@@ -1,22 +1,24 @@
 {
   "coverage": {
-    "benchmarks_with_runs": 12,
-    "cells_with_evidence": 72,
-    "evidence_cell_rate": 0.11842105263157894,
+    "benchmarks_with_runs": 13,
+    "cells_with_evidence": 91,
+    "evidence_cell_rate": 0.14967105263157895,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 45,
     "planned_cells": 608,
     "protocol_v3_executed_cell_rate": 0.044407894736842105,
     "protocol_v3_executed_cells": 27,
+    "protocol_v3_status_only_cells": 19,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 4850
+      "PROTOCOL_V3": 4869
     },
     "records_by_benchmark": {
       "B01": 1474,
       "B02": 60,
       "B03": 1220,
       "B04": 472,
+      "B05": 19,
       "B06": 30,
       "B07": 3600,
       "B09": 21,
@@ -26,14 +28,16 @@
       "B15": 9,
       "B17": 6
     },
-    "run_records": 6928,
+    "run_records": 6947,
     "run_status_counts": {
       "COMPLETED": 1763,
       "ERROR": 3,
+      "NOT_RUN": 19,
       "TIME_LIMIT": 5162
     },
     "solution_status_counts": {
       "INVALID_CERTIFICATE": 31,
+      "NOT_APPLICABLE": 19,
       "NO_SOLUTION": 20,
       "VALID_COMPLETE": 585,
       "VALID_PARTIAL": 6292
@@ -651,7 +655,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "b1f235659f7fec7df25b1fe1d15a8c2bd5a52a266d35d2ed5bb426f492b73b30",
+    "results/comprehensive/run-manifest.jsonl": "7a27efac2dc127b254c169b15f9b51bb8d4be84e77b6a8ea922f463eccc99075",
     "results/comprehensive/suite-implementation-plan.jsonl": "48f0fe450d46af1b82140dfb17a591da8dbc0a1d791c43042ca7ed0d44862c60"
   },
   "warnings": [

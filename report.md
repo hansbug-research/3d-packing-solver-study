@@ -280,11 +280,11 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`12/32` benchmark 有记录、`72/608` cell 有证据，其中 `27` 个 cell 已执行 protocol-v3，合计 `6,928` 条记录（legacy `2,078`，protocol-v3 `4,850`）。本轮新增的约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`91/608` cell 有证据，其中 `27` 个 cell 已执行 protocol-v3，合计 `6,947` 条记录（legacy `2,078`，protocol-v3 `4,869`）。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 27 个 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
-本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；总计 26 条 protocol-v3 记录，均为 10 s 预算。
+本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；总计 30 条 protocol-v3 记录，均为 10 s 预算。
 
 | 问题族 | fork `box` | fork `boxstacks` | upstream patched `box` | upstream patched `boxstacks` | 结论 |
 |---|---|---|---|---|---|
@@ -318,7 +318,7 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 - Python campaign 计划 3,048 条状态记录；语义可表达并实际执行 280 条，276 条合法。`py3dbp` 的 53 对可比实例中 41 对质量随升/降序改变。Jerry 的 87 对中 66 对质量改变、4 对有效性改变；4 条重叠来自 `fix_point=True` 吸附坐标后未重新检查碰撞，改为 `fix_point=False` 后对照合法。
 - PackingSolver `boxstacks` 9/9 通过：异构成本、最大上方重量、最大堆数、nesting、正常/边界/不可行轴荷、无卸货约束和 IncreasingX。正常轴荷由独立公式重算为 middle `6315.789... <= 6400`、rear `3000 <= 9000`。
 - PackingSolver 策略专项中 auto、tree search、maximal spaces、sequential single knapsack 和 sequential value correction 的已运行记录合法；column generation 在 THPACK9-47 返回 0/99 件，validator 判 `INVALID`。
-- Rust ExtremePoint 在 THPACK9-1 重复 5/5 均为 50 箱且合法。Layer、GA、BRKGA、SA 每类重复 5 次均越界，报告的 15–16 箱全部作废。源码显示换层后只检查 Z、未重检姿态后的 X/Y；GA/BRKGA/SA 共用该 decoder。请求的 seed 未接入随机 runner，多数策略也没有读取 `time_limit_ms`，适合分别向上游提交 issue 和小 PR。
+- Rust ExtremePoint 在 THPACK9-1 重复 5/5 均为 50 箱且合法。Layer、GA、BRKGA、SA 每类重复 5 次均越界，报告的 15–16 箱全部作废；在 20 个主实验场景中逐策略只有 Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5 通过独立校验。源码显示换层后只检查 Z、未重检姿态后的 X/Y；GA/BRKGA/SA 共用该 decoder。请求的 seed 未接入随机 runner，多数策略也没有读取 `time_limit_ms`，适合分别向上游提交 issue 和小 PR。
 - Go `bp3d` THPACK9 44/44 合法，但专项证明它没有逐件姿态白名单，`PutItem` 也不检查累计 `MaxWeight`。这类失败不会出现在纯几何 THPACK 排名中。
 
 ### 7.5 B03 profit 3D-KP 全库对照

@@ -22,3 +22,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 18,comprehensive-baseline-import,primary,0,3,迁移 2078 条历史运行并生成分问题排行；修正非标准 NaN、空排行和 JVM 分组；新增 record_origin，明确 55 个历史证据单元不等于协议 v3 已执行,closed
 19,comprehensive-b03-all-library,primary,0,3,审计 Egeblad-Pisinger 60 例及无效参照表；完成 PackingSolver 官方/fork、Python/Go/Rust adapter、exact 20 件层；固定姿态/全旋转投影/exact 分轨并更新 verify、排行和 benchmark 选择表,closed
 20,comprehensive-constraint-gauntlet,primary,0,2,新增 B09/B12/B13/B14/B15/B17 protocol-v3 原生 runner；四个 PackingSolver 版本变体共 30 条记录；独立复核成本、姿态、重量、堆叠、轴荷和卸货；明确 upstream 轴荷进程错误与预期不可行行为并更新聚合、报告和门禁,closed
+21,comprehensive-b05-source-audit,primary,0,1,审计 MPV 三维实例来源并保留 SOURCE_INCOMPLETE/SOURCE_PENDING；将 B05 状态记录排除出 executed cells；同步 13/32、91/608、6947/4869 统计并修正 Rust 逐策略有效率,closed

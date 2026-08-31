@@ -27,7 +27,7 @@
 - ⚠️ Jerry 的 `loadbear` 本地反例允许脆弱件上方实际重量 20；它改变排序优先级，不是硬承压约束。
 - ⚠️ Go `bp3d` 的 `MaxWeight` 字段存在，但放置函数没有用它拒绝超重方案。
 - ⚠️ OR-Tools/SCIP/Gurobi/CPLEX 是建模引擎，不是现成 3D packer；这些行的 ⚠️ 表示可以由自建模型表达，不能解读为官方提供 3D global constraint。它们保留的 ✅ 只表示求解器自身的 bound/optimality 或 Python 接口能力。
-- ⚠️ Rust `u-nesting` 的 `Packer3D` 原生只接受一个 `Boundary3D`。THPACK9 的多箱结果来自本仓库 repeated-single-boundary adapter；ExtremePoint 44/44 合法。Layer decoder 关联的 BottomLeftFill、GA、BRKGA、SA 在 THPACK9-1 和旋转专项中产生越界 placement，5 次重复仍失败；无效的 15–16 箱不能进入排名。
+- ⚠️ Rust `u-nesting` 的 `Packer3D` 原生只接受一个 `Boundary3D`。THPACK9 的多箱结果来自本仓库 repeated-single-boundary adapter；ExtremePoint 44/44 合法。Layer decoder 关联的 BottomLeftFill、GA、BRKGA、SA 在 THPACK9-1 和旋转专项中产生越界 placement，5 次重复仍失败；主实验逐策略有效率为 Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5；无效的 15–16 箱不能进入排名。
 
 ## 技术栈与算法行为矩阵
 
@@ -59,7 +59,7 @@
 | Skjolber Plain/LAFF | ❌ | ✅ 两算法 | ⚠️ 既有小型 smoke | ❌ | ❌ | ✅ 同实例配对 | ❌ |
 | Go `bp3d` | ❌ | ✅ | ⚠️ 禁旋/重量失败 | ❌ | ❌ | ❌ | ❌ |
 | Rust ExtremePoint | ❌ | ⚠️ 44/44，adapter 多箱 | ✅ 能力声明内 7/7 | ❌ | ❌ | ✅ 5/5 有效 | ❌ |
-| Rust Layer/GA/BRKGA/SA | ❌ | ❌ | ⚠️ 14/20 场景有效 | ❌ | ❌ | ❌ 每策略 5/5 非法 | ❌ |
+| Rust Layer/GA/BRKGA/SA | ❌ | ❌ | ⚠️ 14/20 场景有效（Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5） | ❌ | ❌ | ❌ 每策略 5/5 非法 | ❌ |
 | CP-SAT/SCIP/Gurobi/CPLEX | ❌ | ❌ | ❌ | ✅ strengthened 各 7/7 | ❌ | ⚠️ formulation sensitivity | ❌ |
 
 ## 工程定位矩阵

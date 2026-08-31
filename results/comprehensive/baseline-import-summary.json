@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 6928,
+  "combined_run_records": 6947,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -55,6 +55,7 @@
     "results/comprehensive/runs/B03-rust_layer-1s.jsonl": "3d4e0bec4c1c486ea6e40f859bff66d34c9b179176a20a554cf6c5aa4a284d0c",
     "results/comprehensive/runs/B03-rust_sa-10s.jsonl": "9e5c226ddf11677c447f1cc4cd60461c11c051415e53c18f091fba09a7124272",
     "results/comprehensive/runs/B03-rust_sa-1s.jsonl": "18a9beca9595fc3df457ea43234f074503eb2a3e43601ec2c8def668f13df1a1",
+    "results/comprehensive/runs/B05-source-pending.jsonl": "4fa0897e7f5948328d056d1d4b3af03fe14d5ce747b12c320d3f0426a83ee9da",
     "results/comprehensive/runs/B07-packingsolver_fork_box-10s.jsonl": "d7fa06bf9ef7b94fdcb6b44d4cef10ebde32b84d0663affd1b4897385713de98",
     "results/comprehensive/runs/B07-packingsolver_fork_box-1s.jsonl": "b87a53fb041dbad8c6bd1fee24cc3bf29312ff461f8d9cca8379b1c5d6c5313a",
     "results/comprehensive/runs/B07-packingsolver_upstream_box-10s.jsonl": "d77ecc0e4de37aadef56948cb8d9a06a37ee9f18a2c0ab4a7866f022d425af14",
@@ -64,7 +65,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813"
   },
-  "protocol_v3_run_records": 4850,
+  "protocol_v3_run_records": 4869,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -79,7 +80,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "b1f235659f7fec7df25b1fe1d15a8c2bd5a52a266d35d2ed5bb426f492b73b30",
+  "run_manifest_sha256": "7a27efac2dc127b254c169b15f9b51bb8d4be84e77b6a8ea922f463eccc99075",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

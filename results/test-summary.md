@@ -22,7 +22,7 @@
 | Skjolber `c73d521...` Plain/LAFF | THPACK9 两算法 × 44；小型 LAFF/Plain/FastBruteForce | 88/88；小型 3/3 | Plain 在 27 例少用箱，17 例相同，LAFF 0 例胜 | Java 可用；有 obstacles/controls 真实收益时选装 |
 | Go `bp3d@0ba3dcd` | THPACK9 44 例；7 个跨语言场景 | THPACK9 44/44；专项 5/7 | 禁旋无白名单；`MaxWeight` 未执行累计检查 | 不作核心，原因是语义缺口而非语言 |
 | Rust ExtremePoint `8cde85b` | THPACK9 44 例；7 个跨语言场景；THPACK9-1 重复 5 次 | 44/44；7/7 行为符合能力声明；5/5 | 原生单 `Boundary3D`，多箱是 repeated-single-boundary adapter | 可保留为单箱布局基线/观察项 |
-| Rust Layer/GA/BRKGA/SA | 4 策略 × 5 场景；THPACK9-1 每策略重复 5 次 | 主实验 14/20；THPACK9-1 重复 0/20 | 共享 Layer decoder 越界；seed/time limit 接线不完整 | 当前排除；低箱数无效 |
+| Rust Layer/GA/BRKGA/SA | 4 策略 × 5 场景；THPACK9-1 每策略重复 5 次 | 主实验 14/20；逐策略 Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5；THPACK9-1 重复 0/20 | 共享 Layer decoder 越界；seed/time limit 接线不完整 | 当前排除；低箱数无效 |
 | CP-SAT 9.15 | 7 场景 × 3 formulation | canonical strengthened 7/7 | BR/LN/IMM 不是其现成模型；需自建 3D | 默认 exact-small/成本主问题 |
 | SCIP/PySCIPOpt 6.2.1 | 同上 | canonical 7/7 | reduced `overflow_9` 20 s 未证明 | 开放 MIP/CIP 对照与研究轨 |
 | Gurobi 13.0.3 | 同上 | canonical 7/7 | 三种 formulation 均完成；小例不构成通用速度证据 | 有生产许可和真实收益时选装 |

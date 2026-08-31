@@ -94,12 +94,17 @@ def execution_coverage(plan: list[dict[str, Any]], records: list[dict[str, Any]]
         cell_runs = runs.get((cell["benchmark_id"], cell["implementation_id"]), [])
         legacy_runs = [record for record in cell_runs if record["record_origin"] == "LEGACY_BASELINE"]
         protocol_runs = [record for record in cell_runs if record["record_origin"] == "PROTOCOL_V3"]
+        executed_protocol_runs = [record for record in protocol_runs if record["run_status"] != "NOT_RUN"]
         status_counts = Counter(record["solution_status"] for record in cell_runs)
         run_counts = Counter(record["run_status"] for record in cell_runs)
-        if protocol_runs and legacy_runs:
+        if executed_protocol_runs and legacy_runs:
             execution_status = "PROTOCOL_V3_WITH_LEGACY_BASELINE"
-        elif protocol_runs:
+        elif executed_protocol_runs:
             execution_status = "PROTOCOL_V3_EXECUTED"
+        elif protocol_runs and legacy_runs:
+            execution_status = "PROTOCOL_V3_STATUS_ONLY_WITH_LEGACY_BASELINE"
+        elif protocol_runs:
+            execution_status = "PROTOCOL_V3_STATUS_ONLY"
         elif legacy_runs:
             execution_status = "LEGACY_BASELINE_ONLY"
         else:
@@ -120,6 +125,8 @@ def execution_coverage(plan: list[dict[str, Any]], records: list[dict[str, Any]]
                 "run_records": len(cell_runs),
                 "legacy_run_records": len(legacy_runs),
                 "protocol_v3_run_records": len(protocol_runs),
+                "protocol_v3_executed_records": len(executed_protocol_runs),
+                "protocol_v3_not_run_records": len(protocol_runs) - len(executed_protocol_runs),
                 "unique_instances": len({canonical_instance(record) for record in cell_runs}),
                 "completed": run_counts["COMPLETED"],
                 "time_limit": run_counts["TIME_LIMIT"],
@@ -571,8 +578,12 @@ def generated_files() -> dict[Path, str]:
     run_counts = Counter(record["run_status"] for record in records)
     benchmark_counts = Counter(record["benchmark_id"] for record in records)
     evidence_cells = sum(row["run_records"] > 0 for row in coverage)
-    protocol_v3_cells = sum(row["protocol_v3_run_records"] > 0 for row in coverage)
+    protocol_v3_cells = sum(row["protocol_v3_executed_records"] > 0 for row in coverage)
     legacy_only_cells = sum(row["legacy_run_records"] > 0 and row["protocol_v3_run_records"] == 0 for row in coverage)
+    protocol_v3_status_only_cells = sum(
+        row["protocol_v3_run_records"] > 0 and row["protocol_v3_executed_records"] == 0
+        for row in coverage
+    )
     origin_counts = Counter(record["record_origin"] for record in records)
     aggregate = {
         "schema_version": 1,
@@ -586,6 +597,7 @@ def generated_files() -> dict[Path, str]:
             "cells_with_evidence": evidence_cells,
             "evidence_cell_rate": evidence_cells / len(coverage),
             "legacy_baseline_only_cells": legacy_only_cells,
+            "protocol_v3_status_only_cells": protocol_v3_status_only_cells,
             "protocol_v3_executed_cells": protocol_v3_cells,
             "protocol_v3_executed_cell_rate": protocol_v3_cells / len(coverage),
             "run_records": len(records),
@@ -611,7 +623,8 @@ def generated_files() -> dict[Path, str]:
     coverage_fields = [
         "benchmark_id", "benchmark_name", "category", "problem_family", "implementation_id", "library", "algorithm",
         "planned_input_status", "planned_capability_status", "comparison_track", "problem_scope", "run_records",
-        "legacy_run_records", "protocol_v3_run_records", "unique_instances", "completed", "time_limit", "error",
+        "legacy_run_records", "protocol_v3_run_records", "protocol_v3_executed_records", "protocol_v3_not_run_records",
+        "unique_instances", "completed", "time_limit", "error",
         "valid_complete", "valid_partial", "invalid_certificate",
         "constraint_violation", "no_solution", "execution_status",
     ]

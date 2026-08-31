@@ -272,6 +272,7 @@ def check_comprehensive_results() -> None:
         "rankings/exact-proof.csv",
         "rankings/constraint-conformance.csv",
         "rankings/resource-summary.csv",
+        "b05-source-audit.json",
     ]
     for relative in required:
         if not (directory / relative).exists():
@@ -297,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-    ) != (6928, 2078, 6928, 6928):
+        ) != (6947, 2078, 6947, 6947):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -306,10 +307,24 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 72, 45, 27, 12, 19):
+        ) != (608, 91, 45, 27, 13, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4850}:
+    if coverage.get("protocol_v3_status_only_cells") != 19:
+        fail("comprehensive status-only coverage changed")
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4869}:
         fail("comprehensive run origin counts changed")
+    try:
+        b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
+    except (json.JSONDecodeError, ValueError) as exc:
+        fail(f"B05 source audit is not strict JSON: {exc}")
+    decision = b05_audit.get("decision", {})
+    if (
+        b05_audit.get("benchmark_id"),
+        decision.get("input_status"),
+        decision.get("run_status"),
+        decision.get("termination_reason"),
+    ) != ("B05", "SOURCE_INCOMPLETE", "NOT_RUN", "SOURCE_PENDING"):
+        fail("B05 source audit decision changed")
     if coverage.get("records_by_benchmark", {}).get("B07") != 3600:
         fail("comprehensive B07 record count changed")
     manifest_hash = sha256(directory / "run-manifest.jsonl")

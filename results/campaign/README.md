@@ -33,7 +33,7 @@ BR/LN 与 IMM 的目标不同，不能把它们混成一列“平均箱数”。
 | Skjolber Plain/LAFF | ❌ 未实现 BR/LN adapter | ✅ 两算法各 44/44 | ⚠️ 小型 3 算法与既有约束 smoke 已跑 | ❌ | ❌ | ✅ Plain 在 27 例优于 LAFF，17 例相同 | ❌ |
 | Go `bp3d@0ba3dcd` | ❌ 方向语义不支持 | ✅ 44/44 | ⚠️ 5/7 certificate 合法；禁旋和重量失败 | ❌ | ❌ | ❌ | ❌ |
 | Rust ExtremePoint `8cde85b` | ❌ 未实现 BR/LN adapter | ⚠️ 44/44 有效，但多箱来自重复单 boundary adapter | ✅ 7/7 行为符合能力声明 | ❌ | ❌ | ✅ THPACK9-1 重复 5/5 有效 | ❌ |
-| Rust Layer/GA/BRKGA/SA | ❌ | ❌ THPACK9-1 certificate 越界 | ⚠️ 14/20 场景有效 | ❌ | ❌ | ❌ 每种策略 THPACK9-1 重复 5/5 非法 | ❌ |
+| Rust Layer/GA/BRKGA/SA | ❌ | ❌ THPACK9-1 certificate 越界 | ⚠️ 14/20 场景有效；Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5 | ❌ | ❌ | ❌ 每种策略 THPACK9-1 重复 5/5 非法 | ❌ |
 | OR-Tools CP-SAT 9.15 | ❌ 非现成 3D 库 | ❌ 未解 44 例 | ❌ | ✅ strengthened 7/7 | ❌ | ⚠️ legacy/reduced/strengthened 均跑 | ❌ |
 | SCIP/PySCIPOpt 6.2.1 | ❌ | ❌ | ❌ | ✅ strengthened 7/7 | ❌ | ⚠️ reduced `overflow_9` 20 s 未证明 | ❌ |
 | Gurobi 13.0.3 | ❌ | ❌ | ❌ | ✅ strengthened 7/7 | ❌ | ✅ 三种 formulation 均跑 | ❌ |
