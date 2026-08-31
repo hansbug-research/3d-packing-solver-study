@@ -685,22 +685,53 @@ def build_records() -> list[dict[str, Any]]:
 
 
 def generated_files() -> dict[Path, str]:
-    records = build_records()
-    manifest = "".join(json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n" for record in records)
+    baseline_records = build_records()
+    protocol_records: list[dict[str, Any]] = []
+    protocol_sources: dict[str, str] = {}
+    runs_dir = RESULTS_DIR / "runs"
+    for path in sorted(runs_dir.glob("*.jsonl")) if runs_dir.exists() else []:
+        content = path.read_text(encoding="utf-8")
+        protocol_sources[str(path.relative_to(ROOT))] = hashlib.sha256(content.encode("utf-8")).hexdigest()
+        for line in content.splitlines():
+            if not line:
+                continue
+            record = json.loads(line)
+            validate_run_record(record)
+            if record["record_origin"] != "PROTOCOL_V3":
+                raise ValueError(f"protocol run source contains a non-PROTOCOL_V3 record: {path}: {record['run_id']}")
+            protocol_records.append(record)
+
+    baseline_manifest = "".join(
+        json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
+        for record in baseline_records
+    )
+    all_records = sorted(baseline_records + protocol_records, key=lambda row: row["run_id"])
+    run_ids = [record["run_id"] for record in all_records]
+    if len(run_ids) != len(set(run_ids)):
+        duplicates = sorted(run_id for run_id in set(run_ids) if run_ids.count(run_id) > 1)
+        raise ValueError(f"duplicate combined run ids: {duplicates}")
+    manifest = "".join(
+        json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
+        for record in all_records
+    )
     counts: dict[str, int] = {}
-    for record in records:
+    for record in baseline_records:
         source = record["adapter"] or "NONE"
         counts[source] = counts.get(source, 0) + 1
     summary = {
         "schema_version": 1,
         "protocol_version": "benchmark-protocol/3",
         "record_kind": "LEGACY_BASELINE_IMPORT",
-        "run_records": len(records),
-        "benchmark_ids": sorted({record["benchmark_id"] for record in records}),
-        "implementation_ids": sorted({record["implementation_id"] for record in records}),
+        "run_records": len(baseline_records),
+        "protocol_v3_run_records": len(protocol_records),
+        "combined_run_records": len(all_records),
+        "benchmark_ids": sorted({record["benchmark_id"] for record in baseline_records}),
+        "implementation_ids": sorted({record["implementation_id"] for record in baseline_records}),
         "records_by_adapter": dict(sorted(counts.items())),
+        "baseline_manifest_sha256": hashlib.sha256(baseline_manifest.encode("utf-8")).hexdigest(),
         "run_manifest_sha256": hashlib.sha256(manifest.encode("utf-8")).hexdigest(),
-        "warning": "These records normalize already archived v1/v2 experiments; artifacts remain at their original paths.",
+        "protocol_source_sha256": protocol_sources,
+        "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs.",
     }
     return {
         RESULTS_DIR / "run-manifest.jsonl": manifest,

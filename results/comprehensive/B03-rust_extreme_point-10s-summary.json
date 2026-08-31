@@ -1,0 +1,26 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B03/rust_extreme_point/10s/artifacts.tar.gz",
+  "artifact_archive_sha256": "a636ecca003d94e11679952b167adcd553a07a71428610376ded0fc8b4624af1",
+  "benchmark_id": "B03",
+  "binary_sha256": "9d80df0a411d8515dc2db458ae52c4eb81a91af145823ec2d6481f37e8ebfe00",
+  "comparison_track": "COMPOSED",
+  "implementation_id": "rust_extreme_point",
+  "implementation_version": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "instances": 60,
+  "label": "10s",
+  "problem_variant": "FIXED_XYZ",
+  "protocol_version": "benchmark-protocol/3",
+  "python_worker_sha256": "8690d712f282721ea27759a977004cb50c5ca5b60f048a29ff1ed9c7e6182ab9",
+  "run_jsonl_sha256": "4cd0976c3fc896cda5d5a1f743174fe18c7c3e5e99a467a73ef0c6a68fad500b",
+  "run_status_counts": {
+    "COMPLETED": 60
+  },
+  "runner_sha256": "025ef185d1480512cbead3275908ede8b53c27db60931d501f8e7e97233e320b",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 60
+  },
+  "source_index_sha256": "623b376fd6acc90b68e92b51c2438e29ba1d26a73e6f04819667c23b57d441ca",
+  "time_limit_s": 10.0
+}

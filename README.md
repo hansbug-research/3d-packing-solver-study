@@ -31,6 +31,7 @@
 ```text
 report.md                         总报告：问题、模型、算法、benchmark、前端与路线
 research/test-protocol.md         B01-B32 全库综合 benchmark、状态、排行与发布协议
+research/benchmark-selection.md   每个 benchmark 的适用库、指标、解释边界与缺口
 research/                         学术综述、能力矩阵、公共数据集、上游审计
 benchmarks/                       受控脚本、统一数据转换器、独立 validator
 results/                          机器可读结果与测试摘要

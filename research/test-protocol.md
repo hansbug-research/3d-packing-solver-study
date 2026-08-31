@@ -250,4 +250,4 @@ results/comprehensive/
 
 现有证据已经覆盖 PackingSolver THPACK 759 个合法源两档预算、THPACK9 44 例主要 packer 横评、四个 exact backend 的 7 个 strengthened 场景、PackingSolver `boxstacks` 9 项、Rust 策略和工业数据字段审计。它们作为协议 v2 的回归基线保留；协议 v3 不倒写这些历史结果。
 
-当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B03、B05-B11 的统一 adapter 和全量运行；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign；B30 的完整 shelf adapter；B31 的生成器和联合约束运行；B32 的统一在线 adapter。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 排名替代。
+当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B05-B11 的统一 adapter 和全量运行；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign；B30 的完整 shelf adapter；B31 的生成器和联合约束运行；B32 的统一在线 adapter。B03 已完成来源审计、PackingSolver 官方/fork、Python/Go/Rust adapter 和 exact 20 件子集，但其 projection 与 fixed 轨必须继续分开解释。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 或 B03 排名替代。

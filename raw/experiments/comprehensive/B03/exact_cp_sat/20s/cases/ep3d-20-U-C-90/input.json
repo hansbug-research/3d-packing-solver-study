@@ -1,0 +1,213 @@
+{
+  "benchmark_id": "B03",
+  "bin_size": [
+    58,
+    58,
+    117
+  ],
+  "instance": {
+    "capacity_class": 90,
+    "container": [
+      58,
+      58,
+      117
+    ],
+    "distribution": "CLUSTERED",
+    "id": "ep3d-20-U-C-90.3kp",
+    "item_count": 20,
+    "maximum_item_profit": 101400,
+    "pose_semantics": "FIXED_XYZ",
+    "reference_below_single_item_lower_bound": false,
+    "reference_status": "INVALID_REFERENCE_TABLE",
+    "sha256": {
+      "bins": "e51c61b4d415c86aee9f88b85254e6167e26cec7b4ad3e28134460a47d15123f",
+      "items": "d0992a3d0b3fa837ce62b9fa4cb94d9d284d57c7a4dd27ff96107f67df18e577",
+      "raw": "27db7f74d7a32997622cd61b568bb8b1dc6f5d0a5414ebf56df2bda7b2f9e39d"
+    },
+    "shape_class": "U",
+    "total_profit": 459488,
+    "upstream_reference_profit": 132291
+  },
+  "items": [
+    {
+      "id": "0",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "1",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "2",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "3",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "4",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "5",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "6",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "7",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "8",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "9",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "10",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "11",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "12",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "13",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "14",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "15",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "16",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "17",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "18",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "19",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    }
+  ]
+}

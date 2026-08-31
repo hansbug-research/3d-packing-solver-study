@@ -314,7 +314,7 @@ def identical_bin_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str
 
 def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for benchmark_id in ("B06", "B09"):
+    for benchmark_id in ("B03", "B06", "B09"):
         groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for record in records:
             if record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":
@@ -340,11 +340,83 @@ def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
                         ),
                         default=None,
                     ),
-                    "mean_gap": mean(record["metrics"].get("gap") for record in group),
+                    "mean_gap": mean(
+                        record["metrics"].get("gap", record["metrics"].get("solver_relative_gap"))
+                        for record in group
+                    ),
                 }
             )
     rows.sort(key=lambda row: (row["benchmark_id"], -row["proof_rate"], row["mean_solver_s"] or math.inf))
     return rows
+
+
+def profit_knapsack_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    groups: dict[tuple[str, str, float], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if record["benchmark_id"] != "B03" or record["comparison_track"] == "EXACT_MODEL":
+            continue
+        groups[(record["problem_variant"], record["implementation_id"], float(record["budget"]["time_limit_s"]))].append(record)
+    ranking: list[dict[str, Any]] = []
+    selected: dict[tuple[str, str, float], dict[str, dict[str, Any]]] = defaultdict(dict)
+    for (variant, implementation_id, time_limit), group in groups.items():
+        valid = [record for record in group if record["solution_status"] in VALID_SOLUTIONS]
+        fractions = [record["metrics"].get("packed_profit_fraction") for record in valid]
+        ranking.append({
+            "problem_variant": variant,
+            "implementation_id": implementation_id,
+            "comparison_track": group[0]["comparison_track"],
+            "time_limit_s": time_limit,
+            "instances": len(group),
+            "valid_instances": len(valid),
+            "invalid_instances": len(group) - len(valid),
+            "valid_rate": len(valid) / len(group) if group else 0.0,
+            "mean_packed_profit": mean(record["metrics"].get("packed_profit") for record in valid),
+            "mean_profit_fraction": mean(fractions),
+            "median_profit_fraction": median(fractions),
+            "p95_profit_fraction": nearest_rank([float(value) for value in fractions if value is not None], 0.95),
+            "mean_solver_s": mean(record["resources"].get("solver_s") for record in valid),
+            "p95_solver_s": nearest_rank([float(record["resources"]["solver_s"]) for record in valid if record["resources"].get("solver_s") is not None], 0.95),
+            "candidate_invalid_count": sum(int(record["metrics"].get("candidate_invalid_count", 0)) for record in group),
+        })
+        for record in valid:
+            selected[(variant, implementation_id, time_limit)][canonical_instance(record)] = record
+    ranking.sort(key=lambda row: (row["problem_variant"], row["time_limit_s"], -row["valid_rate"], -(row["mean_profit_fraction"] or -1), row["implementation_id"]))
+    pairwise: list[dict[str, Any]] = []
+    for variant, implementation_id, time_limit in sorted(selected):
+        ids = sorted(
+            other_id for other_variant, other_id, other_time in selected
+            if other_variant == variant and other_time == time_limit
+        )
+        if implementation_id != ids[0]:
+            continue
+        for left_index, left_id in enumerate(ids):
+            for right_id in ids[left_index + 1:]:
+                left = selected[(variant, left_id, time_limit)]
+                right = selected[(variant, right_id, time_limit)]
+                common = sorted(set(left) & set(right))
+                wins = ties = losses = 0
+                for instance in common:
+                    left_value = left[instance]["metrics"].get("packed_profit")
+                    right_value = right[instance]["metrics"].get("packed_profit")
+                    if left_value is None or right_value is None:
+                        continue
+                    if left_value > right_value:
+                        wins += 1
+                    elif left_value < right_value:
+                        losses += 1
+                    else:
+                        ties += 1
+                pairwise.append({
+                    "problem_variant": variant,
+                    "time_limit_s": time_limit,
+                    "left": left_id,
+                    "right": right_id,
+                    "common_valid_instances": len(common),
+                    "left_wins": wins,
+                    "ties": ties,
+                    "left_losses": losses,
+                })
+    return ranking, pairwise
 
 
 def constraint_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -419,6 +491,7 @@ def generated_files() -> dict[Path, str]:
     volume = volume_rankings(records)
     volume_common = volume_common_rankings(records)
     identical, pairwise = identical_bin_rankings(records)
+    profit, profit_pairwise = profit_knapsack_rankings(records)
     exact = exact_rankings(records)
     constraints = constraint_rankings(records)
     resources = resource_rankings(records)
@@ -455,6 +528,7 @@ def generated_files() -> dict[Path, str]:
         "headline": {
             "identical_bin_packing": identical,
             "volume_knapsack_common": volume_common,
+            "profit_knapsack": profit,
             "exact_proof": exact,
         },
         "warnings": [
@@ -490,6 +564,14 @@ def generated_files() -> dict[Path, str]:
         "benchmark_id", "implementation_id", "instances", "valid_or_proven_infeasible", "proven", "proof_rate",
         "mean_solver_s", "max_solver_s", "mean_gap",
     ]
+    profit_fields = [
+        "problem_variant", "implementation_id", "comparison_track", "time_limit_s", "instances", "valid_instances",
+        "invalid_instances", "valid_rate", "mean_packed_profit", "mean_profit_fraction", "median_profit_fraction",
+        "p95_profit_fraction", "mean_solver_s", "p95_solver_s", "candidate_invalid_count",
+    ]
+    profit_pairwise_fields = [
+        "problem_variant", "time_limit_s", "left", "right", "common_valid_instances", "left_wins", "ties", "left_losses",
+    ]
     constraint_fields = [
         "benchmark_id", "implementation_id", "records", "valid_complete", "valid_partial", "no_solution",
         "invalid_certificate", "constraint_violation", "process_errors", "expected_behavior_pass_rate",
@@ -505,6 +587,8 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "volume-knapsack-common.csv": write_csv(volume_common, volume_common_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing.csv": write_csv(identical, identical_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing-pairwise.csv": write_csv(pairwise, pairwise_fields),
+        RESULTS_DIR / "rankings" / "profit-knapsack.csv": write_csv(profit, profit_fields),
+        RESULTS_DIR / "rankings" / "profit-knapsack-pairwise.csv": write_csv(profit_pairwise, profit_pairwise_fields),
         RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),

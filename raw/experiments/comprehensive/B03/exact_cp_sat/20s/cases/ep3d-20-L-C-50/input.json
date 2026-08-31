@@ -1,0 +1,213 @@
+{
+  "benchmark_id": "B03",
+  "bin_size": [
+    85,
+    85,
+    170
+  ],
+  "instance": {
+    "capacity_class": 50,
+    "container": [
+      85,
+      85,
+      170
+    ],
+    "distribution": "CLUSTERED",
+    "id": "ep3d-20-L-C-50.3kp",
+    "item_count": 20,
+    "maximum_item_profit": 318056,
+    "pose_semantics": "FIXED_XYZ",
+    "reference_below_single_item_lower_bound": true,
+    "reference_status": "INVALID_REFERENCE_TABLE",
+    "sha256": {
+      "bins": "4044b1826f460854fe6419ed905c8c62ba3840059e38e6f8cea9d2250031b10e",
+      "items": "fa3a5f378d7609125524ea7018a9a7da9135ed74cab1a9dd9fe9dee2d386aa41",
+      "raw": "80aa1fc2b98747741ba60bf3ec50be0780342734e53bab770021f4425c742564"
+    },
+    "shape_class": "L",
+    "total_profit": 2483596,
+    "upstream_reference_profit": 20835
+  },
+  "items": [
+    {
+      "id": "0",
+      "profit": 51230,
+      "size": [
+        27,
+        27,
+        70
+      ]
+    },
+    {
+      "id": "1",
+      "profit": 72440,
+      "size": [
+        30,
+        43,
+        56
+      ]
+    },
+    {
+      "id": "2",
+      "profit": 7256,
+      "size": [
+        6,
+        21,
+        56
+      ]
+    },
+    {
+      "id": "3",
+      "profit": 171917,
+      "size": [
+        51,
+        37,
+        91
+      ]
+    },
+    {
+      "id": "4",
+      "profit": 318056,
+      "size": [
+        66,
+        56,
+        86
+      ]
+    },
+    {
+      "id": "5",
+      "profit": 51230,
+      "size": [
+        27,
+        27,
+        70
+      ]
+    },
+    {
+      "id": "6",
+      "profit": 72440,
+      "size": [
+        30,
+        43,
+        56
+      ]
+    },
+    {
+      "id": "7",
+      "profit": 7256,
+      "size": [
+        6,
+        21,
+        56
+      ]
+    },
+    {
+      "id": "8",
+      "profit": 171917,
+      "size": [
+        51,
+        37,
+        91
+      ]
+    },
+    {
+      "id": "9",
+      "profit": 318056,
+      "size": [
+        66,
+        56,
+        86
+      ]
+    },
+    {
+      "id": "10",
+      "profit": 51230,
+      "size": [
+        27,
+        27,
+        70
+      ]
+    },
+    {
+      "id": "11",
+      "profit": 72440,
+      "size": [
+        30,
+        43,
+        56
+      ]
+    },
+    {
+      "id": "12",
+      "profit": 7256,
+      "size": [
+        6,
+        21,
+        56
+      ]
+    },
+    {
+      "id": "13",
+      "profit": 171917,
+      "size": [
+        51,
+        37,
+        91
+      ]
+    },
+    {
+      "id": "14",
+      "profit": 318056,
+      "size": [
+        66,
+        56,
+        86
+      ]
+    },
+    {
+      "id": "15",
+      "profit": 51230,
+      "size": [
+        27,
+        27,
+        70
+      ]
+    },
+    {
+      "id": "16",
+      "profit": 72440,
+      "size": [
+        30,
+        43,
+        56
+      ]
+    },
+    {
+      "id": "17",
+      "profit": 7256,
+      "size": [
+        6,
+        21,
+        56
+      ]
+    },
+    {
+      "id": "18",
+      "profit": 171917,
+      "size": [
+        51,
+        37,
+        91
+      ]
+    },
+    {
+      "id": "19",
+      "profit": 318056,
+      "size": [
+        66,
+        56,
+        86
+      ]
+    }
+  ]
+}

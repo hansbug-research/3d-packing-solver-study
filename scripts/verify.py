@@ -267,6 +267,8 @@ def check_comprehensive_results() -> None:
         "coverage.csv",
         "rankings/volume-knapsack-common.csv",
         "rankings/identical-bin-packing.csv",
+        "rankings/profit-knapsack.csv",
+        "rankings/profit-knapsack-pairwise.csv",
         "rankings/exact-proof.csv",
         "rankings/constraint-conformance.csv",
         "rankings/resource-summary.csv",
@@ -290,8 +292,13 @@ def check_comprehensive_results() -> None:
         fail(f"comprehensive results are not strict JSON: {exc}")
 
     coverage = aggregate.get("coverage", {})
-    if (len(records), summary.get("run_records"), coverage.get("run_records")) != (2078, 2078, 2078):
-        fail("comprehensive baseline record count changed")
+    if (
+        len(records),
+        summary.get("run_records"),
+        summary.get("combined_run_records"),
+        coverage.get("run_records"),
+    ) != (3298, 2078, 3298, 3298):
+        fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
         coverage.get("cells_with_evidence"),
@@ -299,9 +306,9 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-    ) != (608, 55, 55, 0, 10, 18):
+    ) != (608, 66, 55, 11, 11, 18):
         fail("comprehensive execution coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 1220}:
         fail("comprehensive run origin counts changed")
     manifest_hash = sha256(directory / "run-manifest.jsonl")
     if summary.get("run_manifest_sha256") != manifest_hash:

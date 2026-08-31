@@ -1,6 +1,6 @@
 # 跨平台三维装箱软件技术选型总报告
 
-> 决策日期：2026-08-31。本文是技术架构与产品实施建议，不是车辆/集装箱/航空配载批准、结构计算、危险品合规证明或系固设计。详细证据分别见 [真实工况与元模型](research/domain-model.md)、[算法与论文/库实测](research/algorithms.md)、[逐特性算法/前端矩阵](research/decision-matrices.md)、[公共 benchmark 与指标](research/benchmarks.md)、[PackingSolver 上游核查](research/packingsolver-upstream.md)、[桌面与三维交互](research/frontend.md) 和 [本地测试摘要](results/test-summary.md)。
+> 决策日期：2026-08-31。本文是技术架构与产品实施建议，不是车辆/集装箱/航空配载批准、结构计算、危险品合规证明或系固设计。详细证据分别见 [真实工况与元模型](research/domain-model.md)、[算法与论文/库实测](research/algorithms.md)、[逐特性算法/前端矩阵](research/decision-matrices.md)、[公共 benchmark 与指标](research/benchmarks.md)、[benchmark 选择与覆盖决策](research/benchmark-selection.md)、[PackingSolver 上游核查](research/packingsolver-upstream.md)、[桌面与三维交互](research/frontend.md) 和 [本地测试摘要](results/test-summary.md)。
 
 ## 1. 最终结论
 
@@ -271,13 +271,36 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 - Rust ExtremePoint 在 THPACK9-1 重复 5/5 均为 50 箱且合法。Layer、GA、BRKGA、SA 每类重复 5 次均越界，报告的 15–16 箱全部作废。源码显示换层后只检查 Z、未重检姿态后的 X/Y；GA/BRKGA/SA 共用该 decoder。请求的 seed 未接入随机 runner，多数策略也没有读取 `time_limit_ms`，适合分别向上游提交 issue 和小 PR。
 - Go `bp3d` THPACK9 44/44 合法，但专项证明它没有逐件姿态白名单，`PutItem` 也不检查累计 `MaxWeight`。这类失败不会出现在纯几何 THPACK 排名中。
 
-### 7.4 精确后端与 formulation
+### 7.4 B03 profit 3D-KP 全库对照
+
+B03 是 60 个 Egeblad-Pisinger 实例，覆盖 20/40/60 件、C/L/F/U/D 形状、clustered/random 和 50/90 容量档。来源审计发现上游 57 行参照表中 48 行低于单件最大 profit，且缺 3 行，因此整表标记 `INVALID_REFERENCE_TABLE`，没有使用 reference gap。所有结果都由同一独立 AABB/copies/姿态 validator 重验；完整 runner、原始 stdout/stderr、资源和二进制 hash 见 [`results/comprehensive/rankings/profit-knapsack.csv`](results/comprehensive/rankings/profit-knapsack.csv) 与 [`research/b03-source-audit.md`](research/b03-source-audit.md)。
+
+下表是 60 例平均 `packed_profit / total_available_profit`；固定姿态和全旋转投影不混排，10 s 对没有内部 time-limit 的库只是重复运行边界，不应解读为额外搜索时间。
+
+| 轨道/实现 | 预算 | 合法率 | mean profit fraction | mean solver time | 解释 |
+|---|---:|---:|---:|---:|---|
+| `FIXED_XYZ` Rust ExtremePoint | 1 s | 60/60 | 0.4614 | 0.00014 s | 固定姿态单箱 adapter 基线，速度快但不优化 profit |
+| `FIXED_XYZ` PackingSolver official | 1 s | 60/60 | 0.4498 | 1.118 s | 原生 profit；官方 rolling 对照 |
+| `FIXED_XYZ` PackingSolver fork | 1 s | 60/60 | 0.4442 | 1.146 s | fork 与官方差异不稳定，不能宣称普遍优于官方 |
+| `FIXED_XYZ` Rust SA/GA/BRKGA | 1 s | 60/60 | 0.4078/0.4025/0.3906 | 0.0230/0.0585/0.0175 s | 共享 adapter 可出合法布局，但未接通有效 profit objective |
+| `FIXED_XYZ` Rust Layer | 1 s | 60/60 | 0.3138 | 0.00004 s | 极快几何 baseline，质量明显较低 |
+| `RELAXED_ALL_ROTATIONS` py3dbp | 1 s | 60/60 | 0.5047 | 0.0876 s | 放宽旋转且 best-of-ascending/descending；不能与 fixed 原题直接比较 |
+| `RELAXED_ALL_ROTATIONS` Jerry | 1 s | 59/60 | 0.5006 | 0.5165 s | 1 例最终证书非法；另外 3 个候选布局失败被保留为可靠性证据 |
+| `RELAXED_ALL_ROTATIONS` Go bp3d | 1 s | 60/60 | 0.4761 | 0.00038 s | 几何投影合法，但库不优化 profit |
+| `FIXED_XYZ` PackingSolver fork | 10 s | 60/60 | 0.5217 | 9.252 s | 10 s 相比 1 s 提升约 17.4%（同一 fixed 轨） |
+| `FIXED_XYZ` PackingSolver official | 10 s | 60/60 | 0.5214 | 9.236 s | 与 fork 几乎持平；两者均为合法 incumbent，不是 proof |
+
+固定姿态 1 s 配对中 fork 相对官方为 6 胜/49 平/5 负，10 s 为 3 胜/56 平/1 负；10 s 总收益 fork 高 407,115，但不能据此把 fork 作为所有实例的严格支配版本。exact CP-SAT 只跑 20 件子集：20/20 合法、13/20 在 20 s 内证明最优，7/20 返回合法 incumbent 与上界；它用于校准小规模模型，不给 40/60 件实例制造伪造 optimum。
+
+该实验支持的工程结论是：PackingSolver fork 仍是最接近 B03 原题语义的正交主候选，Python/Go/Jerry 只适合作为放宽旋转的候选生成器或对照；Rust ExtremePoint 是低延迟几何基线，不是 profit 优化器；Rust GA/BRKGA/SA/Layer 目前不能替代原生 profit 求解。完整的 32 套 benchmark 选择、每个套件适用库和结论边界见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)。
+
+### 7.5 精确后端与 formulation
 
 OR-Tools CP-SAT 9.15、SCIP/PySCIPOpt 6.2.1、Gurobi 13.0.3 和 CPLEX 22.1.2.0 都运行了同一组 7 个手工真值场景：网格、9 件溢出拆箱、需旋转、禁旋、重量拆箱、两种异构成本方向。canonical strengthened formulation 四家均为 7/7，证书与目标复算通过。
 
 legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求解器速度榜。CPLEX legacy 的 1,489 条约束超过 promotional license 的 1,000 条上限；SCIP 和 CPLEX 的 reduced `overflow_9` 在 20 秒内未证明；strengthened 四后端都闭合。这里首先说明加强约束和对称处理的重要性，不能外推为某个 solver 在一般 3D 实例上固定更快。
 
-### 7.5 工业数据集状态
+### 7.6 工业数据集状态
 
 Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP 的 BAYTP 快照缺少公共 `products`/`shelves`；虽从 OR-Library 核对了对应文件与 SHA-256，仍标为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。删除字段后运行普通 3D 箱数算法会改变问题，不能作为完整 benchmark 分数。
 

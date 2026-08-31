@@ -5,3 +5,5 @@
 `sources/snapshots/` 中的 PackingSolver README、C++ 源文件和 LICENSE 是提交 `367ebfdaad11424ded3696b7dae799a30c1375d0` 的审计快照，按其上游 MIT License 分发；对应许可证全文与 URL、SHA-256 已登记在 `sources/manifest.csv` 的 S07–S10、S32。快照只用于核对 capability 和缺失分支，不构成官方 release，也不把本仓库的 Apache-2.0 施加到这些文件上。
 
 同目录中的 Go `bp3d.go` 与 LICENSE 是 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7` 的审计快照，按其 MIT License 分发；来源 URL、版本和 SHA-256 登记在 S106–S107。Rust `u-nesting` 只登记了固定仓库 commit，没有把未运行的源码复制为本仓库快照。
+
+B03 Egeblad-Pisinger 60 例从固定 HansBug/PackingSolver commit 获取。作者格式、生成器与论文来源已登记，但没有找到独立的数据集许可证；因此仓库不 vendoring 完整 corpus，只保存逐文件哈希、结构摘要、参照值覆盖状态和实验输出。该数据及其转换不因本仓库的 Apache-2.0 而改变原始权利归属。

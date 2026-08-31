@@ -1,0 +1,1420 @@
+{
+  "benchmark_id": "B03",
+  "best_known_reference_count": 57,
+  "corpus_sha256": "ba149b510f7d6719583bb0d52013e397e56a5d3fb7403af933329d7e08bfb986",
+  "dataset_addition_commit": "03b1e218df45be5e5f33fee1b7901b97610718e1",
+  "generator_audit": {
+    "fixed_seed": 0,
+    "known_source_defect": "container fit loop assigns d=items[i].h instead of items[i].d; no fixed-pose item exceeds its container in the committed 60-instance corpus",
+    "profit_formula": "x*y*z+200"
+  },
+  "instance_count": 60,
+  "instances": [
+    {
+      "capacity_class": 50,
+      "container": [
+        99,
+        99,
+        199
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-C-C-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "698887563023ae91e47c4696c30518f74a8bac1ff8561c992d9703915e33bf79",
+        "items": "f350e34faa26e60e9a86b747b07c2e6bcd82c1c0fe990e05ee29364159c530c7",
+        "raw": "1ff2da8210926fd5215bba17209ed72e52fa8ec1904ea9a7d627d88f15cd48eb"
+      },
+      "shape_class": "C",
+      "total_profit": 3992148,
+      "upstream_reference_profit": 65308
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        121,
+        121,
+        243
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-C-C-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "f63e457a3ee94a730ddaa781d413f4d091f36d225ab7225e2abd88421768c688",
+        "items": "f350e34faa26e60e9a86b747b07c2e6bcd82c1c0fe990e05ee29364159c530c7",
+        "raw": "837488897fccd28abc4fca210e90a139fa6d6b26ad2a3b21b6c1b229e86307d5"
+      },
+      "shape_class": "C",
+      "total_profit": 3992148,
+      "upstream_reference_profit": 80124
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        120,
+        120,
+        241
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-C-R-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 941392,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "b4b274f97e1b93182e91a334232f8a466fdd4cddc38b1e81382eb2639cff4219",
+        "items": "eb19adbad4e0551cf4c49bccb4750a6ac4194d68285972942440a3aabbffa5f9",
+        "raw": "58a6851aa8c0076c871e6ae82887ab35665c1b6049ca128169d03a7dc3915746"
+      },
+      "shape_class": "C",
+      "total_profit": 7085495,
+      "upstream_reference_profit": 62364
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        147,
+        147,
+        294
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-C-R-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 941392,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "38695d6517071a63bb40df94ac496d11479f7412e1c1b143e064a0fa09a2bda6",
+        "items": "eb19adbad4e0551cf4c49bccb4750a6ac4194d68285972942440a3aabbffa5f9",
+        "raw": "13bf235d682a02251d13abf14409a619f3f079627974a6af6f094f19315c0a95"
+      },
+      "shape_class": "C",
+      "total_profit": 7085495,
+      "upstream_reference_profit": 66844
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        131,
+        131,
+        263
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-D-C-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "4420ba60c7ac341a09a41dd0395d7266df08b57ca8a887faebfef2315819b245",
+        "items": "0004aee2df9fcb6ce82b7b0c36e93e40fa79630b269bebc2b7411de8ee855a7a",
+        "raw": "07c4cf6a95d507b9b6e0d1f1488393cf4909494078c323064aa38e77971b8825"
+      },
+      "shape_class": "D",
+      "total_profit": 9200836,
+      "upstream_reference_profit": 13192
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        160,
+        160,
+        321
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-D-C-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "db981e8a38488c2423cf18ada8f7647bbbee916de88e8e3e6d448e2bae757412",
+        "items": "0004aee2df9fcb6ce82b7b0c36e93e40fa79630b269bebc2b7411de8ee855a7a",
+        "raw": "152ef3d1aefdc53bd7caa305a704ffb279466ce11385bbac8535299d970206fb"
+      },
+      "shape_class": "D",
+      "total_profit": 9200836,
+      "upstream_reference_profit": 27848
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        126,
+        126,
+        253
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-D-R-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "a4b9557b5623d8ec272eee773ab6da65e13ce298038d404f873b90a17648a4a5",
+        "items": "7733c2c9237ac38f73c44de0c381ac6afdcd2f1896cf2a58f2ab0b8f77354d71",
+        "raw": "b7fb6a16b71799d3a03eab3449164007a2ee54cb832234d3b14418e24d057ff0"
+      },
+      "shape_class": "D",
+      "total_profit": 8163958,
+      "upstream_reference_profit": 15170
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        154,
+        154,
+        308
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-D-R-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "67237d18cc07f0646fa44c40ce1bb63d041866e238a4594b7b0f2f3a661b634c",
+        "items": "7733c2c9237ac38f73c44de0c381ac6afdcd2f1896cf2a58f2ab0b8f77354d71",
+        "raw": "1533ba87feb7877e922834e226bc892bc5c721a47a31e61c09022603eb5f5ba1"
+      },
+      "shape_class": "D",
+      "total_profit": 8163958,
+      "upstream_reference_profit": 20822
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        118,
+        118,
+        237
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-F-C-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "237effdd7b18a3f09f24220748c0131e9e4a1ebb089f1fd8db5356b469744bff",
+        "items": "a90acc7051e8b057b7880d44eca265996a85fae459e33ee4aabc2e6ff397b7fc",
+        "raw": "08cda112b5bc77c41d549de020e7fb7235a309b3d50b95928723e3be1bf1a038"
+      },
+      "shape_class": "F",
+      "total_profit": 6661244,
+      "upstream_reference_profit": 71816
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        144,
+        144,
+        288
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-F-C-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "85122005b7cacfe1c9d932ce7869e582593b48832dc0a590328159a9b2330ba6",
+        "items": "a90acc7051e8b057b7880d44eca265996a85fae459e33ee4aabc2e6ff397b7fc",
+        "raw": "750de90a28eb05b7af0f92eaa6efcd641867bc4334ae34ec0b0c983549bb32e2"
+      },
+      "shape_class": "F",
+      "total_profit": 6661244,
+      "upstream_reference_profit": 167281
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        108,
+        108,
+        216
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-F-R-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "6e860d1634c388d6f26adcaaa411ac1e37f35297fff4ed2e7e326c998f4d6bed",
+        "items": "b96c13b5a3ed34042c7d5d95e8e5c96ab10a1321d9c26052024063bee6f12303",
+        "raw": "5afcd4da5a5a07a14aa282462048dc9d13cefd7ffd28d1285ec3b236e93f58c7"
+      },
+      "shape_class": "F",
+      "total_profit": 5051634,
+      "upstream_reference_profit": 80962
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        131,
+        131,
+        262
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-F-R-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "d371f12a5b4f16f3f9ecb33439198eeb94db64cb026430075e291fb3d9012bfd",
+        "items": "b96c13b5a3ed34042c7d5d95e8e5c96ab10a1321d9c26052024063bee6f12303",
+        "raw": "ce835be98c1de5438cd20eca4b9f4421d614d8276e64a67cfedcb514d92dfd0e"
+      },
+      "shape_class": "F",
+      "total_profit": 5051634,
+      "upstream_reference_profit": 155155
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        85,
+        85,
+        170
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-L-C-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "4044b1826f460854fe6419ed905c8c62ba3840059e38e6f8cea9d2250031b10e",
+        "items": "fa3a5f378d7609125524ea7018a9a7da9135ed74cab1a9dd9fe9dee2d386aa41",
+        "raw": "80aa1fc2b98747741ba60bf3ec50be0780342734e53bab770021f4425c742564"
+      },
+      "shape_class": "L",
+      "total_profit": 2483596,
+      "upstream_reference_profit": 20835
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        103,
+        103,
+        207
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-L-C-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "bc2e34f0ba1f3e50ec46c0fb6b83e010d60d716949c26e6e198824a0ebb8cde5",
+        "items": "fa3a5f378d7609125524ea7018a9a7da9135ed74cab1a9dd9fe9dee2d386aa41",
+        "raw": "874b262d33faed5ba312ac6637d4561903f8732b414ca1e533f072060cde256d"
+      },
+      "shape_class": "L",
+      "total_profit": 2483596,
+      "upstream_reference_profit": 48404
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        68,
+        68,
+        137
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-L-R-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "7b85a28cd0f3097fe4801ff31720d0e73478177dd8e26339af385f6713f45e1e",
+        "items": "d80591521c455fc28333b33ff1d2fd0a3a7152d80b1fa444c04184c63fce3cfb",
+        "raw": "7062d36e716f854c24eb3b612aacef2f0feda06759139de701f00e7fa3871f1b"
+      },
+      "shape_class": "L",
+      "total_profit": 1290950,
+      "upstream_reference_profit": 24809
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        83,
+        83,
+        166
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-L-R-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "be0f9a1437e2971db830bdc378c9ef68fe24e60ca4baadee5371a185b4fe23c4",
+        "items": "d80591521c455fc28333b33ff1d2fd0a3a7152d80b1fa444c04184c63fce3cfb",
+        "raw": "e4947acbb23697d0a876c987320d7d1f7858bd13695686534cdd88a68f704eec"
+      },
+      "shape_class": "L",
+      "total_profit": 1290950,
+      "upstream_reference_profit": 32892
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        48,
+        48,
+        96
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-U-C-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "fa61329e0e35825b52905f0e526bad1598456047dd60a3d99cac8f20b3fc87e2",
+        "items": "d0992a3d0b3fa837ce62b9fa4cb94d9d284d57c7a4dd27ff96107f67df18e577",
+        "raw": "52e10e83facf5b4ba3e8050e6bc0f11ab68853c3919d7abe5930abaee6a19180"
+      },
+      "shape_class": "U",
+      "total_profit": 459488,
+      "upstream_reference_profit": 91036
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        58,
+        58,
+        117
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-20-U-C-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "e51c61b4d415c86aee9f88b85254e6167e26cec7b4ad3e28134460a47d15123f",
+        "items": "d0992a3d0b3fa837ce62b9fa4cb94d9d284d57c7a4dd27ff96107f67df18e577",
+        "raw": "27db7f74d7a32997622cd61b568bb8b1dc6f5d0a5414ebf56df2bda7b2f9e39d"
+      },
+      "shape_class": "U",
+      "total_profit": 459488,
+      "upstream_reference_profit": 132291
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        47,
+        48,
+        81
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-U-R-50.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "6cd3574bad4bdccb0eb38c8d12562bd1fc4f1d41cf29a545187f52aa9f42fa17",
+        "items": "deb0bd24b23eec2fe9ae272caa449e9c24a5575e34eba1780a715335621a8862",
+        "raw": "70655b37ed8b59ab98057dc85bcca7ccf354504f4d5ee2cd66377ed60839683e"
+      },
+      "shape_class": "U",
+      "total_profit": 274889,
+      "upstream_reference_profit": 97358
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        49,
+        49,
+        99
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-20-U-R-90.3kp",
+      "item_count": 20,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "b897e5d3bf591cbcffbeb8b6013be22f8244b3b3510ac00d152121d23275e693",
+        "items": "deb0bd24b23eec2fe9ae272caa449e9c24a5575e34eba1780a715335621a8862",
+        "raw": "8970a84dcb54070b4391a8e6a988a93177b61c960be69a26a7dbc409b3104b4d"
+      },
+      "shape_class": "U",
+      "total_profit": 274889,
+      "upstream_reference_profit": 188691
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        125,
+        125,
+        251
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-C-C-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "f9dad4b9607ea94400fbf19eb98b0b5d2b4b0732afc937efb6bdf0a420f6f110",
+        "items": "b901decadf78c9732f96355b6f7d52bae0aa0ad44e90f2cab7c1e6e63aa150be",
+        "raw": "d71ac39e5fd0fa3a98f64fc470f00c4ddc6bb55c30e42c45e3660847e13d4b57"
+      },
+      "shape_class": "C",
+      "total_profit": 7984296,
+      "upstream_reference_profit": 141418
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        153,
+        153,
+        306
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-C-C-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "8b587724ea47fe7b404291d9dfaedcb9e0b35ad18112dd7fc84de2334c9ea36d",
+        "items": "b901decadf78c9732f96355b6f7d52bae0aa0ad44e90f2cab7c1e6e63aa150be",
+        "raw": "72813a42bb1806a0b4fc8e1a21d8a9782eac66493ba86c2c7773e167aba6e4fe"
+      },
+      "shape_class": "C",
+      "total_profit": 7984296,
+      "upstream_reference_profit": 243447
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        136,
+        136,
+        273
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-C-R-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 970499,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "c4261fd54b2833d7c12c5e949f96136ba7b29702a2c7b9f631e5e0cf9081af1f",
+        "items": "a801d0eb6b690d99e49f7432a33d418b050fa10772beed68eeb7fd82e4288955",
+        "raw": "294a34dbbb550992c2126114ef9927b94c0bd2ea170a5eb79688c526fc0fba62"
+      },
+      "shape_class": "C",
+      "total_profit": 10200192,
+      "upstream_reference_profit": 126069
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        166,
+        166,
+        332
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-C-R-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 970499,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "5cc4f2ccd2a12a16ea82b892bceb3b085f8ba4801fbb64a2b7211005f473e218",
+        "items": "a801d0eb6b690d99e49f7432a33d418b050fa10772beed68eeb7fd82e4288955",
+        "raw": "558d254a6bfad0dc32cb6d2f1a95e060f042f412160b51fbd99061a58bf6815e"
+      },
+      "shape_class": "C",
+      "total_profit": 10200192,
+      "upstream_reference_profit": 218971
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        166,
+        166,
+        332
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-D-C-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "5cc4f2ccd2a12a16ea82b892bceb3b085f8ba4801fbb64a2b7211005f473e218",
+        "items": "a36a4446374d74d939fc9ae90a1e59c111981fa34054a742d390b2c9dd77561b",
+        "raw": "9f66cbc564d4d51f9cfd96a360883c8b338e2b1b6bc20f1a173e7c1b60d002d1"
+      },
+      "shape_class": "D",
+      "total_profit": 18401672,
+      "upstream_reference_profit": 20464
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        202,
+        202,
+        404
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-D-C-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "17f4442a1fc10901dc16f1be305e3e5d00312a98f7796383aaa6f3d989954cfa",
+        "items": "a36a4446374d74d939fc9ae90a1e59c111981fa34054a742d390b2c9dd77561b",
+        "raw": "34c694b0ebae9256d1546e4bf3cb7f79a65b2f78a5567d8b810afc4750a06f69"
+      },
+      "shape_class": "D",
+      "total_profit": 18401672,
+      "upstream_reference_profit": 56124
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        161,
+        161,
+        322
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-D-R-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "fb25415ad76ffc67f23d23509f1d44c5ae151b1db9873674d161f50dcf1a9761",
+        "items": "170c34ad886da523f18262f89ebe3639f651183893605d4bde1deb7ab3eec7b8",
+        "raw": "be37aae9c4740946557adf46aaf0cdcdd609ff954bb033349010815cbf3339e5"
+      },
+      "shape_class": "D",
+      "total_profit": 16833287,
+      "upstream_reference_profit": 28019
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        196,
+        196,
+        392
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-D-R-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "8c7dc11007746ea02ae225ffc7e92652d5808570814955f29f5e5db46075f900",
+        "items": "170c34ad886da523f18262f89ebe3639f651183893605d4bde1deb7ab3eec7b8",
+        "raw": "790c6d3ab5d56b763b176319e073c1445f2e7e1653077f78321a43962bea4195"
+      },
+      "shape_class": "D",
+      "total_profit": 16833287,
+      "upstream_reference_profit": 49476
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        149,
+        149,
+        298
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-F-C-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "034c75b809171f05604faae8108fb4457615155c1fe4f4ca8fdcf0ac8bf8cf84",
+        "items": "6136566a9ee45b92f177b42fcbc6e47e460e35141f32bb57444fbb1cae6fd750",
+        "raw": "07de9eafbd710ce7307c2b7a8593b7790c4ce2ddaf196f8be5edf3981d25515e"
+      },
+      "shape_class": "F",
+      "total_profit": 13322488,
+      "upstream_reference_profit": 161310
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        181,
+        181,
+        363
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-F-C-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "4f079e87aabd17d7308ca08e6278962a6b0579be4066d488da00dc7a5d9f55a8",
+        "items": "6136566a9ee45b92f177b42fcbc6e47e460e35141f32bb57444fbb1cae6fd750",
+        "raw": "e972075c5d7d6f019afc9ca792f18b27c617186ae894d4f3226bd5fa308056d3"
+      },
+      "shape_class": "F",
+      "total_profit": 13322488,
+      "upstream_reference_profit": 416467
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        135,
+        135,
+        271
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-F-R-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "2284a7f2c8bb44c1d7beda270e1e663bfdb69579f892fd357f05012ff882866c",
+        "items": "973782120918e801542399507bdb76e935d390d7e07ac75c659ccb33d7d3d351",
+        "raw": "9ca53a7a9b4450d58571279a0b8caf55bf377a8871cf8392a4c24102e9ca0b6e"
+      },
+      "shape_class": "F",
+      "total_profit": 10008110,
+      "upstream_reference_profit": 238990
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        165,
+        165,
+        330
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-F-R-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "62e62eea686a336fbb210d02992e52c1b4ef57a0ecb04b4b7aabf04518a4ebdc",
+        "items": "973782120918e801542399507bdb76e935d390d7e07ac75c659ccb33d7d3d351",
+        "raw": "e7863e4c56a62f9c562f26bf9a20e6063a2275b7f62e4d75cdaae2990f32e2e8"
+      },
+      "shape_class": "F",
+      "total_profit": 10008110,
+      "upstream_reference_profit": 367045
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        107,
+        107,
+        214
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-L-C-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "a621464be1658aa1d1259e89273b2fa622f63f41473cdc562693eb20fa8aef4a",
+        "items": "6ab7945c3fd4662a721d2ebc47e3dfe99f2ece210e06057117f88e3cfe395063",
+        "raw": "60c6a0e03601c0f914645975479be70304893d6532a906473aeb90dcc523d942"
+      },
+      "shape_class": "L",
+      "total_profit": 4967192,
+      "upstream_reference_profit": 56742
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        130,
+        130,
+        261
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-L-C-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "27663bdfd02fc244106508055615b9afd448e2bf2223cf609bd8e5a44595903d",
+        "items": "6ab7945c3fd4662a721d2ebc47e3dfe99f2ece210e06057117f88e3cfe395063",
+        "raw": "c97cc5db204043f515b4426ad67bbccd570b2c79a35f1b5cef5209058ad97917"
+      },
+      "shape_class": "L",
+      "total_profit": 4967192,
+      "upstream_reference_profit": 106602
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        87,
+        87,
+        174
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-L-R-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "bd981a8907aa28c6d2b255ce0cd9c0ea950a4a8f0eeb5f12737646f945fe6fb4",
+        "items": "02d82bd8146515e82289e92fa67de854a06d5b1dc12d0ecd2e41423d24435bcb",
+        "raw": "be38afa237f6baf90754bdd1f76d3f42185a24641d1ee42ccdd1df91d547001e"
+      },
+      "shape_class": "L",
+      "total_profit": 2672961,
+      "upstream_reference_profit": 50389
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        106,
+        106,
+        212
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-L-R-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "4a76db3ccc8e25593bed8c0b71f1de48c3060b4e0006bda90ce4f06c0c3b3083",
+        "items": "02d82bd8146515e82289e92fa67de854a06d5b1dc12d0ecd2e41423d24435bcb",
+        "raw": "339f37e289c2a2714a8d6470aa3b36b7a48bc76a32c61324f961296e5a710012"
+      },
+      "shape_class": "L",
+      "total_profit": 2672961,
+      "upstream_reference_profit": 77514
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        61,
+        61,
+        122
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-U-C-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "069d91a1e925cd09e8a6d496587d08e2442e49918db2aaeb443cb148a6b3f35e",
+        "items": "713af843d6d11f24c151d3330859343f69446fc36f52ea974b697b569ac05bdc",
+        "raw": "fc83d2b8a6887981cd0ac315c814b5a29533aba4e15c6a6a93e2d81ec9e275ed"
+      },
+      "shape_class": "U",
+      "total_profit": 918976,
+      "upstream_reference_profit": 164976
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        74,
+        74,
+        148
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-40-U-C-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "d1216df04c6b2573e4705d1210ef9f414760c5edf6f77b7e9dc9fdb6ee72cd28",
+        "items": "713af843d6d11f24c151d3330859343f69446fc36f52ea974b697b569ac05bdc",
+        "raw": "86805f2a089a6a8d61dd7c8343ef0519b44483fe1b416a2e9942b60f28b5a881"
+      },
+      "shape_class": "U",
+      "total_profit": 918976,
+      "upstream_reference_profit": 388456
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        55,
+        55,
+        110
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-U-R-50.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "eeaa4a41d2c91db99a905c41ca3dd2b25a076c68db9b422f09e796c350b53c64",
+        "items": "0c4c819cb5b2e94d77b11aea9ff0c817d9956f03d3b6fcfd0265e067bf8e0f7c",
+        "raw": "ed9b1de83c845c4ae1d6156941f7b140d0e7c47a4dff7b27b77b40d8b4d5e507"
+      },
+      "shape_class": "U",
+      "total_profit": 689577,
+      "upstream_reference_profit": 242819
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        67,
+        67,
+        134
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-40-U-R-90.3kp",
+      "item_count": 40,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "ba6689fc981fa545e26cfa372baa14d57baebc3fa95ae61c44ff397f4c3bcd09",
+        "items": "0c4c819cb5b2e94d77b11aea9ff0c817d9956f03d3b6fcfd0265e067bf8e0f7c",
+        "raw": "4be8c2980b7bcaa56b5035f69c4ffc0ff74bf44ce1c467cb3822596bfe8897fd"
+      },
+      "shape_class": "U",
+      "total_profit": 689577,
+      "upstream_reference_profit": 371662
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        144,
+        144,
+        288
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-C-C-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "85122005b7cacfe1c9d932ce7869e582593b48832dc0a590328159a9b2330ba6",
+        "items": "7c98926e9f3c550ce0dbe113c577ab1a9b1a187f95fffea740391e4c6de62b63",
+        "raw": "7e11b84f7d497f53427c470659808d6beea60a22d2fa9dae35c2f90f79e2c75c"
+      },
+      "shape_class": "C",
+      "total_profit": 11976444,
+      "upstream_reference_profit": 252584
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        175,
+        175,
+        350
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-C-C-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 592904,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "d74872db0d43285f812c3fda20313aa28604e89981700b5f67f91d168ffa543f",
+        "items": "7c98926e9f3c550ce0dbe113c577ab1a9b1a187f95fffea740391e4c6de62b63",
+        "raw": "1423facdab1c411581000e357a87564ff6b8c74d9ca19769236c24d2d4cdc634"
+      },
+      "shape_class": "C",
+      "total_profit": 11976444,
+      "upstream_reference_profit": 499572
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        154,
+        154,
+        309
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-C-R-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 970499,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "0567efc59512c9adb2ffe1a1d1f953a23ea1937303f636e572bb1eef87b1464e",
+        "items": "beae7f976b080d5c2290c2723091f6cc158b64561be74316bdea2a2d556e7867",
+        "raw": "ca1dbbb122f382db6dc45b86f9245873dd32045bb9a3afe050c90695ff152198"
+      },
+      "shape_class": "C",
+      "total_profit": 14771729,
+      "upstream_reference_profit": 224875
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        187,
+        187,
+        375
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-C-R-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 970499,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "fac8b8df58e84ad87039efdede468121ef651e3affe6a81ff97fa75d74f0e09d",
+        "items": "beae7f976b080d5c2290c2723091f6cc158b64561be74316bdea2a2d556e7867",
+        "raw": "c6311c55319fa46cc213a213be2555cec2e36b713877223bcffc4dd4b8152f12"
+      },
+      "shape_class": "C",
+      "total_profit": 14771729,
+      "upstream_reference_profit": 384302
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        190,
+        190,
+        380
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-D-C-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "ee77d88d8df67eb4758609d4eaa55ca3cc1a52708ff8509dab76807a143882f5",
+        "items": "9b739d99ab16e83f46c00fbc54185c3b60f8abc1d42cd0b59408b56d8ee60c4b",
+        "raw": "138057b3be655ddddef15e0f77beefc81f9c110d23130eca5accf5132b4c4ba9"
+      },
+      "shape_class": "D",
+      "total_profit": 27602508,
+      "upstream_reference_profit": 65502
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        231,
+        231,
+        463
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-D-C-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 715187,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "fd2b864e16f2e9ffdf558c559429b9b30ef3a7236a5022dcb45d73e5f488e113",
+        "items": "9b739d99ab16e83f46c00fbc54185c3b60f8abc1d42cd0b59408b56d8ee60c4b",
+        "raw": "0f873f7a0a00fbdf5cfbfac1f416a8ab7496e1882fedc82c916f177edb6aecba"
+      },
+      "shape_class": "D",
+      "total_profit": 27602508,
+      "upstream_reference_profit": 105540
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        186,
+        186,
+        372
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-D-R-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 718148,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "aad2b070b034ad42646fc64dc65b5e35c3629261aafce6435f42ddc23957b4ca",
+        "items": "d95c11dff2099978a7a0b5ea00d3828de1ce27e10a547ff6873a86a8119bfb68",
+        "raw": "53db993616ac02ab2d6327c021ee63a1d04737315e0548a01e65477f8f7d21e9"
+      },
+      "shape_class": "D",
+      "total_profit": 25946680,
+      "upstream_reference_profit": 49011
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        226,
+        226,
+        453
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-D-R-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 718148,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "1ee3f7f37c6639f8f4ffcea3adb1aab3ba5169fe312e65f26bf6e798024f2c6c",
+        "items": "d95c11dff2099978a7a0b5ea00d3828de1ce27e10a547ff6873a86a8119bfb68",
+        "raw": "314034bd44456560faecf02346868fe33e1f7c4084c8bc5146ff34d98d9b8e8c"
+      },
+      "shape_class": "D",
+      "total_profit": 25946680,
+      "upstream_reference_profit": 67202
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        170,
+        170,
+        341
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-F-C-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "d19f5f55d615950c279551bfd25569124d206a4d0e5a95309393f8bad8105f04",
+        "items": "20e6302101437c29505925e4e30e5075498f605d4e7c5db8c3b85d386b0ec1d3",
+        "raw": "33e205e17fe5e5bc5d096101fec47d246bfa6568dcee8ef69842543455fe98c3"
+      },
+      "shape_class": "F",
+      "total_profit": 19983732,
+      "upstream_reference_profit": 467730
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        207,
+        207,
+        415
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-F-C-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "5a2201fa7240cbcc2ebf8e198ca01f67e5b2cff23af2a74febf557c590754592",
+        "items": "20e6302101437c29505925e4e30e5075498f605d4e7c5db8c3b85d386b0ec1d3",
+        "raw": "954a8b1f32aabc7a11f36d29871990a30b3bc3fce13c324df81e5f90f000b901"
+      },
+      "shape_class": "F",
+      "total_profit": 19983732,
+      "upstream_reference_profit": 540732
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        153,
+        153,
+        307
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-F-R-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "560563e387ac62a96ae0e43f9dbb75ba88cb0c11c1010e9e9b669cd2f9298b8e",
+        "items": "75bb02268b4f9fcdf981f2cefa9b1458ecbad0b00159bc48269a74f058c9a936",
+        "raw": "cb39cb7281fa7e633902881675e6d3b40bc94a5eb52c9d208e12f4c6eba96f70"
+      },
+      "shape_class": "F",
+      "total_profit": 14605426,
+      "upstream_reference_profit": 378079
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        187,
+        187,
+        374
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-F-R-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 507025,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "5f4b2af2707e7dec28f4a8425e830ff0ba8c66f50aca27013928d0cfa69536b2",
+        "items": "75bb02268b4f9fcdf981f2cefa9b1458ecbad0b00159bc48269a74f058c9a936",
+        "raw": "d1f717c5f6b8b49ae3eb43fbd422383a9d2e0318020aafcdfe758673dab7c320"
+      },
+      "shape_class": "F",
+      "total_profit": 14605426,
+      "upstream_reference_profit": 625362
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        122,
+        122,
+        245
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-L-C-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "ddc61bc6a69ac68fcca391fbe03935cfc497f202cf47b4fc47c8db43273ef6e5",
+        "items": "ee5299b719b2b828cb164b1efa69d39ab38cc3f993b01d60baaefe2eda1cdfd1",
+        "raw": "8ce081ad62eefc0579ea77985c8dafbac9fa83944c7662573e983e78501b91e6"
+      },
+      "shape_class": "L",
+      "total_profit": 7450788,
+      "upstream_reference_profit": 119676
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        149,
+        149,
+        299
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-L-C-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "50ca50495dc851e238318c5560292a46829ed9316b8915f7a324837f1dcbd568",
+        "items": "ee5299b719b2b828cb164b1efa69d39ab38cc3f993b01d60baaefe2eda1cdfd1",
+        "raw": "ee72a9b17be6814b3f9bea87c65019a48475f5b924f67a0022dabc6b73b0d4d8"
+      },
+      "shape_class": "L",
+      "total_profit": 7450788,
+      "upstream_reference_profit": 113107
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        101,
+        101,
+        203
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-L-R-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "099a4b291d459243ac055365109401d72fdd15c170e49f281749ef5e17dd671e",
+        "items": "eb62af7c8f5d3886987e1388691a398a069863fd80d71a94725b350ac8ed6765",
+        "raw": "37d7ebf0cb714ab5bf1d4849794e9dcac4fb7f9e4a2215a7713a87724f337b57"
+      },
+      "shape_class": "L",
+      "total_profit": 4204372,
+      "upstream_reference_profit": 62190
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        123,
+        123,
+        247
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-L-R-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 318056,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": true,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "57d02d74f31643d0e9ba177b8bd9a9cca53645558719d5562a6a401835051fad",
+        "items": "eb62af7c8f5d3886987e1388691a398a069863fd80d71a94725b350ac8ed6765",
+        "raw": "487291b26de2b8c4063fbc1129b00a41b6b7b6046e86f95fe80fdcb50c409914"
+      },
+      "shape_class": "L",
+      "total_profit": 4204372,
+      "upstream_reference_profit": 107270
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        69,
+        69,
+        139
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-U-C-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": false,
+      "reference_status": "INVALID_REFERENCE_TABLE",
+      "sha256": {
+        "bins": "08f16b3767612f9ca86c3502ed27ef8cc5ca90ada91c187b14d37c8444e0291e",
+        "items": "d6b80cecbb4cda50275076f5a5f544b7b254cfd6484271836befdabe082237cb",
+        "raw": "9b178988163f1f77250317556f50f45ac3a83139012797f0409b63d5bd1bd6e5"
+      },
+      "shape_class": "U",
+      "total_profit": 1378464,
+      "upstream_reference_profit": 361340
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        85,
+        85,
+        170
+      ],
+      "distribution": "CLUSTERED",
+      "id": "ep3d-60-U-C-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": null,
+      "reference_status": "MISSING_REFERENCE",
+      "sha256": {
+        "bins": "4044b1826f460854fe6419ed905c8c62ba3840059e38e6f8cea9d2250031b10e",
+        "items": "d6b80cecbb4cda50275076f5a5f544b7b254cfd6484271836befdabe082237cb",
+        "raw": "3bc0d3d26380789bc69629f2b3a3014ff2b1ce4e34d5f8f1921635b4863c0551"
+      },
+      "shape_class": "U",
+      "total_profit": 1378464,
+      "upstream_reference_profit": null
+    },
+    {
+      "capacity_class": 50,
+      "container": [
+        62,
+        62,
+        124
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-U-R-50.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": null,
+      "reference_status": "MISSING_REFERENCE",
+      "sha256": {
+        "bins": "25819ce188ec64283153b4406bb2639b1eba3897dac31e60ad3c83d0ca3f9e15",
+        "items": "dc11a741cbc1a25f25f319c238020f55b32f061268fb7a283eec60c92d67a5e7",
+        "raw": "76780daf3f53e240e127b7c16570a529e2097b3a9c7a5f93e88f8c487d0c8326"
+      },
+      "shape_class": "U",
+      "total_profit": 979676,
+      "upstream_reference_profit": null
+    },
+    {
+      "capacity_class": 90,
+      "container": [
+        75,
+        75,
+        151
+      ],
+      "distribution": "RANDOM",
+      "id": "ep3d-60-U-R-90.3kp",
+      "item_count": 60,
+      "maximum_item_profit": 101400,
+      "pose_semantics": "FIXED_XYZ",
+      "reference_below_single_item_lower_bound": null,
+      "reference_status": "MISSING_REFERENCE",
+      "sha256": {
+        "bins": "9eba601370177cf5e8649a37385f6668c6486ad74b360fab05e22532431db618",
+        "items": "dc11a741cbc1a25f25f319c238020f55b32f061268fb7a283eec60c92d67a5e7",
+        "raw": "696b4021e3eb7c9165ece9f379e0d7f3c7766689f9fb22fb85afd0ae75c5086e"
+      },
+      "shape_class": "U",
+      "total_profit": 979676,
+      "upstream_reference_profit": null
+    }
+  ],
+  "invalid_reference_table": {
+    "ranking_use": "FORBIDDEN",
+    "rows": 57,
+    "rows_below_single_item_lower_bound": 48,
+    "status": "INVALID_SCALE_FOR_CURRENT_CORPUS"
+  },
+  "license_status": "NO_STANDALONE_DATASET_LICENSE_LOCATED; full corpus is fetched from the pinned upstream repository and is not vendored here",
+  "missing_best_known_references": [
+    "ep3d-60-U-C-90.3kp",
+    "ep3d-60-U-R-50.3kp",
+    "ep3d-60-U-R-90.3kp"
+  ],
+  "reference_addition_commit": "9d83d632edf5686823bb7b5b51e6e3a7dd641234",
+  "schema_version": 1,
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "source_file_sha256": {
+    "data_knapsack_egeblad2009.csv": "45ff711fbf334d9c94ee0ccdebf9656632c3f1af869ed103d41375ceefd90e06",
+    "format.txt": "4e6311dbbe261cf4fbca8b514da02a9f03ddef8682ae9a0933f14bd144cdbbed",
+    "generator3d.c": "2b739f0d13091f275d0837caae6f796e180c55358c4996ff5cb13bfc3d5ffdeb"
+  },
+  "source_paths": {
+    "best_known": "data/box/data_knapsack_egeblad2009.csv",
+    "converted": "data/box/egeblad2009",
+    "raw": "data/box_raw/egeblad2009"
+  },
+  "source_repository": "HansBug/packingsolver"
+}

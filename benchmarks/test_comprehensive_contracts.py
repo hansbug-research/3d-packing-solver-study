@@ -134,13 +134,16 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     aggregate = json.loads((comprehensive / "aggregate.json").read_text())
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
-    assert summary["run_records"] == len(records) == 2078
+    assert summary["run_records"] == 2078
+    assert summary["combined_run_records"] == len(records) == 3298
+    assert summary["protocol_v3_run_records"] == 1220
     assert len(summary["implementation_ids"]) == aggregate["coverage"]["executed_implementations"] == 18
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 10
-    assert aggregate["coverage"]["cells_with_evidence"] == 55
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 11
+    assert aggregate["coverage"]["cells_with_evidence"] == 66
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 55
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 0
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 11
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 1220}
+    assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):
@@ -153,6 +156,25 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
                 assert_finite_json(child)
 
     assert_finite_json(records)
+
+
+def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:
+    path = ROOT / "results" / "comprehensive" / "rankings" / "profit-knapsack.csv"
+    with path.open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    variants = {row["problem_variant"] for row in rows}
+    assert variants == {"FIXED_XYZ", "RELAXED_ALL_ROTATIONS"}
+    assert all(row["instances"] == "60" for row in rows)
+    assert all(row["valid_rate"] == "1.0" for row in rows if row["implementation_id"] != "jerry" or row["time_limit_s"] == "10.0")
+    assert any(row["implementation_id"] == "jerry" and row["invalid_instances"] == "1" for row in rows)
+
+    exact = ROOT / "results" / "comprehensive" / "rankings" / "exact-proof.csv"
+    with exact.open(newline="") as handle:
+        exact_rows = list(csv.DictReader(handle))
+    b03 = [row for row in exact_rows if row["benchmark_id"] == "B03"]
+    assert len(b03) == 1
+    assert b03[0]["instances"] == "20"
+    assert b03[0]["proven"] == "13"
 
 
 def test_identical_bin_ranking_uses_common_44_instance_set() -> None:

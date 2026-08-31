@@ -1,0 +1,213 @@
+{
+  "benchmark_id": "B03",
+  "bin_size": [
+    48,
+    48,
+    96
+  ],
+  "instance": {
+    "capacity_class": 50,
+    "container": [
+      48,
+      48,
+      96
+    ],
+    "distribution": "CLUSTERED",
+    "id": "ep3d-20-U-C-50.3kp",
+    "item_count": 20,
+    "maximum_item_profit": 101400,
+    "pose_semantics": "FIXED_XYZ",
+    "reference_below_single_item_lower_bound": true,
+    "reference_status": "INVALID_REFERENCE_TABLE",
+    "sha256": {
+      "bins": "fa61329e0e35825b52905f0e526bad1598456047dd60a3d99cac8f20b3fc87e2",
+      "items": "d0992a3d0b3fa837ce62b9fa4cb94d9d284d57c7a4dd27ff96107f67df18e577",
+      "raw": "52e10e83facf5b4ba3e8050e6bc0f11ab68853c3919d7abe5930abaee6a19180"
+    },
+    "shape_class": "U",
+    "total_profit": 459488,
+    "upstream_reference_profit": 91036
+  },
+  "items": [
+    {
+      "id": "0",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "1",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "2",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "3",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "4",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "5",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "6",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "7",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "8",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "9",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "10",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "11",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "12",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "13",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "14",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    },
+    {
+      "id": "15",
+      "profit": 1100,
+      "size": [
+        10,
+        18,
+        5
+      ]
+    },
+    {
+      "id": "16",
+      "profit": 101400,
+      "size": [
+        46,
+        44,
+        50
+      ]
+    },
+    {
+      "id": "17",
+      "profit": 240,
+      "size": [
+        1,
+        10,
+        4
+      ]
+    },
+    {
+      "id": "18",
+      "profit": 10952,
+      "size": [
+        32,
+        48,
+        7
+      ]
+    },
+    {
+      "id": "19",
+      "profit": 1180,
+      "size": [
+        7,
+        14,
+        10
+      ]
+    }
+  ]
+}

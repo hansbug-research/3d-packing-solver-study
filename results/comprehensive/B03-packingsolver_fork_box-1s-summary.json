@@ -1,0 +1,21 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B03/packingsolver_fork_box/1s/artifacts.tar.gz",
+  "artifact_archive_sha256": "f18735b2d5f5e1dd18e329bfbc3493660d2f7b53f1e623898dd13ec87baeb258",
+  "benchmark_id": "B03",
+  "binary_sha256": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+  "binary_source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "implementation_id": "packingsolver_fork_box",
+  "implementation_version": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "instances": 60,
+  "label": "1s",
+  "protocol_version": "benchmark-protocol/3",
+  "run_jsonl_sha256": "93686e0d99338aa28be88c7a99c513025e38205ba0afa2c4196a494dafec59e4",
+  "runner_sha256": "b53f9088c7628926ec70713d5173d39c5ec98addf8f56902642dee5179df494f",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 60
+  },
+  "source_index_sha256": "623b376fd6acc90b68e92b51c2438e29ba1d26a73e6f04819667c23b57d441ca",
+  "time_limit_s": 1.0
+}

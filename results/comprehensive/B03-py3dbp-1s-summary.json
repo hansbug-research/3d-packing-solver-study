@@ -1,0 +1,26 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B03/py3dbp/1s/artifacts.tar.gz",
+  "artifact_archive_sha256": "c002b81567065cca97fe482c558d6ebf888286c5db398dd0752634f95dd473a5",
+  "benchmark_id": "B03",
+  "binary_sha256": null,
+  "comparison_track": "COMPOSED",
+  "implementation_id": "py3dbp",
+  "implementation_version": "1.1.2",
+  "instances": 60,
+  "label": "1s",
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "protocol_version": "benchmark-protocol/3",
+  "python_worker_sha256": "8690d712f282721ea27759a977004cb50c5ca5b60f048a29ff1ed9c7e6182ab9",
+  "run_jsonl_sha256": "1b7a9d5900a94b12f3c298564b42267fdeb542c62ae122c478b8340d92b1ea1c",
+  "run_status_counts": {
+    "COMPLETED": 60
+  },
+  "runner_sha256": "025ef185d1480512cbead3275908ede8b53c27db60931d501f8e7e97233e320b",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 60
+  },
+  "source_index_sha256": "623b376fd6acc90b68e92b51c2438e29ba1d26a73e6f04819667c23b57d441ca",
+  "time_limit_s": 1.0
+}

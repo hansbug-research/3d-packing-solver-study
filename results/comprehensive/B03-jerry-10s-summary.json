@@ -1,0 +1,26 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B03/jerry/10s/artifacts.tar.gz",
+  "artifact_archive_sha256": "cbd2bec28e42048b760a12c9d8e771b3c5d1f90685ce5df9d89b3cd627e9f688",
+  "benchmark_id": "B03",
+  "binary_sha256": null,
+  "comparison_track": "COMPOSED",
+  "implementation_id": "jerry",
+  "implementation_version": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+  "instances": 60,
+  "label": "10s",
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "protocol_version": "benchmark-protocol/3",
+  "python_worker_sha256": "8690d712f282721ea27759a977004cb50c5ca5b60f048a29ff1ed9c7e6182ab9",
+  "run_jsonl_sha256": "2ccca798c2eba7da59478ddb974ad32fa113519176e297d7a66449281e3bbe4b",
+  "run_status_counts": {
+    "COMPLETED": 60
+  },
+  "runner_sha256": "025ef185d1480512cbead3275908ede8b53c27db60931d501f8e7e97233e320b",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 60
+  },
+  "source_index_sha256": "623b376fd6acc90b68e92b51c2438e29ba1d26a73e6f04819667c23b57d441ca",
+  "time_limit_s": 10.0
+}

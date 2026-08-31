@@ -1,4 +1,5 @@
 benchmark_id,implementation_id,instances,valid_or_proven_infeasible,proven,proof_rate,mean_solver_s,max_solver_s,mean_gap
+B03,exact_cp_sat,20,20,13,0.65,8.099553853156976,20.005199891980737,0.0
 B06,exact_gurobi,5,5,5,1.0,0.0017813858110457658,0.006303074071183801,0.0
 B06,exact_cplex,5,5,5,1.0,0.0051135434303432705,0.012279939139261842,0.0
 B06,exact_cp_sat,5,5,5,1.0,0.006078784866258502,0.018719259183853865,0.0

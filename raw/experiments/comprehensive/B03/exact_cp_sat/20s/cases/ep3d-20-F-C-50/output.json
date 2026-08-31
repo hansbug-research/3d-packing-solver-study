@@ -1,0 +1,48 @@
+{
+  "bound": 2028100.0,
+  "branches": 2939948,
+  "conflicts": 751156,
+  "gap": 0.0,
+  "packed_profit": 2028100,
+  "placements": [
+    {
+      "dx": 95,
+      "dy": 97,
+      "dz": 55,
+      "item_id": "0",
+      "x": 0,
+      "y": 0,
+      "z": 1
+    },
+    {
+      "dx": 95,
+      "dy": 97,
+      "dz": 55,
+      "item_id": "5",
+      "x": 0,
+      "y": 0,
+      "z": 56
+    },
+    {
+      "dx": 95,
+      "dy": 97,
+      "dz": 55,
+      "item_id": "10",
+      "x": 0,
+      "y": 0,
+      "z": 111
+    },
+    {
+      "dx": 95,
+      "dy": 97,
+      "dz": 55,
+      "item_id": "15",
+      "x": 0,
+      "y": 0,
+      "z": 166
+    }
+  ],
+  "solver_time_s": 19.554752998054028,
+  "status": "OPTIMAL",
+  "validation_errors": []
+}
