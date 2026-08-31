@@ -13,6 +13,8 @@
 
 实际实例级运行写入 `run-manifest.jsonl`，每条记录遵守 [`run-record.schema.json`](../../benchmarks/comprehensive/run-record.schema.json)。`baseline-import-summary.json` 标明哪些记录来自已有 v1/v2 原始归档；新运行仍必须使用协议规定的 `raw/experiments/comprehensive/` 目录。`coverage.csv` 是计划与实际运行合并后的覆盖表。只有 `VALID_COMPLETE` 或原问题允许的 `VALID_PARTIAL` 且通过独立 validator 的记录才能进入 `rankings/`；`NATIVE`、`COMPOSED`、`EXACT_MODEL` 以及 `FULL_PROBLEM`、`GEOMETRY_PROJECTION` 分榜。
 
+`run-manifest.jsonl` 通过 Git LFS 跟踪（当前对象约 121 MB）；检出仓库后请执行 `git lfs install` 与 `git lfs pull`，否则工作区中会只看到 pointer 文件，不能运行本目录的导入、分析和验证脚本。
+
 当前导入 2,078 条已有运行，并合并 B03、B07、约束 gauntlet、B05 来源状态以及 B01/B02 Python/Go/Rust projection 的 49,349 条 protocol-v3 记录，形成 13/32 个 benchmark、19 个实现/算法变体和 110/608 个计划单元的有证据记录；其中 42 个单元仍只有历史基线。B01/B02 projection 有 22,880 条实例记录，B07 projection 新增 21,600 条实例记录；两者都显式标为 `RELAXED_ALL_ROTATIONS`、`GEOMETRY_PROJECTION`，不覆盖源姿态语义。Go/Rust 文件使用 external CLI adapter，Rust 的五个策略分别绑定计划中的实现 ID；B07 额外记录每个 `BR*.txt_*` 来源 CSV 的 SHA-256 和 fork commit。B05 的 19 个单元是 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录而非实际执行。这不是综合 campaign 完成声明。其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
 
 现有排行按问题语义拆分：`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较统一模型的证明能力，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。B05 当前只有来源审计和状态记录，没有质量排行。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
