@@ -1,0 +1,240 @@
+{
+  "benchmark_id": "B01",
+  "instance": {
+    "container": [
+      587,
+      233,
+      220
+    ],
+    "container_volume": 30089620,
+    "family": "THPACK6",
+    "instance_id": 46,
+    "item_count": 111,
+    "item_types": [
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          86,
+          58,
+          36
+        ],
+        "type_id": "1"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 4,
+        "size": [
+          71,
+          69,
+          22
+        ],
+        "type_id": "2"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 9,
+        "size": [
+          108,
+          78,
+          54
+        ],
+        "type_id": "3"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          104,
+          58,
+          57
+        ],
+        "type_id": "4"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 8,
+        "size": [
+          96,
+          65,
+          58
+        ],
+        "type_id": "5"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          58,
+          37,
+          26
+        ],
+        "type_id": "6"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 11,
+        "size": [
+          73,
+          72,
+          49
+        ],
+        "type_id": "7"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          98,
+          67,
+          56
+        ],
+        "type_id": "8"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          117,
+          89,
+          23
+        ],
+        "type_id": "9"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 4,
+        "size": [
+          109,
+          76,
+          73
+        ],
+        "type_id": "10"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          95,
+          61,
+          34
+        ],
+        "type_id": "11"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          106,
+          73,
+          49
+        ],
+        "type_id": "12"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 8,
+        "size": [
+          66,
+          39,
+          35
+        ],
+        "type_id": "13"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          82,
+          76,
+          43
+        ],
+        "type_id": "14"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          93,
+          87,
+          26
+        ],
+        "type_id": "15"
+      }
+    ],
+    "item_volume": 29905463,
+    "key": "THPACK6-046",
+    "objective": "maximize_packed_volume",
+    "problem_kind": "single_container_knapsack",
+    "seed": 2507005,
+    "source_line_errors": []
+  },
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection": {
+    "allowed_orientations": "all_axis_permutations",
+    "removed_constraints": [
+      "source_vertical_flags"
+    ]
+  },
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+}

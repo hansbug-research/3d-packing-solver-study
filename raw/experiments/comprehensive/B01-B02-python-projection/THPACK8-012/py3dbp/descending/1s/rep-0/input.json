@@ -1,0 +1,114 @@
+{
+  "benchmark_id": "B02",
+  "instance": {
+    "container": [
+      3200,
+      2400,
+      1000
+    ],
+    "container_volume": 7680000000,
+    "family": "THPACK8",
+    "instance_id": 12,
+    "item_count": 120,
+    "item_types": [
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          900,
+          275,
+          200
+        ],
+        "type_id": "1"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 33,
+        "size": [
+          400,
+          350,
+          275
+        ],
+        "type_id": "2"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          1200,
+          300,
+          250
+        ],
+        "type_id": "3"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 27,
+        "size": [
+          500,
+          375,
+          275
+        ],
+        "type_id": "4"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 15,
+        "size": [
+          800,
+          400,
+          200
+        ],
+        "type_id": "5"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 25,
+        "size": [
+          600,
+          300,
+          225
+        ],
+        "type_id": "6"
+      }
+    ],
+    "item_volume": 6030187500,
+    "key": "THPACK8-012",
+    "objective": "maximize_packed_volume",
+    "problem_kind": "single_container_knapsack",
+    "seed": null,
+    "source_line_errors": []
+  },
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection": {
+    "allowed_orientations": "all_axis_permutations",
+    "removed_constraints": [
+      "source_vertical_flags"
+    ]
+  },
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+}

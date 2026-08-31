@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from dataclasses import replace
 import importlib.metadata
 import json
 import resource
@@ -75,7 +76,7 @@ def run_py3dbp(instance, order: str) -> dict:
     }
 
 
-def run_jerry(instance, order: str, fix_point: bool = True) -> dict:
+def run_jerry(instance, order: str, fix_point: bool = True, projection: bool = False) -> dict:
     checkout = ROOT / ".cache" / "jerry-3d-bin-packing"
     check_checkout(checkout, JERRY_COMMIT)
     sys.path.insert(0, str(checkout))
@@ -90,7 +91,7 @@ def run_jerry(instance, order: str, fix_point: bool = True) -> dict:
     for bin_index in range(bin_count):
         packer.addBin(Bin(f"bin:{bin_index}", tuple(instance.container), len(items) + 1, 0, 1))
     for item in items:
-        flags = tuple(item["allowed_vertical_dimensions"])
+        flags = (1, 1, 1) if projection else tuple(item["allowed_vertical_dimensions"])
         packer.addItem(
             Item(
                 item["item_id"],
@@ -156,23 +157,33 @@ def main() -> None:
     parser.add_argument("--instance", required=True)
     parser.add_argument("--order", choices=("descending", "ascending"), required=True)
     parser.add_argument("--jerry-fix-point", choices=("true", "false"), default="true")
+    parser.add_argument("--projection", action="store_true", help="ignore source vertical flags for an explicit all-rotations projection")
     args = parser.parse_args()
 
     resource.setrlimit(resource.RLIMIT_AS, (MEMORY_LIMIT_BYTES, MEMORY_LIMIT_BYTES))
     check_checkout(ROOT / ".cache" / "esicup-datasets", ESICUP_COMMIT)
     instance = select_instance(args.instance)
     supported, reason = orientation_support(instance, args.library)
+    if args.projection:
+        reason = "explicit GEOMETRY_PROJECTION: source vertical flags are not enforced; all six axis permutations are allowed"
+        supported = True
     if not supported:
         raise RuntimeError(f"worker was called for unsupported instance: {reason}")
 
     result = (
         run_py3dbp(instance, args.order)
         if args.library == "py3dbp"
-        else run_jerry(instance, args.order, fix_point=args.jerry_fix_point == "true")
+        else run_jerry(instance, args.order, fix_point=args.jerry_fix_point == "true", projection=args.projection)
     )
     placements = result["placements"]
     require_complete = instance.problem_kind == "multi_container_bin_packing"
-    validation_errors = validate_certificate(instance, placements, require_complete=require_complete)
+    validation_instance = instance
+    if args.projection:
+        validation_instance = replace(
+            instance,
+            item_types=[replace(item, allowed_vertical_dimensions=(1, 1, 1)) for item in instance.item_types],
+        )
+    validation_errors = validate_certificate(validation_instance, placements, require_complete=require_complete)
     packed_volume = sum(int(round(p["dx"] * p["dy"] * p["dz"])) for p in placements)
     bins_used = len({placement["bin_id"] for placement in placements})
     if validation_errors:

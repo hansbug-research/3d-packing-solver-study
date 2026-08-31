@@ -1,0 +1,100 @@
+{
+  "benchmark_id": "B01",
+  "instance": {
+    "container": [
+      587,
+      233,
+      220
+    ],
+    "container_volume": 30089620,
+    "family": "THPACK2",
+    "instance_id": 73,
+    "item_count": 132,
+    "item_types": [
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 27,
+        "size": [
+          90,
+          73,
+          37
+        ],
+        "type_id": "1"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 26,
+        "size": [
+          102,
+          95,
+          33
+        ],
+        "type_id": "2"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 29,
+        "size": [
+          117,
+          38,
+          30
+        ],
+        "type_id": "3"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 29,
+        "size": [
+          75,
+          73,
+          57
+        ],
+        "type_id": "4"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 21,
+        "size": [
+          86,
+          36,
+          34
+        ],
+        "type_id": "5"
+      }
+    ],
+    "item_volume": 30006189,
+    "key": "THPACK2-073",
+    "objective": "maximize_packed_volume",
+    "problem_kind": "single_container_knapsack",
+    "seed": 2509705,
+    "source_line_errors": []
+  },
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection": {
+    "allowed_orientations": "all_axis_permutations",
+    "removed_constraints": [
+      "source_vertical_flags"
+    ]
+  },
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+}

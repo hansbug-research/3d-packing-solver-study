@@ -1,0 +1,310 @@
+{
+  "benchmark_id": "B01",
+  "instance": {
+    "container": [
+      587,
+      233,
+      220
+    ],
+    "container_volume": 30089620,
+    "family": "THPACK7",
+    "instance_id": 5,
+    "item_count": 126,
+    "item_types": [
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 6,
+        "size": [
+          88,
+          54,
+          39
+        ],
+        "type_id": "1"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 4,
+        "size": [
+          94,
+          54,
+          36
+        ],
+        "type_id": "2"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          87,
+          77,
+          43
+        ],
+        "type_id": "3"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          100,
+          80,
+          72
+        ],
+        "type_id": "4"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 7,
+        "size": [
+          83,
+          40,
+          36
+        ],
+        "type_id": "5"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          91,
+          54,
+          22
+        ],
+        "type_id": "6"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          109,
+          58,
+          54
+        ],
+        "type_id": "7"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 10,
+        "size": [
+          94,
+          55,
+          30
+        ],
+        "type_id": "8"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 12,
+        "size": [
+          34,
+          32,
+          31
+        ],
+        "type_id": "9"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          83,
+          80,
+          57
+        ],
+        "type_id": "10"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 8,
+        "size": [
+          108,
+          40,
+          26
+        ],
+        "type_id": "11"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 3,
+        "size": [
+          72,
+          37,
+          32
+        ],
+        "type_id": "12"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 4,
+        "size": [
+          93,
+          93,
+          28
+        ],
+        "type_id": "13"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          71,
+          56,
+          33
+        ],
+        "type_id": "14"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          104,
+          78,
+          26
+        ],
+        "type_id": "15"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          1,
+          1
+        ],
+        "copies": 3,
+        "size": [
+          94,
+          85,
+          44
+        ],
+        "type_id": "16"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 11,
+        "size": [
+          82,
+          75,
+          65
+        ],
+        "type_id": "17"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 3,
+        "size": [
+          109,
+          81,
+          28
+        ],
+        "type_id": "18"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 5,
+        "size": [
+          79,
+          73,
+          45
+        ],
+        "type_id": "19"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          1,
+          1,
+          1
+        ],
+        "copies": 3,
+        "size": [
+          104,
+          91,
+          76
+        ],
+        "type_id": "20"
+      }
+    ],
+    "item_volume": 29977458,
+    "key": "THPACK7-005",
+    "objective": "maximize_packed_volume",
+    "problem_kind": "single_container_knapsack",
+    "seed": 2502905,
+    "source_line_errors": []
+  },
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection": {
+    "allowed_orientations": "all_axis_permutations",
+    "removed_constraints": [
+      "source_vertical_flags"
+    ]
+  },
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+}

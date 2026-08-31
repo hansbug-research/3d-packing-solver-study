@@ -135,16 +135,16 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 6947
-    assert summary["protocol_v3_run_records"] == 4869
+    assert summary["combined_run_records"] == len(records) == 12667
+    assert summary["protocol_v3_run_records"] == 10589
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 91
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 45
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 27
+    assert aggregate["coverage"]["cells_with_evidence"] == 92
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 31
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4869}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 10589}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 3600
 
@@ -159,6 +159,42 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
                 assert_finite_json(child)
 
     assert_finite_json(records)
+
+
+def test_b01_b02_projection_campaign_keeps_semantics_and_invalid_certificates() -> None:
+    comprehensive = ROOT / "results" / "comprehensive"
+    projection_paths = sorted((comprehensive / "runs").glob("B01-B02-python-projection-*.jsonl"))
+    assert {path.name for path in projection_paths} == {
+        "B01-B02-python-projection-py3dbp-jerry-10s-rep-0.jsonl",
+        "B01-B02-python-projection-py3dbp-jerry-1s-rep-0.jsonl",
+    }
+    projection_records = [
+        json.loads(line)
+        for path in projection_paths
+        for line in path.read_text().splitlines()
+        if line
+    ]
+    assert len(projection_records) == 5720
+    assert {record["benchmark_id"] for record in projection_records} == {"B01", "B02"}
+    assert {record["implementation_id"] for record in projection_records} == {"py3dbp", "jerry"}
+    assert {record["item_order"] for record in projection_records} == {"ASCENDING", "DESCENDING"}
+    assert {record["budget"]["time_limit_s"] for record in projection_records} == {1.0, 10.0}
+    assert {record["problem_variant"] for record in projection_records} == {"RELAXED_ALL_ROTATIONS"}
+    assert {record["problem_scope"] for record in projection_records} == {"GEOMETRY_PROJECTION"}
+    assert {record["capability_status"] for record in projection_records} == {"PROJECTION_ONLY"}
+    assert all(record["metrics"]["projection_removed_constraints"] == ["source_vertical_flags"] for record in projection_records)
+    assert sum(record["solution_status"] == "INVALID_CERTIFICATE" for record in projection_records) == 66
+
+    manifest_records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
+    native = [
+        record
+        for record in manifest_records
+        if record["benchmark_id"] in {"B01", "B02"}
+        and record["implementation_id"] in {"py3dbp", "jerry"}
+        and record["problem_variant"] != "RELAXED_ALL_ROTATIONS"
+    ]
+    assert native
+    assert all(record["problem_scope"] != "GEOMETRY_PROJECTION" for record in native)
 
 
 def test_b07_version_pairwise_is_complete_and_reproducible() -> None:

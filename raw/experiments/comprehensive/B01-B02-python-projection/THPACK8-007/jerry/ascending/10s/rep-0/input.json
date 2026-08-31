@@ -1,0 +1,142 @@
+{
+  "benchmark_id": "B02",
+  "instance": {
+    "container": [
+      3500,
+      2400,
+      1300
+    ],
+    "container_volume": 10920000000,
+    "family": "THPACK8",
+    "instance_id": 7,
+    "item_count": 200,
+    "item_types": [
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 34,
+        "size": [
+          400,
+          375,
+          250
+        ],
+        "type_id": "1"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 37,
+        "size": [
+          400,
+          275,
+          225
+        ],
+        "type_id": "2"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 23,
+        "size": [
+          300,
+          250,
+          125
+        ],
+        "type_id": "3"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 27,
+        "size": [
+          500,
+          450,
+          225
+        ],
+        "type_id": "4"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 25,
+        "size": [
+          1500,
+          275,
+          200
+        ],
+        "type_id": "5"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 23,
+        "size": [
+          600,
+          400,
+          300
+        ],
+        "type_id": "6"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 14,
+        "size": [
+          900,
+          200,
+          200
+        ],
+        "type_id": "7"
+      },
+      {
+        "allowed_vertical_dimensions": [
+          0,
+          0,
+          1
+        ],
+        "copies": 17,
+        "size": [
+          700,
+          350,
+          300
+        ],
+        "type_id": "8"
+      }
+    ],
+    "item_volume": 9245250000,
+    "key": "THPACK8-007",
+    "objective": "maximize_packed_volume",
+    "problem_kind": "single_container_knapsack",
+    "seed": null,
+    "source_line_errors": []
+  },
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection": {
+    "allowed_orientations": "all_axis_permutations",
+    "removed_constraints": [
+      "source_vertical_flags"
+    ]
+  },
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+}

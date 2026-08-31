@@ -1,0 +1,14 @@
+{
+  "bins_used": 1,
+  "errors": [],
+  "packed_items": 82,
+  "packed_volume": 23421949,
+  "process_returncode": 0,
+  "projection_removed_constraints": [
+    "source_vertical_flags"
+  ],
+  "status": "PASS",
+  "unpacked_items": 40,
+  "validation_error_count": 0,
+  "volume_utilization": 0.7784062743231719
+}

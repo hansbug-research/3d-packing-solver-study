@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py", line 217, in <module>
+    main()
+  File "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py", line 174, in main
+    run_py3dbp(instance, args.order)
+  File "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py", line 35, in run_py3dbp
+    import py3dbp
+ModuleNotFoundError: No module named 'py3dbp'

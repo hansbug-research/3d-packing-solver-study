@@ -1,0 +1,31 @@
+{
+  "benchmark_id": "B01",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py",
+    "--library",
+    "py3dbp",
+    "--instance",
+    "THPACK2-079",
+    "--order",
+    "descending",
+    "--projection"
+  ],
+  "implementation_id": "py3dbp",
+  "implementation_version": "1.1.2",
+  "input_sha256": "2807ab7689a477b7fdc1305f480f434bfa03352db49cd033ce800ea8b6282b7e",
+  "instance_id": "THPACK2-079",
+  "memory_limit_bytes": 2147483648,
+  "problem_variant": "RELAXED_ALL_ROTATIONS",
+  "projection_removed_constraints": [
+    "source_vertical_flags"
+  ],
+  "python_executable": "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+  "source_root": "/home/zhangshaoang/packing-software-study/.cache/esicup-datasets",
+  "source_sha256": "a31e6400d46926574068524172b1e38495cfd5ad6725f92c58a0af8d92721700",
+  "thread_limit": 1,
+  "time_limit_s": 10.0,
+  "validator_sha256": "136e7812f00f5a34477ec28f35cc9bf1e787e837c56f26df36829030983cb49d",
+  "worker_sha256": "4dfd8a7f474019bcf4fd74b1ecb6f27c1818b593303fc97cfbc8594ae3b55a9f"
+}

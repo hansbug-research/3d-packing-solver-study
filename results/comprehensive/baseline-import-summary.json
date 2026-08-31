@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 6947,
+  "combined_run_records": 12667,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -34,6 +34,8 @@
     "skjolber_plain"
   ],
   "protocol_source_sha256": {
+    "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-10s-rep-0.jsonl": "61b89e7f95950791ab760aed25d45455f2d33a3a4ddfd0ca5a4a1e1140ff7bfd",
+    "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-1s-rep-0.jsonl": "4b72729a28271da817e06166e026a0a7bd825e1ef3446b2c20310f41e70c1a5c",
     "results/comprehensive/runs/B03-exact_cp_sat-20s.jsonl": "d2f02007696d708bd41811ab33b8a3531fd0d99e5dc7d7319bb2d73d7ae70316",
     "results/comprehensive/runs/B03-go_bp3d-10s.jsonl": "bab5cc769bc9fdc0447be4c94d224bd403380258f47e99217f2c94bd8160e4fd",
     "results/comprehensive/runs/B03-go_bp3d-1s.jsonl": "6f2430d30d2e906ccfda9eb1ad190c87378cd13e7c0b0d29f1c3d2667e4d36c1",
@@ -65,7 +67,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813"
   },
-  "protocol_v3_run_records": 4869,
+  "protocol_v3_run_records": 10589,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -80,7 +82,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "7a27efac2dc127b254c169b15f9b51bb8d4be84e77b6a8ea922f463eccc99075",
+  "run_manifest_sha256": "cfe732dd4fb0b0d43a383ef206a7b77bacb1ab8fbe80a92cb91c5bdbe6ecf7b7",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

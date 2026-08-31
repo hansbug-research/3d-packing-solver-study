@@ -280,7 +280,7 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`91/608` cell 有证据，其中 `27` 个 cell 已执行 protocol-v3，合计 `6,947` 条记录（legacy `2,078`，protocol-v3 `4,869`）。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 27 个 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`92/608` cell 有证据，其中 `31` 个 cell 已执行 protocol-v3，合计 `12,667` 条记录（legacy `2,078`，protocol-v3 `10,589`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection：两库、两种排序、1 s/10 s 两个预算共 5,720 条；它们与原始姿态语义分轨，不能覆盖 native 结果。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 31 个 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 

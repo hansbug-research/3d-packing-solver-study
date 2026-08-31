@@ -1,0 +1,18 @@
+{
+  "bins_used": 1,
+  "errors": [
+    "2:0 overlaps 8:1 in bin:0",
+    "8:1 overlaps 2:1 in bin:0",
+    "8:1 overlaps 2:2 in bin:0"
+  ],
+  "packed_items": 92,
+  "packed_volume": 24796064,
+  "process_returncode": 0,
+  "projection_removed_constraints": [
+    "source_vertical_flags"
+  ],
+  "status": "FAIL",
+  "unpacked_items": 43,
+  "validation_error_count": 3,
+  "volume_utilization": 0.8240736838816841
+}

@@ -1,0 +1,16 @@
+{
+  "bins_used": null,
+  "errors": [
+    "invalid worker JSON: Expecting value: line 1 column 1 (char 0)"
+  ],
+  "packed_items": null,
+  "packed_volume": null,
+  "process_returncode": 1,
+  "projection_removed_constraints": [
+    "source_vertical_flags"
+  ],
+  "status": "FAIL",
+  "unpacked_items": null,
+  "validation_error_count": 1,
+  "volume_utilization": null
+}
