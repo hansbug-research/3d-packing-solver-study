@@ -375,6 +375,7 @@ Tauri 的主要风险是 WebView 差异。先做 2-3 周 vertical slice；若只
 - Tauri vertical slice 覆盖 50k 编辑行、10k/50k 3D 实例和一个真实 native solver；
 - Windows/macOS/Linux 各产一份可安装开发签名包；
 - 建立经典几何、构造真值和脱敏订单三层 benchmark；
+- 按 [`research/test-protocol.md`](research/test-protocol.md) 完成全部问题族 × 全部候选库的状态矩阵，并将原生、组合 adapter、精确模型和工业投影分榜；
 - 跟踪已提交的 PackingSolver issue #536–#539 与 PR #540–#543；在合并前固定可回归源码提交。
 
 退出条件：三平台 worker 故障不影响 UI；Schema 可由 Python/TS/Rust 一致解析；Tauri WebView 达到明确性能门；主候选升级不会绕过测试。

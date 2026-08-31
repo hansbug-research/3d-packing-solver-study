@@ -30,6 +30,7 @@
 
 ```text
 report.md                         总报告：问题、模型、算法、benchmark、前端与路线
+research/test-protocol.md         全库综合 benchmark、状态、排行与发布协议
 research/                         学术综述、能力矩阵、公共数据集、上游审计
 benchmarks/                       受控脚本、统一数据转换器、独立 validator
 results/                          机器可读结果与测试摘要
@@ -66,7 +67,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m pytest -q
 ```
 
-需要运行 Python/Jerry/公共数据转换时，先执行 `bash scripts/fetch_dependencies.sh` 固定外部 source checkout，再运行下方命令。PackingSolver 的预编译二进制和 Skjolber 的 Maven/JDK 环境不随脚本下载，需按 `research/test-protocol.md` 的版本与 SHA-256 自行准备；无网络或缺少 native/JVM 工具链时，仍可只做上述离线校验。
+需要运行 Python/Jerry/公共数据转换时，先执行 `bash scripts/fetch_dependencies.sh` 固定外部 source checkout，再运行下方命令。PackingSolver 的预编译二进制和 Skjolber 的 Maven/JDK 环境不随脚本下载，需按 [`research/test-protocol.md`](research/test-protocol.md) 的版本、运行矩阵与 SHA-256 要求自行准备；无网络或缺少 native/JVM 工具链时，仍可只做上述离线校验。
 
 候选库受控 smoke test：
 
@@ -77,7 +78,7 @@ bash benchmarks/run_java_controlled.sh
 .venv/bin/python benchmarks/benchmark_public_thpack9.py
 ```
 
-全量 campaign 的脚本、每类 benchmark 的用途和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)。已有结果的统一重算命令为：
+既有 campaign 的脚本、每类 benchmark 的用途和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)；下一轮“全部问题族 × 全部候选库”的范围、状态词、排行与验收门以 [`research/test-protocol.md`](research/test-protocol.md) 为准。已有结果的统一重算命令为：
 
 ```bash
 .venv/bin/python benchmarks/campaign/analyze_campaign.py
