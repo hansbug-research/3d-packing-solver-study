@@ -4,7 +4,7 @@
 
 ## 收口状态（2026-08-31）
 
-本轮发布前复核已关闭初始阻断项：`raw/experiments/` 当前归档 123 个实验文件，另含逐任务 stderr/退出码、Three.js、商业实验和 Java runner 记录，最终由 156 文件 manifest 校验；THPACK9 转换器固定 ESICUP commit 与源文件 SHA-256；CFF 改为合法的 `software` 类型并补版本/日期；CI、105 行来源 manifest、关键引文、审计索引、Three.js fixture、商业求解器历史输出及 PackingSolver 二进制 provenance 均已落盘。当前工作树已形成本地 `main` 提交；研究仓库尚未创建 GitHub 远端。PackingSolver 的四个复现已提交为 issue #536–#539、修复 PR #540–#543，均为 open 未合并。剩余边界是预编译 PackingSolver 二进制、Maven/JDK、商业求解器许可和 GPU 渲染环境不随仓库分发，需在目标环境按文档准备；这些限制在 README、报告和 raw 记录中明确标为可选或未测试，不阻断离线复核。
+本轮发布前复核已关闭初始阻断项：`raw/experiments/` 当前归档 123 个实验文件，另含逐任务 stderr/退出码、Three.js、商业实验和 Java runner 记录，最终由 156 文件 manifest 校验；THPACK9 转换器固定 ESICUP commit 与源文件 SHA-256；CFF 改为合法的 `software` 类型并补版本/日期；CI、105 行来源 manifest、关键引文、审计索引、Three.js fixture、商业求解器历史输出及 PackingSolver 二进制 provenance 均已落盘。仓库已发布到 `hansbug-research/3d-packing-solver-study` 的 public `main` 分支，发布提交和线上 Actions 运行记录见 `audit/reproducibility_audit.md`。PackingSolver 的四个复现已提交为 issue #536–#539、修复 PR #540–#543，均为 open 未合并。剩余边界是预编译 PackingSolver 二进制、Maven/JDK、商业求解器许可和 GPU 渲染环境不随仓库分发，需在目标环境按文档准备；这些限制在 README、报告和 raw 记录中明确标为可选或未测试，不阻断离线复核。
 
 本节是当前状态的权威摘要；下面 Findings 保留初始审计时的证据和建议，历史“部分修复”标签不再表示当前阻断项。当前仍需人工处理的事项只有目标平台的二进制/JVM/商业许可准备、外部滚动文档链接复核，以及远端 GitHub 渲染和 Actions 结果抽查，不影响离线脚本验证。
 
@@ -60,9 +60,9 @@
 
 `sources/snapshots/` 中提交了完整的 PackingSolver README、三个 C++ 源文件和其 MIT LICENSE；`DATA-LICENSE.md` 已明确这些快照按上游 MIT 分发、不会继承本仓库 Apache-2.0，并在 sources manifest 中登记 URL、commit 和 hash。
 
-### 🟡 Nit：研究仓库尚未形成 GitHub 发布状态
+### ✅ 已修复：研究仓库已形成 GitHub 发布状态
 
-当前已建立本地 `main` 提交，但尚未创建或配置 `hansbug-research/3d-packing-solver-study` GitHub 远端。该状态不影响本地脚本运行；公开发布前仍需检查敏感文件和大文件，再创建 public 仓库并记录远端 commit，后续报告中的结果应引用该 commit。
+当前已创建并推送 `hansbug-research/3d-packing-solver-study` public 仓库，默认分支为 `main`；发布提交和 Actions 运行链接记录在 `audit/reproducibility_audit.md`。README、CITATION.cff、raw/manifest.json 已通过 GitHub API 抽查，剩余人工边界是外部滚动 URL、许可证条款和渲染器三平台实测。
 
 ### ✅ 已修复：正文的自然段折行已符合仓库写作约定
 
@@ -77,6 +77,6 @@
 - [x] `CITATION.cff` 通过 CFF 1.2.0 schema，包含版本、日期和 revision 绑定。
 - [x] `sources/manifest.csv`、`sources/quotes.md` 和 `audit/` 自审/复现日志已提交，正文引用可定位。
 - [x] raw canonical 目录包含全部原始 stdout、stderr、退出码、资源、输入和 provenance；156 文件 manifest 可离线核对。
-- [x] `.github/workflows/verify.yml` 定义了干净 runner 的派生文件、manifest、图、CFF、verifier、Markdown 检查和测试门禁；远端运行结果待发布后记录。
+- [x] `.github/workflows/verify.yml` 定义了干净 runner 的派生文件、manifest、图、CFF、verifier、Markdown 检查和测试门禁；线上运行结果已记录并通过。
 - [x] `git diff --check`、敏感信息扫描、文件大小审计和 Markdown 链接检查通过。
-- [ ] 建立有提交哈希的 `main` 分支并推送到目标 public 仓库，README 的仓库 URL 与实际名称一致。
+- [x] 建立有提交哈希的 `main` 分支并推送到目标 public 仓库，README 的仓库 URL 与实际名称一致。

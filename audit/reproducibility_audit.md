@@ -28,4 +28,11 @@ THPACK9 的 `COPIES` certificate 是聚合表示：一行布局可能代表多�
 1. 从 `sources/manifest.csv` 随机抽取至少 5 个 DOI/官方 URL，核对标题、年份、作者和报告对应关系。
 2. 检查 GitHub 渲染后的 Markdown 表格、锚点和 `figures/fig01_thpack9_bins.png` 是否可见。
 3. 在干净 clone 中执行 `scripts/analyze.py`、`scripts/plot.py`、`scripts/verify.py` 和 `pytest`，确认没有依赖工作树缓存。
-4. 远端创建仓库后核对默认分支、许可证、CITATION.cff 解析和 raw 文件完整性。
+4. 已核对远端默认分支、许可证、CITATION.cff 解析和 raw 文件完整性；后续仅需在内容更新后重复抽查。
+
+## 线上发布核对
+
+- 仓库：<https://github.com/hansbug-research/3d-packing-solver-study>，可见性 `public`，默认分支 `main`。
+- 发布提交：`cbf9f7bba6667c17140c81864922ffc95693a718`。
+- GitHub Actions：<https://github.com/hansbug-research/3d-packing-solver-study/actions/runs/33367118663>，`verify` job 全部通过；仅有 GitHub runner 的 Node 20 弃用提示。
+- API 抽查确认 README、CITATION.cff、raw/manifest.json 均可访问；本地链接检查和 CFF schema 检查与线上 CI 结果一致。
