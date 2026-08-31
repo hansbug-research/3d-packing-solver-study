@@ -292,7 +292,7 @@ B03 是 60 个 Egeblad-Pisinger 实例，覆盖 20/40/60 件、C/L/F/U/D 形状�
 
 固定姿态 1 s 配对中 fork 相对官方为 6 胜/49 平/5 负，10 s 为 3 胜/56 平/1 负；10 s 总收益 fork 高 407,115，但不能据此把 fork 作为所有实例的严格支配版本。exact CP-SAT 只跑 20 件子集：20/20 合法、13/20 在 20 s 内证明最优，7/20 返回合法 incumbent 与上界；它用于校准小规模模型，不给 40/60 件实例制造伪造 optimum。
 
-该实验支持的工程结论是：PackingSolver fork 仍是最接近 B03 原题语义的正交主候选，Python/Go/Jerry 只适合作为放宽旋转的候选生成器或对照；Rust ExtremePoint 是低延迟几何基线，不是 profit 优化器；Rust GA/BRKGA/SA/Layer 目前不能替代原生 profit 求解。完整的 32 套 benchmark 选择、每个套件适用库和结论边界见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)。
+该实验支持的工程结论是：PackingSolver fork 仍是最接近 B03 原题语义的正交主候选，Python/Go/Jerry 只适合作为放宽旋转的候选生成器或对照；Rust ExtremePoint 是低延迟几何基线，不是 profit 优化器；Rust GA/BRKGA/SA/Layer 目前不能替代原生 profit 求解。完整的 32 套 benchmark 选择、每个套件适用库和结论边界见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)；运行波次、ALL-libs 记录规则和范围外扩展见 [benchmark 执行优先级与全库横评建议](research/benchmark-execution-plan.md)。
 
 ### 7.5 精确后端与 formulation
 
