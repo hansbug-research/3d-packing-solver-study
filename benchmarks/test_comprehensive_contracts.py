@@ -135,18 +135,18 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 51427
-    assert summary["protocol_v3_run_records"] == 49349
+    assert summary["combined_run_records"] == len(records) == 60427
+    assert summary["protocol_v3_run_records"] == 58349
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 110
+    assert aggregate["coverage"]["cells_with_evidence"] == 112
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 49
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 51
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 49349}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58349}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
-    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 25200
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34200
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):
@@ -258,6 +258,55 @@ def test_b07_external_projection_campaign_is_complete_and_provenanced() -> None:
     assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
     assert all(record["capability_status"] == "PROJECTION_ONLY" for record in records)
     assert all(record["metrics"]["source_items_sha256"] and record["metrics"]["source_bins_sha256"] for record in records)
+
+
+def test_b07_python_projection_campaign_and_fixpoint_control() -> None:
+    comprehensive = ROOT / "results" / "comprehensive"
+    paths = sorted((comprehensive / "runs").glob("B07-python-projection-*.jsonl"))
+    assert {path.name for path in paths} == {
+        "B07-python-projection-jerry-1s-rep-0.jsonl",
+        "B07-python-projection-jerry-10s-rep-0.jsonl",
+        "B07-python-projection-jerry-nofix-10s-rep-0.jsonl",
+        "B07-python-projection-py3dbp-1s-rep-0.jsonl",
+        "B07-python-projection-py3dbp-10s-rep-0.jsonl",
+    }
+    records = [json.loads(line) for path in paths for line in path.read_text().splitlines() if line]
+    assert len(records) == 9000
+    assert len({record["run_id"] for record in records}) == len(records)
+    assert {record["implementation_id"] for record in records} == {"py3dbp", "jerry"}
+    assert {record["metrics"]["source_group"] for record in records} == {
+        "BR0", "BR8", "BR9", "BR10", "BR11", "BR12", "BR13", "BR14", "BR15",
+    }
+    assert all(record["problem_variant"] == "RELAXED_ALL_ROTATIONS" for record in records)
+    assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
+    assert all(record["metrics"]["source_items_sha256"] and record["metrics"]["source_bins_sha256"] for record in records)
+    fix_true = [record for record in records if record["adapter"] == "b07_python_projection_v1" and record["implementation_id"] == "jerry" and record["budget"]["time_limit_s"] == 10.0]
+    fix_false = [record for record in records if record["adapter"] == "b07_python_projection_nofix_v1"]
+    assert len(fix_true) == len(fix_false) == 1800
+    assert sum(record["solution_status"] == "INVALID_CERTIFICATE" for record in fix_true) == 166
+    assert sum(record["solution_status"] == "INVALID_CERTIFICATE" for record in fix_false) == 0
+    assert sum(record["solution_status"] == "NO_SOLUTION" for record in fix_true) == 151
+    assert sum(record["solution_status"] == "NO_SOLUTION" for record in fix_false) == 86
+
+
+def test_b07_projection_common_and_jerry_control_rankings() -> None:
+    rankings = ROOT / "results" / "comprehensive" / "rankings"
+    with (rankings / "B07-projection-common.csv").open(newline="") as handle:
+        common = list(csv.DictReader(handle))
+    assert len(common) == 16
+    assert {row["implementation_id"] for row in common} == {
+        "go_bp3d", "jerry", "py3dbp", "rust_brkga", "rust_extreme_point", "rust_ga", "rust_layer", "rust_sa",
+    }
+    assert {row["common_valid_instances"] for row in common if row["item_order"] == "ASCENDING"} == {"855"}
+    assert {row["common_valid_instances"] for row in common if row["item_order"] == "DESCENDING"} == {"859"}
+    descending = {row["implementation_id"]: float(row["mean_volume_utilization"]) for row in common if row["item_order"] == "DESCENDING"}
+    assert descending["rust_extreme_point"] > descending["py3dbp"] == descending["jerry"] > descending["go_bp3d"]
+    with (rankings / "B07-jerry-fixpoint-pairwise.csv").open(newline="") as handle:
+        controls = {row["item_order"]: row for row in csv.DictReader(handle)}
+    overall = controls["ALL"]
+    assert (overall["common_records"], overall["common_valid_records"]) == ("1800", "1483")
+    assert (overall["fix_true_invalid_certificates"], overall["fix_false_invalid_certificates"]) == ("166", "0")
+    assert (overall["fix_false_wins"], overall["ties"], overall["fix_false_losses"]) == ("44", "75", "1364")
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

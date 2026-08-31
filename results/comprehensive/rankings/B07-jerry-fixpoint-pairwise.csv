@@ -1,0 +1,4 @@
+item_order,common_records,common_valid_records,fix_true_invalid_certificates,fix_false_invalid_certificates,fix_true_no_solution,fix_false_no_solution,fix_false_wins,ties,fix_false_losses,mean_delta_fix_false_minus_true,median_delta_fix_false_minus_true
+ASCENDING,900,760,42,0,98,45,13,38,709,-0.08796758846441152,-0.08841151865659982
+DESCENDING,900,723,124,0,53,41,31,37,655,-0.03468742431180205,-0.036340006952563786
+ALL,1800,1483,166,0,151,86,44,75,1364,-0.06199216116681432,-0.052263504823258033

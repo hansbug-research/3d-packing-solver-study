@@ -18,7 +18,7 @@
 | B04 | ESICUP THPACK9 / IMM，同型多箱装完最少箱 | PS-F/PS-U、PY、JE、SK、GO、RS；EX 小规模 | 完整合法率、箱数、共同 44 例配对胜负 | 多箱分配和规模化几何质量 | 无价格、轴荷、卸货和证明最优值 |
 | B05 | Martello-Pisinger-Vigo 3D-BPP 公共集 | 数据完整后 PS/SK/PY/GO/RS；EX 小规模 | 箱数、best-known/lower-bound gap | 经典多箱分布外部复核 | 当前来源不完整，未补齐前不得排名 |
 | B06 | 版本化 exact-oracle 生成实例 | EX 四后端；启发式仅作 incumbent 对照 | objective、bound、proof rate、time-to-proof | 模型和 validator 是否正确、规模阈值在哪里 | 合成真值不是工业分布；不用于跨库总分 |
-| B07 | Davies-Bischoff BR0/BR8-15，单箱/困难尺寸 | PS、PY、JE、SK、GO、RS；EX 小子集 | packed volume、合法率、困难桶分层 | BR 外的公开质量与困难实例鲁棒性 | 旋转/约束字段有限 |
+| B07 | Davies-Bischoff BR0/BR8-15，单箱/困难尺寸 | PS、PY、JE、SK、GO、RS；EX 小子集 | packed volume、合法率、困难桶分层 | BR 外的公开质量与困难实例鲁棒性 | 当前 Python/Go/Rust 为 `GEOMETRY_PROJECTION`；Jerry `fix_point=True` overlap 与 `False` control 分榜，Skjolber/EX 仍需 adapter |
 | B08 | 多箱型、价格、有限 copies 的公开成本集 | PS-F/PS-U（当前 #536 轨需单独记录）；EX；其他库 projection | total cost、箱型用量、bound | 成本目标是否被真正优化、箱型 dominance 是否正确 | PS issue #536 未修复前不能把异常当质量结果；普通 BPP 箱数不等价成本 |
 | B09 | 版本化 variable-cost exact truth | EX native；PS/PY/JE/SK/GO/RS 只作 conformance/projection | exact cost、hard compliance、proof | 成本、库存和分配模型的真值回归 | 小规模逻辑测试，不代表大规模速度 |
 | B10 | 固定异构箱型 MCLP，必须完整装载 | PS/EX native；SK/PY/JE/GO/RS 需 master + placement projection | complete feasible rate、未装需求、成本 | 异构容量、库存、完整性联合能力 | 数据源未齐前保持 SOURCE_INCOMPLETE |

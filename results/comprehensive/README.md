@@ -13,11 +13,11 @@
 
 实际实例级运行写入 `run-manifest.jsonl`，每条记录遵守 [`run-record.schema.json`](../../benchmarks/comprehensive/run-record.schema.json)。`baseline-import-summary.json` 标明哪些记录来自已有 v1/v2 原始归档；新运行仍必须使用协议规定的 `raw/experiments/comprehensive/` 目录。`coverage.csv` 是计划与实际运行合并后的覆盖表。只有 `VALID_COMPLETE` 或原问题允许的 `VALID_PARTIAL` 且通过独立 validator 的记录才能进入 `rankings/`；`NATIVE`、`COMPOSED`、`EXACT_MODEL` 以及 `FULL_PROBLEM`、`GEOMETRY_PROJECTION` 分榜。
 
-`run-manifest.jsonl` 通过 Git LFS 跟踪（当前对象约 121 MB）；检出仓库后请执行 `git lfs install` 与 `git lfs pull`，否则工作区中会只看到 pointer 文件，不能运行本目录的导入、分析和验证脚本。
+`run-manifest.jsonl` 通过 Git LFS 跟踪（当前对象约 141 MB）；检出仓库后请执行 `git lfs install` 与 `git lfs pull`，否则工作区中会只看到 pointer 文件，不能运行本目录的导入、分析和验证脚本。
 
-当前导入 2,078 条已有运行，并合并 B03、B07、约束 gauntlet、B05 来源状态以及 B01/B02 Python/Go/Rust projection 的 49,349 条 protocol-v3 记录，形成 13/32 个 benchmark、19 个实现/算法变体和 110/608 个计划单元的有证据记录；其中 42 个单元仍只有历史基线。B01/B02 projection 有 22,880 条实例记录，B07 projection 新增 21,600 条实例记录；两者都显式标为 `RELAXED_ALL_ROTATIONS`、`GEOMETRY_PROJECTION`，不覆盖源姿态语义。Go/Rust 文件使用 external CLI adapter，Rust 的五个策略分别绑定计划中的实现 ID；B07 额外记录每个 `BR*.txt_*` 来源 CSV 的 SHA-256 和 fork commit。B05 的 19 个单元是 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录而非实际执行。这不是综合 campaign 完成声明。其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
+当前导入 2,078 条已有运行，并合并 B03、B07、约束 gauntlet、B05 来源状态以及 B01/B02 Python/Go/Rust projection 的 58,349 条 protocol-v3 记录，形成 13/32 个 benchmark、19 个实现/算法变体和 112/608 个计划单元的有证据记录；其中 42 个单元仍只有历史基线。B01/B02 projection 有 22,880 条实例记录，B07 projection 新增 30,600 条实例记录（Go/Rust 21,600，Python 7,200，Jerry `fix_point=False` control 1,800）；两者都显式标为 `RELAXED_ALL_ROTATIONS`、`GEOMETRY_PROJECTION`，不覆盖源姿态语义。Go/Rust 文件使用 external CLI adapter，Rust 的五个策略分别绑定计划中的实现 ID；B07 额外记录每个 `BR*.txt_*` 来源 CSV 的 SHA-256 和 fork commit。B05 的 19 个单元是 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录而非实际执行。这不是综合 campaign 完成声明。其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
 
-现有排行按问题语义拆分：`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较统一模型的证明能力，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。B05 当前只有来源审计和状态记录，没有质量排行。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
+现有排行按问题语义拆分：`volume-knapsack.csv` 显式保留 `problem_variant/problem_scope`，`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`B07-projection-common.csv` 比较八个 projection 实现的共同合法实例，`B07-jerry-fixpoint-pairwise.csv` 记录 Jerry `fix_point` 参数的合法性/质量权衡，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较统一模型的证明能力，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。B05 当前只有来源审计和状态记录，没有质量排行。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
 
 ## B03 复现命令
 
@@ -50,6 +50,29 @@
 ```
 
 ## Constraint gauntlet 复现
+
+## B07 全库 projection 复现
+
+B07 的 Python、Go 和 Rust 轨都使用固定 fork 数据目录；Python/Jerry 通过 canonical JSON 输入，Go/Rust 通过 external CLI。下面的命令分别生成 900 例 × 两排序的 protocol-v3 JSONL 和原始 artifact tarball；Jerry 的 `fix_point=False` 是已知 overlap 路径的独立 control，不覆盖默认轨。
+
+```bash
+python benchmarks/comprehensive/run_b07_python_projection.py \
+  --library py3dbp --time-limit 1 --workers 16
+python benchmarks/comprehensive/run_b07_python_projection.py \
+  --library py3dbp --time-limit 10 --workers 16
+python benchmarks/comprehensive/run_b07_python_projection.py \
+  --library jerry --time-limit 1 --workers 16
+python benchmarks/comprehensive/run_b07_python_projection.py \
+  --library jerry --time-limit 10 --workers 16
+python benchmarks/comprehensive/run_b07_python_projection.py \
+  --library jerry --time-limit 10 --jerry-fix-point false --workers 16
+python benchmarks/comprehensive/run_b07_external_projection.py \
+  --library go_bp3d --library rust_unesting \
+  --strategy extremepoint --strategy bottomleftfill --strategy ga \
+  --strategy brkga --strategy sa --time-limit 1 --time-limit 10 --workers 16
+```
+
+运行完成后执行 `python benchmarks/comprehensive/import_baseline.py`、`python benchmarks/comprehensive/analyze.py` 和 `python scripts/verify.py`。`B07-projection-common.csv` 只在共同合法实例上比较八个 projection 实现；`B07-jerry-fixpoint-pairwise.csv` 单独报告 Jerry 参数导致的合法性/质量变化。
 
 四条 PackingSolver protocol-v3 原生轨分别执行 B09、B12、B13、B14、B15 和 B17 的小型边界套件，共 30 条实例记录。fork 的 `box` 与 `boxstacks` 15/15 个行为均符合预期；已打补丁的 upstream `box` 同样 5/5，upstream `boxstacks` 的正常约束均通过，但两个轴荷反例在 solver 内部报错，保留为 `ERROR` 而不是成功或“不可行证明”。`rotation_forbidden` 与 fork 的两个轴荷反例是预期不可行，证书为空且独立 validator 无错误；这类行为通过率只在 `constraint-conformance.csv` 中按 `expected_behavior_pass` 统计，不进入几何质量均值。
 

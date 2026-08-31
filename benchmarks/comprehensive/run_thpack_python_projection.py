@@ -68,33 +68,61 @@ def as_text(value: str | bytes | None) -> str:
     return value
 
 
-def run_one(instance: Any, library: str, order: str, timeout_s: float, repetition: int) -> dict[str, Any]:
-    benchmark_id = "B01" if int(instance.family.removeprefix("THPACK")) <= 7 else "B02"
-    case_name = f"{instance.key}/{library}/{order}/{timeout_s:g}s/rep-{repetition}"
-    case_dir = RAW_ROOT / instance.key / library / order / f"{timeout_s:g}s" / f"rep-{repetition}"
+def run_one(
+    instance: Any,
+    library: str,
+    order: str,
+    timeout_s: float,
+    repetition: int,
+    benchmark_id_override: str | None = None,
+    source_instance_id_override: str | None = None,
+    source_group: str | None = None,
+    source_commit_override: str | None = None,
+    source_items_sha256: str | None = None,
+    source_bins_sha256: str | None = None,
+    work_root: Path | None = None,
+    archive_name: str | None = None,
+    adapter_override: str | None = None,
+    source_root_override: Path | None = None,
+    jerry_fix_point: bool = True,
+) -> dict[str, Any]:
+    benchmark_id = benchmark_id_override or ("B01" if int(instance.family.removeprefix("THPACK")) <= 7 else "B02")
+    effective_instance_id = source_instance_id_override or instance.key
+    case_name = f"{effective_instance_id}/{library}/{order}/{timeout_s:g}s/rep-{repetition}"
+    case_dir = (
+        work_root / case_name.replace("/", "__")
+        if work_root is not None
+        else RAW_ROOT / instance.key / library / order / f"{timeout_s:g}s" / f"rep-{repetition}"
+    )
     case_dir.mkdir(parents=True, exist_ok=True)
     input_payload = {
         "benchmark_id": benchmark_id,
         "problem_variant": "RELAXED_ALL_ROTATIONS",
         "instance": instance.to_dict(),
         "projection": {"removed_constraints": ["source_vertical_flags"], "allowed_orientations": "all_axis_permutations"},
-        "source_commit": ESICUP_COMMIT,
+        "source_commit": source_commit_override or ESICUP_COMMIT,
     }
     input_hash = payload_hash(input_payload)
     (case_dir / "input.json").write_text(canonical_json(input_payload), encoding="utf-8")
     interpreter = str(WORKER_PYTHON if WORKER_PYTHON.is_file() else Path(sys.executable))
-    command = [interpreter, str(WORKER), "--library", library, "--instance", instance.key, "--order", order, "--projection"]
+    command = [interpreter, str(WORKER), "--library", library]
+    if source_instance_id_override is None:
+        command.extend(["--instance", instance.key])
+    else:
+        command.extend(["--input", str(case_dir / "input.json")])
+    command.extend(["--order", order, "--projection"])
+    if library == "jerry":
+        command.extend(["--jerry-fix-point", "true" if jerry_fix_point else "false"])
     config = {
         "command": command,
         "benchmark_id": benchmark_id,
         "problem_variant": "RELAXED_ALL_ROTATIONS",
-        "instance_id": instance.key,
+        "instance_id": effective_instance_id,
         "implementation_id": library,
         "implementation_version": "1.1.2" if library == "py3dbp" else "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
-        "source_commit": ESICUP_COMMIT,
+        "source_commit": source_commit_override or ESICUP_COMMIT,
         "python_executable": interpreter,
-        "source_root": str(SOURCE_ROOT),
-        "source_sha256": sha256(SOURCE_DIR / f"thpack{int(instance.family.removeprefix('THPACK'))}.txt"),
+        "source_root": str(source_root_override or SOURCE_ROOT),
         "input_sha256": input_hash,
         "projection_removed_constraints": ["source_vertical_flags"],
         "time_limit_s": timeout_s,
@@ -103,6 +131,12 @@ def run_one(instance: Any, library: str, order: str, timeout_s: float, repetitio
         "worker_sha256": sha256(WORKER),
         "validator_sha256": sha256(VALIDATOR),
     }
+    if source_instance_id_override is None:
+        config["source_sha256"] = sha256(SOURCE_DIR / f"thpack{int(instance.family.removeprefix('THPACK'))}.txt")
+    if source_items_sha256 is not None:
+        config["source_items_sha256"] = source_items_sha256
+    if source_bins_sha256 is not None:
+        config["source_bins_sha256"] = source_bins_sha256
     (case_dir / "effective-config.json").write_text(canonical_json(config), encoding="utf-8")
     environment = os.environ.copy()
     environment.update({name: "1" for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS")})
@@ -161,13 +195,13 @@ def run_one(instance: Any, library: str, order: str, timeout_s: float, repetitio
         "schema_version": 2,
         "protocol_version": "benchmark-protocol/3",
         "record_origin": "PROTOCOL_V3",
-        "run_id": f"{benchmark_id}/{instance.key}/{library}/projection/{order}/{timeout_s:g}s/rep-{repetition}",
+        "run_id": f"{benchmark_id}/{effective_instance_id}/{library}/{'projection' if jerry_fix_point else 'projection-nofix'}/{order}/{timeout_s:g}s/rep-{repetition}",
         "benchmark_id": benchmark_id,
         "problem_variant": "RELAXED_ALL_ROTATIONS",
-        "instance_id": instance.key,
+        "instance_id": effective_instance_id,
         "implementation_id": library,
         "algorithm": "pivot greedy",
-        "adapter": "thpack_python_projection_v1",
+        "adapter": adapter_override or "thpack_python_projection_v1",
         "comparison_track": "COMPOSED",
         "problem_scope": "GEOMETRY_PROJECTION",
         "budget": {"time_limit_s": timeout_s, "memory_limit_bytes": 2147483648, "thread_limit": 1},
@@ -184,14 +218,32 @@ def run_one(instance: Any, library: str, order: str, timeout_s: float, repetitio
         "termination_reason": termination,
         "resources": {"wall_s": wall_s, "solver_s": worker.get("solve_seconds"), "peak_rss_bytes": peak_rss_bytes},
         "metrics": metrics,
-        "artifacts": {
+        "artifacts": {},
+    }
+    if archive_name is None:
+        record["artifacts"] = {
             "input": str((case_dir / "input.json").relative_to(ROOT)),
             "effective_config": str((case_dir / "effective-config.json").relative_to(ROOT)),
             "solver_output": str((case_dir / "stdout.json").relative_to(ROOT)),
             "stderr": str((case_dir / "stderr.log").relative_to(ROOT)),
             "validation": str((case_dir / "validation.json").relative_to(ROOT)),
-        },
-    }
+        }
+    else:
+        record["artifacts"] = {
+            "input": f"{archive_name}#{case_dir.name}/input.json",
+            "effective_config": f"{archive_name}#{case_dir.name}/effective-config.json",
+            "solver_output": f"{archive_name}#{case_dir.name}/stdout.json",
+            "stderr": f"{archive_name}#{case_dir.name}/stderr.log",
+            "validation": f"{archive_name}#{case_dir.name}/validation.json",
+        }
+    if source_group is not None:
+        record["metrics"]["source_group"] = source_group
+    if source_items_sha256 is not None:
+        record["metrics"]["source_items_sha256"] = source_items_sha256
+    if source_bins_sha256 is not None:
+        record["metrics"]["source_bins_sha256"] = source_bins_sha256
+    if library == "jerry":
+        record["metrics"]["jerry_fix_point"] = jerry_fix_point
     validate_run_record(record)
     return record
 

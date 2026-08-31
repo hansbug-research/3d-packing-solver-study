@@ -31,7 +31,7 @@
 - 有 published optimum/bound 时才报告 gap，否则只报告 incumbent 和体积下界诊断；
 - 固定姿态、全旋转投影、composed adapter、exact model 分轨。
 
-B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有多箱分布，因此 B05 是必要的外部复核，B06 是必要的真值校准，B07 用于 BR/LN 之外的困难单箱分布。Wave 1 完成后，才能回答“基础 3D 装箱质量”而不是“某一个 benchmark 的质量”。
+B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有多箱分布，因此 B05 是必要的外部复核，B06 是必要的真值校准，B07 用于 BR/LN 之外的困难单箱分布。B07 的 projection 轨目前已覆盖八个 Python/Go/Rust 实现（900 例、两排序、1/10 s），但 Skjolber 与 exact 仍须保持 `ADAPTER_MISSING`，不能用 projection 数字替代它们。Jerry 的 `fix_point=True` overlap 与 `fix_point=False` control 必须分开排行：前者的非法 certificate 永远不能因体积较高进入质量榜。Wave 1 完成后，才能回答“基础 3D 装箱质量”而不是“某一个 benchmark 的质量”。
 
 ### Wave 2：成本、异构和硬约束
 

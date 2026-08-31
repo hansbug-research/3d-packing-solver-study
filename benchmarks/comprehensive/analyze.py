@@ -149,6 +149,9 @@ def volume_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
             continue
         key = (
             record["benchmark_id"],
+            record["problem_variant"],
+            record["problem_scope"],
+            record["comparison_track"],
             record["implementation_id"],
             record["budget"]["time_limit_s"],
             record["item_order"],
@@ -163,10 +166,13 @@ def volume_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         rows.append(
             {
                 "benchmark_id": key[0],
-                "implementation_id": key[1],
-                "time_limit_s": key[2],
-                "item_order": key[3],
-                "adapter": key[4],
+                "problem_variant": key[1],
+                "problem_scope": key[2],
+                "comparison_track": key[3],
+                "implementation_id": key[4],
+                "time_limit_s": key[5],
+                "item_order": key[6],
+                "adapter": key[7],
                 "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
                 "planned_records": len(group),
                 "valid_records": len(valid),
@@ -293,6 +299,115 @@ def b07_version_pairwise_rankings(records: list[dict[str, Any]]) -> list[dict[st
                 "mean_upstream_utilization": mean(upstream_values),
                 "mean_delta_upstream_minus_fork": mean(deltas),
                 "median_delta_upstream_minus_fork": median(deltas),
+            }
+        )
+    return rows
+
+
+def b07_projection_common_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    adapters = {
+        "go_bp3d": "thpack_external_projection_v1",
+        "rust_extreme_point": "thpack_external_projection_v1",
+        "rust_layer": "thpack_external_projection_v1",
+        "rust_ga": "thpack_external_projection_v1",
+        "rust_brkga": "thpack_external_projection_v1",
+        "rust_sa": "thpack_external_projection_v1",
+        "py3dbp": "b07_python_projection_v1",
+        "jerry": "b07_python_projection_nofix_v1",
+    }
+    rows: list[dict[str, Any]] = []
+    for item_order in ("ASCENDING", "DESCENDING"):
+        selected: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+        for record in records:
+            implementation_id = record["implementation_id"]
+            if (
+                record["benchmark_id"] == "B07"
+                and record["problem_variant"] == "RELAXED_ALL_ROTATIONS"
+                and record["problem_scope"] == "GEOMETRY_PROJECTION"
+                and float(record["budget"]["time_limit_s"]) == 10.0
+                and record["item_order"] == item_order
+                and adapters.get(implementation_id) == record["adapter"]
+            ):
+                selected[implementation_id][record["instance_id"]] = record
+        if set(selected) != set(adapters):
+            continue
+        valid_sets = [
+            {instance for instance, record in by_instance.items() if record["solution_status"] in VALID_SOLUTIONS}
+            for by_instance in selected.values()
+        ]
+        common = set.intersection(*valid_sets)
+        common_hash = hashlib.sha256(("\n".join(sorted(common)) + "\n").encode()).hexdigest()
+        for implementation_id, by_instance in selected.items():
+            values = [by_instance[instance]["metrics"].get("volume_utilization") for instance in sorted(common)]
+            statuses = Counter(record["solution_status"] for record in by_instance.values())
+            rows.append(
+                {
+                    "problem_variant": "RELAXED_ALL_ROTATIONS",
+                    "time_limit_s": 10.0,
+                    "item_order": item_order,
+                    "implementation_id": implementation_id,
+                    "adapter": adapters[implementation_id],
+                    "participating_implementations": len(adapters),
+                    "source_instances": len(by_instance),
+                    "common_valid_instances": len(common),
+                    "common_instance_set_sha256": common_hash,
+                    "valid_on_source_instances": sum(statuses[status] for status in VALID_SOLUTIONS),
+                    "invalid_certificates": statuses["INVALID_CERTIFICATE"],
+                    "no_solution": statuses["NO_SOLUTION"],
+                    "mean_volume_utilization": mean(values),
+                    "median_volume_utilization": median(values),
+                    "p95_volume_utilization": nearest_rank([float(value) for value in values if value is not None], 0.95),
+                }
+            )
+    rows.sort(key=lambda row: (row["item_order"], -(row["mean_volume_utilization"] or -1), row["implementation_id"]))
+    return rows
+
+
+def b07_jerry_fixpoint_pairwise(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    selected: dict[tuple[str, str], dict[tuple[str, str], dict[str, Any]]] = defaultdict(dict)
+    adapters = {
+        "fix_point_true": "b07_python_projection_v1",
+        "fix_point_false": "b07_python_projection_nofix_v1",
+    }
+    for record in records:
+        if (
+            record["benchmark_id"] == "B07"
+            and record["implementation_id"] == "jerry"
+            and float(record["budget"]["time_limit_s"]) == 10.0
+        ):
+            for label, adapter in adapters.items():
+                if record["adapter"] == adapter:
+                    selected[(label, record["item_order"])][(record["instance_id"], record["item_order"])] = record
+
+    rows: list[dict[str, Any]] = []
+    for item_order in ("ASCENDING", "DESCENDING", "ALL"):
+        if item_order == "ALL":
+            left = {key: record for (label, _), values in selected.items() if label == "fix_point_true" for key, record in values.items()}
+            right = {key: record for (label, _), values in selected.items() if label == "fix_point_false" for key, record in values.items()}
+        else:
+            left = selected.get(("fix_point_true", item_order), {})
+            right = selected.get(("fix_point_false", item_order), {})
+        common = sorted(set(left) & set(right))
+        deltas = []
+        for key in common:
+            if left[key]["solution_status"] in VALID_SOLUTIONS and right[key]["solution_status"] in VALID_SOLUTIONS:
+                deltas.append(float(right[key]["metrics"]["volume_utilization"]) - float(left[key]["metrics"]["volume_utilization"]))
+        left_status = Counter(left[key]["solution_status"] for key in common)
+        right_status = Counter(right[key]["solution_status"] for key in common)
+        rows.append(
+            {
+                "item_order": item_order,
+                "common_records": len(common),
+                "common_valid_records": len(deltas),
+                "fix_true_invalid_certificates": left_status["INVALID_CERTIFICATE"],
+                "fix_false_invalid_certificates": right_status["INVALID_CERTIFICATE"],
+                "fix_true_no_solution": left_status["NO_SOLUTION"],
+                "fix_false_no_solution": right_status["NO_SOLUTION"],
+                "fix_false_wins": sum(delta > 0 for delta in deltas),
+                "ties": sum(delta == 0 for delta in deltas),
+                "fix_false_losses": sum(delta < 0 for delta in deltas),
+                "mean_delta_fix_false_minus_true": mean(deltas),
+                "median_delta_fix_false_minus_true": median(deltas),
             }
         )
     return rows
@@ -568,6 +683,8 @@ def generated_files() -> dict[Path, str]:
     volume = volume_rankings(records)
     volume_common = volume_common_rankings(records)
     b07_versions = b07_version_pairwise_rankings(records)
+    b07_projection = b07_projection_common_rankings(records)
+    b07_jerry_fixpoint = b07_jerry_fixpoint_pairwise(records)
     identical, pairwise = identical_bin_rankings(records)
     profit, profit_pairwise = profit_knapsack_rankings(records)
     exact = exact_rankings(records)
@@ -629,7 +746,8 @@ def generated_files() -> dict[Path, str]:
         "constraint_violation", "no_solution", "execution_status",
     ]
     volume_fields = [
-        "benchmark_id", "implementation_id", "time_limit_s", "item_order", "adapter", "rank_scope", "planned_records",
+        "benchmark_id", "problem_variant", "problem_scope", "comparison_track", "implementation_id", "time_limit_s",
+        "item_order", "adapter", "rank_scope", "planned_records",
         "valid_records", "invalid_records", "valid_rate", "instance_set_sha256", "mean_volume_utilization",
         "median_volume_utilization", "p95_volume_utilization", "mean_wall_s",
     ]
@@ -641,6 +759,17 @@ def generated_files() -> dict[Path, str]:
         "source_group", "time_limit_s", "left", "right", "common_instances", "valid_comparable_instances",
         "fork_wins", "ties", "upstream_wins", "mean_fork_utilization", "mean_upstream_utilization",
         "mean_delta_upstream_minus_fork", "median_delta_upstream_minus_fork",
+    ]
+    b07_projection_fields = [
+        "problem_variant", "time_limit_s", "item_order", "implementation_id", "adapter",
+        "participating_implementations", "source_instances", "common_valid_instances", "common_instance_set_sha256",
+        "valid_on_source_instances", "invalid_certificates", "no_solution", "mean_volume_utilization",
+        "median_volume_utilization", "p95_volume_utilization",
+    ]
+    b07_jerry_fixpoint_fields = [
+        "item_order", "common_records", "common_valid_records", "fix_true_invalid_certificates",
+        "fix_false_invalid_certificates", "fix_true_no_solution", "fix_false_no_solution", "fix_false_wins", "ties",
+        "fix_false_losses", "mean_delta_fix_false_minus_true", "median_delta_fix_false_minus_true",
     ]
     identical_fields = [
         "implementation_id", "common_instances", "common_instance_set_sha256", "valid_complete", "invalid", "incomplete",
@@ -675,6 +804,8 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "volume-knapsack.csv": write_csv(volume, volume_fields),
         RESULTS_DIR / "rankings" / "volume-knapsack-common.csv": write_csv(volume_common, volume_common_fields),
         RESULTS_DIR / "rankings" / "B07-version-pairwise.csv": write_csv(b07_versions, b07_version_fields),
+        RESULTS_DIR / "rankings" / "B07-projection-common.csv": write_csv(b07_projection, b07_projection_fields),
+        RESULTS_DIR / "rankings" / "B07-jerry-fixpoint-pairwise.csv": write_csv(b07_jerry_fixpoint, b07_jerry_fixpoint_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing.csv": write_csv(identical, identical_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing-pairwise.csv": write_csv(pairwise, pairwise_fields),
         RESULTS_DIR / "rankings" / "profit-knapsack.csv": write_csv(profit, profit_fields),

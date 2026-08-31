@@ -10,7 +10,7 @@ import sys
 from pathlib import Path
 from time import perf_counter
 
-from model import ESICUP_COMMIT, JERRY_COMMIT, expanded_items, orientation_support, parse_all, validate_certificate
+from model import ESICUP_COMMIT, JERRY_COMMIT, Instance, ItemType, expanded_items, orientation_support, parse_all, validate_certificate
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -29,6 +29,32 @@ def select_instance(key: str):
     if len(matches) != 1:
         raise RuntimeError(f"instance key resolved to {len(matches)} records: {key}")
     return matches[0]
+
+
+def read_instance(path: Path) -> Instance:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    source = payload.get("instance")
+    if not isinstance(source, dict):
+        raise RuntimeError(f"input does not contain an instance object: {path}")
+    item_types = [
+        ItemType(
+            type_id=str(item["type_id"]),
+            size=tuple(int(value) for value in item["size"]),
+            allowed_vertical_dimensions=tuple(int(value) for value in item["allowed_vertical_dimensions"]),
+            copies=int(item["copies"]),
+        )
+        for item in source["item_types"]
+    ]
+    return Instance(
+        family=str(source["family"]),
+        instance_id=int(source["instance_id"]),
+        problem_kind=str(source["problem_kind"]),
+        objective=str(source["objective"]),
+        container=tuple(int(value) for value in source["container"]),
+        item_types=item_types,
+        seed=source.get("seed"),
+        source_line_errors=list(source.get("source_line_errors", [])),
+    )
 
 
 def run_py3dbp(instance, order: str) -> dict:
@@ -154,15 +180,20 @@ def run_jerry(instance, order: str, fix_point: bool = True, projection: bool = F
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--library", choices=("py3dbp", "jerry"), required=True)
-    parser.add_argument("--instance", required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--instance")
+    source.add_argument("--input", type=Path)
     parser.add_argument("--order", choices=("descending", "ascending"), required=True)
     parser.add_argument("--jerry-fix-point", choices=("true", "false"), default="true")
     parser.add_argument("--projection", action="store_true", help="ignore source vertical flags for an explicit all-rotations projection")
     args = parser.parse_args()
 
     resource.setrlimit(resource.RLIMIT_AS, (MEMORY_LIMIT_BYTES, MEMORY_LIMIT_BYTES))
-    check_checkout(ROOT / ".cache" / "esicup-datasets", ESICUP_COMMIT)
-    instance = select_instance(args.instance)
+    if args.input is not None:
+        instance = read_instance(args.input)
+    else:
+        check_checkout(ROOT / ".cache" / "esicup-datasets", ESICUP_COMMIT)
+        instance = select_instance(args.instance)
     supported, reason = orientation_support(instance, args.library)
     if args.projection:
         reason = "explicit GEOMETRY_PROJECTION: source vertical flags are not enforced; all six axis permutations are allowed"
