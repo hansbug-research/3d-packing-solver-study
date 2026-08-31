@@ -1,0 +1,20 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B07/packingsolver_fork_box/1s/artifacts.tar.gz",
+  "artifact_archive_sha256": "0449739687e20dfe772d13728e7834a8be2b30c5d758738ea2d33378d748d08b",
+  "benchmark_id": "B07",
+  "binary_sha256": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+  "implementation_id": "packingsolver_fork_box",
+  "implementation_version": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "instances": 900,
+  "label": "1s",
+  "protocol_version": "benchmark-protocol/3",
+  "run_jsonl_sha256": "b87a53fb041dbad8c6bd1fee24cc3bf29312ff461f8d9cca8379b1c5d6c5313a",
+  "runner_sha256": "4d99070b9961693978d74c8a25ca0dae754625c81e096725f9a4acdae9d1b4b0",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 900
+  },
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "time_limit_s": 1.0
+}

@@ -297,7 +297,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-    ) != (3298, 2078, 3298, 3298):
+    ) != (6898, 2078, 6898, 6898):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -306,10 +306,12 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-    ) != (608, 66, 55, 11, 11, 18):
+    ) != (608, 68, 55, 13, 12, 18):
         fail("comprehensive execution coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 1220}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4820}:
         fail("comprehensive run origin counts changed")
+    if coverage.get("records_by_benchmark", {}).get("B07") != 3600:
+        fail("comprehensive B07 record count changed")
     manifest_hash = sha256(directory / "run-manifest.jsonl")
     if summary.get("run_manifest_sha256") != manifest_hash:
         fail("comprehensive baseline summary manifest hash mismatch")
@@ -335,6 +337,20 @@ def check_comprehensive_results() -> None:
             fail(f"comprehensive B04 quality changed: {implementation_id}")
     if b04.get("jerry", {}).get("invalid") != 1:
         fail("comprehensive B04 Jerry invalid-certificate count changed")
+    b07_pairwise = directory / "rankings" / "B07-version-pairwise.csv"
+    if not b07_pairwise.exists():
+        fail("comprehensive B07 version-pairwise ranking is missing")
+    with b07_pairwise.open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    if len(rows) != 18 or any(int(row["common_instances"]) != 100 for row in rows):
+        fail("comprehensive B07 version-pairwise coverage changed")
+    ten_second = [row for row in rows if row["time_limit_s"] == "10.0"]
+    if (
+        sum(int(row["upstream_wins"]) for row in ten_second),
+        sum(int(row["ties"]) for row in ten_second),
+        sum(int(row["fork_wins"]) for row in ten_second),
+    ) != (13, 834, 53):
+        fail("comprehensive B07 fork/upstream comparison changed")
 
 
 def main() -> None:

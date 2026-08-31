@@ -135,15 +135,16 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 3298
-    assert summary["protocol_v3_run_records"] == 1220
+    assert summary["combined_run_records"] == len(records) == 6898
+    assert summary["protocol_v3_run_records"] == 4820
     assert len(summary["implementation_ids"]) == aggregate["coverage"]["executed_implementations"] == 18
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 11
-    assert aggregate["coverage"]["cells_with_evidence"] == 66
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 12
+    assert aggregate["coverage"]["cells_with_evidence"] == 68
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 55
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 11
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 1220}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 13
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4820}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 3600
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):
@@ -156,6 +157,23 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
                 assert_finite_json(child)
 
     assert_finite_json(records)
+
+
+def test_b07_version_pairwise_is_complete_and_reproducible() -> None:
+    path = ROOT / "results" / "comprehensive" / "rankings" / "B07-version-pairwise.csv"
+    with path.open(newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) == 18
+    assert {(row["source_group"], row["time_limit_s"]) for row in rows} == {
+        (group, budget) for group in ("BR0", "BR8", "BR9", "BR10", "BR11", "BR12", "BR13", "BR14", "BR15")
+        for budget in ("1.0", "10.0")
+    }
+    assert all(int(row["common_instances"]) == 100 for row in rows)
+    assert all(int(row["valid_comparable_instances"]) == 100 for row in rows)
+    ten_second = [row for row in rows if row["time_limit_s"] == "10.0"]
+    assert sum(int(row["upstream_wins"]) for row in ten_second) == 13
+    assert sum(int(row["ties"]) for row in ten_second) == 834
+    assert sum(int(row["fork_wins"]) for row in ten_second) == 53
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

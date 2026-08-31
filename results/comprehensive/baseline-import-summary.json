@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 3298,
+  "combined_run_records": 6898,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -54,9 +54,13 @@
     "results/comprehensive/runs/B03-rust_layer-10s.jsonl": "65d5555f3e620e2ff1a4cb06f2b0644b45b01fbb85d232da87d17dbe326c59b9",
     "results/comprehensive/runs/B03-rust_layer-1s.jsonl": "3d4e0bec4c1c486ea6e40f859bff66d34c9b179176a20a554cf6c5aa4a284d0c",
     "results/comprehensive/runs/B03-rust_sa-10s.jsonl": "9e5c226ddf11677c447f1cc4cd60461c11c051415e53c18f091fba09a7124272",
-    "results/comprehensive/runs/B03-rust_sa-1s.jsonl": "18a9beca9595fc3df457ea43234f074503eb2a3e43601ec2c8def668f13df1a1"
+    "results/comprehensive/runs/B03-rust_sa-1s.jsonl": "18a9beca9595fc3df457ea43234f074503eb2a3e43601ec2c8def668f13df1a1",
+    "results/comprehensive/runs/B07-packingsolver_fork_box-10s.jsonl": "d7fa06bf9ef7b94fdcb6b44d4cef10ebde32b84d0663affd1b4897385713de98",
+    "results/comprehensive/runs/B07-packingsolver_fork_box-1s.jsonl": "b87a53fb041dbad8c6bd1fee24cc3bf29312ff461f8d9cca8379b1c5d6c5313a",
+    "results/comprehensive/runs/B07-packingsolver_upstream_box-10s.jsonl": "d77ecc0e4de37aadef56948cb8d9a06a37ee9f18a2c0ab4a7866f022d425af14",
+    "results/comprehensive/runs/B07-packingsolver_upstream_box-1s.jsonl": "0fe35b5365fa608c64432b25ce3ae8612d6d5559267235b51e94f1d81ef91337"
   },
-  "protocol_v3_run_records": 1220,
+  "protocol_v3_run_records": 4820,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -71,7 +75,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "e32c638d55db8c05cda8144435d548bc7dcc560c0a9edffb2eb8c5d6c5bee3bc",
+  "run_manifest_sha256": "18c6281e310d2ad9564b2f89db6b235705e7699b78c4dd0af2cb0f34ec8b77d8",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

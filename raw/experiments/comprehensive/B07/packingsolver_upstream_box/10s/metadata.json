@@ -1,0 +1,23 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B07/packingsolver_upstream_box/10s/artifacts.tar.gz",
+  "artifact_archive_sha256": "a39086fcf57296272bc93c01a0de365bab20cfb74ec6245645dbac5f3df59439",
+  "benchmark_id": "B07",
+  "binary_sha256": "4095913a369399df053ad6d8c4f3ef8873496f2903ba2a0aeeb699081c9edbec",
+  "binary_source_commit": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+  "binary_source_diff_sha256": "225e2a8652493b2f3f9c1e13306a81001ee94ac4ec58a07ac6da6b536797670d",
+  "implementation_id": "packingsolver_upstream_box",
+  "implementation_version": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+  "input_source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "instances": 900,
+  "label": "10s",
+  "protocol_version": "benchmark-protocol/3",
+  "run_jsonl_sha256": "d77ecc0e4de37aadef56948cb8d9a06a37ee9f18a2c0ab4a7866f022d425af14",
+  "runner_sha256": "1a4e67acb38059d3b4b5f2c5e2f8ba87e21385858069b80543215d1a4a4fb57d",
+  "schema_version": 1,
+  "shared_validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "solution_status_counts": {
+    "VALID_PARTIAL": 900
+  },
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "time_limit_s": 10.0
+}

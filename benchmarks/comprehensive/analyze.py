@@ -138,7 +138,7 @@ def execution_coverage(plan: list[dict[str, Any]], records: list[dict[str, Any]]
 def volume_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     groups: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        if record["benchmark_id"] not in {"B01", "B02"}:
+        if record["benchmark_id"] not in {"B01", "B02", "B07"}:
             continue
         key = (
             record["benchmark_id"],
@@ -218,6 +218,76 @@ def volume_common_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]
                 }
             )
     rows.sort(key=lambda row: (row["benchmark_id"], row["invalid_records"], -(row["mean_volume_utilization"] or -1)))
+    return rows
+
+
+def b07_version_pairwise_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Compare the pinned fork and patched upstream on the identical B07 cells.
+
+    This is deliberately separate from the library ranking: the two rows are
+    source variants of the same solver, and the result is useful for tracking
+    fork drift without treating the patched upstream checkout as an official
+    release.
+    """
+    selected: dict[tuple[str, float, str], dict[str, dict[str, Any]]] = defaultdict(dict)
+    for record in records:
+        if record["benchmark_id"] != "B07" or record["implementation_id"] not in {
+            "packingsolver_fork_box",
+            "packingsolver_upstream_box",
+        }:
+            continue
+        source_group = record["metrics"].get("source_group")
+        if not source_group:
+            continue
+        key = (source_group, float(record["budget"]["time_limit_s"]), record["implementation_id"])
+        selected[key][record["instance_id"]] = record
+
+    rows: list[dict[str, Any]] = []
+    for source_group, time_limit_s in sorted({(key[0], key[1]) for key in selected}):
+        fork = selected.get((source_group, time_limit_s, "packingsolver_fork_box"), {})
+        upstream = selected.get((source_group, time_limit_s, "packingsolver_upstream_box"), {})
+        common = sorted(set(fork) & set(upstream))
+        deltas: list[float] = []
+        fork_values: list[float] = []
+        upstream_values: list[float] = []
+        fork_wins = ties = upstream_wins = 0
+        for instance in common:
+            fork_record = fork[instance]
+            upstream_record = upstream[instance]
+            if fork_record["solution_status"] not in VALID_SOLUTIONS or upstream_record["solution_status"] not in VALID_SOLUTIONS:
+                continue
+            fork_value = fork_record["metrics"].get("volume_utilization")
+            upstream_value = upstream_record["metrics"].get("volume_utilization")
+            if fork_value is None or upstream_value is None:
+                continue
+            fork_value = float(fork_value)
+            upstream_value = float(upstream_value)
+            fork_values.append(fork_value)
+            upstream_values.append(upstream_value)
+            deltas.append(upstream_value - fork_value)
+            if upstream_value > fork_value:
+                upstream_wins += 1
+            elif upstream_value < fork_value:
+                fork_wins += 1
+            else:
+                ties += 1
+        rows.append(
+            {
+                "source_group": source_group,
+                "time_limit_s": time_limit_s,
+                "left": "packingsolver_fork_box",
+                "right": "packingsolver_upstream_box",
+                "common_instances": len(common),
+                "valid_comparable_instances": len(deltas),
+                "fork_wins": fork_wins,
+                "ties": ties,
+                "upstream_wins": upstream_wins,
+                "mean_fork_utilization": mean(fork_values),
+                "mean_upstream_utilization": mean(upstream_values),
+                "mean_delta_upstream_minus_fork": mean(deltas),
+                "median_delta_upstream_minus_fork": median(deltas),
+            }
+        )
     return rows
 
 
@@ -490,6 +560,7 @@ def generated_files() -> dict[Path, str]:
     coverage = execution_coverage(plan, records)
     volume = volume_rankings(records)
     volume_common = volume_common_rankings(records)
+    b07_versions = b07_version_pairwise_rankings(records)
     identical, pairwise = identical_bin_rankings(records)
     profit, profit_pairwise = profit_knapsack_rankings(records)
     exact = exact_rankings(records)
@@ -553,6 +624,11 @@ def generated_files() -> dict[Path, str]:
         "benchmark_id", "implementation_id", "common_implementations", "common_instances", "common_instance_set_sha256",
         "valid_records", "invalid_records", "mean_volume_utilization", "median_volume_utilization",
     ]
+    b07_version_fields = [
+        "source_group", "time_limit_s", "left", "right", "common_instances", "valid_comparable_instances",
+        "fork_wins", "ties", "upstream_wins", "mean_fork_utilization", "mean_upstream_utilization",
+        "mean_delta_upstream_minus_fork", "median_delta_upstream_minus_fork",
+    ]
     identical_fields = [
         "implementation_id", "common_instances", "common_instance_set_sha256", "valid_complete", "invalid", "incomplete",
         "invalid_rate", "incomplete_rate", "mean_bins", "median_bins", "p95_bins", "mean_wall_s", "mean_solver_s",
@@ -585,6 +661,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "coverage.csv": write_csv(coverage, coverage_fields),
         RESULTS_DIR / "rankings" / "volume-knapsack.csv": write_csv(volume, volume_fields),
         RESULTS_DIR / "rankings" / "volume-knapsack-common.csv": write_csv(volume_common, volume_common_fields),
+        RESULTS_DIR / "rankings" / "B07-version-pairwise.csv": write_csv(b07_versions, b07_version_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing.csv": write_csv(identical, identical_fields),
         RESULTS_DIR / "rankings" / "identical-bin-packing-pairwise.csv": write_csv(pairwise, pairwise_fields),
         RESULTS_DIR / "rankings" / "profit-knapsack.csv": write_csv(profit, profit_fields),

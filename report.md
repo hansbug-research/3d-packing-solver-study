@@ -247,6 +247,41 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 
 10 秒预算显著改善 knapsack 初解，并消除 BR/LN 空解，但没有让 THPACK9 少用箱。不能由此写成“10 秒总是更优”或“1 秒已足够”：三个问题族的搜索行为不同。
 
+### 7.1.1 B07 Davies-Bischoff 困难单箱分布
+
+B07 补的是 BR/LN 之外的公开困难分布：固定容器 `587×233×220`，来源为 `BR0`、`BR8`–`BR15` 九个桶，每桶 100 个实例，共 900 例。输入 CSV 显式冻结六种轴向排列许可；本轮只运行 `box` 轨，fork 和 upstream patched 分开记录。upstream 使用了为复现已知 comparator 问题而保留的源码 patch，不能称为官方未修改 release；fork 输入和 binary 均绑定到 [`HansBug/packingsolver@d953148b`](https://github.com/HansBug/packingsolver/tree/d953148b8f710c06fa6c410949b7272f9e36327b)，campaign summary/manifest 绑定 source commit、binary hash，所有布局均经过独立 certificate validator。
+
+四组全量运行都是 `900/900` 条记录、`900/900` 合法 partial certificate；B07 的目标是单箱 packed-volume，不要求装完全部件，因此 `VALID_PARTIAL` 是预期状态。整体结果如下，均值按 900 例计算：
+
+| 实现/预算 | mean utilization | median | p95 | 预算配对（10 s 相对 1 s） |
+|---|---:|---:|---:|---:|
+| fork / 1 s | `0.100890` | `0` | `0.929065` | 820 改善 / 80 持平 / 0 变差 |
+| fork / 10 s | `0.949427` | `0.953804` | `0.963448` | |
+| upstream patched / 1 s | `0.100897` | `0` | `0.929065` | 819 改善 / 81 持平 / 0 变差 |
+| upstream patched / 10 s | `0.949377` | `0.953739` | `0.963448` | |
+
+10 s 下 upstream 相对 fork 的逐实例结果为 `13` 胜、`834` 平、`53` 负，平均差为 `-0.0000500`（upstream minus fork）；这不是严格支配关系。按困难桶的 10 s mean utilization，fork 为：`BR0 0.909800`、`BR8 0.959940`、`BR9 0.957578`、`BR10 0.956700`、`BR11 0.955095`、`BR12 0.954063`、`BR13 0.952356`、`BR14 0.950343`、`BR15 0.948967`；对应 upstream 为 `0.909831`、`0.960105`、`0.957582`、`0.956684`、`0.955037`、`0.953897`、`0.952087`、`0.950216`、`0.948952`。完整逐桶/逐预算配对表见 [`B07-version-pairwise.csv`](results/comprehensive/rankings/B07-version-pairwise.csv)，原始 JSONL 和 tarball 在 [`results/comprehensive/runs/`](results/comprehensive/runs/) 与 [`raw/experiments/comprehensive/B07/`](raw/experiments/comprehensive/B07/)。
+
+B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响应和版本漂移”，不能回答多箱成本、库存、承压、轴荷、连续装入路径或卸货顺序。1 s 下 BR8–BR15 的大量 `0` 利用率是合法低预算 incumbent；只有独立 validator 报出的越界、重叠、漏件/身份或旋转白名单错误才算证书错误。B07 也不能替代 B05 的外部多箱分布、B08–B18 的目标/硬约束套件或 B19+ 的工业 full 轨。
+
+### 7.1.2 BR/LN 之外的完整 benchmark 建议
+
+建议保留 `B01–B32`，按问题族分别排行，绝不合成跨目标“总冠军”。选择理由、每个套件适用的库/算法轨道、主指标及不可外推边界详见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)；执行顺序和 ALL-libs 记录规则详见 [benchmark 执行优先级与全库横评建议](research/benchmark-execution-plan.md)。核心取舍是：
+
+| 问题族 | benchmark | 参加的库/算法 | 结果主要说明 |
+|---|---|---|---|
+| 单箱体积与困难分布 | B01 BR、B02 LN、B07 BR0/BR8–15 | PackingSolver 原生；Python/Go/Jerry、Rust/Skjolber 在语义一致时作 composed/projection；exact 只跑小子集 | 合法率、体积利用率、姿态/排序敏感性和 anytime 预算响应 |
+| 价值目标 | B03 Profit-KP | PackingSolver 原生；固定姿态 Rust composed；其他库只能放宽旋转 projection；exact 20 件 | 是否真正优化 profit，而非只优化体积；小规模 objective gap/proof |
+| 同型多箱 | B04 IMM、B05 MPV 3D-BPP | 全部几何库；exact 小规模；B05 来源冻结后才排名 | 装完完整性、箱数质量和分布迁移；THPACK9 单独结果不够 |
+| 真值与成本 | B06 exact oracle、B08 多箱型成本、B09 variable-cost exact、B10 固定异构、B11 open dimension | CP-SAT/SCIP/Gurobi/CPLEX 原生；PackingSolver cost/open 轨；其余只能 projection | 成本方向、箱型/库存选择、开放维度目标和启发式距真值的差距 |
+| 约束合规 | B12 姿态、B13 重量/库存、B14 支撑/承压、B15 重心/轴荷、B16 障碍/门洞、B17 卸货、B18 相容性 | 原生能表达者进入 FULL；其余只作 post-validator/projection，并保留 NOT_SUPPORTED | 硬约束是否真的执行；违反率先于箱数/体积进入门禁 |
+| 工业 full | B19 Alonso 2019、B20 Alonso 2020、B21 VRPTW-CLP、B22 irregular、B23 脱敏真实订单、B30 BAYTP | 只有保留车辆/托盘/路线/货架/非规则字段的 adapter 才能进 FULL；其余明确 projection 或 NOT_SUPPORTED | 从公开正交数据到真实应用的分布迁移和端到端可行率；不能把删字段后的分数叫工业能力 |
+| 可靠性与在线 | B24–B29 metamorphic、numeric、repeatability、scalability、fault/cancellation；B31 mixed-SKU pallet；B32 online/incremental | 所有库都需 capability/conformance；随机算法至少 5 seed；online 需原生增量 adapter | 表示/单位/顺序一致性、质量-延迟-RSS 拐点、取消恢复和在线重排代价 |
+
+因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
+
+当前综合证据仍不是全套件完成：`12/32` benchmark 有记录、`68/608` cell 有证据，其中 `13` 个 cell 已执行 protocol-v3，合计 `6,898` 条记录（legacy `2,078`，protocol-v3 `4,820`）。B05 来源仍未冻结，B08–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+
 ### 7.2 THPACK9 44 例跨实现质量
 
 下表只统计完整且通过独立 certificate 检查的结果。THPACK9 没有 published optimum；相对体积下界只用于诊断，不能替代合法 dual bound。
