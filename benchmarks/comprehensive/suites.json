@@ -16,11 +16,11 @@
   "suites": [
     {
       "id": "B01", "name": "ESICUP THPACK1-7 / BR", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
-      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
       "id": "B02", "name": "ESICUP THPACK8 / LN", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
-      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
       "id": "B03", "name": "Egeblad-Pisinger 3D-KP", "category": "PUBLIC_QUALITY", "problem_family": "PROFIT_KNAPSACK", "primary_metric": "packed_profit", "input_status": "VALID", "ranking_kind": "QUALITY",
@@ -40,7 +40,7 @@
     },
     {
       "id": "B07", "name": "Davies-Bischoff BR0/BR8-15", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
-      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
       "id": "B08", "name": "Public 3D multiple-bin-size/cost", "category": "PUBLIC_QUALITY", "problem_family": "VARIABLE_COST_BIN_PACKING", "primary_metric": "total_cost", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",

@@ -128,10 +128,20 @@ def run_one(
     work_root: Path,
     archive_name: str,
     runner_sha: str,
+    benchmark_id_override: str | None = None,
+    source_instance_id_override: str | None = None,
+    source_group: str | None = None,
+    source_commit_override: str | None = None,
+    source_items_sha256: str | None = None,
+    source_bins_sha256: str | None = None,
 ) -> dict[str, Any]:
-    benchmark_id = "B01" if int(instance.family.removeprefix("THPACK")) <= 7 else "B02"
+    benchmark_id = benchmark_id_override or ("B01" if int(instance.family.removeprefix("THPACK")) <= 7 else "B02")
     algorithm = "pivot greedy" if library == "go_bp3d" else strategy
-    case_name = f"{benchmark_id}/{instance.key}/{library}/{strategy}/{order}/{time_limit_s:g}s/rep-{repetition}"
+    # External suites can reuse the THPACK numeric id across source groups.
+    # Use the source id for every artifact path and protocol run id when one
+    # is supplied, otherwise retain the legacy THPACK key.
+    effective_instance_id = source_instance_id_override or instance.key
+    case_name = f"{benchmark_id}/{effective_instance_id}/{library}/{strategy}/{order}/{time_limit_s:g}s/rep-{repetition}"
     case_dir = work_root / case_name.replace("/", "__")
     case_dir.mkdir(parents=True, exist_ok=True)
     input_payload = make_input(instance, order)
@@ -146,10 +156,10 @@ def run_one(
         "command": command,
         "benchmark_id": benchmark_id,
         "problem_variant": "RELAXED_ALL_ROTATIONS",
-        "instance_id": instance.key,
+        "instance_id": effective_instance_id,
         "implementation_id": implementation_id(library, strategy),
         "implementation_version": GO_COMMIT if library == "go_bp3d" else RUST_COMMIT,
-        "source_commit": ESICUP_COMMIT,
+        "source_commit": source_commit_override or ESICUP_COMMIT,
         "input_sha256": input_hash,
         "item_order": order.upper(),
         "time_limit_s": time_limit_s,
@@ -157,6 +167,10 @@ def run_one(
         "thread_limit": 1,
         "runner_sha256": runner_sha,
     }
+    if source_items_sha256 is not None:
+        config["source_items_sha256"] = source_items_sha256
+    if source_bins_sha256 is not None:
+        config["source_bins_sha256"] = source_bins_sha256
     (case_dir / "effective-config.json").write_text(canonical_json(config), encoding="utf-8")
     resources = case_dir / "resources.txt"
     env = os.environ.copy()
@@ -233,10 +247,13 @@ def run_one(
         "schema_version": 2,
         "protocol_version": "benchmark-protocol/3",
         "record_origin": "PROTOCOL_V3",
-        "run_id": f"{benchmark_id}/{instance.key}/{impl_id}/projection/{order}/{time_limit_s:g}s/rep-{repetition}",
+        "run_id": f"{benchmark_id}/{effective_instance_id}/{impl_id}/projection/{order}/{time_limit_s:g}s/rep-{repetition}",
         "benchmark_id": benchmark_id,
         "problem_variant": "RELAXED_ALL_ROTATIONS",
         "instance_id": (
+            source_instance_id_override
+            if source_instance_id_override is not None
+            else
             f"BR:BR{int(instance.family.removeprefix('THPACK'))}.txt:{instance.instance_id}"
             if benchmark_id == "B01"
             else f"LN:thpack8.txt:{instance.instance_id}"
@@ -281,6 +298,12 @@ def run_one(
             "validation": f"{archive_name}#{case_dir.name}/validation.json",
         },
     }
+    if source_group is not None:
+        record["metrics"]["source_group"] = source_group
+    if source_items_sha256 is not None:
+        record["metrics"]["source_items_sha256"] = source_items_sha256
+    if source_bins_sha256 is not None:
+        record["metrics"]["source_bins_sha256"] = source_bins_sha256
     validate_run_record(record)
     return record
 

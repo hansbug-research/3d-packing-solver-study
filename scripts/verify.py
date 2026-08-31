@@ -298,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (29827, 2078, 29827, 29827):
+        ) != (51427, 2078, 51427, 51427):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +307,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 104, 42, 43, 13, 19):
+        ) != (608, 110, 42, 49, 13, 19):
         fail("comprehensive execution coverage changed")
     if coverage.get("protocol_v3_status_only_cells") != 19:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 27749}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 49349}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -325,7 +325,7 @@ def check_comprehensive_results() -> None:
         decision.get("termination_reason"),
     ) != ("B05", "SOURCE_INCOMPLETE", "NOT_RUN", "SOURCE_PENDING"):
         fail("B05 source audit decision changed")
-    if coverage.get("records_by_benchmark", {}).get("B07") != 3600:
+    if coverage.get("records_by_benchmark", {}).get("B07") != 25200:
         fail("comprehensive B07 record count changed")
     manifest_hash = sha256(directory / "run-manifest.jsonl")
     if summary.get("run_manifest_sha256") != manifest_hash:

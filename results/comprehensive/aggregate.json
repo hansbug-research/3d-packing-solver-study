@@ -1,17 +1,17 @@
 {
   "coverage": {
     "benchmarks_with_runs": 13,
-    "cells_with_evidence": 104,
-    "evidence_cell_rate": 0.17105263157894737,
+    "cells_with_evidence": 110,
+    "evidence_cell_rate": 0.18092105263157895,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 42,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.07072368421052631,
-    "protocol_v3_executed_cells": 43,
+    "protocol_v3_executed_cell_rate": 0.0805921052631579,
+    "protocol_v3_executed_cells": 49,
     "protocol_v3_status_only_cells": 19,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 27749
+      "PROTOCOL_V3": 49349
     },
     "records_by_benchmark": {
       "B01": 23874,
@@ -20,7 +20,7 @@
       "B04": 472,
       "B05": 19,
       "B06": 30,
-      "B07": 3600,
+      "B07": 25200,
       "B09": 21,
       "B12": 18,
       "B13": 9,
@@ -28,19 +28,19 @@
       "B15": 9,
       "B17": 6
     },
-    "run_records": 29827,
+    "run_records": 51427,
     "run_status_counts": {
-      "COMPLETED": 21674,
+      "COMPLETED": 43262,
       "ERROR": 3,
       "NOT_RUN": 19,
-      "TIME_LIMIT": 8131
+      "TIME_LIMIT": 8143
     },
     "solution_status_counts": {
       "INVALID_CERTIFICATE": 97,
       "NOT_APPLICABLE": 19,
-      "NO_SOLUTION": 2986,
+      "NO_SOLUTION": 2998,
       "VALID_COMPLETE": 684,
-      "VALID_PARTIAL": 26041
+      "VALID_PARTIAL": 47629
     }
   },
   "headline": {
@@ -655,8 +655,8 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "43a7c440b9b1e2be7c60eba9bab7ed9652d0d3632a8eaeacb33c42f9286a58d7",
-    "results/comprehensive/suite-implementation-plan.jsonl": "48f0fe450d46af1b82140dfb17a591da8dbc0a1d791c43042ca7ed0d44862c60"
+    "results/comprehensive/run-manifest.jsonl": "3d3ba31285f199f8a3ecd701c2f1850e5b6ab0bf58559264fd6727440317e9f6",
+    "results/comprehensive/suite-implementation-plan.jsonl": "50ed2c493eeeab703c6c12f101745109bb60eb783e0809e22b9bbb4f33f75963"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

@@ -135,18 +135,18 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 29827
-    assert summary["protocol_v3_run_records"] == 27749
+    assert summary["combined_run_records"] == len(records) == 51427
+    assert summary["protocol_v3_run_records"] == 49349
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 104
+    assert aggregate["coverage"]["cells_with_evidence"] == 110
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 43
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 49
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 27749}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 49349}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
-    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 3600
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 25200
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):
@@ -234,6 +234,30 @@ def test_b07_version_pairwise_is_complete_and_reproducible() -> None:
     assert sum(int(row["upstream_wins"]) for row in ten_second) == 13
     assert sum(int(row["ties"]) for row in ten_second) == 834
     assert sum(int(row["fork_wins"]) for row in ten_second) == 53
+
+
+def test_b07_external_projection_campaign_is_complete_and_provenanced() -> None:
+    comprehensive = ROOT / "results" / "comprehensive"
+    paths = sorted((comprehensive / "runs").glob("B07-external-projection-*.jsonl"))
+    assert {path.name for path in paths} == {
+        "B07-external-projection-go_bp3d-rust_extreme_point-rust_layer-rust_ga-rust_brkga-rust_sa-1s-rep-0.jsonl",
+        "B07-external-projection-go_bp3d-rust_extreme_point-rust_layer-rust_ga-rust_brkga-rust_sa-10s-rep-0.jsonl",
+    }
+    records = [json.loads(line) for path in paths for line in path.read_text().splitlines() if line]
+    assert len(records) == 21600
+    assert len({record["run_id"] for record in records}) == len(records)
+    assert {record["implementation_id"] for record in records} == {
+        "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
+    }
+    assert {record["budget"]["time_limit_s"] for record in records} == {1.0, 10.0}
+    assert {record["item_order"] for record in records} == {"ASCENDING", "DESCENDING"}
+    assert {record["metrics"]["source_group"] for record in records} == {
+        "BR0", "BR8", "BR9", "BR10", "BR11", "BR12", "BR13", "BR14", "BR15",
+    }
+    assert all(record["problem_variant"] == "RELAXED_ALL_ROTATIONS" for record in records)
+    assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
+    assert all(record["capability_status"] == "PROJECTION_ONLY" for record in records)
+    assert all(record["metrics"]["source_items_sha256"] and record["metrics"]["source_bins_sha256"] for record in records)
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

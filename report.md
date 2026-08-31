@@ -264,6 +264,20 @@ B07 补的是 BR/LN 之外的公开困难分布：固定容器 `587×233×220`�
 
 B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响应和版本漂移”，不能回答多箱成本、库存、承压、轴荷、连续装入路径或卸货顺序。1 s 下 BR8–BR15 的大量 `0` 利用率是合法低预算 incumbent；只有独立 validator 报出的越界、重叠、漏件/身份或旋转白名单错误才算证书错误。B07 也不能替代 B05 的外部多箱分布、B08–B18 的目标/硬约束套件或 B19+ 的工业 full 轨。
 
+本轮又完成了 B07 的跨库几何 projection：900 个来源实例（BR0、BR8–BR15 各 100）× Go `bp3d` 与 u-nesting 的 ExtremePoint、Layer、GA、BRKGA、SA 五策略 × 升/降序 × 1/10 s，共 21,600 条新记录。原始 CSV 的六种 rotation flag 被有意移除，所有记录标为 `PROJECTION_ONLY / GEOMETRY_PROJECTION`，不能与上面的 `SOURCE_ROTATION_FLAGS / NATIVE` 结果混排。下表均按 1,800 条记录（900 例 × 两种排序）统计；`valid_rate` 只表示 certificate 通过独立 validator，单箱 knapsack 允许 `VALID_PARTIAL`。
+
+| projection 实现 | 预算 | valid rate | mean utilization | median | p95 | no solution |
+|---|---:|---:|---:|---:|---:|---:|
+| Go `bp3d` pivot | 1 s | `0.9944` | `0.739862` | `0.736061` | `0.798552` | 10 |
+| Go `bp3d` pivot | 10 s | `0.9989` | `0.740445` | `0.736240` | `0.802603` | 2 |
+| Rust ExtremePoint | 1/10 s | `1.0000` | `0.824560` | `0.826789` | `0.859481` | 0 |
+| Rust Layer | 1/10 s | `1.0000` | `0.463625` | `0.475980` | `0.664673` | 0 |
+| Rust GA | 1/10 s | `1.0000` | `0.491000 / 0.489628` | `0.487836 / 0.487337` | `0.574843 / 0.573701` | 0 |
+| Rust BRKGA | 1/10 s | `1.0000` | `0.444032 / 0.442785` | `0.434333 / 0.433098` | `0.565295 / 0.564537` | 0 |
+| Rust SA | 1/10 s | `1.0000` | `0.426633 / 0.426738` | `0.421914 / 0.423012` | `0.502044 / 0.498897` | 0 |
+
+表中 `1/10 s` 的两个数依次对应 1 秒和 10 秒；ExtremePoint、Layer 的结果在该实现中对预算不敏感，GA/BRKGA/SA 也没有显示单调增益。这是 projection 轨的几何诊断，不是对源 rotation flags 的结论。Go 在极少数实例返回空解，10 秒预算将其从 10 例降至 2 例；这些空解和所有 `INVALID_CERTIFICATE` 都保留在原始 JSONL，不进入质量均值。按来源桶拆分的均值见 `volume-knapsack.csv`，完整实例、配置、stdout/stderr、validator 和哈希见 `B07-external-projection-*.jsonl` 与对应 tarball。
+
 ### 7.1.2 BR/LN 之外的完整 benchmark 建议
 
 建议保留 `B01–B32`，按问题族分别排行，绝不合成跨目标“总冠军”。选择理由、每个套件适用的库/算法轨道、主指标及不可外推边界详见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)；执行顺序和 ALL-libs 记录规则详见 [benchmark 执行优先级与全库横评建议](research/benchmark-execution-plan.md)。核心取舍是：
@@ -280,7 +294,7 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`104/608` cell 有证据，其中 `43` 个 cell 已执行 protocol-v3，合计 `29,827` 条记录（legacy `2,078`，protocol-v3 `27,749`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection：Python 两库、Go、Rust 五策略、两种排序和 1 s/10 s 预算，共 `22,880` 条新实例记录；它们与原始姿态语义分轨，不能覆盖 native 结果。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 43 个 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`110/608` cell 有证据，其中 `49` 个 cell 已执行 protocol-v3，合计 `51,427` 条记录（legacy `2,078`，protocol-v3 `49,349`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）以及 B07 BR0/BR8–15 的 projection（`21,600` 条）；它们与原始姿态语义分轨，不能覆盖 native 结果。B07 projection 覆盖 900 个来源实例、六个 Go/Rust 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 49 个 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
