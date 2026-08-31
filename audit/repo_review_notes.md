@@ -2,9 +2,9 @@
 
 审计日期：2026-08-31。审计对象是发布到 `hansbug-research` 的三维装箱调研仓库；本记录只描述当前工作树中可复核的发布风险，不替代学术正文、算法矩阵或实验结果。
 
-## 收口状态（2026-08-31）
+## 最终状态（2026-08-31）
 
-本轮发布前复核已关闭初始阻断项：`raw/experiments/` 当前归档 123 个实验文件，另含逐任务 stderr/退出码、Three.js、商业实验和 Java runner 记录，最终由 156 文件 manifest 校验；THPACK9 转换器固定 ESICUP commit 与源文件 SHA-256；CFF 改为合法的 `software` 类型并补版本/日期；CI、111 行来源 manifest、关键引文、审计索引、Three.js fixture、商业求解器历史输出及 PackingSolver 二进制 provenance 均已落盘。仓库已发布到 `hansbug-research/3d-packing-solver-study` 的 public `main` 分支，发布提交和线上 Actions 运行记录见 `audit/reproducibility_audit.md`。PackingSolver 的四个复现已提交为 issue #536–#539、修复 PR #540–#543，均为 open 未合并。剩余边界是预编译 PackingSolver 二进制、Maven/JDK、商业求解器许可和 GPU 渲染环境不随仓库分发，需在目标环境按文档准备；这些限制在 README、报告和 raw 记录中明确标为可选或未测试，不阻断离线复核。
+本轮发布前复核已关闭初始阻断项：`raw/experiments/` 当前归档 123 个实验文件，另含逐任务 stderr/退出码、Three.js、商业实验和 Java runner 记录，最终由 156 文件 manifest 校验；THPACK9 转换器固定 ESICUP commit 与源文件 SHA-256；CFF 改为合法的 `software` 类型并补版本/日期；CI、111 行来源 manifest、关键引文、审计索引、Three.js fixture、商业求解器历史输出及 PackingSolver 二进制 provenance 均已归档。仓库已发布到 `hansbug-research/3d-packing-solver-study` 的 public `main` 分支，发布提交和线上 Actions 运行记录见 `audit/reproducibility_audit.md`。PackingSolver 的四个复现已提交为 issue #536–#539、修复 PR #540–#543，均为 open 未合并。剩余边界是预编译 PackingSolver 二进制、Maven/JDK、商业求解器许可和 GPU 渲染环境不随仓库分发，需在目标环境按文档准备；这些限制在 README、报告和 raw 记录中明确标为可选或未测试，不阻断离线复核。
 
 本节是当前状态的权威摘要；下面 Findings 保留初始审计时的证据和建议，历史“部分修复”标签不再表示当前阻断项。当前仍需人工处理的事项只有目标平台的二进制/JVM/商业许可准备、外部滚动文档链接复核，以及远端 GitHub 渲染和 Actions 结果抽查，不影响离线脚本验证。
 
@@ -14,7 +14,7 @@
 
 ## Findings
 
-截至本次复核，初始 Important 均已完成代码或文档层面的收口：CFF、Python 运行说明、第三方快照许可证、raw 归档、来源清单、CI 门禁、benchmark 来源锁定、商业/前端原始记录、provenance 校验和 Markdown/链接检查均已落盘。下文保留初始证据和建议，避免把历史 finding 静默删除。
+截至本次复核，初始 Important 均已完成代码或文档修正：CFF、Python 运行说明、第三方快照许可证、raw 归档、来源清单、CI 门禁、benchmark 来源锁定、商业/前端原始记录、provenance 校验和 Markdown/链接检查均已归档。下文保留初始证据和建议，避免把历史 finding 静默删除。
 
 ### 🟠 Important（部分修复）：证据原始输出没有进入发布证据链
 

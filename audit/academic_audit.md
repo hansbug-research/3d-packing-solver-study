@@ -83,7 +83,7 @@ sed -n '1,120p' .cache/esicup-datasets/3d_rectangular/thpack/README.txt
 
 本文件记录的是审计发现；正文修复应在变更日志或提交说明中引用本文件。法规、标准和商业软件许可仍需按实际运输方式、司法辖区、版本和采购条款重新确认。
 
-## 2026-08-31 最终收口补记
+## 2026-08-31 最终复核补记
 
 - 论文表已把 Paquay、Zhao 和 Pollaris 的 print/online 年份写成显式双日期，避免把 DOI 元数据的 online 年份误当卷期年份；对应来源仍登记在 S59、S63、S69。
 - 受控资源表已统一使用 canonical `raw/experiments/*.resources.txt`；较早的 `raw/resources/` 数字保留为历史快照，不再作为当前结果叙述。
