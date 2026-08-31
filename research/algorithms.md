@@ -149,7 +149,7 @@ GA、PSO、RL 和神经网络适合产生物品顺序、箱型优先级、候选
 | [Gurobi](https://www.gurobi.com/product) / `gurobipy` | 商业 MIP/QCP/全局非线性 | Proprietary | 13.0.3 wheel，持续维护 | 完成可证明；MIP gap/解池；非凸函数用 spatial B&B | 高性能 MIP、indicator、回调、warm start，多平台 | 需付费生产许可；无 3D 模型；任意角碰撞仍很难 | **预算允许时的商业加速插件** |
 | [IBM CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio) / `cplex` | 商业 LP/MIP；CP Optimizer 为同一产品族的独立引擎 | Proprietary | PyPI `cplex` 22.2.0.1；引擎报告 22.2.0.0 | MIP 完成可证明，返回 best bound/gap | CPLEX MIP 的 indicator、回调、Python、多平台；CP Optimizer 应使用 `docplex.cp` 与对应引擎 | 许可和分发门槛；无 3D 模型；非凸连续几何不宜直接承担 | **客户已有 IBM 授权时适配** |
 | [enzoruiz/3dbinpacking](https://github.com/enzoruiz/3dbinpacking) / `py3dbp` | Python pivot greedy，源自 Go `bp3d` / Dube 模拟报告 | MIT | PyPI 1.1.2 发布于 2020；仓库最后实际 commit 2023-04 | 无界、无证明，顺序敏感 | 6 轴向尺寸旋转、箱总重量、多箱分配、坐标输出 | 无姿态子集、成本、支撑、承压、轴荷、顺序；API 很小 | **只作 smoke baseline，不作核心** |
-| [gedex/bp3d](https://github.com/gedex/bp3d) | Go pivot greedy | MIT | 最后实际 commit 2017-02 | 无 | 6 旋转、坐标，多箱 | `MaxWeight` 仅存字段，`PutItem` 未校验；老旧，Go/Python 集成多余 | **拒绝作为核心** |
+| [gedex/bp3d](https://github.com/gedex/bp3d/tree/0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7) | Go pivot greedy | MIT | 固定 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7`（2017-02） | 无 | 6 旋转、坐标，多箱 | `MaxWeight` 仅存字段，`PutItem` 未校验；老旧，Go/Python 集成多余；关键源码已快照 [bp3d.go](../sources/snapshots/bp3d_bp3d_0ba3dcda.go) | **拒绝作为核心** |
 | [jerry800416/3D-bin-packing](https://github.com/jerry800416/3D-bin-packing) | `py3dbp` 分支，增加落地/支撑启发式和绘图 | MIT | 最后实际 commit 2023-06 | README 明示 example3 “algorithm does not optimize” | up/down 布尔、支撑比例启发式、四象限重量统计、输出顺序 | `loadbear` 只是排序值，不强制上压；稳定规则是面积/四角近似；有 README 自报 binding crash | **可参考 UI/校验思路，不作为求解真值** |
 | [skjolber/3d-bin-container-packing](https://github.com/skjolber/3d-bin-container-packing) | Java LAFF、plain、brute force、controls | Apache-2.0 | 2026-08-26 有提交；README 为 4.2.x | brute force 小件数可穷举；LAFF/plain 近似 | 障碍物、重量、箱数量、deadline、自定义 manifest/point/placement controls、Three.js 调试可视化 | Java 运行时；高级稳定/结构能力只是 control 扩展点，README 明示不一定已实现；连续角无 | **强备选/对照，不优先引入 JVM** |
 
@@ -236,7 +236,7 @@ SCIP 10.0.3 本体是 Apache-2.0，PySCIPOpt 6.2.1 是 MIT。官方接口支持�
 
 源码还存在需要注意的控制流：`put_item()` 在找到第一个边界内姿态后，不论后续因碰撞成功与否都会 return，因此并不总会在同一 pivot 穷尽余下旋转。它不能作为“6 姿态均已尝试”的证据。
 
-Go `bp3d` 是其来源之一。当前 `Bin.PutItem` 检查边界和相交，但未把 `GetTotalWeight + item.Weight <= MaxWeight` 放入可行性；`MaxWeight` 只是字段。README 的“based on Dube paper”也不能替代代码审计。
+Go `bp3d` 是其来源之一。固定 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7` 的 `Bin.PutItem` 检查边界和相交，但未把 `GetTotalWeight + item.Weight <= MaxWeight` 放入可行性；`MaxWeight` 只是字段。关键源码和许可证已在 `sources/snapshots/` 快照，README 的“based on Dube paper”也不能替代代码审计。
 
 ### 6.7 Jerry 分支与 skjolber Java 库
 
@@ -331,7 +331,7 @@ PackingSolver `boxstacks` 的半挂模型可直接利用，但必须校准其轴
 - `benchmarks/benchmark_py3dbp.py`
 - `benchmarks/benchmark_jerry.py`
 - `benchmarks/benchmark_ortools.py`
-- `results/*.json` 与 `results/raw/*.resources.txt`
+- `results/*.json` 与 canonical `raw/experiments/*.resources.txt`
 
 Skjolber 的 Java/Maven 用例另位于 `benchmarks/java-skjolber/`，结果为 `results/skjolber.json`。
 
@@ -339,18 +339,18 @@ Skjolber 的 Java/Maven 用例另位于 `benchmarks/java-skjolber/`，结果为 
 
 | 组件/案例 | 结果 | wall / max RSS（整个脚本） | 结论 |
 |---|---|---|---|
-| PackingSolver 8 个 `5^3` 立方体装 `10^3` | 1 箱、8 件、独立校验通过 | 5.06 s / 15,168 KiB（全 8 案例） | 基础正交输出可靠 |
+| PackingSolver 8 个 `5^3` 立方体装 `10^3` | 1 箱、8 件、独立校验通过 | 5.07 s / 15,232 KiB（全 8 案例；canonical `raw/experiments/packingsolver.resources.txt`） | 基础正交输出可靠 |
 | PackingSolver 方向允许 | 必须旋转后装入，1 件通过 | 同上 | 6 旋转子集有效 |
 | PackingSolver 方向禁止 | 0 件，正确不装 | 同上 | 约束有效；“必须全装”需业务层检查 |
 | PackingSolver 箱总重量 | 3 个重 6 的物品分 3 箱（每箱上限 10） | 同上 | 重量约束有效 |
 | PackingSolver `boxstacks` 上压 | 脆弱件置顶，累计上压无违规 | 同上 | 内建 stack 上压真实生效 |
 | PackingSolver 异构成本 | `box`、`boxstacks` 均 return code 1，无 certificate | 约 1.00 s / case | 当前滚动版本阻断项 |
-| PackingSolver 半挂窄轴荷合成例 | return code 1，`std::bad_array_new_length`，无 certificate | 0.0046 s / case | 只说明该边界搜索路径未通过；不得泛化为全部轴荷配置 |
+| PackingSolver 半挂窄轴荷合成例 | canonical rerun return code 1，`std::bad_alloc`，无 certificate | 0.0039 s / case | 只说明该边界搜索路径未通过；此前独立复跑曾见 `std::bad_array_new_length`，不得泛化为全部轴荷配置 |
 | `py3dbp` 基础/旋转/重量 | 均几何校验通过 | 0.03 s / 13,696 KiB | 可作极轻 baseline |
 | `py3dbp` 异构箱顺序 | 小箱先用 2 箱；大箱先用 1 箱 | 同上 | 明显顺序敏感，不按成本优化 |
-| Jerry 分支反例 | `fragile` 上方实际重量 20，仍判可行 | 1.13 s / 70,688 KiB | `loadbear` 不是硬承压约束 |
-| OR-Tools 9 个 `5^3` 立方体 | `OPTIMAL`，2 箱，best bound 2 | 0.40 s / 101,072 KiB | 小规模 pairwise CP-SAT 能证明 |
-| PySCIPOpt/SCIP 同一 9 立方体例 | `optimal`，2 箱，dual 2，gap 0；9 件独立校验通过 | 0.14 s / 60,760 KiB；solver 0.055 s | 开源 exact-small 第二实现通过 |
+| Jerry 分支反例 | `fragile` 上方实际重量 20，仍判可行 | 0.40 s / 67,684 KiB（canonical `raw/experiments/jerry.resources.txt`） | `loadbear` 不是硬承压约束 |
+| OR-Tools 9 个 `5^3` 立方体 | `OPTIMAL`，2 箱，best bound 2 | 0.41 s / 100,212 KiB（canonical `raw/experiments/ortools.resources.txt`） | 小规模 pairwise CP-SAT 能证明 |
+| PySCIPOpt/SCIP 同一 9 立方体例 | `optimal`，2 箱，dual 2，gap 0；9 件独立校验通过 | 0.15 s / 61,016 KiB（canonical `raw/experiments/scip.resources.txt`；solver JSON 另记 0.060 s） | 开源 exact-small 第二实现通过 |
 | Skjolber LAFF | 网格、3D 旋转、upright 禁止、重量均符合预期；100 异质件装入 1 箱 | 当前 raw 快照库内 21.275 ms（THPACK9-1 8.315 ms）；冷 JVM 资源记录约 0.43 s / 78,336 KiB | 活跃 Java 启发式可作强对照；未测试承压/轴荷/成本最优 |
 
 PackingSolver 的 8 案例脚本时长包含多个 CLI 各自约 1 s 的 solver time；Skjolber 同时报告冷 JVM 与库内 duration。它们都不应与单个 Python case 的微秒数直接作性能排名。
@@ -361,8 +361,8 @@ PackingSolver 的 8 案例脚本时长包含多个 CLI 各自约 1 s 的 solver 
 
 | 求解器 | 安装版本 | 状态 | 目标 / bound / gap | wall / max RSS |
 |---|---|---|---|---|
-| OR-Tools CP-SAT | 9.15.6755 | `OPTIMAL` | 2 / 2 / 0 | 0.40 s / 101,072 KiB |
-| PySCIPOpt + SCIP | 6.2.1 + 10.0 | `optimal` | 2 / 2 / 0 | 0.14 s / 60,760 KiB |
+| OR-Tools CP-SAT | 9.15.6755 | `OPTIMAL` | 2 / 2 / 0 | 0.41 s / 100,212 KiB（canonical resource record） |
+| PySCIPOpt + SCIP | 6.2.1 + 10.0 | `optimal` | 2 / 2 / 0 | 0.15 s / 61,016 KiB（canonical resource record） |
 | Gurobi | 当前环境缺少 `gurobipy`/许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
 | CPLEX | 当前环境缺少 `cplex`/IBM runtime 许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
 
@@ -464,12 +464,12 @@ ProblemSpec
 | Martello, Pisinger, Vigo (2000), *The Three-Dimensional Bin Packing Problem* ([DOI](https://doi.org/10.1287/opre.48.2.256.12386)，[机构摘要](https://cris.unibo.it/handle/11585/915180)) | 相同 3D 箱最少箱数；下界、单箱精确填充、外层 branch-and-bound，并嵌入近似算法；原摘要报告最多 90 件的试验。 | 精确搜索闭合才证明最优，最坏指数。论文给出的 continuous lower bound asymptotic worst-case ratio `1/8` 是**下界质量性质**，不是“所得方案最多差 1/8”。不覆盖真实工况约束。 |
 | Fekete, Schepers, van der Veen (2007), *An Exact Algorithm for Higher-Dimensional Orthogonal Packing* ([DOI](https://doi.org/10.1287/opre.1060.0369)，[作者 PDF](https://arxiv.org/pdf/cs/0604045)) | 用每个轴的 interval graph 组成 `packing class`；结合 conservative scales，下界与两层树搜索判定 orthogonal packing。 | 固定方向的精确 oracle；OPP 强 NP-hard、树最坏指数。不直接处理六向姿态选择、承压或斜角。 |
 | Nascimento, Queiroz, Junqueira (2021), *Practical constraints in the container loading problem: Comprehensive formulations and exact algorithm* ([DOI](https://doi.org/10.1016/j.cor.2020.105186)) | 迭代 ILP/CP，并基于平面装箱松弛；统一建模 complete shipment、冲突、优先、重量、稳定、承压、多站、平衡、人工装载、分组、分隔、多姿态等 12 类约束。摘要报告约 10 item types/110 件，全部测试中超过 70% 得到最优。 | 最接近多约束的精确研究入口；仍是 single-container，最坏指数。110 件多含 type 聚合，不能理解为任意 110 个独特物品的普遍性能。 |
-| Paquay, Schyns, Limbourg (2014), *A mixed integer programming formulation for the three-dimensional bin packing problem deriving from an air cargo application* ([DOI](https://doi.org/10.1111/itor.12111)) | 多箱尺寸、稳定、脆弱、重量分布、箱体旋转，并处理航空截角平行六面体容器的 MILP。 | 小实例验证的精确模型；证明了约束可统一表达，不证明模型能扩展到大订单。 |
+| Paquay, Schyns, Limbourg (2016, online 2014), *A mixed integer programming formulation for the three-dimensional bin packing problem deriving from an air cargo application* ([DOI](https://doi.org/10.1111/itor.12111)) | 多箱尺寸、稳定、脆弱、重量分布、箱体旋转，并处理航空截角平行六面体容器的 MILP。 | 小实例验证的精确模型；证明了约束可统一表达，不证明模型能扩展到大订单。 |
 | Crainic, Perboli, Tadei (2008), *Extreme Point-Based Heuristics for Three-Dimensional Bin Packing* ([DOI](https://doi.org/10.1287/ijoc.1070.0250)) | 系统定义 3D extreme points，构造与具体目标相对解耦的 placement 候选，并讨论附加约束。 | 构造启发式，无最优/近似比；适合作为生产候选点与 anytime 初解。 |
 | Fanslau, Bortfeldt (2010), *A Tree Search Algorithm for Solving the Container Loading Problem* ([DOI](https://doi.org/10.1287/ijoc.1090.0338)) | 广义 block building、partition-controlled tree search；区分 full-support / no-support，可考虑 guillotine cut。 | 有限宽树搜索是启发式，未截断搜索最坏指数；full support 只是几何规则，不等于承压合格。 |
 | Pisinger (2002), *Heuristics for the container loading problem* ([DOI](https://doi.org/10.1016/S0377-2217(02)00132-7)) | 经典 wall-building/层块单箱启发式和 benchmark 比较。 | 成熟、可复现基线；无最优证明，也不是现代工况统一模型。 |
 | Crainic, Perboli, Tadei (2009), *TS2PACK: A two-level tabu search for the three-dimensional bin packing problem* ([DOI](https://doi.org/10.1016/j.ejor.2007.06.063)) | 外层改进分箱，内层改进箱内可行性/布局的两层 tabu search。 | 元启发式；无全局证明，但支持本报告“分配 + 放置”分层设计。 |
-| Zhao, Bennell, Bektaş, Dowsland (2014), *A comparative review of 3D container loading algorithms* ([DOI](https://doi.org/10.1111/itor.12094)) | 对 3D CLP 算法设计和 benchmark 作系统比较。 | 用于选择基准与理解历史算法；综述排名不能代替本项目约束下的本地实测。 |
+| Zhao, Bennell, Bektaş, Dowsland (2016, online 2014), *A comparative review of 3D container loading algorithms* ([DOI](https://doi.org/10.1111/itor.12094)) | 对 3D CLP 算法设计和 benchmark 作系统比较。 | 用于选择基准与理解历史算法；综述排名不能代替本项目约束下的本地实测。 |
 
 #### 12.2.2 异构尺寸、价格和有限库存
 
@@ -500,7 +500,7 @@ ProblemSpec
 | Davies, Bischoff (1999), *Weight distribution considerations in container loading* ([DOI](https://doi.org/10.1016/S0377-2217(98)00139-8)) | 经典 container-loading 重量空间分布研究。 | 说明体积利用率以外必须优化/约束载荷分布；不自动覆盖具体车型轴系。 |
 | Ramos, Silva, Oliveira (2018), *A new load balance methodology for container loading problem in road transportation* ([DOI](https://doi.org/10.1016/j.ejor.2017.10.050)) | 面向道路运输提出装载平衡方法。 | 平衡指标不等同于每轴法定限制，仍需车辆静力模型。 |
 | Krebs, Ehmke (2021), *Axle Weights in combined Vehicle Routing and Container Loading Problems* ([开放论文/DOI](https://doi.org/10.1016/j.ejtl.2021.100043)) | 从静力学推导有/无挂车及不同轴配置公式；嵌入 2L/3L-CVRP；外层 ALNS，内层 Deepest-Bottom-Left-Fill，并强调每次放置后检查轴荷。 | 混合启发式，无全局保证；轴荷可行性应是硬校验。 |
-| Pollaris (2017), *Loading constraints in vehicle routing problems: a focus on axle weight limits* ([DOI](https://doi.org/10.1007/s10288-017-0352-4)) | 聚焦轴荷的车辆路径/装载约束研究。 | 支持“路由与装载不能完全割裂”的架构判断。 |
+| Pollaris (2018, online 2017), *Loading constraints in vehicle routing problems: a focus on axle weight limits* ([DOI](https://doi.org/10.1007/s10288-017-0352-4)) | 聚焦轴荷的车辆路径/装载约束研究。 | 支持“路由与装载不能完全割裂”的架构判断。 |
 
 对多站任务，出发状态合格不代表每次卸货后的剩余载荷仍合格；每站都要重新计算总重心、轴/轴组反力、左右轮差、地板载荷和剩余堆叠稳定。
 

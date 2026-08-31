@@ -5,4 +5,4 @@ C03,THPACK9 instance 1 has 70 items and 10x6x16 container, raw/thpack9_instance1
 C04,Public heuristic results are 25/28/50/50 bins, derived/stats.json + derived/tables/public_thpack9.csv + raw/manifest.json,verified
 C05,CP-SAT and SCIP exact-small status is limited to the tested model, results/ortools.json + results/scip.json + REVIEW.md,verified
 C06,Java is an optional sidecar rather than default backend, research/frontend.md + results/skjolber.json,reviewed
-C07,Go and Rust candidates were not executed in this environment, audit/reproducibility_audit.md + README.md,verified
+C07,Go and Rust candidates were not executed in this environment, audit/reproducibility_audit.md + README.md + sources/manifest.csv S106/S108,verified

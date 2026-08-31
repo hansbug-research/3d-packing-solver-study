@@ -6,7 +6,9 @@
    "packingsolver_source": "367ebfdaad11424ded3696b7dae799a30c1375d0",
    "esicup_datasets": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
    "jerry": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
-   "skjolber": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d"
+   "skjolber": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d",
+   "bp3d": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+   "u_nesting": "8cde85b029e4ade663185dacb93fd74440af170d"
  },
   "packingsolver_fork": {
     "repository": "HansBug/packingsolver",
@@ -19,6 +21,26 @@
     "boxstacks": "c705412d8a6e6d6e828babdec73af69039a780312fca42ea35b254d8824eebc9"
   },
   "packingsolver_binary_label": "latest-2026-07-28; source commit is recorded separately because the rolling binary has no embedded git revision",
+  "packingsolver_patch": {
+    "path": "research/packingsolver-variable-cost.patch",
+    "sha256": "0fb9e5d5196702f1a53fcc659558da2ec751b25aa7baa2c2ca3c7057b887aed9"
+  },
+  "packingsolver_patched_binary_sha256": {
+    "box": "a1257fca24e3741aacd1686348e54cd0dc8441364a31081b04d0a970b9369c47",
+    "boxstacks": "6b940a4660d25479058f01b6d3d873855bec9d5158097b67493b4baabdaa1a11"
+  },
+  "packingsolver_patched_build": {
+    "source_repository": "HansBug/packingsolver",
+    "source_commit": "ac7b1384151bd33f56aec47d5c180dd4c5652266",
+    "linear_programming_solver": "HiGHS",
+    "build_context": ".cache/packingsolver-build-patched-highs",
+    "distributed": false,
+    "output_files": [
+      "raw/thpack9_instance1_packingsolver_patched.json",
+      "raw/certificates/thpack9_packingsolver_patched.csv",
+      "raw/experiments/public/thpack9_packingsolver_patched.csv"
+    ]
+  },
   "upstream_tracking": {
     "repository": "fontanf/packingsolver",
     "checked_at": "2026-08-31",

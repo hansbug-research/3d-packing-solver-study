@@ -47,7 +47,7 @@ def parse_first_instance(values: list[int], source_commit: str, source_sha256: s
                 "id": str(item_type),
                 "size": [length, width, height],
                 "copies": copies,
-                "allowed_axis_rotations": [rotate_x, rotate_y, rotate_z],
+                "allowed_vertical_axes": [rotate_x, rotate_y, rotate_z],
             }
         )
     return {
@@ -62,7 +62,8 @@ def parse_first_instance(values: list[int], source_commit: str, source_sha256: s
         "instance": instance_id,
         "container_types": [{"id": "bin", "size": container, "copies": "unlimited", "cost": 1}],
         "item_types": item_types,
-        "notes": "THPACK9 is a multiple-container benchmark; all orientations marked 1 are allowed.",
+        "orientation_semantics": "The three source flags state whether each listed item dimension may be vertical; they are not 24 face-semantic pose IDs.",
+        "notes": "THPACK9 is a multiple-container benchmark; all source vertical-axis flags are 1 for instance 1.",
     }
 
 

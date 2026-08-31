@@ -7,3 +7,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 5,academic-audit,academic_audit,1,2,修正 BR DOI 与 THPACK 旋转字段语义，收窄 LAFF 性能表述,closed
 6,release-close,primary,0,2,固定 benchmark 来源与 converter，补齐 raw/source/CFF/CI/前端及商业实验 provenance，收窄剩余环境边界,closed
 7,evidence-integrity,primary,0,2,复核商业历史 fixture 矛盾并降级；同步 fork commit、论文元数据、LAFF raw timings、issue/PR source IDs、raw fixture hash 与 9 项测试计数,closed
+8,release-close-followup,repo_audit,0,1,关闭第 5 轮 repo_audit 的历史阻断项；剩余外部二进制、JVM、商业许可和 GPU 是 nonblocking prerequisites,closed

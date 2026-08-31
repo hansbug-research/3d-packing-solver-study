@@ -29,7 +29,7 @@
         8
       ],
       "copies": 20,
-      "allowed_axis_rotations": [
+      "allowed_vertical_axes": [
         1,
         1,
         1
@@ -43,12 +43,13 @@
         10
       ],
       "copies": 50,
-      "allowed_axis_rotations": [
+      "allowed_vertical_axes": [
         1,
         1,
         1
       ]
     }
   ],
-  "notes": "THPACK9 is a multiple-container benchmark; all orientations marked 1 are allowed."
+  "orientation_semantics": "The three source flags state whether each listed item dimension may be vertical; they are not 24 face-semantic pose IDs.",
+  "notes": "THPACK9 is a multiple-container benchmark; all source vertical-axis flags are 1 for instance 1."
 }

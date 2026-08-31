@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 from time import perf_counter
@@ -13,7 +14,18 @@ from py3dbp import Bin, Item, Packer  # noqa: E402
 from validation import Box, validate_aabbs  # noqa: E402
 
 
+EXPECTED_COMMIT = "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a"
+
+
+def check_source() -> None:
+    checkout = ROOT / ".cache" / "jerry-3d-bin-packing"
+    actual = subprocess.check_output(["git", "-C", str(checkout), "rev-parse", "HEAD"], text=True).strip()
+    if actual != EXPECTED_COMMIT:
+        raise SystemExit(f"Jerry checkout mismatch: expected {EXPECTED_COMMIT}, got {actual}")
+
+
 def main() -> None:
+    check_source()
     case = json.loads((ROOT / "benchmarks" / "data" / "public" / "thpack9_instance1.json").read_text())
     original_gravity = Packer.gravityCenter
     Packer.gravityCenter = lambda self, container: [] if not container.items else original_gravity(self, container)
@@ -41,7 +53,7 @@ def main() -> None:
             placements.append(Box(f"{item.partno}:{index}", container.partno, x, y, z, dx, dy, dz, float(item.weight)))
     print(json.dumps({
         "library": "jerry800416/3D-bin-packing",
-        "commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+        "commit": EXPECTED_COMMIT,
         "version": "source checkout at pinned commit",
         "parameters": {"bigger_first": True, "distribute_items": True, "fix_point": True, "check_stable": False, "number_of_decimals": 3},
         "validator": "benchmarks.validation.validate_aabbs",

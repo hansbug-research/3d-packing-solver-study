@@ -83,7 +83,7 @@ def check_release_metadata() -> None:
     except json.JSONDecodeError as exc:
         fail(f"raw/provenance.json is not valid JSON: {exc}")
     source_commits = provenance.get("source_commits", {})
-    for name in ("packingsolver_source", "esicup_datasets", "jerry", "skjolber"):
+    for name in ("packingsolver_source", "esicup_datasets", "jerry", "skjolber", "bp3d", "u_nesting"):
         value = source_commits.get(name, "")
         if not re.fullmatch(r"[0-9a-f]{40}", value):
             fail(f"provenance source commit is not a 40-character SHA: {name}")
@@ -98,6 +98,21 @@ def check_release_metadata() -> None:
         value = provenance.get("packingsolver_binary_sha256", {}).get(name, "")
         if not re.fullmatch(r"[0-9a-f]{64}", value):
             fail(f"provenance binary hash is not SHA-256: {name}")
+        patched_value = provenance.get("packingsolver_patched_binary_sha256", {}).get(name, "")
+        if not re.fullmatch(r"[0-9a-f]{64}", patched_value):
+            fail(f"provenance patched binary hash is not SHA-256: {name}")
+    patch = provenance.get("packingsolver_patch", {})
+    patch_path = ROOT / patch.get("path", "")
+    if not patch_path.exists() or not re.fullmatch(r"[0-9a-f]{64}", patch.get("sha256", "")):
+        fail("PackingSolver patch provenance is missing or malformed")
+    if sha256(patch_path) != patch["sha256"]:
+        fail("PackingSolver patch provenance hash mismatch")
+    patched_build = provenance.get("packingsolver_patched_build", {})
+    if patched_build.get("source_commit") != fork.get("commit") or patched_build.get("linear_programming_solver") != "HiGHS":
+        fail("PackingSolver patched build provenance is missing or stale")
+    for relative in patched_build.get("output_files", []):
+        if not (ROOT / relative).exists():
+            fail(f"PackingSolver patched output is missing: {relative}")
     tracking = provenance.get("upstream_tracking", {})
     if tracking.get("repository") != "fontanf/packingsolver" or tracking.get("status") != "open_not_merged":
         fail("upstream issue/PR tracking is missing or stale")

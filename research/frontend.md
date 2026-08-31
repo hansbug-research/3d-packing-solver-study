@@ -562,7 +562,7 @@ Python/native wheel、Tauri shell、Web assets 和可选 JVM 必须在同一 rel
 
 ## 15. 官方证据与维护状态
 
-以下版本仅用于证明调研时维护状态，不建议在架构稿里永久写死；项目应在 lockfile 和 release manifest 固定实际版本。
+以下版本是本研究在 2026-08-31 核查或固定的版本，不等同于各项目当前 latest；产品应在 lockfile 和 release manifest 固定实际版本。
 
 | 项目 | 2026-08-31 可核实版本/状态 | 许可 |
 |---|---|---|
@@ -573,7 +573,7 @@ Python/native wheel、Tauri shell、Web assets 和可选 JVM 必须在同一 rel
 | Flet | 0.86.5，2026-08-01 [F28] | Apache-2.0 |
 | Three.js | r185/0.185.x，2026-07 release [F30] | MIT |
 | VTK | PyPI 9.7.0，2026-08-15 [F34] | BSD-style [F32] |
-| PyVista / PyVistaQt | 0.48.x / 0.12.0，2026 年仍有发布和提交 [F31] | MIT |
+| PyVista / PyVistaQt | 0.48.x / 0.12.0，按 2026-08-31 PyPI 元数据核查 [F34] | MIT |
 
 ### Qt / PySide
 

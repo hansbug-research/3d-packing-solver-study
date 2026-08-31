@@ -7,17 +7,17 @@
 - Python/C++ 测试由 [`benchmarks/run_controlled.sh`](../benchmarks/run_controlled.sh) 启动：外层 35 秒超时、4 GiB 虚拟内存上限，并设置常见数值库线程数为 1。
 - PackingSolver 每个子任务另设 10 秒和 1 GiB 内部上限；精确模型显式设置单 worker/单线程。
 - Java 测试使用 `-Xmx512m -XX:ActiveProcessorCount=1`。JVM 启动、JIT 或 GC 仍可能短时创建辅助线程，因此不能把它描述为严格单线程进程。
-- 结果 JSON 位于本目录；wall time 与最大 RSS 原始记录位于被 `.gitignore` 排除的 `results/raw/*.resources.txt`。
+- 结果 JSON 位于本目录；本表的 wall time 与最大 RSS 取 canonical `raw/experiments/*.resources.txt`。`results/raw/` 是运行工作目录并被 `.gitignore` 排除，`raw/resources/` 保留更早的资源快照，不用于本表当前数字。
 
 ## 结果总表
 
 | 候选 | 本次覆盖 | 结果 | 整进程 wall / 最大 RSS | 结论 |
 |---|---|---|---:|---|
-| PackingSolver `latest-2026-07-28` | 规则网格、旋转子集、禁旋、重量、上压、异构成本、半挂轴荷边界例 | 基础几何/旋转/重量/上压通过；禁旋实例正确不装；异构成本与轴荷边界例异常退出 | 5.06 s / 15,356 KiB（8 个子任务合计） | 最接近真实工况，但只能 pin SHA 后有条件采用；两条失败路径是上线门禁 |
-| OR-Tools 9.15.6755 CP-SAT | 9 个 `5x5x5` 立方体装入 `10x10x10` 同型箱的直接三维模型 | `OPTIMAL`，箱数 2，best bound 2；几何校验通过 | 0.41 s / 100,320 KiB | 成本主问题与 exact-small 首选；不是现成 3D packer |
-| PySCIPOpt 6.2.1 / SCIP | 与 CP-SAT 相同的连续坐标 MIP | `optimal`，目标 2，dual bound 2，gap 0；几何校验通过 | 0.15 s / 60,396 KiB | 开源 MIP/CIP 扩展轨；同样需要自建 3D 模型 |
+| PackingSolver `latest-2026-07-28` | 规则网格、旋转子集、禁旋、重量、上压、异构成本、半挂轴荷边界例 | 基础几何/旋转/重量/上压通过；禁旋实例正确不装；异构成本与轴荷边界例异常退出 | 5.07 s / 15,232 KiB（8 个子任务合计） | 最接近真实工况，但只能 pin SHA 后有条件采用；两条失败路径是上线门禁 |
+| OR-Tools 9.15.6755 CP-SAT | 9 个 `5x5x5` 立方体装入 `10x10x10` 同型箱的直接三维模型 | `OPTIMAL`，箱数 2，best bound 2；几何校验通过 | 0.41 s / 100,212 KiB | 成本主问题与 exact-small 首选；不是现成 3D packer |
+| PySCIPOpt 6.2.1 / SCIP | 与 CP-SAT 相同的连续坐标 MIP | `optimal`，目标 2，dual bound 2，gap 0；几何校验通过 | 0.15 s / 61,016 KiB | 开源 MIP/CIP 扩展轨；同样需要自建 3D 模型 |
 | `py3dbp` 1.1.2 | 网格、需旋转、重量、多箱型顺序反转 | 基础场景通过；小箱先输入用 2 箱，大箱先输入只用 1 箱 | 0.03 s / 13,696 KiB | 很快但顺序敏感，只作基线 |
-| Jerry Python 分支 | `loadbear` 承压反例 | 几何通过，但脆弱件上方实际放置重量 20；`loadbear` 仅参与排序 | 0.39 s / 67,344 KiB | 不能作为承压约束求解器 |
+| Jerry Python 分支 | `loadbear` 承压反例 | 几何通过，但脆弱件上方实际放置重量 20；`loadbear` 仅参与排序 | 0.40 s / 67,684 KiB | 不能作为承压约束求解器 |
 | Skjolber Java `c73d521...` LAFF | 网格、三维旋转、仅平面旋转、重量、100 件 | 所有预期通过；100 件库内 21.275 ms，THPACK9-1 为 8.315 ms | 约 0.43 s / 78,336 KiB（当前 raw 资源快照） | 强几何备选/对照；高级力学只是扩展点，暂不足以抵消 JVM 集成成本 |
 
 wall time 包含解释器/JVM/进程启动，不等于库内求解时间；PackingSolver 一行还包含多个固定约 1 秒停止粒度的子任务。不同语言的微型测试不能仅凭该列作性能排名。
@@ -51,7 +51,7 @@ C/C++/Rust 实现不因语言被排除。优先级依次是可审计的官方 wh
 
 ## 公共 THPACK9 对照
 
-从 ESICUP `3d_rectangular/thpack/thpack9.txt` 转换了 instance 1（`10x6x16` 箱，20 件 `2x6x8`、50 件 `8x4x10`）。同一实例用 80 个候选箱运行，结果均通过独立 AABB validator：
+从 ESICUP `3d_rectangular/thpack/thpack9.txt` 转换了 instance 1（`10x6x16` 箱，20 件 `2x6x8`、50 件 `8x4x10`）。同一实例用 80 个候选箱运行。`py3dbp`/Jerry 使用共享的 `benchmarks.validation.validate_aabbs`，Skjolber 使用 runner 内的边界与 `intersects3D` 检查，PackingSolver patched certificate 使用 `COPIES` 展开审计；三者均通过各自的独立几何检查：
 
 | 实现 | 完整件数 | 使用箱数 | 结果状态 |
 |---|---:|---:|---|

@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 from time import perf_counter
 
 ROOT = Path(__file__).resolve().parents[1]
+EXPECTED_COMMIT = "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a"
 sys.path.insert(0, str(ROOT / ".cache" / "jerry-3d-bin-packing"))
 
 from py3dbp import Bin, Item, Packer  # noqa: E402
@@ -13,7 +15,15 @@ from py3dbp import Bin, Item, Packer  # noqa: E402
 from validation import Box, cumulative_weight_above, f, validate_aabbs  # noqa: E402
 
 
+def check_source() -> None:
+    checkout = ROOT / ".cache" / "jerry-3d-bin-packing"
+    actual = subprocess.check_output(["git", "-C", str(checkout), "rev-parse", "HEAD"], text=True).strip()
+    if actual != EXPECTED_COMMIT:
+        raise SystemExit(f"Jerry checkout mismatch: expected {EXPECTED_COMMIT}, got {actual}")
+
+
 def main():
+    check_source()
     packer = Packer()
     packer.addBin(Bin("stack-bin", (2, 2, 6), 100, 0, 1))
     # A high loadbear value only changes sort priority in this library. It is
@@ -42,7 +52,7 @@ def main():
     above = cumulative_weight_above(fragile, placements)
     print(json.dumps({
         "library": "jerry800416/3D-bin-packing",
-        "commit": "shallow checkout at benchmark time",
+        "commit": EXPECTED_COMMIT,
         "elapsed_s": elapsed,
         "packed": len(placements),
         "validation_errors": errors,

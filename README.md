@@ -1,6 +1,6 @@
 # 三维装箱求解器、约束模型与可视化技术选型
 
-> 基准日 **2026-08-31** ｜ 能力矩阵实现 **10 个**（另列 Rust `u-nesting` 未测试观察项）｜ 公共 THPACK9 对照 **4 个实现** ｜ 受控测试 **9 项机器断言全部通过** ｜ 统一公共实例 **70 件物品** ｜ 上游缺陷复现与 patch 验证 **2 条路径**
+> 基准日 **2026-08-31** ｜ 能力矩阵实现 **11 个**（含 Rust `u-nesting` 未测试观察项）｜ 公共 THPACK9 对照 **4 个实现** ｜ 受控测试 **9 项机器断言全部通过** ｜ 统一公共实例 **70 件物品** ｜ 上游缺陷复现与 patch 验证 **2 条路径**
 
 三维装箱软件面对的不是一个 `pack()` 函数，而是一组不同的优化问题：固定容器的 3D knapsack、同型容器的 3D bin packing、多箱型有成本与库存限制的 variable-sized BPP、带堆叠/承压/轴荷/多站卸货的运输装载，以及连续姿态的非正交装箱。本仓库把这些问题形式化，核对论文和官方文档，审计开源实现，接入 ESICUP 公共 benchmark，并用独立 validator 检查布局、数量、重量和证书。
 
@@ -79,7 +79,7 @@ bash benchmarks/run_java_controlled.sh
 
 ## 可审计性
 
-每个实验结果保留输入实例、库版本/提交、参数、seed、时间/内存/线程限制、stdout/stderr、退出码、证书路径和 validator 结果。`raw/` 是发布用的 canonical 原始目录，其中 `raw/experiments/` 完整镜像工作目录的原始日志；`derived/` 由脚本重新生成，`sources/manifest.csv` 登记 URL、访问日期、快照路径和哈希，`audit/` 记录被推翻的结论、未测试项和子代理 review。`verify.py` 只证明登记的断言，不替代人工逐条引用审阅。
+正式实验协议要求每个新结果记录输入实例、库版本/提交、参数、seed、时间/内存/线程限制、stdout/stderr、退出码、证书路径和 validator 结果；本轮公共 THPACK9 JSON 已记录版本/commit、参数、来源 hash 和 validator，其他 smoke 结果的原始日志、退出码、资源和输入由 `raw/experiments/` 与 `raw/provenance.json` 绑定，未生成证书的路径明确保留为空。`raw/` 是发布用的 canonical 原始目录，其中 `raw/experiments/` 完整镜像工作目录的原始日志；`derived/` 由脚本重新生成，`sources/manifest.csv` 登记 URL、访问日期、快照路径和哈希，`audit/` 记录被推翻的结论、未测试项和子代理 review。`verify.py` 只证明登记的断言，不替代人工逐条引用审阅。
 
 ## 边界
 

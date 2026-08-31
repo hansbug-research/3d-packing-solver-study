@@ -83,6 +83,13 @@ sed -n '1,120p' .cache/esicup-datasets/3d_rectangular/thpack/README.txt
 
 本文件记录的是审计发现；正文修复应在变更日志或提交说明中引用本文件。法规、标准和商业软件许可仍需按实际运输方式、司法辖区、版本和采购条款重新确认。
 
+## 2026-08-31 最终收口补记
+
+- 论文表已把 Paquay、Zhao 和 Pollaris 的 print/online 年份写成显式双日期，避免把 DOI 元数据的 online 年份误当卷期年份；对应来源仍登记在 S59、S63、S69。
+- 受控资源表已统一使用 canonical `raw/experiments/*.resources.txt`；较早的 `raw/resources/` 数字保留为历史快照，不再作为当前结果叙述。
+- Go `bp3d` 已固定到 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7`，关键 `bp3d.go` 与 MIT LICENSE 已保存为 S106–S107 快照；Rust `u-nesting` 已登记固定 commit S108，但因本机无 Cargo 仍是未运行观察项。
+- CP-SAT/SCIP 等通用建模引擎的能力矩阵已统一改为“⚠️ 自建模型可表达”；共享 AABB validator、Skjolber runner 检查和 PackingSolver `COPIES` 展开审计的差异已在 benchmark 正文中明确。
+
 - 商业求解器历史 JSON 的模型字段是 9 个 `5x5x5` 物品与 2 个 `10x10x10` 箱，但目标/bound 写成 8；该目标不可能超过候选箱数，现已标为 `INVALID_HISTORICAL_INCONSISTENT_FIXTURE`，不再进入比较表。
 - PackingSolver `boxstacks` 的矩阵单元已将重心/轴荷改为 ⚠️：官方接口存在半挂字段，但当前窄轴荷边界复现无 certificate，不能写成无条件 ✅。
 - 论文元数据已按 Crossref 修正：Bortfeldt/Wäscher 标题、Junqueira 的“cargo stability and load bearing constraints”与 `Sato Yamashita` 作者姓氏、Romanova 2018 标题、Pankratov–Romanova–Litvinchev 2020 作者顺序，以及 Ceschia/Paquay/Zhao/Junqueira/Pollaris 的 online/print 年份；Fekete DOI 已加入来源清单。

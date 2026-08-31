@@ -14,9 +14,9 @@ S12,docs,OR-Tools CP-SAT solver guide,https://developers.google.com/optimization
 S13,repository,SCIP repository,https://github.com/scipopt/scip,2026-08-31,10.0.3,no,,open MIP/CIP engine
 S14,repository,PySCIPOpt repository,https://github.com/scipopt/PySCIPOpt,2026-08-31,6.2.1,no,,Python binding
 S15,repository,py3dbp repository,https://github.com/enzoruiz/3dbinpacking,2026-08-31,1.1.2,no,,pivot baseline
-S16,repository,Jerry 3D bin packing,https://github.com/jerry800416/3D-bin-packing,2026-08-31,shallow checkout,no,,loadbear audit
+S16,repository,Jerry 3D bin packing,https://github.com/jerry800416/3D-bin-packing,2026-08-31,75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a,no,,loadbear audit
 S17,repository,Skjolber 3D bin container packing,https://github.com/skjolber/3d-bin-container-packing,2026-08-31,c73d52190c029a14e64f1bbdd2ea70452d1eb83d,no,,LAFF and Java integration
-S18,repository,Go bp3d repository,https://github.com/gedex/bp3d,2026-08-31,shallow checkout,no,,MaxWeight source audit
+S18,repository,Go bp3d repository,https://github.com/gedex/bp3d/tree/0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7,2026-08-31,0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7,no,,MaxWeight source audit
 S19,paper,Wäscher Haußner Schumann typology,https://doi.org/10.1016/j.ejor.2005.12.047,2026-08-31,2007,no,,problem classification
 S20,paper,Martello Pisinger Vigo 3D BPP,https://doi.org/10.1287/opre.48.2.256.12386,2026-08-31,2000,no,,exact 3D bin packing
 S21,paper,Bortfeldt Wäscher CLP review,https://doi.org/10.1016/j.ejor.2012.12.006,2026-08-31,2013,no,,practical constraint taxonomy
@@ -104,3 +104,9 @@ S102,pr,PackingSolver axle repair bounds fix,https://github.com/fontanf/packings
 S103,pr,PackingSolver no-HiGHS build fix,https://github.com/fontanf/packingsolver/pull/542,2026-08-31,open,no,,upstream pull request status
 S104,pr,PackingSolver degenerate truck geometry fix,https://github.com/fontanf/packingsolver/pull/543,2026-08-31,open,no,,upstream pull request status
 S105,repository,HansBug PackingSolver fork with integrated fixes,https://github.com/HansBug/packingsolver/tree/ac7b1384151bd33f56aec47d5c180dd4c5652266,2026-08-31,ac7b1384151bd33f56aec47d5c180dd4c5652266,no,,patched fallback source for urgent use
+S106,source,Go bp3d source snapshot,https://raw.githubusercontent.com/gedex/bp3d/0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7/bp3d.go,2026-08-31,0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7,sources/snapshots/bp3d_bp3d_0ba3dcda.go,261624fa3da90338cfc9737c1fcd91de159aed3b1b76dacc767e7ec8c0520df8,MaxWeight and PutItem audit
+S107,license,Go bp3d MIT license snapshot,https://raw.githubusercontent.com/gedex/bp3d/0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7/LICENSE,2026-08-31,0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7,sources/snapshots/bp3d_LICENSE_0ba3dcda.txt,e78f28382ac236a42dcbc16caaaaf2e76da55ddc67053a8bcb3aabdfc72df9cc,license for Go source snapshot
+S108,repository,Rust u-nesting repository,https://github.com/iyulab/u-nesting/tree/8cde85b029e4ade663185dacb93fd74440af170d,2026-08-31,8cde85b029e4ade663185dacb93fd74440af170d,no,,unexecuted Rust observation candidate
+S109,dataset,OR-Library THPACK recovery notes,https://people.brunel.ac.uk/~mastjjb/jeb/orlib/thpackinfo.html,2026-08-31,accessed,no,,THPACK9 historical provenance and known-optimum boundary
+S110,repository,FCL collision library,https://github.com/flexible-collision-library/fcl/tree/e5efcc41b57b2d0da3bf183480f1298a6d531f44,2026-08-31,e5efcc41b57b2d0da3bf183480f1298a6d531f44,no,,OBB/convex collision candidate for discrete poses
+S111,repository,trimesh geometry library,https://github.com/mikedh/trimesh/tree/cdb90eb87678a56295ae8bb2fd0369f5910c4fe0,2026-08-31,cdb90eb87678a56295ae8bb2fd0369f5910c4fe0,no,,mesh transform and geometry candidate for discrete poses

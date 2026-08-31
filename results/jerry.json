@@ -1,7 +1,7 @@
 {
   "library": "jerry800416/3D-bin-packing",
-  "commit": "shallow checkout at benchmark time",
-  "elapsed_s": 0.0007362421602010727,
+  "commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+  "elapsed_s": 0.0005310820415616035,
   "packed": 3,
   "validation_errors": [],
   "fragile_declared_loadbear": 100,

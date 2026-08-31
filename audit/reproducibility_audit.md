@@ -6,14 +6,14 @@
 
 | 检查 | 命令 | 结果 |
 |---|---|---|
-| 公共数据转换 | `python3 benchmarks/convert_thpack9.py` | 通过；生成 70 件 THPACK9 instance 1 |
+| 公共数据转换 | `.venv/bin/python benchmarks/convert_thpack9.py` | 通过；生成 70 件 THPACK9 instance 1 |
 | 受控 Python/C++ 实验 | `bash benchmarks/run_controlled.sh` | 通过；原版 PackingSolver 失败路径仍被保留 |
 | 受控 Java 实验 | `bash benchmarks/run_java_controlled.sh` | 通过；Skjolber 增加公共实例场景 |
-| 公共 baseline | `python3 benchmarks/benchmark_public_thpack9.py` | 通过；py3dbp/Jerry 均 70/70、50 箱 |
+| 公共 baseline | `.venv/bin/python benchmarks/benchmark_public_thpack9.py` | 通过；py3dbp/Jerry 均 70/70、50 箱 |
 | 派生统计 | `bash scripts/collect_and_derive.sh` | 通过；生成 `derived/stats.json`、CSV 和图 |
-| manifest | `python3 scripts/build_manifest.py` | 通过；当前 raw 文件逐项登记大小和 SHA-256 |
-| 机器核对 | `python3 scripts/verify.py` | `VERIFY_OK` |
-| 单元/结果断言 | `python3 -m pytest -q` | `9 passed` |
+| manifest | `.venv/bin/python scripts/build_manifest.py` | 通过；当前 raw 文件逐项登记大小和 SHA-256 |
+| 机器核对 | `.venv/bin/python scripts/verify.py` | `VERIFY_OK` |
+| 单元/结果断言 | `.venv/bin/python -m pytest -q` | `9 passed` |
 
 ## 证据边界
 
@@ -33,6 +33,6 @@ THPACK9 的 `COPIES` certificate 是聚合表示：一行布局可能代表多�
 ## 线上发布核对
 
 - 仓库：<https://github.com/hansbug-research/3d-packing-solver-study>，可见性 `public`，默认分支 `main`。
-- 发布提交：`cbf9f7bba6667c17140c81864922ffc95693a718`。
-- GitHub Actions：<https://github.com/hansbug-research/3d-packing-solver-study/actions/runs/33367118663>，`verify` job 全部通过；仅有 GitHub runner 的 Node 20 弃用提示。
+- 发布提交：`6dcd8ba77672c959b6d57a1d50888a57de496481`。
+- GitHub Actions：<https://github.com/hansbug-research/3d-packing-solver-study/actions/runs/33367476808>，对应提交的 `verify` job 全部通过；仅有 GitHub runner 的 Node 20 弃用提示。此前提交 `cbf9f7b` 的成功运行仍作为历史 CI 记录保留。
 - API 抽查确认 README、CITATION.cff、raw/manifest.json 均可访问；本地链接检查和 CFF schema 检查与线上 CI 结果一致。

@@ -8,7 +8,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest>=8.3,<9", "psutil>=6,<8"]
+test = ["pytest>=8.3,<9", "psutil>=6,<8", "matplotlib==3.11.1"]
 exact = ["pyscipopt==6.2.1"]
 
 [build-system]

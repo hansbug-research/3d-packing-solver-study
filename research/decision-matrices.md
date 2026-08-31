@@ -8,21 +8,23 @@
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | PackingSolver `box` | ✅ | ❌ | ⚠️ 6 排列，不保留面语义 | ❌ | ✅ | ⚠️ 当前 master `operator<` 崩溃，修复后可用 | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ primal/dual，但常为 anytime | ⚠️ CLI/子进程 | ✅ C++ | ✅ CSV/JSON |
 | PackingSolver `boxstacks` | ✅ | ❌ | ⚠️ | ❌ | ✅ | ⚠️ 同一已复现缺陷 | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ stack 几何，不是一般接触面载荷流 | ⚠️ 官方字段/部分路径，当前窄轴荷边界复现失败 | ✅ increasing X/Y | ❌ | ✅ 有 bound/gap | ⚠️ CLI/子进程 | ✅ C++ | ✅ CSV/JSON |
-| OR-Tools CP-SAT | ⚠️ 需自建姿态变量 | ⚠️ 需自建 face ID | ✅ 可精确列举 | ❌ | ✅ 自建模型 | ✅ 自建主问题 | ✅ | ✅ | ⚠️ 自建支撑/层约束 | ⚠️ | ⚠️ | ⚠️ 自建线性化 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ `NoOverlap2D` 不能直接替代 3D | ✅ 小规模可证明 | ✅ wheel | ✅ native 核心 | ❌ 需自行导出 |
-| SCIP + PySCIPOpt | ⚠️ 需自建 | ⚠️ 需自建 | ✅ | ❌ | ✅ 自建 | ✅ | ✅ | ✅ | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 可做 MIP/CIP/载荷流 | ⚠️ | ⚠️ | ⚠️ 自建碰撞 | ✅ branch-and-bound | ✅ wheel | ✅ C++ | ❌ 需自行导出 |
-| Gurobi / `gurobipy` | ⚠️ 需自建 | ⚠️ 需自建 | ✅ | ⚠️ 非凸连续模型代价高 | ✅ | ✅ | ✅ | ✅ | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ 完成搜索可证明 | ✅ wheel/商业许可 | ✅ C++ | ❌ 需自行导出 |
-| IBM CPLEX / CP Optimizer | ⚠️ 需自建 | ⚠️ 需自建 | ✅ | ⚠️ | ✅ | ✅ | ✅ | ✅ | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ 完成搜索可证明 | ✅ wheel/商业许可 | ✅ C++ | ❌ 需自行导出 |
+| OR-Tools CP-SAT | ⚠️ 需自建姿态变量 | ⚠️ 需自建 face ID | ⚠️ 自建模型可列举 | ❌ | ⚠️ 自建模型 | ⚠️ 自建主问题 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ 自建支撑/层约束 | ⚠️ | ⚠️ | ⚠️ 自建线性化 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ `NoOverlap2D` 不能直接替代 3D | ✅ 小规模可证明 | ✅ wheel | ✅ native 核心 | ❌ 需自行导出 |
+| SCIP + PySCIPOpt | ⚠️ 需自建 | ⚠️ 需自建 | ⚠️ 自建模型可列举 | ❌ | ⚠️ 自建模型 | ⚠️ 自建主问题 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 可做 MIP/CIP/载荷流 | ⚠️ | ⚠️ | ⚠️ 自建碰撞 | ✅ branch-and-bound | ✅ wheel | ✅ C++ | ❌ 需自行导出 |
+| Gurobi / `gurobipy` | ⚠️ 需自建姿态变量 | ⚠️ 需自建 | ⚠️ 自建模型可列举 | ⚠️ 非凸连续模型代价高 | ⚠️ 自建模型 | ⚠️ 自建模型 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 自建 | ✅ 完成搜索可证明 | ✅ wheel/商业许可 | ✅ C++ | ❌ 需自行导出 |
+| IBM CPLEX / CP Optimizer | ⚠️ 需自建姿态变量 | ⚠️ 需自建 | ⚠️ 自建模型可列举 | ⚠️ | ⚠️ 自建模型 | ⚠️ 自建模型 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 自建 | ⚠️ | ⚠️ | ⚠️ 自建 | ✅ 完成搜索可证明 | ✅ wheel/商业许可 | ✅ C++ | ❌ 需自行导出 |
 | `py3dbp` | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ 无 bound | ✅ 原生 Python | ❌ | ❌ |
 | Jerry `3D-bin-packing` | ✅ | ❌ | ✅ `updown` 布尔 | ❌ | ✅ | ❌ | ✅ | ✅ | ⚠️ 支撑面积启发式 | ❌ | ⚠️ `loadbear` 只是排序，见 warning | ⚠️ 四角/面积近似 | ❌ | ❌ | ❌ | ❌ | ✅ Python fork | ❌ | ❌ 绘图/坐标可导出 |
 | Skjolber LAFF (Java) | ✅ | ❌ | ⚠️ 3D/2D rotate | ❌ | ✅ | ❌ | ✅ | ✅ | ⚠️ controls 扩展点 | ⚠️ | ❌ | ⚠️ 自定义 controls | ❌ | ❌ | ✅ obstacles | ⚠️ brute force 仅小规模 | ⚠️ JVM sidecar | ✅ Java | ❌ |
 | Go `bp3d` | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ | ⚠️ `MaxWeight` 未进入 `PutItem` 检查 | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ Go sidecar | ✅ Go | ❌ |
+| Rust `u-nesting` @`8cde85b0` | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未运行 | ⚠️ 未验证 | ⚠️ PyO3/C-ABI 自建 | ✅ Rust | ⚠️ 未验证 |
 
 关键 warning：
 
 - ⚠️ PackingSolver 异构成本不是“不会优化”，而是当前 `box::Solution::operator<` 与 `boxstacks::Solution::operator<` 漏分支；最小 patch 和复现见 [packingsolver-upstream.md](packingsolver-upstream.md)。
 - ⚠️ Jerry 的 `loadbear` 本地反例允许脆弱件上方实际重量 20；它改变排序优先级，不是硬承压约束。
 - ⚠️ Go `bp3d` 的 `MaxWeight` 字段存在，但放置函数没有用它拒绝超重方案。
-- ⚠️ OR-Tools/SCIP/Gurobi/CPLEX 是建模引擎，不是现成 3D packer；矩阵中的 ✅ 指“可以可靠承载自建模型”，不表示官方提供 3D global constraint。
+- ⚠️ OR-Tools/SCIP/Gurobi/CPLEX 是建模引擎，不是现成 3D packer；这些行的 ⚠️ 表示可以由自建模型表达，不能解读为官方提供 3D global constraint。它们保留的 ✅ 只表示求解器自身的 bound/optimality 或 Python 接口能力。
+- ⚠️ Rust `u-nesting` 行对应来源 manifest S108 的固定 commit；本轮没有 Cargo toolchain 和运行结果，所有能力单元都保持“未运行”，不应与已测库横向排名。
 
 ## 工程定位矩阵
 

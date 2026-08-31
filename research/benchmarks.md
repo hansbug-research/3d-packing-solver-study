@@ -4,7 +4,7 @@
 
 | 数据集 | 公开来源/论文 | 原始问题与可比指标 | 能否覆盖本项目约束 |
 |---|---|---|---|
-| **ESICUP THPACK1–7 (BR)** | [ESICUP 3d_rectangular/thpack](https://github.com/ESICUP/datasets/tree/main/3d_rectangular/thpack)，Bischoff & Ratcliff 1995，DOI [10.1016/0305-0483(95)00015-G](https://doi.org/10.1016/0305-0483(95)00015-G) | 单容器装载，最大体积利用率；报告 packed volume、利用率、运行时间 | 每个尺寸作为竖直方向的允许标记，其余两边水平互换按实例语义；没有价格、承压、轴荷 |
+| **ESICUP THPACK1–7 (BR)** | [ESICUP 3d_rectangular/thpack](https://github.com/ESICUP/datasets/tree/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/thpack)，Bischoff & Ratcliff 1995，DOI [10.1016/0305-0483(95)00015-G](https://doi.org/10.1016/0305-0483(95)00015-G) | 单容器装载，最大体积利用率；报告 packed volume、利用率、运行时间 | 每个尺寸作为竖直方向的允许标记，其余两边水平互换按实例语义；没有价格、承压、轴荷 |
 | **ESICUP THPACK8 (LN)** | [ESICUP THPACK README](https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/thpack/README.txt)，H.T. Loh & A.Y. Nee (1992), *A packing algorithm for hexahedral boxes*, Proc. Industrial Automation 92 Conf., Singapore, pp.115–126 | 单容器最大体积利用率 | 同上；无业务力学 |
 | **ESICUP THPACK9 (IMM)** | Ivancic, Mathur & Mohanty 1989，后被 Bischoff 使用；[OR-Library 恢复说明](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/thpackinfo.html) | 多容器装完，最少箱数；报告 bins、完整性、时间 | 6 姿态/几何和多箱目标；没有箱价、承压、站点 |
 | **ESICUP BAYTP** | Hoare & Beasley 2001，DOI [10.1057/palgrave.jors.2601130](https://doi.org/10.1057/palgrave.jors.2601130) | 货架/层序列，不能越过 shelf；报告 bays/shelves 和装载量 | 有序货架/障碍语义；不是一般自由 3D BPP |
@@ -50,13 +50,13 @@ weight_utilization    Σ packed weight / Σ used bin capacity
 
 - Python/C++ 外层 35 s、虚拟内存 4 GiB，`OMP/OPENBLAS/MKL/NUMEXPR=1`；PackingSolver 子任务 10 s、1 GiB。
 - Java 使用 `-Xmx512m -XX:ActiveProcessorCount=1`；记录 JVM 启动/JIT 影响，不能宣称严格单线程。
-- 每个结果带库版本/提交、输入 SHA-256、seed、参数、状态、bound、证书路径和独立 validator 结果。
+- 正式实验协议要求每个新结果带库版本/提交、输入 SHA-256、seed、参数、状态、bound、证书路径和独立 validator 结果。本轮归档中，公共 THPACK9 JSON 已记录 source hash、版本/commit、参数和 validator；其他 smoke JSON 的 stdout/stderr、退出码、资源和输入由 `raw/experiments/` 与 `raw/provenance.json` 绑定，未生成证书的库明确记录为空，不能把协议要求倒写成已有字段。
 - 启发式至少运行多个 item/bin 排序和 seed；精确模型小规模同时跑 CP-SAT 与 SCIP，检查上下界闭合。
 - 统一 validator 检查箱边界、AABB/OBB 碰撞、姿态白名单、件数、总重；承压/支撑/轴荷用单独校验器，缺数据不默认通过。
 
 ## 本次公共实例实测
 
-`THPACK9 instance 1` 是几何/最少箱对照，不包含价格和力学字段；所有库均使用同一箱尺寸、70 件和 80 个候选箱，输出通过独立 AABB validator：
+`THPACK9 instance 1` 是几何/最少箱对照，不包含价格和力学字段；所有库均使用同一箱尺寸、70 件和 80 个候选箱。`py3dbp` 与 Jerry 的 JSON 由共享的 `benchmarks.validation.validate_aabbs` 校验；Skjolber runner 使用源码内的边界与 `intersects3D` 检查；PackingSolver patched certificate 由专门的 `COPIES` 展开审计复核。三种检查都验证了本实例的边界、重叠和完整性，但不能把它们称为字节级相同的 validator：
 
 | 实现 | 完整件数 | 箱数 | 成本（单位箱价） | wall/库内时间 | 几何 |
 |---|---:|---:|---:|---:|---|
