@@ -1,0 +1,10 @@
+{
+  "axle_metrics": "{\"0:0\": {\"middle\": 0.0, \"rear\": 0.0}}",
+  "bins_used": 1,
+  "errors": [],
+  "packed_items": 3,
+  "required_items": 3,
+  "status": "PASS",
+  "total_cost": 1.0,
+  "validation_error_count": 0
+}

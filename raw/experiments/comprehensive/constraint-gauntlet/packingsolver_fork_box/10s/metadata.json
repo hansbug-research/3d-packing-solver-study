@@ -1,0 +1,23 @@
+{
+  "artifact_archive_sha256": "df2528567fb029568c87cf3f14b18503a60ce17c8afb5bc32b2257310f363d9b",
+  "binary_sha256": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+  "cases": [
+    "heterogeneous_large_cheaper",
+    "heterogeneous_small_cheaper",
+    "rotation_required",
+    "rotation_forbidden",
+    "weight_limit"
+  ],
+  "implementation_id": "packingsolver_fork_box",
+  "implementation_version": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.10.1",
+  "run_jsonl_sha256": "1fc82dea95deb565c7ecc759983b1cad9390b6e48dc736ffa76222c78ae712c1",
+  "runner_sha256": "3e02d55cb16fd668f347ef61343d4bb2adc33d9ed0eddc9cc222b89f4f995475",
+  "schema_version": 1,
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "source_diff_sha256": null,
+  "time_limit_s": 10.0,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"
+}

@@ -280,9 +280,24 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`12/32` benchmark 有记录、`68/608` cell 有证据，其中 `13` 个 cell 已执行 protocol-v3，合计 `6,898` 条记录（legacy `2,078`，protocol-v3 `4,820`）。B05 来源仍未冻结，B08–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`12/32` benchmark 有记录、`72/608` cell 有证据，其中 `27` 个 cell 已执行 protocol-v3，合计 `6,928` 条记录（legacy `2,078`，protocol-v3 `4,850`）。本轮新增的约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
-### 7.2 THPACK9 44 例跨实现质量
+### 7.2 Protocol-v3 约束 gauntlet 实测
+
+本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；总计 26 条 protocol-v3 记录，均为 10 s 预算。
+
+| 问题族 | fork `box` | fork `boxstacks` | upstream patched `box` | upstream patched `boxstacks` | 结论 |
+|---|---|---|---|---|---|
+| B09 成本方向 | 2/2 `VALID_COMPLETE`，两种价格方向均 cost=10 | 2/2 `VALID_COMPLETE`，两种价格方向均 cost=10 | 2/2 `VALID_COMPLETE`，两种价格方向均 cost=10 | 2/2 `VALID_COMPLETE`，两种价格方向均 cost=10 | fork 与 patched upstream 的两个模型在小型回归上正确；不能外推到大规模全局最优 |
+| B12 姿态 | 1 个合法姿态 + 1 个预期不可行，2/2 行为通过 | 不适用 | 1 个合法姿态 + 1 个预期不可行，2/2 行为通过 | 不适用 | 姿态白名单被独立 validator 复核；`rotation_forbidden` 不是失败，而是允许姿态全部放不进箱 |
+| B13 重量/库存 | 1/1 `VALID_COMPLETE`，3 件分到 3 个箱 | 不适用 | 1/1 `VALID_COMPLETE` | 不适用 | 总重量和 copies 守恒有效进入 hard check |
+| B14 堆叠/承压 | 不适用 | 3/3 `VALID_COMPLETE` | 不适用 | 3/3 `VALID_COMPLETE` | `boxstacks` 的最大上方重量、最大堆数和 nesting fixture 通过；仍不是通用支撑/材料力学模型 |
+| B15 轴荷 | 不适用 | 正常例通过；2 个反例按预期不可行，3/3 行为通过 | 不适用 | 正常例通过；2 个反例触发进程错误 | fork 的轴荷路径可用于当前模型；upstream 的边界/不可行轴荷仍受已知 #537/#539 路径影响 |
+| B17 卸货 | 不适用 | 2/2 `VALID_COMPLETE` | 不适用 | 2/2 `VALID_COMPLETE` | 无约束和 Increasing-X 顺序均通过；不等于完整路线/时间窗优化 |
+
+`constraint-conformance.csv` 同时包含历史 baseline 和本轮 protocol-v3 记录；正式比较必须按 `record_origin`、轨道和实例交集拆开。upstream 轴荷错误保留为 `run_status=ERROR`，没有被写成 `PROVEN_INFEASIBLE`。完整 runner、fixture 说明和复现命令见 [`research/constraint-gauntlet.md`](research/constraint-gauntlet.md) 与 [`results/comprehensive/README.md`](results/comprehensive/README.md)。
+
+### 7.3 THPACK9 44 例跨实现质量
 
 下表只统计完整且通过独立 certificate 检查的结果。THPACK9 没有 published optimum；相对体积下界只用于诊断，不能替代合法 dual bound。
 
@@ -298,7 +313,7 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 
 跨语言微型计时没有统一 JVM/进程启动、停止粒度和计时边界，因此本报告不据此作性能排名。
 
-### 7.3 顺序、策略与硬约束
+### 7.4 顺序、策略与硬约束
 
 - Python campaign 计划 3,048 条状态记录；语义可表达并实际执行 280 条，276 条合法。`py3dbp` 的 53 对可比实例中 41 对质量随升/降序改变。Jerry 的 87 对中 66 对质量改变、4 对有效性改变；4 条重叠来自 `fix_point=True` 吸附坐标后未重新检查碰撞，改为 `fix_point=False` 后对照合法。
 - PackingSolver `boxstacks` 9/9 通过：异构成本、最大上方重量、最大堆数、nesting、正常/边界/不可行轴荷、无卸货约束和 IncreasingX。正常轴荷由独立公式重算为 middle `6315.789... <= 6400`、rear `3000 <= 9000`。
@@ -306,7 +321,7 @@ B07 能回答“困难尺寸桶上的正交单箱 anytime 鲁棒性、预算响�
 - Rust ExtremePoint 在 THPACK9-1 重复 5/5 均为 50 箱且合法。Layer、GA、BRKGA、SA 每类重复 5 次均越界，报告的 15–16 箱全部作废。源码显示换层后只检查 Z、未重检姿态后的 X/Y；GA/BRKGA/SA 共用该 decoder。请求的 seed 未接入随机 runner，多数策略也没有读取 `time_limit_ms`，适合分别向上游提交 issue 和小 PR。
 - Go `bp3d` THPACK9 44/44 合法，但专项证明它没有逐件姿态白名单，`PutItem` 也不检查累计 `MaxWeight`。这类失败不会出现在纯几何 THPACK 排名中。
 
-### 7.4 B03 profit 3D-KP 全库对照
+### 7.5 B03 profit 3D-KP 全库对照
 
 B03 是 60 个 Egeblad-Pisinger 实例，覆盖 20/40/60 件、C/L/F/U/D 形状、clustered/random 和 50/90 容量档。来源审计发现上游 57 行参照表中 48 行低于单件最大 profit，且缺 3 行，因此整表标记 `INVALID_REFERENCE_TABLE`，没有使用 reference gap。所有结果都由同一独立 AABB/copies/姿态 validator 重验；完整 runner、原始 stdout/stderr、资源和二进制 hash 见 [`results/comprehensive/rankings/profit-knapsack.csv`](results/comprehensive/rankings/profit-knapsack.csv) 与 [`research/b03-source-audit.md`](research/b03-source-audit.md)。
 
@@ -329,13 +344,13 @@ B03 是 60 个 Egeblad-Pisinger 实例，覆盖 20/40/60 件、C/L/F/U/D 形状�
 
 该实验支持的工程结论是：PackingSolver fork 仍是最接近 B03 原题语义的正交主候选，Python/Go/Jerry 只适合作为放宽旋转的候选生成器或对照；Rust ExtremePoint 是低延迟几何基线，不是 profit 优化器；Rust GA/BRKGA/SA/Layer 目前不能替代原生 profit 求解。完整的 32 套 benchmark 选择、每个套件适用库和结论边界见 [benchmark 选择与覆盖决策](research/benchmark-selection.md)；运行波次、ALL-libs 记录规则和范围外扩展见 [benchmark 执行优先级与全库横评建议](research/benchmark-execution-plan.md)。
 
-### 7.5 精确后端与 formulation
+### 7.6 精确后端与 formulation
 
 OR-Tools CP-SAT 9.15、SCIP/PySCIPOpt 6.2.1、Gurobi 13.0.3 和 CPLEX 22.1.2.0 都运行了同一组 7 个手工真值场景：网格、9 件溢出拆箱、需旋转、禁旋、重量拆箱、两种异构成本方向。canonical strengthened formulation 四家均为 7/7，证书与目标复算通过。
 
 legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求解器速度榜。CPLEX legacy 的 1,489 条约束超过 promotional license 的 1,000 条上限；SCIP 和 CPLEX 的 reduced `overflow_9` 在 20 秒内未证明；strengthened 四后端都闭合。这里首先说明加强约束和对称处理的重要性，不能外推为某个 solver 在一般 3D 实例上固定更快。
 
-### 7.6 工业数据集状态
+### 7.7 工业数据集状态
 
 Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP 的 BAYTP 快照缺少公共 `products`/`shelves`；虽从 OR-Library 核对了对应文件与 SHA-256，仍标为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。删除字段后运行普通 3D 箱数算法会改变问题，不能作为完整 benchmark 分数。
 

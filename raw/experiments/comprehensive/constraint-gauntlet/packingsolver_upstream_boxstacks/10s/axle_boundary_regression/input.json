@@ -1,0 +1,54 @@
+{
+  "benchmark_id": "B15",
+  "bins": [
+    {
+      "COPIES": "1",
+      "COST": "1",
+      "EMPTY_TRAILER_WEIGHT": "6000",
+      "FRONT_AXLE_HARNESS_DISTANCE": "4",
+      "FRONT_AXLE_MIDDLE_AXLE_DISTANCE": "3",
+      "FRONT_AXLE_TRACTOR_GRAVITY_CENTER_DISTANCE": "1",
+      "HARNESS_REAR_AXLE_DISTANCE": "8",
+      "ID": "0",
+      "IS_SEMI_TRAILER_TRUCK": "1",
+      "MAXIMUM_STACK_DENSITY": "100",
+      "MAXIMUM_WEIGHT": "100",
+      "MIDDLE_AXLE_MAXIMUM_WEIGHT": "6680",
+      "REAR_AXLE_MAXIMUM_WEIGHT": "3005",
+      "TRACTOR_WEIGHT": "8000",
+      "TRAILER_GRAVITY_CENTER_REAR_AXLE_DISTANCE": "4",
+      "TRAILER_START_HARNESS_DISTANCE": "2",
+      "X": "100",
+      "Y": "2",
+      "Z": "2"
+    }
+  ],
+  "instance_id": "axle_boundary_regression",
+  "items": [
+    {
+      "COPIES": "1",
+      "GROUP_ID": "0",
+      "ID": "0",
+      "MAXIMUM_STACKABILITY": "1",
+      "MAXIMUM_WEIGHT_ABOVE": "100",
+      "NESTING_HEIGHT": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "0",
+      "ROTATION_ZYX": "0",
+      "STACKABILITY_ID": "0",
+      "WEIGHT": "10",
+      "X": "2",
+      "Y": "2",
+      "Z": "2"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "AXLE_BOUNDARY",
+  "source_files": {
+    "benchmarks/data/packingsolver/axle_bins.csv": "84c5c2a2efc34d300d9fcf53b7ce6e0d718b70075742ad12c2c26800b2d09bee",
+    "benchmarks/data/packingsolver/axle_items.csv": "fedab51a039be117dacb8d8b9a1299a160117201c97f9267df6861d30eb91120"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "benchmark_id": "B14",
+  "bins": [
+    {
+      "COPIES": "1",
+      "COST": "1",
+      "ID": "0",
+      "MAXIMUM_STACK_DENSITY": "100",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "2",
+      "Y": "2",
+      "Z": "6"
+    }
+  ],
+  "instance_id": "maximum_weight_above",
+  "items": [
+    {
+      "COPIES": "1",
+      "GROUP_ID": "0",
+      "ID": "0",
+      "MAXIMUM_STACKABILITY": "3",
+      "MAXIMUM_WEIGHT_ABOVE": "0",
+      "NESTING_HEIGHT": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "0",
+      "ROTATION_ZYX": "0",
+      "STACKABILITY_ID": "0",
+      "WEIGHT": "1",
+      "X": "2",
+      "Y": "2",
+      "Z": "2"
+    },
+    {
+      "COPIES": "2",
+      "GROUP_ID": "0",
+      "ID": "1",
+      "MAXIMUM_STACKABILITY": "3",
+      "MAXIMUM_WEIGHT_ABOVE": "100",
+      "NESTING_HEIGHT": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "0",
+      "ROTATION_ZYX": "0",
+      "STACKABILITY_ID": "0",
+      "WEIGHT": "10",
+      "X": "2",
+      "Y": "2",
+      "Z": "2"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "MAXIMUM_WEIGHT_ABOVE",
+  "source_files": {
+    "benchmarks/data/packingsolver/stack_bins.csv": "7140ef6929564ab3b557ad87b9904e221fee8475515c0ce990dd80b44b672674",
+    "benchmarks/data/packingsolver/stack_items.csv": "c45f39d90b6e98ebd038bbbb53d442e3cf75a0e22ba2044baa5deaa2b1fe9f17"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "benchmark_id": "B12",
+  "bins": [
+    {
+      "COPIES": "1",
+      "COST": "1",
+      "ID": "0",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "4",
+      "Y": "3",
+      "Z": "2"
+    }
+  ],
+  "instance_id": "rotation_required",
+  "items": [
+    {
+      "COPIES": "1",
+      "ID": "0",
+      "ROTATION_XYZ": "0",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "1",
+      "ROTATION_ZYX": "0",
+      "WEIGHT": "1",
+      "X": "3",
+      "Y": "2",
+      "Z": "4"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "ROTATION_REQUIRED",
+  "source_files": {
+    "benchmarks/data/packingsolver/rotation_allowed_items.csv": "d65a314e8bd94711a86bbb609ad89f222a6509dff2ef0aa64489159fc52a84dc",
+    "benchmarks/data/packingsolver/rotation_bins.csv": "2870a7349f81b8f1462fc67e075852687eda7523cf2672f60bd0b7de1d7bbb9b"
+  }
+}

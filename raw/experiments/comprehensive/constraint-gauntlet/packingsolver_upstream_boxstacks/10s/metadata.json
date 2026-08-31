@@ -1,0 +1,28 @@
+{
+  "artifact_archive_sha256": "6fdbc4660a59787900e3a63fc308e40fd60117511c1ddee8df807e1d85169b37",
+  "binary_sha256": "6b940a4660d25479058f01b6d3d873855bec9d5158097b67493b4baabdaa1a11",
+  "cases": [
+    "heterogeneous_large_cheaper",
+    "heterogeneous_small_cheaper",
+    "maximum_weight_above",
+    "maximum_stack_count",
+    "nesting_height",
+    "axle_normal",
+    "axle_boundary_regression",
+    "axle_infeasible",
+    "unloading_none",
+    "unloading_increasing_x"
+  ],
+  "implementation_id": "packingsolver_upstream_boxstacks",
+  "implementation_version": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+  "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.10.1",
+  "run_jsonl_sha256": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813",
+  "runner_sha256": "f0a738b528ae335dc2f0e410472da3f4436dae42b7de5d0ab1645b2ae5562661",
+  "schema_version": 1,
+  "source_commit": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+  "source_diff_sha256": "225e2a8652493b2f3f9c1e13306a81001ee94ac4ec58a07ac6da6b536797670d",
+  "time_limit_s": 10.0,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"
+}

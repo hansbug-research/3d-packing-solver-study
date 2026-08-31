@@ -1,0 +1,37 @@
+{
+  "benchmark_id": "B13",
+  "bins": [
+    {
+      "COPIES": "3",
+      "COST": "1",
+      "ID": "0",
+      "MAXIMUM_WEIGHT": "10",
+      "X": "10",
+      "Y": "10",
+      "Z": "10"
+    }
+  ],
+  "instance_id": "weight_limit",
+  "items": [
+    {
+      "COPIES": "3",
+      "ID": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "1",
+      "ROTATION_YXZ": "1",
+      "ROTATION_YZX": "1",
+      "ROTATION_ZXY": "1",
+      "ROTATION_ZYX": "1",
+      "WEIGHT": "6",
+      "X": "4",
+      "Y": "4",
+      "Z": "4"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "WEIGHT_LIMIT",
+  "source_files": {
+    "benchmarks/data/packingsolver/weight_bins.csv": "da4ce4e145d0c6acfee7f970043cea7c68e2503659740aaa0b8070c3c18f3ffb",
+    "benchmarks/data/packingsolver/weight_items.csv": "f5dd5c9236a5b64c3273d152823755f34ed7ce5ebd1aa05acf0cc60fa76002d0"
+  }
+}

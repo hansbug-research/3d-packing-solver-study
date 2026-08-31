@@ -1,0 +1,46 @@
+{
+  "benchmark_id": "B09",
+  "bins": [
+    {
+      "COPIES": "2",
+      "COST": "5",
+      "ID": "0",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "6",
+      "Y": "5",
+      "Z": "5"
+    },
+    {
+      "COPIES": "1",
+      "COST": "20",
+      "ID": "1",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "12",
+      "Y": "5",
+      "Z": "5"
+    }
+  ],
+  "instance_id": "heterogeneous_small_cheaper",
+  "items": [
+    {
+      "COPIES": "2",
+      "ID": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "1",
+      "ROTATION_YXZ": "1",
+      "ROTATION_YZX": "1",
+      "ROTATION_ZXY": "1",
+      "ROTATION_ZYX": "1",
+      "WEIGHT": "1",
+      "X": "6",
+      "Y": "5",
+      "Z": "5"
+    }
+  ],
+  "objective": "variable-sized-bin-packing",
+  "problem_variant": "SMALL_CHEAPER",
+  "source_files": {
+    "benchmarks/data/packingsolver/heterogeneous_bins_reverse.csv": "1e7f4616ba3ec04b91b5decc5e9cc9e7ffb6f8a652460468b10d5447a9aebd4c",
+    "benchmarks/data/packingsolver/heterogeneous_items.csv": "5e62afa0910c92c803cef00b52c4852be7245634741d5acbeec06021b617c070"
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "IntermediaryOutputs": [
+        {
+            "BinPackingBound": 1,
+            "IsProvenInfeasible": false,
+            "KnapsackBound": null,
+            "Solution": {
+                "AreaLoad": 0.0,
+                "BinArea": 0,
+                "BinCost": 0.0,
+                "BinVolume": 0,
+                "BinWeight": 0.0,
+                "FullWaste": 0,
+                "FullWastePercentage": 0.0,
+                "ItemProfit": 0.0,
+                "ItemVolume": 0,
+                "ItemWeight": 0.0,
+                "NumberOfBins": 0,
+                "NumberOfItems": 0,
+                "NumberOfStacks": 0,
+                "NumberOfUnpackedItems": 1,
+                "StackArea": 0,
+                "VolumeLoad": 0.0,
+                "Waste": 0,
+                "WastePercentage": 0.0,
+                "WeightLoad": 0.0,
+                "XMax": 0,
+                "YMax": 0
+            },
+            "Time": 0.0,
+            "VariableSizedBinPackingBound": 0.0
+        },
+        {
+            "BinPackingBound": 1,
+            "IsProvenInfeasible": false,
+            "KnapsackBound": null,
+            "Solution": {
+                "AreaLoad": 0.12254901960784313,
+                "BinArea": 326400,
+                "BinCost": 1.0,
+                "BinVolume": 84864000,
+                "BinWeight": 24000.0,
+                "FullWaste": 76864000,
+                "FullWastePercentage": 0.9057315233785822,
+                "ItemProfit": 8000000.0,
+                "ItemVolume": 8000000,
+                "ItemWeight": 2000.0,
+                "NumberOfBins": 1,
+                "NumberOfItems": 1,
+                "NumberOfStacks": 1,
+                "NumberOfUnpackedItems": 0,
+                "StackArea": 40000,
+                "VolumeLoad": 0.0942684766214178,
+                "Waste": 4480000,
+                "WastePercentage": 0.358974358974359,
+                "WeightLoad": 0.08333333333333333,
+                "XMax": 200,
+                "YMax": 200
+            },
+            "Time": 0.001649199,
+            "VariableSizedBinPackingBound": 0.0
+        }
+    ],
+    "Output": {
+        "BinPackingBound": 1,
+        "IsProvenInfeasible": false,
+        "KnapsackBound": null,
+        "Solution": {
+            "AreaLoad": 0.12254901960784313,
+            "BinArea": 326400,
+            "BinCost": 1.0,
+            "BinVolume": 84864000,
+            "BinWeight": 24000.0,
+            "FullWaste": 76864000,
+            "FullWastePercentage": 0.9057315233785822,
+            "ItemProfit": 8000000.0,
+            "ItemVolume": 8000000,
+            "ItemWeight": 2000.0,
+            "NumberOfBins": 1,
+            "NumberOfItems": 1,
+            "NumberOfStacks": 1,
+            "NumberOfUnpackedItems": 0,
+            "StackArea": 40000,
+            "VolumeLoad": 0.0942684766214178,
+            "Waste": 4480000,
+            "WastePercentage": 0.358974358974359,
+            "WeightLoad": 0.08333333333333333,
+            "XMax": 200,
+            "YMax": 200
+        },
+        "Time": 0.00166855,
+        "VariableSizedBinPackingBound": 0.0
+    },
+    "Parameters": {
+        "Logger": {
+            "FilePath": "",
+            "HasLogger": false,
+            "StardardError": false
+        },
+        "Messages": {
+            "FilePath": "",
+            "NumberOfStreams": 0,
+            "StandardOutput": true,
+            "VerbosityLevel": 0
+        },
+        "TimeLimit": 10.0,
+        "VerbosityLevel": 0
+    }
+}

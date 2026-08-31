@@ -1,16 +1,16 @@
 {
   "coverage": {
     "benchmarks_with_runs": 12,
-    "cells_with_evidence": 68,
-    "evidence_cell_rate": 0.1118421052631579,
-    "executed_implementations": 18,
-    "legacy_baseline_only_cells": 55,
+    "cells_with_evidence": 72,
+    "evidence_cell_rate": 0.11842105263157894,
+    "executed_implementations": 19,
+    "legacy_baseline_only_cells": 45,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.02138157894736842,
-    "protocol_v3_executed_cells": 13,
+    "protocol_v3_executed_cell_rate": 0.044407894736842105,
+    "protocol_v3_executed_cells": 27,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 4820
+      "PROTOCOL_V3": 4850
     },
     "records_by_benchmark": {
       "B01": 1474,
@@ -19,23 +19,23 @@
       "B04": 472,
       "B06": 30,
       "B07": 3600,
-      "B09": 13,
-      "B12": 14,
-      "B13": 7,
-      "B14": 3,
-      "B15": 3,
-      "B17": 2
+      "B09": 21,
+      "B12": 18,
+      "B13": 9,
+      "B14": 9,
+      "B15": 9,
+      "B17": 6
     },
-    "run_records": 6898,
+    "run_records": 6928,
     "run_status_counts": {
-      "COMPLETED": 1735,
-      "ERROR": 1,
+      "COMPLETED": 1763,
+      "ERROR": 3,
       "TIME_LIMIT": 5162
     },
     "solution_status_counts": {
       "INVALID_CERTIFICATE": 31,
-      "NO_SOLUTION": 14,
-      "VALID_COMPLETE": 561,
+      "NO_SOLUTION": 20,
+      "VALID_COMPLETE": 585,
       "VALID_PARTIAL": 6292
     }
   },
@@ -651,7 +651,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "18c6281e310d2ad9564b2f89db6b235705e7699b78c4dd0af2cb0f34ec8b77d8",
+    "results/comprehensive/run-manifest.jsonl": "b1f235659f7fec7df25b1fe1d15a8c2bd5a52a266d35d2ed5bb426f492b73b30",
     "results/comprehensive/suite-implementation-plan.jsonl": "48f0fe450d46af1b82140dfb17a591da8dbc0a1d791c43042ca7ed0d44862c60"
   },
   "warnings": [

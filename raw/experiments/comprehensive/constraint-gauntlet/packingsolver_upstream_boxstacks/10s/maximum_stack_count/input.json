@@ -1,0 +1,43 @@
+{
+  "benchmark_id": "B14",
+  "bins": [
+    {
+      "COPIES": "2",
+      "COST": "1",
+      "ID": "0",
+      "MAXIMUM_STACK_DENSITY": "100",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "2",
+      "Y": "2",
+      "Z": "6"
+    }
+  ],
+  "instance_id": "maximum_stack_count",
+  "items": [
+    {
+      "COPIES": "3",
+      "GROUP_ID": "0",
+      "ID": "0",
+      "MAXIMUM_STACKABILITY": "2",
+      "MAXIMUM_WEIGHT_ABOVE": "100",
+      "NESTING_HEIGHT": "0",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "0",
+      "ROTATION_ZYX": "0",
+      "STACKABILITY_ID": "0",
+      "WEIGHT": "1",
+      "X": "2",
+      "Y": "2",
+      "Z": "2"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "MAXIMUM_STACK_COUNT",
+  "source_files": {
+    "benchmarks/data/packingsolver/stack_count_bins.csv": "4ee249e51980aee35536074700c8e142b92bab6c34b13e59bf7b43dbe4f19a5e",
+    "benchmarks/data/packingsolver/stack_count_items.csv": "48a0d2ef841fac5b29bceda7da2416e8ecde5e9dfcedf42e72c703f1d1fc4360"
+  }
+}

@@ -297,7 +297,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-    ) != (6898, 2078, 6898, 6898):
+    ) != (6928, 2078, 6928, 6928):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -306,9 +306,9 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-    ) != (608, 68, 55, 13, 12, 18):
+        ) != (608, 72, 45, 27, 12, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4820}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 4850}:
         fail("comprehensive run origin counts changed")
     if coverage.get("records_by_benchmark", {}).get("B07") != 3600:
         fail("comprehensive B07 record count changed")

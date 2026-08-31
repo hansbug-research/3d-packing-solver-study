@@ -1,0 +1,43 @@
+{
+  "benchmark_id": "B14",
+  "bins": [
+    {
+      "COPIES": "1",
+      "COST": "1",
+      "ID": "0",
+      "MAXIMUM_STACK_DENSITY": "100",
+      "MAXIMUM_WEIGHT": "100",
+      "X": "2",
+      "Y": "2",
+      "Z": "8"
+    }
+  ],
+  "instance_id": "nesting_height",
+  "items": [
+    {
+      "COPIES": "2",
+      "GROUP_ID": "0",
+      "ID": "0",
+      "MAXIMUM_STACKABILITY": "2",
+      "MAXIMUM_WEIGHT_ABOVE": "100",
+      "NESTING_HEIGHT": "2",
+      "ROTATION_XYZ": "1",
+      "ROTATION_XZY": "0",
+      "ROTATION_YXZ": "0",
+      "ROTATION_YZX": "0",
+      "ROTATION_ZXY": "0",
+      "ROTATION_ZYX": "0",
+      "STACKABILITY_ID": "0",
+      "WEIGHT": "1",
+      "X": "2",
+      "Y": "2",
+      "Z": "5"
+    }
+  ],
+  "objective": "bin-packing",
+  "problem_variant": "NESTING_HEIGHT",
+  "source_files": {
+    "benchmarks/data/packingsolver/nesting_bins.csv": "5387e96e155cf5f6eec4f741a2529db9edf2f04a599324eac72b4b00dbd69420",
+    "benchmarks/data/packingsolver/nesting_items.csv": "18b2d23c0863b98aef8535cab64573bab12019380b1b5d2e9181e9416344681d"
+  }
+}

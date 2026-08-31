@@ -13,9 +13,9 @@
 
 实际实例级运行写入 `run-manifest.jsonl`，每条记录遵守 [`run-record.schema.json`](../../benchmarks/comprehensive/run-record.schema.json)。`baseline-import-summary.json` 标明哪些记录来自已有 v1/v2 原始归档；新运行仍必须使用协议规定的 `raw/experiments/comprehensive/` 目录。`coverage.csv` 是计划与实际运行合并后的覆盖表。只有 `VALID_COMPLETE` 或原问题允许的 `VALID_PARTIAL` 且通过独立 validator 的记录才能进入 `rankings/`；`NATIVE`、`COMPOSED`、`EXACT_MODEL` 以及 `FULL_PROBLEM`、`GEOMETRY_PROJECTION` 分榜。
 
-当前导入 2,078 条已有运行，并合并 B03 与 B07 protocol v3 的 4,820 条实例记录，形成 12/32 个 benchmark、19 个实现/算法变体和 68/608 个计划单元的有证据记录；其中 55 个单元仍只有历史基线。这不是综合 campaign 完成声明。其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
+当前导入 2,078 条已有运行，并合并 B03、B07 以及约束 gauntlet 的 4,850 条 protocol-v3 实例记录，形成 12/32 个 benchmark、19 个实现/算法变体和 72/608 个计划单元的有证据记录；其中 45 个单元仍只有历史基线。这不是综合 campaign 完成声明。其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
 
-现有排行按问题语义拆分：`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较统一模型的证明能力，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
+现有排行按问题语义拆分：`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较统一模型的证明能力，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
 
 ## B03 复现命令
 
@@ -45,4 +45,17 @@
 .venv/bin/python benchmarks/comprehensive/import_baseline.py
 .venv/bin/python benchmarks/comprehensive/analyze.py
 .venv/bin/python scripts/verify.py
+```
+
+## Constraint gauntlet 复现
+
+四条 PackingSolver protocol-v3 原生轨分别执行 B09、B12、B13、B14、B15 和 B17 的小型边界套件，共 30 条实例记录。fork 的 `box` 与 `boxstacks` 15/15 个行为均符合预期；已打补丁的 upstream `box` 同样 5/5，upstream `boxstacks` 的正常约束均通过，但两个轴荷反例在 solver 内部报错，保留为 `ERROR` 而不是成功或“不可行证明”。`rotation_forbidden` 与 fork 的两个轴荷反例是预期不可行，证书为空且独立 validator 无错误；这类行为通过率只在 `constraint-conformance.csv` 中按 `expected_behavior_pass` 统计，不进入几何质量均值。
+
+运行命令示例：
+
+```bash
+.venv/bin/python benchmarks/comprehensive/run_constraint_gauntlet.py \
+  --implementation-id packingsolver_fork_box \
+  --binary .cache/build-fork/src/box/packingsolver_box \
+  --source-root .cache/packingsolver-fork --time-limit 10
 ```
