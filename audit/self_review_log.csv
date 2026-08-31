@@ -25,3 +25,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 21,comprehensive-b05-source-audit,primary,0,1,审计 MPV 三维实例来源并保留 SOURCE_INCOMPLETE/SOURCE_PENDING；将 B05 状态记录排除出 executed cells；同步 13/32、91/608、6947/4869 统计并修正 Rust 逐策略有效率,closed
 22,protocol-v3-current-state-sync,primary,0,1,复核协议正文、自审记录与 aggregate/coverage 的当前状态；修正旧的 12/32、68/608 进度引用并明确 B05 状态记录不等于执行,closed
 23,protocol-v3-python-projection,primary,0,1,同步 B01/B02 projection 的 5720 条实例记录、92/608 证据 cell、31 个 executed cell 和 12667 条总记录；增加 projection/native 分轨及非法证书契约,closed
+24,protocol-v3-external-projection,primary,0,1,完成 Go bp3d 与 u-nesting 五策略的 B01/B02 全量 1 s/10 s 几何 projection；修正 rust strategy 到目录规范 ID，并同步 104/608、43 executed cell、29827 总记录,closed

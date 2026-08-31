@@ -135,16 +135,16 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 12667
-    assert summary["protocol_v3_run_records"] == 10589
+    assert summary["combined_run_records"] == len(records) == 29827
+    assert summary["protocol_v3_run_records"] == 27749
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 92
+    assert aggregate["coverage"]["cells_with_evidence"] == 104
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 31
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 43
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 10589}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 27749}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 3600
 
@@ -195,6 +195,28 @@ def test_b01_b02_projection_campaign_keeps_semantics_and_invalid_certificates() 
     ]
     assert native
     assert all(record["problem_scope"] != "GEOMETRY_PROJECTION" for record in native)
+
+
+def test_b01_b02_external_projection_campaign_uses_catalog_ids_and_budgets() -> None:
+    comprehensive = ROOT / "results" / "comprehensive"
+    paths = sorted((comprehensive / "runs").glob("B01-B02-external-projection-*.jsonl"))
+    assert {path.name for path in paths} == {
+        "B01-B02-external-projection-go_bp3d-rust_extreme_point-1s-rep-0.jsonl",
+        "B01-B02-external-projection-go_bp3d-rust_extreme_point-10s-rep-0.jsonl",
+        "B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-1s-rep-0.jsonl",
+        "B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-10s-rep-0.jsonl",
+    }
+    records = [json.loads(line) for path in paths for line in path.read_text().splitlines() if line]
+    assert len(records) == 17160
+    assert {record["benchmark_id"] for record in records} == {"B01", "B02"}
+    assert {record["implementation_id"] for record in records} == {
+        "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
+    }
+    assert {record["budget"]["time_limit_s"] for record in records} == {1.0, 10.0}
+    assert {record["item_order"] for record in records} == {"ASCENDING", "DESCENDING"}
+    assert all(record["problem_variant"] == "RELAXED_ALL_ROTATIONS" for record in records)
+    assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
+    assert all(record["capability_status"] == "PROJECTION_ONLY" for record in records)
 
 
 def test_b07_version_pairwise_is_complete_and_reproducible() -> None:

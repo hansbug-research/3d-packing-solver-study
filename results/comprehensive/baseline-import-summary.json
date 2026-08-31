@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 12667,
+  "combined_run_records": 29827,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -34,6 +34,10 @@
     "skjolber_plain"
   ],
   "protocol_source_sha256": {
+    "results/comprehensive/runs/B01-B02-external-projection-go_bp3d-rust_extreme_point-10s-rep-0.jsonl": "90a52c6a3e37aed5f44d9efb11366a4bf302e293e97c92f985224d237659bc7b",
+    "results/comprehensive/runs/B01-B02-external-projection-go_bp3d-rust_extreme_point-1s-rep-0.jsonl": "68fc0953c2324b398c5142d51ede548f762e182db19982c413bd625b06a3a39b",
+    "results/comprehensive/runs/B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-10s-rep-0.jsonl": "fb0c973493b95a9d133a906e2453660d814835070a8cbbffaf44798aec94eef6",
+    "results/comprehensive/runs/B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-1s-rep-0.jsonl": "bd3514be56594ec71ac31ed4297420df00ac8a2693a6e64ec5bfc8ae0e96967c",
     "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-10s-rep-0.jsonl": "61b89e7f95950791ab760aed25d45455f2d33a3a4ddfd0ca5a4a1e1140ff7bfd",
     "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-1s-rep-0.jsonl": "4b72729a28271da817e06166e026a0a7bd825e1ef3446b2c20310f41e70c1a5c",
     "results/comprehensive/runs/B03-exact_cp_sat-20s.jsonl": "d2f02007696d708bd41811ab33b8a3531fd0d99e5dc7d7319bb2d73d7ae70316",
@@ -67,7 +71,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813"
   },
-  "protocol_v3_run_records": 10589,
+  "protocol_v3_run_records": 27749,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -82,7 +86,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "cfe732dd4fb0b0d43a383ef206a7b77bacb1ab8fbe80a92cb91c5bdbe6ecf7b7",
+  "run_manifest_sha256": "43a7c440b9b1e2be7c60eba9bab7ed9652d0d3632a8eaeacb33c42f9286a58d7",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."
