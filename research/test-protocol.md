@@ -216,10 +216,11 @@ validator 不读取求解器内部“feasible”布尔值作为真值。所有 p
 | 阶段 | 内容 | 退出条件 |
 |---|---|---|
 | P0 协议冻结 | 本文、来源、状态、schema、validator 和运行 manifest | Markdown/链接/来源检查通过，人工 review 无 blocking finding |
-| P1 公共核心 | B01-B07、B24-B28；全部基础 packer，EX 分层 | all-libs 状态矩阵完整；共同实例质量榜可重算 |
-| P2 成本与硬约束 | B08-B18、B25-B26 | 原生/组合分榜；所有 hard case 有独立反例验证 |
-| P3 工业与高级边界 | B19-B23、B29-B32 | full/projection 分开；BAYTP/托盘/在线结果分榜；不支持项完整记录；真实数据缺口明确 |
-| P4 结论冻结 | 更新 aggregate、结果 README、图、`report.md` 和决策矩阵 | `analyze/plot/verify/pytest` 全过；需求逐项审计完成 |
+| P1 公共核心 | B01-B07；全部基础 packer，EX 分层 | all-libs 状态矩阵完整；共同实例质量榜可重算 |
+| P2 成本与硬约束 | B08-B18 | 原生/组合分榜；所有 hard case 有独立反例验证 |
+| P3 工业与高级边界 | B19-B23、B30-B32 | full/projection 分开；BAYTP/托盘/在线结果分榜；不支持项完整记录；真实数据缺口明确 |
+| P4 可靠性与回归 | B24-B29；重跑各波次代表实例 | metamorphic、numeric、repeatability、scalability、fault/cancellation 均有结果；失败可重现 |
+| P5 结论冻结 | 更新 aggregate、结果 README、图、`report.md` 和决策矩阵 | `analyze/plot/verify/pytest` 全过；需求逐项审计完成 |
 
 ## 12. 结果目录和必交付物
 
@@ -251,3 +252,120 @@ results/comprehensive/
 现有证据已经覆盖 PackingSolver THPACK 759 个合法源两档预算、THPACK9 44 例主要 packer 横评、四个 exact backend 的 7 个 strengthened 场景、PackingSolver `boxstacks` 9 项、Rust 策略和工业数据字段审计。它们作为协议 v2 的回归基线保留；协议 v3 不倒写这些历史结果。
 
 当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B05-B11 的统一 adapter 和全量运行；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign；B30 的完整 shelf adapter；B31 的生成器和联合约束运行；B32 的统一在线 adapter。B03 已完成来源审计、PackingSolver 官方/fork、Python/Go/Rust adapter 和 exact 20 件子集，但其 projection 与 fixed 轨必须继续分开解释。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 或 B03 排名替代。
+
+## 14. 研究问题到实验设计的映射
+
+协议不是“把所有库运行一次”的 smoke test，而是为选型决策提供可反驳证据。每个问题至少要由一个公开或版本化数据源、一个反例/边界套件和一个资源/可靠性套件共同覆盖：
+
+| 研究问题 | 主要套件 | 必须得到的证据 | 选型决策 |
+|---|---|---|---|
+| Q1：库能否保真表达问题？ | B01-B05、B08-B23、B30-B32 | capability 状态、原生字段映射、projection 删除字段清单 | 选择原生库、组合架构或 exact/master 后端 |
+| Q2：输出是否确实可行？ | 全部有 placement 的套件；B12-B18 反例 | 独立 validator、首个失败原因、hard violation 和完整性 | 非法证书直接淘汰，不用 objective 抵消 |
+| Q3：合法解质量和证明能力如何？ | B01-B11、B19-B23、B30-B32 | objective、best-known/合法 bound、proof rate、配对差异 | 按问题族选择质量/证明最优的实现 |
+| Q4：质量代价和部署风险是什么？ | B24-B29 + 全部代表规模重复 | wall/CPU/RSS、p95 延迟、seed/order 方差、取消恢复 | 决定 Python binding、native worker、Java sidecar 或 exact 服务边界 |
+| Q5：结果是否可复现和可审计？ | 全部 suite | source/input/adapter/validator/binary hash、原始 stdout/stderr、重算命令 | 只有证据链闭合的结果可进入最终报告 |
+
+每个 benchmark 的设计都要至少包含一类“正常”、一类“边界”和一类“应失败”实例；公开数据缺乏应失败样例时，用独立 synthetic conformance case 补足，但必须改用新的 `problem_variant`，不能修改公开实例后继续沿用原始名称。
+
+## 15. Canonical 输入与证书契约
+
+所有 adapter 的输入先转换为版本化 canonical model，再调用库。转换器不能隐式删除字段；不能表达的字段必须在 capability 阶段显式产生 `PROJECTION_ONLY` 或 `NOT_SUPPORTED`。canonical model 的最小逻辑结构如下，实际 JSON 可以按 suite 扩展，但不得改变这些语义：
+
+```json
+{
+  "schema_version": 1,
+  "benchmark_id": "Bxx",
+  "problem_variant": "FIXED_XYZ",
+  "instance_id": "stable-id",
+  "units": {"length": "source-unit", "mass": "source-mass"},
+  "containers": [{"type_id": "bin-1", "size": [X, Y, Z], "copies": 1, "cost": 1}],
+  "items": [{"type_id": "sku-1", "instance_ids": ["i-1"], "size": [x, y, z], "copies": 1}],
+  "pose_semantics": {"allowed_orientations": [[x, y, z]]},
+  "constraints": {},
+  "objective": {"kind": "packed_volume", "direction": "max"},
+  "provenance": {"source_ref": "...", "source_commit": "...", "source_sha256": "..."}
+}
+```
+
+长度和质量在 canonical 文件中使用可精确回转的整数或显式 decimal 字符串；转换器必须保留 `source_scale`，不能通过 binary float 截断。每个 placement 至少包含 `instance_id`、`type_id`、`container_id`、`origin`、`size_after_pose` 和 `pose_id`。解中未出现的 item 只有在该 suite 允许 partial 的情况下才能省略，且必须写出 `unpacked_items`；完整装载 suite 的漏件一律是 `INVALID_CERTIFICATE` 或 `CONSTRAINT_VIOLATION`。
+
+`run-record.schema.json` 是执行记录的机器契约，不是 solver 输出格式。solver 的原始 JSON/CSV 必须作为 artifact 保留，validator 从该 artifact 或 canonical placement 转换结果重新计算 objective 和所有 hard checks。`solver_says_feasible`、reported objective 或 reported bound 只能作为诊断字段，不能覆盖 validator 结论。
+
+## 16. 一条 run 的生命周期和不可跳过的步骤
+
+每个 `benchmark × implementation × variant × budget × order × seed × repetition` 按下面顺序执行；任何步骤失败都要留下记录，不能删除该 cell：
+
+1. **Freeze**：读取来源 manifest，检查 source commit、license、输入文件 hash 和 canonical converter hash；非 `VALID` 输入不得启动 solver。
+2. **Capability gate**：根据实现 catalog 和 adapter 的字段映射确定 `SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED` 或 `ADAPTER_MISSING`；记录被删除/近似的字段。
+3. **Prepare**：生成只读 canonical input、effective config 和环境快照；固定工作目录，禁止 runner 修改原始 source。
+4. **Execute**：以受控子进程或同等隔离边界运行；捕获开始/结束时间、退出码、signal、stdout、stderr、CPU、RSS 和取消延迟。
+5. **Capture**：保存原始 solution、solver log、资源文件和命令行；即使超时或崩溃也保留部分输出。
+6. **Validate**：用独立 validator 检查 identity/copies、尺寸/姿态、边界、碰撞、库存、重量、支撑、运输和业务约束；先保存错误列表，再决定 solution status。
+7. **Recompute**：从 validated placement 重新计算 objective、bound 可比性、完整率、利用率、箱数、成本和 margin；不信任 solver 汇总数字。
+8. **Aggregate**：只让同一输入交集、variant、track、budget 和 validator version 的记录进入排行；写入 source hashes 和聚合版本。
+9. **Review**：运行 `analyze.py --check`、`scripts/verify.py`、测试和 Markdown/link 检查；正文数字必须来自 generated artifact，而不是手工复制。
+
+`TIME_LIMIT`、`MEMORY_LIMIT` 和 `CANCELLED` 是运行结局，不自动等于无解；若部分证书通过 validator，可以是 `VALID_COMPLETE` 或 `VALID_PARTIAL` 并进入相应 anytime 榜。反之，正常退出但证书非法必须是 `INVALID_CERTIFICATE`，不能因为 `run_status=COMPLETED` 而升级。
+
+## 17. 资源、随机性和计时控制
+
+每个 runner 在 `effective-config.json` 中写出实际生效值；命令行默认值不能替代记录。固定配置为：单 worker/单 solver thread；Python/C++/Go/Rust 进程默认 4 GiB 地址空间；Java sidecar `-Xmx512m -XX:ActiveProcessorCount=1`；Rust `RAYON_NUM_THREADS=1`；BLAS/OpenMP 线程变量全部设为 1。无法证明线程限制时写 `THREAD_LIMIT_UNVERIFIED`，该结果只能进受限资源榜。
+
+启发式的公共预算是 1 s、10 s；代表规模可增加 60 s，但三档不得混为一列。exact 默认 20 s，扩展 60/300 s 只作为单独预算。外层 timeout 必须留出捕获/清理时间，并区分 solver time、process wall、CPU user/system 和 post-validation time。跨语言 speed ranking 只在相同预热、进程生命周期、输入解析、输出序列化和隔离边界下成立。
+
+确定性实现至少运行 `ORIGINAL`、`ASCENDING`、`DESCENDING`、`HASHED_FIXED` 四种输入顺序；profit 套件另运行 `PROFIT_DESCENDING` 和 `PROFIT_VOLUME_DESCENDING`。随机实现至少使用五个固定 seed，且 runner 要在日志中证明 seed 被传入有效随机源；seed 未接线的实现不能把重复结果伪装成独立实验。B32 额外固定 arrival trace、lookahead、buffer、deadline、rebuild 和 relocation budget。
+
+## 18. Validator 的固定判定顺序与数值规则
+
+validator 采用 fail-closed 规则，检查顺序固定为：
+
+1. JSON/schema、有限数、唯一 run/instance/container ID；
+2. copies、必装需求、未知/重复 item 和箱型库存；
+3. pose whitelist、尺寸重排和正交边界；
+4. 同箱 AABB 分离；斜角/网格使用 OBB/SAT 或经过独立测试的碰撞引擎；
+5. 总重、tare、payload、箱型成本和 objective 重算；
+6. 适用时支撑并集、重心投影、载荷流、上方重量、堆数、nesting；
+7. 适用时轴/轴组反力、地板载荷、门洞、障碍、keepout、卸货可达性和相容/隔离；
+8. 对照 solver bound、proof status、termination reason 和 certificate metadata 的一致性。
+
+canonical 整数坐标采用精确整数比较；格式转换产生的浮点仅允许 `1e-7` canonical unit 的解析容差。边界接触（例如 `x + dx == X`）是合法的，只有存在严格正体积重叠才判 collision；负零、NaN、Infinity、负尺寸和无法解析的 decimal 一律失败。所有 tolerance、碰撞算法和 validator commit/hash 写入 run record 或其 artifact metadata。
+
+硬约束存在一条错误也不得进入 quality mean。对 `INVALID_CERTIFICATE` 保存首个失败规则、完整错误列表、原始输出 hash 和 validator version；禁止在报告阶段“修坐标后重算”并把修正版归给原库。若需要诊断修复，必须另起 `REPAIRED_DIAGNOSTIC` variant 且不进入原问题排行。
+
+## 19. 统计、配对和不确定性报告
+
+百分位使用 nearest-rank，先在每个实例内聚合 seed，再跨实例聚合；不得把 seed 当独立实例。均值必须同时给出有效分母和 invalid/incomplete 分母。没有 published optimum 或独立合法 bound 时报告 incumbent、下界和 solver-reported bound 分开，不写 gap-to-optimum。
+
+同一问题族的跨库比较使用 all-common intersection，并同时输出每库 supported coverage。主指标相等时报告 median/p95、资源和 win/tie/loss；不使用任意 epsilon 把微小差异强行分成胜负。版本比较（例如 fork/upstream）单独输出 pairwise 表，不把 patched upstream 写成官方发行版。
+
+硬约束套件采用词典序：先最大化合法完整率（理想值 100%），再最小化 violation count，之后才比较成本/箱数/利用率。可靠性套件报告 invariance/pass rate、重复方差、p50/p95/p99 延迟和恢复率，不与几何质量分数相加。
+
+## 20. 失败分类、问题升级和结论用语
+
+失败按责任边界分类，便于决定是修 adapter、向上游提 issue/PR 还是换技术栈：
+
+| 类别 | 典型证据 | 报告用语 | 后续动作 |
+|---|---|---|---|
+| `SOURCE_INVALID/INCOMPLETE` | 文件缺失、引用或 hash 不一致 | “数据源未就绪，未排名” | 补来源或锁定版本 |
+| `NOT_SUPPORTED` | 库模型不能表达关键字段 | “明确不支持” | 评估换库/自建模型 |
+| `ADAPTER_MISSING` | 理论可组合但本仓库还没实现 | “尚未适配，不等于不支持” | 实现 adapter 后重跑 |
+| `PROJECTION_ONLY` | 删除了成本、路线、姿态或力学字段 | “仅几何投影诊断” | 不得作为 full 结论 |
+| `INVALID_CERTIFICATE` | 越界、重叠、漏件、非法姿态 | “库/adapter 输出非法” | 最小复现、回归和 issue/PR |
+| `CONSTRAINT_VIOLATION` | 几何合法但重量、轴荷、支撑等失败 | “硬约束不合规” | 不能进入质量榜 |
+| `ERROR/TIMEOUT/MEMORY` | 进程失败或资源耗尽 | “在该预算/环境失败” | 保留 artifact，测扩展和隔离 |
+
+结论只使用可被证据支持的词：`在该 variant/预算上观察到`、`通过独立 validator`、`未发现`、`明确不支持`、`尚未适配`。禁止使用“保证最优”“工业可用”“法规合规”“支持任意角”等超出 benchmark 的表述；这些需要另行的物理、法规或现场验收证据。
+
+## 21. Ready gate 与逐项审计
+
+最终 ready 不是“测试命令返回 0”这一条，而是以下条件全部成立：
+
+1. B01-B32 每个计划 cell 都有状态记录，且 `SOURCE_*`、`NOT_SUPPORTED`、`ADAPTER_MISSING`、`NOT_RUN` 的原因可追溯；
+2. B01-B07 的公共质量轨、B08-B18 的能力/合规轨、B19-B23/B30-B32 的 full/projection 轨和 B24-B29 的可靠性轨均有对应排行或边界表；
+3. 每个质量数字都有原始 artifact、输入/实现/validator hash 和可重算命令；
+4. 所有非法证书和 hard violation 被排除并在报告中计数，不能隐藏在平均值之外；
+5. `analyze.py --check`、`build_plan.py --check`、`scripts/verify.py`、`pytest`、Markdown/link 检查和 `git diff --check` 全部通过；
+6. `report.md`、decision matrix、coverage CSV、rankings 和 self-review 的数字一致；
+7. 仍未完成的来源、adapter、真实订单或工程验证明确列为 gap，不得以“未发现错误”替代证据。
+
+本附录与 [`run-record.schema.json`](../benchmarks/comprehensive/run-record.schema.json)、[`suites.json`](../benchmarks/comprehensive/suites.json)、[`implementations.json`](../benchmarks/comprehensive/implementations.json) 和 [`results/comprehensive/README.md`](../results/comprehensive/README.md) 一起构成可执行协议；若代码与本文冲突，必须先更新协议版本和 self-review，再运行新实验。
