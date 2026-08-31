@@ -11,3 +11,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 9,final-ci,primary,0,1,固定 Jerry commit 结果并更新 raw manifest；提交 6536845 与 Actions run 33369968968 均通过,closed
 10,validator-followup,academic_audit,0,1,COPIES 展开后按 placement 绑定 item type 检查 MAXIMUM_WEIGHT_ABOVE；全量 PackingSolver smoke 结果不变,closed
 11,shuorenhua-final,primary,0,0,保留技术边界与 protected spans；删除 domain-model 空泛副词并将审计过程黑话改为最终状态、复核、修正和归档,closed
+12,final-release-verification,primary,0,0,最终内容基线 365e32c 对应 Actions run 33371401890 全部通过；远端 public main 与本地一致,closed

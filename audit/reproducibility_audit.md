@@ -33,6 +33,6 @@ THPACK9 的 `COPIES` certificate 是聚合表示：一行布局可能代表多�
 ## 线上发布核对
 
 - 仓库：<https://github.com/hansbug-research/3d-packing-solver-study>，可见性 `public`，默认分支 `main`。
-- 发布提交：`e162fa2`（validator 修正后的最终代码基线）。
-- GitHub Actions：<https://github.com/hansbug-research/3d-packing-solver-study/actions/runs/33370330557>，对应提交的 `verify` job 全部通过；仅有 GitHub runner 的 Node 20 弃用提示。此前提交 `6536845`/`6dcd8ba`/`cbf9f7b` 的成功运行仍作为历史 CI 记录保留。
+- 最终内容基线：`365e32cccf0652bf492652a2c4f4e3ae1ae99029`。
+- GitHub Actions：<https://github.com/hansbug-research/3d-packing-solver-study/actions/runs/33371401890>，对应提交的 `verify` job 全部通过；仅有 GitHub runner 的 Node 20 弃用提示。此前提交 `e162fa2`/`6536845`/`6dcd8ba`/`cbf9f7b` 的成功运行仍作为历史 CI 记录保留。
 - API 抽查确认 README、CITATION.cff、raw/manifest.json 均可访问；本地链接检查和 CFF schema 检查与线上 CI 结果一致。
