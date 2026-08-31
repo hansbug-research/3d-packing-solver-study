@@ -1,0 +1,22 @@
+diff --git a/src/box/solution.cpp b/src/box/solution.cpp
+index 5c1731aa..4aee7af9 100644
+--- a/src/box/solution.cpp
++++ b/src/box/solution.cpp
+@@ -186,6 +186,8 @@ bool Solution::operator<(const Solution& solution) const
+         return strictly_greater_profit(solution.profit(), profit());
+     } case Objective::Feasibility: {
+         return strictly_greater_profit(solution.profit(), profit());
++    } case Objective::VariableSizedBinPacking: {
++        return strictly_lesser_cost(solution.cost(), cost());
+     } default: {
+diff --git a/src/boxstacks/solution.cpp b/src/boxstacks/solution.cpp
+index 97c6b874..944a17aa 100644
+--- a/src/boxstacks/solution.cpp
++++ b/src/boxstacks/solution.cpp
+@@ -310,6 +310,8 @@ bool Solution::operator<(const Solution& solution) const
+         return strictly_greater_profit(solution.profit(), profit());
+     } case Objective::Feasibility: {
+         return strictly_greater_profit(solution.profit(), profit());
++    } case Objective::VariableSizedBinPacking: {
++        return strictly_lesser_cost(solution.cost(), cost());
+     } default: {

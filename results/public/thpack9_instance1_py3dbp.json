@@ -1,0 +1,17 @@
+{
+  "dataset": "ESICUP thpack9 instance 1",
+  "source": "ESICUP/datasets 3d_rectangular/thpack/thpack9.txt",
+  "instance": 1,
+  "container_size": [
+    10,
+    6,
+    16
+  ],
+  "items": 70,
+  "bins_available": 80,
+  "packed": 70,
+  "unpacked": 0,
+  "bins_used": 50,
+  "elapsed_s": 0.016503073973581195,
+  "validation_errors": []
+}

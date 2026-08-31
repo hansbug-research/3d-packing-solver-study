@@ -1,0 +1,67 @@
+{
+  "library": "py3dbp",
+  "version": "1.1.2",
+  "scenarios": {
+    "exact_grid": {
+      "elapsed_s": 0.00041999202221632004,
+      "packed": 8,
+      "unpacked": 0,
+      "bins_used": 1,
+      "rotations": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_errors": []
+    },
+    "rotation_required": {
+      "elapsed_s": 1.7432961612939835e-05,
+      "packed": 1,
+      "unpacked": 0,
+      "bins_used": 1,
+      "rotations": [
+        4
+      ],
+      "validation_errors": []
+    },
+    "weight_limit": {
+      "elapsed_s": 8.371798321604729e-05,
+      "packed": 3,
+      "unpacked": 0,
+      "bins_used": 3,
+      "rotations": [
+        0,
+        0,
+        0
+      ],
+      "validation_errors": []
+    },
+    "heterogeneous_order_small_first": {
+      "elapsed_s": 3.4904107451438904e-05,
+      "packed": 2,
+      "unpacked": 0,
+      "bins_used": 2,
+      "rotations": [
+        0,
+        0
+      ],
+      "validation_errors": []
+    },
+    "heterogeneous_order_large_first": {
+      "elapsed_s": 2.8359005227684975e-05,
+      "packed": 2,
+      "unpacked": 0,
+      "bins_used": 1,
+      "rotations": [
+        0,
+        0
+      ],
+      "validation_errors": []
+    }
+  }
+}

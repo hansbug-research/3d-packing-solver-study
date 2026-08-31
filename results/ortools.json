@@ -1,0 +1,10 @@
+{
+  "library": "ortools",
+  "version": "9.15.6755",
+  "status": "OPTIMAL",
+  "objective_bins": 2.0,
+  "best_bound": 2.0,
+  "elapsed_s": 0.13005206501111388,
+  "conflicts": 8870,
+  "branches": 30023
+}

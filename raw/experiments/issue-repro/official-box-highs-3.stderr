@@ -1,0 +1,1 @@
+Error: bool packingsolver::box::Solution::operator<(const packingsolver::box::Solution&) const: solution "box::Solution" does not support objective "VariableSizedBinPacking"

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: 若引用本仓库，请使用以下信息。
+title: 三维装箱求解器、约束模型与可视化技术选型：可审计调研与实测
+abstract: >-
+  本仓库系统整理三维正交/非正交装箱问题的形式化定义、约束、算法、开源库、
+  公共 benchmark、统一指标、受控实验以及桌面三维交互技术选型。研究包含
+  PackingSolver 异构成本目标的上游缺陷复现与最小修复验证，并保留原始结果、
+  派生统计、引用清单和复现审计记录。
+authors:
+  - name: HansBug
+    alias: HansBug
+version: 0.1.0
+date-released: 2026-08-31
+type: software
+license: Apache-2.0
+repository-code: https://github.com/hansbug-research/3d-packing-solver-study
+keywords:
+  - 三维装箱
+  - container loading
+  - bin packing
+  - constraint programming
+  - PackingSolver
+  - benchmark
+  - Three.js

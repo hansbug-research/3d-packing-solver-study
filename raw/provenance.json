@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "benchmark_date": "2026-08-31",
+  "platform": "x86-64 Linux",
+  "source_commits": {
+    "packingsolver_source": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+    "esicup_datasets": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+    "jerry": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+    "skjolber": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d"
+  },
+  "packingsolver_binary_sha256": {
+    "box": "98925f41d3f40bac9da6ec5e4849d708a365b67f496b9aad13d382040a65f166",
+    "boxstacks": "c705412d8a6e6d6e828babdec73af69039a780312fca42ea35b254d8824eebc9"
+  },
+  "packingsolver_binary_label": "latest-2026-07-28; source commit is recorded separately because the rolling binary has no embedded git revision",
+  "upstream_tracking": {
+    "repository": "fontanf/packingsolver",
+    "checked_at": "2026-08-31",
+    "issues": [536, 537, 538, 539],
+    "pull_requests": [540, 541, 542, 543],
+    "status": "open_not_merged"
+  },
+  "resource_policy": {
+    "outer_timeout_s": 35,
+    "outer_virtual_memory_bytes": 4294967296,
+    "packingsolver_timeout_s": 10,
+    "packingsolver_virtual_memory_bytes": 1073741824,
+    "java_heap_bytes": 536870912,
+    "threads": 1
+  }
+}

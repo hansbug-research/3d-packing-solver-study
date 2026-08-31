@@ -1,0 +1,12 @@
+{
+  "library": "PySCIPOpt/SCIP",
+  "version": "6.2.1",
+  "status": "optimal",
+  "objective_bins": 2.0,
+  "dual_bound": 2.0,
+  "gap": 0.0,
+  "elapsed_s": 0.060040079057216644,
+  "nodes": 1,
+  "placements": 9,
+  "validation_errors": []
+}

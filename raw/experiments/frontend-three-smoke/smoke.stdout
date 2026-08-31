@@ -1,0 +1,5 @@
+
+> smoke
+> node --max-old-space-size=256 smoke.mjs
+
+{"schema_version":1,"library":"three","version":"185","node":"v24.14.1","renderer_created":false,"instances":10000,"bounding_box":[100,100,1.0000000000000002],"instance_id_found":5050,"clipping_planes":1,"elapsed_ms":23.211,"heap_used_bytes":7955136,"scope":"non-rendering data-layer smoke; no GPU/FPS claim"}

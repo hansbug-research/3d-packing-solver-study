@@ -1,0 +1,30 @@
+{
+  "dataset": "ESICUP THPACK9 instance 1",
+  "source": "https://github.com/ESICUP/datasets",
+  "container_size": [
+    10,
+    6,
+    16
+  ],
+  "required_items": 70,
+  "results": [
+    {
+      "library": "py3dbp",
+      "packed": 70,
+      "required": 70,
+      "unpacked": 0,
+      "bins_used": 50,
+      "elapsed_s": 0.01586100016720593,
+      "validation_errors": []
+    },
+    {
+      "library": "jerry800416/3D-bin-packing",
+      "packed": 70,
+      "required": 70,
+      "unpacked": 0,
+      "bins_used": 50,
+      "elapsed_s": 0.024499519960954785,
+      "validation_errors": []
+    }
+  ]
+}

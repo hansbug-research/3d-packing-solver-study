@@ -1,0 +1,13 @@
+{
+  "library": "CPLEX",
+  "wheel_version": "22.2.0.1",
+  "engine_version": "22.2.0.0",
+  "status": "OPTIMAL",
+  "objective_bins": 8,
+  "best_bound": 8,
+  "gap": 0,
+  "elapsed_s": 0.04,
+  "license": "community/restricted conditions; not a production authorization",
+  "provenance": "Historical exact-small smoke run on 2026-08-31; the current clone does not contain cplex or an IBM runtime license. Re-run benchmarks/benchmark_cplex.py in a licensed environment.",
+  "model": "nine 5x5x5 cubes, two 10x10x10 bins, same pairwise model as benchmark_ortools.py"
+}

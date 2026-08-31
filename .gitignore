@@ -1,0 +1,12 @@
+.venv/
+.cache/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+node_modules/
+target/
+benchmarks/java-skjolber/classpath.txt
+benchmarks/java-skjolber/target/
+results/raw/
+sources/fulltext/

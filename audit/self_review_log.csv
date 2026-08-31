@@ -1,0 +1,8 @@
+round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
+1,initial-study,primary,3,4,补充上游源码对照/公共数据集/指标,closed
+2,release-structure,primary,2,3,补 README/CITATION/LICENSE/REVIEW/raw-derived-sources,closed
+3,shuorenhua-docs,primary,0,2,删除宣传腔并保留数字/术语/引用,closed
+4,reproducibility,primary,0,2,加入 analyze/plot/verify/manifest 与 certificate 归档,closed
+5,release-structure,repo_audit,11,2,见 audit/repo_review_notes.md：canonical raw、依赖取回、CFF、CI、许可证归属、来源锁定、二进制 provenance、正式实测脚本和 clean-clone 复现待收口,open
+5,academic-audit,academic_audit,1,2,修正 BR DOI 与 THPACK 旋转字段语义，收窄 LAFF 性能表述,closed
+6,release-close,primary,0,2,固定 benchmark 来源与 converter，补齐 raw/source/CFF/CI/前端及商业实验 provenance，收窄剩余环境边界,closed

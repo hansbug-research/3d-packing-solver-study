@@ -1,0 +1,290 @@
+{
+  "library": "fontanf/packingsolver",
+  "release": "latest-2026-07-28",
+  "cases": {
+    "exact_grid": {
+      "returncode": 0,
+      "elapsed_s": 1.00408536195755,
+      "stderr_tail": "",
+      "certificate_created": true,
+      "packed": 8,
+      "expected": 8,
+      "bins_used": 1,
+      "bin_type_rows": [
+        "0"
+      ],
+      "used_cost": 10.0,
+      "max_weight_above_violations": [],
+      "validation_errors": [],
+      "placements": [
+        {
+          "ref": "0:0:0",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:1",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 5.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:2",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 5.0,
+          "z": 0.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:3",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 5.0,
+          "z": 5.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:4",
+          "bin_ref": "0",
+          "x": 5.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:5",
+          "bin_ref": "0",
+          "x": 5.0,
+          "y": 0.0,
+          "z": 5.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:6",
+          "bin_ref": "0",
+          "x": 5.0,
+          "y": 5.0,
+          "z": 0.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        },
+        {
+          "ref": "0:0:7",
+          "bin_ref": "0",
+          "x": 5.0,
+          "y": 5.0,
+          "z": 5.0,
+          "dx": 5.0,
+          "dy": 5.0,
+          "dz": 5.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    "heterogeneous_cost": {
+      "returncode": 1,
+      "elapsed_s": 1.0045215350110084,
+      "stderr_tail": "Error: bool packingsolver::box::Solution::operator<(const packingsolver::box::Solution&) const: solution \"box::Solution\" does not support objective \"VariableSizedBinPacking\"\n",
+      "certificate_created": false,
+      "packed": 0,
+      "expected": 2,
+      "validation_errors": [
+        "no certificate"
+      ]
+    },
+    "heterogeneous_cost_boxstacks": {
+      "returncode": 1,
+      "elapsed_s": 0.006334386067464948,
+      "stderr_tail": "Error: bool packingsolver::box::Solution::operator<(const packingsolver::box::Solution&) const: solution \"box::Solution\" does not support objective \"VariableSizedBinPacking\"\n",
+      "certificate_created": false,
+      "packed": 0,
+      "expected": 2,
+      "validation_errors": [
+        "no certificate"
+      ]
+    },
+    "rotation_allowed": {
+      "returncode": 0,
+      "elapsed_s": 1.0047811712138355,
+      "stderr_tail": "",
+      "certificate_created": true,
+      "packed": 1,
+      "expected": 1,
+      "bins_used": 1,
+      "bin_type_rows": [
+        "0"
+      ],
+      "used_cost": 1.0,
+      "max_weight_above_violations": [],
+      "validation_errors": [],
+      "placements": [
+        {
+          "ref": "0:0:0",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 4.0,
+          "dy": 3.0,
+          "dz": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    "rotation_forbidden": {
+      "returncode": 0,
+      "elapsed_s": 1.0036759220529348,
+      "stderr_tail": "",
+      "certificate_created": true,
+      "packed": 0,
+      "expected": 1,
+      "bins_used": 0,
+      "bin_type_rows": [],
+      "used_cost": 0,
+      "max_weight_above_violations": [],
+      "validation_errors": [
+        "packed 0 != expected 1"
+      ],
+      "placements": []
+    },
+    "weight_limit": {
+      "returncode": 0,
+      "elapsed_s": 1.0032480359077454,
+      "stderr_tail": "",
+      "certificate_created": true,
+      "packed": 3,
+      "expected": 3,
+      "bins_used": 3,
+      "bin_type_rows": [
+        "0",
+        "0",
+        "0"
+      ],
+      "used_cost": 3.0,
+      "max_weight_above_violations": [],
+      "validation_errors": [],
+      "placements": [
+        {
+          "ref": "0:0:0",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 4.0,
+          "dy": 4.0,
+          "dz": 4.0,
+          "weight": 6.0
+        },
+        {
+          "ref": "0:0:1",
+          "bin_ref": "1",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 4.0,
+          "dy": 4.0,
+          "dz": 4.0,
+          "weight": 6.0
+        },
+        {
+          "ref": "0:0:2",
+          "bin_ref": "2",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 4.0,
+          "dy": 4.0,
+          "dz": 4.0,
+          "weight": 6.0
+        }
+      ]
+    },
+    "stack_weight_above": {
+      "returncode": 0,
+      "elapsed_s": 0.0038546761497855186,
+      "stderr_tail": "",
+      "certificate_created": true,
+      "packed": 3,
+      "expected": 3,
+      "bins_used": 1,
+      "bin_type_rows": [
+        "0"
+      ],
+      "used_cost": 1.0,
+      "max_weight_above_violations": [],
+      "validation_errors": [],
+      "placements": [
+        {
+          "ref": "1:0:0",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "dx": 2.0,
+          "dy": 2.0,
+          "dz": 2.0,
+          "weight": 10.0
+        },
+        {
+          "ref": "1:0:1",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 2.0,
+          "dx": 2.0,
+          "dy": 2.0,
+          "dz": 2.0,
+          "weight": 10.0
+        },
+        {
+          "ref": "0:0:2",
+          "bin_ref": "0",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 4.0,
+          "dx": 2.0,
+          "dy": 2.0,
+          "dz": 2.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    "semi_trailer_axle": {
+      "returncode": 1,
+      "elapsed_s": 0.0038902328815311193,
+      "stderr_tail": "Error: std::bad_alloc\n",
+      "certificate_created": false,
+      "packed": 0,
+      "expected": 1,
+      "validation_errors": [
+        "no certificate"
+      ]
+    }
+  }
+}

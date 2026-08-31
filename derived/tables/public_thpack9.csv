@@ -1,0 +1,5 @@
+library,packed,required,bins_used,status
+PackingSolver patched box,70,70,25,FEASIBLE
+Skjolber LAFF,70,70,28,FEASIBLE
+py3dbp,70,70,50,FEASIBLE
+jerry800416/3D-bin-packing,70,70,50,FEASIBLE

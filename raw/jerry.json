@@ -1,0 +1,45 @@
+{
+  "library": "jerry800416/3D-bin-packing",
+  "commit": "shallow checkout at benchmark time",
+  "elapsed_s": 0.0007362421602010727,
+  "packed": 3,
+  "validation_errors": [],
+  "fragile_declared_loadbear": 100,
+  "actual_weight_above_fragile": 20.0,
+  "loadbear_is_only_sort_key": true,
+  "placements": [
+    {
+      "ref": "fragile",
+      "bin_ref": "stack-bin",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "dx": 2.0,
+      "dy": 2.0,
+      "dz": 2.0,
+      "weight": 1.0
+    },
+    {
+      "ref": "heavy-1",
+      "bin_ref": "stack-bin",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 2.0,
+      "dx": 2.0,
+      "dy": 2.0,
+      "dz": 2.0,
+      "weight": 10.0
+    },
+    {
+      "ref": "heavy-2",
+      "bin_ref": "stack-bin",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 4.0,
+      "dx": 2.0,
+      "dy": 2.0,
+      "dz": 2.0,
+      "weight": 10.0
+    }
+  ]
+}

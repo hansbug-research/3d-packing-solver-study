@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "public_dataset": "ESICUP THPACK9 instance 1",
+  "public_required_items": 70,
+  "public_container_volume": 960,
+  "public_item_volume": 17920,
+  "public_volume_lower_bound": 19,
+  "public_results": [
+    {
+      "library": "PackingSolver patched box",
+      "packed": 70,
+      "required": 70,
+      "bins_used": 25,
+      "status": "FEASIBLE"
+    },
+    {
+      "library": "Skjolber LAFF",
+      "packed": 70,
+      "required": 70,
+      "bins_used": 28,
+      "status": "FEASIBLE"
+    },
+    {
+      "library": "py3dbp",
+      "packed": 70,
+      "required": 70,
+      "bins_used": 50,
+      "status": "FEASIBLE"
+    },
+    {
+      "library": "jerry800416/3D-bin-packing",
+      "packed": 70,
+      "required": 70,
+      "bins_used": 50,
+      "status": "FEASIBLE"
+    }
+  ],
+  "controlled_pytest_assertions": 8,
+  "packing_solver_original_variable_cost": "FAIL_KNOWN_UPSTREAM_BUG",
+  "packing_solver_patched_variable_cost": "PASS"
+}

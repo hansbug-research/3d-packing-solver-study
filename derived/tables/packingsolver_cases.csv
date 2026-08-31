@@ -1,0 +1,9 @@
+case,returncode,certificate
+exact_grid,0,True
+heterogeneous_cost,1,False
+heterogeneous_cost_boxstacks,1,False
+rotation_allowed,0,True
+rotation_forbidden,0,True
+weight_limit,0,True
+stack_weight_above,0,True
+semi_trailer_axle,1,False

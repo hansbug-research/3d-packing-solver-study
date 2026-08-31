@@ -1,0 +1,14 @@
+{
+  "name": "packing-study-three-smoke",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.14 <25"
+  },
+  "dependencies": {
+    "three": "0.185.1"
+  },
+  "scripts": {
+    "smoke": "node --max-old-space-size=256 smoke.mjs"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "dataset": "ESICUP THPACK9 instance 1",
+  "library": "Jerry fork",
+  "instance": 1,
+  "container_size": [
+    10,
+    6,
+    16
+  ],
+  "items": 70,
+  "bins_available": 80,
+  "packed": 70,
+  "unpacked": 0,
+  "bins_used": 50,
+  "elapsed_s": 0.02444281498901546,
+  "validation_errors": []
+}

@@ -1,0 +1,76 @@
+id,type,title,url,accessed,commit_or_version,local_snapshot,sha256,used_for
+S01,repository,ESICUP Cutting & Packing Datasets,https://github.com/ESICUP/datasets/tree/154a8f006a8e72f65d734f2d1e36777f678f31f8,2026-08-31,154a8f006a8e72f65d734f2d1e36777f678f31f8,no,,dataset catalog and license note
+S02,dataset,ESICUP 3D rectangular README,https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/README.md,2026-08-31,154a8f006a8e72f65d734f2d1e36777f678f31f8,no,,THPACK/BAYTP/Alonso provenance
+S03,dataset,ESICUP THPACK README,https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/thpack/README.txt,2026-08-31,154a8f006a8e72f65d734f2d1e36777f678f31f8,no,,THPACK1-9 semantics and formats
+S04,dataset,ESICUP Alonso 2019 README,https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/alonso_2019/readme.txt,2026-08-31,154a8f006a8e72f65d734f2d1e36777f678f31f8,no,,delivery day pallet truck and axle fields
+S05,dataset,ESICUP Alonso 2020 README,https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/alonso_2020/readme.txt,2026-08-31,154a8f006a8e72f65d734f2d1e36777f678f31f8,no,,pallet class and day fields
+S06,repository,PackingSolver repository,https://github.com/fontanf/packingsolver,2026-08-31,367ebfdaad11424ded3696b7dae799a30c1375d0,no,,official project status
+S07,source,PackingSolver README snapshot,https://raw.githubusercontent.com/fontanf/packingsolver/367ebfdaad11424ded3696b7dae799a30c1375d0/README.md,2026-08-31,367ebfd,sources/snapshots/packingsolver_README_367ebfd.md,4ae2d10408819ad5600a6bec963bc3d1fc6f0e93212b9c2d6e248aa129abc62e,official capability claims
+S08,source,PackingSolver box Solution snapshot,https://raw.githubusercontent.com/fontanf/packingsolver/367ebfdaad11424ded3696b7dae799a30c1375d0/src/box/solution.cpp,2026-08-31,367ebfd,sources/snapshots/packingsolver_box_solution_367ebfd.cpp,db02145273f9a61ad908c1b507464779526ac1f29842630ea1acdd09ad7642e4,missing objective branch
+S09,source,PackingSolver boxstacks Solution snapshot,https://raw.githubusercontent.com/fontanf/packingsolver/367ebfdaad11424ded3696b7dae799a30c1375d0/src/boxstacks/solution.cpp,2026-08-31,367ebfd,sources/snapshots/packingsolver_boxstacks_solution_367ebfd.cpp,36f1756bba02ee8fe22d6704ff5d438346dfbed4661e585c1ca3f0280abad48e,missing objective branch
+S10,source,PackingSolver rectangle Solution snapshot,https://raw.githubusercontent.com/fontanf/packingsolver/367ebfdaad11424ded3696b7dae799a30c1375d0/src/rectangle/solution.cpp,2026-08-31,367ebfd,sources/snapshots/packingsolver_rectangle_solution_367ebfd.cpp,74a4b67858ca3bbf9934b956aca451a1e1b8ab43a0c870c3b738ec95d0188246,comparison implementation
+S11,repository,OR-Tools repository,https://github.com/google/or-tools,2026-08-31,9.15.6755,no,,CP-SAT implementation and license
+S12,docs,OR-Tools CP-SAT solver guide,https://developers.google.com/optimization/cp/cp_solver,2026-08-31,accessed,no,,solver status and bounds
+S13,repository,SCIP repository,https://github.com/scipopt/scip,2026-08-31,10.0.3,no,,open MIP/CIP engine
+S14,repository,PySCIPOpt repository,https://github.com/scipopt/PySCIPOpt,2026-08-31,6.2.1,no,,Python binding
+S15,repository,py3dbp repository,https://github.com/enzoruiz/3dbinpacking,2026-08-31,1.1.2,no,,pivot baseline
+S16,repository,Jerry 3D bin packing,https://github.com/jerry800416/3D-bin-packing,2026-08-31,shallow checkout,no,,loadbear audit
+S17,repository,Skjolber 3D bin container packing,https://github.com/skjolber/3d-bin-container-packing,2026-08-31,c73d52190c029a14e64f1bbdd2ea70452d1eb83d,no,,LAFF and Java integration
+S18,repository,Go bp3d repository,https://github.com/gedex/bp3d,2026-08-31,shallow checkout,no,,MaxWeight source audit
+S19,paper,Wäscher Haußner Schumann typology,https://doi.org/10.1016/j.ejor.2005.12.047,2026-08-31,2007,no,,problem classification
+S20,paper,Martello Pisinger Vigo 3D BPP,https://doi.org/10.1287/opre.48.2.256.12386,2026-08-31,2000,no,,exact 3D bin packing
+S21,paper,Bortfeldt Wäscher CLP review,https://doi.org/10.1016/j.ejor.2012.12.006,2026-08-31,2013,no,,practical constraint taxonomy
+S22,paper,Junqueira Morabito Yamashita stability load bearing,https://doi.org/10.1016/j.cor.2010.07.017,2026-08-31,2012,no,,support and load-bearing models
+S23,paper,Crainic Perboli Tadei extreme points,https://doi.org/10.1287/ijoc.1070.0250,2026-08-31,2008,no,,constructive heuristic
+S24,paper,Crainic Perboli Rei Tadei variable cost size BPP,https://doi.org/10.1016/j.cor.2011.01.001,2026-08-31,2011,no,,heterogeneous cost master and bounds
+S25,paper,Davies Bischoff weight distribution,https://doi.org/10.1016/S0377-2217(98)00139-8,2026-08-31,1999,no,,load distribution objective
+S26,paper,Krebs Ehmke axle weights,https://doi.org/10.1016/j.ejtl.2021.100043,2026-08-31,2021,no,,axle formulas and integrated loading
+S27,paper,Ceschia Schaerf multi-drop loading,https://doi.org/10.1007/s10732-011-9162-6,2026-08-31,2013,no,,multi-drop search
+S28,paper,Romanova Bennell Stoyan Pankratov continuous rotations,https://doi.org/10.1016/j.ejor.2018.01.025,2026-08-31,2018,no,,continuous non-convex packing
+S29,docs,Three.js documentation,https://threejs.org/docs/,2026-08-31,r185,no,,3D rendering and instancing
+S30,docs,Tauri documentation,https://tauri.app/,2026-08-31,2,no,,desktop shell and sidecar
+S31,paper,Bischoff and Ratcliff container loading,https://doi.org/10.1016/0305-0483(95)00015-G,2026-08-31,1995,no,,THPACK1-7 provenance
+S32,license,PackingSolver MIT license snapshot,https://raw.githubusercontent.com/fontanf/packingsolver/367ebfdaad11424ded3696b7dae799a30c1375d0/LICENSE,2026-08-31,367ebfd,sources/snapshots/packingsolver_LICENSE_367ebfd.txt,69af8deb5c986861d0d90e880d1220f9157582b4cc2743e1146d6bb62939a0de,license for source snapshots
+S33,regulation,U.S. eCFR 29 CFR 1910.176,https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-N/section-1910.176,2026-08-31,current,no,,warehouse stacking stability
+S34,regulation,EU Directive 2014/47/EU Annex III,https://eur-lex.europa.eu/eli/dir/2014/47/oj,2026-08-31,current,no,,road cargo securing and axle loads
+S35,regulation,U.S. eCFR 49 CFR 393.102 and 393.106,https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-393/subpart-I/section-393.102;https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-393/subpart-I/section-393.106,2026-08-31,current,no,,road cargo securement
+S36,standard,IMO ILO UNECE CTU Code,https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/1497.pdf,2026-08-31,MSC.1/Circ.1497,no,,cargo distribution and securing
+S37,standard,IMO International Convention for Safe Containers,https://www.imo.org/en/About/Conventions/Pages/International-Convention-for-Safe-Containers-(CSC).aspx,2026-08-31,current,no,,container structural safety
+S38,standard,IMO SOLAS verified gross mass,https://www.imo.org/en/OurWork/Safety/Pages/Verification-of-the-gross-mass.aspx,2026-08-31,current,no,,VGM process
+S39,standard,ISO 668 series 1 freight containers,https://www.iso.org/standard/76912.html,2026-08-31,2020,no,,container dimensions and ratings
+S40,standard,ISO 1496-1 series 1 freight containers,https://www.iso.org/standard/60720.html,2026-08-31,2013,no,,container specification and testing
+S41,regulation,FAA AC 120-85B air cargo operations,https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_120-85B.pdf,2026-08-31,120-85B,no,,air cargo WBM and ULD
+S42,regulation,U.S. eCFR 14 CFR 121.665,https://www.ecfr.gov/current/title-14/chapter-I/subchapter-G/part-121/subpart-U/section-121.665,2026-08-31,current,no,,air cargo loading requirements
+S43,standard,IATA ULD Regulations,https://www.iata.org/en/publications/manuals/uld-regulations/,2026-08-31,current,no,,ULD operations
+S44,standard,ASTM D642 compressive resistance,https://doi.org/10.1520/D0642-25,2026-08-31,D642-25,no,,packaging compression tests
+S45,standard,ISO 2234 stacking tests,https://www.iso.org/standard/25752.html,2026-08-31,2000,no,,static stacking tests
+S46,paper,Christensen and Rousoe multi-drop loading,https://doi.org/10.1111/j.1475-3995.2009.00714.x,2026-08-31,2009,no,,multi-drop constraints
+S47,regulation,U.S. eCFR 49 CFR 177.848,https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-177/subpart-C/section-177.848,2026-08-31,current,no,,hazardous material segregation
+S48,regulation,UNECE ADR 2025,https://unece.org/transport/dangerous-goods/adr-2025-files,2026-08-31,2025,no,,road dangerous goods
+S49,standard,IMO IMDG Code,https://www.imo.org/en/publications/pages/imdg%20code.aspx,2026-08-31,current,no,,maritime dangerous goods
+S50,standard,IATA Dangerous Goods Regulations and ICAO Dangerous Goods,https://www.iata.org/en/publications/dgr/;https://www.icao.int/safety/dangerousgoods,2026-08-31,current,no,,air dangerous goods
+S51,standard,UNECE ATP,https://unece.org/about-atp,2026-08-31,current,no,,perishable food temperature controls
+S52,standard,IPPC ISPM 15 wood packaging,https://www.ippc.int/en/publications/640/,2026-08-31,current,no,,wood packaging treatment
+S53,standard,GS1 Package Measurement Rules,https://www.gs1.org/standards/gs1-package-measurement-rules-standard/current-standard,2026-08-31,current,no,,package measurement consistency
+S54,standard,IMO CTU Code supplementary material,https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/1498.pdf,2026-08-31,MSC.1/Circ.1498,no,,CTU Code supplementary guidance
+S55,paper,Alonso et al mathematical multi-container loading models,https://doi.org/10.1016/j.cie.2018.11.012,2026-08-31,2019,no,,Alonso 2019 benchmark provenance
+S56,paper,Alonso Alvarez-Valdes Parreno GRASP multi-container loading,https://doi.org/10.1007/s10288-018-0397-z,2026-08-31,2020 (online 2019),no,,Alonso 2020 benchmark provenance
+S57,paper,Hoare Beasley placing boxes on shelves,https://doi.org/10.1057/palgrave.jors.2601130,2026-08-31,2001,no,,BAYTP benchmark provenance
+S58,paper,Nascimento Queiroz Junqueira practical container loading constraints,https://doi.org/10.1016/j.cor.2020.105186,2026-08-31,2021,no,,comprehensive exact constraint model
+S59,paper,Paquay Schyns Limbourg air cargo 3D bin packing MIP,https://doi.org/10.1111/itor.12111,2026-08-31,2014,no,,air cargo MIP formulation
+S60,paper,Fanslau Bortfeldt container loading tree search,https://doi.org/10.1287/ijoc.1090.0338,2026-08-31,2010,no,,tree search heuristic
+S61,paper,Pisinger heuristics for container loading,https://doi.org/10.1016/S0377-2217(02)00132-7,2026-08-31,2002,no,,wall and block heuristic
+S62,paper,Crainic Perboli Tadei TS2PACK tabu search,https://doi.org/10.1016/j.ejor.2007.06.063,2026-08-31,2009,no,,two-level tabu search
+S63,paper,Zhao Bennell Bektas Dowsland 3D container loading review,https://doi.org/10.1111/itor.12094,2026-08-31,2014,no,,algorithm comparison review
+S64,paper,Pisinger Sigurd variable bin size cost 2D packing,https://doi.org/10.1016/j.disopt.2005.01.002,2026-08-31,2005,no,,variable-size cost framework
+S65,paper,Correia Gouveia Saldanha-da-Gama variable size bin packing,https://doi.org/10.1016/j.cor.2006.10.014,2026-08-31,2008,no,,discretized variable-size model
+S66,paper,Alvarez-Valdes Parreno Tamarit 3D multiple bin size lower bounds,https://doi.org/10.1007/s00291-013-0347-2,2026-08-31,2015 (online 2013),no,,3D lower bounds
+S67,paper,Martinez-Franco et al PackageCargo stability tool,https://doi.org/10.1016/j.softx.2020.100601,2026-08-31,2020,no,,stability decision support software
+S68,paper,Ramos Silva Oliveira road container load balance,https://doi.org/10.1016/j.ejor.2017.10.050,2026-08-31,2018,no,,road load balance methodology
+S69,paper,Pollaris axle weight loading constraints,https://doi.org/10.1007/s10288-017-0352-4,2026-08-31,2018 (online 2017),no,,vehicle routing axle limits
+S70,paper,Junqueira Morabito Yamashita multi-drop MIP,https://doi.org/10.1007/s10479-011-0942-z,2026-08-31,2011,no,,multi-drop MIP formulation
+S71,paper,Bonet Filella Trivella Corman soft unloading constraints,https://doi.org/10.1016/j.ejor.2022.10.033,2026-08-31,2023,no,,soft multi-drop unloading
+S72,paper,Egeblad Nielsen Brazil translational arbitrary polytope packing,https://doi.org/10.1016/j.comgeo.2008.06.003,2026-08-31,2009,no,,nonorthogonal geometry baseline
+S73,paper,Lamas-Fernandez Bennell Martinez-Sykora voxel irregular packing,https://doi.org/10.1287/opre.2022.2260,2026-08-31,2023,no,,voxel irregular packing
+S74,paper,Romanova et al packing oblique 3D objects,https://doi.org/10.3390/math8071130,2026-08-31,2020,no,,oblique continuous rotation
+S75,paper,Cano Torra nonorthogonal objects stability load bearing,https://doi.org/10.1109/LINDI.2009.5258764,2026-08-31,2009,no,,nonorthogonal loading heuristic
