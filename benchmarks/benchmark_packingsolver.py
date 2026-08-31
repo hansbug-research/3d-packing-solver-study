@@ -54,6 +54,7 @@ def run_case(name, executable, items, bins, objective, expected_items, extra=())
     bin_sizes = {}
     bin_weights = {}
     placements = []
+    placement_item_ids = []
     for row in rows:
         if row["TYPE"] == "BIN":
             ref = row["BIN"]
@@ -68,19 +69,19 @@ def run_case(name, executable, items, bins, objective, expected_items, extra=())
                     float(row["LX"]), float(row["LY"]), float(row["LZ"]),
                     float(item_specs[row["ID"]].get("WEIGHT", 0)),
                 ))
+                placement_item_ids.append(row["ID"])
     errors = validate_aabbs(placements, bin_sizes, bin_weights)
     if len(placements) != expected_items:
         errors.append(f"packed {len(placements)} != expected {expected_items}")
     used_cost = sum(float(bin_specs[row["ID"]].get("COST", 0)) * int(row["COPIES"])
                     for row in rows if row["TYPE"] == "BIN")
     max_above_violations = []
-    item_rows = [row for row in rows if row["TYPE"] == "ITEM"]
-    for placement, row in zip(placements, item_rows):
-        limit = item_specs[row["ID"]].get("MAXIMUM_WEIGHT_ABOVE")
+    for placement, item_id in zip(placements, placement_item_ids):
+        limit = item_specs[item_id].get("MAXIMUM_WEIGHT_ABOVE")
         if limit not in (None, ""):
             actual = cumulative_weight_above(placement, placements)
             if actual > float(limit) + 1e-7:
-                max_above_violations.append({"item_type": row["ID"], "actual": actual, "limit": float(limit)})
+                max_above_violations.append({"item_type": item_id, "actual": actual, "limit": float(limit)})
     result.update({
         "packed": len(placements),
         "expected": expected_items,
