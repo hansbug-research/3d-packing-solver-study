@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/hansbug-research/3d-packing-solver-study/benchmarks/comprehensive/run-record.schema.json",
+  "title": "Comprehensive packing benchmark run record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "protocol_version",
+    "run_id",
+    "benchmark_id",
+    "problem_variant",
+    "instance_id",
+    "implementation_id",
+    "algorithm",
+    "adapter",
+    "comparison_track",
+    "problem_scope",
+    "budget",
+    "item_order",
+    "bin_order",
+    "seed",
+    "repetition",
+    "input_sha256",
+    "input_status",
+    "capability_status",
+    "run_status",
+    "solution_status",
+    "proof_status",
+    "termination_reason",
+    "resources",
+    "metrics",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_version": {"const": "benchmark-protocol/3"},
+    "run_id": {"type": "string", "minLength": 1},
+    "benchmark_id": {"type": "string", "pattern": "^B(0[1-9]|[12][0-9]|3[0-2])$"},
+    "problem_variant": {"type": "string", "minLength": 1},
+    "instance_id": {"type": "string", "minLength": 1},
+    "implementation_id": {"type": "string", "minLength": 1},
+    "algorithm": {"type": "string", "minLength": 1},
+    "adapter": {"type": ["string", "null"]},
+    "comparison_track": {"enum": ["NATIVE", "COMPOSED", "EXACT_MODEL", "NOT_APPLICABLE"]},
+    "problem_scope": {"enum": ["FULL_PROBLEM", "GEOMETRY_PROJECTION", "NOT_APPLICABLE"]},
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["time_limit_s", "memory_limit_bytes", "thread_limit"],
+      "properties": {
+        "time_limit_s": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "memory_limit_bytes": {"type": ["integer", "null"], "minimum": 1},
+        "thread_limit": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "item_order": {"type": "string", "minLength": 1},
+    "bin_order": {"type": "string", "minLength": 1},
+    "seed": {"type": ["integer", "null"]},
+    "repetition": {"type": "integer", "minimum": 0},
+    "input_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "input_status": {"enum": ["VALID", "SOURCE_INVALID", "SOURCE_INCOMPLETE"]},
+    "capability_status": {"enum": ["SUPPORTED_NATIVE", "SUPPORTED_COMPOSED", "PROJECTION_ONLY", "NOT_SUPPORTED", "ADAPTER_MISSING"]},
+    "run_status": {"enum": ["COMPLETED", "TIME_LIMIT", "MEMORY_LIMIT", "CANCELLED", "ERROR", "NOT_RUN"]},
+    "solution_status": {"enum": ["VALID_COMPLETE", "VALID_PARTIAL", "INVALID_CERTIFICATE", "CONSTRAINT_VIOLATION", "NO_SOLUTION", "NOT_APPLICABLE"]},
+    "proof_status": {"enum": ["PROVEN_OPTIMAL", "PROVEN_INFEASIBLE", "INCUMBENT_WITH_BOUND", "FEASIBLE", "UNKNOWN", "NOT_APPLICABLE"]},
+    "termination_reason": {"type": "string", "minLength": 1},
+    "resources": {
+      "type": "object",
+      "additionalProperties": {"type": ["number", "integer", "string", "null"]}
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {"type": ["number", "integer", "string", "boolean", "null"]}
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": {"type": ["string", "null"]}
+    }
+  }
+}

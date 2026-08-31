@@ -1,0 +1,31 @@
+{
+  "capability_status_counts": {
+    "ADAPTER_MISSING": 246,
+    "NOT_SUPPORTED": 52,
+    "PROJECTION_ONLY": 130,
+    "SUPPORTED_COMPOSED": 15,
+    "SUPPORTED_NATIVE": 165
+  },
+  "catalog_sha256": {
+    "benchmarks/comprehensive/implementations.json": "2f7bba7eabd81940fb0b956694d2b673fc3c328fa790ac8049b57d3a031bbcb9",
+    "benchmarks/comprehensive/suites.json": "35f1ce9605b9353af9de3eb189bfcf10d50eaf58b982c40d3cf555c63ab96306"
+  },
+  "comparison_track_counts": {
+    "COMPOSED": 145,
+    "EXACT_MODEL": 124,
+    "NATIVE": 287,
+    "NOT_APPLICABLE": 52
+  },
+  "executed_cells": 0,
+  "implementation_count": 19,
+  "input_status_counts": {
+    "SOURCE_INCOMPLETE": 380,
+    "VALID": 228
+  },
+  "planned_cells": 608,
+  "protocol_version": "benchmark-protocol/3",
+  "record_kind": "SUITE_IMPLEMENTATION_PLAN_SUMMARY",
+  "schema_version": 1,
+  "suite_count": 32,
+  "warning": "This is a deterministic execution plan, not benchmark results."
+}

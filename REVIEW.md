@@ -8,6 +8,7 @@
 .venv/bin/python scripts/analyze.py
 .venv/bin/python scripts/plot.py
 .venv/bin/python benchmarks/campaign/analyze_campaign.py
+.venv/bin/python benchmarks/comprehensive/build_plan.py --check
 .venv/bin/python scripts/verify.py
 .venv/bin/python -m pytest -q
 ```

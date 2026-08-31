@@ -1,0 +1,118 @@
+from __future__ import annotations
+
+import copy
+import json
+from pathlib import Path
+
+import pytest
+
+from comprehensive.model import build_plan_rows, load_catalogs, validate_plan_rows, validate_run_record
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def plan_cells() -> dict[tuple[str, str], dict]:
+    suites, implementations = load_catalogs()
+    rows = build_plan_rows(suites, implementations)
+    return {(row["benchmark_id"], row["implementation_id"]): row for row in rows}
+
+
+def valid_run_record() -> dict:
+    return {
+        "schema_version": 1,
+        "protocol_version": "benchmark-protocol/3",
+        "run_id": "B06/grid/exact_cp_sat/seed-42/rep-0",
+        "benchmark_id": "B06",
+        "problem_variant": "IDENTICAL_BIN_PACKING",
+        "instance_id": "grid",
+        "implementation_id": "exact_cp_sat",
+        "algorithm": "strengthened CP-SAT model",
+        "adapter": "exact_suite/strengthened",
+        "comparison_track": "EXACT_MODEL",
+        "problem_scope": "FULL_PROBLEM",
+        "budget": {"time_limit_s": 20.0, "memory_limit_bytes": 4294967296, "thread_limit": 1},
+        "item_order": "ORIGINAL",
+        "bin_order": "ORIGINAL",
+        "seed": 42,
+        "repetition": 0,
+        "input_sha256": "0" * 64,
+        "input_status": "VALID",
+        "capability_status": "SUPPORTED_NATIVE",
+        "run_status": "COMPLETED",
+        "solution_status": "VALID_COMPLETE",
+        "proof_status": "PROVEN_OPTIMAL",
+        "termination_reason": "OPTIMAL",
+        "resources": {"wall_s": 0.1, "peak_rss_bytes": 1000000},
+        "metrics": {"objective": 1, "bound": 1, "gap": 0.0},
+        "artifacts": {"solution": "solution.json", "validation": "validation.json"},
+    }
+
+
+def test_comprehensive_catalog_is_full_cartesian_plan() -> None:
+    suites, implementations = load_catalogs()
+    rows = build_plan_rows(suites, implementations)
+    validate_plan_rows(rows, 32, 19)
+    assert len(rows) == 608
+    assert {row["benchmark_id"] for row in rows} == {f"B{index:02d}" for index in range(1, 33)}
+    assert len({row["implementation_id"] for row in rows}) == 19
+    assert all(row["run_status"] == "NOT_RUN" for row in rows)
+    assert all(row["solution_status"] == "NOT_APPLICABLE" for row in rows)
+
+
+def test_known_capability_boundaries_remain_explicit() -> None:
+    cells = plan_cells()
+    assert cells[("B04", "packingsolver_fork_box")]["capability_status"] == "SUPPORTED_NATIVE"
+    assert cells[("B04", "rust_extreme_point")]["capability_status"] == "SUPPORTED_COMPOSED"
+    assert cells[("B08", "packingsolver_upstream_box")]["capability_status"] == "SUPPORTED_NATIVE"
+    assert "#536" in cells[("B08", "packingsolver_upstream_box")]["status_reason"]
+    assert cells[("B14", "jerry")]["capability_status"] == "PROJECTION_ONLY"
+    assert "loadbear" in cells[("B14", "jerry")]["status_reason"]
+    assert cells[("B22", "packingsolver_fork_box")]["capability_status"] == "NOT_SUPPORTED"
+    assert cells[("B30", "exact_cp_sat")]["capability_status"] == "ADAPTER_MISSING"
+    assert cells[("B32", "py3dbp")]["capability_status"] == "ADAPTER_MISSING"
+
+
+def test_source_readiness_is_not_inferred_from_solver_capability() -> None:
+    cells = plan_cells()
+    assert cells[("B05", "packingsolver_fork_box")]["input_status"] == "SOURCE_INCOMPLETE"
+    assert cells[("B05", "packingsolver_fork_box")]["termination_reason"] == "SOURCE_PENDING"
+    assert cells[("B30", "packingsolver_fork_box")]["input_status"] == "VALID"
+    assert cells[("B30", "packingsolver_fork_box")]["termination_reason"] == "ADAPTER_MISSING"
+
+
+def test_run_record_contract_rejects_false_results() -> None:
+    record = valid_run_record()
+    validate_run_record(record)
+
+    not_run = copy.deepcopy(record)
+    not_run["run_status"] = "NOT_RUN"
+    with pytest.raises(ValueError, match="cannot claim a solution"):
+        validate_run_record(not_run)
+
+    unsupported = copy.deepcopy(record)
+    unsupported["capability_status"] = "NOT_SUPPORTED"
+    with pytest.raises(ValueError, match="cannot claim a solution"):
+        validate_run_record(unsupported)
+
+    incomplete = copy.deepcopy(record)
+    incomplete["input_status"] = "SOURCE_INCOMPLETE"
+    with pytest.raises(ValueError, match="cannot be executed"):
+        validate_run_record(incomplete)
+
+    invalid_hash = copy.deepcopy(record)
+    invalid_hash["input_sha256"] = "z" * 64
+    with pytest.raises(ValueError, match="SHA-256"):
+        validate_run_record(invalid_hash)
+
+    extra = copy.deepcopy(record)
+    extra["solver_says_feasible"] = True
+    with pytest.raises(ValueError, match="unsupported fields"):
+        validate_run_record(extra)
+
+
+def test_run_record_json_schema_is_pinned_to_protocol_v3() -> None:
+    schema = json.loads((ROOT / "benchmarks" / "comprehensive" / "run-record.schema.json").read_text())
+    assert schema["properties"]["protocol_version"]["const"] == "benchmark-protocol/3"
+    assert schema["properties"]["benchmark_id"]["pattern"].endswith("3[0-2])$")
+    assert schema["additionalProperties"] is False

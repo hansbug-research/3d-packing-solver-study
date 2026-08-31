@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "protocol_version": "benchmark-protocol/3",
+  "capability_profiles": [
+    "ps_fork_box",
+    "ps_fork_boxstacks",
+    "ps_upstream_box",
+    "ps_upstream_boxstacks",
+    "py3dbp",
+    "jerry",
+    "skjolber",
+    "go_bp3d",
+    "rust_unesting",
+    "exact_model"
+  ],
+  "suites": [
+    {
+      "id": "B01", "name": "ESICUP THPACK1-7 / BR", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B02", "name": "ESICUP THPACK8 / LN", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B03", "name": "Egeblad-Pisinger 3D-KP", "category": "PUBLIC_QUALITY", "problem_family": "PROFIT_KNAPSACK", "primary_metric": "packed_profit", "input_status": "VALID", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B04", "name": "ESICUP THPACK9 / IMM", "category": "PUBLIC_QUALITY", "problem_family": "IDENTICAL_BIN_PACKING", "primary_metric": "bins_used", "input_status": "VALID", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_COMPOSED", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B05", "name": "Martello-Pisinger-Vigo 3D-BPP", "category": "PUBLIC_QUALITY", "problem_family": "IDENTICAL_BIN_PACKING", "primary_metric": "bins_used", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_COMPOSED", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B06", "name": "Exact-oracle generated", "category": "PUBLIC_QUALITY", "problem_family": "EXACT_ORACLE", "primary_metric": "objective_gap", "input_status": "VALID", "ranking_kind": "EXACT",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_COMPOSED", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B07", "name": "Davies-Bischoff BR0/BR8-15", "category": "PUBLIC_QUALITY", "problem_family": "VOLUME_KNAPSACK", "primary_metric": "packed_volume", "input_status": "VALID", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B08", "name": "Public 3D multiple-bin-size/cost", "category": "PUBLIC_QUALITY", "problem_family": "VARIABLE_COST_BIN_PACKING", "primary_metric": "total_cost", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B09", "name": "Variable-cost exact truth", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "VARIABLE_COST_BIN_PACKING", "primary_metric": "total_cost", "input_status": "VALID", "ranking_kind": "EXACT",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B10", "name": "Fixed heterogeneous MCLP", "category": "PUBLIC_QUALITY", "problem_family": "FIXED_HETEROGENEOUS_LOADING", "primary_metric": "complete_feasible_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B11", "name": "Open-X/Y/Z / 3D strip", "category": "PUBLIC_QUALITY", "problem_family": "OPEN_DIMENSION", "primary_metric": "used_length", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B12", "name": "Pose/orientation gauntlet", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "POSE", "primary_metric": "pose_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B13", "name": "Payload/inventory gauntlet", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "PAYLOAD_INVENTORY", "primary_metric": "hard_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B14", "name": "Support/load-bearing gauntlet", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "SUPPORT_LOAD_BEARING", "primary_metric": "hard_violation_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "NOT_SUPPORTED", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "NOT_SUPPORTED", "rust_unesting": "NOT_SUPPORTED", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B15", "name": "CG/axle/floor-load gauntlet", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "VEHICLE_STATICS", "primary_metric": "hard_violation_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B16", "name": "Obstacles/door/keepout", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "OBSTACLES_ACCESS", "primary_metric": "hard_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "NOT_SUPPORTED", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "NOT_SUPPORTED", "py3dbp": "NOT_SUPPORTED", "jerry": "NOT_SUPPORTED", "skjolber": "PROJECTION_ONLY", "go_bp3d": "NOT_SUPPORTED", "rust_unesting": "NOT_SUPPORTED", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B17", "name": "Multi-drop/unloading", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "MULTI_DROP", "primary_metric": "hard_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "NOT_SUPPORTED", "jerry": "NOT_SUPPORTED", "skjolber": "PROJECTION_ONLY", "go_bp3d": "NOT_SUPPORTED", "rust_unesting": "NOT_SUPPORTED", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B18", "name": "Compatibility/segregation", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "COMPATIBILITY", "primary_metric": "hard_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",
+      "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B19", "name": "Alonso 2019", "category": "INDUSTRIAL", "problem_family": "MULTI_CONTAINER_INDUSTRIAL", "primary_metric": "full_feasible_rate", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B20", "name": "Alonso 2020", "category": "INDUSTRIAL", "problem_family": "MULTI_PERIOD_PALLET", "primary_metric": "demand_completion", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B21", "name": "ESICUP VRPTW-CLP", "category": "INDUSTRIAL", "problem_family": "ROUTING_LOADING", "primary_metric": "full_feasible_rate", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B22", "name": "ESICUP 3D irregular", "category": "INDUSTRIAL", "problem_family": "IRREGULAR_3D", "primary_metric": "capability_coverage", "input_status": "VALID", "ranking_kind": "BOUNDARY",
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "NOT_SUPPORTED", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "NOT_SUPPORTED", "py3dbp": "NOT_SUPPORTED", "jerry": "NOT_SUPPORTED", "skjolber": "NOT_SUPPORTED", "go_bp3d": "NOT_SUPPORTED", "rust_unesting": "NOT_SUPPORTED", "exact_model": "NOT_SUPPORTED"}
+    },
+    {
+      "id": "B23", "name": "De-identified real orders", "category": "INDUSTRIAL", "problem_family": "REAL_ORDER_SHIFT", "primary_metric": "objective_by_stratum", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B24", "name": "Metamorphic", "category": "RELIABILITY", "problem_family": "METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B25", "name": "Cost/bin-order metamorphic", "category": "RELIABILITY", "problem_family": "COST_METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B26", "name": "Unit/numeric", "category": "RELIABILITY", "problem_family": "NUMERIC", "primary_metric": "numeric_consistency", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B27", "name": "Seed/order repeatability", "category": "RELIABILITY", "problem_family": "REPEATABILITY", "primary_metric": "quality_variance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B28", "name": "Scalability", "category": "RELIABILITY", "problem_family": "SCALABILITY", "primary_metric": "time_quality_curve", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "PERFORMANCE",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B29", "name": "Fault/cancellation", "category": "RELIABILITY", "problem_family": "FAULT_HANDLING", "primary_metric": "fault_recovery_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
+    },
+    {
+      "id": "B30", "name": "OR-Library BAYTP", "category": "INDUSTRIAL", "problem_family": "SHELF_BAY", "primary_metric": "bays_used", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B31", "name": "Mixed-SKU pallet building", "category": "INDUSTRIAL", "problem_family": "PALLET_BUILDING", "primary_metric": "pallets_used", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
+    },
+    {
+      "id": "B32", "name": "Online/incremental 3D packing", "category": "INDUSTRIAL", "problem_family": "ONLINE_PACKING", "primary_metric": "cumulative_cost", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "INDUSTRIAL",
+      "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+    }
+  ]
+}

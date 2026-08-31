@@ -63,6 +63,7 @@ python3.12 -m venv .venv
 ```bash
 .venv/bin/python scripts/analyze.py
 .venv/bin/python scripts/plot.py
+.venv/bin/python benchmarks/comprehensive/build_plan.py --check
 .venv/bin/python scripts/verify.py
 .venv/bin/python -m pytest -q
 ```

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "protocol_version": "benchmark-protocol/3",
+  "implementations": [
+    {
+      "id": "packingsolver_fork_box",
+      "library": "PackingSolver fork",
+      "algorithm": "box portfolio",
+      "technology": "C++14 CLI",
+      "version": "d953148b8f710c06fa6c410949b7272f9e36327b",
+      "capability_profile": "ps_fork_box",
+      "default_track": "NATIVE",
+      "known_issues": ["column_generation returned an empty incumbent on THPACK9-47"]
+    },
+    {
+      "id": "packingsolver_fork_boxstacks",
+      "library": "PackingSolver fork",
+      "algorithm": "boxstacks portfolio",
+      "technology": "C++14 CLI",
+      "version": "d953148b8f710c06fa6c410949b7272f9e36327b",
+      "capability_profile": "ps_fork_boxstacks",
+      "default_track": "NATIVE",
+      "known_issues": ["stack support is not a general contact/load-flow model"]
+    },
+    {
+      "id": "packingsolver_upstream_box",
+      "library": "PackingSolver upstream",
+      "algorithm": "box portfolio",
+      "technology": "C++14 CLI",
+      "version": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+      "capability_profile": "ps_upstream_box",
+      "default_track": "NATIVE",
+      "known_issues": ["upstream issue #536 breaks variable-sized-bin-packing solution comparison"]
+    },
+    {
+      "id": "packingsolver_upstream_boxstacks",
+      "library": "PackingSolver upstream",
+      "algorithm": "boxstacks portfolio",
+      "technology": "C++14 CLI",
+      "version": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+      "capability_profile": "ps_upstream_boxstacks",
+      "default_track": "NATIVE",
+      "known_issues": ["upstream issue #536 breaks variable-sized-bin-packing solution comparison", "upstream issues #537 and #539 affect axle repair and degenerate truck geometry"]
+    },
+    {
+      "id": "py3dbp",
+      "library": "py3dbp",
+      "algorithm": "pivot greedy",
+      "technology": "Python",
+      "version": "1.1.2",
+      "capability_profile": "py3dbp",
+      "default_track": "NATIVE",
+      "known_issues": ["no per-item orientation subset or cost objective", "quality is strongly input-order sensitive"]
+    },
+    {
+      "id": "jerry",
+      "library": "jerry800416/3D-bin-packing",
+      "algorithm": "pivot/fix-point greedy",
+      "technology": "Python",
+      "version": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+      "capability_profile": "jerry",
+      "default_track": "NATIVE",
+      "known_issues": ["fix-point produced overlapping certificates", "loadbear is a sort key rather than a hard load-bearing constraint"]
+    },
+    {
+      "id": "skjolber_plain",
+      "library": "skjolber/3d-bin-container-packing",
+      "algorithm": "Plain",
+      "technology": "Java 21 sidecar",
+      "version": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d",
+      "capability_profile": "skjolber",
+      "default_track": "NATIVE",
+      "known_issues": ["JVM sidecar integration and cross-process timing require a separate performance track"]
+    },
+    {
+      "id": "skjolber_laff",
+      "library": "skjolber/3d-bin-container-packing",
+      "algorithm": "LAFF",
+      "technology": "Java 21 sidecar",
+      "version": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d",
+      "capability_profile": "skjolber",
+      "default_track": "NATIVE",
+      "known_issues": ["JVM sidecar integration and cross-process timing require a separate performance track"]
+    },
+    {
+      "id": "skjolber_fast_bruteforce",
+      "library": "skjolber/3d-bin-container-packing",
+      "algorithm": "FastBruteForce",
+      "technology": "Java 21 sidecar",
+      "version": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d",
+      "capability_profile": "skjolber",
+      "default_track": "NATIVE",
+      "known_issues": ["intended only for small instances", "JVM sidecar integration and cross-process timing require a separate performance track"]
+    },
+    {
+      "id": "go_bp3d",
+      "library": "gedex/bp3d",
+      "algorithm": "pivot greedy",
+      "technology": "Go sidecar",
+      "version": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+      "capability_profile": "go_bp3d",
+      "default_track": "NATIVE",
+      "known_issues": ["PutItem does not enforce cumulative MaxWeight", "no per-item orientation subset"]
+    },
+    {
+      "id": "rust_extreme_point",
+      "library": "u-nesting",
+      "algorithm": "ExtremePoint",
+      "technology": "Rust CLI/PyO3 candidate",
+      "version": "8cde85b029e4ade663185dacb93fd74440af170d",
+      "capability_profile": "rust_unesting",
+      "default_track": "NATIVE",
+      "known_issues": ["native API accepts one boundary; multi-bin results require a repeated-single-boundary adapter"]
+    },
+    {
+      "id": "rust_layer",
+      "library": "u-nesting",
+      "algorithm": "Layer/BottomLeftFill",
+      "technology": "Rust CLI/PyO3 candidate",
+      "version": "8cde85b029e4ade663185dacb93fd74440af170d",
+      "capability_profile": "rust_unesting",
+      "default_track": "NATIVE",
+      "known_issues": ["shared layer decoder produced out-of-bounds certificates"]
+    },
+    {
+      "id": "rust_ga",
+      "library": "u-nesting",
+      "algorithm": "GA",
+      "technology": "Rust CLI/PyO3 candidate",
+      "version": "8cde85b029e4ade663185dacb93fd74440af170d",
+      "capability_profile": "rust_unesting",
+      "default_track": "NATIVE",
+      "known_issues": ["shared layer decoder produced out-of-bounds certificates", "seed and time limit were not wired to the effective runner"]
+    },
+    {
+      "id": "rust_brkga",
+      "library": "u-nesting",
+      "algorithm": "BRKGA",
+      "technology": "Rust CLI/PyO3 candidate",
+      "version": "8cde85b029e4ade663185dacb93fd74440af170d",
+      "capability_profile": "rust_unesting",
+      "default_track": "NATIVE",
+      "known_issues": ["shared layer decoder produced out-of-bounds certificates", "seed and time limit were not wired to the effective runner"]
+    },
+    {
+      "id": "rust_sa",
+      "library": "u-nesting",
+      "algorithm": "SA",
+      "technology": "Rust CLI/PyO3 candidate",
+      "version": "8cde85b029e4ade663185dacb93fd74440af170d",
+      "capability_profile": "rust_unesting",
+      "default_track": "NATIVE",
+      "known_issues": ["shared layer decoder produced out-of-bounds certificates", "seed and time limit were not wired to the effective runner"]
+    },
+    {
+      "id": "exact_cp_sat",
+      "library": "OR-Tools",
+      "algorithm": "strengthened CP-SAT model",
+      "technology": "C++ core/Python binding",
+      "version": "9.15.6755",
+      "capability_profile": "exact_model",
+      "default_track": "EXACT_MODEL",
+      "known_issues": ["not a prebuilt 3D packer; every problem family needs an explicit integer model"]
+    },
+    {
+      "id": "exact_scip",
+      "library": "SCIP/PySCIPOpt",
+      "algorithm": "strengthened MIP model",
+      "technology": "C/C++ core/Python binding",
+      "version": "6.2.1",
+      "capability_profile": "exact_model",
+      "default_track": "EXACT_MODEL",
+      "known_issues": ["not a prebuilt 3D packer; every problem family needs an explicit model"]
+    },
+    {
+      "id": "exact_gurobi",
+      "library": "Gurobi",
+      "algorithm": "strengthened MIP model",
+      "technology": "native commercial/Python binding",
+      "version": "13.0.3",
+      "capability_profile": "exact_model",
+      "default_track": "EXACT_MODEL",
+      "known_issues": ["commercial production and redistribution licensing required", "not a prebuilt 3D packer"]
+    },
+    {
+      "id": "exact_cplex",
+      "library": "CPLEX",
+      "algorithm": "strengthened MIP model",
+      "technology": "native commercial/Python binding",
+      "version": "22.1.2.0",
+      "capability_profile": "exact_model",
+      "default_track": "EXACT_MODEL",
+      "known_issues": ["promotional license has a 1000-constraint limit", "not a prebuilt 3D packer"]
+    }
+  ]
+}

@@ -228,6 +228,36 @@ def check_campaign_results() -> None:
         fail("industrial dataset run status changed: baytp")
 
 
+def check_comprehensive_plan() -> None:
+    directory = ROOT / "results" / "comprehensive"
+    plan_path = directory / "suite-implementation-plan.jsonl"
+    coverage_path = directory / "coverage.csv"
+    summary_path = directory / "plan-summary.json"
+    for path in (plan_path, coverage_path, summary_path):
+        if not path.exists():
+            fail(f"comprehensive plan artifact is missing: {path.relative_to(ROOT)}")
+
+    plan = [json.loads(line) for line in plan_path.read_text().splitlines() if line]
+    coverage = list(csv.DictReader(coverage_path.open()))
+    summary = json.loads(summary_path.read_text())
+    if len(plan) != 608 or len(coverage) != 608:
+        fail("comprehensive plan must contain 32 suites x 19 implementations")
+    if (summary.get("suite_count"), summary.get("implementation_count"), summary.get("planned_cells")) != (32, 19, 608):
+        fail("comprehensive plan summary dimensions changed")
+    if summary.get("executed_cells") != 0 or any(row.get("run_status") != "NOT_RUN" for row in plan):
+        fail("suite-level execution plan must not claim completed runs")
+    if any(row.get("solution_status") != "NOT_APPLICABLE" for row in plan):
+        fail("suite-level execution plan must not claim solutions")
+    plan_keys = {(row["benchmark_id"], row["implementation_id"]) for row in plan}
+    coverage_keys = {(row["benchmark_id"], row["implementation_id"]) for row in coverage}
+    if len(plan_keys) != 608 or coverage_keys != plan_keys:
+        fail("comprehensive JSONL and CSV coverage keys differ")
+    if {row["benchmark_id"] for row in plan} != {f"B{index:02d}" for index in range(1, 33)}:
+        fail("comprehensive plan does not cover B01-B32")
+    if len({row["implementation_id"] for row in plan}) != 19:
+        fail("comprehensive plan implementation coverage changed")
+
+
 def main() -> None:
     stats_path = ROOT / "derived" / "stats.json"
     table_path = ROOT / "derived" / "tables" / "public_thpack9.csv"
@@ -263,6 +293,7 @@ def main() -> None:
     check_sources()
     check_release_metadata()
     check_campaign_results()
+    check_comprehensive_plan()
     readme = (ROOT / "README.md").read_text()
     for phrase in (
         "759 个合法源",
