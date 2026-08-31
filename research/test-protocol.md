@@ -1,6 +1,6 @@
 # 全库综合 Benchmark 与技术选型测试协议
 
-> 协议版本：`benchmark-protocol/2`；冻结日期：2026-08-31。本文定义后续“全部问题族 × 全部候选库”的实验边界、状态、证据、排行和发布门禁。已有 campaign 是基线证据，不自动视为已满足本协议的新增覆盖。
+> 协议版本：`benchmark-protocol/3`；冻结日期：2026-08-31。本文定义后续“全部问题族 × 全部候选库”的实验边界、状态、证据、排行和发布门禁。已有 campaign 是基线证据，不自动视为已满足本协议的新增覆盖。
 
 ## 1. 目的与完成条件
 
@@ -58,6 +58,8 @@
 
 ## 4. Benchmark 目录与问题覆盖
 
+B01-B11 是公共质量、目标函数和精确真值主线；B12-B18 是约束 conformance suite；B19-B23 与 B30-B32 是工业综合、边界和应用分布；B24-B29 是可靠性与托管测试。后三类不因统一编号而自动成为可比较的学术质量数据集。每个候选在每个套件必须有机器状态，但只有保留相同问题语义、输入交集和预算的记录才能进入数值排行。
+
 ### 4.1 公共几何与基础优化
 
 | ID | 套件 | 原问题与主指标 | 适用实现 | 该结果主要说明什么 |
@@ -91,7 +93,7 @@ B08 优先采用 Alvarez-Valdes-Parreno-Tamarit 的 3D multiple-bin-size 数据�
 | B13 | Payload/inventory gauntlet | 总重量、箱 payload、有限箱 copies、空箱/tare | PS、PY、SK、RS 部分；GO 缺陷对照；EX | 字段是否真正进入 hard check；重量和库存完整性 |
 | B14 | Support/load-bearing gauntlet | 支撑面积、支撑凸包、最大上方重量、最大堆数、nesting、脆弱件 | PS `boxstacks`；Jerry/Skjolber 近似或 controls；EX；其余 capability 状态 | 区分排序启发式、几何稳定和硬承压模型 |
 | B15 | CG/axle/floor-load gauntlet | 总重心、轴/轴组反力、逐站剩余载荷、地板点载/面载 | PS `boxstacks`；EX；其他候选 placement 只能送独立 post-validator | 几何可装方案是否具有车辆静力可行性 |
-| B16 | Obstacles/door/keepout | 内部障碍、轮拱、禁区、门尺寸、直线抽取和装入路径反例 | Skjolber obstacles/controls；EX；其他候选按能力状态 | 非完整长方体可用空间与基本可达性 |
+| B16 | Obstacles/door/keepout | 内部障碍、轮拱、禁区、门尺寸、直线抽取和装入路径反例；另设阶梯近似 ULD 与夹具包络子变体 | Skjolber obstacles/controls；EX；其他候选按能力状态 | 非完整长方体可用空间、近似 ULD 和基本可达性；不外推为连续机器人运动规划 |
 | B17 | Multi-drop/unloading | 固定路线、Increasing-X/Y、无遮挡、允许倒货及倒货代价 | PS 部分；Skjolber controls；EX；其余通常 `NOT_SUPPORTED` | 是否能按站点执行、逐站状态和重搬成本 |
 | B18 | Compatibility/segregation | 必须同箱/分箱、相容组、温区、危险品隔离、优先区域 | EX 与外层分组；其他候选按 capability | 业务规则不能由几何偶然满足来冒充支持 |
 
@@ -104,12 +106,22 @@ B12-B18 使用版本化 synthetic truth cases 补足公共数据缺字段的问�
 | B19 | Alonso 2019 | 产品到层/托盘/车辆、交付日、重量和轴距；完整需求、车辆数和可行性 | PS `boxstacks` 投影；EX 完整模型候选；其他库仅几何投影 | 工业层级、车辆、轴荷和交付约束的综合覆盖 |
 | B20 | Alonso 2020 | stock/case/rest pallet 和多日需求；需求完成与资源使用 | PS + master、EX；其余投影 | 大需求分解、托盘类别和日序联合优化 |
 | B21 | ESICUP VRPTW-CLP | 46 个路由与装载实例；固定路线投影及完整组合问题分开 | PS/SK/EX 可做固定路线装载；其他候选几何投影 | 路由、时间窗、三维可装性和多站卸货的耦合 |
-| B22 | ESICUP 3D irregular | mesh/voxel/polytope 与连续或离散非正交姿态 | 当前正交长方体库通常 `NOT_SUPPORTED`；未来 irregular engine | 明确任意角、多面体和 voxel 能力边界 |
+| B22 | ESICUP 3D irregular | mesh/voxel/polytope、连续或离散非正交姿态，以及非长方体容器边界 | 当前正交长方体库通常 `NOT_SUPPORTED`；未来 irregular engine | 明确任意角、多面体、voxel 与真实斜壁 ULD 的能力边界 |
 | B23 | De-identified real orders | 按件数、类型数、箱型数、姿态受限率、重量密度、站点数分层 | 适用语义的全部实现 | 公共随机实例到真实订单的 distribution shift |
 
 B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表不得合并。删除层、托盘、轴荷、路线或日序字段后的成绩不属于原始工业 benchmark。B22 即使当前全部候选都是 `NOT_SUPPORTED` 也必须保留，因为这证明当前选型边界，而不是测试缺失。
 
-### 4.5 可靠性、扩展性和故障行为
+### 4.5 仓储、托盘与在线作业
+
+| ID | 套件 | 原问题与主指标 | 适用实现 | 该结果主要说明什么 |
+|---|---|---|---|---|
+| B30 | OR-Library BAYTP | 产品按给定 bay 顺序进入可选 shelf；考虑 shelf 厚度、位置和 top/left/inter/right gap；主指标为使用 bay/shelf 和完整装载 | EX 完整模型；PS/SK + shelf master；PY/JE/GO/RS 只能进入逐 shelf 几何投影 | 仓储货架不是自由 3D-BPP；检验 shelf 选择、bay 顺序、间隙和禁止越架 |
+| B31 | Mixed-SKU pallet building | 由 BR 类型重复分层、Alonso 托盘字段和脱敏订单生成；固定托盘底面、最大高度、完整需求、全支撑/最小支撑、承压和层型；主指标为合法完整率、托盘数或使用高度 | PS `boxstacks`；EX 小规模；Jerry/Skjolber 近似或 controls；其余仅 `GEOMETRY_PROJECTION` | 高重复 SKU、层模式、支撑和承压联合后，普通箱体积排名是否仍成立 |
+| B32 | Online/incremental 3D packing | 固定到货序列、有限 lookahead/buffer、不可移动或有预算重排；报告累计箱数/成本、每件决策延迟和 relocation | 当前离线候选均通过统一 rebuild/incremental adapter；EX 只到小规模窗口；无 adapter 时 `ADAPTER_MISSING` | 离线最优质量不能回答实时装箱；检验延迟、重排代价、顺序鲁棒性和离线损失 |
+
+B30 的 ESICUP 快照只含 README 与两个 bay 文件，但 OR-Library 的 `products.txt`、`shelves.txt`、`baytp1.txt` 和 `baytp2.txt` 已于 2026-08-31 重新取回并记录内容 SHA-256，因此输入来源为 `VALID`；当前缺口是完整模型/adapter，不再是源文件缺失。B31 是版本化工业 conformance/performance suite，不冒充公开学术数据集；每个生成实例必须保存父分布、seed 和约束参数。B32 的 arrival trace 从公共实例和 B23 订单确定性派生，离线重算必须单独记录 `OFFLINE_REBUILD`，不能写成库原生 online 能力。
+
+### 4.6 可靠性、扩展性和故障行为
 
 | ID | 套件 | 变换或规模 | 适用实现 | 该结果主要说明什么 |
 |---|---|---|---|---|
@@ -124,6 +136,8 @@ B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表�
 
 每个数据集必须登记来源 URL、访问日期、commit/version、原始文件哈希、许可证/引用要求和转换器版本。canonical 输入使用稳定实例 ID、整数单位、显式 objective、允许姿态、箱型成本与 copies；转换结果必须能回指原始行。
 
+BAYTP 四个源文件必须逐文件校验已登记 SHA-256，不能只校验目录或 README。B31/B32 的生成器版本、seed、父实例 hash 和生成参数视同外部数据来源，缺少任一项时使用 `SOURCE_INCOMPLETE`。真实订单只能使用获准的脱敏快照；没有可发布数据时必须保留 B23 计划状态，不得用随机实例替代后沿用 `REAL_ORDER` 名称。
+
 允许的问题投影必须具有新 ID 和明确的 `projection_of`：例如 `Alonso2019/GEOMETRY_PROJECTION`、`THPACK/RELAXED_ALL_ROTATIONS`。以下行为禁止：删除不受支持字段后沿用原 benchmark 名称；把 knapsack 当完整装箱；把最少箱数替代最小成本；把体积下界写成已证明 optimum；把 adapter 能力记到原库名下。
 
 ## 6. 统一运行矩阵
@@ -137,7 +151,7 @@ algorithm / adapter / budget / item_order / bin_order / seed / repetition
 
 启发式公共质量集默认运行 `1 s` 和 `10 s` 两档内部预算；代表规模另加 `60 s` 档。没有内部 time limit 的库由外层强杀，并记录无法保证完整输出。exact-oracle 默认 `20 s`，分层扩展可用 `60 s/300 s`，但不同预算不混为一列。
 
-确定性实现至少运行原始、体积降序、体积升序和一个固定哈希顺序；profit 套件增加 profit、profit/volume 降序。随机实现至少 5 个 seed，并验证 seed 确实改变或固定随机源。策略共享 decoder 时仍分别记录算法名，但共同缺陷必须在结论中关联说明。
+确定性实现至少运行原始、体积降序、体积升序和一个固定哈希顺序；profit 套件增加 profit、profit/volume 降序。随机实现至少 5 个 seed，并验证 seed 确实改变或固定随机源。策略共享 decoder 时仍分别记录算法名，但共同缺陷必须在结论中关联说明。B32 另记录 arrival sequence、buffer/lookahead、每次可移动件数、每件决策 deadline、rebuild 次数和 relocation 次数；允许重排与不可重排结果不得合并。
 
 ## 7. 资源与计时边界
 
@@ -176,6 +190,9 @@ validator 不读取求解器内部“feasible”布尔值作为真值。所有 p
 | 异构成本 | total cost | 箱型用量、bins、库存 margin、bound |
 | fixed MCLP | 完整可行率或 packed value | 容器均衡、未装需求 |
 | open dimension | used length/height | 截面利用率、gap |
+| shelf/bay | 完整可行率；使用 bay/shelf | 空位、间隙 margin、顺序违规 |
+| pallet building | 合法完整率；pallets 或 used height | 层数、支撑/承压 margin、层型重复率 |
+| online/incremental | 累计 bins/cost；deadline 命中率 | 每件 p50/p95/p99 延迟、relocation、相对离线损失 |
 | 支撑/运输 | hard violation rate 必须为 0 | 最小支撑/承压/轴荷/CG margin、重搬量 |
 | exact | proof rate、objective、bound、gap | time-to-first、time-to-proof、节点/冲突 |
 | reliability | metamorphic invariance、重复合法率 | seed/order best/median/p95 |
@@ -201,7 +218,7 @@ validator 不读取求解器内部“feasible”布尔值作为真值。所有 p
 | P0 协议冻结 | 本文、来源、状态、schema、validator 和运行 manifest | Markdown/链接/来源检查通过，人工 review 无 blocking finding |
 | P1 公共核心 | B01-B07、B24-B28；全部基础 packer，EX 分层 | all-libs 状态矩阵完整；共同实例质量榜可重算 |
 | P2 成本与硬约束 | B08-B18、B25-B26 | 原生/组合分榜；所有 hard case 有独立反例验证 |
-| P3 工业与高级边界 | B19-B23、B29 | full/projection 分开；不支持项完整记录；真实数据缺口明确 |
+| P3 工业与高级边界 | B19-B23、B29-B32 | full/projection 分开；BAYTP/托盘/在线结果分榜；不支持项完整记录；真实数据缺口明确 |
 | P4 结论冻结 | 更新 aggregate、结果 README、图、`report.md` 和决策矩阵 | `analyze/plot/verify/pytest` 全过；需求逐项审计完成 |
 
 ## 12. 结果目录和必交付物
@@ -227,10 +244,10 @@ results/comprehensive/
 
 `run-manifest.jsonl` 每条记录保存输入和工具哈希、执行命令、环境、状态和 artifact 相对路径。聚合文件登记所有消费源 SHA-256；`scripts/verify.py` 对 headline 数字、全库覆盖、无效证书排除、来源哈希和正文数字建立断言。
 
-最终 `report.md` 至少增加以下独立结果表：单箱 knapsack、profit 3D-KP、同构多箱、异构成本/库存、exact 证明、硬约束合规、工业 full/projection、可靠性/扩展性。每个表都要回答“能否做、做得是否合法、质量如何、资源如何、工程上是否采用”。
+最终 `report.md` 至少增加以下独立结果表：单箱 knapsack、profit 3D-KP、同构多箱、异构成本/库存、open dimension、shelf/bay、托盘构建、online/incremental、exact 证明、硬约束合规、工业 full/projection、可靠性/扩展性。每个表都要回答“能否做、做得是否合法、质量如何、资源如何、工程上是否采用”。
 
 ## 13. 当前基线与明确缺口
 
-现有证据已经覆盖 PackingSolver THPACK 759 个合法源两档预算、THPACK9 44 例主要 packer 横评、四个 exact backend 的 7 个 strengthened 场景、PackingSolver `boxstacks` 9 项、Rust 策略和工业数据字段审计。它们作为协议 v2 的回归基线保留。
+现有证据已经覆盖 PackingSolver THPACK 759 个合法源两档预算、THPACK9 44 例主要 packer 横评、四个 exact backend 的 7 个 strengthened 场景、PackingSolver `boxstacks` 9 项、Rust 策略和工业数据字段审计。它们作为协议 v2 的回归基线保留；协议 v3 不倒写这些历史结果。
 
-当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B03、B05-B11 的统一 adapter 和全量运行；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 排名替代。
+当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B03、B05-B11 的统一 adapter 和全量运行；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign；B30 的完整 shelf adapter；B31 的生成器和联合约束运行；B32 的统一在线 adapter。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 排名替代。

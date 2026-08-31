@@ -17,3 +17,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 13,industrial-scope,academic_audit,0,1,复核 Alonso/BAYTP 数据完整性与语义边界；保留完整问题 NOT_SUPPORTED/NOT_RUN，不用降级几何问题冒充原 benchmark,closed
 14,shuorenhua-campaign-final,primary,0,0,按 docs/status minimal structural 保护数字、SHA、命令、状态词与 issue/PR；删除无度量比较级并完成保真与残留回读,closed
 15,benchmark-protocol-v2,primary,0,2,将单一状态拆为输入/能力/运行/证书/证明五维；修正 Egeblad-Pisinger 60 例为固定方向待审计并区分原题与全旋转投影,closed
+16,benchmark-protocol-v3,primary,0,3,补入 BAYTP/混合托盘/在线增量套件；恢复 OR-Library 四个 BAYTP 文件与哈希；扩展 ULD/机器人边界并保持公共质量/构造/工业/可靠性分层,closed

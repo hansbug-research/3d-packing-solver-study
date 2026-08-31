@@ -30,7 +30,7 @@
 
 ```text
 report.md                         总报告：问题、模型、算法、benchmark、前端与路线
-research/test-protocol.md         全库综合 benchmark、状态、排行与发布协议
+research/test-protocol.md         B01-B32 全库综合 benchmark、状态、排行与发布协议
 research/                         学术综述、能力矩阵、公共数据集、上游审计
 benchmarks/                       受控脚本、统一数据转换器、独立 validator
 results/                          机器可读结果与测试摘要
@@ -78,7 +78,7 @@ bash benchmarks/run_java_controlled.sh
 .venv/bin/python benchmarks/benchmark_public_thpack9.py
 ```
 
-既有 campaign 的脚本、每类 benchmark 的用途和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)；下一轮“全部问题族 × 全部候选库”的范围、状态词、排行与验收门以 [`research/test-protocol.md`](research/test-protocol.md) 为准。已有结果的统一重算命令为：
+既有 campaign 的脚本、每类 benchmark 的用途和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)；下一轮“全部问题族 × 全部候选库”的 B01-B32 范围、状态词、排行与验收门以 [`research/test-protocol.md`](research/test-protocol.md) 为准。已有结果的统一重算命令为：
 
 ```bash
 .venv/bin/python benchmarks/campaign/analyze_campaign.py

@@ -39,6 +39,7 @@ def check_sources() -> None:
     ids = [row["id"] for row in rows]
     if len(ids) != len(set(ids)) or not ids:
         fail("source manifest ids must be non-empty and unique")
+    rows_by_id = {row["id"]: row for row in rows}
     for row in rows:
         for field in ("url", "accessed", "used_for"):
             if not row[field].strip():
@@ -52,6 +53,15 @@ def check_sources() -> None:
         expected = row["sha256"].strip()
         if not re.fullmatch(r"[0-9a-f]{64}", expected) or sha256(path) != expected:
             fail(f"source snapshot hash mismatch: {row['id']}: {snapshot}")
+    expected_baytp_hashes = {
+        "S116": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+        "S117": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7",
+        "S118": "9a9b06a40628e87d03fbe36e6a0db220043e4fe45891cc9c2d7498b394621c63",
+        "S119": "f334858c23120de183424bbda24784435311b263ce8c730cd78c17b649bcc125",
+    }
+    for source_id, expected_hash in expected_baytp_hashes.items():
+        if rows_by_id.get(source_id, {}).get("sha256") != expected_hash:
+            fail(f"BAYTP source hash missing or changed: {source_id}")
     quote_text = quotes_path.read_text()
     quote_ids = re.findall(r"^##\s+(Q\d+)", quote_text, re.MULTILINE)
     if len(quote_ids) != len(set(quote_ids)) or not quote_ids:
@@ -73,6 +83,13 @@ def check_release_metadata() -> None:
     for relative in required_paths:
         if not (ROOT / relative).exists():
             fail(f"missing release audit artifact: {relative}")
+    protocol = (ROOT / "research" / "test-protocol.md").read_text()
+    if "`benchmark-protocol/3`" not in protocol:
+        fail("comprehensive benchmark protocol version is not v3")
+    benchmark_ids = re.findall(r"^\| (B\d{2}) \|", protocol, re.MULTILINE)
+    expected_benchmark_ids = [f"B{index:02d}" for index in range(1, 33)]
+    if sorted(benchmark_ids) != expected_benchmark_ids or len(benchmark_ids) != len(set(benchmark_ids)):
+        fail(f"comprehensive benchmark catalog must contain B01-B32 exactly once: {benchmark_ids}")
     cff = (ROOT / "CITATION.cff").read_text()
     for field in ("cff-version:", "title:", "authors:", "version:", "date-released:", "repository-code:"):
         if field not in cff:

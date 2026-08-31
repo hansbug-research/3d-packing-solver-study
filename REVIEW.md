@@ -21,7 +21,8 @@
 3. 失败、超时、崩溃、许可证限制和未测试项必须保留，不能只发布成功结果。
 4. 每个 benchmark 结果必须带输入、版本、参数、资源限制和独立 validator 状态。
 5. `results/campaign/aggregate.json` 的每个消费源必须登记 SHA-256；新增 campaign 结果要同时更新机器断言和 `results/campaign/README.md` 的运行状态矩阵。
-6. 综合 campaign 必须遵守 [`research/test-protocol.md`](research/test-protocol.md)：每个候选 × benchmark 产生计划状态，原生/adapter/投影/精确模型分轨，非法 certificate 不得进入排名。
+6. 综合 campaign 必须遵守 [`research/test-protocol.md`](research/test-protocol.md)：B01-B32 的每个候选 × benchmark 产生计划状态，原生/adapter/投影/精确模型分轨，非法 certificate 不得进入排名。
+7. 公共质量 benchmark、构造约束套件、工业综合问题和故障测试不得合并成一个总分；BAYTP 的完整源文件、B31/B32 生成器 provenance 和所有问题投影必须逐项校验。
 
 ## L3 结论强度
 
