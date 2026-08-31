@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-08-31T11:40:32.538476+00:00",
+  "python": "3.12.1 (main, Jul 29 2026, 13:47:40) [GCC 13.3.0]",
+  "executable": "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+  "platform": "linux",
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+  "jerry_commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+  "py3dbp_version": "1.1.2",
+  "timeout_seconds_per_run": 60,
+  "memory_limit_bytes_per_worker": 2147483648,
+  "threads_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "orders": [
+    "descending",
+    "ascending"
+  ],
+  "selected_instances": 762,
+  "full_campaign": true,
+  "inventory": {
+    "families": [
+      {
+        "family": "THPACK1",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 300,
+        "parsed_item_types": 300,
+        "parsed_item_instances": 15044,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2384,
+          "011": 5866,
+          "111": 6794
+        },
+        "source_file": "thpack1.txt",
+        "source_sha256": "d6f0b99b4cc6e51c5753565b175a778a40422dc92cffee3204bf16cc1d23f341"
+      },
+      {
+        "family": "THPACK2",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 500,
+        "parsed_item_types": 500,
+        "parsed_item_instances": 13665,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2192,
+          "011": 5523,
+          "111": 5950
+        },
+        "source_file": "thpack2.txt",
+        "source_sha256": "a31e6400d46926574068524172b1e38495cfd5ad6725f92c58a0af8d92721700"
+      },
+      {
+        "family": "THPACK3",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 800,
+        "parsed_item_types": 800,
+        "parsed_item_instances": 13430,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2158,
+          "011": 5234,
+          "111": 6038
+        },
+        "source_file": "thpack3.txt",
+        "source_sha256": "3359b278aa20a6874d5a63467be6064e8d489014df45f5410a7d85a852ef876d"
+      },
+      {
+        "family": "THPACK4",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 1000,
+        "parsed_item_types": 1000,
+        "parsed_item_instances": 13285,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2201,
+          "011": 5061,
+          "111": 6023
+        },
+        "source_file": "thpack4.txt",
+        "source_sha256": "9668bae0abd2ad513c6f8bcb5ed8845c4526f08b452f1b7fa9426b6990fbc4d6"
+      },
+      {
+        "family": "THPACK5",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 1200,
+        "parsed_item_types": 1200,
+        "parsed_item_instances": 13287,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2309,
+          "011": 5064,
+          "111": 5914
+        },
+        "source_file": "thpack5.txt",
+        "source_sha256": "5ece29990ab5034d75728c7ee777379475b16b9218fa9dded17f327de7fa126f"
+      },
+      {
+        "family": "THPACK6",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 1500,
+        "parsed_item_types": 1500,
+        "parsed_item_instances": 13147,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2189,
+          "011": 5085,
+          "111": 5873
+        },
+        "source_file": "thpack6.txt",
+        "source_sha256": "5c3604cad7a47f7ee38c3c6a4e74c0e846db1eea9ca4ac637106843311abe196"
+      },
+      {
+        "family": "THPACK7",
+        "instances": 100,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 2000,
+        "parsed_item_types": 2000,
+        "parsed_item_instances": 13033,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2366,
+          "011": 4712,
+          "111": 5955
+        },
+        "source_file": "thpack7.txt",
+        "source_sha256": "43fc06212473bbb12ec575678232e444e021642cec7b649be1d43282edec7f2a"
+      },
+      {
+        "family": "THPACK8",
+        "instances": 15,
+        "problem_kind": "single_container_knapsack",
+        "objective": "maximize_packed_volume",
+        "declared_item_type_rows": 109,
+        "parsed_item_types": 109,
+        "parsed_item_instances": 2420,
+        "malformed_instances": 0,
+        "vertical_flag_item_counts": {
+          "001": 2420
+        },
+        "source_file": "thpack8.txt",
+        "source_sha256": "fcda8cfac55592c41095efcab55f362bb3866eb25ad2d7192e6bfdce9629eae2"
+      },
+      {
+        "family": "THPACK9",
+        "instances": 47,
+        "problem_kind": "multi_container_bin_packing",
+        "objective": "minimize_bins_complete",
+        "declared_item_type_rows": 154,
+        "parsed_item_types": 151,
+        "parsed_item_instances": 4496,
+        "malformed_instances": 3,
+        "vertical_flag_item_counts": {
+          "111": 4496
+        },
+        "source_file": "thpack9.txt",
+        "source_sha256": "a4f5e3a748709217cdc749f7d27940f15b9f2a31b3e840e725642237036f82cc"
+      }
+    ],
+    "total_instances": 762
+  },
+  "finished_at_utc": "2026-08-31T11:50:28.746665+00:00",
+  "record_count": 3048,
+  "records_sha256": "49140e4c041cece4204b7395e71763bc107aaa6b6dcd1b5e9649de29c8f7de5b"
+}

@@ -1,0 +1,10 @@
+family,instances,source_valid_instances,problem_kind,declared_item_type_rows,parsed_item_types,parsed_item_instances,item_count_min,item_count_median,item_count_max,type_count_median,demand_to_container_volume_median,malformed_instances,flags_001_items,flags_011_items,flags_111_items,py3dbp_expressible_instances,py3dbp_valid_instances,py3dbp_median_utilization,py3dbp_median_capacity_gap,jerry_expressible_instances,jerry_valid_instances,jerry_median_utilization,jerry_median_capacity_gap,py3dbp_median_bins,py3dbp_median_volume_lower_bound,py3dbp_median_relative_gap_to_volume_bound,jerry_median_bins,jerry_median_volume_lower_bound,jerry_median_relative_gap_to_volume_bound
+THPACK1,100,100,single_container_knapsack,300,300,15044,69,133.0,476,3.0,0.9967905211165844,0,2384,5866,6794,9,9,0.8214121680499787,0.17858783195002126,22,22,0.7978378922698259,0.20216210773017407,,,,,,
+THPACK2,100,100,single_container_knapsack,500,500,13665,81,132.5,266,5.0,0.9958432176943411,0,2192,5523,5950,0,0,,,5,5,0.8160941214943891,0.1839058785056109,,,,,,
+THPACK3,100,100,single_container_knapsack,800,800,13430,80,132.0,232,8.0,0.9955460720341434,0,2158,5234,6038,0,0,,,1,1,0.8263106679313331,0.17368933206866688,,,,,,
+THPACK4,100,100,single_container_knapsack,1000,1000,13285,75,132.0,233,10.0,0.9959562134716224,0,2201,5061,6023,0,0,,,0,0,,,,,,,,
+THPACK5,100,100,single_container_knapsack,1200,1200,13287,84,132.5,218,12.0,0.9954135678682549,0,2309,5064,5914,0,0,,,0,0,,,,,,,,
+THPACK6,100,100,single_container_knapsack,1500,1500,13147,85,131.0,203,15.0,0.9967055084112062,0,2189,5085,5873,0,0,,,0,0,,,,,,,,
+THPACK7,100,100,single_container_knapsack,2000,2000,13033,90,129.0,172,20.0,0.9954484137719253,0,2366,4712,5955,0,0,,,0,0,,,,,,,,
+THPACK8,15,15,single_container_knapsack,109,109,2420,100,130,250,7,0.6280696576151121,0,2420,0,0,0,0,,,15,13,0.6280696576151121,0.37193034238488787,,,,,,
+THPACK9,47,44,multi_container_bin_packing,154,151,4496,70,95.0,180,3.0,10.050694444444446,3,0,0,4496,44,44,,,44,43,,,14.0,10.5,0.3582887700534759,14,11,0.35294117647058826

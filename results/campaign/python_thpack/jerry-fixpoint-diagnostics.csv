@@ -1,0 +1,5 @@
+instance_key,order,fix_point,status,packed_items,packed_volume,bins_used,validation_error_count
+THPACK8-001,descending,False,FEASIBLE_COMPLETE,100,3750000000,1,0
+THPACK8-002,descending,False,FEASIBLE_PARTIAL,133,5066625000,1,0
+THPACK8-005,ascending,False,FEASIBLE_PARTIAL,105,3268125000,1,0
+THPACK9-035,descending,False,FEASIBLE_COMPLETE,84,24192,3,0

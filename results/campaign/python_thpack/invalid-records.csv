@@ -1,0 +1,5 @@
+instance_key,family,library,order,status,packed_items,bins_used,validation_error_count,first_validation_error
+THPACK8-001,THPACK8,jerry,descending,INVALID,100,1,2,3:8 overlaps 4:13 in bin:0
+THPACK8-002,THPACK8,jerry,descending,INVALID,137,1,28,8:15 overlaps 8:16 in bin:0
+THPACK8-005,THPACK8,jerry,ascending,INVALID,112,1,8,5:3 overlaps 5:4 in bin:0
+THPACK9-035,THPACK9,jerry,descending,INVALID,84,3,1,2:27 overlaps 1:27 in bin:1

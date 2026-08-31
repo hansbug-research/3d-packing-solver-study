@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "parsed_instances": 762,
+  "family_counts": {
+    "THPACK1": 100,
+    "THPACK2": 100,
+    "THPACK3": 100,
+    "THPACK4": 100,
+    "THPACK5": 100,
+    "THPACK6": 100,
+    "THPACK7": 100,
+    "THPACK8": 15,
+    "THPACK9": 47
+  },
+  "malformed_instances": [
+    "THPACK9-018",
+    "THPACK9-019",
+    "THPACK9-020"
+  ],
+  "expressible_instances": {
+    "py3dbp": 53,
+    "jerry": 87
+  },
+  "negative_checks": {
+    "forbidden_orientation_rejected": true,
+    "overlap_rejected": true
+  }
+}

@@ -1,0 +1,3 @@
+library,semantic_supported_paired_instances,valid_both_orders,validity_changed_by_order,invalid_both_orders,quality_changed,descending_better,ascending_better,ties,median_absolute_relative_change,max_absolute_relative_change
+py3dbp,53,53,0,0,41,41,0,12,0.15384615384615385,0.41025641025641024
+jerry,87,83,4,0,66,62,4,17,0.1388257922405327,0.41025641025641024
