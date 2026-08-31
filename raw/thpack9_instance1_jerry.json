@@ -1,17 +1,1 @@
-{
-  "dataset": "ESICUP THPACK9 instance 1",
-  "library": "Jerry fork",
-  "instance": 1,
-  "container_size": [
-    10,
-    6,
-    16
-  ],
-  "items": 70,
-  "bins_available": 80,
-  "packed": 70,
-  "unpacked": 0,
-  "bins_used": 50,
-  "elapsed_s": 0.02444281498901546,
-  "validation_errors": []
-}
+{"library": "jerry800416/3D-bin-packing", "commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a", "version": "source checkout at pinned commit", "parameters": {"bigger_first": true, "distribute_items": true, "fix_point": true, "check_stable": false, "number_of_decimals": 3}, "validator": "benchmarks.validation.validate_aabbs", "packed": 70, "required": 70, "unpacked": 0, "bins_used": 50, "elapsed_s": 0.0255722280126065, "validation_errors": []}

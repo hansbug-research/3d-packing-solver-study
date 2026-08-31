@@ -35,7 +35,7 @@
       "status": "FEASIBLE"
     }
   ],
-  "controlled_pytest_assertions": 8,
+  "controlled_pytest_assertions": 9,
   "packing_solver_original_variable_cost": "FAIL_KNOWN_UPSTREAM_BUG",
   "packing_solver_patched_variable_cost": "PASS"
 }

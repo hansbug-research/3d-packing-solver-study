@@ -25,7 +25,7 @@ S23,paper,Crainic Perboli Tadei extreme points,https://doi.org/10.1287/ijoc.1070
 S24,paper,Crainic Perboli Rei Tadei variable cost size BPP,https://doi.org/10.1016/j.cor.2011.01.001,2026-08-31,2011,no,,heterogeneous cost master and bounds
 S25,paper,Davies Bischoff weight distribution,https://doi.org/10.1016/S0377-2217(98)00139-8,2026-08-31,1999,no,,load distribution objective
 S26,paper,Krebs Ehmke axle weights,https://doi.org/10.1016/j.ejtl.2021.100043,2026-08-31,2021,no,,axle formulas and integrated loading
-S27,paper,Ceschia Schaerf multi-drop loading,https://doi.org/10.1007/s10732-011-9162-6,2026-08-31,2013,no,,multi-drop search
+S27,paper,Ceschia Schaerf multi-drop loading,https://doi.org/10.1007/s10732-011-9162-6,2026-08-31,2013 (online 2011),no,,multi-drop search
 S28,paper,Romanova Bennell Stoyan Pankratov continuous rotations,https://doi.org/10.1016/j.ejor.2018.01.025,2026-08-31,2018,no,,continuous non-convex packing
 S29,docs,Three.js documentation,https://threejs.org/docs/,2026-08-31,r185,no,,3D rendering and instancing
 S30,docs,Tauri documentation,https://tauri.app/,2026-08-31,2,no,,desktop shell and sidecar
@@ -57,20 +57,50 @@ S55,paper,Alonso et al mathematical multi-container loading models,https://doi.o
 S56,paper,Alonso Alvarez-Valdes Parreno GRASP multi-container loading,https://doi.org/10.1007/s10288-018-0397-z,2026-08-31,2020 (online 2019),no,,Alonso 2020 benchmark provenance
 S57,paper,Hoare Beasley placing boxes on shelves,https://doi.org/10.1057/palgrave.jors.2601130,2026-08-31,2001,no,,BAYTP benchmark provenance
 S58,paper,Nascimento Queiroz Junqueira practical container loading constraints,https://doi.org/10.1016/j.cor.2020.105186,2026-08-31,2021,no,,comprehensive exact constraint model
-S59,paper,Paquay Schyns Limbourg air cargo 3D bin packing MIP,https://doi.org/10.1111/itor.12111,2026-08-31,2014,no,,air cargo MIP formulation
+S59,paper,Paquay Schyns Limbourg air cargo 3D bin packing MIP,https://doi.org/10.1111/itor.12111,2026-08-31,2016 (online 2014),no,,air cargo MIP formulation
 S60,paper,Fanslau Bortfeldt container loading tree search,https://doi.org/10.1287/ijoc.1090.0338,2026-08-31,2010,no,,tree search heuristic
 S61,paper,Pisinger heuristics for container loading,https://doi.org/10.1016/S0377-2217(02)00132-7,2026-08-31,2002,no,,wall and block heuristic
 S62,paper,Crainic Perboli Tadei TS2PACK tabu search,https://doi.org/10.1016/j.ejor.2007.06.063,2026-08-31,2009,no,,two-level tabu search
-S63,paper,Zhao Bennell Bektas Dowsland 3D container loading review,https://doi.org/10.1111/itor.12094,2026-08-31,2014,no,,algorithm comparison review
+S63,paper,Zhao Bennell Bektas Dowsland 3D container loading review,https://doi.org/10.1111/itor.12094,2026-08-31,2016 (online 2014),no,,algorithm comparison review
 S64,paper,Pisinger Sigurd variable bin size cost 2D packing,https://doi.org/10.1016/j.disopt.2005.01.002,2026-08-31,2005,no,,variable-size cost framework
 S65,paper,Correia Gouveia Saldanha-da-Gama variable size bin packing,https://doi.org/10.1016/j.cor.2006.10.014,2026-08-31,2008,no,,discretized variable-size model
 S66,paper,Alvarez-Valdes Parreno Tamarit 3D multiple bin size lower bounds,https://doi.org/10.1007/s00291-013-0347-2,2026-08-31,2015 (online 2013),no,,3D lower bounds
 S67,paper,Martinez-Franco et al PackageCargo stability tool,https://doi.org/10.1016/j.softx.2020.100601,2026-08-31,2020,no,,stability decision support software
 S68,paper,Ramos Silva Oliveira road container load balance,https://doi.org/10.1016/j.ejor.2017.10.050,2026-08-31,2018,no,,road load balance methodology
 S69,paper,Pollaris axle weight loading constraints,https://doi.org/10.1007/s10288-017-0352-4,2026-08-31,2018 (online 2017),no,,vehicle routing axle limits
-S70,paper,Junqueira Morabito Yamashita multi-drop MIP,https://doi.org/10.1007/s10479-011-0942-z,2026-08-31,2011,no,,multi-drop MIP formulation
+S70,paper,Junqueira Morabito Yamashita multi-drop MIP,https://doi.org/10.1007/s10479-011-0942-z,2026-08-31,2012 (online 2011),no,,multi-drop MIP formulation
 S71,paper,Bonet Filella Trivella Corman soft unloading constraints,https://doi.org/10.1016/j.ejor.2022.10.033,2026-08-31,2023,no,,soft multi-drop unloading
 S72,paper,Egeblad Nielsen Brazil translational arbitrary polytope packing,https://doi.org/10.1016/j.comgeo.2008.06.003,2026-08-31,2009,no,,nonorthogonal geometry baseline
 S73,paper,Lamas-Fernandez Bennell Martinez-Sykora voxel irregular packing,https://doi.org/10.1287/opre.2022.2260,2026-08-31,2023,no,,voxel irregular packing
-S74,paper,Romanova et al packing oblique 3D objects,https://doi.org/10.3390/math8071130,2026-08-31,2020,no,,oblique continuous rotation
+S74,paper,Pankratov Romanova Litvinchev packing oblique 3D objects,https://doi.org/10.3390/math8071130,2026-08-31,2020,no,,oblique continuous rotation
 S75,paper,Cano Torra nonorthogonal objects stability load bearing,https://doi.org/10.1109/LINDI.2009.5258764,2026-08-31,2009,no,,nonorthogonal loading heuristic
+S76,docs,Qt for Python overview and licensing,https://doc.qt.io/qtforpython-6/,2026-08-31,6,no,,F1 PySide6 license and Python integration
+S77,docs,Qt for Python deployment and supported platforms,https://doc.qt.io/qtforpython-6/deployment/deployment-pyside6-deploy.html;https://doc.qt.io/qt-6/supported-platforms.html,2026-08-31,6,no,,F2-F3 PySide deployment and platform support
+S78,docs,Qt Quick 3D documentation and licensing,https://doc.qt.io/qt-6/qtquick3d-index.html,2026-08-31,6.11,no,,F4 Qt Quick 3D capabilities and license
+S79,docs,Qt 3D documentation and LGPL/GPL obligations,https://doc.qt.io/qt-6/qt3d-index.html;https://www.qt.io/licensing/open-source-lgpl-obligations,2026-08-31,6.11,no,,F5-F6 Qt 3D and redistribution obligations
+S80,docs,Tauri sidecar documentation,https://v2.tauri.app/develop/sidecar/,2026-08-31,2,no,,F7 Python sidecar integration
+S81,docs,Tauri process model IPC channels and capabilities,https://v2.tauri.app/concept/process-model/;https://v2.tauri.app/concept/inter-process-communication/;https://v2.tauri.app/develop/calling-frontend/;https://v2.tauri.app/security/;https://v2.tauri.app/security/capabilities/,2026-08-31,2,no,,F8-F11 process isolation IPC channels and security
+S82,docs,Tauri distribution prerequisites signing and CI,https://v2.tauri.app/distribute/;https://v2.tauri.app/start/prerequisites/;https://v2.tauri.app/distribute/sign/macos/;https://v2.tauri.app/distribute/sign/windows/;https://v2.tauri.app/distribute/pipelines/github/,2026-08-31,2,no,,F12-F16 packaging WebView prerequisites signing and pipelines
+S83,repository,Tauri releases and license,https://github.com/tauri-apps/tauri;https://github.com/tauri-apps/tauri/releases/tag/tauri-v2.11.5,2026-08-31,2.11.5,no,,F17 Tauri maintenance and license
+S84,docs,Electron security distribution signing and support policy,https://www.electronjs.org/docs/latest/tutorial/security;https://www.electronjs.org/docs/latest/tutorial/application-distribution;https://www.electronjs.org/docs/latest/tutorial/code-signing;https://www.electronjs.org/docs/latest/tutorial/electron-timelines,2026-08-31,44,no,,F18-F21 Electron security packaging signing and support
+S85,repository,Electron 44 release assets,https://github.com/electron/electron/releases/tag/v44.0.0,2026-08-31,44.0.0,no,,F22 Electron runtime package measurements
+S86,docs,Flutter desktop and native code integration,https://docs.flutter.dev/platform-integration/desktop;https://docs.flutter.dev/platform-integration/bind-native-code,2026-08-31,3.47,no,,F23-F24 Flutter desktop and C/C++ FFI
+S87,repository,Flutter release manifest and repository license,https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json;https://github.com/flutter/flutter,2026-08-31,3.47.2,no,,F25-F26 Flutter release and BSD license
+S88,docs,Flet publishing and user extensions,https://flet.dev/docs/publish/;https://flet.dev/docs/extend/user-extensions;https://github.com/flet-dev/flet;https://github.com/flet-dev/flet/releases/tag/v0.86.5,2026-08-31,0.86.5,no,,F27-F29 Flet packaging extensions and release
+S89,docs,Three.js documentation release and license,https://threejs.org/docs/;https://github.com/mrdoob/three.js;https://github.com/mrdoob/three.js/releases/tag/r185,2026-08-31,r185,no,,F30 Three.js capabilities release and MIT license
+S90,repository,PyVista and PyVistaQt documentation and repositories,https://docs.pyvista.org/;https://qtdocs.pyvista.org/;https://github.com/pyvista/pyvista;https://github.com/pyvista/pyvistaqt,2026-08-31,0.48.x/0.12.0,no,,F31 PyVista capabilities and maintenance
+S91,license,VTK license and copyright,https://vtk.org/about/#license;https://gitlab.kitware.com/vtk/vtk/-/blob/master/Copyright.txt,2026-08-31,9.7.0,no,,F32 VTK license
+S92,package,PySide6 package metadata,https://pypi.org/project/PySide6/;https://pypi.org/project/PySide6-Essentials/;https://pypi.org/project/PySide6-Addons/,2026-08-31,6.11.2,no,,F33 PySide6 wheel versions and sizes
+S93,package,VTK PyVista and PyVistaQt package metadata,https://pypi.org/project/vtk/;https://pypi.org/project/pyvista/;https://pypi.org/project/pyvistaqt/,2026-08-31,9.7.0/0.48.x/0.12.0,no,,F34 package versions and wheel sizes
+S94,package,flutter_3d_controller pub.dev metadata,https://pub.dev/packages/flutter_3d_controller,2026-08-31,2.3.0,no,,F35 supported platform metadata
+S95,repository,PySide setup repository,https://github.com/pyside/pyside-setup,2026-08-31,6.11,no,,F36 PySide maintenance status
+S96,paper,Fekete Schepers van der Veen higher-dimensional orthogonal packing,https://doi.org/10.1287/opre.1060.0369,2026-08-31,2007,no,,exact orthogonal packing and packing classes
+S97,issue,PackingSolver heterogeneous cost comparator bug,https://github.com/fontanf/packingsolver/issues/536,2026-08-31,open,no,,upstream issue status
+S98,issue,PackingSolver axle repair out-of-bounds bug,https://github.com/fontanf/packingsolver/issues/537,2026-08-31,open,no,,upstream issue status
+S99,issue,PackingSolver no-HiGHS build failure,https://github.com/fontanf/packingsolver/issues/538,2026-08-31,open,no,,upstream issue status
+S100,issue,PackingSolver degenerate truck geometry empty solution,https://github.com/fontanf/packingsolver/issues/539,2026-08-31,open,no,,upstream issue status
+S101,pr,PackingSolver heterogeneous cost comparator fix,https://github.com/fontanf/packingsolver/pull/540,2026-08-31,open,no,,upstream pull request status
+S102,pr,PackingSolver axle repair bounds fix,https://github.com/fontanf/packingsolver/pull/541,2026-08-31,open,no,,upstream pull request status
+S103,pr,PackingSolver no-HiGHS build fix,https://github.com/fontanf/packingsolver/pull/542,2026-08-31,open,no,,upstream pull request status
+S104,pr,PackingSolver degenerate truck geometry fix,https://github.com/fontanf/packingsolver/pull/543,2026-08-31,open,no,,upstream pull request status
+S105,repository,HansBug PackingSolver fork with integrated fixes,https://github.com/HansBug/packingsolver/tree/ac7b1384151bd33f56aec47d5c180dd4c5652266,2026-08-31,ac7b1384151bd33f56aec47d5c180dd4c5652266,no,,patched fallback source for urgent use

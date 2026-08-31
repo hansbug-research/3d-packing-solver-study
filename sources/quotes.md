@@ -28,10 +28,11 @@
 
 来源：S11、S13、S14 的官方项目定位。OR-Tools 和 SCIP 提供通用整数/约束优化能力，但没有被本项目发现的通用 3D 装箱 global constraint；报告中将它们标为“可自建模型”，没有写成现成 3D packer。
 
-## Q07：BR 论文 DOI 与 THPACK 旋转字段
-
-来源：S03 与 S31。THPACK README 将 THPACK1–7 的来源列为 Bischoff 与 Ratcliff 的 *Issues in the development of approaches to container loading*（OMEGA 23(4), 377–390, 1995），Crossref 登记 DOI 为 `10.1016/0305-0483(95)00015-G`。README 的尺寸字段以每个尺寸后的 0/1 表示该尺寸是否可作为竖直方向；本报告据此不把它解释为三个轴的独立旋转开关。
 
 ## Q07：BR 论文 DOI 与 THPACK 旋转字段
 
 来源：S03 与 S31。THPACK README 将 THPACK1–7 的来源列为 Bischoff 与 Ratcliff 的 *Issues in the development of approaches to container loading*（OMEGA 23(4), 377–390, 1995），Crossref 登记 DOI 为 `10.1016/0305-0483(95)00015-G`。README 的尺寸字段以每个尺寸后的 0/1 表示该尺寸是否可作为竖直方向；本报告据此不把它解释为三个轴的独立旋转开关。
+
+## Q08：前端 F 编号到来源清单的映射
+
+前端研究稿中的官方事实均有来源清单入口：F1→S76；F2–F3→S77；F4→S78；F5–F6→S79；F7→S80；F8–F11→S81；F12–F16→S82；F17→S83；F18–F21→S84；F22→S85；F23–F24→S86；F25–F26→S87；F27–F29→S88；F30→S89；F31→S90；F32→S91；F33→S92；F34→S93；F35→S94；F36→S95。S29/S30 仍保留为报告早期 Three.js/Tauri 通用入口；新增条目记录了正文所依赖的具体官方页面、版本和许可证来源。

@@ -225,10 +225,7 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 - 一个刻意收紧的半挂轴荷合成边界例发生分配类异常且没有 certificate；这只证明该路径未通过，不代表全部正常轴荷参数失效；
 - 官方滚动预编译资产覆盖 Linux x64、Windows x64、macOS x64；macOS arm64 等目标要自行从固定源码构建并在 CI 验证。
 
-已向上游提交四个最小复现 issue（#536–#539）及对应 PR（#540–#543），但截至 2026-08-31
-均为 open、尚未合并；在合并前仍需固定本地已回归的源码提交、在三平台自行构建，保留异构成本、
-箱序反转、正常/边界/不可行轴荷测试。修复前由 CP-SAT/SCIP 承担成本选择，轴荷一律由独立
-静力校核器硬门禁。
+已向上游提交四个最小复现 issue（#536–#539）及对应 PR（#540–#543），但截至 2026-08-31 均为 open、尚未合并；在合并前仍需固定本地已回归的源码提交、在三平台自行构建，保留异构成本、箱序反转、正常/边界/不可行轴荷测试。修复前由 CP-SAT/SCIP 承担成本选择，轴荷一律由独立静力校核器硬门禁。
 
 ## 7. 本地实测结论
 
@@ -238,12 +235,13 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 |---|---|---|
 | PackingSolver | 网格、旋转子集、禁旋、总重量、`boxstacks` 上压通过；异构成本失败；轴荷边界例异常 | 有条件采用，不能盲信 README |
 | PackingSolver 两文件最小 patch + HiGHS | 异构成本 `box`/`boxstacks` 均返回 0，选择 1 个成本 10 大箱，2/2 件并生成证书；公开 THPACK9-1 为 25 箱 | 仅本地验证，不是官方 release；已提交 issue [#536](https://github.com/fontanf/packingsolver/issues/536) / PR [#540](https://github.com/fontanf/packingsolver/pull/540)，open 未合并 |
+| HansBug/packingsolver fork | `master` at `ac7b1384` integrates PR #540–#543 | 可在 pin 该 commit 后作为应急源码来源，仍不是官方 release |
 | CP-SAT 9.15 | 9 个 `5^3` 物品装 `10^3` 箱：`OPTIMAL`，2 箱，bound 2，约 0.13 s solver | exact-small 模型语义与界通过 |
 | PySCIPOpt 6.2.1 | 同例 `optimal`，目标/dual 都为 2，gap 0，约 0.06 s solver | 开放精确第二实现通过 |
 | `py3dbp` 1.1.2 | 基础通过；异构箱小箱先为 2 箱，大箱先为 1 箱 | 顺序敏感，只作 baseline |
 | Jerry | 脆弱件上方实际重量 20 仍被接受 | `loadbear` 不能当承压约束 |
-| Skjolber `c73d521...` | 网格/旋转/upright/重量符合预期，100 件库内约 12 ms；缓存依赖后冷 JVM 约 0.24 s/76,088 KiB | Java 可用但暂无独特到值得默认集成的能力 |
-| Gurobi/CPLEX | 历史受限许可运行中，同一个微型成本 MIP 均返回最优；原始 JSON 在 `raw/experiments/commercial/`，当前环境缺包时复跑脚本返回 `NOT_RUN` | 只证明安装/API；实例太小不能排名，许可也不能外推到生产 |
+| Skjolber `c73d521...` | 网格/旋转/upright/重量符合预期，100 件库内 21.275 ms，THPACK9-1 为 8.315 ms；当前 raw 冷 JVM 约 0.43 s/78,336 KiB | Java 可用但暂无独特到值得默认集成的能力 |
+| Gurobi/CPLEX | 当前环境缺少 Python 包或运行时许可，复跑入口返回 `NOT_RUN`；两份历史 JSON 因模型字段与目标值矛盾，已标为 `INVALID_HISTORICAL_INCONSISTENT_FIXTURE` 并排除 | 没有可采信的本轮商业求解器数字；需在许可环境用固定 fixture 重跑 |
 
 这些烟雾测试的功能覆盖比速度数字更重要。不同脚本的进程启动、案例数量和停止粒度不同，不能把微秒/毫秒列当跨语言性能榜。
 
@@ -287,7 +285,7 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 
 ### 8.4 Three.js 实现要点
 
-后端保留整数坐标，渲染时映射到 Three.js 的 Y-up 坐标。相同几何/材质组使用 `InstancedMesh`；边线和标签只为选中/问题项创建；placement 数组和 scene 生命周期不放进 React 热路径。Node 数据层烟测在 256 MiB V8 heap 上限内创建 10,000 实例、计算 bounds、完成 instance picking 和 clipping 组合；本次归档运行约 23.211 ms、68,120 KiB RSS，且不含 GPU renderer。正式决策门仍需三平台实际 Tauri WebView 的 1k/10k/50k FPS、显存、拾取和 GPU 恢复测试。
+后端保留整数坐标，渲染时映射到 Three.js 的 Y-up 坐标。相同几何/材质组使用 `InstancedMesh`；边线和标签只为选中/问题项创建；placement 数组和 scene 生命周期不放进 React 热路径。Node 数据层烟测在 256 MiB V8 heap 上限内创建 10,000 实例、计算 bounds、完成 instance picking 和 clipping plane 配置组合；本次归档运行约 23.211 ms、68,120 KiB RSS，且不含 GPU renderer。脚本、fixture 与原始输出见 [`smoke.mjs`](benchmarks/frontend-three-smoke/smoke.mjs)、[`smoke.stdout`](raw/experiments/frontend-three-smoke/smoke.stdout) 和 [`smoke.resources.txt`](raw/experiments/frontend-three-smoke/smoke.resources.txt)。正式决策门仍需三平台实际 Tauri WebView 的 1k/10k/50k FPS、显存、拾取和 GPU 恢复测试。
 
 ## 9. CLI、IPC 与插件契约
 

@@ -52,6 +52,9 @@ def check_sources() -> None:
         if not re.fullmatch(r"[0-9a-f]{64}", expected) or sha256(path) != expected:
             fail(f"source snapshot hash mismatch: {row['id']}: {snapshot}")
     quote_text = quotes_path.read_text()
+    quote_ids = re.findall(r"^##\s+(Q\d+)", quote_text, re.MULTILINE)
+    if len(quote_ids) != len(set(quote_ids)) or not quote_ids:
+        fail("quote ids must be non-empty and unique")
     missing_ids = sorted(set(re.findall(r"\bS\d{2}\b", quote_text)) - set(ids))
     if missing_ids:
         fail(f"quotes refer to unknown source ids: {missing_ids}")
@@ -63,7 +66,8 @@ def check_release_metadata() -> None:
         "figures/fig01_thpack9_bins.png", ".github/workflows/verify.yml",
         "raw/provenance.json", "benchmarks/frontend-three-smoke/package.json",
         "benchmarks/frontend-three-smoke/package-lock.json", "benchmarks/frontend-three-smoke/smoke.mjs",
-        "references.bib",
+        "benchmarks/data/public/thpack9_instance1.json", "raw/thpack9_instance1.json",
+        "raw/experiments/commercial/README.md", "references.bib", "scripts/check_markdown.py", "scripts/check_links.py",
     ]
     for relative in required_paths:
         if not (ROOT / relative).exists():
@@ -75,9 +79,34 @@ def check_release_metadata() -> None:
     if not re.search(r"^type:\s+(software|dataset)\s*$", cff, re.MULTILINE):
         fail("CITATION.cff type must be software or dataset")
     try:
-        json.loads((ROOT / "raw" / "provenance.json").read_text())
+        provenance = json.loads((ROOT / "raw" / "provenance.json").read_text())
     except json.JSONDecodeError as exc:
         fail(f"raw/provenance.json is not valid JSON: {exc}")
+    source_commits = provenance.get("source_commits", {})
+    for name in ("packingsolver_source", "esicup_datasets", "jerry", "skjolber"):
+        value = source_commits.get(name, "")
+        if not re.fullmatch(r"[0-9a-f]{40}", value):
+            fail(f"provenance source commit is not a 40-character SHA: {name}")
+    fork = provenance.get("packingsolver_fork", {})
+    if fork.get("repository") != "HansBug/packingsolver" or fork.get("branch") != "master":
+        fail("PackingSolver fork provenance is missing")
+    if not re.fullmatch(r"[0-9a-f]{40}", fork.get("commit", "")):
+        fail("PackingSolver fork commit is not a 40-character SHA")
+    if fork.get("integrated_upstream_prs") != [540, 541, 542, 543]:
+        fail("PackingSolver fork PR provenance is incomplete")
+    for name in ("box", "boxstacks"):
+        value = provenance.get("packingsolver_binary_sha256", {}).get(name, "")
+        if not re.fullmatch(r"[0-9a-f]{64}", value):
+            fail(f"provenance binary hash is not SHA-256: {name}")
+    tracking = provenance.get("upstream_tracking", {})
+    if tracking.get("repository") != "fontanf/packingsolver" or tracking.get("status") != "open_not_merged":
+        fail("upstream issue/PR tracking is missing or stale")
+    if tracking.get("issues") != [536, 537, 538, 539] or tracking.get("pull_requests") != [540, 541, 542, 543]:
+        fail("upstream issue/PR tracking numbers are incomplete")
+    benchmark_fixture = json.loads((ROOT / "benchmarks" / "data" / "public" / "thpack9_instance1.json").read_text())
+    raw_fixture = json.loads((ROOT / "raw" / "thpack9_instance1.json").read_text())
+    if raw_fixture != benchmark_fixture:
+        fail("raw/thpack9_instance1.json is not identical to the pinned benchmark fixture")
 
 
 def main() -> None:

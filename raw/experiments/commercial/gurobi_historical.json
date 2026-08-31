@@ -1,12 +1,17 @@
 {
   "library": "Gurobi",
   "version": "13.0.3",
-  "status": "OPTIMAL",
-  "objective_bins": 8,
-  "best_bound": 8,
-  "gap": 0,
+  "status": "INVALID_HISTORICAL_INCONSISTENT_FIXTURE",
+  "objective_bins": null,
+  "best_bound": null,
+  "gap": null,
+  "reported_status": "OPTIMAL",
+  "reported_objective_bins": 8,
+  "reported_best_bound": 8,
+  "reported_gap": 0,
   "elapsed_s": 0.03,
   "license": "restricted non-production",
   "provenance": "Historical exact-small smoke run on 2026-08-31; the current clone does not contain gurobipy or a license. Re-run benchmarks/benchmark_gurobi.py when licensed.",
-  "model": "nine 5x5x5 cubes, two 10x10x10 bins, same pairwise model as benchmark_ortools.py"
+  "model": "nine 5x5x5 cubes, two 10x10x10 bins, same pairwise model as benchmark_ortools.py",
+  "invalid_reason": "Reported objective 8 cannot be produced by the recorded two-bin nine-cube fixture; the historical run is retained for audit only and excluded from comparisons."
 }

@@ -63,7 +63,7 @@ Wäscher、Haußner、Schumann 的 typology 用“输入物品同质性、容器
 - **空间索引/网格 MIP**：变量随离散坐标格点数增长，属于伪多项式；毫米级大车厢通常不可直接建满网格。
 - **排列 + 姿态穷举**：最坏约 `n! * product_i(|R_i|)`，即使剪掉相同件和对称姿态也只适合很小 `n`。
 - **极点/最大空余空间启发式**：每次放置检查候选点/空间和既有物品，朴素实现常见 `O(n^2)` 到 `O(n^3)`，维护 maximal spaces 的数量本身可能组合爆炸；但在正常实例上通常很快，没有近似比或最优保证。
-- **层/墙/块启发式**：排序一般 `O(n log n)`，构造阶段依候选块而变；本仓库 100 件 smoke test 的 LAFF 库内耗时为 12 ms，但这不是一般性能保证；层结构可能排除更好的非层状方案。
+- **层/墙/块启发式**：排序一般 `O(n log n)`，构造阶段依候选块而变；本仓库当前 100 件 smoke test 的 LAFF 库内耗时为 21.275 ms（THPACK9-1 为 8.315 ms），但这不是一般性能保证；层结构可能排除更好的非层状方案。
 - **GA/SA/VNS/Tabu/GRASP**：复杂度约为“迭代数 × decoder 成本”；能改进排序和选择，但最终可行性与质量仍取决于 decoder，不提供全局最优证明。
 - **列生成/branch-and-price**：LP 主问题变量按可行单箱 pattern 指数多，通过定价逐步生成；只有把分支与定价完整结合并收敛才是精确 branch-and-price。有限 pattern 池 + 整数主问题只是 matheuristic。
 
@@ -351,22 +351,22 @@ Skjolber 的 Java/Maven 用例另位于 `benchmarks/java-skjolber/`，结果为 
 | Jerry 分支反例 | `fragile` 上方实际重量 20，仍判可行 | 1.13 s / 70,688 KiB | `loadbear` 不是硬承压约束 |
 | OR-Tools 9 个 `5^3` 立方体 | `OPTIMAL`，2 箱，best bound 2 | 0.40 s / 101,072 KiB | 小规模 pairwise CP-SAT 能证明 |
 | PySCIPOpt/SCIP 同一 9 立方体例 | `optimal`，2 箱，dual 2，gap 0；9 件独立校验通过 | 0.14 s / 60,760 KiB；solver 0.055 s | 开源 exact-small 第二实现通过 |
-| Skjolber LAFF | 网格、3D 旋转、upright 禁止、重量均符合预期；100 异质件装入 1 箱 | 缓存依赖后冷 JVM 0.24 s / 76,088 KiB；100 件库内 12 ms | 活跃 Java 启发式可作强对照；未测试承压/轴荷/成本最优 |
+| Skjolber LAFF | 网格、3D 旋转、upright 禁止、重量均符合预期；100 异质件装入 1 箱 | 当前 raw 快照库内 21.275 ms（THPACK9-1 8.315 ms）；冷 JVM 资源记录约 0.43 s / 78,336 KiB | 活跃 Java 启发式可作强对照；未测试承压/轴荷/成本最优 |
 
 PackingSolver 的 8 案例脚本时长包含多个 CLI 各自约 1 s 的 solver time；Skjolber 同时报告冷 JVM 与库内 duration。它们都不应与单个 Python case 的微秒数直接作性能排名。
 
 ### 9.2 本次补充的求解器烟雾测试
 
-同一最小成本实例：两件 `10 x 10 x 10`；候选为两个 `10 x 10 x 10` 小箱（单价 5）和一个 `20 x 10 x 10` 大箱（单价 8）。手工建立固定姿态、分配与六向分离模型，限制单线程/2 s：
+同一 exact-small 实例：9 个 `5 x 5 x 5` 立方体，最多两个 `10 x 10 x 10` 箱；手工建立固定姿态、分配与六向分离模型，限制单线程/20 s。该实例用于验证开源精确模型的可证明界，不是大规模性能排名：
 
 | 求解器 | 安装版本 | 状态 | 目标 / bound / gap | wall / max RSS |
 |---|---|---|---|---|
-| OR-Tools CP-SAT | 9.15.6755 | `OPTIMAL` | 8 / 8 / 0 | 0.34 s / 95,268 KiB |
-| PySCIPOpt + SCIP | 6.2.1 + 10.0 | `optimal` | 8 / 8 / 0 | 0.13 s / 46,160 KiB |
-| Gurobi | 13.0.3 restricted non-production license | status 2 (`OPTIMAL`) | 8 / 8 / 0 | 0.03 s / 24,508 KiB |
-| CPLEX | wheel 22.2.0.1；引擎 22.2.0.0 | `integer optimal solution` | 8 / 8 / 0 | 0.04 s / 27,580 KiB |
+| OR-Tools CP-SAT | 9.15.6755 | `OPTIMAL` | 2 / 2 / 0 | 0.40 s / 101,072 KiB |
+| PySCIPOpt + SCIP | 6.2.1 + 10.0 | `optimal` | 2 / 2 / 0 | 0.14 s / 60,760 KiB |
+| Gurobi | 当前环境缺少 `gurobipy`/许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
+| CPLEX | 当前环境缺少 `cplex`/IBM runtime 许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
 
-这些数字只证明历史运行中的官方 wheel 在 x86-64 Linux 环境可安装、模型语义正确、能返回界；实例太小，**不能**据此排名真实性能。原始结构化记录在 `raw/experiments/commercial/`，复跑入口为 `benchmarks/benchmark_gurobi.py` 和 `benchmarks/benchmark_cplex.py`；当前发布环境没有这些包或运行时许可，脚本会明确返回 `NOT_RUN`。Gurobi 测试明确输出 restricted、non-production license；CPLEX wheel 的 community/许可条件同样不能外推到生产。
+CP-SAT/SCIP 的 2 箱数字只证明该 exact-small 离散模型的界闭合。Gurobi/CPLEX 没有本轮可采信的实测结果；`raw/experiments/commercial/README.md` 解释了历史记录为何被排除，复跑入口仍是 `benchmarks/benchmark_gurobi.py` 和 `benchmarks/benchmark_cplex.py`。商业许可、离线激活、并发和分发条款仍需单独确认。
 
 另一个 PackingSolver 对照把同一 `bin-packing` 输入箱型顺序反转：小箱在前得到 2 箱且报告 gap 0；大箱在前得到 1 箱且 gap 0。这两个“证明”针对的是它按给定 bin 序列定义的普通目标，进一步证明不能用该目标代替 variable-sized cost selection。
 
@@ -486,7 +486,7 @@ ProblemSpec
 
 | 论文 | 原始贡献 | 边界 |
 |---|---|---|
-| Junqueira, Morabito, Yamashita (2012), *Three-dimensional container loading models with cargo stability and load bearing constraints* ([DOI](https://doi.org/10.1016/j.cor.2010.07.017)) | 在 3D CLP 数学模型中显式加入 stability 与 load-bearing，是后续综合模型基础。 | MIP 搜索闭合才证明；载荷传播是模型假设，不等于有限元、包装试验或认证。 |
+| Junqueira, Morabito, Sato Yamashita (2012), *Three-dimensional container loading models with cargo stability and load bearing constraints* ([DOI](https://doi.org/10.1016/j.cor.2010.07.017)) | 在 3D CLP 数学模型中显式加入 stability 与 load-bearing，是后续综合模型基础。 | MIP 搜索闭合才证明；载荷传播是模型假设，不等于有限元、包装试验或认证。 |
 | Christensen, Rousøe (2009), *Container loading with multi-drop constraints* ([DOI](https://doi.org/10.1111/j.1475-3995.2009.00714.x)) | 建材配送 hard multi-drop；无需移动其他箱即可取货，同时检查 load bearing 和下方支撑；dynamic-width tree search。 | 实用启发式，无全局保证；显示卸货顺序与支撑/承压必须联合处理。 |
 | Martínez-Franco, Céspedes-Sabogal, Álvarez-Martínez (2020), *PackageCargo: A decision support tool ... with stability* ([DOI](https://doi.org/10.1016/j.softx.2020.100601)) | 数学稳定指标，并用 Unity/PhysX 做仿真验证的开源决策支持工具。 | Metaheuristic + 近似物理仿真；仿真不能替代强度试验和工程签核。 |
 | Bortfeldt, Wäscher (2013), *Constraints in container loading - A state-of-the-art review* ([DOI](https://doi.org/10.1016/j.ejor.2012.12.006)) | 权威分类方向、稳定、承压、重量分布、分组、装卸等实际约束。 | 是需求字典和文献入口，不提供统一算法保证。 |
@@ -508,8 +508,8 @@ ProblemSpec
 
 | 论文 | 原始贡献 | 算法性质与边界 |
 |---|---|---|
-| Ceschia, Schaerf (2013), *Local search for a multi-drop multi-container loading problem* ([DOI](https://doi.org/10.1007/s10732-011-9162-6)) | 多站、多容器局部搜索。 | 元启发式，无全局证明。 |
-| Junqueira 等, *MIP-based approaches for the container loading problem with multi-drop constraints* ([DOI](https://doi.org/10.1007/s10479-011-0942-z)) | 用 MIP 表达 multi-drop 约束。 | 小实例可精确，最坏指数。 |
+| Ceschia, Schaerf (2013, online 2011), *Local search for a multi-drop multi-container loading problem* ([DOI](https://doi.org/10.1007/s10732-011-9162-6)) | 多站、多容器局部搜索。 | 元启发式，无全局证明。 |
+| Junqueira 等 (2012, online 2011), *MIP-based approaches for the container loading problem with multi-drop constraints* ([DOI](https://doi.org/10.1007/s10479-011-0942-z)) | 用 MIP 表达 multi-drop 约束。 | 小实例可精确，最坏指数。 |
 | Bonet Filella, Trivella, Corman (2023), *Modeling soft unloading constraints in the multi-drop container loading problem* ([DOI](https://doi.org/10.1016/j.ejor.2022.10.033)) | 允许倒箱并按被移动体积、重量和移动类型计罚；小实例 MILP，大实例随机 EP + destroy/reconstruct。 | 小实例闭合可证明；大实例启发式。比把所有遮挡直接判死更贴合实际业务。 |
 
 正交“无遮挡”常用保守规则是：若两件在门截面投影相交，晚卸件不能挡在早卸件与门之间。它只证明直线抽取近似，不证明叉车能接近、货能过门或能在门外转向。
@@ -520,18 +520,14 @@ ProblemSpec
 |---|---|---|
 | Egeblad, Nielsen, Brazil (2009), *Translational packing of arbitrary polytopes* ([DOI](https://doi.org/10.1016/j.comgeo.2008.06.003)) | 任意多面体的几何与平移装箱。 | 标题即限定 translational，姿态固定；不是连续旋转证据。局部搜索无全局保证。 |
 | Romanova, Bennell, Stoyan, Pankratov (2018), *Packing of concave polyhedra with continuous rotations using nonlinear optimisation* ([DOI](https://doi.org/10.1016/j.ejor.2018.01.025)，[作者稿入口](https://eprints.soton.ac.uk/418130/)) | 凹多面体、连续旋转与非线性优化。 | 连续非凸 NLP/多启动通常只有局部结果；碰撞模型和数值容差远难于正交问题。 |
-| Lamas-Fernandez, Martinez-Sykora, Bennell (2023), *Voxel-Based Solution Approaches to the Three-Dimensional Irregular Packing Problem* ([DOI](https://doi.org/10.1287/opre.2022.2260)，[作者稿入口](https://eprints.soton.ac.uk/454733/)) | voxel 几何、数学模型、局部邻域和 metaheuristic，用于 3D irregular objects。 | 分辨率带来内存/速度/几何误差权衡；体素可行不等于连续公差下可行，无全局保证。 |
-| Romanova 等 (2020), *Packing Oblique 3D Objects* ([DOI](https://doi.org/10.3390/math8071130)) | oblique 3D objects 的数学建模与优化，开放获取。 | 适合作为实验 NLP 路线，不是大规模物流统一精确解。 |
+| Lamas-Fernandez, Bennell, Martinez-Sykora (2023), *Voxel-Based Solution Approaches to the Three-Dimensional Irregular Packing Problem* ([DOI](https://doi.org/10.1287/opre.2022.2260)，[作者稿入口](https://eprints.soton.ac.uk/454733/)) | voxel 几何、数学模型、局部邻域和 metaheuristic，用于 3D irregular objects。 | 分辨率带来内存/速度/几何误差权衡；体素可行不等于连续公差下可行，无全局保证。 |
+| Pankratov, Romanova, Litvinchev (2020), *Packing Oblique 3D Objects* ([DOI](https://doi.org/10.3390/math8071130)) | oblique 3D objects 的数学建模与优化，开放获取。 | 适合作为实验 NLP 路线，不是大规模物流统一精确解。 |
 | Cano, Torra (2009), *Container Loading for Nonorthogonal Objects with Stability and Load Bearing Strength Compliance* ([DOI](https://doi.org/10.1109/LINDI.2009.5258764)) | 多面体表示正交/非正交物品，考虑三维旋转权限、承压和最小稳定度的构造状态。 | 启发式，无全局证明；“稳定度”仍是简化模型指标。 |
 
 给定姿态的 OBB 碰撞检测、连续姿态搜索和可执行装入路径是三个不同问题。以上文献支持把连续角放到独立实验 capability，而不是给正交库增加一个 `allow_tilt=true` 就对外声称支持。
 
 ## 13. 公共实例复核补充
 
-ESICUP THPACK9 instance 1 已按同一物品清单复跑：PackingSolver 修复版 25 箱，Skjolber
-LAFF 28 箱，py3dbp/Jerry 各 50 箱，均 70/70 件且 validator 通过。数据文件没有
-known optimum；体积下界 19，所以这些都是 feasible incumbent。异构成本的原始
-PackingSolver 失败及两文件最小修复见 [packingsolver-upstream.md](packingsolver-upstream.md)。
+ESICUP THPACK9 instance 1 已按同一物品清单复跑：PackingSolver 修复版 25 箱，Skjolber LAFF 28 箱，py3dbp/Jerry 各 50 箱，均 70/70 件且 validator 通过。数据文件没有 known optimum；体积下界 19，所以这些都是 feasible incumbent。异构成本的原始 PackingSolver 失败及两文件最小修复见 [packingsolver-upstream.md](packingsolver-upstream.md)。
 
-矩阵化的逐特性 ✅/❌/⚠️ 结论（含前端选型与导出格式）集中在
-[decision-matrices.md](decision-matrices.md)，避免将“建模引擎可表达”误写成“库原生实现”。
+矩阵化的逐特性 ✅/❌/⚠️ 结论（含前端选型与导出格式）集中在 [decision-matrices.md](decision-matrices.md)，避免将“建模引擎可表达”误写成“库原生实现”。

@@ -1,20 +1,28 @@
 # 三维装箱求解器、约束模型与可视化技术选型
 
-> 基准日 **2026-08-31** ｜ 能力矩阵实现 **10 个**（另列 Rust `u-nesting` 未测试观察项）｜ 公共 THPACK9 对照 **4 个实现** ｜ 受控测试 **8 项机器断言全部通过** ｜ 统一公共实例 **70 件物品** ｜ 上游缺陷复现与 patch 验证 **2 条路径**
+> 基准日 **2026-08-31** ｜ 能力矩阵实现 **10 个**（另列 Rust `u-nesting` 未测试观察项）｜ 公共 THPACK9 对照 **4 个实现** ｜ 受控测试 **9 项机器断言全部通过** ｜ 统一公共实例 **70 件物品** ｜ 上游缺陷复现与 patch 验证 **2 条路径**
 
 三维装箱软件面对的不是一个 `pack()` 函数，而是一组不同的优化问题：固定容器的 3D knapsack、同型容器的 3D bin packing、多箱型有成本与库存限制的 variable-sized BPP、带堆叠/承压/轴荷/多站卸货的运输装载，以及连续姿态的非正交装箱。本仓库把这些问题形式化，核对论文和官方文档，审计开源实现，接入 ESICUP 公共 benchmark，并用独立 validator 检查布局、数量、重量和证书。
 
 **完整报告：[`report.md`](report.md)**
+
+![ESICUP THPACK9 instance 1 箱数对照，虚线为体积下界 19](figures/fig01_thpack9_bins.png)
+
+---
 
 ## 主要结论
 
 | # | 结论 | 证据 |
 |---|---|---|
 | 1 | **推荐分层架构：CP-SAT/SCIP 负责成本与 exact-small，PackingSolver 负责正交布局，所有结果经过独立 validator。** | [`report.md`](report.md)、[`research/decision-matrices.md`](research/decision-matrices.md) |
-| 2 | **PackingSolver 原版异构成本路径是上游缺陷，不是调用错误。** `box` 与 `boxstacks` 漏掉 `VariableSizedBinPacking` 的方案比较分支；本地最小 patch 两条路径均通过。 | [`research/packingsolver-upstream.md`](research/packingsolver-upstream.md) |
+| 2 | **PackingSolver 原版异构成本路径是上游缺陷，不是调用错误。** `box` 与 `boxstacks` 漏掉 `VariableSizedBinPacking` 的方案比较分支；本地最小 patch 两条路径均通过；issue [#536](https://github.com/fontanf/packingsolver/issues/536) 与 PR [#540](https://github.com/fontanf/packingsolver/pull/540) 仍在 open。 | [`research/packingsolver-upstream.md`](research/packingsolver-upstream.md) |
 | 3 | **公共 THPACK9 instance 1：PackingSolver patch 25 箱、Skjolber 28 箱、py3dbp/Jerry 各 50 箱，均装下 70/70 件。** 数据文件没有 known optimum，因此只能报告 incumbent。 | [`research/benchmarks.md`](research/benchmarks.md)、`results/public/` |
 | 4 | **py3dbp、Jerry 和 Go bp3d 不能承担业务真值。** py3dbp 顺序敏感，Jerry 的 `loadbear` 只是排序，Go bp3d 的 `MaxWeight` 没进入放置检查。 | [`research/algorithms.md`](research/algorithms.md)、代码审计和反例 |
 | 5 | **桌面首选 Tauri 2 + React/TypeScript + Three.js + Python worker。** 大 placement 数据写入 job bundle，进度走版本化事件，3D 场景与表格按稳定 ID 联动。 | [`research/frontend.md`](research/frontend.md)、[`research/decision-matrices.md`](research/decision-matrices.md) |
+
+## 已知限制与修正
+
+本轮将四个可复现的 PackingSolver 问题提交为 [#536](https://github.com/fontanf/packingsolver/issues/536)、[#537](https://github.com/fontanf/packingsolver/issues/537)、[#538](https://github.com/fontanf/packingsolver/issues/538)、[#539](https://github.com/fontanf/packingsolver/issues/539)，对应修复 PR 为 [#540](https://github.com/fontanf/packingsolver/pull/540)、[#541](https://github.com/fontanf/packingsolver/pull/541)、[#542](https://github.com/fontanf/packingsolver/pull/542)、[#543](https://github.com/fontanf/packingsolver/pull/543)。截至 2026-08-31 均未合并，patch 二进制不能当作官方 release。用户维护的公开 fork [`HansBug/packingsolver@ac7b1384`](https://github.com/HansBug/packingsolver/tree/ac7b1384151bd33f56aec47d5c180dd4c5652266) 已整合四个修复，着急使用时可 pin 该 commit；学术 DOI、THPACK 语义、LAFF 性能措辞、CPLEX 接口归属和来源 commit 的修正记录在 [`audit/academic_audit.md`](audit/academic_audit.md)，实验边界和未测试项见 [`results/test-summary.md`](results/test-summary.md)。
 
 ## 目录
 
@@ -28,7 +36,7 @@ derived/                          统计表和 manifest 派生文件
 figures/                          由 scripts/plot.py 生成的图
 sources/                          URL、DOI、官方文档和关键逐字引文登记
 audit/                            复现审计、学术审计、自审迭代日志
-scripts/                          分析、绘图、manifest、verify 和全量复现入口
+scripts/                          分析、绘图、manifest、verify、Markdown 门禁和全量复现入口
 LICENSE / DATA-LICENSE.md         代码许可和外部数据许可边界
 CITATION.cff                      GitHub “Cite this repository” 信息
 references.bib                    主要论文与数据集的 BibTeX 条目
@@ -75,7 +83,7 @@ bash benchmarks/run_java_controlled.sh
 
 ## 边界
 
-公开几何 benchmark 不能证明材料强度、动态稳定、摩擦、系固、危险品或车辆法规合规；没有真实字段的约束报告为 `NOT_APPLICABLE` 或 `UNKNOWN`。x86-64 实测不能外推到 aarch64、loongarch64 或其他平台。Gurobi/CPLEX 的微型 MIP 结果只证明当前 wheel/API 可用，不代表生产许可或大规模性能。Go/Rust 候选本轮因本机没有对应 toolchain，仅保留源码审计，不冒充运行结果。
+公开几何 benchmark 不能证明材料强度、动态稳定、摩擦、系固、危险品或车辆法规合规；没有真实字段的约束报告为 `NOT_APPLICABLE` 或 `UNKNOWN`。x86-64 实测不能外推到 aarch64、loongarch64 或其他平台。Gurobi/CPLEX 本轮没有可采信的实测数字：当前环境缺包/许可，历史 fixture 因内部矛盾被排除。Go/Rust 候选本轮因本机没有对应 toolchain，仅保留源码审计，不冒充运行结果。
 
 ## 许可
 

@@ -2,11 +2,17 @@
   "schema_version": 1,
   "benchmark_date": "2026-08-31",
   "platform": "x86-64 Linux",
-  "source_commits": {
-    "packingsolver_source": "367ebfdaad11424ded3696b7dae799a30c1375d0",
-    "esicup_datasets": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
-    "jerry": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
-    "skjolber": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d"
+ "source_commits": {
+   "packingsolver_source": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+   "esicup_datasets": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+   "jerry": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+   "skjolber": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d"
+ },
+  "packingsolver_fork": {
+    "repository": "HansBug/packingsolver",
+    "branch": "master",
+    "commit": "ac7b1384151bd33f56aec47d5c180dd4c5652266",
+    "integrated_upstream_prs": [540, 541, 542, 543]
   },
   "packingsolver_binary_sha256": {
     "box": "98925f41d3f40bac9da6ec5e4849d708a365b67f496b9aad13d382040a65f166",

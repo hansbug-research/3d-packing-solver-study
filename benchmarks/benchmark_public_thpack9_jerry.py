@@ -41,6 +41,10 @@ def main() -> None:
             placements.append(Box(f"{item.partno}:{index}", container.partno, x, y, z, dx, dy, dz, float(item.weight)))
     print(json.dumps({
         "library": "jerry800416/3D-bin-packing",
+        "commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+        "version": "source checkout at pinned commit",
+        "parameters": {"bigger_first": True, "distribute_items": True, "fix_point": True, "check_stable": False, "number_of_decimals": 3},
+        "validator": "benchmarks.validation.validate_aabbs",
         "packed": len(placements), "required": len(items), "unpacked": len(packer.unfit_items),
         "bins_used": sum(bool(container.items) for container in packer.bins),
         "elapsed_s": perf_counter() - started,

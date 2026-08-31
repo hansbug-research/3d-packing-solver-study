@@ -132,14 +132,19 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "raw/experiments/commercial/README.md",
+      "bytes": 870,
+      "sha256": "b422b92334e038107c54d42af1c5f17f94055357a21cc28d7676625f74313fdb"
+    },
+    {
       "path": "raw/experiments/commercial/cplex_historical.json",
-      "bytes": 560,
-      "sha256": "eb2b54a5f591c2321a1ddd7dc7b2ed43d29a132c13e324608bfe20a0c157697d"
+      "bytes": 897,
+      "sha256": "432fa6ec1dc42124fb76ede43055cf2a4fbd5c098c9d277386830b2ad9ad8e3d"
     },
     {
       "path": "raw/experiments/commercial/gurobi_historical.json",
-      "bytes": 462,
-      "sha256": "ca3e07d8500e6ad5d7654ce39c01aaa76778163d631909231ca096331ff895e4"
+      "bytes": 799,
+      "sha256": "224cc2286b24368beba430d6eeb8c0798c31c8b7e52bf1497c77f7bba678139f"
     },
     {
       "path": "raw/experiments/frontend-three-smoke/smoke.exitcode",
@@ -663,8 +668,8 @@
     },
     {
       "path": "raw/provenance.json",
-      "bytes": 1179,
-      "sha256": "06847e38cb1b66e0bd8d71c3c5ea1b2301ae7c1f9e4b4431640f8b7d80e9340a"
+      "bytes": 1381,
+      "sha256": "1f1295a1d9847c7988798e609620f616a10f78026708ffe761b0b72dcb17ef9f"
     },
     {
       "path": "raw/py3dbp.json",
@@ -738,18 +743,18 @@
     },
     {
       "path": "raw/test-summary.md",
-      "bytes": 6151,
-      "sha256": "60f82f570f923aa8d0ba6d4cabcbb41de92b22880558c9e67ad043be3d77b071"
+      "bytes": 6208,
+      "sha256": "e4819fc948f122b5420fc2a9fd8c86075d0fff79383f7f156531b899b25e19d1"
     },
     {
       "path": "raw/thpack9_baselines.json",
-      "bytes": 600,
-      "sha256": "97ec4866d1fa5b778a84756f65ec30a8d83488c16441eb1772267494c72d1c16"
+      "bytes": 1490,
+      "sha256": "898f0fc872318150913b4237ed9bc3cc2709ed2c24594a47e5a94aa38b62ed27"
     },
     {
       "path": "raw/thpack9_instance1.json",
-      "bytes": 962,
-      "sha256": "717111cf6b4309f70131ee3205910da9a83a1487bca7d46836521c90bcb6adc1"
+      "bytes": 1192,
+      "sha256": "9ecc02855cbab422cc44792b181a1b7115dd4a7711d532ece8b1024c0c14723f"
     },
     {
       "path": "raw/thpack9_instance1_bins.csv",
@@ -763,8 +768,8 @@
     },
     {
       "path": "raw/thpack9_instance1_jerry.json",
-      "bytes": 292,
-      "sha256": "8fc21590f8240872272d0a195062b08dae29de718f6018e8640752bbe6e24ba5"
+      "bytes": 447,
+      "sha256": "8e0bc775e5570ff4e083a5956af453834d452817bbab55108f722e352a83d076"
     },
     {
       "path": "raw/thpack9_instance1_packingsolver_patched.json",

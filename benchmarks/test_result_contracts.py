@@ -44,6 +44,14 @@ def test_exact_solver_results_close_their_bounds() -> None:
     assert scip["validation_errors"] == []
 
 
+def test_commercial_historical_records_are_excluded_when_fixture_is_inconsistent() -> None:
+    for name in ("gurobi_historical", "cplex_historical"):
+        record = json.loads((ROOT / "raw" / "experiments" / "commercial" / f"{name}.json").read_text())
+        assert record["status"] == "INVALID_HISTORICAL_INCONSISTENT_FIXTURE"
+        assert record["objective_bins"] is None
+        assert record["reported_objective_bins"] == 8
+
+
 def test_packingsolver_passes_supported_smoke_cases() -> None:
     cases = result("packingsolver")["cases"]
     for name in ("exact_grid", "rotation_allowed", "weight_limit", "stack_weight_above"):
@@ -86,7 +94,11 @@ def test_skjolber_java_smoke_contract() -> None:
 def test_public_thpack9_cross_library_contracts() -> None:
     baseline = json.loads((ROOT / "results" / "public" / "thpack9_baselines.json").read_text())
     assert baseline["required_items"] == 70
+    assert baseline["source_commit"] == "154a8f006a8e72f65d734f2d1e36777f678f31f8"
+    assert baseline["source_sha256"] == "a4f5e3a748709217cdc749f7d27940f15b9f2a31b3e840e725642237036f82cc"
     for result_case in baseline["results"]:
+        assert result_case.get("version") or result_case.get("commit")
+        assert result_case["validator"] == "benchmarks.validation.validate_aabbs"
         assert result_case["packed"] == result_case["required"] == 70
         assert result_case["unpacked"] == 0
         assert result_case["validation_errors"] == []

@@ -30,3 +30,7 @@
 ## L4 文本与发布
 
 中文正文使用自然段且段内不硬换行；代码块、表格、路径和错误原文不做风格改写。发布前运行 `scripts/verify.py`，检查登记的 raw/source SHA-256、核心引用入口、CFF 必要字段、图表文件和审计目录；Markdown 链接、论文元数据与未快照的法规正文仍需人工抽查。
+
+`scripts/check_markdown.py` 会在 CI 中拒绝普通 Markdown 段落的硬换行，同时忽略代码块、表格、列表、上游源码快照和依赖缓存。
+
+`scripts/check_links.py` 会校验仓库内 Markdown 的相对链接、图片目标和路径越界；外部 URL 仍以 `sources/manifest.csv` 登记，并在发布后抽查。

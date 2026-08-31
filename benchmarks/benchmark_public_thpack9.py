@@ -25,6 +25,7 @@ def specs() -> tuple[dict, list[tuple[str, int, int, int, int]]]:
 
 
 def run_py3dbp(case: dict, items: list[tuple[str, int, int, int, int]]) -> dict:
+    import py3dbp
     from py3dbp import Bin, Item, Packer
 
     size = case["container_types"][0]["size"]
@@ -48,6 +49,10 @@ def run_py3dbp(case: dict, items: list[tuple[str, int, int, int, int]]) -> dict:
             placements.append(Box(f"{item.name}:{index}", container.name, x, y, z, dx, dy, dz, float(item.weight)))
     return {
         "library": "py3dbp",
+        "version": getattr(py3dbp, "__version__", "1.1.2"),
+        "source_commit": "PyPI 1.1.2",
+        "parameters": {"bigger_first": True, "distribute_items": True, "number_of_decimals": 3},
+        "validator": "benchmarks.validation.validate_aabbs",
         "packed": len(placements),
         "required": len(items),
         "unpacked": len(packer.items),
@@ -70,6 +75,9 @@ def main() -> None:
     print(json.dumps({
         "dataset": "ESICUP THPACK9 instance 1",
         "source": case["source_url"],
+        "source_commit": case["source_commit"],
+        "source_sha256": case["source_sha256"],
+        "validator": "benchmarks.validation.validate_aabbs",
         "container_size": case["container_types"][0]["size"],
         "required_items": len(items),
         "results": [run_py3dbp(case, items), run_jerry(case, items)],

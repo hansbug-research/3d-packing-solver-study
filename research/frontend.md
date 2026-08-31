@@ -103,6 +103,8 @@ Electron 的优势是自带同一 Chromium 与 Node，Three.js、WebGL、字体�
 
 Flutter desktop 是成熟的跨平台 UI 方案，官方支持 Windows/macOS/Linux，并可通过 Dart FFI/code assets 调 C/C++，也能在 build hook 中下载和校验预编译原生库 [F23-F24]。但本项目的事实中心是 Python，3D 又以 WebGL/Three.js 最合适；引入 Dart 后仍需一套 Python sidecar 协议，却没有得到更好的 3D 生态，所以不划算。
 
+`flutter_3d_controller` 只能作为待核验插件候选：其 pub.dev 元数据列出 Android、iOS、Web 和 macOS，未列 Windows/Linux [F35]，不能据此承诺 Flutter 三平台桌面 3D。
+
 Flet 的 `flet build` 会创建 Flutter 工程、用 `serious_python` 打包 Python、再执行 Flutter build；官方矩阵和文档说明了 Windows/macOS/Linux/web 等目标与对应宿主要求 [F27]。它适合快速做目录、表单、任务列表，但本产品的虚拟化编辑表、Three.js 级 3D、精确指针交互最终都要写 Dart extension 或嵌 WebView [F29]。届时团队同时维护 Flet、Flutter extension 和 Python，反而比 Tauri+React 更绕。
 
 ## 4. 3D 引擎选择
@@ -128,7 +130,7 @@ Three.js 的选择不是说它能验证几何。它只负责展示由后端验�
 - material 接受一个 clipping plane；
 - 本次归档运行进程 23.211 ms 完成，`/usr/bin/time -v` 最大 RSS 68,120 KiB，V8 `heapUsed` 约 7.6 MiB；重复运行的时间和 RSS 会随 Node/主机抖动。
 
-这只证明 r185 的实例矩阵、包围体、instance picking 和 clipping 数据可组合，不证明 WebGL 帧率。Node 没有创建 renderer/GPU context，不能把该 RSS 或耗时当成桌面渲染基准。正式原型必须在三个系统的实际 Tauri WebView 上测 1k/10k/50k 箱体的 FPS、显存、拾取延迟、透明/剖切正确性和 GPU 恢复。
+这只证明 r185 的实例矩阵、包围体、instance picking 和 clipping plane 配置可组合，不证明 WebGL 帧率。Node 没有创建 renderer/GPU context，不能把该 RSS 或耗时当成桌面渲染基准。正式原型必须在三个系统的实际 Tauri WebView 上测 1k/10k/50k 箱体的 FPS、显存、拾取延迟、透明/剖切正确性和 GPU 恢复。脚本、fixture 与原始输出见 [`smoke.mjs`](../benchmarks/frontend-three-smoke/smoke.mjs)、[`smoke.stdout`](../raw/experiments/frontend-three-smoke/smoke.stdout) 和 [`smoke.resources.txt`](../raw/experiments/frontend-three-smoke/smoke.resources.txt)。
 
 ### 4.3 坐标、精度与实例布局
 
@@ -246,7 +248,7 @@ Java 不应因为“有库”就进入默认安装包。只有同时满足以下
 4. 能被独立 validator 校核，而不是只能相信 Java 库自己的结果；
 5. 增加的运行时和签名体积与收益相称。
 
-实现为 Python worker 启动的二级 sidecar，继续使用有版本 stdio 协议。用 `jlink` 生成最小 runtime image 而非要求用户预装 Java；启动加 `-Xms/-Xmx` 和处理器数上限；stderr 单独采集；macOS/Windows 发布时把 JVM、JNI 和 jar 一起签名/公证。UI 只看到 engine id 和 capability，不知道它是 Java。这样将来移除或替换该引擎不会迁移前端和项目格式。
+实现为 Python worker 启动的二级 sidecar，继续使用有版本 stdio 协议。用 `jlink` 生成最小 runtime image 而非要求用户预装 Java；启动加 `-Xms/-Xmx` 和处理器数上限；stderr 单独采集。macOS/Windows 发布时对 JVM/JNI 等 Mach-O/PE 文件分别执行 OS code signing（macOS 还要公证）；若分发 JAR，则按需要用 `jarsigner` 或 release manifest hash 校验，不能把 JAR 当作 OS 签名对象。UI 只看到 engine id 和 capability，不知道它是 Java。这样将来移除或替换该引擎不会迁移前端和项目格式。
 
 ## 6. 本地安全模型
 
@@ -389,6 +391,7 @@ Pareto 图用两个可选轴、颜色和大小编码第三/第四指标，但硬
 - 容器、层、SKU、站点、问题类型的隐藏/ghost/isolate；
 - X/Y/Z 三轴剖切 slider，剖切位置可输入精确数值；
 - 装载步骤播放、逐件/逐批前进、跳到 issue；时间轴不改变最终坐标；
+- 可选爆炸视图按容器、层或步骤分离实例；它只改变展示偏移，不修改权威坐标或验证结果；
 - 选中件显示实例 id、尺寸、质量、pose、位置、直接支撑、上方传递载荷、站点和来源；
 - 碰撞/越界为红，方向/支撑/承压等按 issue 类型着色；issue list 与 3D 双向联动；
 - 箱体重心、总重心、允许包络、轴/地板载荷 overlay；没有数据时不画“安全绿色”；
@@ -563,7 +566,7 @@ Python/native wheel、Tauri shell、Web assets 和可选 JVM 必须在同一 rel
 
 | 项目 | 2026-08-31 可核实版本/状态 | 许可 |
 |---|---|---|
-| PySide6 | PyPI 6.11.2，上传于 2026-08-18；官方仓库 2026-08 仍有提交 [F33] | LGPLv3/GPLv3/Qt Commercial [F1] |
+| PySide6 | PyPI 6.11.2，上传于 2026-08-18 [F33]；官方仓库维护状态见 [F36] | LGPLv3/GPLv3/Qt Commercial [F1] |
 | Tauri | 2.11.5，2026-07-01 release；官方仓库持续更新 [F17] | MIT OR Apache-2.0 |
 | Electron | 44.0.0，2026-08-25 release [F22] | MIT |
 | Flutter | stable 3.47.2，2026-08-27 [F25] | BSD-3-Clause [F26] |
@@ -617,3 +620,5 @@ Python/native wheel、Tauri shell、Web assets 和可选 JVM 必须在同一 rel
 - [F32] VTK 官方版权/许可: https://vtk.org/about/#license 和 https://gitlab.kitware.com/vtk/vtk/-/blob/master/Copyright.txt
 - [F33] PySide6/PySide6-Essentials/PySide6-Addons 官方 PyPI 发行元数据: https://pypi.org/project/PySide6/ 、https://pypi.org/project/PySide6-Essentials/ 、https://pypi.org/project/PySide6-Addons/
 - [F34] VTK/PyVista/PyVistaQt 官方 PyPI 发行元数据: https://pypi.org/project/vtk/ 、https://pypi.org/project/pyvista/ 、https://pypi.org/project/pyvistaqt/
+- [F35] `flutter_3d_controller` pub.dev 平台元数据: https://pub.dev/packages/flutter_3d_controller
+- [F36] PySide 官方仓库与提交记录: https://github.com/pyside/pyside-setup

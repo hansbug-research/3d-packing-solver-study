@@ -29,9 +29,7 @@ volume_utilization    Σ packed item volume / Σ used bin volume
 weight_utilization    Σ packed weight / Σ used bin capacity
 ```
 
-单箱 THPACK 用 `volume_utilization`/packed volume；THPACK9 用 `bins_used`，体积利用率只
-作次级诊断。异构箱报告 `total_cost`，不能用箱数替代价格。若允许漏装，必须为每件给
-profit/penalty，并同时报告 profit 和漏装列表。
+单箱 THPACK 用 `volume_utilization`/packed volume；THPACK9 用 `bins_used`，体积利用率只作次级诊断。异构箱报告 `total_cost`，不能用箱数替代价格。若允许漏装，必须为每件给 profit/penalty，并同时报告 profit 和漏装列表。
 
 ### 最优性、性能与可靠性
 
@@ -46,9 +44,7 @@ profit/penalty，并同时报告 profit 和漏装列表。
 | `invalid_geometry_rate` | 越界、重叠、非法姿态、漏件计数 | 任何非零都是硬失败，不得被利用率掩盖 |
 | `constraint_violation` | 重量、承压、支撑、重心、轴荷、站点遮挡逐项计数/幅度 | 没有数据的约束标 `not_applicable`，不能填 0 |
 
-仅在 `status=OPTIMAL` 或 primal/dual bound 在约定容差内闭合时显示“已证明最优”。CP-SAT
-需要整数化单位并记录 scale；SCIP/Gurobi/CPLEX 的证明也只对给定离散模型成立，不等于
-真实车辆法规证明。
+仅在 `status=OPTIMAL` 或 primal/dual bound 在约定容差内闭合时显示“已证明最优”。CP-SAT 需要整数化单位并记录 scale；SCIP/Gurobi/CPLEX 的证明也只对给定离散模型成立，不等于真实车辆法规证明。
 
 ## 受控实验协议
 
@@ -65,23 +61,14 @@ profit/penalty，并同时报告 profit 和漏装列表。
 | 实现 | 完整件数 | 箱数 | 成本（单位箱价） | wall/库内时间 | 几何 |
 |---|---:|---:|---:|---:|---|
 | PackingSolver patched `box` | 70/70 | 25 | 25 | 约 1 s / 输出 JSON | ✅ |
-| Skjolber LAFF | 70/70 | 28 | 28 | 约 5 ms 库内 | ✅ |
+| Skjolber LAFF | 70/70 | 28 | 28 | 8.315 ms 库内（当前 raw 快照） | ✅ |
 | `py3dbp` 1.1.2 | 70/70 | 50 | 50 | 约 16 ms | ✅ |
 | Jerry fork | 70/70 | 50 | 50 | 约 24 ms | ✅ |
 
-这不是已知最优表：THPACK9 文件没有给该实例的 optimum，体积下界为
-`ceil(17920 / 960) = 19`，所以只能报告 25/28/50 的 incumbent，不把 25 叫最优。
-PackingSolver certificate 的 `COPIES` 是按相同布局聚合的箱实例，validator 已按物理
-copy 展开后再检查；直接把聚合行重复到同一 bin 会错误地产生重叠。
+这不是已知最优表：THPACK9 文件没有给该实例的 optimum，体积下界为 `ceil(17920 / 960) = 19`，所以只能报告 25/28/50 的 incumbent，不把 25 叫最优。PackingSolver certificate 的 `COPIES` 是按相同布局聚合的箱实例，validator 已按物理 copy 展开后再检查；直接把聚合行重复到同一 bin 会错误地产生重叠。
 
-CP-SAT/SCIP 的 9 立方体 exact-small smoke test 已分别闭合到 2 箱；它验证建模/界和
-资源协议，不代表 70 件 THPACK9 的全局最优。对大公共实例，正确做法是报告
-time-limit/incumbent/bound，而不是强行延长到不可控。
+CP-SAT/SCIP 的 9 立方体 exact-small smoke test 已分别闭合到 2 箱；它验证建模/界和资源协议，不代表 70 件 THPACK9 的全局最优。对大公共实例，正确做法是报告 time-limit/incumbent/bound，而不是强行延长到不可控。
 
 ## 约束合规套件（不能用经典数据集替代）
 
-另建版本化 synthetic suite，每个 case 只改变一个约束并保留人工可算真值：旋转白名单、
-禁止倒置、有限箱 copies、总重、最大上压、部分支撑、重心/地板点载荷、半挂轴荷、门洞、
-障碍物、多站 LIFO、危险品隔离和离散 OBB 姿态。结果必须逐项 `PASS/FAIL/NOT_APPLICABLE`
-并显示反例证书。经典 THPACK/Alonso 只用于算法质量和业务格式覆盖，不能证明材料强度、
-摩擦、加速度或法规合规。
+另建版本化 synthetic suite，每个 case 只改变一个约束并保留人工可算真值：旋转白名单、禁止倒置、有限箱 copies、总重、最大上压、部分支撑、重心/地板点载荷、半挂轴荷、门洞、障碍物、多站 LIFO、危险品隔离和离散 OBB 姿态。结果必须逐项 `PASS/FAIL/NOT_APPLICABLE` 并显示反例证书。经典 THPACK/Alonso 只用于算法质量和业务格式覆盖，不能证明材料强度、摩擦、加速度或法规合规。

@@ -21,9 +21,9 @@
 ### 🟢 低（已修复）：LAFF 性能句应限定为实验观察
 
 - 文件位置：`research/algorithms.md:66`。
-- 审计时当前值为“LAFF 等通常毫秒级”；当前正文已限定为本仓库 100 件 smoke test 的 12 ms 观察值。
-- 证据：本仓库 100 件 smoke test 的 Skjolber LAFF 库内耗时约 12 ms；该数字不能证明所有硬件、规模和参数下的普遍性能。
-- 修复建议：改成“在本仓库 100 件 smoke test 中库内约 12 ms；实际耗时随实例、JVM 和 deadline 变化”，或添加官方 benchmark 引用。
+- 审计时当前值为“LAFF 等通常毫秒级”；当前正文已改为本仓库 raw 快照的 100 件 21.275 ms、THPACK9-1 8.315 ms，并注明资源记录快照。
+- 证据：`raw/skjolber.json` 的 `measured_ms` 为 21.274940（100 件）和 8.314526（THPACK9-1）；该数字不能证明所有硬件、规模和参数下的普遍性能。
+- 修复：正文改为当前 raw 数值，并明确实际耗时随实例、JVM 和 deadline 变化。
 
 ### 🟡 中（已修复）：CPLEX Python 包与 CP Optimizer 产品接口混写
 
@@ -67,7 +67,7 @@
 
 ## 已核对且未发现错误的项目
 
-- `research/algorithms.md` 论文表（Martello–Pisinger–Vigo、Fekete–Schepers–van der Veen、Nascimento 等、Paquay 等、Crainic 等、Fanslau–Bortfeldt、Pisinger、TS2PACK、Zhao 等、异构箱型、支撑/承压、轴荷、多站和连续旋转条目）的 DOI、题名和作者与 Crossref 记录一致。
+- `research/algorithms.md` 论文表的 DOI 已逐项保留并按本轮 Crossref 复核修正题名、作者顺序和 online/print 年份；仍应把 DOI 元数据当作随时间变化的外部记录，发布后按 manifest 抽查。
 - `research/domain-model.md` 的 R1、R2、R16 及 ASTM D642 DOI 均可解析，法规/标准 URL 可访问；正文明确指出法规版本、许可和工程签核边界，没有把几何可行性写成法规或强度证明。
 - ESICUP README 明确：THPACK1–7 和 THPACK8 是单容器最大体积利用率问题；THPACK9 是装完全部货物并最小化容器数的多容器问题。`research/benchmarks.md:15`、`:32-34`、`:72-79` 保持了这一区分，并正确声明 instance 1 没有 published known optimum。
 - Alonso 2019（DOI `10.1016/j.cie.2018.11.012`）摘要明确包含轴荷、重心、动态稳定和交付日期；Alonso 2020（DOI `10.1007/s10288-018-0397-z`）题名和摘要元数据支持 GRASP 与 practical constraints 的描述。
@@ -82,3 +82,8 @@ sed -n '1,120p' .cache/esicup-datasets/3d_rectangular/thpack/README.txt
 ```
 
 本文件记录的是审计发现；正文修复应在变更日志或提交说明中引用本文件。法规、标准和商业软件许可仍需按实际运输方式、司法辖区、版本和采购条款重新确认。
+
+- 商业求解器历史 JSON 的模型字段是 9 个 `5x5x5` 物品与 2 个 `10x10x10` 箱，但目标/bound 写成 8；该目标不可能超过候选箱数，现已标为 `INVALID_HISTORICAL_INCONSISTENT_FIXTURE`，不再进入比较表。
+- PackingSolver `boxstacks` 的矩阵单元已将重心/轴荷改为 ⚠️：官方接口存在半挂字段，但当前窄轴荷边界复现无 certificate，不能写成无条件 ✅。
+- 论文元数据已按 Crossref 修正：Bortfeldt/Wäscher 标题、Junqueira 的“cargo stability and load bearing constraints”与 `Sato Yamashita` 作者姓氏、Romanova 2018 标题、Pankratov–Romanova–Litvinchev 2020 作者顺序，以及 Ceschia/Paquay/Zhao/Junqueira/Pollaris 的 online/print 年份；Fekete DOI 已加入来源清单。
+- PackingSolver issue #536 的 patch/test 内容属于 PR #540 body/test plan，不再写成 issue 评论内容；GitHub issue/PR URL 与 fork commit 已登记到 `sources/manifest.csv` 和 `raw/provenance.json`。

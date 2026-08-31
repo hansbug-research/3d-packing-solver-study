@@ -1,6 +1,9 @@
 {
   "dataset": "ESICUP THPACK9 instance 1",
-  "source": "https://github.com/ESICUP/datasets",
+  "source": "https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/thpack/thpack9.txt",
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+  "source_sha256": "a4f5e3a748709217cdc749f7d27940f15b9f2a31b3e840e725642237036f82cc",
+  "validator": "benchmarks.validation.validate_aabbs",
   "container_size": [
     10,
     6,
@@ -10,20 +13,38 @@
   "results": [
     {
       "library": "py3dbp",
+      "version": "1.1.2",
+      "source_commit": "PyPI 1.1.2",
+      "parameters": {
+        "bigger_first": true,
+        "distribute_items": true,
+        "number_of_decimals": 3
+      },
+      "validator": "benchmarks.validation.validate_aabbs",
       "packed": 70,
       "required": 70,
       "unpacked": 0,
       "bins_used": 50,
-      "elapsed_s": 0.01586100016720593,
+      "elapsed_s": 0.0159614491276443,
       "validation_errors": []
     },
     {
       "library": "jerry800416/3D-bin-packing",
+      "commit": "75764a2b8a5c8e0a6713a4f672c0a8ff81b1107a",
+      "version": "source checkout at pinned commit",
+      "parameters": {
+        "bigger_first": true,
+        "distribute_items": true,
+        "fix_point": true,
+        "check_stable": false,
+        "number_of_decimals": 3
+      },
+      "validator": "benchmarks.validation.validate_aabbs",
       "packed": 70,
       "required": 70,
       "unpacked": 0,
       "bins_used": 50,
-      "elapsed_s": 0.024499519960954785,
+      "elapsed_s": 0.024165000999346375,
       "validation_errors": []
     }
   ]

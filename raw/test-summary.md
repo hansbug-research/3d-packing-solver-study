@@ -18,7 +18,7 @@
 | PySCIPOpt 6.2.1 / SCIP | 与 CP-SAT 相同的连续坐标 MIP | `optimal`，目标 2，dual bound 2，gap 0；几何校验通过 | 0.15 s / 60,396 KiB | 开源 MIP/CIP 扩展轨；同样需要自建 3D 模型 |
 | `py3dbp` 1.1.2 | 网格、需旋转、重量、多箱型顺序反转 | 基础场景通过；小箱先输入用 2 箱，大箱先输入只用 1 箱 | 0.03 s / 13,696 KiB | 很快但顺序敏感，只作基线 |
 | Jerry Python 分支 | `loadbear` 承压反例 | 几何通过，但脆弱件上方实际放置重量 20；`loadbear` 仅参与排序 | 0.39 s / 67,344 KiB | 不能作为承压约束求解器 |
-| Skjolber Java `c73d521...` LAFF | 网格、三维旋转、仅平面旋转、重量、100 件 | 所有预期通过；100 件库内约 12 ms | 0.24 s / 76,088 KiB | 强几何备选/对照；高级力学只是扩展点，暂不足以抵消 JVM 集成成本 |
+| Skjolber Java `c73d521...` LAFF | 网格、三维旋转、仅平面旋转、重量、100 件 | 所有预期通过；100 件库内 21.275 ms，THPACK9-1 为 8.315 ms | 约 0.43 s / 78,336 KiB（当前 raw 资源快照） | 强几何备选/对照；高级力学只是扩展点，暂不足以抵消 JVM 集成成本 |
 
 wall time 包含解释器/JVM/进程启动，不等于库内求解时间；PackingSolver 一行还包含多个固定约 1 秒停止粒度的子任务。不同语言的微型测试不能仅凭该列作性能排名。
 
@@ -51,9 +51,7 @@ C/C++/Rust 实现不因语言被排除。优先级依次是可审计的官方 wh
 
 ## 公共 THPACK9 对照
 
-从 ESICUP `3d_rectangular/thpack/thpack9.txt` 转换了 instance 1（`10x6x16` 箱，20
-件 `2x6x8`、50 件 `8x4x10`）。同一实例用 80 个候选箱运行，结果均通过独立 AABB
-validator：
+从 ESICUP `3d_rectangular/thpack/thpack9.txt` 转换了 instance 1（`10x6x16` 箱，20 件 `2x6x8`、50 件 `8x4x10`）。同一实例用 80 个候选箱运行，结果均通过独立 AABB validator：
 
 | 实现 | 完整件数 | 使用箱数 | 结果状态 |
 |---|---:|---:|---|
@@ -62,7 +60,4 @@ validator：
 | `py3dbp` | 70/70 | 50 | feasible incumbent |
 | Jerry fork | 70/70 | 50 | feasible incumbent |
 
-该实例体积下界为 19 箱，但没有在数据文件中提供 known optimum；25 不能标记为
-`PROVEN_OPTIMAL`。原始库/修复版差异、聚合 `COPIES` certificate 的展开规则和复现
-命令见 [`research/packingsolver-upstream.md`](../research/packingsolver-upstream.md)，
-统一数据和 baseline 命令见 [`research/benchmarks.md`](../research/benchmarks.md)。
+该实例体积下界为 19 箱，但没有在数据文件中提供 known optimum；25 不能标记为 `PROVEN_OPTIMAL`。原始库/修复版差异、聚合 `COPIES` certificate 的展开规则和复现命令见 [`research/packingsolver-upstream.md`](../research/packingsolver-upstream.md)，统一数据和 baseline 命令见 [`research/benchmarks.md`](../research/benchmarks.md)。

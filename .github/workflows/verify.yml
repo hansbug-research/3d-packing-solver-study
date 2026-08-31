@@ -28,6 +28,8 @@ jobs:
         run: git diff --exit-code -- derived/
       - name: Regenerate figures
         run: python scripts/plot.py
+      - name: Reject figure drift
+        run: git diff --exit-code -- figures/
       - name: Rebuild raw manifest
         run: python scripts/build_manifest.py
       - name: Reject raw manifest drift
@@ -36,5 +38,7 @@ jobs:
         run: |
           cffconvert --validate --infile CITATION.cff
           python scripts/verify.py
+          python scripts/check_markdown.py
+          python scripts/check_links.py
       - name: Run contract tests
         run: python -m pytest -q

@@ -46,7 +46,7 @@ def main() -> None:
         "public_item_volume": 17920,
         "public_volume_lower_bound": 19,
         "public_results": rows,
-        "controlled_pytest_assertions": 8,
+        "controlled_pytest_assertions": 9,
         "packing_solver_original_variable_cost": "FAIL_KNOWN_UPSTREAM_BUG",
         "packing_solver_patched_variable_cost": "PASS",
     }

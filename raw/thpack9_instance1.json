@@ -1,7 +1,9 @@
 {
   "dataset": "ESICUP THPACK9",
   "source_file": "3d_rectangular/thpack/thpack9.txt",
-  "source_url": "https://github.com/ESICUP/datasets",
+  "source_url": "https://github.com/ESICUP/datasets/blob/154a8f006a8e72f65d734f2d1e36777f678f31f8/3d_rectangular/thpack/thpack9.txt",
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+  "source_sha256": "a4f5e3a748709217cdc749f7d27940f15b9f2a31b3e840e725642237036f82cc",
   "reference": "Ivancic, Mathur & Mohanty (1989), followed by Bischoff & Ratcliff (1995)",
   "problem_kind": "3d_bin_packing",
   "objective": "minimize_bins",

@@ -13,7 +13,7 @@
 | 派生统计 | `bash scripts/collect_and_derive.sh` | 通过；生成 `derived/stats.json`、CSV 和图 |
 | manifest | `python3 scripts/build_manifest.py` | 通过；当前 raw 文件逐项登记大小和 SHA-256 |
 | 机器核对 | `python3 scripts/verify.py` | `VERIFY_OK` |
-| 单元/结果断言 | `python3 -m pytest -q` | `8 passed` |
+| 单元/结果断言 | `python3 -m pytest -q` | `9 passed` |
 
 ## 证据边界
 
