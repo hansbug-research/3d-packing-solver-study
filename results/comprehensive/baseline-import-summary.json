@@ -1,0 +1,52 @@
+{
+  "benchmark_ids": [
+    "B01",
+    "B02",
+    "B04",
+    "B06",
+    "B09",
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B17"
+  ],
+  "implementation_ids": [
+    "exact_cp_sat",
+    "exact_cplex",
+    "exact_gurobi",
+    "exact_scip",
+    "go_bp3d",
+    "jerry",
+    "packingsolver_fork_box",
+    "packingsolver_fork_boxstacks",
+    "packingsolver_upstream_box",
+    "py3dbp",
+    "rust_brkga",
+    "rust_extreme_point",
+    "rust_ga",
+    "rust_layer",
+    "rust_sa",
+    "skjolber_fast_bruteforce",
+    "skjolber_laff",
+    "skjolber_plain"
+  ],
+  "protocol_version": "benchmark-protocol/3",
+  "record_kind": "LEGACY_BASELINE_IMPORT",
+  "records_by_adapter": {
+    "exact_suite/strengthened": 28,
+    "legacy_import/boxstacks_constraints_v1": 9,
+    "legacy_import/crosslang_packingsolver": 14,
+    "legacy_import/native_multi_bin": 44,
+    "legacy_import/packingsolver_thpack_v2": 1518,
+    "legacy_import/python_thpack_v1": 280,
+    "legacy_import/repeated_single_boundary": 44,
+    "legacy_import/rust_repeated_single_boundary": 50,
+    "legacy_import/skjolber_algorithm_small": 3,
+    "legacy_import/skjolber_thpack9_v1": 88
+  },
+  "run_manifest_sha256": "a808e4eb68e31811b1f833c2e96b973eb6560d134fd038f9f5d9a028d740548a",
+  "run_records": 2078,
+  "schema_version": 1,
+  "warning": "These records normalize already archived v1/v2 experiments; artifacts remain at their original paths."
+}

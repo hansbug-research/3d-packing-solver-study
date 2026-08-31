@@ -19,3 +19,4 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 15,benchmark-protocol-v2,primary,0,2,将单一状态拆为输入/能力/运行/证书/证明五维；修正 Egeblad-Pisinger 60 例为固定方向待审计并区分原题与全旋转投影,closed
 16,benchmark-protocol-v3,primary,0,3,补入 BAYTP/混合托盘/在线增量套件；恢复 OR-Library 四个 BAYTP 文件与哈希；扩展 ULD/机器人边界并保持公共质量/构造/工业/可靠性分层,closed
 17,comprehensive-plan-contract,primary,0,2,建立 B01-B32 × 19 实现的 608 单元确定性计划；加入严格运行 schema、状态不变量、已知缺陷原因、生成漂移检查和 CI 门禁,closed
+18,comprehensive-baseline-import,primary,0,3,迁移 2078 条历史运行并生成分问题排行；修正非标准 NaN、空排行和 JVM 分组；新增 record_origin，明确 55 个历史证据单元不等于协议 v3 已执行,closed

@@ -22,7 +22,7 @@ def generated_files() -> dict[Path, str]:
     validate_plan_rows(rows, len(suites["suites"]), len(implementations["implementations"]))
     return {
         RESULTS_DIR / "suite-implementation-plan.jsonl": plan_jsonl(rows),
-        RESULTS_DIR / "coverage.csv": coverage_csv(rows),
+        RESULTS_DIR / "coverage-plan.csv": coverage_csv(rows),
         RESULTS_DIR / "plan-summary.json": canonical_json(plan_summary(rows, suites, implementations)),
     }
 

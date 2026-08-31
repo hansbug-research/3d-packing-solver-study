@@ -1,0 +1,306 @@
+{
+  "coverage": {
+    "benchmarks_with_runs": 10,
+    "cells_with_evidence": 55,
+    "evidence_cell_rate": 0.09046052631578948,
+    "executed_implementations": 18,
+    "legacy_baseline_only_cells": 55,
+    "planned_cells": 608,
+    "protocol_v3_executed_cell_rate": 0.0,
+    "protocol_v3_executed_cells": 0,
+    "record_origin_counts": {
+      "LEGACY_BASELINE": 2078
+    },
+    "records_by_benchmark": {
+      "B01": 1474,
+      "B02": 60,
+      "B04": 472,
+      "B06": 30,
+      "B09": 13,
+      "B12": 14,
+      "B13": 7,
+      "B14": 3,
+      "B15": 3,
+      "B17": 2
+    },
+    "run_records": 2078,
+    "run_status_counts": {
+      "COMPLETED": 628,
+      "ERROR": 1,
+      "TIME_LIMIT": 1449
+    },
+    "solution_status_counts": {
+      "INVALID_CERTIFICATE": 31,
+      "NO_SOLUTION": 13,
+      "VALID_COMPLETE": 541,
+      "VALID_PARTIAL": 1493
+    }
+  },
+  "headline": {
+    "exact_proof": [
+      {
+        "benchmark_id": "B06",
+        "implementation_id": "exact_gurobi",
+        "instances": 5,
+        "max_solver_s": 0.006303074071183801,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0017813858110457658,
+        "proof_rate": 1.0,
+        "proven": 5,
+        "valid_or_proven_infeasible": 5
+      },
+      {
+        "benchmark_id": "B06",
+        "implementation_id": "exact_cplex",
+        "instances": 5,
+        "max_solver_s": 0.012279939139261842,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0051135434303432705,
+        "proof_rate": 1.0,
+        "proven": 5,
+        "valid_or_proven_infeasible": 5
+      },
+      {
+        "benchmark_id": "B06",
+        "implementation_id": "exact_cp_sat",
+        "instances": 5,
+        "max_solver_s": 0.018719259183853865,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.006078784866258502,
+        "proof_rate": 1.0,
+        "proven": 5,
+        "valid_or_proven_infeasible": 5
+      },
+      {
+        "benchmark_id": "B06",
+        "implementation_id": "exact_scip",
+        "instances": 5,
+        "max_solver_s": 0.05418348009698093,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.014848797116428614,
+        "proof_rate": 1.0,
+        "proven": 5,
+        "valid_or_proven_infeasible": 5
+      },
+      {
+        "benchmark_id": "B09",
+        "implementation_id": "exact_gurobi",
+        "instances": 2,
+        "max_solver_s": 0.0006921230815351009,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0006880644941702485,
+        "proof_rate": 1.0,
+        "proven": 2,
+        "valid_or_proven_infeasible": 2
+      },
+      {
+        "benchmark_id": "B09",
+        "implementation_id": "exact_cp_sat",
+        "instances": 2,
+        "max_solver_s": 0.0013842398766428232,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0013703934382647276,
+        "proof_rate": 1.0,
+        "proven": 2,
+        "valid_or_proven_infeasible": 2
+      },
+      {
+        "benchmark_id": "B09",
+        "implementation_id": "exact_scip",
+        "instances": 2,
+        "max_solver_s": 0.0016835869755595922,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0016467554960399866,
+        "proof_rate": 1.0,
+        "proven": 2,
+        "valid_or_proven_infeasible": 2
+      },
+      {
+        "benchmark_id": "B09",
+        "implementation_id": "exact_cplex",
+        "instances": 2,
+        "max_solver_s": 0.002892782911658287,
+        "mean_gap": 0.0,
+        "mean_solver_s": 0.0024204634828493,
+        "proof_rate": 1.0,
+        "proven": 2,
+        "valid_or_proven_infeasible": 2
+      }
+    ],
+    "identical_bin_packing": [
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "packingsolver_fork_box",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 15.477272727272727,
+        "mean_solver_s": 1.0005439250000001,
+        "mean_wall_s": 1.0046725546073338,
+        "median_bins": 11.5,
+        "p95_bins": 51.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "skjolber_plain",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 17.795454545454547,
+        "mean_solver_s": 0.0007954545454545455,
+        "mean_wall_s": 0.0009117087954545456,
+        "median_bins": 14.0,
+        "p95_bins": 55.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "rust_extreme_point",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 18.40909090909091,
+        "mean_solver_s": 0.0012490689545454545,
+        "mean_wall_s": null,
+        "median_bins": 14.0,
+        "p95_bins": 52.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "py3dbp",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 18.431818181818183,
+        "mean_solver_s": 0.13454514715439556,
+        "mean_wall_s": 0.24268429158043794,
+        "median_bins": 14.0,
+        "p95_bins": 52.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "go_bp3d",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 19.931818181818183,
+        "mean_solver_s": 0.001677806159090909,
+        "mean_wall_s": null,
+        "median_bins": 16.0,
+        "p95_bins": 55.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "skjolber_laff",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 0,
+        "invalid_rate": 0.0,
+        "mean_bins": 20.84090909090909,
+        "mean_solver_s": 0.0027954545454545454,
+        "mean_wall_s": 0.005459475659090909,
+        "median_bins": 17.0,
+        "p95_bins": 61.0,
+        "valid_complete": 44
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "jerry",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 1,
+        "invalid_rate": 0.022727272727272728,
+        "mean_bins": 18.72093023255814,
+        "mean_solver_s": 0.17586373496085925,
+        "mean_wall_s": 0.6620390542869478,
+        "median_bins": 14.0,
+        "p95_bins": 52.0,
+        "valid_complete": 43
+      }
+    ],
+    "volume_knapsack_common": [
+      {
+        "benchmark_id": "B01",
+        "common_implementations": 3,
+        "common_instance_set_sha256": "697fd746a16e46abc3c3991fcff5fd19076c40c67cbce16cfe199f48555a0378",
+        "common_instances": 9,
+        "implementation_id": "packingsolver_fork_box",
+        "invalid_records": 0,
+        "mean_volume_utilization": 0.9659607310871103,
+        "median_volume_utilization": 0.9686328707374836,
+        "valid_records": 9
+      },
+      {
+        "benchmark_id": "B01",
+        "common_implementations": 3,
+        "common_instance_set_sha256": "697fd746a16e46abc3c3991fcff5fd19076c40c67cbce16cfe199f48555a0378",
+        "common_instances": 9,
+        "implementation_id": "jerry",
+        "invalid_records": 0,
+        "mean_volume_utilization": 0.8170490724412974,
+        "median_volume_utilization": 0.8392637394556661,
+        "valid_records": 9
+      },
+      {
+        "benchmark_id": "B01",
+        "common_implementations": 3,
+        "common_instance_set_sha256": "697fd746a16e46abc3c3991fcff5fd19076c40c67cbce16cfe199f48555a0378",
+        "common_instances": 9,
+        "implementation_id": "py3dbp",
+        "invalid_records": 0,
+        "mean_volume_utilization": 0.8066066636933269,
+        "median_volume_utilization": 0.8214121680499787,
+        "valid_records": 9
+      },
+      {
+        "benchmark_id": "B02",
+        "common_implementations": 2,
+        "common_instance_set_sha256": "e8e072c84b48316983e189e6394b6773ae095cab408ebd7af725c9121fafe160",
+        "common_instances": 15,
+        "implementation_id": "packingsolver_fork_box",
+        "invalid_records": 0,
+        "mean_volume_utilization": 0.7115089318469416,
+        "median_volume_utilization": 0.6280696576151121,
+        "valid_records": 15
+      },
+      {
+        "benchmark_id": "B02",
+        "common_implementations": 2,
+        "common_instance_set_sha256": "e8e072c84b48316983e189e6394b6773ae095cab408ebd7af725c9121fafe160",
+        "common_instances": 15,
+        "implementation_id": "jerry",
+        "invalid_records": 2,
+        "mean_volume_utilization": 0.6722749579918924,
+        "median_volume_utilization": 0.6280696576151121,
+        "valid_records": 13
+      }
+    ]
+  },
+  "protocol_version": "benchmark-protocol/3",
+  "schema_version": 1,
+  "source_sha256": {
+    "results/comprehensive/run-manifest.jsonl": "a808e4eb68e31811b1f833c2e96b973eb6560d134fd038f9f5d9a028d740548a",
+    "results/comprehensive/suite-implementation-plan.jsonl": "48f0fe450d46af1b82140dfb17a591da8dbc0a1d791c43042ca7ed0d44862c60"
+  },
+  "warnings": [
+    "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",
+    "Cross-language timing groups are not combined into a single speed ranking.",
+    "Per-supported-instance-set volume rows are not directly comparable when instance_set_sha256 differs."
+  ]
+}

@@ -1,0 +1,535 @@
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import io
+import json
+import math
+import statistics
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+from typing import Any, Iterable
+
+from model import RESULTS_DIR, ROOT, canonical_json, validate_run_record
+
+
+VALID_SOLUTIONS = {"VALID_COMPLETE", "VALID_PARTIAL"}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
+    return [json.loads(line) for line in path.read_text().splitlines() if line]
+
+
+def nearest_rank(values: list[float], percentile: float) -> float | None:
+    finite = [value for value in values if math.isfinite(value)]
+    if not finite:
+        return None
+    ordered = sorted(finite)
+    return ordered[max(0, math.ceil(percentile * len(ordered)) - 1)]
+
+
+def mean(values: Iterable[float | int | None]) -> float | None:
+    present = [float(value) for value in values if value is not None and math.isfinite(float(value))]
+    return statistics.fmean(present) if present else None
+
+
+def median(values: Iterable[float | int | None]) -> float | None:
+    present = [float(value) for value in values if value is not None and math.isfinite(float(value))]
+    return statistics.median(present) if present else None
+
+
+def write_csv(rows: list[dict[str, Any]], fields: list[str]) -> str:
+    output = io.StringIO(newline="")
+    writer = csv.DictWriter(output, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    for row in rows:
+        writer.writerow({field: row.get(field) for field in fields})
+    return output.getvalue()
+
+
+def canonical_instance(record: dict[str, Any]) -> str:
+    instance_id = record["instance_id"]
+    if record["benchmark_id"] == "B01":
+        match = __import__("re").fullmatch(r"BR:BR(\d+)\.txt:(\d+)", instance_id)
+        if match:
+            return f"THPACK{match.group(1)}-{int(match.group(2)):03d}"
+    if record["benchmark_id"] == "B02" and instance_id.startswith("LN:thpack8.txt:"):
+        return f"THPACK8-{int(instance_id.rsplit(':', 1)[1]):03d}"
+    if record["benchmark_id"] == "B04" and instance_id.startswith("IMM:thpack9.txt:"):
+        return f"THPACK9-{int(instance_id.rsplit(':', 1)[1]):03d}"
+    return instance_id.upper().replace("THPACK9_INSTANCE1", "THPACK9-001")
+
+
+def validate_records(records: list[dict[str, Any]]) -> None:
+    run_ids: set[str] = set()
+    for record in records:
+        validate_run_record(record)
+        if record["run_id"] in run_ids:
+            raise ValueError(f"duplicate run id: {record['run_id']}")
+        run_ids.add(record["run_id"])
+        for artifact in record["artifacts"].values():
+            if not artifact or artifact.startswith("offline ") or artifact.startswith("exact_suite") or artifact.startswith("independent ") or artifact.startswith("crosslang_") or artifact.startswith("packingsolver_") or artifact.startswith("Skjolber"):
+                continue
+            path_text = artifact.split("#", 1)[0]
+            if "/" in path_text and not (ROOT / path_text).exists():
+                raise ValueError(f"run artifact is missing: {record['run_id']}: {path_text}")
+
+
+def execution_coverage(plan: list[dict[str, Any]], records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    runs: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        runs[(record["benchmark_id"], record["implementation_id"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for cell in plan:
+        cell_runs = runs.get((cell["benchmark_id"], cell["implementation_id"]), [])
+        legacy_runs = [record for record in cell_runs if record["record_origin"] == "LEGACY_BASELINE"]
+        protocol_runs = [record for record in cell_runs if record["record_origin"] == "PROTOCOL_V3"]
+        status_counts = Counter(record["solution_status"] for record in cell_runs)
+        run_counts = Counter(record["run_status"] for record in cell_runs)
+        if protocol_runs and legacy_runs:
+            execution_status = "PROTOCOL_V3_WITH_LEGACY_BASELINE"
+        elif protocol_runs:
+            execution_status = "PROTOCOL_V3_EXECUTED"
+        elif legacy_runs:
+            execution_status = "LEGACY_BASELINE_ONLY"
+        else:
+            execution_status = cell["termination_reason"]
+        rows.append(
+            {
+                "benchmark_id": cell["benchmark_id"],
+                "benchmark_name": cell["benchmark_name"],
+                "category": cell["category"],
+                "problem_family": cell["problem_family"],
+                "implementation_id": cell["implementation_id"],
+                "library": cell["library"],
+                "algorithm": cell["algorithm"],
+                "planned_input_status": cell["input_status"],
+                "planned_capability_status": cell["capability_status"],
+                "comparison_track": cell["comparison_track"],
+                "problem_scope": cell["problem_scope"],
+                "run_records": len(cell_runs),
+                "legacy_run_records": len(legacy_runs),
+                "protocol_v3_run_records": len(protocol_runs),
+                "unique_instances": len({canonical_instance(record) for record in cell_runs}),
+                "completed": run_counts["COMPLETED"],
+                "time_limit": run_counts["TIME_LIMIT"],
+                "error": run_counts["ERROR"],
+                "valid_complete": status_counts["VALID_COMPLETE"],
+                "valid_partial": status_counts["VALID_PARTIAL"],
+                "invalid_certificate": status_counts["INVALID_CERTIFICATE"],
+                "constraint_violation": status_counts["CONSTRAINT_VIOLATION"],
+                "no_solution": status_counts["NO_SOLUTION"],
+                "execution_status": execution_status,
+            }
+        )
+    return rows
+
+
+def volume_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    groups: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if record["benchmark_id"] not in {"B01", "B02"}:
+            continue
+        key = (
+            record["benchmark_id"],
+            record["implementation_id"],
+            record["budget"]["time_limit_s"],
+            record["item_order"],
+            record["adapter"],
+        )
+        groups[key].append(record)
+    rows: list[dict[str, Any]] = []
+    for key, group in groups.items():
+        valid = [record for record in group if record["solution_status"] in VALID_SOLUTIONS]
+        utilizations = [record["metrics"].get("volume_utilization") for record in valid]
+        instance_set = sorted(canonical_instance(record) for record in group)
+        rows.append(
+            {
+                "benchmark_id": key[0],
+                "implementation_id": key[1],
+                "time_limit_s": key[2],
+                "item_order": key[3],
+                "adapter": key[4],
+                "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
+                "planned_records": len(group),
+                "valid_records": len(valid),
+                "invalid_records": len(group) - len(valid),
+                "valid_rate": len(valid) / len(group),
+                "instance_set_sha256": hashlib.sha256(("\n".join(instance_set) + "\n").encode()).hexdigest(),
+                "mean_volume_utilization": mean(utilizations),
+                "median_volume_utilization": median(utilizations),
+                "p95_volume_utilization": nearest_rank([float(value) for value in utilizations if value is not None], 0.95),
+                "mean_wall_s": mean(record["resources"].get("wall_s") for record in valid),
+            }
+        )
+    rows.sort(key=lambda row: (row["benchmark_id"], -row["valid_rate"], -(row["mean_volume_utilization"] or -1), row["implementation_id"], row["item_order"]))
+    return rows
+
+
+def canonical_volume_records(records: list[dict[str, Any]], benchmark_id: str) -> dict[str, dict[str, dict[str, Any]]]:
+    selected: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+    for record in records:
+        if record["benchmark_id"] != benchmark_id:
+            continue
+        implementation_id = record["implementation_id"]
+        canonical = False
+        if implementation_id == "packingsolver_fork_box":
+            canonical = record["adapter"] == "legacy_import/packingsolver_thpack_v2" and record["budget"]["time_limit_s"] == 10.0
+        elif implementation_id in {"py3dbp", "jerry"}:
+            canonical = record["adapter"] == "legacy_import/python_thpack_v1" and record["item_order"] == "DESCENDING"
+        if canonical:
+            selected[implementation_id][canonical_instance(record)] = record
+    return selected
+
+
+def volume_common_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for benchmark_id in ("B01", "B02"):
+        selected = canonical_volume_records(records, benchmark_id)
+        if len(selected) < 2:
+            continue
+        common = set.intersection(*(set(by_instance) for by_instance in selected.values()))
+        common_hash = hashlib.sha256(("\n".join(sorted(common)) + "\n").encode()).hexdigest()
+        for implementation_id, by_instance in selected.items():
+            group = [by_instance[instance] for instance in sorted(common)]
+            valid = [record for record in group if record["solution_status"] in VALID_SOLUTIONS]
+            values = [record["metrics"].get("volume_utilization") for record in valid]
+            rows.append(
+                {
+                    "benchmark_id": benchmark_id,
+                    "implementation_id": implementation_id,
+                    "common_implementations": len(selected),
+                    "common_instances": len(common),
+                    "common_instance_set_sha256": common_hash,
+                    "valid_records": len(valid),
+                    "invalid_records": len(group) - len(valid),
+                    "mean_volume_utilization": mean(values),
+                    "median_volume_utilization": median(values),
+                }
+            )
+    rows.sort(key=lambda row: (row["benchmark_id"], row["invalid_records"], -(row["mean_volume_utilization"] or -1)))
+    return rows
+
+
+def canonical_b04(records: list[dict[str, Any]]) -> dict[str, dict[str, dict[str, Any]]]:
+    selected: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+    for record in records:
+        if record["benchmark_id"] != "B04":
+            continue
+        implementation_id = record["implementation_id"]
+        adapter = record["adapter"]
+        canonical = False
+        if implementation_id == "packingsolver_fork_box":
+            canonical = adapter == "legacy_import/packingsolver_thpack_v2" and record["budget"]["time_limit_s"] == 1.0
+        elif implementation_id in {"py3dbp", "jerry"}:
+            canonical = adapter == "legacy_import/python_thpack_v1" and record["item_order"] == "DESCENDING"
+        elif implementation_id in {"skjolber_plain", "skjolber_laff"}:
+            canonical = adapter == "legacy_import/skjolber_thpack9_v1"
+        elif implementation_id == "go_bp3d":
+            canonical = adapter == "legacy_import/native_multi_bin"
+        elif implementation_id == "rust_extreme_point":
+            canonical = adapter == "legacy_import/repeated_single_boundary"
+        if canonical:
+            selected[implementation_id][canonical_instance(record)] = record
+    return selected
+
+
+def identical_bin_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    selected = canonical_b04(records)
+    if not selected:
+        return [], []
+    common = set.intersection(*(set(by_instance) for by_instance in selected.values()))
+    if not common:
+        return [], []
+    common_hash = hashlib.sha256(("\n".join(sorted(common)) + "\n").encode()).hexdigest()
+    ranking: list[dict[str, Any]] = []
+    for implementation_id, by_instance in selected.items():
+        group = [by_instance[instance] for instance in sorted(common)]
+        valid = [record for record in group if record["solution_status"] == "VALID_COMPLETE"]
+        bins = [record["metrics"].get("bins_used") for record in valid]
+        invalid = sum(record["solution_status"] in {"INVALID_CERTIFICATE", "CONSTRAINT_VIOLATION"} for record in group)
+        incomplete = len(group) - len(valid) - invalid
+        ranking.append(
+            {
+                "implementation_id": implementation_id,
+                "common_instances": len(common),
+                "common_instance_set_sha256": common_hash,
+                "valid_complete": len(valid),
+                "invalid": invalid,
+                "incomplete": incomplete,
+                "invalid_rate": invalid / len(group),
+                "incomplete_rate": incomplete / len(group),
+                "mean_bins": mean(bins),
+                "median_bins": median(bins),
+                "p95_bins": nearest_rank([float(value) for value in bins if value is not None], 0.95),
+                "mean_wall_s": mean(record["resources"].get("wall_s") for record in valid),
+                "mean_solver_s": mean(record["resources"].get("solver_s") for record in valid),
+            }
+        )
+    ranking.sort(key=lambda row: (row["invalid_rate"], row["incomplete_rate"], row["mean_bins"] or math.inf))
+
+    pairwise: list[dict[str, Any]] = []
+    implementation_ids = sorted(selected)
+    for left_index, left_id in enumerate(implementation_ids):
+        for right_id in implementation_ids[left_index + 1 :]:
+            left, right = selected[left_id], selected[right_id]
+            pair_common = sorted(set(left) & set(right))
+            wins = ties = losses = comparable = 0
+            for instance in pair_common:
+                left_record, right_record = left[instance], right[instance]
+                if left_record["solution_status"] != "VALID_COMPLETE" or right_record["solution_status"] != "VALID_COMPLETE":
+                    continue
+                comparable += 1
+                left_bins = left_record["metrics"]["bins_used"]
+                right_bins = right_record["metrics"]["bins_used"]
+                if left_bins < right_bins:
+                    wins += 1
+                elif left_bins > right_bins:
+                    losses += 1
+                else:
+                    ties += 1
+            pairwise.append(
+                {
+                    "left": left_id,
+                    "right": right_id,
+                    "source_common_instances": len(pair_common),
+                    "valid_comparable_instances": comparable,
+                    "left_wins": wins,
+                    "ties": ties,
+                    "left_losses": losses,
+                }
+            )
+    return ranking, pairwise
+
+
+def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for benchmark_id in ("B06", "B09"):
+        groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for record in records:
+            if record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":
+                groups[record["implementation_id"]].append(record)
+        for implementation_id, group in groups.items():
+            proven = sum(record["proof_status"] in {"PROVEN_OPTIMAL", "PROVEN_INFEASIBLE"} for record in group)
+            valid = sum(record["solution_status"] in VALID_SOLUTIONS or record["proof_status"] == "PROVEN_INFEASIBLE" for record in group)
+            rows.append(
+                {
+                    "benchmark_id": benchmark_id,
+                    "implementation_id": implementation_id,
+                    "instances": len(group),
+                    "valid_or_proven_infeasible": valid,
+                    "proven": proven,
+                    "proof_rate": proven / len(group),
+                    "mean_solver_s": mean(record["resources"].get("solver_s") for record in group),
+                    "max_solver_s": max(
+                        (
+                            float(value)
+                            for record in group
+                            if (value := record["resources"].get("solver_s")) is not None
+                            and math.isfinite(float(value))
+                        ),
+                        default=None,
+                    ),
+                    "mean_gap": mean(record["metrics"].get("gap") for record in group),
+                }
+            )
+    rows.sort(key=lambda row: (row["benchmark_id"], -row["proof_rate"], row["mean_solver_s"] or math.inf))
+    return rows
+
+
+def constraint_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if record["benchmark_id"] in {"B09", "B12", "B13", "B14", "B15", "B16", "B17", "B18"}:
+            groups[(record["benchmark_id"], record["implementation_id"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in groups.items():
+        statuses = Counter(record["solution_status"] for record in group)
+        expected = [record["metrics"].get("expected_behavior_pass") for record in group if record["metrics"].get("expected_behavior_pass") is not None]
+        rows.append(
+            {
+                "benchmark_id": benchmark_id,
+                "implementation_id": implementation_id,
+                "records": len(group),
+                "valid_complete": statuses["VALID_COMPLETE"],
+                "valid_partial": statuses["VALID_PARTIAL"],
+                "no_solution": statuses["NO_SOLUTION"],
+                "invalid_certificate": statuses["INVALID_CERTIFICATE"],
+                "constraint_violation": statuses["CONSTRAINT_VIOLATION"],
+                "process_errors": sum(record["run_status"] == "ERROR" for record in group),
+                "expected_behavior_pass_rate": mean(1 if value else 0 for value in expected),
+            }
+        )
+    rows.sort(key=lambda row: (row["benchmark_id"], row["invalid_certificate"], row["process_errors"], row["implementation_id"]))
+    return rows
+
+
+def resource_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    selected = canonical_b04(records)
+    timing_group = {
+        "packingsolver_fork_box": "PACKINGSOLVER_PROCESS",
+        "py3dbp": "PYTHON_WORKER",
+        "jerry": "PYTHON_WORKER",
+        "skjolber_plain": "SKJOLBER_JVM",
+        "skjolber_laff": "SKJOLBER_JVM",
+        "go_bp3d": "GO_PROCESS_LIBRARY_ONLY",
+        "rust_extreme_point": "RUST_PROCESS_LIBRARY_ONLY",
+    }
+    rows: list[dict[str, Any]] = []
+    for implementation_id, by_instance in selected.items():
+        valid = [record for record in by_instance.values() if record["solution_status"] == "VALID_COMPLETE"]
+        wall = [float(record["resources"]["wall_s"]) for record in valid if record["resources"].get("wall_s") is not None]
+        solver = [float(record["resources"]["solver_s"]) for record in valid if record["resources"].get("solver_s") is not None]
+        rss = [float(record["resources"]["peak_rss_bytes"]) for record in valid if record["resources"].get("peak_rss_bytes") is not None]
+        rows.append(
+            {
+                "implementation_id": implementation_id,
+                "timing_comparison_group": timing_group[implementation_id],
+                "valid_instances": len(valid),
+                "wall_samples": len(wall),
+                "median_wall_s": median(wall),
+                "p95_wall_s": nearest_rank(wall, 0.95),
+                "solver_samples": len(solver),
+                "median_solver_s": median(solver),
+                "p95_solver_s": nearest_rank(solver, 0.95),
+                "peak_rss_bytes": max(rss) if rss else None,
+            }
+        )
+    rows.sort(key=lambda row: (row["timing_comparison_group"], row["median_wall_s"] or math.inf, row["median_solver_s"] or math.inf))
+    return rows
+
+
+def generated_files() -> dict[Path, str]:
+    manifest_path = RESULTS_DIR / "run-manifest.jsonl"
+    plan_path = RESULTS_DIR / "suite-implementation-plan.jsonl"
+    records = read_jsonl(manifest_path)
+    plan = read_jsonl(plan_path)
+    validate_records(records)
+    coverage = execution_coverage(plan, records)
+    volume = volume_rankings(records)
+    volume_common = volume_common_rankings(records)
+    identical, pairwise = identical_bin_rankings(records)
+    exact = exact_rankings(records)
+    constraints = constraint_rankings(records)
+    resources = resource_rankings(records)
+
+    solution_counts = Counter(record["solution_status"] for record in records)
+    run_counts = Counter(record["run_status"] for record in records)
+    benchmark_counts = Counter(record["benchmark_id"] for record in records)
+    evidence_cells = sum(row["run_records"] > 0 for row in coverage)
+    protocol_v3_cells = sum(row["protocol_v3_run_records"] > 0 for row in coverage)
+    legacy_only_cells = sum(row["legacy_run_records"] > 0 and row["protocol_v3_run_records"] == 0 for row in coverage)
+    origin_counts = Counter(record["record_origin"] for record in records)
+    aggregate = {
+        "schema_version": 1,
+        "protocol_version": "benchmark-protocol/3",
+        "source_sha256": {
+            "results/comprehensive/run-manifest.jsonl": sha256(manifest_path),
+            "results/comprehensive/suite-implementation-plan.jsonl": sha256(plan_path),
+        },
+        "coverage": {
+            "planned_cells": len(coverage),
+            "cells_with_evidence": evidence_cells,
+            "evidence_cell_rate": evidence_cells / len(coverage),
+            "legacy_baseline_only_cells": legacy_only_cells,
+            "protocol_v3_executed_cells": protocol_v3_cells,
+            "protocol_v3_executed_cell_rate": protocol_v3_cells / len(coverage),
+            "run_records": len(records),
+            "record_origin_counts": dict(sorted(origin_counts.items())),
+            "executed_implementations": len({record["implementation_id"] for record in records}),
+            "benchmarks_with_runs": len(benchmark_counts),
+            "run_status_counts": dict(sorted(run_counts.items())),
+            "solution_status_counts": dict(sorted(solution_counts.items())),
+            "records_by_benchmark": dict(sorted(benchmark_counts.items())),
+        },
+        "headline": {
+            "identical_bin_packing": identical,
+            "volume_knapsack_common": volume_common,
+            "exact_proof": exact,
+        },
+        "warnings": [
+            "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",
+            "Cross-language timing groups are not combined into a single speed ranking.",
+            "Per-supported-instance-set volume rows are not directly comparable when instance_set_sha256 differs.",
+        ],
+    }
+    coverage_fields = [
+        "benchmark_id", "benchmark_name", "category", "problem_family", "implementation_id", "library", "algorithm",
+        "planned_input_status", "planned_capability_status", "comparison_track", "problem_scope", "run_records",
+        "legacy_run_records", "protocol_v3_run_records", "unique_instances", "completed", "time_limit", "error",
+        "valid_complete", "valid_partial", "invalid_certificate",
+        "constraint_violation", "no_solution", "execution_status",
+    ]
+    volume_fields = [
+        "benchmark_id", "implementation_id", "time_limit_s", "item_order", "adapter", "rank_scope", "planned_records",
+        "valid_records", "invalid_records", "valid_rate", "instance_set_sha256", "mean_volume_utilization",
+        "median_volume_utilization", "p95_volume_utilization", "mean_wall_s",
+    ]
+    volume_common_fields = [
+        "benchmark_id", "implementation_id", "common_implementations", "common_instances", "common_instance_set_sha256",
+        "valid_records", "invalid_records", "mean_volume_utilization", "median_volume_utilization",
+    ]
+    identical_fields = [
+        "implementation_id", "common_instances", "common_instance_set_sha256", "valid_complete", "invalid", "incomplete",
+        "invalid_rate", "incomplete_rate", "mean_bins", "median_bins", "p95_bins", "mean_wall_s", "mean_solver_s",
+    ]
+    pairwise_fields = [
+        "left", "right", "source_common_instances", "valid_comparable_instances", "left_wins", "ties", "left_losses",
+    ]
+    exact_fields = [
+        "benchmark_id", "implementation_id", "instances", "valid_or_proven_infeasible", "proven", "proof_rate",
+        "mean_solver_s", "max_solver_s", "mean_gap",
+    ]
+    constraint_fields = [
+        "benchmark_id", "implementation_id", "records", "valid_complete", "valid_partial", "no_solution",
+        "invalid_certificate", "constraint_violation", "process_errors", "expected_behavior_pass_rate",
+    ]
+    resource_fields = [
+        "implementation_id", "timing_comparison_group", "valid_instances", "wall_samples", "median_wall_s", "p95_wall_s",
+        "solver_samples", "median_solver_s", "p95_solver_s", "peak_rss_bytes",
+    ]
+    return {
+        RESULTS_DIR / "aggregate.json": canonical_json(aggregate),
+        RESULTS_DIR / "coverage.csv": write_csv(coverage, coverage_fields),
+        RESULTS_DIR / "rankings" / "volume-knapsack.csv": write_csv(volume, volume_fields),
+        RESULTS_DIR / "rankings" / "volume-knapsack-common.csv": write_csv(volume_common, volume_common_fields),
+        RESULTS_DIR / "rankings" / "identical-bin-packing.csv": write_csv(identical, identical_fields),
+        RESULTS_DIR / "rankings" / "identical-bin-packing-pairwise.csv": write_csv(pairwise, pairwise_fields),
+        RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
+        RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
+        RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Analyze protocol v3 run records")
+    parser.add_argument("--check", action="store_true", help="fail if generated outputs are missing or stale")
+    args = parser.parse_args()
+    files = generated_files()
+    if args.check:
+        stale = [path for path, content in files.items() if not path.exists() or path.read_text() != content]
+        if stale:
+            for path in stale:
+                print(f"COMPREHENSIVE_STALE: {path}", file=sys.stderr)
+            return 1
+        print(f"COMPREHENSIVE_OK: {len(files)} generated artifacts are current")
+        return 0
+    for path, content in files.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+        print(path.relative_to(ROOT))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

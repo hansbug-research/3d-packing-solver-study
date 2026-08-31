@@ -35,7 +35,10 @@ jobs:
       - name: Reject raw manifest drift
         run: git diff --exit-code -- raw/manifest.json
       - name: Verify comprehensive execution plan
-        run: python benchmarks/comprehensive/build_plan.py --check
+        run: |
+          python benchmarks/comprehensive/build_plan.py --check
+          python benchmarks/comprehensive/import_baseline.py --check
+          python benchmarks/comprehensive/analyze.py --check
       - name: Verify evidence chain and metadata
         run: |
           cffconvert --validate --infile CITATION.cff

@@ -231,7 +231,7 @@ def check_campaign_results() -> None:
 def check_comprehensive_plan() -> None:
     directory = ROOT / "results" / "comprehensive"
     plan_path = directory / "suite-implementation-plan.jsonl"
-    coverage_path = directory / "coverage.csv"
+    coverage_path = directory / "coverage-plan.csv"
     summary_path = directory / "plan-summary.json"
     for path in (plan_path, coverage_path, summary_path):
         if not path.exists():
@@ -256,6 +256,78 @@ def check_comprehensive_plan() -> None:
         fail("comprehensive plan does not cover B01-B32")
     if len({row["implementation_id"] for row in plan}) != 19:
         fail("comprehensive plan implementation coverage changed")
+
+
+def check_comprehensive_results() -> None:
+    directory = ROOT / "results" / "comprehensive"
+    required = [
+        "run-manifest.jsonl",
+        "baseline-import-summary.json",
+        "aggregate.json",
+        "coverage.csv",
+        "rankings/volume-knapsack-common.csv",
+        "rankings/identical-bin-packing.csv",
+        "rankings/exact-proof.csv",
+        "rankings/constraint-conformance.csv",
+        "rankings/resource-summary.csv",
+    ]
+    for relative in required:
+        if not (directory / relative).exists():
+            fail(f"comprehensive result artifact is missing: results/comprehensive/{relative}")
+
+    def reject_constant(value: str) -> None:
+        raise ValueError(f"non-standard JSON constant: {value}")
+
+    try:
+        summary = json.loads((directory / "baseline-import-summary.json").read_text(), parse_constant=reject_constant)
+        aggregate = json.loads((directory / "aggregate.json").read_text(), parse_constant=reject_constant)
+        records = [
+            json.loads(line, parse_constant=reject_constant)
+            for line in (directory / "run-manifest.jsonl").read_text().splitlines()
+            if line
+        ]
+    except (json.JSONDecodeError, ValueError) as exc:
+        fail(f"comprehensive results are not strict JSON: {exc}")
+
+    coverage = aggregate.get("coverage", {})
+    if (len(records), summary.get("run_records"), coverage.get("run_records")) != (2078, 2078, 2078):
+        fail("comprehensive baseline record count changed")
+    if (
+        coverage.get("planned_cells"),
+        coverage.get("cells_with_evidence"),
+        coverage.get("legacy_baseline_only_cells"),
+        coverage.get("protocol_v3_executed_cells"),
+        coverage.get("benchmarks_with_runs"),
+        coverage.get("executed_implementations"),
+    ) != (608, 55, 55, 0, 10, 18):
+        fail("comprehensive execution coverage changed")
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078}:
+        fail("comprehensive run origin counts changed")
+    manifest_hash = sha256(directory / "run-manifest.jsonl")
+    if summary.get("run_manifest_sha256") != manifest_hash:
+        fail("comprehensive baseline summary manifest hash mismatch")
+    for relative, expected_hash in aggregate.get("source_sha256", {}).items():
+        path = ROOT / relative
+        if not path.exists() or sha256(path) != expected_hash:
+            fail(f"comprehensive aggregate source hash mismatch: {relative}")
+
+    b04 = {row["implementation_id"]: row for row in aggregate.get("headline", {}).get("identical_bin_packing", [])}
+    expected_means = {
+        "packingsolver_fork_box": 15.477272727272727,
+        "skjolber_plain": 17.795454545454547,
+        "rust_extreme_point": 18.40909090909091,
+        "py3dbp": 18.431818181818183,
+        "go_bp3d": 19.931818181818183,
+        "skjolber_laff": 20.84090909090909,
+    }
+    for implementation_id, expected in expected_means.items():
+        row = b04.get(implementation_id, {})
+        if row.get("common_instances") != 44 or row.get("valid_complete") != 44:
+            fail(f"comprehensive B04 coverage changed: {implementation_id}")
+        if not math.isclose(row.get("mean_bins", math.inf), expected, rel_tol=0, abs_tol=1e-12):
+            fail(f"comprehensive B04 quality changed: {implementation_id}")
+    if b04.get("jerry", {}).get("invalid") != 1:
+        fail("comprehensive B04 Jerry invalid-certificate count changed")
 
 
 def main() -> None:
@@ -294,6 +366,7 @@ def main() -> None:
     check_release_metadata()
     check_campaign_results()
     check_comprehensive_plan()
+    check_comprehensive_results()
     readme = (ROOT / "README.md").read_text()
     for phrase in (
         "759 个合法源",

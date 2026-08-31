@@ -4,6 +4,7 @@ import csv
 import hashlib
 import io
 import json
+import math
 import re
 from collections import Counter
 from pathlib import Path
@@ -247,6 +248,7 @@ def validate_run_record(record: dict[str, Any]) -> None:
     required = {
         "schema_version",
         "protocol_version",
+        "record_origin",
         "run_id",
         "benchmark_id",
         "problem_variant",
@@ -278,8 +280,21 @@ def validate_run_record(record: dict[str, Any]) -> None:
     extra = set(record) - required
     if extra:
         raise ValueError(f"run record has unsupported fields: {sorted(extra)}")
-    if record["schema_version"] != 1 or record["protocol_version"] != PROTOCOL_VERSION:
+    if record["schema_version"] != 2 or record["protocol_version"] != PROTOCOL_VERSION:
         raise ValueError("run record version mismatch")
+    def reject_non_finite(value: Any, path: str) -> None:
+        if isinstance(value, float) and not math.isfinite(value):
+            raise ValueError(f"run record contains non-finite JSON number: {path}")
+        if isinstance(value, dict):
+            for key, child in value.items():
+                reject_non_finite(child, f"{path}.{key}")
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                reject_non_finite(child, f"{path}[{index}]")
+
+    reject_non_finite(record, "record")
+    if record["record_origin"] not in {"LEGACY_BASELINE", "PROTOCOL_V3"}:
+        raise ValueError("invalid run record origin")
     if record["input_status"] not in INPUT_STATUSES:
         raise ValueError("invalid run input status")
     if record["capability_status"] not in CAPABILITY_STATUSES:

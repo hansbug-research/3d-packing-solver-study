@@ -7,6 +7,7 @@
   "required": [
     "schema_version",
     "protocol_version",
+    "record_origin",
     "run_id",
     "benchmark_id",
     "problem_variant",
@@ -33,8 +34,9 @@
     "artifacts"
   ],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"const": 2},
     "protocol_version": {"const": "benchmark-protocol/3"},
+    "record_origin": {"enum": ["LEGACY_BASELINE", "PROTOCOL_V3"]},
     "run_id": {"type": "string", "minLength": 1},
     "benchmark_id": {"type": "string", "pattern": "^B(0[1-9]|[12][0-9]|3[0-2])$"},
     "problem_variant": {"type": "string", "minLength": 1},

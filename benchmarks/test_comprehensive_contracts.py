@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import copy
+import csv
 import json
+import math
 from pathlib import Path
 
 import pytest
@@ -20,8 +22,9 @@ def plan_cells() -> dict[tuple[str, str], dict]:
 
 def valid_run_record() -> dict:
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "protocol_version": "benchmark-protocol/3",
+        "record_origin": "PROTOCOL_V3",
         "run_id": "B06/grid/exact_cp_sat/seed-42/rep-0",
         "benchmark_id": "B06",
         "problem_variant": "IDENTICAL_BIN_PACKING",
@@ -110,9 +113,63 @@ def test_run_record_contract_rejects_false_results() -> None:
     with pytest.raises(ValueError, match="unsupported fields"):
         validate_run_record(extra)
 
+    non_finite = copy.deepcopy(record)
+    non_finite["metrics"]["gap"] = float("nan")
+    with pytest.raises(ValueError, match="non-finite JSON number"):
+        validate_run_record(non_finite)
+
 
 def test_run_record_json_schema_is_pinned_to_protocol_v3() -> None:
     schema = json.loads((ROOT / "benchmarks" / "comprehensive" / "run-record.schema.json").read_text())
+    assert schema["properties"]["schema_version"]["const"] == 2
     assert schema["properties"]["protocol_version"]["const"] == "benchmark-protocol/3"
+    assert schema["properties"]["record_origin"]["enum"] == ["LEGACY_BASELINE", "PROTOCOL_V3"]
     assert schema["properties"]["benchmark_id"]["pattern"].endswith("3[0-2])$")
     assert schema["additionalProperties"] is False
+
+
+def test_legacy_baseline_import_and_aggregate_regression() -> None:
+    comprehensive = ROOT / "results" / "comprehensive"
+    summary = json.loads((comprehensive / "baseline-import-summary.json").read_text())
+    aggregate = json.loads((comprehensive / "aggregate.json").read_text())
+    records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
+
+    assert summary["run_records"] == len(records) == 2078
+    assert len(summary["implementation_ids"]) == aggregate["coverage"]["executed_implementations"] == 18
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 10
+    assert aggregate["coverage"]["cells_with_evidence"] == 55
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 55
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 0
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078}
+
+    def assert_finite_json(value: object) -> None:
+        if isinstance(value, float):
+            assert math.isfinite(value)
+        elif isinstance(value, dict):
+            for child in value.values():
+                assert_finite_json(child)
+        elif isinstance(value, list):
+            for child in value:
+                assert_finite_json(child)
+
+    assert_finite_json(records)
+
+
+def test_identical_bin_ranking_uses_common_44_instance_set() -> None:
+    path = ROOT / "results" / "comprehensive" / "rankings" / "identical-bin-packing.csv"
+    with path.open(newline="") as handle:
+        rows = {row["implementation_id"]: row for row in csv.DictReader(handle)}
+    expected_means = {
+        "packingsolver_fork_box": 15.477272727272727,
+        "skjolber_plain": 17.795454545454547,
+        "rust_extreme_point": 18.40909090909091,
+        "py3dbp": 18.431818181818183,
+        "go_bp3d": 19.931818181818183,
+        "skjolber_laff": 20.84090909090909,
+    }
+    assert set(rows) == set(expected_means) | {"jerry"}
+    assert all(row["common_instances"] == "44" for row in rows.values())
+    for implementation_id, expected in expected_means.items():
+        assert int(rows[implementation_id]["valid_complete"]) == 44
+        assert math.isclose(float(rows[implementation_id]["mean_bins"]), expected, rel_tol=0, abs_tol=1e-12)
+    assert int(rows["jerry"]["invalid"]) == 1
