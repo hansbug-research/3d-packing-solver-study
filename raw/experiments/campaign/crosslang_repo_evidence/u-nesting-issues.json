@@ -1,0 +1,104 @@
+[
+  {
+    "url": "https://api.github.com/repos/iyulab/u-nesting/issues/1",
+    "repository_url": "https://api.github.com/repos/iyulab/u-nesting",
+    "labels_url": "https://api.github.com/repos/iyulab/u-nesting/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/iyulab/u-nesting/issues/1/comments",
+    "events_url": "https://api.github.com/repos/iyulab/u-nesting/issues/1/events",
+    "html_url": "https://github.com/iyulab/u-nesting/issues/1",
+    "id": 4380744237,
+    "node_id": "I_kwDOQ9c9jM8AAAABBRzaLQ",
+    "number": 1,
+    "title": "Fresh checkout cannot build u-nesting-d2 due to missing path dependencies",
+    "user": {
+      "login": "schmnr",
+      "id": 210919093,
+      "node_id": "U_kgDODJJetQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/210919093?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/schmnr",
+      "html_url": "https://github.com/schmnr",
+      "followers_url": "https://api.github.com/users/schmnr/followers",
+      "following_url": "https://api.github.com/users/schmnr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/schmnr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/schmnr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/schmnr/subscriptions",
+      "organizations_url": "https://api.github.com/users/schmnr/orgs",
+      "repos_url": "https://api.github.com/users/schmnr/repos",
+      "events_url": "https://api.github.com/users/schmnr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/schmnr/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2026-05-05T01:04:10Z",
+    "updated_at": "2026-05-05T13:01:36Z",
+    "closed_at": "2026-05-05T13:01:36Z",
+    "assignee": null,
+    "author_association": "NONE",
+    "issue_field_values": [
+
+    ],
+    "type": null,
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "Hi, I tried evaluating U-Nesting as a candidate dependency for an in-app 2D nesting feature and could not build the current published/source package because the workspace references local path dependencies that are not present in the repo or published to crates.io.\n\nRepro from a fresh checkout:\n\n```sh\ngit clone --depth 1 https://github.com/iyulab/U-Nesting /tmp/U-Nesting\ncd /tmp/U-Nesting\ncargo tree -p u-nesting-d2\ncargo check -p u-nesting-d2\n```\n\nObserved on current `main`:\n\n```text\nHEAD=653acdae930c150e293792875eb1ef85b925ffa1\nworkspace version=0.3.1\n\nerror: failed to load manifest for workspace member `/private/tmp/.../U-Nesting/crates/core`\nreferenced by workspace at `/private/tmp/.../U-Nesting/Cargo.toml`\n\nCaused by:\n  failed to load manifest for dependency `u-geometry`\n\nCaused by:\n  failed to read `/private/tmp/algorithms/u-geometry/Cargo.toml`\n\nCaused by:\n  No such file or directory (os error 2)\n```\n\nThe missing dependencies appear in `crates/core/Cargo.toml`:\n\n```toml\nu-metaheur = { version = \"0.2\", path = \"../../../../algorithms/u-metaheur\" }\nu-numflow = { version = \"0.2\", path = \"../../../../foundation/u-numflow\" }\nu-geometry = { version = \"0.1\", path = \"../../../../algorithms/u-geometry\" }\n```\n\nThe crates.io package `u-nesting-d2` currently has only `0.1.0` published, and that published version was also not usable for the same class of missing private path dependency.\n\nWould you be able to publish or include the required dependencies, or update the workspace to depend on public crates so `cargo tree -p u-nesting-d2` and `cargo check -p u-nesting-d2` work from a fresh clone?\n",
+    "closed_by": {
+      "login": "birdnamoo",
+      "id": 52388475,
+      "node_id": "MDQ6VXNlcjUyMzg4NDc1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52388475?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/birdnamoo",
+      "html_url": "https://github.com/birdnamoo",
+      "followers_url": "https://api.github.com/users/birdnamoo/followers",
+      "following_url": "https://api.github.com/users/birdnamoo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/birdnamoo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/birdnamoo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/birdnamoo/subscriptions",
+      "organizations_url": "https://api.github.com/users/birdnamoo/orgs",
+      "repos_url": "https://api.github.com/users/birdnamoo/repos",
+      "events_url": "https://api.github.com/users/birdnamoo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/birdnamoo/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/iyulab/u-nesting/issues/1/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/iyulab/u-nesting/issues/1/timeline",
+    "performed_via_github_app": null,
+    "state_reason": "completed",
+    "pinned_comment": null
+  }
+]

@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "suite": "exact-small-3d/2",
+  "backend": "cp-sat",
+  "formulation": "strengthened",
+  "suite_status": "PASS",
+  "versions": {
+    "python": "3.12.1",
+    "ortools": "9.15.6755"
+  },
+  "parameters": {
+    "time_limit_s": 20.0,
+    "threads": 1,
+    "seed": 42
+  },
+  "cases": [
+    {
+      "status": "OPTIMAL",
+      "objective": 1.0,
+      "bound": 1.0,
+      "gap": 0.0,
+      "solver_time_s": 0.008003052091225982,
+      "nodes_or_branches": 271,
+      "conflicts": 10,
+      "used_bins": [
+        "bin-0"
+      ],
+      "placements": [
+        {
+          "item_ref": "cube-0",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 5,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-1",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 0,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-2",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-3",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 0,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-4",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 0,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-5",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 5,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-6",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 5,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-7",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        }
+      ],
+      "wall_time_s": 0.216200825991109,
+      "case": "grid_8",
+      "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 1,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "OPTIMAL",
+      "objective": 2.0,
+      "bound": 2.0,
+      "gap": 0.0,
+      "solver_time_s": 0.018684923881664872,
+      "nodes_or_branches": 536,
+      "conflicts": 22,
+      "used_bins": [
+        "bin-0",
+        "bin-1"
+      ],
+      "placements": [
+        {
+          "item_ref": "cube-0",
+          "bin_ref": "bin-1",
+          "x": 5,
+          "y": 5,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-1",
+          "bin_ref": "bin-1",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-2",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 0,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-3",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 0,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-4",
+          "bin_ref": "bin-1",
+          "x": 5,
+          "y": 0,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-5",
+          "bin_ref": "bin-1",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-6",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 0,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-7",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 5,
+          "z": 5,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "cube-8",
+          "bin_ref": "bin-0",
+          "x": 5,
+          "y": 5,
+          "z": 0,
+          "dx": 5,
+          "dy": 5,
+          "dz": 5
+        }
+      ],
+      "wall_time_s": 0.023573829093948007,
+      "case": "overflow_9",
+      "purpose": "The ninth cube forces a second bin and gives a hand-checkable lower bound.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 2,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "OPTIMAL",
+      "objective": 1.0,
+      "bound": 1.0,
+      "gap": 0.0,
+      "solver_time_s": 0.0003147600218653679,
+      "nodes_or_branches": 0,
+      "conflicts": 0,
+      "used_bins": [
+        "bin-0"
+      ],
+      "placements": [
+        {
+          "item_ref": "rotated",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 4,
+          "dy": 3,
+          "dz": 2
+        }
+      ],
+      "wall_time_s": 0.0007441970519721508,
+      "case": "rotation_required",
+      "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 1,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "INFEASIBLE",
+      "objective": null,
+      "bound": null,
+      "gap": null,
+      "solver_time_s": 5.6590884923934937e-05,
+      "nodes_or_branches": 0,
+      "conflicts": 0,
+      "used_bins": [],
+      "placements": [],
+      "wall_time_s": 0.001328442944213748,
+      "case": "rotation_forbidden",
+      "purpose": "The same geometry must be rejected when the required orientation is absent.",
+      "expected_status": "INFEASIBLE",
+      "expected_objective": null,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "OPTIMAL",
+      "objective": 3.0,
+      "bound": 3.0,
+      "gap": 0.0,
+      "solver_time_s": 0.0016136020421981812,
+      "nodes_or_branches": 0,
+      "conflicts": 0,
+      "used_bins": [
+        "bin-0",
+        "bin-1",
+        "bin-2"
+      ],
+      "placements": [
+        {
+          "item_ref": "heavy-0",
+          "bin_ref": "bin-2",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 4,
+          "dy": 4,
+          "dz": 4
+        },
+        {
+          "item_ref": "heavy-1",
+          "bin_ref": "bin-0",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 4,
+          "dy": 4,
+          "dz": 4
+        },
+        {
+          "item_ref": "heavy-2",
+          "bin_ref": "bin-1",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 4,
+          "dy": 4,
+          "dz": 4
+        }
+      ],
+      "wall_time_s": 0.002587206894531846,
+      "case": "weight_split",
+      "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 3,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "OPTIMAL",
+      "objective": 10.0,
+      "bound": 10.0,
+      "gap": 0.0,
+      "solver_time_s": 0.001198706915602088,
+      "nodes_or_branches": 0,
+      "conflicts": 0,
+      "used_bins": [
+        "large-0"
+      ],
+      "placements": [
+        {
+          "item_ref": "item-0",
+          "bin_ref": "large-0",
+          "x": 6,
+          "y": 0,
+          "z": 0,
+          "dx": 6,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "item-1",
+          "bin_ref": "large-0",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 6,
+          "dy": 5,
+          "dz": 5
+        }
+      ],
+      "wall_time_s": 0.0018270490691065788,
+      "case": "heterogeneous_large_cheaper",
+      "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 10,
+      "formulation": "strengthened",
+      "validation_errors": []
+    },
+    {
+      "status": "OPTIMAL",
+      "objective": 10.0,
+      "bound": 10.0,
+      "gap": 0.0,
+      "solver_time_s": 0.001325779827311635,
+      "nodes_or_branches": 0,
+      "conflicts": 0,
+      "used_bins": [
+        "small-0",
+        "small-1"
+      ],
+      "placements": [
+        {
+          "item_ref": "item-0",
+          "bin_ref": "small-0",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 6,
+          "dy": 5,
+          "dz": 5
+        },
+        {
+          "item_ref": "item-1",
+          "bin_ref": "small-1",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "dx": 6,
+          "dy": 5,
+          "dz": 5
+        }
+      ],
+      "wall_time_s": 0.012197572039440274,
+      "case": "heterogeneous_small_cheaper",
+      "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
+      "expected_status": "OPTIMAL",
+      "expected_objective": 10,
+      "formulation": "strengthened",
+      "validation_errors": []
+    }
+  ]
+}

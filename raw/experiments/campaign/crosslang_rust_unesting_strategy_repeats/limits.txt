@@ -1,0 +1,4 @@
+process_timeout_seconds=20
+memory_limit_bytes=2147483648
+rayon_num_threads=1
+repeats=5

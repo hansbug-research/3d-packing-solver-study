@@ -1,0 +1,21 @@
+[  1%] Built target OptimizationTools_utils
+[  1%] Built target PackingSolver_common
+[ 58%] Built target highs
+[ 58%] Built target MathOptSolversCMake_mathopt
+[ 60%] Built target KnapsackSolver
+[ 61%] Built target KnapsackSolver_upper_bound_dantzig
+[ 61%] Built target KnapsackSolver_greedy
+[ 61%] Built target KnapsackSolver_dynamic_programming_primal_dual
+[ 63%] Built target TreeSearchSolver_treesearchsolver
+[ 64%] Built target ColumnGenerationSolver_columngenerationsolver
+[ 69%] Built target PackingSolver_onedimensional
+[ 75%] Built target Shape_shape
+[ 76%] Built target MultipleChoiceSubsetSumSolver
+[ 78%] Built target MultipleChoiceSubsetSumSolver_dynamic_programming_bellman
+[ 84%] Built target PackingSolver_rectangle
+[ 86%] Built target boost_atomic
+[ 87%] Built target boost_container
+[ 90%] Built target boost_filesystem
+[ 95%] Built target boost_program_options
+[ 98%] Built target PackingSolver_box
+[100%] Built target PackingSolver_box_main

@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "suite": "packingsolver-boxstacks-constraints/1",
+  "engine": "HansBug/packingsolver",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "binary_sha256": "308c99538039ffa0c640feb2df3f63ab8f7cfc92c6526834c83a2defcf7fd2d5",
+  "parameters": {
+    "time_limit_s": 10,
+    "memory_limit_mib": 1024,
+    "thread_limit": "NOT_EXPOSED_BY_CLI"
+  },
+  "suite_status": "PASS",
+  "records": [
+    {
+      "case": "heterogeneous_cost",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.005577089032158256,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/heterogeneous_cost.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/heterogeneous_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/heterogeneous_bins.csv",
+        "--objective",
+        "variable-sized-bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/heterogeneous_cost.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/heterogeneous_cost.csv"
+      ],
+      "items_sha256": "5e62afa0910c92c803cef00b52c4852be7245634741d5acbeec06021b617c070",
+      "bins_sha256": "b915a63ac164f521169dec9d2bc5f3d07e3cdc9b8ea97b589541b87ccb61c971",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 2,
+      "bins_used": 1,
+      "used_cost": 10.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "0": [
+          0.0,
+          6.0
+        ]
+      }
+    },
+    {
+      "case": "maximum_weight_above",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.004203012911602855,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_weight_above.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_weight_above.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_weight_above.csv"
+      ],
+      "items_sha256": "c45f39d90b6e98ebd038bbbb53d442e3cf75a0e22ba2044baa5deaa2b1fe9f17",
+      "bins_sha256": "7140ef6929564ab3b557ad87b9904e221fee8475515c0ce990dd80b44b672674",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 3,
+      "bins_used": 1,
+      "used_cost": 1.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "0": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "case": "maximum_stack_count",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.005163769004866481,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_stack_count.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_stack_count.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/maximum_stack_count.csv"
+      ],
+      "items_sha256": "48a0d2ef841fac5b29bceda7da2416e8ecde5e9dfcedf42e72c703f1d1fc4360",
+      "bins_sha256": "4ee249e51980aee35536074700c8e142b92bab6c34b13e59bf7b43dbe4f19a5e",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 3,
+      "bins_used": 2,
+      "used_cost": 2.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        },
+        "pattern-1-row-1-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "0": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "case": "nesting_height",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.0034007441718131304,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/nesting_height.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/nesting_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/nesting_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/nesting_height.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/nesting_height.csv"
+      ],
+      "items_sha256": "18b2d23c0863b98aef8535cab64573bab12019380b1b5d2e9181e9416344681d",
+      "bins_sha256": "5387e96e155cf5f6eec4f741a2529db9edf2f04a599324eac72b4b00dbd69420",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 2,
+      "bins_used": 1,
+      "used_cost": 1.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "0": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "case": "axle_normal",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.003444385016337037,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_normal.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_realistic_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_normal_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_normal.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_normal.csv"
+      ],
+      "items_sha256": "48ea2b1b6ade3df37a6505b10842213063c430e2e59b977a1531a3c52cea22bf",
+      "bins_sha256": "5549c459d8206442ac0cdbf74da63470c2dca80f7bd028864e8d69c247871893",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 1,
+      "bins_used": 1,
+      "used_cost": 1.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 6315.789473684211,
+          "middle_limit": 6400.0,
+          "rear": 3000.0,
+          "rear_limit": 9000.0
+        }
+      },
+      "unloading_x_by_group": {
+        "0": [
+          0.0
+        ]
+      }
+    },
+    {
+      "case": "axle_boundary_regression",
+      "status": "PASS",
+      "expected_complete": false,
+      "returncode": 0,
+      "wall_time_s": 0.0036886578891426325,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_boundary_regression.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_boundary_regression.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_boundary_regression.csv"
+      ],
+      "items_sha256": "fedab51a039be117dacb8d8b9a1299a160117201c97f9267df6861d30eb91120",
+      "bins_sha256": "84c5c2a2efc34d300d9fcf53b7ce6e0d718b70075742ad12c2c26800b2d09bee",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 0,
+      "bins_used": 0,
+      "used_cost": 0.0,
+      "axle_weights": {},
+      "unloading_x_by_group": {}
+    },
+    {
+      "case": "axle_infeasible",
+      "status": "PASS",
+      "expected_complete": false,
+      "returncode": 0,
+      "wall_time_s": 0.0038292340468615294,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_infeasible.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_realistic_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_infeasible_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_infeasible.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/axle_infeasible.csv"
+      ],
+      "items_sha256": "48ea2b1b6ade3df37a6505b10842213063c430e2e59b977a1531a3c52cea22bf",
+      "bins_sha256": "766e17f017864fdac04e7c80ab4f7156421646ed97d5072a5dbed88c87b27b37",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 0,
+      "bins_used": 0,
+      "used_cost": 0.0,
+      "axle_weights": {},
+      "unloading_x_by_group": {}
+    },
+    {
+      "case": "unloading_none",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.0038412881549447775,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_none.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_none.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_none.csv"
+      ],
+      "items_sha256": "4001ac9f71198e155cdc5c50622b7f1a0edae887edf0a35b569e09e70c05ef26",
+      "bins_sha256": "201a4c680ce69a50316bf0c63370e395a551613b2ddf29f55f1bc9e57ae4d71a",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 2,
+      "bins_used": 1,
+      "used_cost": 1.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "1": [
+          0.0
+        ],
+        "0": [
+          2.0
+        ]
+      }
+    },
+    {
+      "case": "unloading_increasing_x",
+      "status": "PASS",
+      "expected_complete": true,
+      "returncode": 0,
+      "wall_time_s": 0.003844745922833681,
+      "command": [
+        "/usr/bin/time",
+        "-v",
+        "-o",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_increasing_x.resources.txt",
+        "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+        "--items",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv",
+        "--bins",
+        "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv",
+        "--objective",
+        "bin-packing",
+        "--time-limit",
+        "10",
+        "--memory-limit",
+        "1024",
+        "--verbosity-level",
+        "0",
+        "--only-write-at-the-end",
+        "--output",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_increasing_x.json",
+        "--certificate",
+        "/tmp/boxstacks-suite-o8qk5fb4/unloading_increasing_x.csv",
+        "--unloading-constraint",
+        "increasing-x"
+      ],
+      "items_sha256": "4001ac9f71198e155cdc5c50622b7f1a0edae887edf0a35b569e09e70c05ef26",
+      "bins_sha256": "201a4c680ce69a50316bf0c63370e395a551613b2ddf29f55f1bc9e57ae4d71a",
+      "stderr": "",
+      "validation_errors": [],
+      "placements": 2,
+      "bins_used": 1,
+      "used_cost": 1.0,
+      "axle_weights": {
+        "pattern-0-row-0-copy-0": {
+          "middle": 0.0,
+          "middle_limit": Infinity,
+          "rear": 0.0,
+          "rear_limit": Infinity
+        }
+      },
+      "unloading_x_by_group": {
+        "1": [
+          0.0
+        ],
+        "0": [
+          2.0
+        ]
+      }
+    }
+  ]
+}

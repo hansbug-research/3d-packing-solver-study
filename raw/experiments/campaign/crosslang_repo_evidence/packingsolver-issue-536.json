@@ -1,0 +1,78 @@
+{
+  "url": "https://api.github.com/repos/fontanf/packingsolver/issues/536",
+  "repository_url": "https://api.github.com/repos/fontanf/packingsolver",
+  "labels_url": "https://api.github.com/repos/fontanf/packingsolver/issues/536/labels{/name}",
+  "comments_url": "https://api.github.com/repos/fontanf/packingsolver/issues/536/comments",
+  "events_url": "https://api.github.com/repos/fontanf/packingsolver/issues/536/events",
+  "html_url": "https://github.com/fontanf/packingsolver/issues/536",
+  "id": 5296945521,
+  "node_id": "I_kwDODjHOMM8AAAABO7j5cQ",
+  "number": 536,
+  "title": "[box][boxstacks] `variable-sized-bin-packing` throws in `Solution::operator<` as soon as two bin types remain",
+  "user": {
+    "login": "HansBug",
+    "id": 20508435,
+    "node_id": "MDQ6VXNlcjIwNTA4NDM1",
+    "avatar_url": "https://avatars.githubusercontent.com/u/20508435?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/HansBug",
+    "html_url": "https://github.com/HansBug",
+    "followers_url": "https://api.github.com/users/HansBug/followers",
+    "following_url": "https://api.github.com/users/HansBug/following{/other_user}",
+    "gists_url": "https://api.github.com/users/HansBug/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/HansBug/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/HansBug/subscriptions",
+    "organizations_url": "https://api.github.com/users/HansBug/orgs",
+    "repos_url": "https://api.github.com/users/HansBug/repos",
+    "events_url": "https://api.github.com/users/HansBug/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/HansBug/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "labels": [
+
+  ],
+  "state": "open",
+  "locked": false,
+  "assignees": [
+
+  ],
+  "milestone": null,
+  "comments": 1,
+  "created_at": "2026-08-31T05:56:45Z",
+  "updated_at": "2026-08-31T06:03:38Z",
+  "closed_at": null,
+  "assignee": null,
+  "author_association": "NONE",
+  "active_lock_reason": null,
+  "sub_issues_summary": {
+    "total": 0,
+    "completed": 0,
+    "percent_completed": 0
+  },
+  "issue_dependencies_summary": {
+    "blocked_by": 0,
+    "total_blocked_by": 0,
+    "blocking": 0,
+    "total_blocking": 0
+  },
+  "body": "\nHello Florian,\n\nThe `variable-sized-bin-packing` objective is listed as supported by both the `box` and the `boxstacks` solver, but as soon as an instance keeps more than one bin type, the run fails: `Solution::operator<` has no case for that objective, so it falls through to its `default` branch and throws. No certificate and no output JSON are written, and the exit code is 1. Instances that reduce to a single bin type do not hit it, because `optimize` then routes the objective to the tree search instead of sequential value correction, so the smallest possible test case does not show the problem.\n\n**Version**\n\n```text\nrelease:      Latest (master), packingsolver-linux-x64.tar.gz, asset updated 2026-08-29\ncommit:       367ebfdaad11424ded3696b7dae799a30c1375d0\nasset SHA256: 1ef068f2041c8199e9ac6ef8a6780b01f636b79b8b2f7e98aaf60360d67c7aa4\n```\n\n**Environment**\n\n```text\nUbuntu 24.04.3 LTS, x86-64, glibc 2.39\nIntel Core i7-11700\n```\n\n**Reproducer**\n\n`items.csv`\n\n```csv\nID,X,Y,Z,ROTATION_XYZ,ROTATION_YXZ,ROTATION_ZYX,ROTATION_YZX,ROTATION_XZY,ROTATION_ZXY,WEIGHT,COPIES\n0,6,5,5,1,1,1,1,1,1,1,2\n```\n\n`bins.csv`\n\n```csv\nID,X,Y,Z,COST,COPIES,MAXIMUM_WEIGHT\n0,6,5,5,7,2,100\n1,12,5,5,10,1,100\n```\n\n```shell\n./packingsolver_box \\\n        --items items.csv \\\n        --bins bins.csv \\\n        --objective variable-sized-bin-packing \\\n        --linear-programming-solver highs \\\n        --time-limit 3 \\\n        --memory-limit 1024 \\\n        --verbosity-level 0 \\\n        --certificate solution.csv \\\n        --output output.json \\\n        --only-write-at-the-end\n```\n\nThe same command with `./packingsolver_boxstacks` fails the same way.\n\n**Actual result**\n\n```text\nError: bool packingsolver::box::Solution::operator<(const packingsolver::box::Solution&) const: solution \"box::Solution\" does not support objective \"VariableSizedBinPacking\"\n```\n\nExit code 1, no `solution.csv` and no `output.json`. Both binaries fail in under 10 ms, well before the time limit, and the behaviour is the same at `--time-limit 1`, `3` and `10`.\n\n**Expected result**\n\nBoth items fit in one bin of type 1, so the expected solution is one bin of type 1 with a total cost of 10 and 2/2 items packed. That is what both solvers produce once the missing case is added.\n\n**Reproducibility**\n\n| program | LP solver | runs | failures | certificates |\n|---|---|---:|---:|---:|\n| `packingsolver_box` | default | 5 | 5 | 0 |\n| `packingsolver_box` | `highs` | 5 | 5 | 0 |\n| `packingsolver_boxstacks` | default | 5 | 5 | 0 |\n| `packingsolver_boxstacks` | `highs` | 5 | 5 | 0 |\n\n20 out of 20 runs of the official binaries fail. What decides whether the objective works is the number of bin types that survive on the instance, not the size of the instance: with a single bin type, or with two identical bin types, both solvers return a solution normally; with two distinct bin types both fail. `src/box/optimize.cpp:704-715` is where that split happens, since `number_of_bin_types() == 1` sends the objective to the tree search, and anything more disables the tree search in favour of sequential value correction, whose `SolutionPool::add` compares solutions.\n\n**Root cause**\n\n`Objective::VariableSizedBinPacking` is handled along the rest of both pipelines: the CLI (`src/algorithms/common.cpp:156`), the objective enum (`include/packingsolver/algorithms/common.hpp:224`), the bound (`src/box/optimize.cpp:217,540` and `src/boxstacks/optimize.cpp:167,190`), the formatters (`src/box/algorithm_formatter.cpp:136,231,396` and `src/boxstacks/algorithm_formatter.cpp:125,213,330`) and the default tree-search branching scheme (`src/box/tree_search.cpp:702,754` and `src/boxstacks/tree_search.cpp:1425,1477`; the maximal-spaces scheme does not handle it, but `src/box/optimize.cpp:706` disables that scheme for this objective). The objective is missing only from the two solution comparators:\n\n- `src/box/solution.cpp:158-197`, where `Objective::Feasibility` is at line 187 and `default` at 189\n- `src/boxstacks/solution.cpp:286-321`, where they are at lines 311 and 313\n\n`rectangle::Solution::operator<` (`src/rectangle/solution.cpp:224-225`) and `onedimensional::Solution::operator<` (`src/onedimensional/solution.cpp:252-253`) already handle it, immediately after the `Objective::Feasibility` case:\n\n```cpp\n    } case Objective::VariableSizedBinPacking: {\n        return strictly_lesser_cost(solution.cost(), cost());\n```\n\nThe objective reached the `box` and `boxstacks` optimization pipelines, but the matching cost comparison never reached their comparators.\n\nBoth places have to be fixed, which the stderr output alone does not show: `boxstacks` first computes a `box` relaxation bound (`optimize_box_bound`, `src/boxstacks/optimize.cpp:158`) which runs the full `box::optimize`, which is why the unpatched `boxstacks` binary reports `box::Solution`. I checked the call chain with a staged build that patches only `src/box/solution.cpp`; the `boxstacks` run then gets past the bound and fails one level higher:\n\n```text\nError: bool packingsolver::boxstacks::Solution::operator<(const packingsolver::boxstacks::Solution&) const: solution \"boxstacks::Solution\" does not support objective \"VariableSizedBinPacking\"\n```\n\n**Local verification of the fix**\n\nAdding that case to both comparators is enough. With both in place, 5 runs of `packingsolver_box` and 5 runs of `packingsolver_boxstacks` all succeed. The `box` certificate is\n\n```text\nTYPE,ID,COPIES,BIN,X,Y,Z,LX,LY,LZ,ROTATION\nBIN,1,1,0,0,0,0,12,5,5,\nITEM,0,1,0,0,0,0,6,5,5,XYZ\nITEM,0,1,0,6,0,0,6,5,5,XYZ\n```\n\nand `output.json` reports `NumberOfItems 2`, `NumberOfUnpackedItems 0`, `NumberOfBins 1`, `BinCost 10` and `VariableSizedBinPackingBound 10`. `boxstacks` produces the same packing through `STACK` rows.\n\nI also checked the direction of the comparison with an inverted cost structure (bin type 0 at cost 5 with 2 copies, bin type 1 at cost 20 with 1 copy). Both solvers then select two bins of type 0 for a total cost of 10, which is the cheaper option.\n\n**Test coverage**\n\n`test/box/box_test.cpp` is commented out in its entirety. `test/box/tree_search_test.cpp` does run `optimize`, but only on knapsack and open-dimension-x instances, and no `box` or `boxstacks` test data sets `objective,variable-sized-bin-packing`. `test/boxstacks/boxstacks_test.cpp::BinCopies` does set the objective, but it builds a single solution and asserts `number_of_bins()` and `bin_copies(0)`, so it never reaches `operator<`. `test/boxstacks/tree_search_test.cpp` is an empty file. A comparator-level test that compares two feasible solutions of different cost covers this without an LP solver, a data file or an optimize run.\n\nI can open a pull request with the two cases and those tests.\n",
+  "closed_by": null,
+  "reactions": {
+    "url": "https://api.github.com/repos/fontanf/packingsolver/issues/536/reactions",
+    "total_count": 0,
+    "+1": 0,
+    "-1": 0,
+    "laugh": 0,
+    "hooray": 0,
+    "confused": 0,
+    "heart": 0,
+    "rocket": 0,
+    "eyes": 0
+  },
+  "timeline_url": "https://api.github.com/repos/fontanf/packingsolver/issues/536/timeline",
+  "performed_via_github_app": null,
+  "state_reason": null,
+  "pinned_comment": null
+}

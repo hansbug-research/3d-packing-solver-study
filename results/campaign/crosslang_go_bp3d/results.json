@@ -1,0 +1,171 @@
+{
+  "algorithm": "pivot greedy",
+  "all_expected_behaviors_pass": false,
+  "build_exitcode": 0,
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "library": "gedex/bp3d",
+  "raw_directory": "raw/experiments/campaign/crosslang_go_bp3d",
+  "scenarios": {
+    "exact_grid": {
+      "algorithm": "pivot greedy",
+      "bins_used": 1,
+      "capability_note": "single physical bin",
+      "capability_status": "SUPPORTED",
+      "complete": true,
+      "expected_behavior_pass": true,
+      "geometry_and_constraints_valid": true,
+      "items_placed": 8,
+      "items_total": 8,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.007933,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 1
+      },
+      "process_exitcode": 0,
+      "rotation_used": false,
+      "scenario": "exact_grid",
+      "total_cost": 1.0,
+      "validation_errors": []
+    },
+    "heterogeneous_large_first": {
+      "algorithm": "pivot greedy",
+      "bins_used": 2,
+      "capability_note": "input order is large then small; bp3d sorts bins by volume",
+      "capability_status": "NO_COST_OBJECTIVE",
+      "complete": true,
+      "expected_behavior_pass": false,
+      "geometry_and_constraints_valid": true,
+      "items_placed": 2,
+      "items_total": 2,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.001743,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 3
+      },
+      "process_exitcode": 0,
+      "rotation_used": false,
+      "scenario": "heterogeneous_large_first",
+      "total_cost": 17.0,
+      "validation_errors": []
+    },
+    "heterogeneous_small_first": {
+      "algorithm": "pivot greedy",
+      "bins_used": 2,
+      "capability_note": "input order is small then large; bp3d sorts bins by volume",
+      "capability_status": "NO_COST_OBJECTIVE",
+      "complete": true,
+      "expected_behavior_pass": false,
+      "geometry_and_constraints_valid": true,
+      "items_placed": 2,
+      "items_total": 2,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.001803,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 3
+      },
+      "process_exitcode": 0,
+      "rotation_used": false,
+      "scenario": "heterogeneous_small_first",
+      "total_cost": 17.0,
+      "validation_errors": []
+    },
+    "rotation_forbidden": {
+      "algorithm": "pivot greedy",
+      "bins_used": 1,
+      "capability_note": "bp3d exposes no per-item orientation whitelist; the observed run remains unrestricted",
+      "capability_status": "NOT_SUPPORTED",
+      "complete": true,
+      "expected_behavior_pass": false,
+      "geometry_and_constraints_valid": false,
+      "items_placed": 1,
+      "items_total": 1,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.001562,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 1
+      },
+      "process_exitcode": 0,
+      "rotation_used": true,
+      "scenario": "rotation_forbidden",
+      "total_cost": 1.0,
+      "validation_errors": [
+        "orientation violations: ['upright-000: fixed orientation changed']"
+      ]
+    },
+    "rotation_required": {
+      "algorithm": "pivot greedy",
+      "bins_used": 1,
+      "capability_note": "requires a non-identity axis permutation",
+      "capability_status": "SUPPORTED",
+      "complete": true,
+      "expected_behavior_pass": true,
+      "geometry_and_constraints_valid": true,
+      "items_placed": 1,
+      "items_total": 1,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.001333,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 1
+      },
+      "process_exitcode": 0,
+      "rotation_used": true,
+      "scenario": "rotation_required",
+      "total_cost": 1.0,
+      "validation_errors": []
+    },
+    "thpack9_instance1": {
+      "algorithm": "pivot greedy",
+      "bins_used": 50,
+      "capability_note": "ESICUP THPACK9 instance 1, 80 physical bins",
+      "capability_status": "SUPPORTED",
+      "complete": true,
+      "expected_behavior_pass": true,
+      "geometry_and_constraints_valid": true,
+      "items_placed": 70,
+      "items_total": 70,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.35216,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 80
+      },
+      "process_exitcode": 0,
+      "rotation_used": true,
+      "scenario": "thpack9_instance1",
+      "total_cost": 50.0,
+      "validation_errors": []
+    },
+    "weight_limit": {
+      "algorithm": "pivot greedy",
+      "bins_used": 1,
+      "capability_note": "MaxWeight exists but PutItem never checks accumulated weight",
+      "capability_status": "DOCUMENTED_FIELD_NOT_ENFORCED",
+      "complete": true,
+      "expected_behavior_pass": false,
+      "geometry_and_constraints_valid": false,
+      "items_placed": 3,
+      "items_total": 3,
+      "items_unplaced": 0,
+      "library_elapsed_ms": 0.002301,
+      "parameters": {
+        "library_sort": "ascending bin volume / descending item volume",
+        "physical_bin_objects": 3
+      },
+      "process_exitcode": 0,
+      "rotation_used": false,
+      "scenario": "weight_limit",
+      "total_cost": 1.0,
+      "validation_errors": [
+        "bin bin-000 weight 18 > 10"
+      ]
+    }
+  },
+  "toolchain": "go1.27.0",
+  "upstream_test_exitcode": 1
+}

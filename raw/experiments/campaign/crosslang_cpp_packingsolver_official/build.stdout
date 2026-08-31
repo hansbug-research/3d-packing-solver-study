@@ -1,0 +1,2 @@
+PREBUILT_ARTIFACT: no campaign build was possible because the official rolling binary has no embedded source revision.
+The nearby pristine source checkout is recorded only as a dated comparison, not asserted as this binary source.

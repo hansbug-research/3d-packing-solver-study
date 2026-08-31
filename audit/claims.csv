@@ -5,4 +5,9 @@ C03,THPACK9 instance 1 has 70 items and 10x6x16 container, raw/thpack9_instance1
 C04,Public heuristic results are 25/28/50/50 bins, derived/stats.json + derived/tables/public_thpack9.csv + raw/manifest.json,verified
 C05,CP-SAT and SCIP exact-small status is limited to the tested model, results/ortools.json + results/scip.json + REVIEW.md,verified
 C06,Java is an optional sidecar rather than default backend, research/frontend.md + results/skjolber.json,reviewed
-C07,Go and Rust candidates were not executed in this environment, audit/reproducibility_audit.md + README.md + sources/manifest.csv S106/S108,verified
+C07,Go bp3d and Rust u-nesting were built and executed in this environment, results/campaign/crosslang_go_bp3d/results.json + results/campaign/crosslang_rust_unesting/results.json + sources/manifest.csv S106/S108,verified
+C08,PackingSolver 1s and 10s THPACK campaigns validate all 759 legal sources,results/campaign/packingsolver-thpack-summary.json + results/campaign/packingsolver-thpack-10s-summary.json + results/campaign/aggregate.json,verified
+C09,THPACK9 44-instance quality statistics exclude invalid certificates,results/campaign/aggregate.json + results/campaign/README.md + audit/crosslang_campaign_review.md,verified
+C10,CP-SAT SCIP Gurobi and CPLEX canonical strengthened exact-small suites each pass 7 scenarios,results/campaign/exact-cp-sat.json + results/campaign/exact-scip.json + results/campaign/exact-gurobi.json + results/campaign/exact-cplex.json,verified
+C11,Rust Layer GA BRKGA and SA THPACK9-1 results are invalid and excluded,results/campaign/crosslang_rust_unesting_strategy_repeats/results.json + audit/crosslang_campaign_review.md,verified
+C12,Alonso complete problems are unsupported and BAYTP ESICUP snapshot is incomplete,results/campaign/industrial-dataset-audit.json + audit/industrial_benchmark_scope.md,verified

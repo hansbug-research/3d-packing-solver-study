@@ -1,0 +1,3 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+     Running unittests src/lib.rs (/tmp/packing-crosslang-u-build/nesting/u-nesting/target/debug/deps/u_nesting_d3-e597b68a8b99849d)
+   Doc-tests u_nesting_d3

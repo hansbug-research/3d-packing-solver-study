@@ -31,7 +31,7 @@
 - C/C++/Rust 可通过官方 wheel、pybind11/PyO3/cffi 或受控 CLI 接入，完全属于主候选范围；
 - native binding 仍运行在独立 Python worker 中，段错误不能拖垮 Tauri 主进程；
 - Java 不作一票否决。实测 Skjolber LAFF 的基础几何和 100 件性能合格，但它未原生补齐本项目最难的承压、轴荷和价格目标，当前收益不足以抵消裁剪 JRE、第二进程协议、签名和三平台打包成本，因此只保留为选装 sidecar/强对照；
-- Rust `u-nesting` 等新项目可观察，但不能因语言新而降低成熟度、约束覆盖和回归要求。
+- Rust `u-nesting` 已完成构建、上游测试和跨语言实测。ExtremePoint 可保留为单容器布局基线；Layer、GA、BRKGA、SA 的共享 decoder 已复现越界，且 seed/time limit 接线不完整，当前不能进入生产 shortlist。
 
 ## 2. 产品边界
 
@@ -206,15 +206,17 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 
 | 引擎 | 定位 | 采用条件/拒绝原因 |
 |---|---|---|
-| PackingSolver C++ | 主正交启发式候选 | 工况覆盖最接近；必须 pin SHA、hash binary、子进程隔离，并关闭异构成本与轴荷边界回归 |
+| PackingSolver C++ fork `d953148b` | 主正交启发式候选 | 工况覆盖最接近；759 个合法 THPACK 源和 `boxstacks` 9 项专项通过。必须 pin SHA、hash binary、子进程隔离，保留策略与上游回归 |
+| PackingSolver 官方 rolling | 上游行为对照 | 异构成本 #536 等四个 issue/PR 尚未合并，不能把 fork 通过写成官方已修复 |
 | OR-Tools CP-SAT | 默认成本/pattern master、exact-small | Apache-2.0、多平台 wheel、逻辑强；需自建 3D 模型且只接受整数 |
 | SCIP/PySCIPOpt | 开放 MIP/CIP 研究轨 | 适合连续坐标、cuts、载荷流；不是现成装箱库 |
 | Gurobi/CPLEX | 商业 exact 插件 | 真实企业规模基准有收益且生产/离线/分发许可已确认 |
-| `py3dbp` | 基准和 smoke test | 很快但顺序敏感，无成本、姿态子集、支撑/承压/轴荷和 bound |
-| Jerry 分支 | 仅参考可视化/支撑近似 | `loadbear` 实际只排序；本地反例未限制上压重量 |
-| Skjolber Java | 强几何对照、可选 sidecar | LAFF 实测合格；只有障碍/controls/稳定 deadline 在真实基准显著胜出时才打包 JVM |
-| Go `bp3d` | 不采用 | 维护旧且 `MaxWeight` 未进入放置可行性；拒绝原因不是 Go |
-| Rust `u-nesting` | 观察项 | 2026 新项目、3D 仍是 axis-aligned，本机无 Cargo；未进入 shortlist、未实测 |
+| `py3dbp` | 基准和候选生成 | THPACK9 44/44 合法，但 53 对中 41 对受排序影响；无成本、姿态子集、支撑/承压/轴荷和 bound |
+| Jerry 分支 | 仅参考可视化/支撑近似 | 174 个执行结果有 4 个重叠；`loadbear` 实际只排序，不能当承压约束 |
+| Skjolber Java Plain/LAFF | 强几何对照、可选 sidecar | 两算法 THPACK9 各 44/44 合法；Plain 本轮质量优于 LAFF。只有 obstacles/controls 带来真实收益时才打包 JVM |
+| Go `bp3d` | 不采用 | THPACK9 44/44 合法，但禁旋和累计重量专项失败；拒绝原因是约束语义，不是 Go |
+| Rust `u-nesting` ExtremePoint | 观察项/单箱基线 | THPACK9 adapter 44/44 合法；上游原生只接受一个 `Boundary3D`，Python/PyO3 构建还需固定多仓依赖 |
+| Rust Layer/GA/BRKGA/SA | 不采用 | 共用 Layer decoder，旋转专项和 THPACK9-1 产生越界 placement；无效低箱数不得排名 |
 
 ### 6.3 PackingSolver 的现实门禁
 
@@ -227,23 +229,57 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 
 已向上游提交四个最小复现 issue（#536–#539）及对应 PR（#540–#543），但截至 2026-08-31 均为 open、尚未合并；在合并前仍需固定本地已回归的源码提交、在三平台自行构建，保留异构成本、箱序反转、正常/边界/不可行轴荷测试。修复前由 CP-SAT/SCIP 承担成本选择，轴荷一律由独立静力校核器硬门禁。
 
+应急源码可固定到用户 fork [`HansBug/packingsolver@d953148b8f710c06fa6c410949b7272f9e36327b`](https://github.com/HansBug/packingsolver/tree/d953148b8f710c06fa6c410949b7272f9e36327b)。该 `master` 已整合 #540–#543 并追加 data-driven 回归；本轮全量 campaign 使用的 `box` binary SHA-256 为 `1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285`。它仍是 fork，不是官方 release。
+
 ## 7. 本地实测结论
 
-所有 Python/C++ 主测试均在外层 35 秒 timeout、4 GiB 虚拟内存和常见数值库单线程环境变量下复跑；PackingSolver 另有 10 秒/1 GiB 内部限制。详情和 JSON 路径见 [测试摘要](results/test-summary.md)。
+只跑“最少箱数”无法回答本项目的算法能力。THPACK1–8 是单箱 knapsack，主指标是 packed volume；THPACK9 才是装完全部物品后最少箱数。即便箱数更少，只要存在漏件、越界、重叠、非法姿态或超重，certificate 就必须作废。价格、堆叠、轴荷和卸货又需要独立专项，因为 THPACK 没有这些字段。各 benchmark 的字段、主指标、不能外推的结论和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)。
 
-| 候选 | 关键结果 | 判断 |
-|---|---|---|
-| PackingSolver | 网格、旋转子集、禁旋、总重量、`boxstacks` 上压通过；异构成本失败；轴荷边界例异常 | 有条件采用，不能盲信 README |
-| PackingSolver 两文件最小 patch + HiGHS | 异构成本 `box`/`boxstacks` 均返回 0，选择 1 个成本 10 大箱，2/2 件并生成证书；公开 THPACK9-1 为 25 箱 | 仅本地验证，不是官方 release；已提交 issue [#536](https://github.com/fontanf/packingsolver/issues/536) / PR [#540](https://github.com/fontanf/packingsolver/pull/540)，open 未合并 |
-| HansBug/packingsolver fork | `master` at `ac7b1384` integrates PR #540–#543 | 可在 pin 该 commit 后作为应急源码来源，仍不是官方 release |
-| CP-SAT 9.15 | 9 个 `5^3` 物品装 `10^3` 箱：`OPTIMAL`，2 箱，bound 2，约 0.13 s solver | exact-small 模型语义与界通过 |
-| PySCIPOpt 6.2.1 | 同例 `optimal`，目标/dual 都为 2，gap 0，约 0.06 s solver | 开放精确第二实现通过 |
-| `py3dbp` 1.1.2 | 基础通过；异构箱小箱先为 2 箱，大箱先为 1 箱 | 顺序敏感，只作 baseline |
-| Jerry | 脆弱件上方实际重量 20 仍被接受 | `loadbear` 不能当承压约束 |
-| Skjolber `c73d521...` | 网格/旋转/upright/重量符合预期，100 件库内 21.275 ms，THPACK9-1 为 8.315 ms；当前 raw 冷 JVM 约 0.43 s/78,336 KiB | Java 可用但暂无独特到值得默认集成的能力 |
-| Gurobi/CPLEX | 当前环境缺少 Python 包或运行时许可，复跑入口返回 `NOT_RUN`；两份历史 JSON 因模型字段与目标值矛盾，已标为 `INVALID_HISTORICAL_INCONSISTENT_FIXTURE` 并排除 | 没有可采信的本轮商业求解器数字；需在许可环境用固定 fixture 重跑 |
+### 7.1 PackingSolver 公开全集与时间预算
 
-这些烟雾测试的功能覆盖比速度数字更重要。不同脚本的进程启动、案例数量和停止粒度不同，不能把微秒/毫秒列当跨语言性能榜。
+固定 fork 运行 762 条 THPACK 记录，其中 THPACK9 18–20 为 malformed source 并排除，留下 759 个合法源。1 秒和 10 秒结果都从原始 certificate archive 离线重验：逐件 ID/数量、允许 rotation 对应尺寸、箱尺寸、边界、AABB 重叠、packed volume、箱数和完整性全部重算。759/759 均为合法 certificate；solver-reported bound 只记录为 `SOLVER_REPORTED_BOUND_CLOSED`，不当作独立最优性证明。
+
+| 问题族 | 目标 | 1 s | 10 s | 配对行为 |
+|---|---|---:|---:|---|
+| BR，700 例 | 单箱最大体积利用率 | mean `0.7216`；166 个 0-item incumbent | mean `0.9624`；0 个空解 | 673 改善、27 相同、0 变差 |
+| LN，15 例 | 单箱最大体积利用率 | mean `0.5072`；5 个 0-item incumbent | mean `0.7115`；0 个空解 | 7 改善、8 相同、0 变差 |
+| IMM，44 个合法例 | 多箱最少箱数 | mean/median `15.48/11.5`；23 个 reported bound closed | mean/median `15.48/11.5`；25 个 reported bound closed | 44 个箱数全部相同 |
+
+10 秒预算显著改善 knapsack 初解，并消除 BR/LN 空解，但没有让 THPACK9 少用箱。不能由此写成“10 秒总是更优”或“1 秒已足够”：三个问题族的搜索行为不同。
+
+### 7.2 THPACK9 44 例跨实现质量
+
+下表只统计完整且通过独立 certificate 检查的结果。THPACK9 没有 published optimum；相对体积下界只用于诊断，不能替代合法 dual bound。
+
+| 实现 | 有效 certificate | mean bins | median bins | 观察 |
+|---|---:|---:|---:|---|
+| PackingSolver fork，1 s/10 s | 44/44 | 15.48 | 11.5 | 本轮质量最好；两档箱数相同 |
+| Skjolber Plain | 44/44 | 17.80 | 14 | 27 例优于 LAFF，17 例相同 |
+| Rust ExtremePoint adapter | 44/44 | 18.41 | 14 | 原生单 boundary，外层重复调用形成多箱 |
+| `py3dbp` 降序 | 44/44 | 18.43 | 14 | 与 Rust EP 很接近，但整体顺序敏感 |
+| Jerry 降序 | 43/44 | 18.72 | 14 | 1 条重叠；均值只基于 43 条有效记录 |
+| Go `bp3d` | 44/44 | 19.93 | 16 | 几何有效，但另有禁旋/重量语义缺陷 |
+| Skjolber LAFF | 44/44 | 20.84 | 17 | 层结构在该分布未带来质量优势 |
+
+跨语言微型计时没有统一 JVM/进程启动、停止粒度和计时边界，因此本报告不据此作性能排名。
+
+### 7.3 顺序、策略与硬约束
+
+- Python campaign 计划 3,048 条状态记录；语义可表达并实际执行 280 条，276 条合法。`py3dbp` 的 53 对可比实例中 41 对质量随升/降序改变。Jerry 的 87 对中 66 对质量改变、4 对有效性改变；4 条重叠来自 `fix_point=True` 吸附坐标后未重新检查碰撞，改为 `fix_point=False` 后对照合法。
+- PackingSolver `boxstacks` 9/9 通过：异构成本、最大上方重量、最大堆数、nesting、正常/边界/不可行轴荷、无卸货约束和 IncreasingX。正常轴荷由独立公式重算为 middle `6315.789... <= 6400`、rear `3000 <= 9000`。
+- PackingSolver 策略专项中 auto、tree search、maximal spaces、sequential single knapsack 和 sequential value correction 的已运行记录合法；column generation 在 THPACK9-47 返回 0/99 件，validator 判 `INVALID`。
+- Rust ExtremePoint 在 THPACK9-1 重复 5/5 均为 50 箱且合法。Layer、GA、BRKGA、SA 每类重复 5 次均越界，报告的 15–16 箱全部作废。源码显示换层后只检查 Z、未重检姿态后的 X/Y；GA/BRKGA/SA 共用该 decoder。请求的 seed 未接入随机 runner，多数策略也没有读取 `time_limit_ms`，适合分别向上游提交 issue 和小 PR。
+- Go `bp3d` THPACK9 44/44 合法，但专项证明它没有逐件姿态白名单，`PutItem` 也不检查累计 `MaxWeight`。这类失败不会出现在纯几何 THPACK 排名中。
+
+### 7.4 精确后端与 formulation
+
+OR-Tools CP-SAT 9.15、SCIP/PySCIPOpt 6.2.1、Gurobi 13.0.3 和 CPLEX 22.1.2.0 都运行了同一组 7 个手工真值场景：网格、9 件溢出拆箱、需旋转、禁旋、重量拆箱、两种异构成本方向。canonical strengthened formulation 四家均为 7/7，证书与目标复算通过。
+
+legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求解器速度榜。CPLEX legacy 的 1,489 条约束超过 promotional license 的 1,000 条上限；SCIP 和 CPLEX 的 reduced `overflow_9` 在 20 秒内未证明；strengthened 四后端都闭合。这里首先说明加强约束和对称处理的重要性，不能外推为某个 solver 在一般 3D 实例上固定更快。
+
+### 7.5 工业数据集状态
+
+Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP 的 BAYTP 快照缺少公共 `products`/`shelves`；虽从 OR-Library 核对了对应文件与 SHA-256，仍标为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。删除字段后运行普通 3D 箱数算法会改变问题，不能作为完整 benchmark 分数。
 
 ## 8. GUI 与三维产品原型
 
@@ -281,7 +317,7 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 - 门、障碍、keepout、重心包络、轴/地板载 overlay；
 - 顶/侧/端 2D 正投影、坐标、编号和装载顺序导出。
 
-若没有通过装入路径验证，动画必须叫 `layout animation`，不能叫 `executable loading sequence`。glTF/PNG 只是交流视图，权威结果始终是带 hash/schema 的 JSON 和验证报告。
+若没有通过装入路径验证，动画必须叫 `layout animation`，不能叫 `executable loading sequence`。glTF/PNG 只是交流视图；CSV/XLSX/JSONL placement 明细必须由 manifest 绑定完整 problem/solution hash、单位、预期件数和 validator/version。权威结果始终是带 hash/schema 的完整 ProblemSpec/Solution/ValidationReport JSON。
 
 ### 8.4 Three.js 实现要点
 
@@ -291,10 +327,13 @@ JSON Schema 使用 Draft 2020-12、`additionalProperties:false` 和显式 `schem
 
 CLI 最少提供：
 
+YAML/CSV/XLSX 只作便捷导入。导入器拒绝歧义并完成单位、默认值和 ID 归一化，产出带 `schema_version` 的 canonical JSON；hash、求解和复现均绑定归一化后的 JSON。
+
 ```bash
-packctl project validate job.yaml --format json
-packctl solve job.yaml --profile balanced --engine portfolio --time-limit 120s --threads 4 --seed 7 --out run-001
-packctl verify run-001/solution.json --problem job.yaml --strict
+packctl project import job.yaml --out job.json
+packctl project validate job.json --format json
+packctl solve job.json --profile balanced --engine portfolio --time-limit 120s --threads 4 --seed 7 --out run-001
+packctl verify run-001/solution.json --problem job.json --strict
 packctl inspect run-001 --solutions --format table
 packctl export run-001/solution.json --format pdf --out load-plan.pdf
 packctl engines list --capabilities

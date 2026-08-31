@@ -1,0 +1,5 @@
+declared_commit=rolling-binary-no-embedded-commit
+nearby_source_commit=367ebfdaad11424ded3696b7dae799a30c1375d0
+commit_date=2026-08-29T13:12:52+02:00
+subject=rectangle: don't lift item dimensions along an axis an objective measures directly
+98925f41d3f40bac9da6ec5e4849d708a365b67f496b9aad13d382040a65f166  /home/zhangshaoang/packing-software-study/.cache/packingsolver/packingsolver_box

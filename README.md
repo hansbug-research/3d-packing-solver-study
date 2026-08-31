@@ -1,6 +1,6 @@
 # 三维装箱求解器、约束模型与可视化技术选型
 
-> 基准日 **2026-08-31** ｜ 能力矩阵实现 **11 个**（含 Rust `u-nesting` 未测试观察项）｜ 公共 THPACK9 对照 **4 个实现** ｜ 受控测试 **9 项机器断言全部通过** ｜ 统一公共实例 **70 件物品** ｜ 上游缺陷复现与 patch 验证 **2 条路径**
+> 基准日 **2026-08-31** ｜ 能力矩阵 **14 行算法/库** ｜ THPACK **759 个合法源** ｜ THPACK9 **44 个跨实现实例** ｜ 上游缺陷与 fork 修复分别验证
 
 三维装箱软件面对的不是一个 `pack()` 函数，而是一组不同的优化问题：固定容器的 3D knapsack、同型容器的 3D bin packing、多箱型有成本与库存限制的 variable-sized BPP、带堆叠/承压/轴荷/多站卸货的运输装载，以及连续姿态的非正交装箱。本仓库把这些问题形式化，核对论文和官方文档，审计开源实现，接入 ESICUP 公共 benchmark，并用独立 validator 检查布局、数量、重量和证书。
 
@@ -16,13 +16,15 @@
 |---|---|---|
 | 1 | **推荐分层架构：CP-SAT/SCIP 负责成本与 exact-small，PackingSolver 负责正交布局，所有结果经过独立 validator。** | [`report.md`](report.md)、[`research/decision-matrices.md`](research/decision-matrices.md) |
 | 2 | **PackingSolver 原版异构成本路径是上游缺陷，不是调用错误。** `box` 与 `boxstacks` 漏掉 `VariableSizedBinPacking` 的方案比较分支；本地最小 patch 两条路径均通过；issue [#536](https://github.com/fontanf/packingsolver/issues/536) 与 PR [#540](https://github.com/fontanf/packingsolver/pull/540) 仍在 open。 | [`research/packingsolver-upstream.md`](research/packingsolver-upstream.md) |
-| 3 | **公共 THPACK9 instance 1：PackingSolver patch 25 箱、Skjolber 28 箱、py3dbp/Jerry 各 50 箱，均装下 70/70 件。** 数据文件没有 known optimum，因此只能报告 incumbent。 | [`research/benchmarks.md`](research/benchmarks.md)、`results/public/` |
+| 3 | **THPACK9 44 个合法实例：PackingSolver mean 15.48 箱、Skjolber Plain 17.80、Rust ExtremePoint adapter 18.41、py3dbp 降序 18.43、Go bp3d 19.93、Skjolber LAFF 20.84，以上均为 44/44 有效 certificate。** 数据没有 published optimum，只能报告 incumbent。 | [`results/campaign/README.md`](results/campaign/README.md)、[`research/benchmarks.md`](research/benchmarks.md) |
 | 4 | **py3dbp、Jerry 和 Go bp3d 不能承担业务真值。** py3dbp 顺序敏感，Jerry 的 `loadbear` 只是排序，Go bp3d 的 `MaxWeight` 没进入放置检查。 | [`research/algorithms.md`](research/algorithms.md)、代码审计和反例 |
 | 5 | **桌面首选 Tauri 2 + React/TypeScript + Three.js + Python worker。** 大 placement 数据写入 job bundle，进度走版本化事件，3D 场景与表格按稳定 ID 联动。 | [`research/frontend.md`](research/frontend.md)、[`research/decision-matrices.md`](research/decision-matrices.md) |
+| 6 | **PackingSolver 的额外预算主要改善 knapsack，不改善本轮 THPACK9 箱数。** BR mean utilization 从 0.7216 升到 0.9624，LN 从 0.5072 升到 0.7115；THPACK9 44 对箱数全部相同。 | [`results/campaign/aggregate.json`](results/campaign/aggregate.json) |
+| 7 | **CP-SAT、SCIP、Gurobi、CPLEX 的 strengthened exact-small 均为 7/7。** legacy/reduced 的失败说明 formulation 和许可证规模会改变结果，不能当通用速度榜。 | [`results/campaign/README.md`](results/campaign/README.md) |
 
 ## 已知限制与修正
 
-本轮将四个可复现的 PackingSolver 问题提交为 [#536](https://github.com/fontanf/packingsolver/issues/536)、[#537](https://github.com/fontanf/packingsolver/issues/537)、[#538](https://github.com/fontanf/packingsolver/issues/538)、[#539](https://github.com/fontanf/packingsolver/issues/539)，对应修复 PR 为 [#540](https://github.com/fontanf/packingsolver/pull/540)、[#541](https://github.com/fontanf/packingsolver/pull/541)、[#542](https://github.com/fontanf/packingsolver/pull/542)、[#543](https://github.com/fontanf/packingsolver/pull/543)。截至 2026-08-31 均未合并，patch 二进制不能当作官方 release。用户维护的公开 fork [`HansBug/packingsolver@ac7b1384`](https://github.com/HansBug/packingsolver/tree/ac7b1384151bd33f56aec47d5c180dd4c5652266) 已整合四个修复，着急使用时可 pin 该 commit；学术 DOI、THPACK 语义、LAFF 性能措辞、CPLEX 接口归属和来源 commit 的修正记录在 [`audit/academic_audit.md`](audit/academic_audit.md)，实验边界和未测试项见 [`results/test-summary.md`](results/test-summary.md)。
+本轮将四个可复现的 PackingSolver 问题提交为 [#536](https://github.com/fontanf/packingsolver/issues/536)、[#537](https://github.com/fontanf/packingsolver/issues/537)、[#538](https://github.com/fontanf/packingsolver/issues/538)、[#539](https://github.com/fontanf/packingsolver/issues/539)，对应修复 PR 为 [#540](https://github.com/fontanf/packingsolver/pull/540)、[#541](https://github.com/fontanf/packingsolver/pull/541)、[#542](https://github.com/fontanf/packingsolver/pull/542)、[#543](https://github.com/fontanf/packingsolver/pull/543)。截至 2026-08-31 均未合并，patch 二进制不能当作官方 release。用户维护的公开 fork [`HansBug/packingsolver@d953148b`](https://github.com/HansBug/packingsolver/tree/d953148b8f710c06fa6c410949b7272f9e36327b) 已整合四个修复及追加的 data-driven 回归测试；完整 campaign 固定到这个提交。学术 DOI、THPACK 语义、LAFF 性能措辞、CPLEX 接口归属和来源 commit 的修正记录在 [`audit/academic_audit.md`](audit/academic_audit.md)，实验范围和状态见 [`results/campaign/`](results/campaign/) 与 [`results/test-summary.md`](results/test-summary.md)。
 
 ## 目录
 
@@ -75,6 +77,13 @@ bash benchmarks/run_java_controlled.sh
 .venv/bin/python benchmarks/benchmark_public_thpack9.py
 ```
 
+全量 campaign 的脚本、每类 benchmark 的用途和逐库运行状态见 [`results/campaign/README.md`](results/campaign/README.md)。已有结果的统一重算命令为：
+
+```bash
+.venv/bin/python benchmarks/campaign/analyze_campaign.py
+.venv/bin/python scripts/verify.py
+```
+
 公共数据转换依赖 `.cache/esicup-datasets` 的 shallow checkout；没有该目录时脚本会明确报出缺少来源，不会静默生成替代实例。PackingSolver 的原始滚动二进制、修复版源码副本和 SHA-256 只作为审计实验输入，不伪装成官方 release。
 
 ## 可审计性
@@ -83,7 +92,7 @@ bash benchmarks/run_java_controlled.sh
 
 ## 边界
 
-公开几何 benchmark 不能证明材料强度、动态稳定、摩擦、系固、危险品或车辆法规合规；没有真实字段的约束报告为 `NOT_APPLICABLE` 或 `UNKNOWN`。x86-64 实测不能外推到 aarch64、loongarch64 或其他平台。Gurobi/CPLEX 本轮没有可采信的实测数字：当前环境缺包/许可，历史 fixture 因内部矛盾被排除。Go/Rust 候选本轮因本机没有对应 toolchain，仅保留源码审计，不冒充运行结果。
+公开几何 benchmark 不能证明材料强度、动态稳定、摩擦、系固、危险品或车辆法规合规；没有真实字段的约束报告为 `NOT_APPLICABLE` 或 `UNKNOWN`。x86-64 实测不能外推到 aarch64、loongarch64 或其他平台。OR-Tools CP-SAT、SCIP、Gurobi 与 CPLEX 已在同一 7 场景 strengthened 模型上运行；它们是建模后端，不是现成 3D packer。Go `bp3d` 与 Rust `u-nesting` 已用固定工具链运行，结果中的失败和 adapter 能力边界不得改写为未测试或原生支持。
 
 ## 许可
 

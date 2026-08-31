@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=TERM --kill-after=10s 1800s /home/zhangshaoang/packing-software-study/.venv/bin/python /home/zhangshaoang/packing-software-study/benchmarks/campaign/packingsolver_thpack.py --binary /home/zhangshaoang/packing-software-study/.cache/build-fork/src/box/packingsolver_box --source-commit d953148b8f710c06fa6c410949b7272f9e36327b --data-root /home/zhangshaoang/packing-software-study/.cache/packingsolver-fork/data/box --results-dir /home/zhangshaoang/packing-software-study/results/campaign --raw-dir /home/zhangshaoang/packing-software-study/raw/experiments/campaign/packingsolver --time-limit 1"
+	User time (seconds): 940.51
+	System time (seconds): 12.16
+	Percent of CPU this job got: 120%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:08.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 99692
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 6918652
+	Voluntary context switches: 21556
+	Involuntary context switches: 31852
+	Swaps: 0
+	File system inputs: 7104
+	File system outputs: 36920
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

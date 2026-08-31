@@ -87,7 +87,7 @@ sed -n '1,120p' .cache/esicup-datasets/3d_rectangular/thpack/README.txt
 
 - 论文表已把 Paquay、Zhao 和 Pollaris 的 print/online 年份写成显式双日期，避免把 DOI 元数据的 online 年份误当卷期年份；对应来源仍登记在 S59、S63、S69。
 - 受控资源表已统一使用 canonical `raw/experiments/*.resources.txt`；较早的 `raw/resources/` 数字保留为历史快照，不再作为当前结果叙述。
-- Go `bp3d` 已固定到 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7`，关键 `bp3d.go` 与 MIT LICENSE 已保存为 S106–S107 快照；Rust `u-nesting` 已登记固定 commit S108，但因本机无 Cargo 仍是未运行观察项。
+- Go `bp3d` 已固定到 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7`，关键 `bp3d.go` 与 MIT LICENSE 已保存为 S106–S107 快照；Rust `u-nesting` 固定到 S108 对应提交，并用 Rust 1.98.0 及固定的三个 path dependency 实际构建运行。ExtremePoint adapter 的 THPACK9 44/44 certificate 合法；Layer/GA/BRKGA/SA 的共享 decoder 越界，不能进入质量排名。
 - CP-SAT/SCIP 等通用建模引擎的能力矩阵已统一改为“⚠️ 自建模型可表达”；共享 AABB validator、Skjolber runner 检查和 PackingSolver `COPIES` 展开审计的差异已在 benchmark 正文中明确。
 
 - 商业求解器历史 JSON 的模型字段是 9 个 `5x5x5` 物品与 2 个 `10x10x10` 箱，但目标/bound 写成 8；该目标不可能超过候选箱数，现已标为 `INVALID_HISTORICAL_INCONSISTENT_FIXTURE`，不再进入比较表。

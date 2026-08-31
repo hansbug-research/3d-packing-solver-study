@@ -1,0 +1,5 @@
+declared_commit=d953148b8f710c06fa6c410949b7272f9e36327b
+nearby_source_commit=d953148b8f710c06fa6c410949b7272f9e36327b
+commit_date=2026-08-31T18:15:26+08:00
+subject=Merge updated 'fix/boxstacks-axle-index' (axle weight regression test)
+1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285  /home/zhangshaoang/packing-software-study/.cache/build-fork/src/box/packingsolver_box

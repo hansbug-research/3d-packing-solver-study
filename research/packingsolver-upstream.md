@@ -1,6 +1,6 @@
 # PackingSolver 上游缺陷核查
 
-核查快照：2026-08-31，仓库 `fontanf/packingsolver`，提交 `367ebfdaad11424ded3696b7dae799a30c1375d0`（本地短 hash `367ebfd`）。结论是：**原始调用方式正确，`box` 和 `boxstacks` 的异构成本目标存在上游缺失分支；该缺陷已向上游提交 issue [#536](https://github.com/fontanf/packingsolver/issues/536) 和 PR [#540](https://github.com/fontanf/packingsolver/pull/540)，截至 2026-08-31 均为 open、尚未合并。** 用户维护的公开 fork `HansBug/packingsolver` 的 `master` 提交 `ac7b1384151bd33f56aec47d5c180dd4c5652266` 已整合 PR #540–#543；着急使用时可 pin 该 commit，但它仍不是官方 release。
+核查快照：2026-08-31，仓库 `fontanf/packingsolver`，提交 `367ebfdaad11424ded3696b7dae799a30c1375d0`（本地短 hash `367ebfd`）。结论是：**原始调用方式正确，`box` 和 `boxstacks` 的异构成本目标存在上游缺失分支；该缺陷已向上游提交 issue [#536](https://github.com/fontanf/packingsolver/issues/536) 和 PR [#540](https://github.com/fontanf/packingsolver/pull/540)，截至 2026-08-31 均为 open、尚未合并。** 用户维护的公开 fork `HansBug/packingsolver` 的 `master` 提交 `d953148b8f710c06fa6c410949b7272f9e36327b` 已整合 PR #540-#543 并追加 data-driven 回归；着急使用时可 pin 该 commit，但它仍不是官方 release。
 
 ## 证据链
 
@@ -54,6 +54,8 @@ case Objective::VariableSizedBinPacking: {
 验证二进制 SHA-256：patched `box` `a1257fca24e3741aacd1686348e54cd0dc8441364a31081b04d0a970b9369c47`；patched `boxstacks` `6b940a4660d25479058f01b6d3d873855bec9d5158097b67493b4baabdaa1a11`。
 
 额外回归覆盖：小箱/大箱成本方向、有限 copies、box 与 boxstacks 两条路径；公开 THPACK9 instance 1 的普通 bin-packing 也完成 70 件、25 箱，证书通过独立几何校验。结果文件见 `results/raw/patched-highs/` 和 `results/public/`。
+
+固定 fork `d953148b...` 还运行了完整 campaign：THPACK 的 759 个合法源在 1 s 和 10 s 两档均通过离线 certificate 重验；`boxstacks` 的异构成本、最大上方重量、最大堆数、nesting、三类轴荷和卸货专项为 9/9。策略专项另发现 column generation 在 THPACK9-47 返回 0/99 件，说明 fork 修复四个已知问题后仍需按策略保留 validator，不能把提交 SHA 当作全部算法路径的无条件保证。机器结果见 [`../results/campaign/aggregate.json`](../results/campaign/aggregate.json)。
 
 成本反向回归把小箱成本改为 5（两份）、大箱改为 20（1 份），两种程序均选择 2 个小箱、总成本 10；这排除了“只要能运行但比较方向反了”的假修复。
 

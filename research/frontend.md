@@ -42,13 +42,13 @@
 
 | 路线 | Python 集成 | 密集表格/产品 UI | 3D 路线 | IPC 与隔离 | 三平台分发 | 体积/性能 | 许可与维护 | 结论 |
 |---|---|---|---|---|---|---|---|---|
-| **Tauri 2 + React/TS** | Python sidecar，需维护协议；对 C/C++/Rust binding 无额外限制 | Web 生态最强，可虚拟化和精细定制 | Three.js 原生匹配 | Rust core 集中路由 IPC，capability/permission 可收窄；可隔离 worker 崩溃 [F7-F11] | 官方支持平台安装包、签名和 CI；各 OS 原生构建 [F12-F16] | 不内置浏览器，壳小；最终体积由 Python/求解库主导；长任务不阻塞 UI | Tauri `MIT OR Apache-2.0`；2026-07 发布 2.11.5，持续维护 [F17] | **推荐** |
+| **Tauri 2 + React/TS** | Python sidecar，需维护协议；对 C/C++/Rust binding 无额外限制 | React/TanStack 可实现虚拟表格、可访问 primitives 和细粒度桌面交互 | Three.js 原生匹配 | Rust core 集中路由 IPC，capability/permission 可收窄；可隔离 worker 崩溃 [F7-F11] | 官方支持平台安装包、签名和 CI；各 OS 原生构建 [F12-F16] | 不内置浏览器，壳小；最终体积由 Python/求解库主导；长任务不阻塞 UI | Tauri `MIT OR Apache-2.0`；2026-07 发布 2.11.5，持续维护 [F17] | **推荐** |
 | **PySide6 + Qt** | 最直接，同进程调用或 `QProcess` worker | Qt Model/View 很成熟；QML 与 Python 状态边界要纪律化 | Qt Quick 3D、Qt 3D、VTK/PyVista 或 QWebEngine+Three | 同进程最简单但原生崩溃会带走 UI；仍建议独立 worker | `pyside6-deploy` 封装 Nuitka，输出 Windows/Linux/macOS 应用 [F2] | 启动和原生控件好；QML/Qt 插件需裁剪，完整 wheels 较大 | PySide6 为 LGPLv3/GPLv3/商业 [F1]；**Qt Quick 3D 是 GPLv3/商业** [F4] | **条件备选** |
 | **Electron + React/TS** | Node 主进程监管 Python sidecar，成熟 | 与推荐前端完全相同 | Three.js，且 Chromium 行为最一致 | 可做到 context isolation/sandbox/preload 白名单，但能力面比 Tauri 默认更宽，需严格加固 [F18] | Forge 官方推荐；三平台成熟，签名/更新资料完整 [F19-F21] | 每包带 Chromium+Node，基线体积和常驻内存最高 | MIT；8 周 major 节奏，仅支持最新 3 条 stable，升级负担明确 [F21-F22] | **兼容性后备** |
 | **Flutter desktop** | Dart 与 Python 没有一等集成；通常仍是 sidecar；C ABI 可用 FFI [F23-F24] | 原生渲染、一致性和常规 UI 好 | 没有与 Three.js/VTK 同等级的官方成熟工程可视化路线，需插件或自研 | Dart sidecar 协议；引入第三种主语言 | 官方支持 Windows/macOS/Linux 构建，插件需逐平台核查 [F23] | AOT 和 UI 性能好，包体中等 | BSD-3-Clause；2026-08 stable 3.47.2 [F25-F26] | 不选；Python+3D 组合收益不足 |
 | **Flet** | Python API 最直接，桌面包内嵌 Python | 快速表单/管理工具好；复杂虚拟表格和细粒度桌面交互受控件层限制 | 需自定义 Flutter 扩展或嵌 WebView，抵消“只写 Python”优势 | Python 与 Flutter 控件协议被框架封装，底层调优空间较少 | `flet build` 可产出三平台包，但 Flutter 必需，桌面目标基本需相应宿主 OS [F27] | 同时含 Flutter 和 Python；精确值需成品测量 | Apache-2.0；2026-08 发布 0.86.5 [F28] | 适合 MVP，不适合本产品主线 |
 
-评分若只按“Python 代码最少”，Flet/PySide 会领先；按本产品真正的表格、3D、长任务隔离和后续扩展来算，Tauri 路线更均衡。
+按“Python 代码量”单项看，Flet/PySide 的桥接代码更少；按本文给定的优先级，Tauri 同时提供可复用的 React/Three 前端、Rust 权限边界和独立 Python worker，因此作为首选进入 packaged PoC。
 
 ### 3.2 Tauri 2：为什么推荐
 
@@ -113,7 +113,7 @@ Flet 的 `flet build` 会创建 Flutter 工程、用 `serious_python` 打包 Pyt
 
 | 引擎 | 与候选 GUI 的结合 | 本产品关键能力 | 体积/性能 | 许可/维护 | 判断 |
 |---|---|---|---|---|---|
-| **Three.js** | Tauri/Electron WebView 原生；React 外由 imperative scene controller 管理 | `InstancedMesh`、instance picking、raycaster、clipping planes、自定义 shader、正交/透视相机、glTF export；交互生态最好 [F30] | 一次 draw call 可表达同材质大量箱体；最终受系统 WebView/GPU 限制 | MIT；2026-07 r185，持续维护 [F30] | **推荐** |
+| **Three.js** | Tauri/Electron WebView 原生；React 外由 imperative scene controller 管理 | `InstancedMesh`、instance picking、raycaster、clipping planes、自定义 shader、正交/透视相机和 glTF export 均有维护中的 API [F30] | 一次 draw call 可表达同材质大量箱体；最终受系统 WebView/GPU 限制 | MIT；2026-07 r185，持续维护 [F30] | **推荐** |
 | **Qt Quick 3D** | QML 原生，可混合 2D/3D | instancing、LOD、picking、PBR、custom material，适合 Qt 产品 [F4] | 原生渲染，避免浏览器层 | 当前为 GPLv3/商业，闭源需采购 [F4] | 仅 PySide 商业路线 |
 | **Qt 3D** | Qt C++/QML/PySide binding | entity/component、framegraph、input、collision 等通用基础 [F5] | 可控但需较多低层产品代码 | LGPLv3/GPLv2/商业；Qt 6.11 文档仍在 [F5] | LGPL Qt 的可行但次优路线 |
 | **VTK/PyVista/PyVistaQt** | PySide/Python 最方便 | clipping、slice、picking、mesh/标量场、科学可视化工具成熟 [F31] | 对纯长方体装箱能力过剩；VTK 9.7.0 wheel 已约 76.7-133.2 MiB compressed（按 OS）[F34] | VTK BSD-style，PyVista/PyVistaQt MIT；持续维护 [F31-F34] | 后续结构/热场插件，不做主视图 |
@@ -393,13 +393,14 @@ Pareto 图用两个可选轴、颜色和大小编码第三/第四指标，但硬
 - 装载步骤播放、逐件/逐批前进、跳到 issue；时间轴不改变最终坐标；
 - 可选爆炸视图按容器、层或步骤分离实例；它只改变展示偏移，不修改权威坐标或验证结果；
 - 选中件显示实例 id、尺寸、质量、pose、位置、直接支撑、上方传递载荷、站点和来源；
-- 碰撞/越界为红，方向/支撑/承压等按 issue 类型着色；issue list 与 3D 双向联动；
+- 统一 issue visual spec：碰撞红、越界橙、姿态黄、超重/承压紫红；同件多问题用 badge 列表、叠加 outline/hatch 和 inspector 表达，不能用最后一种填充色覆盖前一种；
+- 碰撞显示 collision pair 与穿透面，支撑/承压显示 support footprint 和 load path；物品显示 top/front 面标记或局部轴，使对称件的禁姿态仍可检查；issue list 与 3D 双向联动；
 - 箱体重心、总重心、允许包络、轴/地板载荷 overlay；没有数据时不画“安全绿色”；
 - 门、障碍物、keepout、冷机/轮拱等使用不同几何语义，不能当普通货物；
 - 顶/侧/端 2D 正投影，可带坐标、编号和装载顺序打印；
 - glTF 仅作为交流视图导出，权威方案仍是带 schema/hash 的 JSON 和验证报告。
 
-一个重要产品诚信规则：如果算法只给最终布局、没有做门通过和无碰撞装入路径，播放的只是“展示顺序”，界面必须标成 `layout animation`，不能称“可执行装载路径”。只有 path validator 通过后才显示 `executable loading sequence`。
+如果算法只给最终布局、没有做门通过和无碰撞装入路径，播放的只是“展示顺序”，界面必须标成 `layout animation`，不能称“可执行装载路径”。只有 path validator 通过后才显示 `executable loading sequence`。
 
 ### 8.5 报告与审批
 
@@ -408,9 +409,10 @@ Pareto 图用两个可选轴、颜色和大小编码第三/第四指标，但硬
 导出至少包括：
 
 - PDF：执行摘要、容器用量与成本、每箱装载清单、六向/分层图、步骤、问题和免责声明；
-- CSV/XLSX：每个 placement 的 container、position、orientation、load step、stop；
+- CSV/XLSX/JSONL：每个 placement 的 container、position、orientation、load step、stop；这些是由 manifest 绑定 canonical JSON 的明细/流，不能脱离 problem/solution hash、单位、预期件数和 validator/version 单独作为有效证书；
 - JSON：完整 ProblemSpec/Solution/ValidationReport 与 schema version；
 - glTF/PNG：只作可视化交换；
+- Parquet：用于实验分析和归档的派生表；Arrow IPC 只在 profiling 证明 JSON 分页传输是瓶颈后作为协议 v2，不替代 JSON 权威结果；
 - job bundle：输入、配置、日志摘要、候选 manifest、最终报告和 checksums，支持离线复现。
 
 ## 9. 前端具体技术栈
@@ -436,10 +438,13 @@ Pareto 图用两个可选轴、颜色和大小编码第三/第四指标，但硬
 
 CLI 名称示例为 `packctl`：
 
+YAML 是便捷导入格式，不是规范存储。导入器必须拒绝重复 key、隐式日期/布尔值等 YAML 歧义，完成单位换算和默认值展开，输出带 `schema_version` 的 canonical ProblemSpec JSON；后续 hash、求解和复现都绑定该 JSON。
+
 ```bash
-packctl project validate job.yaml --format json
-packctl solve job.yaml --profile balanced --engine portfolio --time-limit 120s --threads 4 --seed 7 --out run-001
-packctl verify run-001/solution.json --problem job.yaml --strict
+packctl project import job.yaml --out job.json
+packctl project validate job.json --format json
+packctl solve job.json --profile balanced --engine portfolio --time-limit 120s --threads 4 --seed 7 --out run-001
+packctl verify run-001/solution.json --problem job.json --strict
 packctl inspect run-001 --solutions --format table
 packctl export run-001/solution.json --format pdf --out load-plan.pdf
 packctl engines list --capabilities

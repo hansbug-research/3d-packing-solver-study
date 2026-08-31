@@ -1,0 +1,70 @@
+{
+  "schema_version": 2,
+  "campaign": "packingsolver-thpack-10s/2-offline-revalidation/1",
+  "engine": "HansBug/packingsolver",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "binary_sha256": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+  "parameters": {
+    "original_time_limit_s": 10.0,
+    "memory_limit_mib": 1024,
+    "thread_limit": "NOT_EXPOSED_BY_CLI",
+    "blas_openmp_environment_threads": 1,
+    "parallel_processes": 4
+  },
+  "instances": 762,
+  "artifact_archive_sha256": "173be2419684e16da28c145a482967a0fa3e614108315e8da00b85952697801e",
+  "original_harness_provenance": "VERSIONED_PARALLEL_RUNNER; solver artifacts revalidated offline",
+  "original_harness_sha256": {
+    "parallel_runner": "2bd3405e81884851c31d3a2c0ff884a4905f449f6d267a83d729f2d46fd93a6e",
+    "certificate_validator": "cb00d05c1de8040216ba18ebc1c6305ccf94ab55603df43fcb20b8a7e7ed7a42"
+  },
+  "revalidator_sha256": "3d82caf460973969c72d35b8c554186390c97f1dac600a5ea7995fa2b4ecc601",
+  "offline_driver_sha256": "27670ab89b736144802844ebbf58c1b84efdbdaa832017b21c65627d84a77ecc",
+  "families": {
+    "BR": {
+      "instances": 700,
+      "source_valid": 700,
+      "validated": 700,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "knapsack",
+      "primary_metric": "packed_volume",
+      "solver_reported_bound_closed": 0,
+      "mean_relative_gap_to_solver_reported_bound": 0.03224770686417268,
+      "mean_volume_utilization": 0.9623944919970977,
+      "mean_bins_used": null,
+      "mean_wall_time_s": 10.008943339729283,
+      "max_rss_kib": 100180
+    },
+    "LN": {
+      "instances": 15,
+      "source_valid": 15,
+      "validated": 15,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "knapsack",
+      "primary_metric": "packed_volume",
+      "solver_reported_bound_closed": 13,
+      "mean_relative_gap_to_solver_reported_bound": 0.0017623015873015873,
+      "mean_volume_utilization": 0.7115089318469416,
+      "mean_bins_used": null,
+      "mean_wall_time_s": 2.874965271943559,
+      "max_rss_kib": 92000
+    },
+    "IMM": {
+      "instances": 47,
+      "source_valid": 44,
+      "validated": 44,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "bin-packing",
+      "primary_metric": "bins_used",
+      "solver_reported_bound_closed": 25,
+      "mean_relative_gap_to_solver_reported_bound": 0.08211005021086672,
+      "mean_volume_utilization": null,
+      "mean_bins_used": 15.477272727272727,
+      "mean_wall_time_s": 5.543448598589748,
+      "max_rss_kib": 39180
+    }
+  }
+}

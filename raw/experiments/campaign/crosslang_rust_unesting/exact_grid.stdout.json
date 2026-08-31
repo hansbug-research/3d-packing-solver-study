@@ -1,0 +1,295 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "ExtremePoint; repeated single-boundary adapter",
+  "scenario": "exact_grid",
+  "capability_status": "SUPPORTED",
+  "capability_note": "single physical boundary",
+  "parameters": {
+    "placement_rule": "first feasible orientation at first feasible extreme point",
+    "rayon_num_threads_env": "1",
+    "seed_applicable": false,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "extremepoint",
+    "time_limit_effective": false,
+    "time_limit_ms_requested_per_bin": 10000
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-000",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-001",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-002",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-003",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-004",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-005",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-006",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-007",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "cube-000",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-001",
+      "bin_id": "bin-000",
+      "position": [
+        5.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-002",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-003",
+      "bin_id": "bin-000",
+      "position": [
+        5.0,
+        5.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-004",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-005",
+      "bin_id": "bin-000",
+      "position": [
+        5.0,
+        0.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-006",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        5.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-007",
+      "bin_id": "bin-000",
+      "position": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.024211
+}

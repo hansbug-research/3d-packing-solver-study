@@ -1,0 +1,118 @@
+
+running 103 tests
+test boundary::tests::test_box_boundary_volume ... ok
+test boundary::tests::test_constraints ... ok
+test boundary::tests::test_validation ... ok
+test brkga_packing::tests::test_brkga_packing_all_placed ... ok
+test brkga_packing::tests::test_brkga_packing_basic ... ok
+test brkga_packing::tests::test_brkga_packing_mass_constraint ... ok
+test brkga_packing::tests::test_brkga_packing_with_orientations ... ok
+test brkga_packing::tests::test_brkga_problem_decode ... ok
+test extreme_point::tests::test_ep_packing_all_placements_in_bounds ... ok
+test extreme_point::tests::test_ep_packing_multiple_boxes ... ok
+test extreme_point::tests::test_ep_packing_orientations ... ok
+test extreme_point::tests::test_ep_packing_perfect_fill ... ok
+test extreme_point::tests::test_ep_packing_single_box ... ok
+test extreme_point::tests::test_ep_packing_with_margin ... ok
+test extreme_point::tests::test_ep_packing_with_spacing ... ok
+test extreme_point::tests::test_extreme_point_creation ... ok
+test extreme_point::tests::test_extreme_point_set_initial ... ok
+test extreme_point::tests::test_placed_box_overlap ... ok
+test ga_packing::tests::test_ga_packing_all_placed ... ok
+test ga_packing::tests::test_ga_packing_basic ... ok
+test ga_packing::tests::test_ga_packing_mass_constraint ... ok
+test ga_packing::tests::test_ga_packing_with_orientations ... ok
+test ga_packing::tests::test_packing_chromosome_crossover ... ok
+test ga_packing::tests::test_packing_chromosome_mutation ... ok
+test ga_packing::tests::test_packing_problem_decode ... ok
+test geometry::tests::test_aabb ... ok
+test geometry::tests::test_box_volume ... ok
+test geometry::tests::test_orientation_label ... ok
+test geometry::tests::test_orientations ... ok
+test geometry::tests::test_validation ... ok
+test packer::tests::test_3d_response_orientation_in_bounds ... ok
+test packer::tests::test_brkga_strategy_all_placed ... ok
+test packer::tests::test_brkga_strategy_basic ... ok
+test packer::tests::test_ep_at_least_as_good_as_blf ... ok
+test packer::tests::test_ep_strategy_all_placed ... ok
+test packer::tests::test_ep_strategy_basic ... ok
+test packer::tests::test_ep_strategy_perfect_fill_via_solve ... ok
+test packer::tests::test_ep_strategy_with_margin ... ok
+test packer::tests::test_ep_strategy_with_orientations ... ok
+test packer::tests::test_ga_strategy_all_placed ... ok
+test packer::tests::test_ga_strategy_basic ... ok
+test packer::tests::test_ga_strategy_with_orientations ... ok
+test packer::tests::test_gravity_keeps_floor_boxes_with_margin ... ok
+test packer::tests::test_gravity_removes_floating_box ... ok
+test packer::tests::test_layer_packing_orientation_optimization ... ok
+test packer::tests::test_layer_packing_selects_best_orientation ... ok
+test packer::tests::test_mass_constraint ... ok
+test packer::tests::test_no_constraint_keeps_floating_box ... ok
+test packer::tests::test_placement_within_bounds ... ok
+test packer::tests::test_simple_packing ... ok
+test packer::tests::test_stability_drops_undersupported_box ... ok
+test packing_utils::tests::test_build_instances_multiple ... ok
+test packing_utils::tests::test_build_instances_single ... ok
+test packing_utils::tests::test_build_unplaced_list_all_placed ... ok
+test packing_utils::tests::test_build_unplaced_list_partial ... ok
+test packing_utils::tests::test_layer_place_items_basic ... ok
+test packing_utils::tests::test_layer_place_items_cancellation ... ok
+test packing_utils::tests::test_layer_place_items_mass_constraint ... ok
+test packing_utils::tests::test_layer_place_items_respects_bounds ... ok
+test packing_utils::tests::test_packing_fitness_all_placed ... ok
+test packing_utils::tests::test_packing_fitness_none_placed ... ok
+test packing_utils::tests::test_packing_fitness_partial ... ok
+test packing_utils::tests::test_packing_fitness_zero_total ... ok
+test physics::tests::test_compute_effective_height ... ok
+test physics::tests::test_compute_utilization ... ok
+test physics::tests::test_container_collision ... ok
+test physics::tests::test_empty_simulation ... ok
+test physics::tests::test_falling_box ... ok
+test physics::tests::test_physics_config_builder ... ok
+test physics::tests::test_physics_config_default ... ok
+test physics::tests::test_shaking_compaction ... ok
+test physics::tests::test_single_box_on_floor ... ok
+test physics::tests::test_stacked_boxes_settlement ... ok
+test physics::tests::test_validate_stability ... ok
+test sa_packing::tests::test_sa_packing_all_placed ... ok
+test sa_packing::tests::test_sa_packing_basic ... ok
+test sa_packing::tests::test_sa_packing_mass_constraint ... ok
+test sa_packing::tests::test_sa_packing_with_orientations ... ok
+test sa_packing::tests::test_sa_problem_decode ... ok
+test spatial_index::tests::test_aabb_intersects ... ok
+test spatial_index::tests::test_aabb_is_within ... ok
+test spatial_index::tests::test_boundary_aabb ... ok
+test spatial_index::tests::test_can_place ... ok
+test spatial_index::tests::test_get_potential_collisions ... ok
+test spatial_index::tests::test_has_collision ... ok
+test spatial_index::tests::test_spatial_index_insert ... ok
+test spatial_index::tests::test_spatial_index_new ... ok
+test spatial_index::tests::test_spatial_index_query_aabb ... ok
+test spatial_index::tests::test_spatial_index_with_geometry ... ok
+test spatial_index::tests::test_transformed_aabb ... ok
+test stability::tests::test_box_on_floor_is_stable ... ok
+test stability::tests::test_cog_stability_check ... ok
+test stability::tests::test_equilibrium_check ... ok
+test stability::tests::test_face_overlap_computation ... ok
+test stability::tests::test_no_constraint_always_stable ... ok
+test stability::tests::test_placed_box_center ... ok
+test stability::tests::test_placed_box_with_cog_offset ... ok
+test stability::tests::test_stability_constraint_default ... ok
+test stability::tests::test_stability_constraint_partial_base ... ok
+test stability::tests::test_stability_report_summary ... ok
+test stability::tests::test_stacked_box_partial_support ... ok
+test stability::tests::test_stacked_boxes_full_support ... ok
+test stability::tests::test_unsupported_box_is_unstable ... ok
+
+test result: ok. 103 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+
+running 5 tests
+test crates/d3/src/lib.rs - (line 18) ... ok
+test crates/d3/src/lib.rs - (line 45) ... ok
+test crates/d3/src/lib.rs - (line 63) ... ok
+test crates/d3/src/physics.rs - physics (line 15) ... ignored
+test crates/d3/src/stability.rs - stability (line 17) ... ignored
+
+test result: ok. 3 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.27s
+

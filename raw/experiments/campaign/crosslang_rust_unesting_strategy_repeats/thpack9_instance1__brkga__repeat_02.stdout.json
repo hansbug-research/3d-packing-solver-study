@@ -1,0 +1,3074 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "BRKGA; repeated single-boundary adapter",
+  "scenario": "thpack9_instance1",
+  "capability_status": "ADAPTER_REPEATED_SINGLE_BIN",
+  "capability_note": "u-nesting is a single-boundary packer; the campaign repeats it until all items are placed",
+  "parameters": {
+    "decoder": "layer_place_items",
+    "elite_bias_effective": 0.7,
+    "elite_fraction_effective": 0.2,
+    "max_generations_effective": 100,
+    "mutant_fraction_effective": 0.15,
+    "population_size_effective": 50,
+    "rayon_num_threads_env": "1",
+    "seed_applicable": true,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "brkga",
+    "time_limit_effective": false,
+    "time_limit_ms_requested_per_bin": 1000
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-001",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-002",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-003",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-004",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-005",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-006",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-007",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-008",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-009",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-010",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-011",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-012",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-013",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-014",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-015",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-016",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-017",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-018",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-019",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-020",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-021",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-022",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-023",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-024",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-025",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-026",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-027",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-028",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-029",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-030",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-031",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-032",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-033",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-034",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-035",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-036",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-037",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-038",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-039",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-040",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-041",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-042",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-043",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-044",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-045",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-046",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-047",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-048",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-049",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-050",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-051",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-052",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-053",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-054",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-055",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-056",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-057",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-058",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-059",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-060",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-061",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-062",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-063",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-064",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-065",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-066",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-067",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-068",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-069",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-070",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-071",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-072",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-073",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-074",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-075",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-076",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-077",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-078",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-079",
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ],
+      "max_weight": 100000.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "small-000",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-001",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-002",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-003",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-004",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-005",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-006",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-007",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-008",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-009",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-010",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-011",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-012",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-013",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-014",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-015",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-016",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-017",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-018",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "small-019",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-000",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-001",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-002",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-003",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-004",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-005",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-006",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-007",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-008",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-009",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-010",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-011",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-012",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-013",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-014",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-015",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-016",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-017",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-018",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-019",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-020",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-021",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-022",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-023",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-024",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-025",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-026",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-027",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-028",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-029",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-030",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-031",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-032",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-033",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-034",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-035",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-036",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-037",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-038",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-039",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-040",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-041",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-042",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-043",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-044",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-045",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-046",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-047",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-048",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "large-049",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "small-014",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-018",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "large-017",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "small-004",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-005",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-006",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "small-016",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "small-007",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-012",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-017",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-010",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        6.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "large-004",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "small-002",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-000",
+      "bin_id": "bin-001",
+      "position": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "large-006",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "small-008",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "large-036",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        6.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "small-003",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        10.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "small-013",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "small-019",
+      "bin_id": "bin-002",
+      "position": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "size": [
+        8.0,
+        6.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "large-021",
+      "bin_id": "bin-003",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-018",
+      "bin_id": "bin-003",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-014",
+      "bin_id": "bin-003",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "small-001",
+      "bin_id": "bin-003",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "small-015",
+      "bin_id": "bin-003",
+      "position": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "large-032",
+      "bin_id": "bin-004",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-024",
+      "bin_id": "bin-004",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-008",
+      "bin_id": "bin-004",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "small-011",
+      "bin_id": "bin-004",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "small-009",
+      "bin_id": "bin-004",
+      "position": [
+        0.0,
+        0.0,
+        14.0
+      ],
+      "size": [
+        6.0,
+        8.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "large-025",
+      "bin_id": "bin-005",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-026",
+      "bin_id": "bin-005",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-034",
+      "bin_id": "bin-005",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-049",
+      "bin_id": "bin-005",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-013",
+      "bin_id": "bin-006",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-005",
+      "bin_id": "bin-006",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-037",
+      "bin_id": "bin-006",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-027",
+      "bin_id": "bin-006",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-046",
+      "bin_id": "bin-007",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-048",
+      "bin_id": "bin-007",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-016",
+      "bin_id": "bin-007",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-020",
+      "bin_id": "bin-007",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-019",
+      "bin_id": "bin-008",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-011",
+      "bin_id": "bin-008",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-039",
+      "bin_id": "bin-008",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-007",
+      "bin_id": "bin-008",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-042",
+      "bin_id": "bin-009",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-000",
+      "bin_id": "bin-009",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-010",
+      "bin_id": "bin-009",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-044",
+      "bin_id": "bin-009",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-003",
+      "bin_id": "bin-010",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-029",
+      "bin_id": "bin-010",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-028",
+      "bin_id": "bin-010",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-001",
+      "bin_id": "bin-010",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-030",
+      "bin_id": "bin-011",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-031",
+      "bin_id": "bin-011",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-047",
+      "bin_id": "bin-011",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-022",
+      "bin_id": "bin-011",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-009",
+      "bin_id": "bin-012",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-041",
+      "bin_id": "bin-012",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-002",
+      "bin_id": "bin-012",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-043",
+      "bin_id": "bin-012",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-035",
+      "bin_id": "bin-013",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-023",
+      "bin_id": "bin-013",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-015",
+      "bin_id": "bin-013",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-012",
+      "bin_id": "bin-013",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-038",
+      "bin_id": "bin-014",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-033",
+      "bin_id": "bin-014",
+      "position": [
+        0.0,
+        0.0,
+        4.0
+      ],
+      "size": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "large-040",
+      "bin_id": "bin-014",
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "large-045",
+      "bin_id": "bin-014",
+      "position": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "size": [
+        8.0,
+        10.0,
+        4.0
+      ],
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 89.831492
+}

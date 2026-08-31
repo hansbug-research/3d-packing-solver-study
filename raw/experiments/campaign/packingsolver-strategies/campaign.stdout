@@ -1,0 +1,16 @@
+BR:BR1.txt:001 auto VALID
+BR:BR1.txt:001 tree_search VALID
+BR:BR1.txt:001 maximal_spaces VALID
+LN:thpack8.txt:001 auto VALID
+LN:thpack8.txt:001 tree_search VALID
+LN:thpack8.txt:001 maximal_spaces VALID
+IMM:thpack9.txt:001 auto VALID
+IMM:thpack9.txt:001 tree_search VALID
+IMM:thpack9.txt:001 sequential_single_knapsack VALID
+IMM:thpack9.txt:001 sequential_value_correction VALID
+IMM:thpack9.txt:001 column_generation VALID
+IMM:thpack9.txt:047 auto VALID
+IMM:thpack9.txt:047 tree_search VALID
+IMM:thpack9.txt:047 sequential_single_knapsack VALID
+IMM:thpack9.txt:047 sequential_value_correction VALID
+IMM:thpack9.txt:047 column_generation INVALID

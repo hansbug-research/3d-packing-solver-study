@@ -1,0 +1,149 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "weight_limit",
+  "capability_status": "DOCUMENTED_FIELD_NOT_ENFORCED",
+  "capability_note": "MaxWeight exists but PutItem never checks accumulated weight",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 3
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 10,
+      "cost": 1
+    },
+    {
+      "id": "bin-001",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 10,
+      "cost": 1
+    },
+    {
+      "id": "bin-002",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 10,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "heavy-000",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "heavy-001",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "heavy-002",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "heavy-000",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "heavy-001",
+      "bin_id": "bin-000",
+      "position": [
+        4,
+        0,
+        0
+      ],
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "heavy-002",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        4,
+        0
+      ],
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.002301
+}

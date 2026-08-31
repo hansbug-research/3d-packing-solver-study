@@ -14,6 +14,14 @@
 | manifest | `.venv/bin/python scripts/build_manifest.py` | 通过；当前 raw 文件逐项登记大小和 SHA-256 |
 | 机器核对 | `.venv/bin/python scripts/verify.py` | `VERIFY_OK` |
 | 单元/结果断言 | `.venv/bin/python -m pytest -q` | `9 passed` |
+| PackingSolver 全量 1 s | `bash benchmarks/campaign/run_packingsolver_thpack.sh`，随后 `bash benchmarks/campaign/revalidate_packingsolver_archive.sh` | 762 条记录；759 个合法源 certificate 通过 |
+| PackingSolver 全量 10 s | `bash benchmarks/campaign/run_packingsolver_thpack_10s.sh`，随后离线 archive 重验 | 762 条记录；759 个合法源 certificate 通过；campaign exitcode 0 |
+| Exact-small 四后端 | `bash benchmarks/campaign/run_exact.sh` 与 `bash benchmarks/campaign/run_exact_sensitivity.sh` | canonical strengthened 四后端各 7/7；失败 formulation 保留非零 exitcode |
+| Java THPACK9 | `bash benchmarks/campaign/run_skjolber_thpack.sh` | Plain/LAFF 各 44/44 合法 |
+| Go/Rust THPACK9 | `bash benchmarks/campaign/crosslang_run_thpack9.sh` | Go 与 Rust ExtremePoint adapter 各 44/44 合法 |
+| Rust 策略重复 | 跨语言 strategy adapter，每策略 THPACK9-1 重复 5 次 | ExtremePoint 5/5 合法；Layer/GA/BRKGA/SA 各 0/5 |
+| 工业数据审计 | `.venv/bin/python benchmarks/audit_industrial_datasets.py --esicup-root .cache/esicup-datasets` | Alonso 2019/2020 解析通过；BAYTP 快照缺文件状态保留 |
+| Campaign 汇总 | `.venv/bin/python benchmarks/campaign/analyze_campaign.py` | `results/campaign/aggregate.json` 绑定 35 个输入 SHA-256 |
 
 ## 证据边界
 
@@ -21,7 +29,11 @@
 
 THPACK9 的 `COPIES` certificate 是聚合表示：一行布局可能代表多个相同箱实例。独立校验必须先按物理 copy 展开，否则会把同一布局重复到同一箱而错误报告重叠。当前 `raw/certificates/thpack9_packingsolver_patched.csv` 已按该规则复核。
 
-公开实例没有 known optimum；`ceil(17920/960)=19` 只是体积下界。25、28 和 50 箱都是 incumbent，不允许写成 `PROVEN_OPTIMAL`。Go `bp3d` 与 Rust `u-nesting` 因本机没有 `go/cargo` toolchain 未运行，报告保留为静态审计/未测试状态。
+公开实例没有 known optimum；`ceil(17920/960)=19` 只是 THPACK9-1 的体积下界。25、28 和 50 箱都是 incumbent，不允许写成 `PROVEN_OPTIMAL`。完整 44 例的跨实现均值也只统计通过 validator 的 certificate；Jerry 的 1 条重叠和 Rust Layer/GA/BRKGA/SA 的越界结果均从质量排名排除。
+
+Go 1.27.0 与 Rust 1.98.0 已用固定下载 hash bootstrap。Go `bp3d` 固定到 `0ba3dcda...`；Rust `u-nesting` 固定主仓及三个 path dependency commit，并使用提交的 `Cargo.lock --locked` 构建。Rust 上游 103 个 unit test 与 3 个 doc test 通过，但不能消除 campaign 发现的 Layer decoder 越界和参数未接线问题。
+
+PackingSolver 1 s/10 s 的原始 solver artifacts 已打包保存。重验器从输入重新核对 certificate 尺寸、rotation、数量、边界、重叠、packed volume 和箱数。`SOLVER_REPORTED_BOUND_CLOSED` 只保留上游自报含义，没有被重命名为独立证明的 `PROVEN_OPTIMAL`。
 
 ## 发布前还需人工抽查
 

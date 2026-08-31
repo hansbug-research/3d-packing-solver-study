@@ -1,0 +1,163 @@
+{
+  "alonso_2019": {
+    "always_bottom_counts": {
+      "0": 4455
+    },
+    "always_top_counts": {
+      "0": 4455
+    },
+    "capability_status": "NOT_SUPPORTED",
+    "delivery_day_counts": {
+      "0": 1484,
+      "1": 1487,
+      "2": 1484
+    },
+    "instances": 111,
+    "layer_rotation_z_counts": {
+      "0": 4455
+    },
+    "layer_rows": 4455,
+    "product_rotation_xyz_counts": {
+      "111": 4455
+    },
+    "product_rows": 4455,
+    "run_status": "NOT_RUN",
+    "sections": {
+      "layers": {
+        "per_instance_max": 398,
+        "per_instance_median": 24,
+        "per_instance_min": 3,
+        "total": 4455
+      },
+      "pallets": {
+        "per_instance_max": 1,
+        "per_instance_median": 1,
+        "per_instance_min": 1,
+        "total": 111
+      },
+      "products": {
+        "per_instance_max": 398,
+        "per_instance_median": 24,
+        "per_instance_min": 3,
+        "total": 4455
+      },
+      "trucks": {
+        "per_instance_max": 1,
+        "per_instance_median": 1,
+        "per_instance_min": 1,
+        "total": 111
+      }
+    },
+    "stacking_group_counts": {
+      "1": 4455
+    },
+    "total_product_demand": 3025923
+  },
+  "alonso_2020": {
+    "always_bottom_counts": {
+      "0": 1483
+    },
+    "always_top_counts": {
+      "0": 1483
+    },
+    "capability_status": "NOT_SUPPORTED",
+    "demand_by_day": {
+      "1": 1002734,
+      "2": 939653,
+      "3": 993627
+    },
+    "demand_by_pallet_class": {
+      "case": 1653455,
+      "rest": 13298,
+      "stock": 1269261
+    },
+    "demand_identities_verified": true,
+    "instances": 107,
+    "layer_rotation_z_counts": {
+      "0": 1483
+    },
+    "layer_rows": 1483,
+    "product_rotation_xyz_counts": {
+      "000": 22,
+      "100": 477,
+      "111": 984
+    },
+    "product_rows": 1483,
+    "readme_delivery_day_column_value_counts": {
+      "1": 219,
+      "2": 8,
+      "3": 1253,
+      "4": 3
+    },
+    "run_status": "NOT_RUN",
+    "sections": {
+      "layers": {
+        "per_instance_max": 142,
+        "per_instance_median": 8,
+        "per_instance_min": 1,
+        "total": 1483
+      },
+      "pallets": {
+        "per_instance_max": 1,
+        "per_instance_median": 1,
+        "per_instance_min": 1,
+        "total": 107
+      },
+      "products": {
+        "per_instance_max": 142,
+        "per_instance_median": 8,
+        "per_instance_min": 1,
+        "total": 1483
+      },
+      "trucks": {
+        "per_instance_max": 1,
+        "per_instance_median": 1,
+        "per_instance_min": 1,
+        "total": 107
+      }
+    },
+    "stacking_group_counts": {
+      "1": 1483
+    },
+    "total_product_demand": 2936014
+  },
+  "baytp": {
+    "bays": {
+      "baytp1": {
+        "distinct_rows": 1,
+        "rows": 350
+      },
+      "baytp2": {
+        "distinct_rows": 10,
+        "rows": 350
+      }
+    },
+    "capability_status": "ESICUP_SNAPSHOT_INCOMPLETE",
+    "esicup_snapshot_complete": false,
+    "esicup_snapshot_files": [
+      "README.txt",
+      "baytp1.txt",
+      "baytp2.txt"
+    ],
+    "esicup_snapshot_has_required_common_products": false,
+    "esicup_snapshot_has_required_common_shelves": false,
+    "official_or_library_recovery": {
+      "product_families": 67,
+      "product_rows": 6000,
+      "quantity_max": 5,
+      "quantity_min": 1,
+      "sha256": {
+        "products": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+        "shelves": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7"
+      },
+      "shelf_rows": 49,
+      "total_quantity": 17793
+    },
+    "readme_present": true,
+    "run_status": "NOT_RUN"
+  },
+  "source": {
+    "commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+    "repository": "https://github.com/ESICUP/datasets.git"
+  }
+}

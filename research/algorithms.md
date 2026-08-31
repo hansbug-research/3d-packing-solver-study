@@ -143,7 +143,8 @@ GA、PSO、RL 和神经网络适合产生物品顺序、箱型优先级、候选
 
 | 组件 | 类型/算法 | 许可证 | 维护快照 | 最优性 | 原生相关能力 | 关键缺口 | 建议 |
 |---|---|---|---|---|---|---|---|
-| [fontanf/packingsolver](https://github.com/fontanf/packingsolver) | C++，tree/beam search、maximal spaces、SVC、列生成、下界 | MIT | 2026-08-29 仍有提交；`latest` 是随 master 重建的滚动二进制，稳定 tag `v1.1.0` 停在 2023 | 有 primal/dual/gap，部分实例可证明；一般是 anytime 近似 | 6 旋转子集、重量；`boxstacks` 有同底面堆栈、上压、层数、密度、半挂轴荷、2D 卸货方向 | 当前 variable-sized cost 路径崩溃；窄轴荷合成例触发异常；无通用部分支撑/载荷传播、3D 任意角、官方 Python API | **主启发式候选，必须 pin SHA + subprocess 适配 + 回归门禁** |
+| [fontanf/packingsolver](https://github.com/fontanf/packingsolver) official | C++，tree/beam search、maximal spaces、SVC、列生成、下界 | MIT | 2026-08-29 仍有提交；`latest` 是随 master 重建的滚动二进制，稳定 tag `v1.1.0` 停在 2023 | 有 primal/dual/gap；本仓库只把闭合记为 solver-reported | 6 旋转子集、重量；`boxstacks` 有同底面堆栈、上压、层数、密度、半挂轴荷、2D 卸货方向 | variable-sized cost #536 等修复尚未合并；无通用部分支撑/载荷传播、3D 任意角、官方 Python API | **官方行为对照，不直接上线 rolling binary** |
+| [HansBug/packingsolver](https://github.com/HansBug/packingsolver/tree/d953148b8f710c06fa6c410949b7272f9e36327b) fork | 与官方同源 C++ 算法，整合 PR #540-#543 和 data-driven 回归 | MIT | 固定 `d953148b...`；本轮 binary/source hash 对应 | 同上；bound 未独立证明 | 官方能力加四项修复；THPACK 759 个合法源和 `boxstacks` 9/9 通过 | fork 尚未上游合并；column generation 在 THPACK9-47 给出 0/99 件 | **当前主启发式候选，固定 SHA + subprocess + validator** |
 | [Google OR-Tools](https://github.com/google/or-tools) CP-SAT | SAT + CP + integer optimization | Apache-2.0 | v9.15，2026-01；持续维护 | 完整搜索可证明，超时给 best bound | 强布尔/整数逻辑、indicator、调度 interval，Python/多平台 | 官方 bin-packing 示例是 1D；只有 `NoOverlap2D`，没有 3D global constraint；只接受整数 | **精确小规模/成本主问题首选** |
 | [SCIP](https://github.com/scipopt/scip) + [PySCIPOpt](https://github.com/scipopt/PySCIPOpt) | MIP/CIP/MINLP 框架 | SCIP Apache-2.0；PySCIPOpt MIT | SCIP 10.0.3 (2026-07)，PySCIPOpt 6.2.1 (2026-05) | branch-and-bound 完成可证明；有 primal/dual/gap | 线性/指示/逻辑/非线性约束、插件/回调、Python | 不自带 3D 几何；直接 pairwise 模型仍会爆炸 | **开放许可证精确轨与研究扩展首选** |
 | [Gurobi](https://www.gurobi.com/product) / `gurobipy` | 商业 MIP/QCP/全局非线性 | Proprietary | 13.0.3 wheel，持续维护 | 完成可证明；MIP gap/解池；非凸函数用 spatial B&B | 高性能 MIP、indicator、回调、warm start，多平台 | 需付费生产许可；无 3D 模型；任意角碰撞仍很难 | **预算允许时的商业加速插件** |
@@ -152,6 +153,7 @@ GA、PSO、RL 和神经网络适合产生物品顺序、箱型优先级、候选
 | [gedex/bp3d](https://github.com/gedex/bp3d/tree/0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7) | Go pivot greedy | MIT | 固定 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7`（2017-02） | 无 | 6 旋转、坐标，多箱 | `MaxWeight` 仅存字段，`PutItem` 未校验；老旧，Go/Python 集成多余；关键源码已快照 [bp3d.go](../sources/snapshots/bp3d_bp3d_0ba3dcda.go) | **拒绝作为核心** |
 | [jerry800416/3D-bin-packing](https://github.com/jerry800416/3D-bin-packing) | `py3dbp` 分支，增加落地/支撑启发式和绘图 | MIT | 最后实际 commit 2023-06 | README 明示 example3 “algorithm does not optimize” | up/down 布尔、支撑比例启发式、四象限重量统计、输出顺序 | `loadbear` 只是排序值，不强制上压；稳定规则是面积/四角近似；有 README 自报 binding crash | **可参考 UI/校验思路，不作为求解真值** |
 | [skjolber/3d-bin-container-packing](https://github.com/skjolber/3d-bin-container-packing) | Java LAFF、plain、brute force、controls | Apache-2.0 | 2026-08-26 有提交；README 为 4.2.x | brute force 小件数可穷举；LAFF/plain 近似 | 障碍物、重量、箱数量、deadline、自定义 manifest/point/placement controls、Three.js 调试可视化 | Java 运行时；高级稳定/结构能力只是 control 扩展点，README 明示不一定已实现；连续角无 | **强备选/对照，不优先引入 JVM** |
+| [iyulab/u-nesting](https://github.com/iyulab/u-nesting/tree/8cde85b029e4ade663185dacb93fd74440af170d) | Rust ExtremePoint、Layer、GA、BRKGA、SA；PyO3/C FFI/WASM | MIT | 固定 `8cde85b...`，Rust 1.98；主库另依赖三个外部 path repo | 无可证明界 | AABB、`Any/Upright/Fixed`、单 boundary 总重量；gravity/stability/stacking API | 原生 `Packer3D` 只收一个 boundary；Layer decoder 越界，GA/BRKGA/SA 共用；seed/time limit 接线不完整 | **只保留 ExtremePoint 单箱基线，其余当前排除** |
 
 维护状态按“最后实际 commit / 官方 release”判断，不用 GitHub 页面访问时间或星标替代。滚动 `latest` 不是稳定版本号，生产构建必须记录二进制 SHA-256 与源提交。
 
@@ -162,7 +164,7 @@ GA、PSO、RL 和神经网络适合产生物品顺序、箱型优先级、候选
 | PackingSolver C++ | 首版用独立 CLI + CSV/JSON；稳定后可补窄 C ABI/pybind11 binding | 官方已有 Linux x64、Windows x64、macOS x64 滚动二进制；仍需自行补 arm64/签名/固定版本 | 子进程隔离崩溃、内存和取消最稳；不要直接暴露庞大 C++ API |
 | OR-Tools / PySCIPOpt | 官方 Python wheels，native 核心在 wheel 内 | 主流 Linux/Windows/macOS 易部署；应在目标 Python/CPU 矩阵实测 | 默认 exact-small/主问题最省集成成本 |
 | Gurobi / CPLEX | 官方 Python wheels + 外部/嵌入许可证 | 技术打包成熟，真正风险是客户生产许可、离线激活和并发条款 | 只有性能/客户授权收益覆盖许可成本时启用 |
-| Rust solver（未来候选） | 优先 PyO3 + maturin wheel，或稳定 C ABI | Rust 本身不是优势；仍需 manylinux、Windows、macOS/arm64 构建与异常边界 | 只按算法成熟度选，不为语言重写已有求解器 |
+| Rust `u-nesting`/其他 Rust solver | `u-nesting` 已有 PyO3 `cdylib`、C FFI、WASM；也可用 maturin 产 wheel | 当前源码需要固定四仓目录；仍需 manylinux、Windows、macOS/arm64 构建与异常边界 | ExtremePoint 可试验；语言和 binding 便利不能覆盖 decoder 正确性缺陷 |
 | Skjolber Java | JVM 子进程/本地 sidecar + JSON/Protobuf IPC；不建议嵌入 Python 进程 | 可用 `jlink/jpackage` 随桌面应用带裁剪 JRE；增加安装体积、冷启动、签名和进程管理 | 不因 Java 排除；只有 obstacles/controls/LAFF 的独特价值显著时引入 |
 | Go `bp3d` | 可编译 shared library 或 sidecar，但跨 FFI 对象/错误管理需额外协议 | 技术可行，算法与维护状态不足以支付集成成本 | 拒绝原因是能力和维护，不是 Go |
 
@@ -243,6 +245,14 @@ Go `bp3d` 是其来源之一。固定 commit `0ba3dcda7ab334c19b0979b1cf1fa05e09
 Jerry 分支增加 `fix_point`、`check_stable`、`support_surface_ratio`、`updown`、四象限重量比例和放置顺序输出，适合研究简单重力落地与可视化。其 README 对 `loadbear` 的描述是“高值优先排序”，代码/实测均未把它当最大上压阈值；稳定规则主要检查支持面积比及底面四角是否有支撑，不能替代重心投影落在支撑多边形、载荷传播和动态稳定。
 
 Skjolber Java 项目相对成熟且仍维护：LAFF/plain 追求可预测时间，brute-force 文档明确只建议约 6 件以内并要求 deadline；支持障碍物、箱数量和扩展 controls。它是优秀对照与 Java 生态备选，但 placement controls 中“可考虑 stability/structural integrity”是扩展接口，不等于项目已内建这些规则。Java 不是排除理由；如果障碍物、manifest/point/placement controls 或其稳定 deadline 行为成为明确优势，可用裁剪 JRE + sidecar 接入。当前它在承压、轴荷、成本最优上没有超过 PackingSolver + CP-SAT/SCIP 组合，暂不值得为相近几何启发式增加第二个常驻运行时。
+
+### 6.8 Rust `u-nesting`：binding 齐全，但 decoder 必须先修
+
+固定 `u-nesting-d3@8cde85b...` 的 ExtremePoint、Layer、GA、BRKGA 和 SA 已实际编译运行；BRKGA 由同一策略 adapter 覆盖。上游 103 个 unit test 和 3 个 doc test 通过，但构建当前源码需要把 `u-geometry`、`u-metaheur`、`u-numflow` 按外部 path dependency 放在指定目录，单仓 checkout 不能复现完整构建。
+
+ExtremePoint 在 44 个 THPACK9 合法实例上得到 44/44 有效 certificate，mean/median `18.41/14` 箱。它按体积降序，对 z/y/x 排序的 extreme points 和姿态顺序取首个可行位置；原生 API 一次只接一个 `Boundary3D`，本轮多箱结果由 adapter 反复调用，不能写成原生多箱优化。
+
+Layer 在换层、重置 X/Y 后只重新检查 Z，没有再检查新姿态的 width/depth。`3x2x4` 物品和 `4x3x2` boundary 的最小反例返回 `3x4x2` placement；THPACK9-1 也越界。GA、BRKGA、SA 共用 `layer_place_items`，因此报告的 15-16 箱全部无效。`Config.seed=42` 没传到随机 runner，多数策略不读取 `time_limit_ms`；这两组问题适合拆成上游 issue 和小 PR，但在修复合并前不能进入质量排名。
 
 ## 7. 真实约束如何进入算法
 
@@ -332,6 +342,7 @@ PackingSolver `boxstacks` 的半挂模型可直接利用，但必须校准其轴
 - `benchmarks/benchmark_jerry.py`
 - `benchmarks/benchmark_ortools.py`
 - `results/*.json` 与 canonical `raw/experiments/*.resources.txt`
+- `benchmarks/campaign/`、`results/campaign/` 与 `raw/experiments/campaign/`
 
 Skjolber 的 Java/Maven 用例另位于 `benchmarks/java-skjolber/`，结果为 `results/skjolber.json`。
 
@@ -355,18 +366,18 @@ Skjolber 的 Java/Maven 用例另位于 `benchmarks/java-skjolber/`，结果为 
 
 PackingSolver 的 8 案例脚本时长包含多个 CLI 各自约 1 s 的 solver time；Skjolber 同时报告冷 JVM 与库内 duration。它们都不应与单个 Python case 的微秒数直接作性能排名。
 
-### 9.2 本次补充的求解器烟雾测试
+### 9.2 Exact-small 七场景与 formulation sensitivity
 
-同一 exact-small 实例：9 个 `5 x 5 x 5` 立方体，最多两个 `10 x 10 x 10` 箱；手工建立固定姿态、分配与六向分离模型，限制单线程/20 s。该实例用于验证开源精确模型的可证明界，不是大规模性能排名：
+同一模型生成器建立 7 个手工真值场景：8 件网格、9 件溢出拆箱、必须旋转、禁止旋转、重量迫使拆箱，以及两种异构箱成本方向。每个 backend 限制单线程/20 s，返回坐标后由共享 validator 重算完整性、姿态、边界、重叠、重量、箱成本和 objective。
 
-| 求解器 | 安装版本 | 状态 | 目标 / bound / gap | wall / max RSS |
-|---|---|---|---|---|
-| OR-Tools CP-SAT | 9.15.6755 | `OPTIMAL` | 2 / 2 / 0 | 0.41 s / 100,212 KiB（canonical resource record） |
-| PySCIPOpt + SCIP | 6.2.1 + 10.0 | `optimal` | 2 / 2 / 0 | 0.15 s / 61,016 KiB（canonical resource record） |
-| Gurobi | 当前环境缺少 `gurobipy`/许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
-| CPLEX | 当前环境缺少 `cplex`/IBM runtime 许可 | `NOT_RUN_MISSING_PACKAGE` 或 `NOT_RUN_LICENSE_OR_RUNTIME` | — | — |
+| 求解器 | 安装版本 | canonical strengthened | sensitivity 观察 |
+|---|---|---|---|
+| OR-Tools CP-SAT | 9.15 | 7/7 | legacy、reduced、strengthened 均通过 |
+| PySCIPOpt/SCIP | 6.2.1 / 10.x | 7/7 | reduced `overflow_9` 20 s 未证明 |
+| Gurobi | 13.0.3 | 7/7 | 三种 formulation 均通过 |
+| CPLEX | 22.1.2.0 | 7/7 | legacy 1,489 constraints 超 promotional limit；reduced `overflow_9` 20 s 未证明 |
 
-CP-SAT/SCIP 的 2 箱数字只证明该 exact-small 离散模型的界闭合。Gurobi/CPLEX 没有本轮可采信的实测结果；`raw/experiments/commercial/README.md` 解释了历史记录为何被排除，复跑入口仍是 `benchmarks/benchmark_gurobi.py` 和 `benchmarks/benchmark_cplex.py`。商业许可、离线激活、并发和分发条款仍需单独确认。
+`results/campaign/exact-{backend}.json` 是 canonical strengthened 结果；`exact-{legacy,reduced,strengthened}-{backend}.json` 用于模型敏感性。strengthened 同时增删了约束，不是严格单因素对照；这些小例首先证明模型语义与 formulation 影响，不能作为通用 solver 速度排名。商业许可、离线激活、并发和分发条款仍需单独确认。
 
 另一个 PackingSolver 对照把同一 `bin-packing` 输入箱型顺序反转：小箱在前得到 2 箱且报告 gap 0；大箱在前得到 1 箱且 gap 0。这两个“证明”针对的是它按给定 bin 序列定义的普通目标，进一步证明不能用该目标代替 variable-sized cost selection。
 
@@ -528,6 +539,8 @@ ProblemSpec
 
 ## 13. 公共实例复核补充
 
-ESICUP THPACK9 instance 1 已按同一物品清单复跑：PackingSolver 修复版 25 箱，Skjolber LAFF 28 箱，py3dbp/Jerry 各 50 箱，均 70/70 件且 validator 通过。数据文件没有 known optimum；体积下界 19，所以这些都是 feasible incumbent。异构成本的原始 PackingSolver 失败及两文件最小修复见 [packingsolver-upstream.md](packingsolver-upstream.md)。
+ESICUP THPACK 的 759 个合法源已由 PackingSolver fork 在 1 s/10 s 两档运行并离线重验。THPACK9 的 44 个合法实例还用 Skjolber Plain/LAFF、`py3dbp`、Jerry、Go `bp3d` 和 Rust ExtremePoint adapter 运行；有效 certificate 的 mean bins 依次见 [benchmarks.md](benchmarks.md) 和 [`results/campaign/aggregate.json`](../results/campaign/aggregate.json)。instance 1 的 25/28/50 箱继续保留为可手算 adapter 诊断例，不再代替全量 benchmark。
+
+公开数据没有 known optimum；体积下界不是合法 dual bound，因此所有跨库箱数仍是 feasible incumbent。Rust Layer/GA/BRKGA/SA 的 15-16 箱因越界作废，Jerry 的 1 条重叠从排名中排除。异构成本的官方 PackingSolver 失败、两文件最小修复和用户 fork 证据见 [packingsolver-upstream.md](packingsolver-upstream.md)。
 
 矩阵化的逐特性 ✅/❌/⚠️ 结论（含前端选型与导出格式）集中在 [decision-matrices.md](decision-matrices.md)，避免将“建模引擎可表达”误写成“库原生实现”。

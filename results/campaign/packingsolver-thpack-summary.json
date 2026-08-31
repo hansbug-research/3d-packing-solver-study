@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "campaign": "packingsolver-thpack/1-offline-revalidation/1",
+  "engine": "HansBug/packingsolver",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "binary_sha256": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+  "parameters": {
+    "original_time_limit_s": 1.0,
+    "memory_limit_mib": 1024,
+    "thread_limit": "NOT_EXPOSED_BY_CLI",
+    "blas_openmp_environment_threads": 1
+  },
+  "instances": 762,
+  "artifact_archive_sha256": "a8c3828bd4fa8a28a706b766137fd9b8d0d8158db75cb39ad42290b0ac1e2fd6",
+  "original_harness_provenance": "UNVERSIONED_RUNNER; solver artifacts revalidated offline",
+  "revalidator_sha256": "3d82caf460973969c72d35b8c554186390c97f1dac600a5ea7995fa2b4ecc601",
+  "offline_driver_sha256": "ae41f7e02a8e8b3df23c9784f990edda7eeb62b412078c3ddd0ad6973ef20bb6",
+  "families": {
+    "BR": {
+      "instances": 700,
+      "source_valid": 700,
+      "validated": 700,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "knapsack",
+      "primary_metric": "packed_volume",
+      "solver_reported_bound_closed": 0,
+      "mean_relative_gap_to_solver_reported_bound": 0.27450392520860356,
+      "mean_volume_utilization": 0.7215738158683483,
+      "mean_bins_used": null,
+      "mean_wall_time_s": 1.0315680926382942,
+      "max_rss_kib": 99692
+    },
+    "LN": {
+      "instances": 15,
+      "source_valid": 15,
+      "validated": 15,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "knapsack",
+      "primary_metric": "packed_volume",
+      "solver_reported_bound_closed": 8,
+      "mean_relative_gap_to_solver_reported_bound": 0.3361767857142857,
+      "mean_volume_utilization": 0.5071748463414479,
+      "mean_bins_used": null,
+      "mean_wall_time_s": 1.0159829552130153,
+      "max_rss_kib": 81524
+    },
+    "IMM": {
+      "instances": 47,
+      "source_valid": 44,
+      "validated": 44,
+      "errors": 0,
+      "invalid_certificates": 0,
+      "objective_kind": "bin-packing",
+      "primary_metric": "bins_used",
+      "solver_reported_bound_closed": 23,
+      "mean_relative_gap_to_solver_reported_bound": 0.09123409609961851,
+      "mean_volume_utilization": null,
+      "mean_bins_used": 15.477272727272727,
+      "mean_wall_time_s": 1.0046725546073338,
+      "max_rss_kib": 39532
+    }
+  }
+}

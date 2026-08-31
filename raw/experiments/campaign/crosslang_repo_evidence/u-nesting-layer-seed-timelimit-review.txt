@@ -1,0 +1,51 @@
+Review date: 2026-08-31 Asia/Shanghai
+Repository: https://github.com/iyulab/u-nesting
+Pinned commit: 8cde85b029e4ade663185dacb93fd74440af170d
+
+Existing issue audit
+--------------------
+GET https://api.github.com/repos/iyulab/U-Nesting/issues?state=all&per_page=100
+returned only issue #1, "Fresh checkout cannot build u-nesting-d2 due to
+missing path dependencies" (closed). No existing issue covered the layer
+boundary violation or Config seed/time-limit wiring found by this campaign.
+The complete API response is stored in u-nesting-issues.json.
+
+Official documentation claims checked
+-------------------------------------
+docs/user-guide/algorithms.md rates BRKGA as production/best-quality and
+describes ExtremePoint as evaluating all EPs then minimizing wasted space.
+crates/d3/src/packer.rs describes GA's layer-based decoder as producing
+collision-free placements.
+docs/user-guide/packing-3d.md documents time_limit_ms as "Maximum solving time".
+crates/core/src/solver.rs documents Config.seed as enabling reproducible runs
+of GA, BRKGA, and SA.
+
+Source findings
+---------------
+crates/d3/src/packer.rs layer_packing and
+crates/d3/src/packing_utils.rs layer_place_items reset X/Y and advance Z after
+a Y overflow, then check only Z before accepting the placement. They do not
+recheck the oriented width and depth after the reset.
+
+crates/d3/src/packer.rs builds GA/BRKGA/SA runner configs without forwarding
+Config.seed or Config.time_limit_ms. Their run paths use rand::rng().
+ExtremePoint also receives no deadline from Config.time_limit_ms.
+
+Minimal observed regression
+---------------------------
+Container: 4 x 3 x 2
+Item:      3 x 2 x 4, OrientationConstraint::Any
+Layer returned rotation index 1, oriented size 3 x 4 x 2 at (0,0,0).
+The independent validator rejects depth 4 in container depth 3.
+
+Raw output:
+../crosslang_rust_unesting_strategies/rotation_required__bottomleftfill.stdout.json
+Validator summary:
+../../../../results/campaign/crosslang_rust_unesting_strategies/results.json
+
+Suggested upstream split
+------------------------
+1. Bounds issue/PR: recheck all three oriented dimensions after every row/layer
+   transition in both layer implementations; add the minimal regression above.
+2. Reproducibility/deadline issue: forward seed and time limit into GA/BRKGA/SA
+   runners and add EP deadline checks; test same-seed equality and short limits.

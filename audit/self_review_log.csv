@@ -12,3 +12,7 @@ round,scope,reviewer,blocking_findings,nonblocking_findings,action,status
 10,validator-followup,academic_audit,0,1,COPIES 展开后按 placement 绑定 item type 检查 MAXIMUM_WEIGHT_ABOVE；全量 PackingSolver smoke 结果不变,closed
 11,shuorenhua-final,primary,0,0,保留技术边界与 protected spans；删除 domain-model 空泛副词并将审计过程黑话改为最终状态、复核、修正和归档,closed
 12,final-release-verification,primary,0,0,最终内容基线 365e32c 对应 Actions run 33371401890 全部通过；远端 public main 与本地一致,closed
+13,campaign-statistics,repo_audit,1,2,修正 Rust 四问题策略为 14/20 并新增逐策略 3/5、3/5、4/5、4/5、5/5 断言；工业数据 JSON 增加 capability/run 状态,closed
+13,frontend-evidence,frontend,2,5,将未做 GPU renderer 的 3D 路线改为 warning；绑定 canonical JSON/manifest；统一多 issue 可视化、Parquet/Arrow、YAML 导入和 PySide/Electron 条件,closed
+13,industrial-scope,academic_audit,0,1,复核 Alonso/BAYTP 数据完整性与语义边界；保留完整问题 NOT_SUPPORTED/NOT_RUN，不用降级几何问题冒充原 benchmark,closed
+14,shuorenhua-campaign-final,primary,0,0,按 docs/status minimal structural 保护数字、SHA、命令、状态词与 issue/PR；删除无度量比较级并完成保真与残留回读,closed

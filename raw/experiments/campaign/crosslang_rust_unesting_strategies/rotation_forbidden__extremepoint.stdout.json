@@ -1,0 +1,50 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "ExtremePoint; repeated single-boundary adapter",
+  "scenario": "rotation_forbidden",
+  "capability_status": "SUPPORTED",
+  "capability_note": "OrientationConstraint::Fixed should leave the item unplaced",
+  "parameters": {
+    "placement_rule": "first feasible orientation at first feasible extreme point",
+    "rayon_num_threads_env": "1",
+    "seed_applicable": false,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "extremepoint",
+    "time_limit_effective": false,
+    "time_limit_ms_requested_per_bin": 1000
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        4.0,
+        3.0,
+        2.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "upright-000",
+      "size": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "fixed"
+    }
+  ],
+  "placements": [],
+  "unplaced": [
+    "upright-000"
+  ],
+  "elapsed_ms": 0.011178
+}

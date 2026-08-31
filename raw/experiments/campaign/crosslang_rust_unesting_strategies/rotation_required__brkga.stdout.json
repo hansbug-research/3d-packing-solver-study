@@ -1,0 +1,76 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "BRKGA; repeated single-boundary adapter",
+  "scenario": "rotation_required",
+  "capability_status": "SUPPORTED",
+  "capability_note": "OrientationConstraint::Any must choose a non-identity axis permutation",
+  "parameters": {
+    "decoder": "layer_place_items",
+    "elite_bias_effective": 0.7,
+    "elite_fraction_effective": 0.2,
+    "max_generations_effective": 100,
+    "mutant_fraction_effective": 0.15,
+    "population_size_effective": 50,
+    "rayon_num_threads_env": "1",
+    "seed_applicable": true,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "brkga",
+    "time_limit_effective": false,
+    "time_limit_ms_requested_per_bin": 1000
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        4.0,
+        3.0,
+        2.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "rotated-000",
+      "size": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "rotated-000",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.0,
+        3.0,
+        2.0
+      ],
+      "original_size": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.36928599999999995
+}

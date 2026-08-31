@@ -1,0 +1,43 @@
+/tmp/crosslang-toolchains/downloads/go1.27.0.linux-amd64.tar.gz: OK
+/tmp/crosslang-toolchains/downloads/rustup-init: OK
+
+  1.98.0-x86_64-unknown-linux-gnu installed - rustc 1.98.0 (88d9e12ae 2026-08-18)
+
+
+Rust is installed now. Great!
+
+To get started you need Cargo's bin directory 
+(/tmp/crosslang-toolchains/cargo-home/bin) in your PATH
+environment variable. This has not been done automatically.
+
+To configure your current shell, you need to source
+the corresponding env file under /tmp/crosslang-toolchains/cargo-home.
+
+This is usually done by running one of the following (note the leading DOT):
+. "/tmp/crosslang-toolchains/cargo-home/env"            # For 
+sh/bash/zsh/ash/dash/pdksh
+source "/tmp/crosslang-toolchains/cargo-home/env.fish"  # For fish
+source "/tmp/crosslang-toolchains/cargo-home/env.nu"  # For nushell
+source "/tmp/crosslang-toolchains/cargo-home/env.tcsh"  # For tcsh
+. "/tmp/crosslang-toolchains/cargo-home/env.ps1"        # For pwsh
+source "/tmp/crosslang-toolchains/cargo-home/env.xsh"   # For xonsh
+tool_root=/tmp/crosslang-toolchains
+go_archive_sha256=675c26c449cbb18fc24b74650de1eabbae6e16f64326fd85a283fb3b58280685
+rustup_init_sha256=4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10
+go version go1.27.0 linux/amd64
+rustc 1.98.0 (88d9e12ae 2026-08-18)
+binary: rustc
+commit-hash: 88d9e12ae178fab0fb5cc050a94da85685d449ea
+commit-date: 2026-08-18
+host: x86_64-unknown-linux-gnu
+release: 1.98.0
+LLVM version: 22.1.8
+cargo 1.98.0 (797e8a9bc 2026-08-05)
+release: 1.98.0
+commit-hash: 797e8a9bca276c1c9f9f738d2a20f484fa4eea9d
+commit-date: 2026-08-05
+host: x86_64-unknown-linux-gnu
+libgit2: 1.9.4 (sys:0.21.0 vendored)
+libcurl: 8.21.0-DEV (sys:0.4.90+curl-8.21.0 vendored ssl:OpenSSL/3.6.3)
+ssl: OpenSSL 3.6.3 9 Jun 2026
+os: Ubuntu 24.4.0 (noble) [64-bit]

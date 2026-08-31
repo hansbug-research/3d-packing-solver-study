@@ -13,7 +13,7 @@
   "packingsolver_fork": {
     "repository": "HansBug/packingsolver",
     "branch": "master",
-    "commit": "ac7b1384151bd33f56aec47d5c180dd4c5652266",
+    "commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
     "integrated_upstream_prs": [540, 541, 542, 543]
   },
   "packingsolver_binary_sha256": {
@@ -40,6 +40,15 @@
       "raw/certificates/thpack9_packingsolver_patched.csv",
       "raw/experiments/public/thpack9_packingsolver_patched.csv"
     ]
+  },
+  "packingsolver_campaign_build": {
+    "source_repository": "HansBug/packingsolver",
+    "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+    "binary_sha256": {
+      "box": "1a1a114938a9c2ebf12225751b8c88d69b9fc2b2a434f6ca2f51531d3cf26285",
+      "boxstacks": "308c99538039ffa0c640feb2df3f63ab8f7cfc92c6526834c83a2defcf7fd2d5"
+    },
+    "purpose": "full THPACK, strategy sensitivity, and boxstacks constraint campaigns"
   },
   "upstream_tracking": {
     "repository": "fontanf/packingsolver",

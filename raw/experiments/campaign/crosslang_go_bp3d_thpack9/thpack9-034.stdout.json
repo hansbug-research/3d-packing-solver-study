@@ -1,0 +1,3803 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "THPACK9-034",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 90
+  },
+  "bins": [
+    {
+      "id": "bin:000",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:001",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:002",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:003",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:004",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:005",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:006",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:007",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:008",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:009",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:010",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:011",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:012",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:013",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:014",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:015",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:016",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:017",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:018",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:019",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:020",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:021",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:022",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:023",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:024",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:025",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:026",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:027",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:028",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:029",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:030",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:031",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:032",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:033",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:034",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:035",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:036",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:037",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:038",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:039",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:040",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:041",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:042",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:043",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:044",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:045",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:046",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:047",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:048",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:049",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:050",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:051",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:052",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:053",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:054",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:055",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:056",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:057",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:058",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:059",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:060",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:061",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:062",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:063",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:064",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:065",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:066",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:067",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:068",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:069",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:070",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:071",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:072",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:073",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:074",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:075",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:076",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:077",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:078",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:079",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:080",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:081",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:082",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:083",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:084",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:085",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:086",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:087",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:088",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    },
+    {
+      "id": "bin:089",
+      "size": [
+        20,
+        18,
+        10
+      ],
+      "max_weight": 91,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "1:0",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:1",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:2",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:3",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:4",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:5",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:6",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:7",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:8",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:9",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:10",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:11",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:12",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:13",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:14",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:15",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:16",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:17",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:18",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:19",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:20",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:21",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:22",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:23",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:24",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:25",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:26",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:27",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:28",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:29",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:30",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:31",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:32",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:33",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:34",
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:0",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:1",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:2",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:3",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:4",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:5",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:6",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:7",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:8",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:9",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:10",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:11",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:12",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:13",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:14",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:15",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:16",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:17",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:18",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:19",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:20",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:21",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:22",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:23",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:24",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:25",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:26",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:27",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:28",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:29",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:30",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:31",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:32",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:33",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:34",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:35",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:36",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:37",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:38",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "2:39",
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:0",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:1",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:2",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:3",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:4",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:5",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:6",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:7",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:8",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:9",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:10",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:11",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:12",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:13",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "3:14",
+      "size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "3:0",
+      "bin_id": "bin:000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:14",
+      "bin_id": "bin:001",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:13",
+      "bin_id": "bin:002",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:12",
+      "bin_id": "bin:003",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:11",
+      "bin_id": "bin:004",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:10",
+      "bin_id": "bin:005",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:9",
+      "bin_id": "bin:006",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:8",
+      "bin_id": "bin:007",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:7",
+      "bin_id": "bin:008",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:6",
+      "bin_id": "bin:009",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:5",
+      "bin_id": "bin:010",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:4",
+      "bin_id": "bin:011",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:3",
+      "bin_id": "bin:012",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:2",
+      "bin_id": "bin:013",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "3:1",
+      "bin_id": "bin:014",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        9,
+        12,
+        8
+      ],
+      "original_size": [
+        8,
+        9,
+        12
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "2:24",
+      "bin_id": "bin:015",
+      "position": [
+        15,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:25",
+      "bin_id": "bin:015",
+      "position": [
+        10,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:26",
+      "bin_id": "bin:015",
+      "position": [
+        5,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:27",
+      "bin_id": "bin:015",
+      "position": [
+        0,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:28",
+      "bin_id": "bin:015",
+      "position": [
+        15,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:29",
+      "bin_id": "bin:015",
+      "position": [
+        10,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:30",
+      "bin_id": "bin:015",
+      "position": [
+        5,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:31",
+      "bin_id": "bin:015",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:32",
+      "bin_id": "bin:015",
+      "position": [
+        0,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:33",
+      "bin_id": "bin:015",
+      "position": [
+        15,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:34",
+      "bin_id": "bin:015",
+      "position": [
+        10,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:35",
+      "bin_id": "bin:015",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:36",
+      "bin_id": "bin:015",
+      "position": [
+        5,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:37",
+      "bin_id": "bin:015",
+      "position": [
+        0,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:38",
+      "bin_id": "bin:015",
+      "position": [
+        15,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:39",
+      "bin_id": "bin:015",
+      "position": [
+        10,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:0",
+      "bin_id": "bin:016",
+      "position": [
+        0,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:1",
+      "bin_id": "bin:016",
+      "position": [
+        5,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:10",
+      "bin_id": "bin:016",
+      "position": [
+        10,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:11",
+      "bin_id": "bin:016",
+      "position": [
+        15,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:2",
+      "bin_id": "bin:016",
+      "position": [
+        10,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:20",
+      "bin_id": "bin:016",
+      "position": [
+        15,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:21",
+      "bin_id": "bin:016",
+      "position": [
+        10,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:22",
+      "bin_id": "bin:016",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:23",
+      "bin_id": "bin:016",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:3",
+      "bin_id": "bin:016",
+      "position": [
+        15,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:4",
+      "bin_id": "bin:016",
+      "position": [
+        0,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:5",
+      "bin_id": "bin:016",
+      "position": [
+        5,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:6",
+      "bin_id": "bin:016",
+      "position": [
+        10,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:7",
+      "bin_id": "bin:016",
+      "position": [
+        15,
+        0,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:8",
+      "bin_id": "bin:016",
+      "position": [
+        0,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:9",
+      "bin_id": "bin:016",
+      "position": [
+        5,
+        9,
+        4
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:19",
+      "bin_id": "bin:017",
+      "position": [
+        10,
+        0,
+        4
+      ],
+      "size": [
+        6,
+        8,
+        3
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "1:20",
+      "bin_id": "bin:017",
+      "position": [
+        0,
+        0,
+        4
+      ],
+      "size": [
+        6,
+        8,
+        3
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "1:31",
+      "bin_id": "bin:017",
+      "position": [
+        10,
+        9,
+        4
+      ],
+      "size": [
+        6,
+        8,
+        3
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "1:32",
+      "bin_id": "bin:017",
+      "position": [
+        0,
+        9,
+        4
+      ],
+      "size": [
+        6,
+        8,
+        3
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "2:12",
+      "bin_id": "bin:017",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:13",
+      "bin_id": "bin:017",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:14",
+      "bin_id": "bin:017",
+      "position": [
+        10,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:15",
+      "bin_id": "bin:017",
+      "position": [
+        15,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:16",
+      "bin_id": "bin:017",
+      "position": [
+        0,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:17",
+      "bin_id": "bin:017",
+      "position": [
+        5,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:18",
+      "bin_id": "bin:017",
+      "position": [
+        10,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "2:19",
+      "bin_id": "bin:017",
+      "position": [
+        15,
+        9,
+        0
+      ],
+      "size": [
+        5,
+        9,
+        4
+      ],
+      "original_size": [
+        5,
+        9,
+        4
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:0",
+      "bin_id": "bin:018",
+      "position": [
+        3,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:14",
+      "bin_id": "bin:018",
+      "position": [
+        15,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:15",
+      "bin_id": "bin:018",
+      "position": [
+        12,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:16",
+      "bin_id": "bin:018",
+      "position": [
+        15,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:17",
+      "bin_id": "bin:018",
+      "position": [
+        9,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:18",
+      "bin_id": "bin:018",
+      "position": [
+        6,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:21",
+      "bin_id": "bin:018",
+      "position": [
+        12,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:22",
+      "bin_id": "bin:018",
+      "position": [
+        9,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:23",
+      "bin_id": "bin:018",
+      "position": [
+        6,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:24",
+      "bin_id": "bin:018",
+      "position": [
+        0,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:25",
+      "bin_id": "bin:018",
+      "position": [
+        15,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:26",
+      "bin_id": "bin:018",
+      "position": [
+        12,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:27",
+      "bin_id": "bin:018",
+      "position": [
+        9,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:28",
+      "bin_id": "bin:018",
+      "position": [
+        6,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:29",
+      "bin_id": "bin:018",
+      "position": [
+        3,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:30",
+      "bin_id": "bin:018",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:33",
+      "bin_id": "bin:018",
+      "position": [
+        0,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:34",
+      "bin_id": "bin:018",
+      "position": [
+        3,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:1",
+      "bin_id": "bin:019",
+      "position": [
+        0,
+        12,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:10",
+      "bin_id": "bin:019",
+      "position": [
+        9,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:11",
+      "bin_id": "bin:019",
+      "position": [
+        6,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:12",
+      "bin_id": "bin:019",
+      "position": [
+        3,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:13",
+      "bin_id": "bin:019",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:2",
+      "bin_id": "bin:019",
+      "position": [
+        15,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:3",
+      "bin_id": "bin:019",
+      "position": [
+        12,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:4",
+      "bin_id": "bin:019",
+      "position": [
+        9,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:5",
+      "bin_id": "bin:019",
+      "position": [
+        6,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:6",
+      "bin_id": "bin:019",
+      "position": [
+        3,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:7",
+      "bin_id": "bin:019",
+      "position": [
+        0,
+        6,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:8",
+      "bin_id": "bin:019",
+      "position": [
+        15,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "1:9",
+      "bin_id": "bin:019",
+      "position": [
+        12,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        6,
+        8
+      ],
+      "original_size": [
+        3,
+        6,
+        8
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 2.050175
+}

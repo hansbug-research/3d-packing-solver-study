@@ -1,63 +1,71 @@
 # 本地受控实测摘要
 
-> 最后复跑：2026-08-31。平台为 Linux x86-64、Python 3.12.1、OpenJDK 21。这里的“通过”只表示给定小型测试及独立几何校验通过，不代表覆盖所有业务工况或其他操作系统。
+> 最后复跑：2026-08-31。平台为 Linux x86-64、Python 3.12.1、OpenJDK 21、Go 1.27.0、Rust 1.98.0。`VALID` 只表示对应输入语义和独立 validator 检查通过，不代表覆盖所有业务约束或已证明全局最优。
 
-## 资源控制
+## 资源与证据
 
-- Python/C++ 测试由 [`benchmarks/run_controlled.sh`](../benchmarks/run_controlled.sh) 启动：外层 35 秒超时、4 GiB 虚拟内存上限，并设置常见数值库线程数为 1。
-- PackingSolver 每个子任务另设 10 秒和 1 GiB 内部上限；精确模型显式设置单 worker/单线程。
-- Java 测试使用 `-Xmx512m -XX:ActiveProcessorCount=1`。JVM 启动、JIT 或 GC 仍可能短时创建辅助线程，因此不能把它描述为严格单线程进程。
-- 结果 JSON 位于本目录；本表的 wall time 与最大 RSS 取 canonical `raw/experiments/*.resources.txt`。`results/raw/` 是运行工作目录并被 `.gitignore` 排除，`raw/resources/` 保留更早的资源快照，不用于本表当前数字。
+- PackingSolver 全集：每实例内部 1 s 或 10 s、1 GiB；10 s campaign 外层 4 个并行进程。CLI 没有暴露 engine thread limit，`OMP/OPENBLAS/MKL/NUMEXPR=1` 不能据此声称 C++ 内部严格单线程。
+- Exact-small：20 s、单 worker/线程、seed 42；四个 backend 使用同一模型生成器和 validator。
+- Java：`-Xmx512m -XX:ActiveProcessorCount=1`。Go/Rust 跨语言场景为每进程 20 s、2 GiB，Rust 另设 `RAYON_NUM_THREADS=1`。
+- 原始 stdout/stderr、exitcode、resource log、certificate archive 和固定源码证据位于 [`../raw/experiments/campaign/`](../raw/experiments/campaign/)；统一汇总是 [`campaign/aggregate.json`](campaign/aggregate.json)，35 个消费源均记录 SHA-256。
 
-## 结果总表
+不同实现的计时边界不同：有的包含 Python/JVM/进程启动，有的是已启动进程内库调用，PackingSolver 还有停止检查粒度。当前计时只能检查资源失控和数量级，不能作为跨语言速度排名。
 
-| 候选 | 本次覆盖 | 结果 | 整进程 wall / 最大 RSS | 结论 |
-|---|---|---|---:|---|
-| PackingSolver `latest-2026-07-28` | 规则网格、旋转子集、禁旋、重量、上压、异构成本、半挂轴荷边界例 | 基础几何/旋转/重量/上压通过；禁旋实例正确不装；异构成本与轴荷边界例异常退出 | 5.07 s / 15,232 KiB（8 个子任务合计） | 最接近真实工况，但只能 pin SHA 后有条件采用；两条失败路径是上线门禁 |
-| OR-Tools 9.15.6755 CP-SAT | 9 个 `5x5x5` 立方体装入 `10x10x10` 同型箱的直接三维模型 | `OPTIMAL`，箱数 2，best bound 2；几何校验通过 | 0.41 s / 100,212 KiB | 成本主问题与 exact-small 首选；不是现成 3D packer |
-| PySCIPOpt 6.2.1 / SCIP | 与 CP-SAT 相同的连续坐标 MIP | `optimal`，目标 2，dual bound 2，gap 0；几何校验通过 | 0.15 s / 61,016 KiB | 开源 MIP/CIP 扩展轨；同样需要自建 3D 模型 |
-| `py3dbp` 1.1.2 | 网格、需旋转、重量、多箱型顺序反转 | 基础场景通过；小箱先输入用 2 箱，大箱先输入只用 1 箱 | 0.03 s / 13,696 KiB | 很快但顺序敏感，只作基线 |
-| Jerry Python 分支 | `loadbear` 承压反例 | 几何通过，但脆弱件上方实际放置重量 20；`loadbear` 仅参与排序 | 0.40 s / 67,684 KiB | 不能作为承压约束求解器 |
-| Skjolber Java `c73d521...` LAFF | 网格、三维旋转、仅平面旋转、重量、100 件 | 所有预期通过；100 件库内 21.275 ms，THPACK9-1 为 8.315 ms | 约 0.43 s / 78,336 KiB（当前 raw 资源快照） | 强几何备选/对照；高级力学只是扩展点，暂不足以抵消 JVM 集成成本 |
+## 实际运行总表
 
-wall time 包含解释器/JVM/进程启动，不等于库内求解时间；PackingSolver 一行还包含多个固定约 1 秒停止粒度的子任务。不同语言的微型测试不能仅凭该列作性能排名。
+| 候选 | 实际运行范围 | 合法结果 | 主要发现 | 工程判断 |
+|---|---|---:|---|---|
+| PackingSolver fork `d953148b` | THPACK 759 个合法源 × 1 s/10 s；7 个跨语言场景；`boxstacks` 9 例；16 条策略记录 | 全集 1,518/1,518；跨语言 7/7；`boxstacks` 9/9；策略 15/16 | THPACK9 质量最好；10 s 显著改善 knapsack；column generation 在 THPACK9-47 返回 0/99 | 主正交候选，固定源码和 binary hash，保留 validator |
+| PackingSolver 官方 rolling | 7 个跨语言场景 | 6 个成功 certificate 合法，1 个进程错误 | 小箱行先的异构成本触发 `Solution::operator<` #536 | 仅作官方行为对照，等待 PR 合并 |
+| `py3dbp` 1.1.2 | 53 个语义可表达 THPACK 实例 × 2 排序；THPACK9 44 例 | 106/106；THPACK9 44/44 | 41/53 对质量随排序变化 | baseline/候选生成，不作业务真值 |
+| Jerry `75764a` | 87 个语义可表达实例 × 2 排序；THPACK9 44 例 | 170/174；降序 THPACK9 43/44 | `fix_point` 吸附后不重检碰撞；`loadbear` 仅排序 | 不作承压或合法性真值 |
+| Skjolber `c73d521...` Plain/LAFF | THPACK9 两算法 × 44；小型 LAFF/Plain/FastBruteForce | 88/88；小型 3/3 | Plain 在 27 例少用箱，17 例相同，LAFF 0 例胜 | Java 可用；有 obstacles/controls 真实收益时选装 |
+| Go `bp3d@0ba3dcd` | THPACK9 44 例；7 个跨语言场景 | THPACK9 44/44；专项 5/7 | 禁旋无白名单；`MaxWeight` 未执行累计检查 | 不作核心，原因是语义缺口而非语言 |
+| Rust ExtremePoint `8cde85b` | THPACK9 44 例；7 个跨语言场景；THPACK9-1 重复 5 次 | 44/44；7/7 行为符合能力声明；5/5 | 原生单 `Boundary3D`，多箱是 repeated-single-boundary adapter | 可保留为单箱布局基线/观察项 |
+| Rust Layer/GA/BRKGA/SA | 4 策略 × 5 场景；THPACK9-1 每策略重复 5 次 | 主实验 14/20；THPACK9-1 重复 0/20 | 共享 Layer decoder 越界；seed/time limit 接线不完整 | 当前排除；低箱数无效 |
+| CP-SAT 9.15 | 7 场景 × 3 formulation | canonical strengthened 7/7 | BR/LN/IMM 不是其现成模型；需自建 3D | 默认 exact-small/成本主问题 |
+| SCIP/PySCIPOpt 6.2.1 | 同上 | canonical 7/7 | reduced `overflow_9` 20 s 未证明 | 开放 MIP/CIP 对照与研究轨 |
+| Gurobi 13.0.3 | 同上 | canonical 7/7 | 三种 formulation 均完成；小例不构成通用速度证据 | 有生产许可和真实收益时选装 |
+| CPLEX 22.1.2.0 | 同上 | canonical 7/7 | legacy 超 promotional license 规模；reduced 20 s 未证明 | 客户已有 IBM 授权时适配 |
 
-## 已复现的关键差异
+## Benchmark 分工
 
-### PackingSolver
+| Benchmark | 主要测量 | 本轮结论 |
+|---|---|---|
+| THPACK1-7 / BR，700 例 | 单箱最大 packed volume | PackingSolver 1 s mean utilization `0.7216`，10 s `0.9624`；673/700 改善 |
+| THPACK8 / LN，15 例 | 单箱最大 packed volume | `0.5072` 到 `0.7115`；7/15 改善 |
+| THPACK9 / IMM，44 个合法例 | 完整装载后的最少箱数 | PackingSolver 1 s/10 s 箱数 44/44 相同；跨实现质量见下表 |
+| Python 顺序 campaign | pivot greedy 对输入顺序的敏感性 | `py3dbp` 41/53 质量变化；Jerry 66/87 质量变化、4/87 有效性变化 |
+| Exact-small | 旋转、禁旋、重量、成本方向、bound | strengthened 四后端均 7/7；formulation 强弱影响证明和许可证规模 |
+| `boxstacks` 专项 | 上压、堆数、nesting、轴荷、卸货 | 9/9；正常轴荷独立重算通过 |
+| 工业数据审计 | Alonso/BAYTP 数据完整性和语义映射 | Alonso 完整问题 `NOT_SUPPORTED / NOT_RUN`；BAYTP `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN` |
 
-- `box` 与 `boxstacks` 的 `variable-sized-bin-packing` 均在方案比较阶段退出，错误为 `Solution::operator<` 不支持该 objective，且没有证书。普通 `bin-packing` 会受箱型输入顺序影响，不能替代价格优化。
-- 半挂轴荷合成边界例没有生成证书：受控全量复跑为 `std::bad_alloc`，此前单独复跑为 `std::bad_array_new_length`。据此只能判定该输入路径未通过，不能推断所有正常参数下的轴荷功能失效。
-- `rotation_forbidden` 的 `packed=0` 是期望行为：物品只有旋转后才可装入，而输入禁止相应旋转。汇总脚本的 `validation_errors` 记录“未装到 expected=1”，不应误读为求解器违反方向限制。
+THPACK 不带价格、最大上压、重心/轴荷或卸货字段，不能用 THPACK 箱数证明这些能力。构造专项能验证具体约束实现，却不能代替公开数据分布上的算法质量。
 
-### 精确模型
+## THPACK9 44 例质量
 
-CP-SAT 与 SCIP 的小例均闭合上下界，因此只对这个模型和实例可写“已证明最优”。两者都没有内建通用三维装箱约束；直接模型含随物品对数增长的六向不相交析取，不能把本次 9 件结果外推到数百件。
+只统计完整且 certificate 有效的记录：
 
-### Java 与原生 binding
+| 实现 | 有效/总数 | mean bins | median | p95 |
+|---|---:|---:|---:|---:|
+| PackingSolver 1 s | 44/44 | 15.48 | 11.5 | 50.1 |
+| PackingSolver 10 s | 44/44 | 15.48 | 11.5 | 50.1 |
+| Skjolber Plain | 44/44 | 17.80 | 14 | 53.5 |
+| Rust ExtremePoint adapter | 44/44 | 18.41 | 14 | 51.7 |
+| `py3dbp` 降序 | 44/44 | 18.43 | 14 | 51.7 |
+| Jerry 降序 | 43/44 | 18.72 | 14 | 51.8 |
+| Go `bp3d` | 44/44 | 19.93 | 16 | 54.25 |
+| Skjolber LAFF | 44/44 | 20.84 | 17 | 60.1 |
 
-Skjolber 的实测说明 Java 不是能力上不可用：LAFF 的基础几何速度和行为都合格。但它没有原生实现本项目要求的通用承压、稳定、轴荷和箱价目标。若后续在真实基准上显著优于主引擎，可通过常驻 sidecar 纳入；首版不应仅为相近的几何启发式增加裁剪 JRE、IPC、签名和三平台打包成本。
+THPACK9 没有 published optimum。表中的箱数是 feasible incumbent；`relative_gap_to_volume_lower_bound` 只是相对体积下界的诊断，不是合法的最优性 gap。
 
-C/C++/Rust 实现不因语言被排除。优先级依次是可审计的官方 wheel（pybind11/PyO3/cffi）、在 Python worker 内加载的稳定 ABI binding、受限 CLI 子进程。原生模块仍放在独立 worker，避免崩溃拖垮桌面 UI。Rust `u-nesting` 因项目新、3D 仍为 axis-aligned 且本机无 Cargo，未进入 shortlist，也未伪称已经实测。
+## 已复现缺陷与边界
 
-## 判定边界
+- PackingSolver 官方 #536：文档、CLI 和 objective enum 都声明异构成本能力，调用方式正确；`box`/`boxstacks` 的两个 `Solution::operator<` 漏分支。#536-#539 与 PR #540-#543 仍 open，fork 通过不能写成官方已修复。
+- Jerry：`fix_point=True` 修改 placement 坐标后没有重新运行碰撞检查，产生 4 条重叠 certificate；`fix_point=False` 对照均合法。
+- Go `bp3d`：没有逐件姿态白名单；`MaxWeight` 是公开字段，但 `PutItem` 不检查累计重量。
+- Rust `u-nesting`：Layer 换层并重置 X/Y 后只检查 Z；GA/BRKGA/SA 共用该 decoder。`Config.seed=42` 没传到随机 runner，多数策略不读取 `time_limit_ms`。
+- Exact-small：canonical 文件 `exact-{backend}.json` 固定代表 strengthened formulation。legacy/reduced/strengthened 是模型敏感性实验，不是单因素后端性能对照。
+- PackingSolver 的 `SOLVER_REPORTED_BOUND_CLOSED` 没有独立证明 bound 有效，只能视为求解器自报闭合。
 
-- **通过**：测试输入完整、输出几何/方向/重量等本场景硬约束经独立校验通过。
-- **功能缺失**：库没有对应模型或接口，不能用样例偶然满足冒充支持。
-- **已复现缺陷/失败路径**：同一固定输入可得到异常或错误语义；上线前必须回归关闭。
-- **未测试**：不进入 shortlist、环境不具备，或授权/平台不可用；不会据此作通过判断。
-
-完整算法、复杂度、最优性和源码证据见 [`research/algorithms.md`](../research/algorithms.md)，工况与元模型见 [`research/domain-model.md`](../research/domain-model.md)。
-
-## 公共 THPACK9 对照
-
-从 ESICUP `3d_rectangular/thpack/thpack9.txt` 转换了 instance 1（`10x6x16` 箱，20 件 `2x6x8`、50 件 `8x4x10`）。同一实例用 80 个候选箱运行。`py3dbp`/Jerry 使用共享的 `benchmarks.validation.validate_aabbs`，Skjolber 使用 runner 内的边界与 `intersects3D` 检查，PackingSolver patched certificate 使用 `COPIES` 展开审计；三者均通过各自的独立几何检查：
-
-| 实现 | 完整件数 | 使用箱数 | 结果状态 |
-|---|---:|---:|---|
-| PackingSolver patched `box` | 70/70 | 25 | feasible incumbent |
-| Skjolber LAFF | 70/70 | 28 | feasible incumbent |
-| `py3dbp` | 70/70 | 50 | feasible incumbent |
-| Jerry fork | 70/70 | 50 | feasible incumbent |
-
-该实例体积下界为 19 箱，但没有在数据文件中提供 known optimum；25 不能标记为 `PROVEN_OPTIMAL`。原始库/修复版差异、聚合 `COPIES` certificate 的展开规则和复现命令见 [`research/packingsolver-upstream.md`](../research/packingsolver-upstream.md)，统一数据和 baseline 命令见 [`research/benchmarks.md`](../research/benchmarks.md)。
+逐项文件和状态含义见 [`campaign/README.md`](campaign/README.md)，算法/库 × 特性矩阵见 [`../research/decision-matrices.md`](../research/decision-matrices.md)。

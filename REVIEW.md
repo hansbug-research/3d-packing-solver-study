@@ -7,6 +7,7 @@
 ```bash
 .venv/bin/python scripts/analyze.py
 .venv/bin/python scripts/plot.py
+.venv/bin/python benchmarks/campaign/analyze_campaign.py
 .venv/bin/python scripts/verify.py
 .venv/bin/python -m pytest -q
 ```
@@ -19,6 +20,7 @@
 2. 原始结果放在 `raw/`，不直接修改；发现错误时修改脚本并记录 `audit/`。
 3. 失败、超时、崩溃、许可证限制和未测试项必须保留，不能只发布成功结果。
 4. 每个 benchmark 结果必须带输入、版本、参数、资源限制和独立 validator 状态。
+5. `results/campaign/aggregate.json` 的每个消费源必须登记 SHA-256；新增 campaign 结果要同时更新机器断言和 `results/campaign/README.md` 的运行状态矩阵。
 
 ## L3 结论强度
 
@@ -26,6 +28,7 @@
 2. “可建模”与“库原生支持”分开写；未测试与失败分开写。
 3. x86-64 实测不得外推到其他架构；缺少力学/法规数据时必须写 `NOT_APPLICABLE` 或 `UNKNOWN`。
 4. 上游 bug、临时 patch 和官方 release 必须分别标注。
+5. adapter 提供的能力必须写成 adapter 能力；无效 certificate、malformed source 和 `NOT_SUPPORTED` 不进入质量均值。
 
 ## L4 文本与发布
 

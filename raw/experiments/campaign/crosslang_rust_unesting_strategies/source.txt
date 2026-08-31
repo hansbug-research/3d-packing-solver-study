@@ -1,0 +1,18 @@
+repository=/tmp/packing-crosslang-u-build/nesting/u-nesting
+commit=8cde85b029e4ade663185dacb93fd74440af170d
+commit_date=2026-08-23T23:11:57+09:00
+subject=fix(ci): use v-prefixed tag for pinned wasm-pack version
+repository=/tmp/packing-crosslang-u-build/algorithms/u-geometry
+commit=e8d23e9b70ad2fdf4ff82918bc25057fd803e4f4
+commit_date=2026-07-16T11:36:13+09:00
+subject=chore: stop committing Cargo.lock (라이브러리 크레이트 Rust 관행)
+repository=/tmp/packing-crosslang-u-build/algorithms/u-metaheur
+commit=717192f7c5e39ff8d5e506b1909d58d5f762cd23
+commit_date=2026-07-16T11:36:16+09:00
+subject=chore: stop committing Cargo.lock (라이브러리 크레이트 Rust 관행)
+repository=/tmp/packing-crosslang-u-build/foundation/u-numflow
+commit=652d405d18bd1eab47f0ddaab26386c9db9386c4
+commit_date=2026-07-16T11:36:11+09:00
+subject=chore: stop committing Cargo.lock (라이브러리 크레이트 Rust 관행)
+8c394cb7276c38bab25efcc612e429bc137c7acd38266ad4dd5bc3168d836be1  /tmp/packing-crosslang-u-build/nesting/u-nesting/crates/d3/src/packer.rs
+1088081bb877c400c79e97e48f2242e0903854bf873fff705ebc588eb2f63516  /tmp/packing-crosslang-u-build/nesting/u-nesting/crates/d3/src/geometry.rs

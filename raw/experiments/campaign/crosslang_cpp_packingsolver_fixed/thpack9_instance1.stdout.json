@@ -1,0 +1,3626 @@
+{
+  "algorithm": "PackingSolver box default portfolio/tree-search pipeline",
+  "bins": [
+    {
+      "cost": 1.0,
+      "id": "thpack9-000",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-001",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-002",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-003",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-004",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-005",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-006",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-007",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-008",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-009",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-010",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-011",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-012",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-013",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-014",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-015",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-016",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-017",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-018",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-019",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-020",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-021",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-022",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-023",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-024",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-025",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-026",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-027",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-028",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-029",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-030",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-031",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-032",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-033",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-034",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-035",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-036",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-037",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-038",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-039",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-040",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-041",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-042",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-043",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-044",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-045",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-046",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-047",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-048",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-049",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-050",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-051",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-052",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-053",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-054",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-055",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-056",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-057",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-058",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-059",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-060",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-061",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-062",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-063",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-064",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-065",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-066",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-067",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-068",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-069",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-070",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-071",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-072",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-073",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-074",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-075",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-076",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-077",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-078",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    },
+    {
+      "cost": 1.0,
+      "id": "thpack9-079",
+      "max_weight": 100000.0,
+      "size": [
+        10.0,
+        6.0,
+        16.0
+      ]
+    }
+  ],
+  "campaign_version": "crosslang-1",
+  "capability_note": "native PackingSolver box model",
+  "capability_status": "SUPPORTED",
+  "commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "elapsed_ms": 1005.0,
+  "items": [
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-000",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-001",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-002",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-003",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-004",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-005",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-006",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-007",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-008",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-009",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-010",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-011",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-012",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-013",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-014",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-015",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-016",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-017",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-018",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "small-019",
+      "orientation_requirement": "any",
+      "size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-000",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-001",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-002",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-003",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-004",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-005",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-006",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-007",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-008",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-009",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-010",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-011",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-012",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-013",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-014",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-015",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-016",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-017",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-018",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-019",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-020",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-021",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-022",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-023",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-024",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-025",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-026",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-027",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-028",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-029",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-030",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-031",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-032",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-033",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-034",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-035",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-036",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-037",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-038",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-039",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-040",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-041",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-042",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-043",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-044",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-045",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-046",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-047",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-048",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "large-049",
+      "orientation_requirement": "any",
+      "size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "language": "C++",
+  "library": "fontanf/packingsolver (fixed)",
+  "parameters": {
+    "memory_limit_mb": 1024,
+    "objective": "bin-packing",
+    "solver_exitcode": 0,
+    "threads_requested": 1,
+    "time_limit_s": 2
+  },
+  "placements": [
+    {
+      "bin_id": "thpack9-000",
+      "item_id": "large-000",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-001",
+      "item_id": "large-001",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-002",
+      "item_id": "large-002",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-003",
+      "item_id": "large-003",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-004",
+      "item_id": "large-004",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-005",
+      "item_id": "large-005",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-006",
+      "item_id": "large-006",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-007",
+      "item_id": "large-007",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-008",
+      "item_id": "large-008",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-009",
+      "item_id": "large-009",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-000",
+      "item_id": "large-010",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-001",
+      "item_id": "large-011",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-002",
+      "item_id": "large-012",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-003",
+      "item_id": "large-013",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-004",
+      "item_id": "large-014",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-005",
+      "item_id": "large-015",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-006",
+      "item_id": "large-016",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-007",
+      "item_id": "large-017",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-008",
+      "item_id": "large-018",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-009",
+      "item_id": "large-019",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-000",
+      "item_id": "small-000",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-001",
+      "item_id": "small-001",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-002",
+      "item_id": "small-002",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-003",
+      "item_id": "small-003",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-004",
+      "item_id": "small-004",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-005",
+      "item_id": "small-005",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-006",
+      "item_id": "small-006",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-007",
+      "item_id": "small-007",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-008",
+      "item_id": "small-008",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-009",
+      "item_id": "small-009",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        0.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-000",
+      "item_id": "small-010",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-001",
+      "item_id": "small-011",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-002",
+      "item_id": "small-012",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-003",
+      "item_id": "small-013",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-004",
+      "item_id": "small-014",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-005",
+      "item_id": "small-015",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-006",
+      "item_id": "small-016",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-007",
+      "item_id": "small-017",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-008",
+      "item_id": "small-018",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-009",
+      "item_id": "small-019",
+      "original_size": [
+        2.0,
+        6.0,
+        8.0
+      ],
+      "position": [
+        0.0,
+        4.0,
+        8.0
+      ],
+      "rotation": "yxz",
+      "rotation_index": 1,
+      "size": [
+        6.0,
+        2.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-010",
+      "item_id": "large-020",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-011",
+      "item_id": "large-021",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-012",
+      "item_id": "large-022",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-013",
+      "item_id": "large-023",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-014",
+      "item_id": "large-024",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-015",
+      "item_id": "large-025",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-016",
+      "item_id": "large-026",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-017",
+      "item_id": "large-027",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-018",
+      "item_id": "large-028",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-019",
+      "item_id": "large-029",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-020",
+      "item_id": "large-030",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-021",
+      "item_id": "large-031",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-022",
+      "item_id": "large-032",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-023",
+      "item_id": "large-033",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-024",
+      "item_id": "large-034",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-010",
+      "item_id": "large-035",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-011",
+      "item_id": "large-036",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-012",
+      "item_id": "large-037",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-013",
+      "item_id": "large-038",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-014",
+      "item_id": "large-039",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-015",
+      "item_id": "large-040",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-016",
+      "item_id": "large-041",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-017",
+      "item_id": "large-042",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-018",
+      "item_id": "large-043",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-019",
+      "item_id": "large-044",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-020",
+      "item_id": "large-045",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-021",
+      "item_id": "large-046",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-022",
+      "item_id": "large-047",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-023",
+      "item_id": "large-048",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "thpack9-024",
+      "item_id": "large-049",
+      "original_size": [
+        8.0,
+        4.0,
+        10.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "rotation": "zyx",
+      "rotation_index": 2,
+      "size": [
+        10.0,
+        4.0,
+        8.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "scenario": "thpack9_instance1",
+  "toolchain": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "unplaced": []
+}

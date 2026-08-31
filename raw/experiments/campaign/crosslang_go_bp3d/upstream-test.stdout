@@ -1,0 +1,28 @@
+--- FAIL: TestPack (0.00s)
+    bp3d_test.go:160: 
+        Got:
+        Bin 1(220x160x100, max_weight:110)
+         packed items:
+           Item 6(100x100x30, weight: 10) pos(0,0,0) rt(RotationType_WHD (w,h,d))
+           Item 7(100x100x30, weight: 10) pos(100,0,0) rt(RotationType_WHD (w,h,d))
+           Item 1(20x100x30, weight: 10) pos(200,0,0) rt(RotationType_WHD (w,h,d))
+           Item 2(100x20x30, weight: 10) pos(0,100,0) rt(RotationType_WHD (w,h,d))
+           Item 3(20x100x30, weight: 10) pos(100,100,0) rt(RotationType_HWD (h,w,d))
+           Item 4(100x20x30, weight: 10) pos(200,100,0) rt(RotationType_HDW (h,d,w))
+           Item 5(100x20x30, weight: 10) pos(0,120,0) rt(RotationType_WHD (w,h,d))
+         unpacked items:
+        
+        want:
+        Bin 1(220x160x100, max_weight:110)
+         packed items:
+           Item 7(100x100x30, weight: 10) pos(0,0,0) rt(RotationType_WHD (w,h,d))
+           Item 6(100x100x30, weight: 10) pos(100,0,0) rt(RotationType_WHD (w,h,d))
+           Item 2(100x20x30, weight: 10) pos(200,0,0) rt(RotationType_HWD (h,w,d))
+           Item 3(20x100x30, weight: 10) pos(0,100,0) rt(RotationType_HWD (h,w,d))
+           Item 4(100x20x30, weight: 10) pos(100,100,0) rt(RotationType_WHD (w,h,d))
+           Item 5(100x20x30, weight: 10) pos(200,100,0) rt(RotationType_HDW (h,d,w))
+           Item 1(20x100x30, weight: 10) pos(100,120,0) rt(RotationType_HWD (h,w,d))
+         unpacked items:
+FAIL
+FAIL	github.com/gedex/bp3d	0.001s
+FAIL

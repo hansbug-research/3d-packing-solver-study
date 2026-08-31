@@ -1,0 +1,22 @@
+{
+  "crosslang_cpp_packingsolver_fixed": {
+    "all_expected_behaviors_pass": true,
+    "library": "fontanf/packingsolver (fixed)",
+    "scenario_count": 7
+  },
+  "crosslang_cpp_packingsolver_official": {
+    "all_expected_behaviors_pass": false,
+    "library": "fontanf/packingsolver (official)",
+    "scenario_count": 7
+  },
+  "crosslang_go_bp3d": {
+    "all_expected_behaviors_pass": false,
+    "library": "gedex/bp3d",
+    "scenario_count": 7
+  },
+  "crosslang_rust_unesting": {
+    "all_expected_behaviors_pass": true,
+    "library": "iyulab/u-nesting",
+    "scenario_count": 7
+  }
+}

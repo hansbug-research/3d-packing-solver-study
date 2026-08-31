@@ -54,20 +54,62 @@ weight_utilization    Σ packed weight / Σ used bin capacity
 - 启发式至少运行多个 item/bin 排序和 seed；精确模型小规模同时跑 CP-SAT 与 SCIP，检查上下界闭合。
 - 统一 validator 检查箱边界、AABB/OBB 碰撞、姿态白名单、件数、总重；承压/支撑/轴荷用单独校验器，缺数据不默认通过。
 
-## 本次公共实例实测
+## 本次公共 benchmark 实测
 
-`THPACK9 instance 1` 是几何/最少箱对照，不包含价格和力学字段；所有库均使用同一箱尺寸、70 件和 80 个候选箱。`py3dbp` 与 Jerry 的 JSON 由共享的 `benchmarks.validation.validate_aabbs` 校验；Skjolber runner 使用源码内的边界与 `intersects3D` 检查；PackingSolver patched certificate 由专门的 `COPIES` 展开审计复核。三种检查都验证了本实例的边界、重叠和完整性，但不能把它们称为字节级相同的 validator：
+### THPACK 全集
 
-| 实现 | 完整件数 | 箱数 | 成本（单位箱价） | wall/库内时间 | 几何 |
+PackingSolver fork `d953148b...` 实际处理 762 条记录。THPACK9 18、19、20 的源行 malformed，作为 `MALFORMED_SOURCE_EXCLUDED` 保留；其余 759 个源在 1 s 和 10 s 两档均得到合法 certificate。validator 独立核对输入/证书 item identity、copies、允许 rotation 对应尺寸、箱尺寸、边界、重叠、完整性、packed volume 和箱数。
+
+| 问题族 | 合法源 | 主指标 | 1 s | 10 s | 预算响应 |
+|---|---:|---|---:|---:|---|
+| THPACK1-7 / BR | 700 | 单箱 volume utilization | mean `0.7216`，166 个空解 | mean `0.9624`，0 个空解 | 673 改善、27 相同 |
+| THPACK8 / LN | 15 | 单箱 volume utilization | mean `0.5072`，5 个空解 | mean `0.7115`，0 个空解 | 7 改善、8 相同 |
+| THPACK9 / IMM | 44 | bins used | mean/median `15.48/11.5` | mean/median `15.48/11.5` | 44 个箱数相同；reported bound closed 从 23 到 25 |
+
+1 秒 BR/LN 原汇总曾因空解的“已使用箱体积”为 0 而把 `volume_utilization` 记为 null，均值跳过这些记录。离线重验改用输入容器总体积作分母，空解明确为 `0.0`；表中是修正后的结果。PackingSolver 的 bound 没有由本仓库独立证明，因此状态写 `SOLVER_REPORTED_BOUND_CLOSED`，不直接写 `PROVEN_OPTIMAL`。
+
+### THPACK9 44 个合法实例的跨实现质量
+
+每行只统计完整且通过 certificate 检查的记录：
+
+| 实现 | 有效/总数 | mean bins | median | p95 | 说明 |
 |---|---:|---:|---:|---:|---|
-| PackingSolver patched `box` | 70/70 | 25 | 25 | 约 1 s / 输出 JSON | ✅ |
-| Skjolber LAFF | 70/70 | 28 | 28 | 8.315 ms 库内（当前 raw 快照） | ✅ |
-| `py3dbp` 1.1.2 | 70/70 | 50 | 50 | 约 16 ms | ✅ |
-| Jerry fork | 70/70 | 50 | 50 | 约 24 ms | ✅ |
+| PackingSolver 1 s | 44/44 | 15.48 | 11.5 | 50.1 | 10 s 箱数完全相同 |
+| Skjolber Plain | 44/44 | 17.80 | 14 | 53.5 | 27 例优于 LAFF，17 例相同 |
+| Rust ExtremePoint adapter | 44/44 | 18.41 | 14 | 51.7 | repeated-single-boundary，不是原生多箱 |
+| `py3dbp` 降序 | 44/44 | 18.43 | 14 | 51.7 | pivot greedy，顺序敏感 |
+| Jerry 降序 | 43/44 | 18.72 | 14 | 51.8 | 1 个重叠 certificate 被排除 |
+| Go `bp3d` | 44/44 | 19.93 | 16 | 54.25 | 原生多箱；另有禁旋/重量缺口 |
+| Skjolber LAFF | 44/44 | 20.84 | 17 | 60.1 | 层构造在此分布未赢 Plain |
 
-这不是已知最优表：THPACK9 文件没有给该实例的 optimum，体积下界为 `ceil(17920 / 960) = 19`，所以只能报告 25/28/50 的 incumbent，不把 25 叫最优。PackingSolver certificate 的 `COPIES` 是按相同布局聚合的箱实例，validator 已按物理 copy 展开后再检查；直接把聚合行重复到同一 bin 会错误地产生重叠。
+THPACK9 没有 published optimum。`ceil(total item volume / bin volume)` 只是体积下界；相对它的差值不是已证明 optimality gap。
 
-CP-SAT/SCIP 的 9 立方体 exact-small smoke test 已分别闭合到 2 箱；它验证建模/界和资源协议，不代表 70 件 THPACK9 的全局最优。对大公共实例，正确做法是报告 time-limit/incumbent/bound，而不是强行延长到不可控。
+### THPACK9 instance 1 诊断例
+
+instance 1 的箱为 `10x6x16`，物品是 20 件 `2x6x8` 和 50 件 `8x4x10`，总 70 件。体积下界 `ceil(17920 / 960) = 19`。它适合手工核对 adapter 和 certificate，但不能代替 44 例分布：
+
+| 实现 | 完整件数 | 箱数 | certificate |
+|---|---:|---:|---|
+| PackingSolver fork | 70/70 | 25 | ✅ |
+| Skjolber LAFF | 70/70 | 28 | ✅ |
+| `py3dbp` / Jerry | 70/70 | 50 | ✅ |
+| Go `bp3d` | 70/70 | 50 | ✅ |
+| Rust ExtremePoint adapter | 70/70 | 50 | ✅ |
+| Rust Layer/GA/BRKGA/SA | 报告 70/70 | 15-16 | ❌ 越界，全部作废 |
+
+PackingSolver certificate 的 `COPIES` 是按相同布局聚合的箱实例，validator 先展开物理 copy 再检查。把聚合行直接重复到同一 bin 会产生错误的重叠报告。
+
+### 顺序与 formulation sensitivity
+
+Python campaign 共计划 3,048 条状态记录；因逐件姿态语义不匹配，实际只有 280 条可运行，276 条合法。`py3dbp` 的 53 对可比实例中 41 对质量随升/降序改变；Jerry 的 87 对中 66 对质量改变、4 对 certificate 有效性改变。
+
+Exact-small 用 7 个手工真值场景测试网格、溢出拆箱、需旋转、禁旋、重量拆箱和两种异构成本方向。CP-SAT 9.15、SCIP/PySCIPOpt 6.2.1、Gurobi 13.0.3、CPLEX 22.1.2.0 的 canonical strengthened formulation 均为 7/7。legacy/reduced/strengthened 用来测模型强度：CPLEX legacy 的 1,489 条约束超过 promotional license，SCIP/CPLEX reduced 的 `overflow_9` 在 20 s 内未证明，而 strengthened 四家均闭合。它不是跨求解器通用速度榜。
+
+### 工业数据集只审计、未降格求解
+
+Alonso 2019/2020 已解析并核对字段、行数和需求恒等式，但现有 adapter 不能保真表达完整车辆、托盘、层、交付日和实际约束，状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP BAYTP 快照缺公共 `products`/`shelves`，状态为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。本轮没有删除字段后用普通 3D BPP 冒充完整工业 benchmark。
+
+所有 benchmark 的目的、结果路径和库覆盖矩阵见 [`../results/campaign/README.md`](../results/campaign/README.md)。
 
 ## 约束合规套件（不能用经典数据集替代）
 

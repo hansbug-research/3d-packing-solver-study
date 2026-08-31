@@ -1,0 +1,356 @@
+{
+  "algorithm": "PackingSolver box default portfolio/tree-search pipeline",
+  "bins": [
+    {
+      "cost": 1.0,
+      "id": "grid-000",
+      "max_weight": 100.0,
+      "size": [
+        10.0,
+        10.0,
+        10.0
+      ]
+    }
+  ],
+  "campaign_version": "crosslang-1",
+  "capability_note": "native PackingSolver box model",
+  "capability_status": "SUPPORTED",
+  "commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "elapsed_ms": 1005.0,
+  "items": [
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-000",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-001",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-002",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-003",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-004",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-005",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-006",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "allowed_orientations": [
+        "xyz",
+        "yxz",
+        "zyx",
+        "yzx",
+        "xzy",
+        "zxy"
+      ],
+      "id": "cube-007",
+      "orientation_requirement": "any",
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "language": "C++",
+  "library": "fontanf/packingsolver (fixed)",
+  "parameters": {
+    "memory_limit_mb": 1024,
+    "objective": "bin-packing",
+    "solver_exitcode": 0,
+    "threads_requested": 1,
+    "time_limit_s": 2
+  },
+  "placements": [
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-000",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-001",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        5.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-002",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-003",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        5.0,
+        5.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-004",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        5.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-005",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        5.0,
+        0.0,
+        5.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-006",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        5.0,
+        5.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "grid-000",
+      "item_id": "cube-007",
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "scenario": "exact_grid",
+  "toolchain": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "unplaced": []
+}

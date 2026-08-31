@@ -1,0 +1,117 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "heterogeneous_large_first",
+  "capability_status": "NO_COST_OBJECTIVE",
+  "capability_note": "input order is large then small; bp3d sorts bins by volume",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 3
+  },
+  "bins": [
+    {
+      "id": "large-000",
+      "size": [
+        12,
+        5,
+        5
+      ],
+      "max_weight": 100,
+      "cost": 10
+    },
+    {
+      "id": "small-000",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "max_weight": 100,
+      "cost": 7
+    },
+    {
+      "id": "small-001",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "max_weight": 100,
+      "cost": 7
+    }
+  ],
+  "items": [
+    {
+      "id": "heterogeneous-000",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "heterogeneous-001",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "heterogeneous-001",
+      "bin_id": "large-000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "original_size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "heterogeneous-000",
+      "bin_id": "small-000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "original_size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.001743
+}

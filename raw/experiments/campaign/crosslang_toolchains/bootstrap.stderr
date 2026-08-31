@@ -1,0 +1,17 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    75  100    75    0     0     88      0 --:--:-- --:--:-- --:--:--    88
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0 67.2M    0 93650    0     0  38799      0  0:30:17  0:00:02  0:30:15 96946  1 67.2M    1 1101k    0     0   323k      0  0:03:33  0:00:03  0:03:30  562k  9 67.2M    9 6415k    0     0  1398k      0  0:00:49  0:00:04  0:00:45 2044k 21 67.2M   21 14.6M    0     0  2763k      0  0:00:24  0:00:05  0:00:19 3772k 30 67.2M   30 20.2M    0     0  3263k      0  0:00:21  0:00:06  0:00:15 4223k 37 67.2M   37 25.5M    0     0  3577k      0  0:00:19  0:00:07  0:00:12 5323k 51 67.2M   51 34.5M    0     0  4173k      0  0:00:16  0:00:08  0:00:08 6763k 57 67.2M   57 38.7M    0     0  4251k      0  0:00:16  0:00:09  0:00:07 7009k 70 67.2M   70 47.4M    0     0  4717k      0  0:00:14  0:00:10  0:00:04 6877k 79 67.2M   79 53.2M    0     0  4820k      0  0:00:14  0:00:11  0:00:03 6825k 90 67.2M   90 60.6M    0     0  4988k      0  0:00:13  0:00:12  0:00:01 6991k 96 67.2M   96 64.6M    0     0  4916k      0  0:00:14  0:00:13  0:00:01 6175k100 67.2M  100 67.2M    0     0  5028k      0  0:00:13  0:00:13 --:--:-- 6689k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 19.8M    0  126k    0     0  81071      0  0:04:17  0:00:01  0:04:16 81056  6 19.8M    6 1422k    0     0   583k      0  0:00:34  0:00:02  0:00:32  583k 34 19.8M   34 6926k    0     0  2032k      0  0:00:10  0:00:03  0:00:07 2032k 66 19.8M   66 13.2M    0     0  3012k      0  0:00:06  0:00:04  0:00:02 3012k100 19.8M  100 19.8M    0     0  3744k      0  0:00:05  0:00:05 --:--:-- 4090k100 19.8M  100 19.8M    0     0  3744k      0  0:00:05  0:00:05 --:--:-- 5272k
+warn: It looks like you have an existing rustup settings file at:
+warn: /tmp/crosslang-toolchains/rustup-home/settings.toml
+warn: Rustup will install the default toolchain as specified in the settings file,
+warn: instead of the one inferred from the default host triple.
+info: profile set to minimal
+info: default host triple is x86_64-unknown-linux-gnu
+info: syncing channel updates for 1.98.0-x86_64-unknown-linux-gnu
+info: latest update on 2026-08-20 for version 1.98.0 (88d9e12ae 2026-08-18)
+info: downloading 3 components
+info: default toolchain set to 1.98.0-x86_64-unknown-linux-gnu
