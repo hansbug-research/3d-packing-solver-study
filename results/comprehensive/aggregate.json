@@ -1,18 +1,18 @@
 {
   "coverage": {
-    "benchmarks_with_runs": 12,
+    "benchmarks_with_runs": 13,
     "benchmarks_with_status_records": 32,
-    "cells_with_evidence": 515,
-    "evidence_cell_rate": 0.8470394736842105,
+    "cells_with_evidence": 514,
+    "evidence_cell_rate": 0.8453947368421053,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 29,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.12006578947368421,
-    "protocol_v3_executed_cells": 73,
-    "protocol_v3_status_only_cells": 413,
+    "protocol_v3_executed_cell_rate": 0.125,
+    "protocol_v3_executed_cells": 76,
+    "protocol_v3_status_only_cells": 409,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 60409
+      "PROTOCOL_V3": 60414
     },
     "records_by_benchmark": {
       "B01": 25283,
@@ -25,7 +25,7 @@
       "B08": 19,
       "B09": 48,
       "B10": 19,
-      "B11": 19,
+      "B11": 24,
       "B12": 22,
       "B13": 13,
       "B14": 22,
@@ -48,18 +48,18 @@
       "B31": 19,
       "B32": 19
     },
-    "run_records": 62487,
+    "run_records": 62492,
     "run_status_counts": {
-      "COMPLETED": 48544,
-      "ERROR": 3,
-      "NOT_RUN": 425,
+      "COMPLETED": 48550,
+      "ERROR": 6,
+      "NOT_RUN": 421,
       "TIME_LIMIT": 13515
     },
     "solution_status_counts": {
       "INVALID_CERTIFICATE": 263,
-      "NOT_APPLICABLE": 425,
-      "NO_SOLUTION": 6888,
-      "VALID_COMPLETE": 900,
+      "NOT_APPLICABLE": 421,
+      "NO_SOLUTION": 6891,
+      "VALID_COMPLETE": 906,
       "VALID_PARTIAL": 54011
     }
   },
@@ -281,6 +281,65 @@
         "median_bins": 14.0,
         "p95_bins": 52.0,
         "valid_complete": 43
+      }
+    ],
+    "open_dimension": [
+      {
+        "adapter": "b11_open_dimension_fork_fixture_v1",
+        "benchmark_id": "B11",
+        "comparison_track": "NATIVE",
+        "implementation_id": "packingsolver_fork_box",
+        "invalid_records": 0,
+        "mean_open_dimension_bound": 28.666666666666668,
+        "mean_used_length": 30.0,
+        "mean_wall_s": 1.0031143659725785,
+        "median_used_length": 40.0,
+        "p95_used_length": 40.0,
+        "planned_records": 3,
+        "problem_scope": "FULL_PROBLEM",
+        "problem_variant": "OPEN_DIMENSION_X",
+        "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
+        "time_limit_s": 2.0,
+        "valid_rate": 1.0,
+        "valid_records": 3
+      },
+      {
+        "adapter": "b11_open_dimension_fork_fixture_v1",
+        "benchmark_id": "B11",
+        "comparison_track": "NATIVE",
+        "implementation_id": "packingsolver_upstream_box",
+        "invalid_records": 0,
+        "mean_open_dimension_bound": 28.666666666666668,
+        "mean_used_length": 30.0,
+        "mean_wall_s": 1.0034946909484763,
+        "median_used_length": 40.0,
+        "p95_used_length": 40.0,
+        "planned_records": 3,
+        "problem_scope": "FULL_PROBLEM",
+        "problem_variant": "OPEN_DIMENSION_X",
+        "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
+        "time_limit_s": 2.0,
+        "valid_rate": 1.0,
+        "valid_records": 3
+      },
+      {
+        "adapter": "b11_open_dimension_fork_fixture_v1",
+        "benchmark_id": "B11",
+        "comparison_track": "NATIVE",
+        "implementation_id": "packingsolver_fork_boxstacks",
+        "invalid_records": 3,
+        "mean_open_dimension_bound": null,
+        "mean_used_length": null,
+        "mean_wall_s": null,
+        "median_used_length": null,
+        "p95_used_length": null,
+        "planned_records": 3,
+        "problem_scope": "FULL_PROBLEM",
+        "problem_variant": "OPEN_DIMENSION_X",
+        "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
+        "time_limit_s": 2.0,
+        "valid_rate": 0.0,
+        "valid_records": 0
       }
     ],
     "profit_knapsack": [
@@ -1063,8 +1122,8 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "af9234bcf208c37aac286ad70965e86bf5ef5110c38005936f50ac58aa2250c9",
-    "results/comprehensive/suite-implementation-plan.jsonl": "25e830dcff2356d5e59af4ec3f9840ffd814bff1bc0e6ddf0968096faaaccfe9"
+    "results/comprehensive/run-manifest.jsonl": "e4ab3c74c7649c29ea1bb8cf8ed0f0cd4d6842ce6504a5dc555168c5bdfde0bb",
+    "results/comprehensive/suite-implementation-plan.jsonl": "ab94cf73c7a7674f64a089c7491b6e11aadc37144ca8de9034ca7d7226340e72"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

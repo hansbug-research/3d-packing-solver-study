@@ -8,7 +8,7 @@
   },
   "catalog_sha256": {
     "benchmarks/comprehensive/implementations.json": "2f7bba7eabd81940fb0b956694d2b673fc3c328fa790ac8049b57d3a031bbcb9",
-    "benchmarks/comprehensive/suites.json": "d439a061e42c4c10e0bd50a46e98cae31b22bce2d678dd2ea433a6e697133b80"
+    "benchmarks/comprehensive/suites.json": "10ee8f4ded0638ed24f9fbe79f4eae378230bae8c545a6425e94b996eed65613"
   },
   "comparison_track_counts": {
     "COMPOSED": 168,
@@ -19,8 +19,8 @@
   "executed_cells": 0,
   "implementation_count": 19,
   "input_status_counts": {
-    "SOURCE_INCOMPLETE": 285,
-    "VALID": 323
+    "SOURCE_INCOMPLETE": 266,
+    "VALID": 342
   },
   "planned_cells": 608,
   "protocol_version": "benchmark-protocol/3",

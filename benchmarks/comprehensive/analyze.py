@@ -723,6 +723,37 @@ def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]
     return rows
 
 
+def open_dimension_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Summarize B11 open-X calibration runs without mixing other objectives."""
+    groups: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if not executed(record) or record["benchmark_id"] != "B11":
+            continue
+        key = (
+            record["benchmark_id"], record["problem_variant"], record["problem_scope"],
+            record["comparison_track"], record["implementation_id"],
+            record["budget"].get("time_limit_s"), record["adapter"],
+        )
+        groups[key].append(record)
+    rows: list[dict[str, Any]] = []
+    for key, group in groups.items():
+        valid = [record for record in group if record["solution_status"] in VALID_SOLUTIONS]
+        lengths = [record["metrics"].get("used_length") for record in valid]
+        rows.append({
+            "benchmark_id": key[0], "problem_variant": key[1], "problem_scope": key[2],
+            "comparison_track": key[3], "implementation_id": key[4],
+            "time_limit_s": key[5], "adapter": key[6], "rank_scope": "PER_SUPPORTED_INSTANCE_SET",
+            "planned_records": len(group), "valid_records": len(valid),
+            "invalid_records": len(group) - len(valid), "valid_rate": len(valid) / len(group),
+            "mean_used_length": mean(lengths), "median_used_length": median(lengths),
+            "p95_used_length": nearest_rank([float(value) for value in lengths if value is not None], 0.95),
+            "mean_wall_s": mean(record["resources"].get("wall_s") for record in valid),
+            "mean_open_dimension_bound": mean(record["metrics"].get("open_dimension_bound") for record in valid),
+        })
+    rows.sort(key=lambda row: (row["benchmark_id"], -row["valid_rate"], row["mean_used_length"] if row["mean_used_length"] is not None else float("inf"), row["implementation_id"]))
+    return rows
+
+
 def resource_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     selected = canonical_b04(records)
     timing_group = {
@@ -775,6 +806,7 @@ def generated_files() -> dict[Path, str]:
     exact = exact_rankings(records)
     constraints = constraint_rankings(records)
     variable_cost = variable_cost_rankings(records)
+    open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
 
     solution_counts = Counter(record["solution_status"] for record in records)
@@ -821,6 +853,7 @@ def generated_files() -> dict[Path, str]:
             "profit_knapsack": profit,
             "exact_proof": exact,
             "variable_cost": variable_cost,
+            "open_dimension": open_dimension,
         },
         "warnings": [
             "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",
@@ -890,6 +923,12 @@ def generated_files() -> dict[Path, str]:
         "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
         "mean_cost_delta", "mean_solver_s",
     ]
+    open_dimension_fields = [
+        "benchmark_id", "problem_variant", "problem_scope", "comparison_track", "implementation_id",
+        "time_limit_s", "adapter", "rank_scope", "planned_records", "valid_records", "invalid_records",
+        "valid_rate", "mean_used_length", "median_used_length", "p95_used_length", "mean_wall_s",
+        "mean_open_dimension_bound",
+    ]
     resource_fields = [
         "implementation_id", "timing_comparison_group", "valid_instances", "wall_samples", "median_wall_s", "p95_wall_s",
         "solver_samples", "median_solver_s", "p95_solver_s", "peak_rss_bytes",
@@ -909,6 +948,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
         RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
+        RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
     }
 

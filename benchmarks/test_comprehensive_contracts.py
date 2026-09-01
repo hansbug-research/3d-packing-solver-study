@@ -197,17 +197,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 62487
-    assert summary["protocol_v3_run_records"] == 60409
+    assert summary["combined_run_records"] == len(records) == 62492
+    assert summary["protocol_v3_run_records"] == 60414
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 12
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 13
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 515
+    assert aggregate["coverage"]["cells_with_evidence"] == 514
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 29
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 73
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 413
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60409}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 76
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 409
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60414}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 

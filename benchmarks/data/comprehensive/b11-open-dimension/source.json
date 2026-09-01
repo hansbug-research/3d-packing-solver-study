@@ -1,0 +1,57 @@
+{
+  "benchmark_id": "B11",
+  "source_scope": "REPOSITORY_FIXTURE_DERIVED_FROM_FORK_TESTS",
+  "source_repository": "HansBug/packingsolver",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "source_path_prefix": "data/box/tests/open_dimension_x_4_different_items_",
+  "objective": "open-dimension-x",
+  "cases": [
+    {
+      "id": "open_dimension_x_xy",
+      "source_case": "xy",
+      "bin": {"id": "0", "size": [100, 40, 10], "cost": 1, "copies": 1, "max_weight": 100000},
+      "items": [
+        {"id": "0", "size": [30, 20, 10], "weight": 1, "orientation": "XYZ"},
+        {"id": "1", "size": [10, 30, 10], "weight": 1, "orientation": "XYZ"},
+        {"id": "2", "size": [20, 20, 10], "weight": 1, "orientation": "XYZ"},
+        {"id": "3", "size": [20, 10, 10], "weight": 1, "orientation": "XYZ"}
+      ]
+    },
+    {
+      "id": "open_dimension_x_xz",
+      "source_case": "xz",
+      "bin": {"id": "0", "size": [100, 10, 40], "cost": 1, "copies": 1, "max_weight": 100000},
+      "items": [
+        {"id": "0", "size": [30, 10, 20], "weight": 1, "orientation": "XYZ"},
+        {"id": "1", "size": [10, 10, 30], "weight": 1, "orientation": "XYZ"},
+        {"id": "2", "size": [20, 10, 20], "weight": 1, "orientation": "XYZ"},
+        {"id": "3", "size": [20, 10, 10], "weight": 1, "orientation": "XYZ"}
+      ]
+    },
+    {
+      "id": "open_dimension_x_yz",
+      "source_case": "yz",
+      "bin": {"id": "0", "size": [100, 40, 40], "cost": 1, "copies": 1, "max_weight": 100000},
+      "items": [
+        {"id": "0", "size": [10, 20, 30], "weight": 1, "orientation": "XYZ"},
+        {"id": "1", "size": [10, 30, 10], "weight": 1, "orientation": "XYZ"},
+        {"id": "2", "size": [10, 20, 20], "weight": 1, "orientation": "XYZ"},
+        {"id": "3", "size": [10, 10, 20], "weight": 1, "orientation": "XYZ"}
+      ]
+    }
+  ],
+  "upstream_source_sha256": {
+    "xy/bins.csv": "fc4c7ba068fe668e97a5317c75281c75b1bd7af9f9741be4d4ae0b9bd6e34c7b",
+    "xy/items.csv": "c28a4b5f2fe582a837d5ee1a578bf18439eb061b3cb14deb4efe01f99905e063",
+    "xy/parameters.csv": "4183a741ebe11023e2364cbdb7956406de3fd67d2fb258cfa9fd646aae9f96c8",
+    "xy/solution.csv": "55b1c73fdb5d5506fbcf9ee98558234ed9463c63bc585d881a6ee55e20352c5a",
+    "xz/bins.csv": "9cfb304578c5da6db8b021d8a88d873a937b48a4a49742adee689dac22a0106a",
+    "xz/items.csv": "bef920c1278f56c5696719037cf25baadb065dc323ad1e9f4eadb5c8f25f467b",
+    "xz/parameters.csv": "4183a741ebe11023e2364cbdb7956406de3fd67d2fb258cfa9fd646aae9f96c8",
+    "xz/solution.csv": "42dd9cdb896171dad3ebbcb07a90c77fa84e99cf4f654f71f7dfd045b1ec4ccc",
+    "yz/bins.csv": "4a8b6ace01f8ed20d0f1284c63bbd6810b336e664d53e28af5c3140f2f62d810",
+    "yz/items.csv": "1507b8ba92eff12a85a1877bc2fc57611cb73dd279d9a2d13fa63e92035b9469",
+    "yz/parameters.csv": "4183a741ebe11023e2364cbdb7956406de3fd67d2fb258cfa9fd646aae9f96c8",
+    "yz/solution.csv": "8ff42e43b8045f3e45673220c52d538bd1132f1e9dabf8cd4329fd13ee7b0cd0"
+  }
+}

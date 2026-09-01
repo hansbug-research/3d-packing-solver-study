@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "B11",
+  "case_count": 3,
+  "decision": {
+    "input_status": "VALID",
+    "run_status": "NOT_RUN",
+    "termination_reason": "CALIBRATION_FIXTURE_ONLY",
+    "warning": "This is a fork-owned conformance/calibration fixture, not an independent public B11 distribution."
+  },
+  "errors": [],
+  "item_counts": {
+    "open_dimension_x_xy": 4,
+    "open_dimension_x_xz": 4,
+    "open_dimension_x_yz": 4
+  },
+  "schema_version": 1,
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "source_repository": "HansBug/packingsolver",
+  "source_scope": "REPOSITORY_FIXTURE_DERIVED_FROM_FORK_TESTS",
+  "source_sha256": "d443f4aed1db34967a51ba2d1b951befcc6457bb6694f25e195502b9648017c3",
+  "upstream_file_count": 12
+}

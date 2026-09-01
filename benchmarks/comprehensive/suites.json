@@ -55,7 +55,7 @@
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
     },
     {
-      "id": "B11", "name": "Open-X/Y/Z / 3D strip", "category": "PUBLIC_QUALITY", "problem_family": "OPEN_DIMENSION", "primary_metric": "used_length", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",
+      "id": "B11", "name": "Open-X/Y/Z / 3D strip", "category": "PUBLIC_QUALITY", "problem_family": "OPEN_DIMENSION", "primary_metric": "used_length", "input_status": "VALID", "ranking_kind": "QUALITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
     },
     {

@@ -1,0 +1,4 @@
+benchmark_id,problem_variant,problem_scope,comparison_track,implementation_id,time_limit_s,adapter,rank_scope,planned_records,valid_records,invalid_records,valid_rate,mean_used_length,median_used_length,p95_used_length,mean_wall_s,mean_open_dimension_bound
+B11,OPEN_DIMENSION_X,FULL_PROBLEM,NATIVE,packingsolver_fork_box,2.0,b11_open_dimension_fork_fixture_v1,PER_SUPPORTED_INSTANCE_SET,3,3,0,1.0,30.0,40.0,40.0,1.0031143659725785,28.666666666666668
+B11,OPEN_DIMENSION_X,FULL_PROBLEM,NATIVE,packingsolver_upstream_box,2.0,b11_open_dimension_fork_fixture_v1,PER_SUPPORTED_INSTANCE_SET,3,3,0,1.0,30.0,40.0,40.0,1.0034946909484763,28.666666666666668
+B11,OPEN_DIMENSION_X,FULL_PROBLEM,NATIVE,packingsolver_fork_boxstacks,2.0,b11_open_dimension_fork_fixture_v1,PER_SUPPORTED_INSTANCE_SET,3,0,3,0.0,,,,,

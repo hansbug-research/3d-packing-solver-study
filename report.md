@@ -311,6 +311,8 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 当前综合证据仍不是全套件完成：`12/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`515/608` cell 有证据，其中 `73` 个 cell 已执行 protocol-v3、`413` 个是 status-only，合计 `62,487` 条记录（legacy `2,078`，protocol-v3 `60,409`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）、B01/B02/B04 PackingSolver native certificate revalidation（`1,524` 条）、B07 BR0/BR8–15 的 projection（`30,600` 条）、4 条 B07 source-rotation exact calibration、B09 py3dbp/Jerry/Go/Rust composed cost-master 记录，以及 Wave-1 fresh exact/Skjolber 记录（B06/B09 四个 exact backend 共 20 个 case 行，B04 Skjolber Plain/LAFF 共 88 个有效源行）；projection 与原始姿态语义分轨，不能覆盖 native 结果。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，复用了已归档并独立重验的 certificate，不是一次新的 solver invocation；fresh 记录明确标为 `FRESH_SOLVER_INVOCATION`，并保留输入、结果、runner hash 和独立验证引用。B07 projection 覆盖 900 个来源实例、八个 Python/Go/Rust projection 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。B09 composed runner 枚举全部有限箱型组合和两种 item order，所有候选均经过独立 AABB/copies/重量 validator；它证明的是外层 master + 几何库的组合行为，不是 py3dbp/Jerry/Go/Rust 原生 variable-cost comparator。新增 status-only 记录只表示来源/能力边界，不能视为求解运行，也不计入 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
+上述统计在 B11 运行后更新为：`13/32` benchmark 有实际执行，`32/32` 有状态记录，`514/608` cell 有证据，`76` 个 protocol-v3 cell 已执行，`409` 个为 status-only，合计 `62,492` 条记录（protocol-v3 `60,414`）。B11 是 fork-owned 三例 open-X 校准：fork/upstream `box` 各 `3/3` 通过，fork `boxstacks` `0/3`（非同底面 stack fixture 导致进程错误）；上游 `boxstacks` 因缺少同源二进制保持 `PLANNED`。其 `used_length` 单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，不与 BR/LN 或封闭箱数混排。
+
 ### 7.1.3 新发现的公开现实约束数据
 
 在 protocol-v3 冻结后又审计了两个公开数据源。它们对“BR/LN 之外还缺什么”的回答是互补的：Q4RealBPP 适合检验现实约束字段有没有被当作硬约束执行，3DBPPsi 适合检验异构车队、堆叠规则和大规模性能。两者都不能替代 MPV 的经典同型多箱分布，也不能把 projection 轨升级成原题能力。
@@ -346,7 +348,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 | py3dbp | 1/1 合法完整，cost=10 | 1/1 合法完整，cost=10 | 外层枚举得到正确成本；不是库原生 comparator |
 | Jerry（`fix_point=False`） | 1/1 合法完整，cost=10 | 1/1 合法完整，cost=10 | 同上；fix-point overlap 风险不在本轨隐藏 |
 
-该结果只进入 [`variable-cost.csv`](results/comprehensive/rankings/variable-cost.csv) 的 `COMPOSED` 行，与 PackingSolver/Exact 的 `NATIVE`、`EXACT_MODEL` 行分开。B09 仍只有两个小 fixture，不能外推到大规模成本优化；B08 的公开多箱型成本集和 B10/B11 仍需完成来源冻结与 adapter。
+该结果只进入 [`variable-cost.csv`](results/comprehensive/rankings/variable-cost.csv) 的 `COMPOSED` 行，与 PackingSolver/Exact 的 `NATIVE`、`EXACT_MODEL` 行分开。B09 仍只有两个小 fixture，不能外推到大规模成本优化；B08 的公开多箱型成本集和 B10 仍需完成来源冻结与 adapter。B11 已完成 fork-owned open-X 校准，结果见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)。
 
 ### 7.3 THPACK9 44 例跨实现质量
 
