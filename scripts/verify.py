@@ -298,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62492, 2078, 62492, 62492):
+        ) != (62580, 2122, 62580, 62580):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +307,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 514, 29, 76, 13, 19):
+        ) != (608, 515, 29, 77, 13, 19):
         fail("comprehensive execution coverage changed")
     if coverage.get("protocol_v3_status_only_cells") != 409:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60414}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60458}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -364,6 +364,9 @@ def check_comprehensive_results() -> None:
             fail(f"comprehensive B04 coverage changed: {implementation_id}")
         if not math.isclose(row.get("mean_bins", math.inf), expected, rel_tol=0, abs_tol=1e-12):
             fail(f"comprehensive B04 quality changed: {implementation_id}")
+    fast = b04.get("skjolber_fast_bruteforce", {})
+    if fast.get("common_instances") != 44 or fast.get("valid_complete") != 7 or fast.get("invalid") != 37:
+        fail("comprehensive B04 FastBruteForce failure accounting changed")
     if b04.get("jerry", {}).get("invalid") != 1:
         fail("comprehensive B04 Jerry invalid-certificate count changed")
     b07_pairwise = directory / "rankings" / "B07-version-pairwise.csv"

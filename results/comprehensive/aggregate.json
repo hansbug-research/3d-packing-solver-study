@@ -2,23 +2,23 @@
   "coverage": {
     "benchmarks_with_runs": 13,
     "benchmarks_with_status_records": 32,
-    "cells_with_evidence": 514,
-    "evidence_cell_rate": 0.8453947368421053,
+    "cells_with_evidence": 515,
+    "evidence_cell_rate": 0.8470394736842105,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 29,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.125,
-    "protocol_v3_executed_cells": 76,
+    "protocol_v3_executed_cell_rate": 0.12664473684210525,
+    "protocol_v3_executed_cells": 77,
     "protocol_v3_status_only_cells": 409,
     "record_origin_counts": {
-      "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 60414
+      "LEGACY_BASELINE": 2122,
+      "PROTOCOL_V3": 60458
     },
     "records_by_benchmark": {
       "B01": 25283,
       "B02": 579,
       "B03": 1234,
-      "B04": 658,
+      "B04": 746,
       "B05": 19,
       "B06": 50,
       "B07": 34209,
@@ -48,18 +48,18 @@
       "B31": 19,
       "B32": 19
     },
-    "run_records": 62492,
+    "run_records": 62580,
     "run_status_counts": {
-      "COMPLETED": 48550,
+      "COMPLETED": 48638,
       "ERROR": 6,
       "NOT_RUN": 421,
       "TIME_LIMIT": 13515
     },
     "solution_status_counts": {
-      "INVALID_CERTIFICATE": 263,
+      "INVALID_CERTIFICATE": 337,
       "NOT_APPLICABLE": 421,
       "NO_SOLUTION": 6891,
-      "VALID_COMPLETE": 906,
+      "VALID_COMPLETE": 920,
       "VALID_PARTIAL": 54011
     }
   },
@@ -80,9 +80,9 @@
         "benchmark_id": "B06",
         "implementation_id": "exact_gurobi",
         "instances": 5,
-        "max_solver_s": 0.006303074071183801,
+        "max_solver_s": 0.005799134960398078,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0017813858110457658,
+        "mean_solver_s": 0.001880212826654315,
         "proof_rate": 1.0,
         "proven": 5,
         "valid_or_proven_infeasible": 5
@@ -91,9 +91,9 @@
         "benchmark_id": "B06",
         "implementation_id": "exact_cplex",
         "instances": 5,
-        "max_solver_s": 0.012279939139261842,
+        "max_solver_s": 0.011470749042928219,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0051135434303432705,
+        "mean_solver_s": 0.0049159091897308825,
         "proof_rate": 1.0,
         "proven": 5,
         "valid_or_proven_infeasible": 5
@@ -102,9 +102,9 @@
         "benchmark_id": "B06",
         "implementation_id": "exact_cp_sat",
         "instances": 5,
-        "max_solver_s": 0.018719259183853865,
+        "max_solver_s": 0.018133177189156413,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.006078784866258502,
+        "mean_solver_s": 0.005663016811013222,
         "proof_rate": 1.0,
         "proven": 5,
         "valid_or_proven_infeasible": 5
@@ -113,9 +113,9 @@
         "benchmark_id": "B06",
         "implementation_id": "exact_scip",
         "instances": 5,
-        "max_solver_s": 0.05418348009698093,
+        "max_solver_s": 0.051640041172504425,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.014848797116428614,
+        "mean_solver_s": 0.014311790000647306,
         "proof_rate": 1.0,
         "proven": 5,
         "valid_or_proven_infeasible": 5
@@ -135,9 +135,9 @@
         "benchmark_id": "B09",
         "implementation_id": "exact_gurobi",
         "instances": 2,
-        "max_solver_s": 0.0006921230815351009,
+        "max_solver_s": 0.0007764589972794056,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0006880644941702485,
+        "mean_solver_s": 0.000738653470762074,
         "proof_rate": 1.0,
         "proven": 2,
         "valid_or_proven_infeasible": 2
@@ -146,9 +146,9 @@
         "benchmark_id": "B09",
         "implementation_id": "exact_cp_sat",
         "instances": 2,
-        "max_solver_s": 0.0013842398766428232,
+        "max_solver_s": 0.0013245819136500359,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0013703934382647276,
+        "mean_solver_s": 0.0012522758916020393,
         "proof_rate": 1.0,
         "proven": 2,
         "valid_or_proven_infeasible": 2
@@ -157,9 +157,9 @@
         "benchmark_id": "B09",
         "implementation_id": "exact_scip",
         "instances": 2,
-        "max_solver_s": 0.0016835869755595922,
+        "max_solver_s": 0.001569471089169383,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0016467554960399866,
+        "mean_solver_s": 0.0015632385620847344,
         "proof_rate": 1.0,
         "proven": 2,
         "valid_or_proven_infeasible": 2
@@ -168,9 +168,9 @@
         "benchmark_id": "B09",
         "implementation_id": "exact_cplex",
         "instances": 2,
-        "max_solver_s": 0.002892782911658287,
+        "max_solver_s": 0.0027049309574067593,
         "mean_gap": 0.0,
-        "mean_solver_s": 0.0024204634828493,
+        "mean_solver_s": 0.0022515534656122327,
         "proof_rate": 1.0,
         "proven": 2,
         "valid_or_proven_infeasible": 2
@@ -201,8 +201,8 @@
         "invalid": 0,
         "invalid_rate": 0.0,
         "mean_bins": 17.795454545454547,
-        "mean_solver_s": 0.0007272727272727273,
-        "mean_wall_s": 0.0008215836136363636,
+        "mean_solver_s": 0.0005,
+        "mean_wall_s": 0.00058682425,
         "median_bins": 14.0,
         "p95_bins": 55.0,
         "valid_complete": 44
@@ -261,8 +261,8 @@
         "invalid": 0,
         "invalid_rate": 0.0,
         "mean_bins": 20.84090909090909,
-        "mean_solver_s": 0.0025227272727272724,
-        "mean_wall_s": 0.004607853522727273,
+        "mean_solver_s": 0.0024772727272727273,
+        "mean_wall_s": 0.00460315675,
         "median_bins": 17.0,
         "p95_bins": 61.0,
         "valid_complete": 44
@@ -281,6 +281,21 @@
         "median_bins": 14.0,
         "p95_bins": 52.0,
         "valid_complete": 43
+      },
+      {
+        "common_instance_set_sha256": "35cd9ebe9080882796d1be6691242391f1eeb7ac37404bc33b08c7834df29c64",
+        "common_instances": 44,
+        "implementation_id": "skjolber_fast_bruteforce",
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "invalid": 37,
+        "invalid_rate": 0.8409090909090909,
+        "mean_bins": 38.57142857142857,
+        "mean_solver_s": 1.760142857142857,
+        "mean_wall_s": 1.7609049892857145,
+        "median_bins": 27.0,
+        "p95_bins": 76.0,
+        "valid_complete": 7
       }
     ],
     "open_dimension": [
@@ -1122,7 +1137,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "e4ab3c74c7649c29ea1bb8cf8ed0f0cd4d6842ce6504a5dc555168c5bdfde0bb",
+    "results/comprehensive/run-manifest.jsonl": "202e57031d3b2501e45b98f90b2a7d9ba7d9d3d697da7841d631104879d99ba5",
     "results/comprehensive/suite-implementation-plan.jsonl": "ab94cf73c7a7674f64a089c7491b6e11aadc37144ca8de9034ca7d7226340e72"
   },
   "warnings": [

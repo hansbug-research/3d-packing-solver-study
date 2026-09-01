@@ -280,7 +280,12 @@ def import_skjolber_thpack9(implementations: dict[str, dict[str, Any]]) -> tuple
             continue
         input_hash = combined_hash(row["items_sha256"], row["bins_sha256"])
         hashes[row["instance_id"]] = input_hash
-        implementation_id = "skjolber_plain" if row["algorithm"] == "plain" else "skjolber_laff"
+        implementation_ids = {
+            "plain": "skjolber_plain",
+            "laff": "skjolber_laff",
+            "fast_brute_force": "skjolber_fast_bruteforce",
+        }
+        implementation_id = implementation_ids[row["algorithm"]]
         valid = row["status"] == "VALID" and not row["validation_errors"] and not row["independent_validation_errors"]
         records.append(
             make_record(

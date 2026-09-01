@@ -27,6 +27,7 @@ import com.github.skjolber.packing.api.PackagerResultBuilder;
 import com.github.skjolber.packing.api.Placement;
 import com.github.skjolber.packing.packer.laff.LargestAreaFitFirstPackager;
 import com.github.skjolber.packing.packer.plain.PlainPackager;
+import com.github.skjolber.packing.packer.bruteforce.FastBruteForcePackager;
 
 public class SkjolberThpackCampaign {
 
@@ -135,6 +136,7 @@ public class SkjolberThpackCampaign {
         return switch (algorithm) {
             case "laff" -> LargestAreaFitFirstPackager.newBuilder().build();
             case "plain" -> PlainPackager.newBuilder().build();
+            case "fast_brute_force" -> FastBruteForcePackager.newBuilder().build();
             default -> throw new IllegalArgumentException(algorithm);
         };
     }
@@ -313,7 +315,7 @@ public class SkjolberThpackCampaign {
             certificate.write("INSTANCE,ALGORITHM,BIN_INDEX,ITEM_ID,X,Y,Z,DX,DY,DZ");
             certificate.newLine();
             for (Instance instance : instances) {
-                for (String algorithm : Arrays.asList("laff", "plain")) {
+                for (String algorithm : Arrays.asList("laff", "plain", "fast_brute_force")) {
                     if (benchmarkId.equals("B04") && MALFORMED.contains(instance.number())) {
                         writeExcluded(output, instance, algorithm, benchmarkId);
                     } else {

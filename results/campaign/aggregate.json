@@ -437,6 +437,25 @@
       },
       "valid_complete": 44
     },
+    "skjolber_fast_brute_force": {
+      "bins_used": {
+        "max": 76.0,
+        "mean": 38.57142857142857,
+        "median": 27.0,
+        "min": 17.0,
+        "p95": 69.99999999999999
+      },
+      "invalid": 37,
+      "records": 44,
+      "relative_gap_to_volume_lower_bound": {
+        "max": 0.8,
+        "mean": 0.4472775985484387,
+        "median": 0.42105263157894735,
+        "min": 0.21428571428571427,
+        "p95": 0.7556521739130434
+      },
+      "valid_complete": 7
+    },
     "skjolber_laff": {
       "bins_used": {
         "max": 65.0,
@@ -1094,6 +1113,26 @@
   "schema_version": 1,
   "skjolber_thpack9": {
     "algorithms": {
+      "fast_brute_force": {
+        "bins_used": {
+          "max": 76.0,
+          "mean": 38.57142857142857,
+          "median": 27.0,
+          "min": 17.0,
+          "p95": 69.99999999999999
+        },
+        "invalid": 37,
+        "malformed_source_excluded": 3,
+        "records": 47,
+        "validated": 7,
+        "wall_time_ms": {
+          "max": 9419.887896,
+          "mean": 1760.9049892857142,
+          "median": 430.988454,
+          "min": 5.281333,
+          "p95": 6915.854973899995
+        }
+      },
       "laff": {
         "bins_used": {
           "max": 65.0,
@@ -1107,11 +1146,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 174.372372,
-          "mean": 4.607853522727273,
-          "median": 0.38009899999999996,
-          "min": 0.231716,
-          "p95": 3.0689900500000014
+          "max": 177.804696,
+          "mean": 4.60315675,
+          "median": 0.40640149999999997,
+          "min": 0.257109,
+          "p95": 2.517374100000002
         }
       },
       "plain": {
@@ -1127,11 +1166,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 4.481247,
-          "mean": 0.8215836136363636,
-          "median": 0.547384,
-          "min": 0.262077,
-          "p95": 3.1277343000000024
+          "max": 4.235173,
+          "mean": 0.58682425,
+          "median": 0.4121395,
+          "min": 0.203066,
+          "p95": 1.4337057000000009
         }
       }
     },
@@ -1183,7 +1222,7 @@
     "results/campaign/packingsolver-thpack.jsonl": "9226e8475541565e194ea62d7ec136d39e28e07a885c562c660fbd22f8c47cad",
     "results/campaign/python_thpack/summary.json": "b398272c7745b32531f8611600de0d2a59efb6fda606df29cffda23274e3c121",
     "results/campaign/skjolber-algorithms.json": "8292f048c4765963caf95cd128fb91256b2f85d6f1efaa1931435c1c39ba193f",
-    "results/campaign/skjolber-thpack9.json": "03a9d94d97e548ff1f4bab76a3eff94cd0f63d721ded2a740194ba870f1880ae"
+    "results/campaign/skjolber-thpack9.json": "2932ff601699bb9a1efa2030d58f498ecc57ba61e6f53464876c573570b28a6e"
   },
   "targeted_suites": {
     "packingsolver_boxstacks": {

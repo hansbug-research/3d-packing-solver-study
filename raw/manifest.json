@@ -5229,7 +5229,7 @@
     {
       "path": "raw/experiments/campaign/skjolber-thpack/build.resources.txt",
       "bytes": 887,
-      "sha256": "e40ac6236f2773a94fecc8ae8d0722405ed766cd30aed2b7c7a227d568fcaf0d"
+      "sha256": "a4871c611e42a3041f6fa53433703ac5d4fcb39f6cb92198d1c65e21008230d3"
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/build.stderr",
@@ -5248,13 +5248,13 @@
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/campaign.resources.txt",
-      "bytes": 1830,
-      "sha256": "664292dc7efbc3522e289ea49e908527bacc8e77e9ebb719dce4658ce0c10600"
+      "bytes": 1838,
+      "sha256": "25ff0de1520e4995407abb3dcf8b97259e69222a4beb114651933a73b0369e02"
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/campaign.stderr",
-      "bytes": 2285,
-      "sha256": "cd0faa0d030ff214dd7df8fec991db5a76d95f81d2769b5d8f15b4ec5189524b"
+      "bytes": 3968,
+      "sha256": "493c17a769d080ddcbcca6a10447f0eab8341d902f8e4b1dc6d1086f88be12cc"
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/campaign.stdout",
@@ -5263,13 +5263,13 @@
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/certificate.csv",
-      "bytes": 322688,
-      "sha256": "9f471e12754fc87c4a2c02ce279d9d04984b69472ea86306f18218aa3a618831"
+      "bytes": 359231,
+      "sha256": "2c57595bc379f762ae8ea856c79dede4ff767faf3f9eac233188a3ac7511697c"
     },
     {
       "path": "raw/experiments/campaign/skjolber-thpack/java-records.jsonl",
-      "bytes": 43637,
-      "sha256": "decf9021f2c2746481e41788dea3a7d86362c86cb77d87e2cb3fe111b3a31374"
+      "bytes": 70252,
+      "sha256": "32b9f7f32a6cb3a3801bf2bd1cc4d3dbc72b0512c2803d68cabfaf44489c846a"
     },
     {
       "path": "raw/experiments/commercial/README.md",
@@ -177715,6 +177715,16 @@
       "path": "raw/experiments/comprehensive/B07-python-projection-py3dbp-1s-rep-0.tar.gz",
       "bytes": 2123356,
       "sha256": "968f6d37bd586f90fd1a6a1959945970d0ff1bfc4b3fcc6577146107859136bf"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B11/packingsolver/2s/artifacts.tar.gz",
+      "bytes": 5119,
+      "sha256": "fbc2740bc509a5af8c6069cea287d2b0e456febafee2d64a912e9c98628309c1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B11/packingsolver/2s/metadata.json",
+      "bytes": 549,
+      "sha256": "28969e6420057fdf8707f5c0cc47dd23f036ed8a577d58db6426fa5b8b7c0964"
     },
     {
       "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-000/input.json",

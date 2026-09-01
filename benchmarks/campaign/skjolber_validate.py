@@ -116,7 +116,7 @@ def main() -> None:
             record["status"] = "INVALID"
 
     summaries: dict[str, Any] = {}
-    for algorithm in ("laff", "plain"):
+    for algorithm in ("laff", "plain", "fast_brute_force"):
         selected = [record for record in records if record["algorithm"] == algorithm]
         valid_source = [record for record in selected if record["source_line_valid"]]
         valid = [record for record in valid_source if record["status"] == "VALID"]

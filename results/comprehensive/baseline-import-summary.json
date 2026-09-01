@@ -1,5 +1,5 @@
 {
-  "baseline_manifest_sha256": "8d80da11a6eafd016b4ae234a453808a3585959a20381f59d58d0fad67d1cb6a",
+  "baseline_manifest_sha256": "1fc79bc76e2fb603766f0b37e0432b0ca2a28350e3a31459fb441a7294d28c44",
   "benchmark_ids": [
     "B01",
     "B02",
@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62492,
+  "combined_run_records": 62580,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -113,9 +113,9 @@
     "results/comprehensive/runs/status-B30.jsonl": "26d53031c0174d1554931be55d09bc43e42f4a3ffa9c207cf004a164ddd74656",
     "results/comprehensive/runs/status-B31.jsonl": "36898ccf7f4f3188013571c18228a11044367426435f9b9493a540d394ccd853",
     "results/comprehensive/runs/status-B32.jsonl": "7bd1d06e96f1273aa0f0f4756481775387b0b4200e58120f0b0e05fa23107c53",
-    "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "7381c40d212f2f57252d6317f4d3090633b92b0569dbf1d9acaa16a7906cb031"
+    "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "2b851f066fb0028db02dc762a19734ee1aa8e0dc26da9a6a01b2b903259f68b4"
   },
-  "protocol_v3_run_records": 60414,
+  "protocol_v3_run_records": 60458,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -128,10 +128,10 @@
     "legacy_import/repeated_single_boundary": 44,
     "legacy_import/rust_repeated_single_boundary": 50,
     "legacy_import/skjolber_algorithm_small": 3,
-    "legacy_import/skjolber_thpack9_v1": 88
+    "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "e4ab3c74c7649c29ea1bb8cf8ed0f0cd4d6842ce6504a5dc555168c5bdfde0bb",
-  "run_records": 2078,
+  "run_manifest_sha256": "202e57031d3b2501e45b98f90b2a7d9ba7d9d3d697da7841d631104879d99ba5",
+  "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."
 }

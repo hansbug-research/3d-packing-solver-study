@@ -445,7 +445,7 @@ def canonical_b04(records: list[dict[str, Any]]) -> dict[str, dict[str, dict[str
             canonical = adapter == "legacy_import/packingsolver_thpack_v2" and record["budget"]["time_limit_s"] == 1.0
         elif implementation_id in {"py3dbp", "jerry"}:
             canonical = adapter == "legacy_import/python_thpack_v1" and record["item_order"] == "DESCENDING"
-        elif implementation_id in {"skjolber_plain", "skjolber_laff"}:
+        elif implementation_id in {"skjolber_plain", "skjolber_laff", "skjolber_fast_bruteforce"}:
             canonical = adapter == "legacy_import/skjolber_thpack9_v1"
         elif implementation_id == "go_bp3d":
             canonical = adapter == "legacy_import/native_multi_bin"
@@ -762,6 +762,7 @@ def resource_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         "jerry": "PYTHON_WORKER",
         "skjolber_plain": "SKJOLBER_JVM",
         "skjolber_laff": "SKJOLBER_JVM",
+        "skjolber_fast_bruteforce": "SKJOLBER_JVM",
         "go_bp3d": "GO_PROCESS_LIBRARY_ONLY",
         "rust_extreme_point": "RUST_PROCESS_LIBRARY_ONLY",
     }

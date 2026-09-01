@@ -148,7 +148,7 @@ def skjolber_records(implementations: dict[str, dict[str, Any]]) -> list[dict[st
     result_path = RESULTS / "skjolber-thpack9.json"
     result_sha = sha256(result_path)
     data = json.loads(result_path.read_text(encoding="utf-8"))
-    algorithm_ids = {"plain": "skjolber_plain", "laff": "skjolber_laff"}
+    algorithm_ids = {"plain": "skjolber_plain", "laff": "skjolber_laff", "fast_brute_force": "skjolber_fast_bruteforce"}
     records: list[dict[str, Any]] = []
     for index, row in enumerate(data["records"]):
         if not row.get("source_line_valid"):

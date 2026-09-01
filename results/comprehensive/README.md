@@ -23,6 +23,8 @@ B11 已完成 fork-owned open-X 校准运行：fork/upstream `box` 各 3/3 个 c
 
 上段是 B11 加入前的快照；当前权威统计与 B11 结果以紧随其后的 B11 更新段、`aggregate.json` 和 `coverage.csv` 为准。
 
+FastBruteForce 加入后的当前权威统计为：2,122 条 legacy baseline、60,458 条 protocol-v3、62,580 条合计记录；`13/32` benchmark 已实际执行，`32/32` 有状态记录，`515/608` cell 有证据，`77` 个 protocol-v3 cell 已执行，`409` 个为 status-only，`29` 个仍只有历史基线。B04 的 FastBruteForce 44 个源实例中仅 7/44 通过独立 validator，37/44 保留为非法证书；该失败比例进入共同实例表，不被成功样本掩盖。
+
 现有排行按问题语义拆分：`volume-knapsack.csv` 显式保留 `problem_variant/problem_scope`，`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`B07-projection-common.csv` 比较八个 projection 实现的共同合法实例，`B07-jerry-fixpoint-pairwise.csv` 记录 Jerry `fix_point` 参数的合法性/质量权衡，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较 B03/B06/B07/B09 的统一模型或校准模型证明能力，`variable-cost.csv` 只比较带独立验证 `total_cost` 的 B08/B09 记录，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。B05 当前只有来源审计和状态记录，没有质量排行。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
 
 B09 composed cost-master 的复现命令为：

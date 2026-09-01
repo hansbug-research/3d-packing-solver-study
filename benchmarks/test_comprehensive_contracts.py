@@ -122,11 +122,13 @@ def test_packingsolver_thpack_protocol_revalidation_is_explicit() -> None:
 
 def test_fresh_wave1_protocol_records_are_explicit_and_finite() -> None:
     records = build_fresh_protocol_records()
-    assert len(records) == 116
+    assert len(records) == 160
     assert {record["record_origin"] for record in records} == {"PROTOCOL_V3"}
     assert {record["metrics"]["provenance_kind"] for record in records} == {"FRESH_SOLVER_INVOCATION"}
     assert {record["benchmark_id"] for record in records} == {"B04", "B06", "B09"}
-    assert {record["implementation_id"] for record in records if record["benchmark_id"] == "B04"} == {"skjolber_plain", "skjolber_laff"}
+    assert {record["implementation_id"] for record in records if record["benchmark_id"] == "B04"} == {
+        "skjolber_plain", "skjolber_laff", "skjolber_fast_bruteforce"
+    }
     assert all(record["input_sha256"] and len(record["input_sha256"]) == 64 for record in records)
 
 
@@ -196,18 +198,18 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     aggregate = json.loads((comprehensive / "aggregate.json").read_text())
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
-    assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 62492
-    assert summary["protocol_v3_run_records"] == 60414
+    assert summary["run_records"] == 2122
+    assert summary["combined_run_records"] == len(records) == 62580
+    assert summary["protocol_v3_run_records"] == 60458
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 514
+    assert aggregate["coverage"]["cells_with_evidence"] == 515
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 29
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 76
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 77
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 409
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60414}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60458}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 
@@ -415,9 +417,12 @@ def test_identical_bin_ranking_uses_common_44_instance_set() -> None:
         "go_bp3d": 19.931818181818183,
         "skjolber_laff": 20.84090909090909,
     }
-    assert set(rows) == set(expected_means) | {"jerry"}
+    assert set(rows) == set(expected_means) | {"jerry", "skjolber_fast_bruteforce"}
     assert all(row["common_instances"] == "44" for row in rows.values())
     for implementation_id, expected in expected_means.items():
         assert int(rows[implementation_id]["valid_complete"]) == 44
         assert math.isclose(float(rows[implementation_id]["mean_bins"]), expected, rel_tol=0, abs_tol=1e-12)
+    assert int(rows["skjolber_fast_bruteforce"]["valid_complete"]) == 7
+    assert int(rows["skjolber_fast_bruteforce"]["invalid"]) == 37
+    assert math.isclose(float(rows["skjolber_fast_bruteforce"]["mean_bins"]), 38.57142857142857, rel_tol=0, abs_tol=1e-12)
     assert int(rows["jerry"]["invalid"]) == 1

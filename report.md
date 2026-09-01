@@ -313,6 +313,8 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 上述统计在 B11 运行后更新为：`13/32` benchmark 有实际执行，`32/32` 有状态记录，`514/608` cell 有证据，`76` 个 protocol-v3 cell 已执行，`409` 个为 status-only，合计 `62,492` 条记录（protocol-v3 `60,414`）。B11 是 fork-owned 三例 open-X 校准：fork/upstream `box` 各 `3/3` 通过，fork `boxstacks` `0/3`（非同底面 stack fixture 导致进程错误）；上游 `boxstacks` 因缺少同源二进制保持 `PLANNED`。其 `used_length` 单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，不与 BR/LN 或封闭箱数混排。
 
+FastBruteForce 后的当前权威统计为：`13/32` benchmark 有实际执行，`32/32` 有状态记录，`515/608` cell 有证据，`77` 个 protocol-v3 cell 已执行，`409` 个为 status-only，合计 `62,580` 条记录（legacy `2,122`，protocol-v3 `60,458`）。B04 的 FastBruteForce 为 7/44 合法、37/44 非法/不完整证书；它进入共同实例表的失败计数，但不以 7 条成功结果冒充完整质量排行。
+
 ### 7.1.3 新发现的公开现实约束数据
 
 在 protocol-v3 冻结后又审计了两个公开数据源。它们对“BR/LN 之外还缺什么”的回答是互补的：Q4RealBPP 适合检验现实约束字段有没有被当作硬约束执行，3DBPPsi 适合检验异构车队、堆叠规则和大规模性能。两者都不能替代 MPV 的经典同型多箱分布，也不能把 projection 轨升级成原题能力。
@@ -323,6 +325,8 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 | B34 3DBPPsi | Science Data Bank DOI `10.57760/sciencedb.42066`，V1/20 个文件，CC BY 4.0；异构车辆尺寸、价格、payload、stacked-weight、density；物品 nesting height、stackability class、forced orientation、最大堆叠层级；规模可到数千件 | `boxstacks`/exact model 和有 stack controls 的引擎做 `FULL`；其他实现做几何 projection；大实例重点跑 B28 scalability | 异构车队成本、堆叠/密度/姿态硬合规，以及质量-延迟-RSS 拐点 | 候选 B34；先做 stack master、密度/载荷 validator 和小实例 exact 校准，再进入工业 Wave |
 
 这两个候选不会改变当前 `12/32` 实际执行、`32/32` 状态记录和 `515/608` 有证据 cell 的 protocol-v3 进度数字。B33 的源审计已验证 15 个必要文件的 SHA-256 和 12 个输入的结构，但发现 3 条官方描述件数不一致；B34 的 20 个 CSV 已通过列、数值和重复 ID 审计。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。审计证据见 [`b33-source-audit.json`](results/comprehensive/b33-source-audit.json) 和 [`b34-source-audit.json`](results/comprehensive/b34-source-audit.json)。
+
+上段候选数据审计文字沿用 protocol-v3 冻结时的快照；FastBruteForce 补跑后，当前覆盖数字以本节前的最新权威统计为准（`13/32`、`515/608`、`62,580` 条）。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
@@ -363,6 +367,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 | Jerry 降序 | 43/44 | 18.72 | 14 | 1 条重叠；均值只基于 43 条有效记录 |
 | Go `bp3d` | 44/44 | 19.93 | 16 | 几何有效，但另有禁旋/重量语义缺陷 |
 | Skjolber LAFF | 44/44 | 20.84 | 17 | 层结构在该分布未带来质量优势 |
+| Skjolber FastBruteForce | 7/44 | 38.57（仅 7 条合法） | 27 | 37 条在预算内未完成并被独立 validator 判为非法；保留作扩展性/可靠性证据，不应视为高质量主算法 |
 
 跨语言微型计时没有统一 JVM/进程启动、停止粒度和计时边界，因此本报告不据此作性能排名。
 
