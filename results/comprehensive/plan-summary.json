@@ -2,18 +2,18 @@
   "capability_status_counts": {
     "ADAPTER_MISSING": 198,
     "NOT_SUPPORTED": 36,
-    "PROJECTION_ONLY": 182,
+    "PROJECTION_ONLY": 172,
     "SUPPORTED_COMPOSED": 23,
-    "SUPPORTED_NATIVE": 169
+    "SUPPORTED_NATIVE": 179
   },
   "catalog_sha256": {
     "benchmarks/comprehensive/implementations.json": "2f7bba7eabd81940fb0b956694d2b673fc3c328fa790ac8049b57d3a031bbcb9",
-    "benchmarks/comprehensive/suites.json": "504eb0f2e2fd226b0946de533b0ed2c530a15609e5acb55ad68ba97abf31af06"
+    "benchmarks/comprehensive/suites.json": "ec04df36b4504e63849802b0e61c72a45c0e19f64fd42f0a54450abdd4914a19"
   },
   "comparison_track_counts": {
-    "COMPOSED": 205,
+    "COMPOSED": 195,
     "EXACT_MODEL": 124,
-    "NATIVE": 243,
+    "NATIVE": 253,
     "NOT_APPLICABLE": 36
   },
   "executed_cells": 0,
