@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Materialize audited source/capability status for an unexecutable suite cell."""
+"""Materialize audited source/capability status for unexecutable suite cells.
+
+This command deliberately emits ``NOT_RUN`` records only for cells that cannot
+be executed without changing the benchmark semantics: incomplete sources,
+missing adapters, or explicitly unsupported capabilities.  A valid source and
+supported capability remains a real execution task and is never silently
+converted into a status-only record.
+"""
 
 from __future__ import annotations
 
@@ -7,7 +14,10 @@ import argparse
 import json
 from pathlib import Path
 
-from model import ROOT, comparison_track, load_catalogs, validate_run_record
+try:  # support both ``python record_source_status.py`` and package imports
+    from .model import comparison_track, load_catalogs, validate_run_record
+except ImportError:  # pragma: no cover - exercised by the CLI entry point
+    from model import comparison_track, load_catalogs, validate_run_record
 
 
 def build_records(benchmark_id: str, audit_artifact: str) -> list[dict]:
@@ -18,14 +28,31 @@ def build_records(benchmark_id: str, audit_artifact: str) -> list[dict]:
         capability = suite["capability_by_profile"][implementation["capability_profile"]]
         track = comparison_track(implementation, capability)
         scope = "GEOMETRY_PROJECTION" if capability == "PROJECTION_ONLY" else "NOT_APPLICABLE" if capability == "NOT_SUPPORTED" else "FULL_PROBLEM"
+        # A source audit blocks every implementation in the suite, while a
+        # valid source only permits status materialization for an unexecutable
+        # capability.  Supported cells must be run by a real adapter.
+        blocked_by_source = suite["input_status"] != "VALID"
+        blocked_by_capability = capability in {"NOT_SUPPORTED", "ADAPTER_MISSING"}
+        if not (blocked_by_source or blocked_by_capability):
+            continue
+        if blocked_by_source:
+            termination_reason = "SOURCE_PENDING"
+        else:
+            termination_reason = capability
+        if capability == "NOT_SUPPORTED":
+            scope = "NOT_APPLICABLE"
+        elif capability == "PROJECTION_ONLY":
+            scope = "GEOMETRY_PROJECTION"
+        else:
+            scope = "FULL_PROBLEM"
         record = {
             "schema_version": 2,
             "protocol_version": "benchmark-protocol/3",
             "record_origin": "PROTOCOL_V3",
-            "run_id": f"{benchmark_id}/SOURCE_PENDING/{implementation['id']}/rep-0",
+            "run_id": f"{benchmark_id}/STATUS/{implementation['id']}/rep-0",
             "benchmark_id": benchmark_id,
             "problem_variant": "ORIGINAL",
-            "instance_id": "SOURCE_PENDING",
+            "instance_id": "STATUS_ONLY",
             "implementation_id": implementation["id"],
             "algorithm": implementation["algorithm"],
             "adapter": None,
@@ -42,9 +69,13 @@ def build_records(benchmark_id: str, audit_artifact: str) -> list[dict]:
             "run_status": "NOT_RUN",
             "solution_status": "NOT_APPLICABLE",
             "proof_status": "NOT_APPLICABLE",
-            "termination_reason": "SOURCE_PENDING",
+            "termination_reason": termination_reason,
             "resources": {},
-            "metrics": {"source_audit": "B05_SOURCE_AUDIT", "executable_source": False},
+            "metrics": {
+                "source_audit": audit_artifact,
+                "executable_source": False,
+                "status_only_reason": termination_reason,
+            },
             "artifacts": {"source_audit": audit_artifact},
         }
         validate_run_record(record)

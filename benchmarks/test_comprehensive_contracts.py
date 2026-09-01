@@ -9,6 +9,7 @@ from pathlib import Path
 import pytest
 
 from comprehensive.model import build_plan_rows, load_catalogs, validate_plan_rows, validate_run_record
+from comprehensive.record_source_status import build_records as build_status_records
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,6 +85,25 @@ def test_source_readiness_is_not_inferred_from_solver_capability() -> None:
     assert cells[("B30", "packingsolver_fork_box")]["termination_reason"] == "ADAPTER_MISSING"
 
 
+def test_status_materialization_only_emits_unexecutable_cells() -> None:
+    unsupported = build_status_records("B22", "benchmarks/comprehensive/suites.json#B22")
+    assert len(unsupported) == 19
+    assert {record["capability_status"] for record in unsupported} == {"NOT_SUPPORTED"}
+    assert {record["termination_reason"] for record in unsupported} == {"NOT_SUPPORTED"}
+    assert len({record["run_id"] for record in unsupported}) == len(unsupported)
+
+    adapter_missing = build_status_records("B30", "benchmarks/comprehensive/suites.json#B30")
+    assert adapter_missing
+    assert {record["capability_status"] for record in adapter_missing} == {"ADAPTER_MISSING"}
+    assert all(record["termination_reason"] == record["capability_status"] for record in adapter_missing)
+    assert all(record["input_status"] == "VALID" for record in adapter_missing)
+
+    # A valid source with a runnable capability must remain a real execution
+    # task; status materialization must never turn it into a false result.
+    b04_status = build_status_records("B04", "benchmarks/comprehensive/suites.json#B04")
+    assert "packingsolver_fork_box" not in {record["implementation_id"] for record in b04_status}
+
+
 def test_run_record_contract_rejects_false_results() -> None:
     record = valid_run_record()
     validate_run_record(record)
@@ -135,18 +155,19 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 60431
-    assert summary["protocol_v3_run_records"] == 58353
+    assert summary["combined_run_records"] == len(records) == 60893
+    assert summary["protocol_v3_run_records"] == 58815
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 113
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 12
+    assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
+    assert aggregate["coverage"]["cells_with_evidence"] == 549
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 32
     assert aggregate["coverage"]["protocol_v3_executed_cells"] == 52
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58353}
-    assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
-    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34204
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 465
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58815}
+    assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 
     exact_b07 = [
         record for record in records

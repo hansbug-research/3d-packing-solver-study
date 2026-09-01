@@ -298,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (60431, 2078, 60431, 60431):
+        ) != (60893, 2078, 60893, 60893):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +307,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 113, 42, 52, 13, 19):
+        ) != (608, 549, 32, 52, 12, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 19:
+    if coverage.get("protocol_v3_status_only_cells") != 465:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58353}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58815}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -325,7 +325,7 @@ def check_comprehensive_results() -> None:
         decision.get("termination_reason"),
     ) != ("B05", "SOURCE_INCOMPLETE", "NOT_RUN", "SOURCE_PENDING"):
         fail("B05 source audit decision changed")
-    if coverage.get("records_by_benchmark", {}).get("B07") != 34204:
+    if coverage.get("records_by_benchmark", {}).get("B07") != 34209:
         fail("comprehensive B07 record count changed")
     subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
     if not subset_audit_path.exists():

@@ -18,6 +18,16 @@ from model import RESULTS_DIR, ROOT, canonical_json, validate_run_record
 VALID_SOLUTIONS = {"VALID_COMPLETE", "VALID_PARTIAL"}
 
 
+def executed(record: dict[str, Any]) -> bool:
+    """Return whether a run has actually executed.
+
+    Capability/source status rows are intentionally part of the manifest, but
+    they have no budget or objective sample and must not enter rankings.
+    """
+
+    return record["run_status"] != "NOT_RUN"
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -145,7 +155,7 @@ def execution_coverage(plan: list[dict[str, Any]], records: list[dict[str, Any]]
 def volume_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     groups: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        if record["benchmark_id"] not in {"B01", "B02", "B07"}:
+        if not executed(record) or record["benchmark_id"] not in {"B01", "B02", "B07"}:
             continue
         key = (
             record["benchmark_id"],
@@ -321,6 +331,8 @@ def b07_projection_common_rankings(records: list[dict[str, Any]]) -> list[dict[s
         for record in records:
             implementation_id = record["implementation_id"]
             if (
+                executed(record)
+                and
                 record["benchmark_id"] == "B07"
                 and record["problem_variant"] == "RELAXED_ALL_ROTATIONS"
                 and record["problem_scope"] == "GEOMETRY_PROJECTION"
@@ -371,6 +383,8 @@ def b07_jerry_fixpoint_pairwise(records: list[dict[str, Any]]) -> list[dict[str,
     }
     for record in records:
         if (
+            executed(record)
+            and
             record["benchmark_id"] == "B07"
             and record["implementation_id"] == "jerry"
             and float(record["budget"]["time_limit_s"]) == 10.0
@@ -416,7 +430,7 @@ def b07_jerry_fixpoint_pairwise(records: list[dict[str, Any]]) -> list[dict[str,
 def canonical_b04(records: list[dict[str, Any]]) -> dict[str, dict[str, dict[str, Any]]]:
     selected: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
     for record in records:
-        if record["benchmark_id"] != "B04":
+        if not executed(record) or record["benchmark_id"] != "B04":
             continue
         implementation_id = record["implementation_id"]
         adapter = record["adapter"]
@@ -509,7 +523,7 @@ def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for benchmark_id in ("B03", "B06", "B07", "B09"):
         groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for record in records:
-            if record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":
+            if executed(record) and record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":
                 groups[record["implementation_id"]].append(record)
         for implementation_id, group in groups.items():
             proven = sum(record["proof_status"] in {"PROVEN_OPTIMAL", "PROVEN_INFEASIBLE"} for record in group)
@@ -545,7 +559,7 @@ def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def profit_knapsack_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     groups: dict[tuple[str, str, float], list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        if record["benchmark_id"] != "B03" or record["comparison_track"] == "EXACT_MODEL":
+        if not executed(record) or record["benchmark_id"] != "B03" or record["comparison_track"] == "EXACT_MODEL":
             continue
         groups[(record["problem_variant"], record["implementation_id"], float(record["budget"]["time_limit_s"]))].append(record)
     ranking: list[dict[str, Any]] = []
@@ -614,7 +628,7 @@ def profit_knapsack_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[s
 def constraint_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for record in records:
-        if record["benchmark_id"] in {"B09", "B12", "B13", "B14", "B15", "B16", "B17", "B18"}:
+        if executed(record) and record["benchmark_id"] in {"B09", "B12", "B13", "B14", "B15", "B16", "B17", "B18"}:
             groups[(record["benchmark_id"], record["implementation_id"])].append(record)
     rows: list[dict[str, Any]] = []
     for (benchmark_id, implementation_id), group in groups.items():
@@ -694,6 +708,7 @@ def generated_files() -> dict[Path, str]:
     solution_counts = Counter(record["solution_status"] for record in records)
     run_counts = Counter(record["run_status"] for record in records)
     benchmark_counts = Counter(record["benchmark_id"] for record in records)
+    executed_benchmark_counts = Counter(record["benchmark_id"] for record in records if executed(record))
     evidence_cells = sum(row["run_records"] > 0 for row in coverage)
     protocol_v3_cells = sum(row["protocol_v3_executed_records"] > 0 for row in coverage)
     legacy_only_cells = sum(row["legacy_run_records"] > 0 and row["protocol_v3_run_records"] == 0 for row in coverage)
@@ -720,7 +735,10 @@ def generated_files() -> dict[Path, str]:
             "run_records": len(records),
             "record_origin_counts": dict(sorted(origin_counts.items())),
             "executed_implementations": len({record["implementation_id"] for record in records}),
-            "benchmarks_with_runs": len(benchmark_counts),
+            # Status-only records make every suite visible in the manifest, so
+            # distinguish actual execution coverage from status coverage.
+            "benchmarks_with_runs": len(executed_benchmark_counts),
+            "benchmarks_with_status_records": len(benchmark_counts),
             "run_status_counts": dict(sorted(run_counts.items())),
             "solution_status_counts": dict(sorted(solution_counts.items())),
             "records_by_benchmark": dict(sorted(benchmark_counts.items())),
