@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 60893,
+  "combined_run_records": 62323,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -38,6 +38,8 @@
     "results/comprehensive/runs/B01-B02-external-projection-go_bp3d-rust_extreme_point-1s-rep-0.jsonl": "68fc0953c2324b398c5142d51ede548f762e182db19982c413bd625b06a3a39b",
     "results/comprehensive/runs/B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-10s-rep-0.jsonl": "fb0c973493b95a9d133a906e2453660d814835070a8cbbffaf44798aec94eef6",
     "results/comprehensive/runs/B01-B02-external-projection-rust_layer-rust_ga-rust_brkga-rust_sa-1s-rep-0.jsonl": "bd3514be56594ec71ac31ed4297420df00ac8a2693a6e64ec5bfc8ae0e96967c",
+    "results/comprehensive/runs/B01-B02-packingsolver-protocol-revalidation-10s.jsonl": "5ff752a9e6f342a8cb97ae65a90021c09f3e209a8826b8d10b9ff49f95499ba8",
+    "results/comprehensive/runs/B01-B02-packingsolver-protocol-revalidation-1s.jsonl": "a40ba922e836f36ceb10b16281e7124906390ffd12d0d06152f29f73e4fada6f",
     "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-10s-rep-0.jsonl": "61b89e7f95950791ab760aed25d45455f2d33a3a4ddfd0ca5a4a1e1140ff7bfd",
     "results/comprehensive/runs/B01-B02-python-projection-py3dbp-jerry-1s-rep-0.jsonl": "4b72729a28271da817e06166e026a0a7bd825e1ef3446b2c20310f41e70c1a5c",
     "results/comprehensive/runs/B03-exact_cp_sat-20s.jsonl": "d2f02007696d708bd41811ab33b8a3531fd0d99e5dc7d7319bb2d73d7ae70316",
@@ -82,7 +84,6 @@
     "results/comprehensive/runs/status-B03.jsonl": "a55246b534bf83b20f6d424baa90b48e058bc7fba24ba15d1c1ea4d9bafaca68",
     "results/comprehensive/runs/status-B04.jsonl": "1541c3620287c9156a73b8f7e4190715abc84338301c4e4c4bf633a7feb04791",
     "results/comprehensive/runs/status-B05.jsonl": "8b4f26fc53d3f82260f80e2d873bd642621bd127b791079b0dd543364135d09c",
-    "results/comprehensive/runs/status-B06.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "results/comprehensive/runs/status-B07.jsonl": "fb79fc9071413cce1d4c0d8535723fc12a56f5efd32e993f8cb29f1d06e060bc",
     "results/comprehensive/runs/status-B08.jsonl": "4692d1c8df733131e249f76524fa4b885ebb60125f8af5c04730a3157fa2082e",
     "results/comprehensive/runs/status-B09.jsonl": "9737e1e77e316042d1749a49b7873ef196038670422d2958287066cff1db20c8",
@@ -110,7 +111,7 @@
     "results/comprehensive/runs/status-B31.jsonl": "36898ccf7f4f3188013571c18228a11044367426435f9b9493a540d394ccd853",
     "results/comprehensive/runs/status-B32.jsonl": "7bd1d06e96f1273aa0f0f4756481775387b0b4200e58120f0b0e05fa23107c53"
   },
-  "protocol_v3_run_records": 58815,
+  "protocol_v3_run_records": 60245,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -125,7 +126,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "b825f4c3e8d604568bd67436bf101c72025d900723e862fd8ff8c801c85b3a02",
+  "run_manifest_sha256": "b0287b67fb8f18dac7f15177193be61e949f4bc9d90326b4962f8bbd1833d6b0",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

@@ -28,7 +28,7 @@
 
 ## 当前 execution gap
 
-以下是实验进度而非协议缺陷，必须在后续波次关闭：B05-B11 全库统一 adapter；B12-B18 的跨库 conformance；Alonso/VRPTW-CLP full/projection；B22 irregular 边界记录；B23 脱敏真实订单；B24-B29 跨库可靠性；B30 shelf adapter；B31 生成器联合约束；B32 online adapter。当前聚合是 `12/32` benchmark 实际执行、`32/32` benchmark 有状态记录、`549/608` cells 有证据，其中 `465` 个 cell 仅为 status-only，不能写成全量完成。
+以下是实验进度而非协议缺陷，必须在后续波次关闭：B05-B11 全库统一 adapter；B12-B18 的跨库 conformance；Alonso/VRPTW-CLP full/projection；B22 irregular 边界记录；B23 脱敏真实订单；B24-B29 跨库可靠性；B30 shelf adapter；B31 生成器联合约束；B32 online adapter。当前聚合是 `12/32` benchmark 实际执行、`32/32` benchmark 有状态记录、`549/608` cells 有证据，其中 `465` 个 cell 仅为 status-only，`54` 个 cell 已执行 protocol-v3；新增的 1,430 条 B01/B02 native revalidation 仍是已归档 certificate 的协议化重验，不应写成新的 solver invocation，不能写成全量完成。
 
 ## 本次自审命令
 

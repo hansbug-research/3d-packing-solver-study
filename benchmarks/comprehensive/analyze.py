@@ -207,7 +207,13 @@ def canonical_volume_records(records: list[dict[str, Any]], benchmark_id: str) -
         implementation_id = record["implementation_id"]
         canonical = False
         if implementation_id == "packingsolver_fork_box":
-            canonical = record["adapter"] == "legacy_import/packingsolver_thpack_v2" and record["budget"]["time_limit_s"] == 10.0
+            if benchmark_id in {"B01", "B02"}:
+                canonical = (
+                    record["adapter"] == "packingsolver_thpack_protocol_revalidation_v1"
+                    and record["budget"]["time_limit_s"] == 10.0
+                )
+            else:
+                canonical = record["adapter"] == "legacy_import/packingsolver_thpack_v2" and record["budget"]["time_limit_s"] == 10.0
         elif implementation_id in {"py3dbp", "jerry"}:
             canonical = record["adapter"] == "legacy_import/python_thpack_v1" and record["item_order"] == "DESCENDING"
         if canonical:

@@ -9,6 +9,7 @@ from pathlib import Path
 import pytest
 
 from comprehensive.model import build_plan_rows, load_catalogs, validate_plan_rows, validate_run_record
+from comprehensive.import_packingsolver_protocol import build_records as build_packingsolver_protocol_records
 from comprehensive.record_source_status import build_records as build_status_records
 
 
@@ -104,6 +105,16 @@ def test_status_materialization_only_emits_unexecutable_cells() -> None:
     assert "packingsolver_fork_box" not in {record["implementation_id"] for record in b04_status}
 
 
+def test_packingsolver_thpack_protocol_revalidation_is_explicit() -> None:
+    records = build_packingsolver_protocol_records(10.0)
+    assert len(records) == 715
+    assert {record["benchmark_id"] for record in records} == {"B01", "B02"}
+    assert {record["record_origin"] for record in records} == {"PROTOCOL_V3"}
+    assert {record["adapter"] for record in records} == {"packingsolver_thpack_protocol_revalidation_v1"}
+    assert all(record["metrics"]["provenance_kind"] == "ARCHIVED_CERTIFICATE_REVALIDATION" for record in records)
+    assert all(record["input_sha256"] and len(record["input_sha256"]) == 64 for record in records)
+
+
 def test_run_record_contract_rejects_false_results() -> None:
     record = valid_run_record()
     validate_run_record(record)
@@ -155,17 +166,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 60893
-    assert summary["protocol_v3_run_records"] == 58815
+    assert summary["combined_run_records"] == len(records) == 62323
+    assert summary["protocol_v3_run_records"] == 60245
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 12
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 549
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 32
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 52
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 30
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 54
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 465
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58815}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60245}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 
