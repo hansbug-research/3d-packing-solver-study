@@ -251,7 +251,7 @@ results/comprehensive/
 
 现有证据已经覆盖 PackingSolver THPACK 759 个合法源两档预算、THPACK9 44 例主要 packer 横评、四个 exact backend 的 7 个 strengthened 场景、PackingSolver `boxstacks` 9 项、Rust 策略和工业数据字段审计。它们作为协议 v2 的回归基线保留；协议 v3 不倒写这些历史结果。
 
-当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B05、B08、B10 的来源/统一 adapter 和全量运行；B11 的 SK/EX adapter 及大规模独立公开分布；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B24-B29 的统一跨库可靠性 campaign；B30 的完整 shelf adapter；B31 的生成器和联合约束运行；B32 的统一在线 adapter。B11 已对 PY/JE/GO/RS 增加可复现的外层搜索 projection，但不得把该轨写成原生 open-dimension 能力。B03 已完成来源审计、PackingSolver 官方/fork、Python/Go/Rust adapter 和 exact 20 件子集，但其 projection 与 fixed 轨必须继续分开解释。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 或 B03 排名替代。
+当前尚未完成并因此不能宣称全库综合选型已经冻结的项目包括：B05、B08、B10 的来源/统一 adapter 和全量运行；B11 的 SK/EX adapter 及大规模独立公开分布；PY/SK 对 B12-B18 的统一状态；Alonso/VRPTW-CLP 的 full/projection 求解；B22 的明确能力边界执行记录；B23 的脱敏真实订单；B30 的完整 shelf adapter；B31 的生成器和联合约束 FULL 运行；B32 的原生 incremental/FULL adapter。B24-B29 reliability-v3 已完成一轮 19 个实现的代表性跨库运行，但仍需在 B05/B23 等非对称真实分布上复跑，才能作为最终稳定性结论。B11 已对 PY/JE/GO/RS 增加可复现的外层搜索 projection，但不得把该轨写成原生 open-dimension 能力；B32 已对 PY/JE/GO/RS 完成固定 arrival trace 的组合 policy 校准，全部记录为 `COMPOSED/GEOMETRY_PROJECTION`，不能解释为库原生 online API。B03 已完成来源审计、PackingSolver 官方/fork、Python/Go/Rust adapter 和 exact 20 件子集，但其 projection 与 fixed 轨必须继续分开解释。后续提交必须逐项关闭这些缺口，不能用已有 THPACK9 或 B03 排名替代。
 
 ## 14. 研究问题到实验设计的映射
 

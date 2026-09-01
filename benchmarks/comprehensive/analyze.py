@@ -756,6 +756,42 @@ def industrial_mixed_pallet_rankings(records: list[dict[str, Any]]) -> list[dict
     return rows
 
 
+def online_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Summarize B32 policy adapters without calling them native online APIs."""
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if executed(record) and record["benchmark_id"] == "B32":
+            groups[(record["implementation_id"], record["item_order"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for (implementation_id, policy), group in sorted(groups.items()):
+        statuses = Counter(record["solution_status"] for record in group)
+        bins = [record["metrics"].get("bins_used") for record in group if record["metrics"].get("bins_used") is not None]
+        costs = [record["metrics"].get("total_cost") for record in group if record["metrics"].get("total_cost") is not None]
+        latencies = [record["metrics"].get("decision_latency_p95_s") for record in group if record["metrics"].get("decision_latency_p95_s") is not None]
+        deadlines = [record["metrics"].get("deadline_hit_rate") for record in group if record["metrics"].get("deadline_hit_rate") is not None]
+        failures = [record["metrics"].get("candidate_failures") for record in group if record["metrics"].get("candidate_failures") is not None]
+        rows.append({
+            "benchmark_id": "B32",
+            "implementation_id": implementation_id,
+            "policy": policy,
+            "comparison_track": group[0]["comparison_track"],
+            "problem_scope": group[0]["problem_scope"],
+            "cases": len(group),
+            "valid_complete": statuses["VALID_COMPLETE"],
+            "invalid_certificate": statuses["INVALID_CERTIFICATE"],
+            "constraint_violation": statuses["CONSTRAINT_VIOLATION"],
+            "no_solution": statuses["NO_SOLUTION"],
+            "complete_rate": statuses["VALID_COMPLETE"] / len(group) if group else 0.0,
+            "mean_bins_used": mean(bins),
+            "mean_total_cost": mean(costs),
+            "mean_decision_latency_p95_s": mean(latencies),
+            "mean_deadline_hit_rate": mean(deadlines),
+            "mean_candidate_failures": mean(failures),
+        })
+    rows.sort(key=lambda row: (row["policy"], -row["complete_rate"], row["mean_total_cost"] if row["mean_total_cost"] is not None else math.inf, row["mean_decision_latency_p95_s"] if row["mean_decision_latency_p95_s"] is not None else math.inf, row["implementation_id"]))
+    return rows
+
+
 def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Rank only records carrying a validated variable-cost objective.
 
@@ -976,6 +1012,7 @@ def generated_files() -> dict[Path, str]:
     constraints = constraint_rankings(records)
     industrial_baytp = industrial_baytp_rankings(records)
     industrial_mixed_pallet = industrial_mixed_pallet_rankings(records)
+    online = online_rankings(records)
     variable_cost = variable_cost_rankings(records)
     open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
@@ -1008,6 +1045,9 @@ def generated_files() -> dict[Path, str]:
             "benchmarks/comprehensive/run_b11_external_composed.py": sha256(ROOT / "benchmarks/comprehensive/run_b11_external_composed.py"),
             "benchmarks/data/comprehensive/b11-open-dimension/source.json": sha256(ROOT / "benchmarks/data/comprehensive/b11-open-dimension/source.json"),
             "raw/experiments/comprehensive/B11-external-composed/artifacts.tar.gz": sha256(ROOT / "raw/experiments/comprehensive/B11-external-composed/artifacts.tar.gz"),
+            "benchmarks/comprehensive/run_b32_online_composed.py": sha256(ROOT / "benchmarks/comprehensive/run_b32_online_composed.py"),
+            "benchmarks/data/comprehensive/b32-online-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/b32-online-fixture.json"),
+            "results/comprehensive/b32-source-audit.json": sha256(ROOT / "results/comprehensive/b32-source-audit.json"),
         },
         "coverage": {
             "planned_cells": len(coverage),
@@ -1037,6 +1077,7 @@ def generated_files() -> dict[Path, str]:
         "open_dimension": open_dimension,
             "industrial_baytp": industrial_baytp,
             "industrial_mixed_pallet": industrial_mixed_pallet,
+            "online": online,
             "reliability": reliability,
         },
         "warnings": [
@@ -1112,6 +1153,12 @@ def generated_files() -> dict[Path, str]:
         "constraint_violation", "invalid_certificate", "no_solution", "complete_rate", "mean_packed_items",
         "mean_hard_violation_count",
     ]
+    online_fields = [
+        "benchmark_id", "implementation_id", "policy", "comparison_track", "problem_scope", "cases",
+        "valid_complete", "invalid_certificate", "constraint_violation", "no_solution", "complete_rate",
+        "mean_bins_used", "mean_total_cost", "mean_decision_latency_p95_s", "mean_deadline_hit_rate",
+        "mean_candidate_failures",
+    ]
     variable_cost_fields = [
         "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "instances", "valid_complete",
         "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
@@ -1150,6 +1197,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
         RESULTS_DIR / "rankings" / "industrial-baytp.csv": write_csv(industrial_baytp, industrial_baytp_fields),
         RESULTS_DIR / "rankings" / "industrial-mixed-pallet.csv": write_csv(industrial_mixed_pallet, industrial_mixed_pallet_fields),
+        RESULTS_DIR / "rankings" / "industrial-online.csv": write_csv(online, online_fields),
         RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
         RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),

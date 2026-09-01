@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "record_kind": "B32_ONLINE_PACKING_FIXTURE",
+  "benchmark_id": "B32",
+  "source": {
+    "kind": "repository_owned_synthetic",
+    "generator": "hand-authored protocol-v3 arrival-trace fixture",
+    "license": "CC0-1.0",
+    "semantic_note": "Two deterministic arrival traces isolate order sensitivity and bounded lookahead. Geometry is orthogonal and all six rotations are allowed; no material or route constraint is implied."
+  },
+  "policies": [
+    {"id": "NO_REORDER", "lookahead": 0, "reorder_budget": 0},
+    {"id": "LOOKAHEAD_2", "lookahead": 2, "reorder_budget": 0},
+    {"id": "OFFLINE_REBUILD", "lookahead": null, "reorder_budget": 999}
+  ],
+  "cases": [
+    {
+      "id": "B32/ADVERSARIAL_ORDER",
+      "expected_complete": true,
+      "container": {"id": "bin-online-a", "size": [100, 100, 100], "max_weight": 1000.0, "cost": 1.0},
+      "deadline_s": 1.0,
+      "items": [
+        {"id": "a01", "size": [60, 60, 40], "weight": 10.0, "arrival": 0},
+        {"id": "a02", "size": [40, 40, 40], "weight": 10.0, "arrival": 1},
+        {"id": "a03", "size": [60, 40, 40], "weight": 10.0, "arrival": 2},
+        {"id": "a04", "size": [40, 60, 40], "weight": 10.0, "arrival": 3},
+        {"id": "a05", "size": [50, 50, 60], "weight": 10.0, "arrival": 4},
+        {"id": "a06", "size": [50, 50, 40], "weight": 10.0, "arrival": 5},
+        {"id": "a07", "size": [70, 70, 70], "weight": 10.0, "arrival": 6},
+        {"id": "a08", "size": [70, 70, 70], "weight": 10.0, "arrival": 7}
+      ]
+    },
+    {
+      "id": "B32/STACKED_ORDER",
+      "expected_complete": true,
+      "container": {"id": "bin-online-b", "size": [100, 100, 100], "max_weight": 1000.0, "cost": 1.0},
+      "deadline_s": 1.0,
+      "items": [
+        {"id": "s01", "size": [100, 50, 50], "weight": 10.0, "arrival": 0},
+        {"id": "s02", "size": [50, 50, 50], "weight": 10.0, "arrival": 1},
+        {"id": "s03", "size": [50, 50, 50], "weight": 10.0, "arrival": 2},
+        {"id": "s04", "size": [100, 50, 50], "weight": 10.0, "arrival": 3},
+        {"id": "s05", "size": [50, 50, 50], "weight": 10.0, "arrival": 4},
+        {"id": "s06", "size": [50, 50, 50], "weight": 10.0, "arrival": 5},
+        {"id": "s07", "size": [80, 80, 50], "weight": 10.0, "arrival": 6},
+        {"id": "s08", "size": [80, 80, 50], "weight": 10.0, "arrival": 7}
+      ]
+    }
+  ]
+}

@@ -76,7 +76,7 @@ def test_known_capability_boundaries_remain_explicit() -> None:
     assert "loadbear" in cells[("B14", "jerry")]["status_reason"]
     assert cells[("B22", "packingsolver_fork_box")]["capability_status"] == "NOT_SUPPORTED"
     assert cells[("B30", "exact_cp_sat")]["capability_status"] == "ADAPTER_MISSING"
-    assert cells[("B32", "py3dbp")]["capability_status"] == "ADAPTER_MISSING"
+    assert cells[("B32", "py3dbp")]["capability_status"] == "PROJECTION_ONLY"
 
 
 def test_source_readiness_is_not_inferred_from_solver_capability() -> None:
@@ -199,17 +199,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62913
-    assert summary["protocol_v3_run_records"] == 60791
+    assert summary["combined_run_records"] == len(records) == 62953
+    assert summary["protocol_v3_run_records"] == 60831
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 23
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 24
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 530
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 252
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 259
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60791}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 260
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 251
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60831}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]

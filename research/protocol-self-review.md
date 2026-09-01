@@ -26,8 +26,8 @@
 ## 已知但非 blocking 的缺口
 
 - B05 MPV 三维输入仍未完成可复现来源审计；保持 `SOURCE_INCOMPLETE/SOURCE_PENDING`。
-- B08、B10、B19-B23、B32 仍缺完整公开来源或 full adapter；B31 fixture 来源已冻结，但仍缺 full adapter；projection 不能升级为原题结果。
-- B24-B29 的跨库统一运行尚未完成；已有局部专项不代表全套可靠性结果。
+- B08、B10、B19-B23 仍缺完整公开来源或 full adapter；B31 fixture 来源已冻结，但仍缺 full adapter；B32 已完成 48 条组合 policy projection，但仍缺原生 incremental/full adapter；projection 不能升级为原题结果。
+- B24-B29 已完成一轮 19 个实现的跨库 reliability-v3 运行；在 B05/B23 等非对称或真实分布上仍需复跑，才能作为最终稳定性结论。
 - B33 Q4RealBPP（GPLv3）和 B34 3DBPPsi（CC BY 4.0）只能在许可证、canonical converter 和 validator 审计后加入下一版协议。
 - 非规则几何、鲁棒/随机装载、软包装物理、连续机器人运动和 2D cutting/nesting 不在 B01-B32 的结论范围内，需另立 suite。
 

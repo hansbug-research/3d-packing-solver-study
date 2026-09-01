@@ -1,0 +1,48 @@
+{
+  "policy": "OFFLINE_REBUILD",
+  "order": [
+    "s07",
+    "s08",
+    "s01",
+    "s04",
+    "s02",
+    "s03",
+    "s05",
+    "s06"
+  ],
+  "arrival_order": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08"
+  ],
+  "bins": [
+    {
+      "id": "bin-online-b:0",
+      "items": [
+        "s07",
+        "s08"
+      ]
+    },
+    {
+      "id": "bin-online-b:1",
+      "items": [
+        "s01",
+        "s04",
+        "s02",
+        "s03",
+        "s06"
+      ]
+    },
+    {
+      "id": "bin-online-b:2",
+      "items": [
+        "s05"
+      ]
+    }
+  ]
+}

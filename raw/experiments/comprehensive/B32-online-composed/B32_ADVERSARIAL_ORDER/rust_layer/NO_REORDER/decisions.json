@@ -1,0 +1,53 @@
+{
+  "policy": "NO_REORDER",
+  "order": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08"
+  ],
+  "arrival_order": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08"
+  ],
+  "bins": [
+    {
+      "id": "bin-online-a:0",
+      "items": [
+        "a01",
+        "a02",
+        "a03",
+        "a04",
+        "a06"
+      ]
+    },
+    {
+      "id": "bin-online-a:1",
+      "items": [
+        "a05"
+      ]
+    },
+    {
+      "id": "bin-online-a:2",
+      "items": [
+        "a07"
+      ]
+    },
+    {
+      "id": "bin-online-a:3",
+      "items": [
+        "a08"
+      ]
+    }
+  ]
+}

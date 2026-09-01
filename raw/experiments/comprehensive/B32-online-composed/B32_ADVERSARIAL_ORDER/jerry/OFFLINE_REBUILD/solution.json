@@ -1,0 +1,92 @@
+{
+  "placements": [
+    {
+      "item_id": "a07",
+      "bin_id": "bin-online-a:0",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "dx": 70.0,
+      "dy": 70.0,
+      "dz": 70.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a08",
+      "bin_id": "bin-online-a:1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "dx": 70.0,
+      "dy": 70.0,
+      "dz": 70.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a05",
+      "bin_id": "bin-online-a:2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "dx": 50.0,
+      "dy": 50.0,
+      "dz": 60.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a06",
+      "bin_id": "bin-online-a:2",
+      "x": 0.0,
+      "y": 50.0,
+      "z": 0.0,
+      "dx": 50.0,
+      "dy": 50.0,
+      "dz": 40.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a04",
+      "bin_id": "bin-online-a:2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 60.0,
+      "dx": 40.0,
+      "dy": 60.0,
+      "dz": 40.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a02",
+      "bin_id": "bin-online-a:2",
+      "x": 40.0,
+      "y": 0.0,
+      "z": 60.0,
+      "dx": 40.0,
+      "dy": 40.0,
+      "dz": 40.0,
+      "rotation": 0
+    },
+    {
+      "item_id": "a01",
+      "bin_id": "bin-online-a:2",
+      "x": 50.0,
+      "y": 0.0,
+      "z": 0.0,
+      "dx": 40.0,
+      "dy": 60.0,
+      "dz": 60.0,
+      "rotation": 3
+    },
+    {
+      "item_id": "a03",
+      "bin_id": "bin-online-a:2",
+      "x": 50.0,
+      "y": 60.0,
+      "z": 0.0,
+      "dx": 40.0,
+      "dy": 40.0,
+      "dz": 60.0,
+      "rotation": 2
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "policy": "LOOKAHEAD_2",
+  "order": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08"
+  ],
+  "arrival_order": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08"
+  ],
+  "bins": [
+    {
+      "id": "bin-online-b:0",
+      "items": [
+        "s01",
+        "s02",
+        "s03",
+        "s04",
+        "s05"
+      ]
+    },
+    {
+      "id": "bin-online-b:1",
+      "items": [
+        "s06",
+        "s07"
+      ]
+    },
+    {
+      "id": "bin-online-b:2",
+      "items": [
+        "s08"
+      ]
+    }
+  ]
+}

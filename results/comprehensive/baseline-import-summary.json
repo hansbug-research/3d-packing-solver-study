@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62913,
+  "combined_run_records": 62953,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -79,6 +79,7 @@
     "results/comprehensive/runs/B09-python-composed.jsonl": "879b062a591497e3a79131c4b1561fc8b4cdb2250821364f226690dbac31f66f",
     "results/comprehensive/runs/B11-external-composed.jsonl": "d24c3ede7a8ce9a8de58583f35265cc990a5d71a3fa3b9ee14026ea8cfd59016",
     "results/comprehensive/runs/B11-packingsolver.jsonl": "41a60a2c119c954cddbe8fa5f8a22348fac574b6e278b7ad71170efd8e57c54e",
+    "results/comprehensive/runs/B32-online-composed.jsonl": "edd7835dbf2ca3be7058fc8181b4321ce463207b5108f6e7a9f86eaaeb0a518d",
     "results/comprehensive/runs/constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl": "641d6953281a148737e243da13e73e84b84ca81a45980baddbb5d834dad2bdf8",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_box-10s.jsonl": "1fc82dea95deb565c7ecc759983b1cad9390b6e48dc736ffa76222c78ae712c1",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_boxstacks-10s.jsonl": "a197d7b06c40cffce15a66f077459d7edacaca612b8227080fad2a43deb097a7",
@@ -115,10 +116,10 @@
     "results/comprehensive/runs/status-B29.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "results/comprehensive/runs/status-B30.jsonl": "26d53031c0174d1554931be55d09bc43e42f4a3ffa9c207cf004a164ddd74656",
     "results/comprehensive/runs/status-B31.jsonl": "ef8f10d854c3dfca3221dbba132db6b4191b2b3f679bdc00c9a260307b3b9192",
-    "results/comprehensive/runs/status-B32.jsonl": "7bd1d06e96f1273aa0f0f4756481775387b0b4200e58120f0b0e05fa23107c53",
+    "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "2b851f066fb0028db02dc762a19734ee1aa8e0dc26da9a6a01b2b903259f68b4"
   },
-  "protocol_v3_run_records": 60791,
+  "protocol_v3_run_records": 60831,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -133,7 +134,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "090a176b00e5f0d945dd472d93da4ffb07c84e77c1348b236ff6128cb14af136",
+  "run_manifest_sha256": "e31c322f3bef3c12ad7bbc99dc1564be240ca03e2c73787bff9fd416790ebbde",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

@@ -1,0 +1,72 @@
+{
+  "scenario": "b32_b32_adversarial_order_bin-online-a:2",
+  "benchmark_id": "B32",
+  "problem_variant": "GEOMETRY_CANDIDATE",
+  "items": [
+    {
+      "id": "a05",
+      "size": [
+        50,
+        50,
+        60
+      ],
+      "weight": 10.0,
+      "arrival": 4,
+      "type_id": "a05",
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "a01",
+      "size": [
+        60,
+        60,
+        40
+      ],
+      "weight": 10.0,
+      "arrival": 0,
+      "type_id": "a01",
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "a06",
+      "size": [
+        50,
+        50,
+        40
+      ],
+      "weight": 10.0,
+      "arrival": 5,
+      "type_id": "a06",
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "a03",
+      "size": [
+        60,
+        40,
+        40
+      ],
+      "weight": 10.0,
+      "arrival": 2,
+      "type_id": "a03",
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "bin-online-a:2",
+      "type_id": "bin-online-a:2",
+      "size": [
+        100,
+        100,
+        100
+      ],
+      "max_weight": 1000.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/comprehensive/b32-online-fixture.json": "47fd423c14238a17a1abb22f2a2ddb848dc75e2391cc5b9c50ae9b30cc321320"
+  }
+}

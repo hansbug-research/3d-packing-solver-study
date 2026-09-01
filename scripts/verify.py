@@ -273,8 +273,10 @@ def check_comprehensive_results() -> None:
         "rankings/constraint-conformance.csv",
         "rankings/industrial-baytp.csv",
         "rankings/industrial-mixed-pallet.csv",
+        "rankings/industrial-online.csv",
         "rankings/resource-summary.csv",
         "b31-source-audit.json",
+        "b32-source-audit.json",
         "b05-source-audit.json",
     ]
     for relative in required:
@@ -301,7 +303,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62913, 2122, 62913, 62913):
+        ) != (62953, 2122, 62953, 62953):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -310,11 +312,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 530, 19, 252, 23, 19):
+        ) != (608, 530, 19, 260, 24, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 259:
+    if coverage.get("protocol_v3_status_only_cells") != 251:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60791}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60831}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)

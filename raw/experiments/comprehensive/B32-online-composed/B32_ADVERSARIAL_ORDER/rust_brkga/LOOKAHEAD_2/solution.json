@@ -1,0 +1,180 @@
+{
+  "placements": [
+    {
+      "item_id": "a05",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        60.0,
+        50.0,
+        50.0
+      ],
+      "original_size": [
+        50.0,
+        50.0,
+        60.0
+      ],
+      "weight": 10.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "a01",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        60.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        40.0,
+        60.0,
+        60.0
+      ],
+      "original_size": [
+        60.0,
+        60.0,
+        40.0
+      ],
+      "weight": 10.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "a02",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0.0,
+        60.0,
+        0.0
+      ],
+      "size": [
+        40.0,
+        40.0,
+        40.0
+      ],
+      "original_size": [
+        40.0,
+        40.0,
+        40.0
+      ],
+      "weight": 10.0,
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "a06",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0.0,
+        0.0,
+        60.0
+      ],
+      "size": [
+        50.0,
+        50.0,
+        40.0
+      ],
+      "original_size": [
+        50.0,
+        50.0,
+        40.0
+      ],
+      "weight": 10.0,
+      "rotation": "yxz",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "a03",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        50.0,
+        0.0,
+        60.0
+      ],
+      "size": [
+        40.0,
+        60.0,
+        40.0
+      ],
+      "original_size": [
+        60.0,
+        40.0,
+        40.0
+      ],
+      "weight": 10.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "a04",
+      "bin_id": "bin-online-a:1",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        40.0,
+        60.0,
+        40.0
+      ],
+      "original_size": [
+        40.0,
+        60.0,
+        40.0
+      ],
+      "weight": 10.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "a07",
+      "bin_id": "bin-online-a:2",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        70.0,
+        70.0,
+        70.0
+      ],
+      "original_size": [
+        70.0,
+        70.0,
+        70.0
+      ],
+      "weight": 10.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "a08",
+      "bin_id": "bin-online-a:3",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        70.0,
+        70.0,
+        70.0
+      ],
+      "original_size": [
+        70.0,
+        70.0,
+        70.0
+      ],
+      "weight": 10.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    }
+  ]
+}

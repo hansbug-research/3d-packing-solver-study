@@ -1,0 +1,12 @@
+{
+  "bins_used": 3,
+  "constraint_errors": [],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 0,
+  "packed_items": 8,
+  "required_items": 8,
+  "total_cost": 3.0,
+  "validation_error_count": 0,
+  "validation_errors": []
+}

@@ -309,7 +309,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`23/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`530/608` cell 有证据，其中 `252` 个 cell 已执行 protocol-v3、`259` 个是 status-only，合计 `62,913` 条记录（legacy `2,122`，protocol-v3 `60,791`）。B11 新增 24 条外层搜索 projection 记录，23/24 为完整合法证书；Rust Layer 的 `open_dimension_x_xz` 无完整候选，保留为 `NO_SOLUTION`。B30 新增 8 条 source-derived shelf/bay projection；8/8 均完成几何布局但被独立 validator 判为 `CONSTRAINT_VIOLATION`，结果单列于 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)。B31 新增 24 条 mixed-SKU pallet projection；7/8 实现的 3-case 完整率为 `1/3`，Rust SA 为 `0/3`，结果单列于 [`industrial-mixed-pallet.csv`](results/comprehensive/rankings/industrial-mixed-pallet.csv)。B31 fixture 的来源已冻结并通过独立审计，但 FULL `boxstacks`/exact adapter 尚未完成。projection 与原始姿态语义分轨，不能覆盖 native 结果；status-only 记录只表示来源/能力边界，不能视为求解运行。B05 来源仍未冻结，B08、B10 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`24/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`530/608` cell 有证据，其中 `260` 个 cell 已执行 protocol-v3、`251` 个是 status-only，合计 `62,953` 条记录（legacy `2,122`，protocol-v3 `60,831`）。B11 新增 24 条外层搜索 projection 记录，23/24 为完整合法证书；Rust Layer 的 `open_dimension_x_xz` 无完整候选，保留为 `NO_SOLUTION`。B30 新增 8 条 source-derived shelf/bay projection；8/8 均完成几何布局但被独立 validator 判为 `CONSTRAINT_VIOLATION`，结果单列于 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)。B31 新增 24 条 mixed-SKU pallet projection；7/8 实现的 3-case 完整率为 `1/3`，Rust SA 为 `0/3`，结果单列于 [`industrial-mixed-pallet.csv`](results/comprehensive/rankings/industrial-mixed-pallet.csv)。B32 新增 48 条组合 online policy 记录（2 条 arrival trace × 8 个实现 × 3 个 policy），全部为 `VALID_COMPLETE`，结果单列于 [`industrial-online.csv`](results/comprehensive/rankings/industrial-online.csv)。B31 fixture 的来源已冻结并通过独立审计，但 FULL `boxstacks`/exact adapter 尚未完成；B32 的原生 incremental adapter 仍未完成。projection 与原始姿态语义分轨，不能覆盖 native 结果；status-only 记录只表示来源/能力边界，不能视为求解运行。B05 来源仍未冻结，B08、B10 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
 历史快照（12/32、13/32、21/32 等）仅用于追溯，不再作为当前统计。当前权威数字以 [`aggregate.json`](results/comprehensive/aggregate.json)、[`coverage.csv`](results/comprehensive/coverage.csv) 和 [`baseline-import-summary.json`](results/comprehensive/baseline-import-summary.json) 为准。B11 的原生/投影三例 open-X 校准单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，两条轨道不互相混排，也不与 BR/LN 或封闭箱数混排；B04 FastBruteForce 仍为 7/44 合法、37/44 非法/不完整证书。
 
@@ -340,7 +340,7 @@ B11 的 fork fixture 只有 3 个四件实例，属于来源可追溯的校准�
 | B33 Q4RealBPP | Mendeley Data DOI `10.17632/y258s6d939.2`；12 个实例，输入 quantity 合计 578 件、单实例 38–53 件；尺寸、重量、箱数/重量上限、不相容/亲和、相对位置和重心字段；附 Python generator；GPLv3 | PS/boxstacks、exact model 做 `FULL`；py3dbp/Jerry/Go/Rust/Skjolber 只能做明确 projection 或 post-validator | 现实约束 conformance、完整率和违规幅度；小规模端到端回归和分布迁移 | 官方 `Description.txt` 与输入 quantity 在 `3dBPP_5`、`3dBPP_6`、`3dBPP_10` 有不一致，canonical 以输入文件为准；先冻结文件 UUID/SHA-256、字段语义和 GPLv3 再分发审计，再跑 FULL/projection 双轨 |
 | B34 3DBPPsi | Science Data Bank DOI `10.57760/sciencedb.42066`，V1/20 个文件，CC BY 4.0；异构车辆尺寸、价格、payload、stacked-weight、density；物品 nesting height、stackability class、forced orientation、最大堆叠层级；规模可到数千件 | `boxstacks`/exact model 和有 stack controls 的引擎做 `FULL`；其他实现做几何 projection；大实例重点跑 B28 scalability | 异构车队成本、堆叠/密度/姿态硬合规，以及质量-延迟-RSS 拐点 | 候选 B34；先做 stack master、密度/载荷 validator 和小实例 exact 校准，再进入工业 Wave |
 
-这两个候选不会改变当前 `23/32` 实际执行、`32/32` 状态记录和 `537/608` 有证据 cell 的 protocol-v3 进度数字。B33 的源审计已验证 15 个必要文件的 SHA-256 和 12 个输入的结构，但发现 3 条官方描述件数不一致；B34 的 20 个 CSV 已通过列、数值和重复 ID 审计。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。审计证据见 [`b33-source-audit.json`](results/comprehensive/b33-source-audit.json) 和 [`b34-source-audit.json`](results/comprehensive/b34-source-audit.json)。
+这两个候选不会改变当前 `24/32` 实际执行、`32/32` 状态记录和 `530/608` 有证据 cell 的 protocol-v3 进度数字。B33 的源审计已验证 15 个必要文件的 SHA-256 和 12 个输入的结构，但发现 3 条官方描述件数不一致；B34 的 20 个 CSV 已通过列、数值和重复 ID 审计。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。审计证据见 [`b33-source-audit.json`](results/comprehensive/b33-source-audit.json) 和 [`b34-source-audit.json`](results/comprehensive/b34-source-audit.json)。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
@@ -439,7 +439,7 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 | B28 scalability | 全部；EX 为小规模质量/证明参照，FastBruteForce 单独看 timeout | Go/Rust/py3dbp/Jerry/Skjolber Plain/LAFF/PackingSolver fork 在 8–64 件均产生完整或明确失败状态；exact 在 16–64 件出现许可证/时间边界；FastBruteForce 16–64 件约 10 s 无解 | 当前是 process/适配层拐点 smoke，不替代协议要求的 20/50/100/200/500/1000 件正式曲线；跨语言只比较各自 timing group |
 | B29 fault/cancellation | 全部 worker/sidecar/CLI | exact、Go、Python、Rust 多数实现为 `ERROR + CANCELLED`；PackingSolver fork/upstream `box` 取消约 21 ms；Skjolber 约 39–56 ms；Rust Layer 与 FastBruteForce 在 20 ms 门限内提前正常结束，记 `0.5` fault rate | 本轮只实测 malformed input 与 cancellation，没有把 OOM 当作已完成；正常退出但没有有效证书仍保留为处理结果，不冒充 crash recovery |
 
-外部约束适配器运行前的中间快照仅用于追溯；当前权威数字见本节前的 `23/32`、`530/608` 和 `62,913`。无论哪个快照，都不代表 B05、B08、B10-B23、B30-B32 已完成 ALL-libs；这些问题仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨逐项补齐。
+外部约束适配器运行前的中间快照仅用于追溯；当前权威数字见本节前的 `24/32`、`530/608` 和 `62,953`。无论哪个快照，都不代表 B05、B08、B10-B23、B30-B31 已完成 ALL-libs FULL 轨；B32 目前只有组合 projection，原生 incremental 仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨补齐。
 
 ### 7.9 B12/B13/B15/B16/B17/B18 外部库 projection conformance
 
@@ -456,7 +456,7 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 
 这 80 条 B12/B13/B15/B16/B17/B18 记录已经合并进 [`constraint-conformance.csv`](results/comprehensive/rankings/constraint-conformance.csv) 和总 manifest。另有 8 条 B30 shelf/bay projection 记录单独进入 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)，24 条 B31 mixed-SKU pallet projection 记录单独进入 [`industrial-mixed-pallet.csv`](results/comprehensive/rankings/industrial-mixed-pallet.csv)，避免与自由 3D 箱数或一般约束榜混排。B16/B17/B18 目录现将可运行的几何库标为 `PROJECTION_ONLY`，PS 与 exact 仍为 `NOT_SUPPORTED/ADAPTER_MISSING`；这样“计划状态”和“真实 projection 运行”一致。该波次不改变硬门禁：先按 hard violation 和完整率筛选，再比较目标值。
 
-本轮更新后的综合覆盖为 `23/32` benchmark 有实际运行、`32/32` 有状态记录、`252/608` protocol-v3 cell 已执行、`259` 个为 status-only，记录总数 `62,913`（legacy `2,122`、protocol-v3 `60,791`）。B05、B08、B10、B19-B23、B30-B32 仍未形成完整 ALL-libs FULL 轨，不能据此宣布最终 ready；B11 的非 PS 结果是明确的 projection 外层搜索，B30 目前只有 source-derived calibration 和 projection 失败证据，B31 目前只有 projection/conformance 证据，但其 fixture 来源已冻结。
+本轮更新后的综合覆盖为 `24/32` benchmark 有实际运行、`32/32` 有状态记录、`260/608` protocol-v3 cell 已执行、`251` 个为 status-only，记录总数 `62,953`（legacy `2,122`、protocol-v3 `60,831`）。B05、B08、B10、B19-B23、B30-B31 仍未形成完整 ALL-libs FULL 轨，B32 仍缺原生 incremental adapter，不能据此宣布最终 ready；B11 的非 PS 结果是明确的 projection 外层搜索，B30 目前只有 source-derived calibration 和 projection 失败证据，B31 目前只有 projection/conformance 证据，但其 fixture 来源已冻结。
 
 ### 7.10 B31 mixed-SKU pallet projection
 
@@ -468,6 +468,18 @@ B31 使用仓库内固定的 3-case synthetic fixture：平铺混 SKU、允许�
 | Rust SA | `0/3` | 支撑率、不可堆叠和超重 | 当前 decoder 在此 fixture 上更不稳定；不能把无效/违规布局用于质量排名 |
 
 该结果是约束合规和 adapter 边界证据，不是 mixed-SKU 工业最优性证明。正式 B31 仍需 `boxstacks`/exact 的 FULL adapter、更多托盘尺寸和公开或经批准的订单分布；projection 结果不升级为原题能力。
+
+### 7.11 B32 online/incremental composed policy
+
+B32 使用两个固定到货 trace（`ADVERSARIAL_ORDER`、`STACKED_ORDER`）、8 个几何实现和三个策略（`NO_REORDER`、`LOOKAHEAD_2`、`OFFLINE_REBUILD`），共 48 条 protocol-v3 记录。每次决策都记录候选调用/失败、p50/p95 延迟、deadline 命中率、重排次数、箱数/成本，并由独立几何 validator 检查完整性、边界和重叠。所有记录均为 `COMPOSED/GEOMETRY_PROJECTION`：它们验证统一外层 policy 是否可复现，不能解释为任何库原生提供 incremental API。
+
+| policy | 主要结果 | 解释 |
+|---|---|---|
+| `NO_REORDER` | 除 Layer/BRKGA 外，几何实现平均 `2.5` 箱；Layer/BRKGA 平均 `3.0` 箱；全部 `2/2` trace 完整合法 | 到货顺序固定时，贪心/ExtremePoint 的累计箱数较稳定；共享 Layer decoder 的策略代价更高 |
+| `LOOKAHEAD_2` | ExtremePoint、Layer、Go、GA、SA、py3dbp、Jerry 均 `2/2` 完整；BRKGA 平均 `3.5` 箱；Jerry deadline hit rate `0.9375`，其余为 `1.0` | 两件 lookahead 在该小 fixture 上没有提高大多数库的箱数；Jerry 的 p95 决策延迟约 `0.999 s`，已接近 `1 s` deadline |
+| `OFFLINE_REBUILD` | 除 BRKGA 外平均 `2.5` 箱；全部 `2/2` 完整；每次重建候选失败数升至约 `9.5` | 离线重建可恢复几何质量，但需要重复求解，不能等价于在线增量能力；BRKGA 平均 `3.0` 箱 |
+
+按实现的代表性 p95 决策延迟，Rust/Go 约 `0.003–0.010 s`，py3dbp 约 `0.166 s`，Jerry 约 `0.994–1.001 s`；这些数字包含本次组合 runner 的调用边界，不是库内部纯 solver time。该 fixture 只有 8 件物品、两个 trace，因而只能作为 policy/adapter 校准，不能推出大规模在线性能。完整记录、artifact 和聚合见 [`B32-online-composed.jsonl`](results/comprehensive/runs/B32-online-composed.jsonl)、[`industrial-online.csv`](results/comprehensive/rankings/industrial-online.csv) 和 [`b32-source-audit.json`](results/comprehensive/b32-source-audit.json)。
 
 可靠性结果不产生跨问题族总冠军：B24/B26/B27 是工程稳定性门，B25 是成本 comparator/parser 门，B28 是规模和资源边界，B29 是托管故障边界。质量、成本、硬约束和可靠性必须分别看表；`NOT_SUPPORTED`、`ADAPTER_MISSING`、`ERROR` 或 `TIME_LIMIT` 都是能力边界证据，不可用其他 benchmark 的高利用率抵消。
 

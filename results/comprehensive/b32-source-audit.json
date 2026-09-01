@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "B32",
+  "cases": [
+    {
+      "container_size": [
+        100,
+        100,
+        100
+      ],
+      "deadline_s": 1.0,
+      "id": "B32/ADVERSARIAL_ORDER",
+      "items": 8,
+      "required_items": 8
+    },
+    {
+      "container_size": [
+        100,
+        100,
+        100
+      ],
+      "deadline_s": 1.0,
+      "id": "B32/STACKED_ORDER",
+      "items": 8,
+      "required_items": 8
+    }
+  ],
+  "fixture": "benchmarks/data/comprehensive/b32-online-fixture.json",
+  "fixture_sha256": "47fd423c14238a17a1abb22f2a2ddb848dc75e2391cc5b9c50ae9b30cc321320",
+  "input_status": "VALID",
+  "license": "CC0-1.0",
+  "policies": [
+    {
+      "id": "NO_REORDER",
+      "lookahead": 0,
+      "reorder_budget": 0
+    },
+    {
+      "id": "LOOKAHEAD_2",
+      "lookahead": 2,
+      "reorder_budget": 0
+    },
+    {
+      "id": "OFFLINE_REBUILD",
+      "lookahead": null,
+      "reorder_budget": 999
+    }
+  ],
+  "record_kind": "B32_SOURCE_AUDIT",
+  "run_status": "NOT_RUN",
+  "schema_version": 1,
+  "semantic_note": "Two deterministic arrival traces isolate order sensitivity and bounded lookahead. Geometry is orthogonal and all six rotations are allowed; no material or route constraint is implied."
+}

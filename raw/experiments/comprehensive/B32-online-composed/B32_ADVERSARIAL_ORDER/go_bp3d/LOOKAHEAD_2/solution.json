@@ -1,0 +1,180 @@
+{
+  "placements": [
+    {
+      "item_id": "a01",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        50,
+        0,
+        0
+      ],
+      "size": [
+        40,
+        60,
+        60
+      ],
+      "original_size": [
+        60,
+        60,
+        40
+      ],
+      "weight": 10,
+      "rotation": "RotationType_DHW (d,h,w)",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "a02",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        40,
+        0,
+        60
+      ],
+      "size": [
+        40,
+        40,
+        40
+      ],
+      "original_size": [
+        40,
+        40,
+        40
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "a03",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        50,
+        60,
+        0
+      ],
+      "size": [
+        40,
+        40,
+        60
+      ],
+      "original_size": [
+        60,
+        40,
+        40
+      ],
+      "weight": 10,
+      "rotation": "RotationType_HDW (h,d,w)",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "a04",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0,
+        0,
+        60
+      ],
+      "size": [
+        40,
+        60,
+        40
+      ],
+      "original_size": [
+        40,
+        60,
+        40
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "a05",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        50,
+        50,
+        60
+      ],
+      "original_size": [
+        50,
+        50,
+        60
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "a06",
+      "bin_id": "bin-online-a:0",
+      "position": [
+        0,
+        50,
+        0
+      ],
+      "size": [
+        50,
+        50,
+        40
+      ],
+      "original_size": [
+        50,
+        50,
+        40
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "a07",
+      "bin_id": "bin-online-a:1",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        70,
+        70,
+        70
+      ],
+      "original_size": [
+        70,
+        70,
+        70
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "a08",
+      "bin_id": "bin-online-a:2",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        70,
+        70,
+        70
+      ],
+      "original_size": [
+        70,
+        70,
+        70
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ]
+}
