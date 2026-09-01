@@ -1,0 +1,36 @@
+{
+  "scenario": "b15_axle_infeasible",
+  "benchmark_id": "B15",
+  "problem_variant": "AXLE_INFEASIBLE",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        200.0,
+        200.0,
+        200.0
+      ],
+      "weight": 2000.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        1360.0,
+        240.0,
+        260.0
+      ],
+      "max_weight": 24000.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": false,
+  "source_files": {
+    "benchmarks/data/packingsolver/axle_realistic_items.csv": "48ea2b1b6ade3df37a6505b10842213063c430e2e59b977a1531a3c52cea22bf",
+    "benchmarks/data/packingsolver/axle_infeasible_bins.csv": "766e17f017864fdac04e7c80ab4f7156421646ed97d5072a5dbed88c87b27b37"
+  }
+}

@@ -80,7 +80,7 @@
     },
     {
       "id": "B17", "name": "Multi-drop/unloading", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "MULTI_DROP", "primary_metric": "hard_compliance", "input_status": "VALID", "ranking_kind": "CAPABILITY",
-      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "NOT_SUPPORTED", "jerry": "NOT_SUPPORTED", "skjolber": "PROJECTION_ONLY", "go_bp3d": "NOT_SUPPORTED", "rust_unesting": "NOT_SUPPORTED", "exact_model": "ADAPTER_MISSING"}
+      "capability_by_profile": {"ps_fork_box": "NOT_SUPPORTED", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "NOT_SUPPORTED", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
       "id": "B18", "name": "Compatibility/segregation", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "COMPATIBILITY", "primary_metric": "hard_compliance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "CAPABILITY",

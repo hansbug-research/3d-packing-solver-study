@@ -1,0 +1,18 @@
+{
+  "bins_used": 1,
+  "constraint_errors": [
+    "0:0: middle axle 6315.789473684211 exceeds limit",
+    "0:0: rear axle 3000.0 exceeds limit"
+  ],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 2,
+  "packed_items": 1,
+  "required_items": 1,
+  "total_cost": 1.0,
+  "validation_error_count": 2,
+  "validation_errors": [
+    "0:0: middle axle 6315.789473684211 exceeds limit",
+    "0:0: rear axle 3000.0 exceeds limit"
+  ]
+}

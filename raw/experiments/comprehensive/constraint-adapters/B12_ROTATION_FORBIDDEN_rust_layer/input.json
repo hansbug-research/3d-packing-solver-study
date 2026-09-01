@@ -1,0 +1,36 @@
+{
+  "scenario": "b12_rotation_forbidden",
+  "benchmark_id": "B12",
+  "problem_variant": "ROTATION_FORBIDDEN",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        3.0,
+        2.0,
+        4.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        4.0,
+        3.0,
+        2.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": false,
+  "source_files": {
+    "benchmarks/data/packingsolver/rotation_forbidden_items.csv": "5295e75f2dbecd991444323be0d1658c270ad33510c5e94c5b6cb897f34a95a2",
+    "benchmarks/data/packingsolver/rotation_bins.csv": "2870a7349f81b8f1462fc67e075852687eda7523cf2672f60bd0b7de1d7bbb9b"
+  }
+}

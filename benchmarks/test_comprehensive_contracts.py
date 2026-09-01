@@ -199,17 +199,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62824
-    assert summary["protocol_v3_run_records"] == 60702
+    assert summary["combined_run_records"] == len(records) == 62880
+    assert summary["protocol_v3_run_records"] == 60758
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 19
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 515
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 29
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 180
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 306
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60702}
+    assert aggregate["coverage"]["cells_with_evidence"] == 529
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 212
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 298
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60758}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -395,6 +395,25 @@ def test_b07_projection_common_and_jerry_control_rankings() -> None:
     assert (overall["common_records"], overall["common_valid_records"]) == ("1800", "1483")
     assert (overall["fix_true_invalid_certificates"], overall["fix_false_invalid_certificates"]) == ("166", "0")
     assert (overall["fix_false_wins"], overall["ties"], overall["fix_false_losses"]) == ("44", "75", "1364")
+
+
+def test_constraint_adapter_projection_campaign_is_complete_and_independently_validated() -> None:
+    path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b17.jsonl"
+    records = [json.loads(line) for line in path.read_text().splitlines() if line]
+    assert len(records) == 64
+    assert len({record["run_id"] for record in records}) == 64
+    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B17"}
+    assert {record["implementation_id"] for record in records} == {
+        "py3dbp", "jerry", "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
+    }
+    assert all(record["capability_status"] == "PROJECTION_ONLY" for record in records)
+    assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
+    assert all(record["metrics"]["projection_removed_constraints"] for record in records)
+    b13 = [record for record in records if record["benchmark_id"] == "B13"]
+    assert {record["solution_status"] for record in b13} == {"CONSTRAINT_VIOLATION", "VALID_COMPLETE"}
+    b15_infeasible = [record for record in records if record["benchmark_id"] == "B15" and record["problem_variant"] == "AXLE_INFEASIBLE"]
+    assert len(b15_infeasible) == 8
+    assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b15_infeasible)
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

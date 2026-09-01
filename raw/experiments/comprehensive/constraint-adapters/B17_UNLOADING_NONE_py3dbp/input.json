@@ -1,0 +1,47 @@
+{
+  "scenario": "b17_unloading_none",
+  "benchmark_id": "B17",
+  "problem_variant": "UNLOADING_NONE",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:0",
+      "type_id": "1",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        4.0,
+        2.0,
+        2.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/packingsolver/unloading_items.csv": "4001ac9f71198e155cdc5c50622b7f1a0edae887edf0a35b569e09e70c05ef26",
+    "benchmarks/data/packingsolver/unloading_bins.csv": "201a4c680ce69a50316bf0c63370e395a551613b2ddf29f55f1bc9e57ae4d71a"
+  }
+}
