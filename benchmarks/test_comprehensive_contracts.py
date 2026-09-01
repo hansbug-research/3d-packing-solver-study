@@ -108,12 +108,16 @@ def test_status_materialization_only_emits_unexecutable_cells() -> None:
 
 def test_packingsolver_thpack_protocol_revalidation_is_explicit() -> None:
     records = build_packingsolver_protocol_records(10.0)
-    assert len(records) == 715
-    assert {record["benchmark_id"] for record in records} == {"B01", "B02"}
+    assert len(records) == 762
+    assert {record["benchmark_id"] for record in records} == {"B01", "B02", "B04"}
     assert {record["record_origin"] for record in records} == {"PROTOCOL_V3"}
     assert {record["adapter"] for record in records} == {"packingsolver_thpack_protocol_revalidation_v1"}
     assert all(record["metrics"]["provenance_kind"] == "ARCHIVED_CERTIFICATE_REVALIDATION" for record in records)
-    assert all(record["input_sha256"] and len(record["input_sha256"]) == 64 for record in records)
+    assert all(
+        record["input_sha256"] and len(record["input_sha256"]) == 64
+        for record in records
+        if record["input_status"] == "VALID"
+    )
 
 
 def test_fresh_wave1_protocol_records_are_explicit_and_finite() -> None:
@@ -177,17 +181,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 62439
-    assert summary["protocol_v3_run_records"] == 60361
+    assert summary["combined_run_records"] == len(records) == 62533
+    assert summary["protocol_v3_run_records"] == 60455
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 12
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 549
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 20
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 64
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 65
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 465
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60361}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60455}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 

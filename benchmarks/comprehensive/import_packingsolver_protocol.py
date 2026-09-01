@@ -4,9 +4,9 @@
 The original THPACK campaign predates the comprehensive manifest and is kept
 as ``LEGACY_BASELINE``.  Its records contain the source hashes, pinned fork
 commit, binary hash, harness hashes and offline certificate validation.  This
-importer creates a separate, explicitly named protocol revalidation record for
-the BR/LN native track without changing the historical records or claiming a
-new solver invocation.
+importer creates separate, explicitly named protocol revalidation records for
+the BR/LN and IMM native tracks without changing the historical records or
+claiming a new solver invocation.
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ SOURCE_FILES = {
     1.0: ROOT / "results" / "campaign" / "packingsolver-thpack.jsonl",
     10.0: ROOT / "results" / "campaign" / "packingsolver-thpack-10s.jsonl",
 }
-BENCHMARK_IDS = {"BR": "B01", "LN": "B02"}
+BENCHMARK_IDS = {"BR": "B01", "LN": "B02", "IMM": "B04"}
 IMPLEMENTATION_ID = "packingsolver_fork_box"
 
 
@@ -44,7 +44,7 @@ def source_record(path: Path, budget: float) -> list[tuple[int, dict[str, Any]]]
             row = json.loads(line)
             if row.get("family") in BENCHMARK_IDS:
                 rows.append((line_number, row))
-    expected = 715
+    expected = 762
     if len(rows) != expected:
         raise ValueError(f"expected {expected} BR/LN records in {path}, found {len(rows)}")
     return rows
@@ -79,7 +79,7 @@ def build_records(budget: float, source_path: Path | None = None) -> list[dict[s
                 solution_status = "INVALID_CERTIFICATE"
                 proof_status = "UNKNOWN"
                 termination_reason = "INVALID_CERTIFICATE"
-            elif source["family"] == "BR" or source["family"] == "LN":
+            elif source["family"] in {"BR", "LN"}:
                 solution_status = "VALID_PARTIAL"
                 proof_status = "INCUMBENT_WITH_BOUND" if source.get("proof_status") == "SOLVER_REPORTED_BOUND_CLOSED" else "FEASIBLE"
                 termination_reason = "TIME_LIMIT_WITH_INCUMBENT" if reached_limit else "SOLVER_STOPPED"
