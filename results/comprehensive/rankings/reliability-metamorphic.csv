@@ -8,7 +8,7 @@ B24,jerry,3,3,1.0,VALID_COMPLETE
 B24,packingsolver_fork_box,3,3,1.0,VALID_COMPLETE
 B24,packingsolver_fork_boxstacks,3,3,1.0,VALID_COMPLETE
 B24,packingsolver_upstream_box,3,3,1.0,VALID_COMPLETE
-B24,packingsolver_upstream_boxstacks,3,0,0.0,NO_SOLUTION
+B24,packingsolver_upstream_boxstacks,3,3,1.0,VALID_COMPLETE
 B24,py3dbp,3,3,1.0,VALID_COMPLETE
 B24,rust_brkga,3,3,1.0,VALID_COMPLETE
 B24,rust_extreme_point,3,3,1.0,VALID_COMPLETE

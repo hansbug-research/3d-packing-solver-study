@@ -1,9 +1,13 @@
 {
-  "placements": 0,
+  "bins_used": 1,
+  "library_reported": null,
+  "objective": 1,
+  "placements": 8,
   "required_items": 8,
-  "status": "ERROR",
-  "validation_error_count": 1,
-  "validation_errors": [
-    "adapter or binary unavailable"
-  ]
+  "scale": 1,
+  "status": "VALID_COMPLETE",
+  "total_cost": 1.0,
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "base"
 }

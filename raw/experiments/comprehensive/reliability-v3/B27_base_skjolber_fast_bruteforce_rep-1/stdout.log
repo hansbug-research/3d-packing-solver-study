@@ -1,1 +1,1 @@
-{"algorithm":"fast_brute_force","variant":"base","count":8,"scale":1,"success":true,"timeout":false,"placements":8,"bins_used":1,"geometry_valid":true,"library_duration_ms":144,"wall_ms":168.002535}
+{"algorithm":"fast_brute_force","variant":"base","count":8,"scale":1,"success":true,"timeout":false,"placements":8,"bins_used":1,"geometry_valid":true,"library_duration_ms":171,"wall_ms":195.585500}

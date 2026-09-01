@@ -1,11 +1,11 @@
 {
-  "cancel_latency_s": 0.020912639098241925,
+  "cancel_latency_s": 0.020907359896227717,
   "fault_command": [
     "/home/zhangshaoang/packing-software-study/.cache/build-upstream-367/src/box/packingsolver_box",
     "--items",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-wsp6v6w0/items.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-61wc2t4_/items.csv",
     "--bins",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-wsp6v6w0/bins.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-61wc2t4_/bins.csv",
     "--objective",
     "bin-packing",
     "--time-limit",

@@ -4,9 +4,9 @@
   "command": [
     "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
     "--items",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-82ysq1el/items.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-0144vgch/items.csv",
     "--bins",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-82ysq1el/bins.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-0144vgch/bins.csv",
     "--objective",
     "bin-packing",
     "--time-limit",

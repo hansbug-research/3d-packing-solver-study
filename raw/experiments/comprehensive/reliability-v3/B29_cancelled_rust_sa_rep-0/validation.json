@@ -1,9 +1,9 @@
 {
-  "cancel_latency_s": 0.02058260189369321,
+  "cancel_latency_s": 0.02061748900450766,
   "fault_command": [
     "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-hxj_q09w/input.json",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-cu1a7082/input.json",
     "sa",
     "10000"
   ],

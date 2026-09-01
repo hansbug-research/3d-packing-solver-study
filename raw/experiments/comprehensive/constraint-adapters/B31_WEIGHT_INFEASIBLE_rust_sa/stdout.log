@@ -69,7 +69,7 @@
   ],
   "placements": [
     {
-      "item_id": "B:0",
+      "item_id": "A:1",
       "bin_id": "pallet-light",
       "position": [
         0.0,
@@ -78,8 +78,8 @@
       ],
       "size": [
         600.0,
-        400.0,
-        600.0
+        600.0,
+        400.0
       ],
       "original_size": [
         600.0,
@@ -87,13 +87,13 @@
         400.0
       ],
       "weight": 25.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "yxz",
+      "rotation_index": 2
     }
   ],
   "unplaced": [
     "A:0",
-    "A:1"
+    "B:0"
   ],
-  "elapsed_ms": 1.3587740000000001
+  "elapsed_ms": 1.355745
 }

@@ -89,7 +89,7 @@
   ],
   "placements": [
     {
-      "item_id": "0:1",
+      "item_id": "0:0",
       "bin_id": "0:0",
       "position": [
         0.0,
@@ -107,11 +107,11 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "xyz",
-      "rotation_index": 0
+      "rotation": "zxy",
+      "rotation_index": 4
     },
     {
-      "item_id": "0:0",
+      "item_id": "0:1",
       "bin_id": "0:1",
       "position": [
         0.0,
@@ -129,8 +129,8 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "yxz",
+      "rotation_index": 2
     },
     {
       "item_id": "0:2",
@@ -151,10 +151,10 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "xyz",
-      "rotation_index": 0
+      "rotation": "zyx",
+      "rotation_index": 5
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 3.653711
+  "elapsed_ms": 3.80175
 }

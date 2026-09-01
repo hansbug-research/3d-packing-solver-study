@@ -5,7 +5,7 @@
     "--backend",
     "gurobi",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-h3srcjxp/invalid.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-q0iyopxf/invalid.json"
   ],
   "objective": null,
   "placements": 0,

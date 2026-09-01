@@ -1,1 +1,1 @@
-{"algorithm":"laff","variant":"n16","count":16,"scale":1,"success":true,"timeout":false,"placements":16,"bins_used":2,"geometry_valid":true,"library_duration_ms":86,"wall_ms":179.121033}
+{"algorithm":"laff","variant":"n16","count":16,"scale":1,"success":true,"timeout":false,"placements":16,"bins_used":2,"geometry_valid":true,"library_duration_ms":91,"wall_ms":184.578593}

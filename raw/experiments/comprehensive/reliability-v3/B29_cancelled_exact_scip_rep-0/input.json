@@ -7,6 +7,6 @@
     "--backend",
     "scip",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-kepps5nc/input.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-hb1u605t/input.json"
   ]
 }

@@ -7,7 +7,7 @@
     "--library",
     "jerry",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-mkbo2syn/invalid.json",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-5o__fz3m/invalid.json",
     "--order",
     "descending",
     "--projection"

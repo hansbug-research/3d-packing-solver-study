@@ -1,7 +1,7 @@
 {
   "bins_used": 1,
   "constraint_errors": [
-    "product-14:0: shelf side gap/overhang violation",
+    "product-14:1: shelf side gap/overhang violation",
     "shelf shelf-1: inter-gap 0.0 below 10"
   ],
   "geometry_error_count": 0,
@@ -12,7 +12,7 @@
   "total_cost": 1.0,
   "validation_error_count": 2,
   "validation_errors": [
-    "product-14:0: shelf side gap/overhang violation",
+    "product-14:1: shelf side gap/overhang violation",
     "shelf shelf-1: inter-gap 0.0 below 10"
   ]
 }

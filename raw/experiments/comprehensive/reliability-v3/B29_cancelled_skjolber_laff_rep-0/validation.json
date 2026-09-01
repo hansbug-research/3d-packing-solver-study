@@ -1,5 +1,5 @@
 {
-  "cancel_latency_s": 0.04946414497680962,
+  "cancel_latency_s": 0.039674754021689296,
   "fault_command": [
     "java",
     "-Xms32m",

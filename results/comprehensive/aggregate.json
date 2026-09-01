@@ -50,18 +50,18 @@
     },
     "run_records": 64630,
     "run_status_counts": {
-      "CANCELLED": 16,
-      "COMPLETED": 49213,
-      "ERROR": 194,
+      "CANCELLED": 17,
+      "COMPLETED": 49229,
+      "ERROR": 177,
       "NOT_RUN": 271,
       "TIME_LIMIT": 14936
     },
     "solution_status_counts": {
-      "CONSTRAINT_VIOLATION": 75,
-      "INVALID_CERTIFICATE": 347,
+      "CONSTRAINT_VIOLATION": 76,
+      "INVALID_CERTIFICATE": 346,
       "NOT_APPLICABLE": 271,
-      "NO_SOLUTION": 7104,
-      "VALID_COMPLETE": 1304,
+      "NO_SOLUTION": 7088,
+      "VALID_COMPLETE": 1320,
       "VALID_PARTIAL": 55529
     }
   },
@@ -597,7 +597,7 @@
         "constraint_violation": 3,
         "implementation_id": "rust_brkga",
         "invalid_certificate": 0,
-        "mean_hard_violation_count": 2.3333333333333335,
+        "mean_hard_violation_count": 2.0,
         "mean_packed_items": 4.333333333333333,
         "no_solution": 0,
         "problem_scope": "GEOMETRY_PROJECTION",
@@ -611,7 +611,7 @@
         "constraint_violation": 3,
         "implementation_id": "rust_ga",
         "invalid_certificate": 0,
-        "mean_hard_violation_count": 2.0,
+        "mean_hard_violation_count": 2.3333333333333335,
         "mean_packed_items": 4.333333333333333,
         "no_solution": 0,
         "problem_scope": "GEOMETRY_PROJECTION",
@@ -1997,7 +1997,7 @@
       "fault": [
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020855993032455444,
+          "cancel_latency_s": 0.02091990690678358,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2007,7 +2007,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020844065118581057,
+          "cancel_latency_s": 0.0208461401052773,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2017,7 +2017,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020802040118724108,
+          "cancel_latency_s": 0.02088909805752337,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2027,7 +2027,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020840781973674893,
+          "cancel_latency_s": 0.020923132076859474,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2037,7 +2037,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020585978869348764,
+          "cancel_latency_s": 0.020698396023362875,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2047,7 +2047,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020859745796769857,
+          "cancel_latency_s": 0.020923634991049767,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2057,7 +2057,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.02084587304852903,
+          "cancel_latency_s": 0.020860051037743688,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2067,7 +2067,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.006250024074688554,
+          "cancel_latency_s": 0.006060415878891945,
           "cancel_status": "COMPLETED",
           "fault_cases": 2,
           "fault_recovery_rate": 0.5,
@@ -2077,7 +2077,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020912639098241925,
+          "cancel_latency_s": 0.020907359896227717,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2087,17 +2087,17 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": null,
-          "cancel_status": "ERROR",
+          "cancel_latency_s": 0.00590794812887907,
+          "cancel_status": "COMPLETED",
           "fault_cases": 2,
           "fault_recovery_rate": 0.5,
           "handled_cases": 1,
           "implementation_id": "packingsolver_upstream_boxstacks",
-          "invalid_input_status": "ERROR"
+          "invalid_input_status": "COMPLETED"
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020800697850063443,
+          "cancel_latency_s": 0.020853737136349082,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2107,7 +2107,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020615265937522054,
+          "cancel_latency_s": 0.020653229905292392,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2117,17 +2117,17 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.02035490400157869,
-          "cancel_status": "COMPLETED",
+          "cancel_latency_s": 0.020779507933184505,
+          "cancel_status": "CANCELLED",
           "fault_cases": 2,
-          "fault_recovery_rate": 0.5,
-          "handled_cases": 1,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
           "implementation_id": "rust_extreme_point",
           "invalid_input_status": "ERROR"
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.020704675931483507,
+          "cancel_latency_s": 0.020689029013738036,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2137,7 +2137,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.007400767877697945,
+          "cancel_latency_s": 0.0076868790201842785,
           "cancel_status": "COMPLETED",
           "fault_cases": 2,
           "fault_recovery_rate": 0.5,
@@ -2147,7 +2147,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.02058260189369321,
+          "cancel_latency_s": 0.02061748900450766,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2157,7 +2157,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.04964263387955725,
+          "cancel_latency_s": 0.03923468408174813,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 0.5,
@@ -2167,7 +2167,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.04946414497680962,
+          "cancel_latency_s": 0.039674754021689296,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2177,7 +2177,7 @@
         },
         {
           "benchmark_id": "B29",
-          "cancel_latency_s": 0.03926979401148856,
+          "cancel_latency_s": 0.04851151118054986,
           "cancel_status": "CANCELLED",
           "fault_cases": 2,
           "fault_recovery_rate": 1.0,
@@ -2260,11 +2260,11 @@
           "transform_cases": 3
         },
         {
-          "base_status": "NO_SOLUTION",
+          "base_status": "VALID_COMPLETE",
           "benchmark_id": "B24",
           "implementation_id": "packingsolver_upstream_boxstacks",
-          "invariance_rate": 0.0,
-          "invariant_cases": 0,
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
           "transform_cases": 3
         },
         {
@@ -2481,9 +2481,9 @@
           "benchmark_id": "B26",
           "cases": 2,
           "implementation_id": "packingsolver_upstream_boxstacks",
-          "invalid_or_missing": 2,
-          "numeric_consistency_rate": 0.0,
-          "passing_cases": 0
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
         },
         {
           "benchmark_id": "B26",
@@ -2564,209 +2564,209 @@
           "bins_stddev": 0.0,
           "implementation_id": "exact_cp_sat",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.010285206837579608,
+          "p95_wall_s": 0.011378989089280367,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.00036113702817479765
+          "wall_stddev_s": 0.000777548476216954
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "exact_cplex",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.028875567950308323,
+          "p95_wall_s": 0.027974714059382677,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0010275196792187754
+          "wall_stddev_s": 0.0005087857303872772
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "exact_gurobi",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.007690187077969313,
+          "p95_wall_s": 0.008244714001193643,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.00013205297281096353
+          "wall_stddev_s": 0.0003343578372945015
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "exact_scip",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.022620772942900658,
+          "p95_wall_s": 0.02260173810645938,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0009832957306120122
+          "wall_stddev_s": 0.0008664782600669794
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "go_bp3d",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.0013403322082012892,
+          "p95_wall_s": 0.0015218709595501423,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 3.8111063404383796e-05
+          "wall_stddev_s": 8.04447121857827e-05
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "jerry",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.3974889600649476,
+          "p95_wall_s": 0.4182430999353528,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0025979260485820424
+          "wall_stddev_s": 0.009060975491045314
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "packingsolver_fork_box",
           "mean_bins": 1.0,
-          "p95_wall_s": 1.0035640599671751,
+          "p95_wall_s": 1.003638946916908,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 8.76971291956637e-05
+          "wall_stddev_s": 8.343397285500906e-05
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "packingsolver_fork_boxstacks",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.004584847018122673,
+          "p95_wall_s": 0.005389039171859622,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 3.905970782667364e-05
+          "wall_stddev_s": 0.00033569430784529346
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "packingsolver_upstream_box",
           "mean_bins": 1.0,
-          "p95_wall_s": 1.0032776999287307,
+          "p95_wall_s": 1.0039210331160575,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 6.939496007496291e-05
+          "wall_stddev_s": 0.00022534013954181412
         },
         {
           "benchmark_id": "B27",
-          "bins_stddev": null,
+          "bins_stddev": 0.0,
           "implementation_id": "packingsolver_upstream_boxstacks",
-          "mean_bins": null,
-          "p95_wall_s": null,
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.005145366070792079,
           "repetitions": 5,
-          "valid_rate": 0.0,
-          "valid_repetitions": 0,
-          "wall_stddev_s": null
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.00017078588731502098
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "py3dbp",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.06632494297809899,
+          "p95_wall_s": 0.06993008009158075,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0009812250976428082
+          "wall_stddev_s": 0.0009822524999390334
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "rust_brkga",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.0034468090161681175,
+          "p95_wall_s": 0.003325536847114563,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.00014640343340771822
+          "wall_stddev_s": 9.213980662057264e-05
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "rust_extreme_point",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.0010473839938640594,
+          "p95_wall_s": 0.001413207035511732,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 4.762722280594389e-05
+          "wall_stddev_s": 0.000169364572991125
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "rust_ga",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.005950432037934661,
+          "p95_wall_s": 0.0060416110791265965,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0001526774922842943
+          "wall_stddev_s": 0.00016196061235382805
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "rust_layer",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.00089788599871099,
+          "p95_wall_s": 0.0012650499120354652,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 2.7512374113291053e-05
+          "wall_stddev_s": 0.0001549393581806228
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "rust_sa",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.006859543034806848,
+          "p95_wall_s": 0.006911130156368017,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.00010911913026781675
+          "wall_stddev_s": 8.800864016107536e-05
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "skjolber_fast_bruteforce",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.2405324960127473,
+          "p95_wall_s": 0.24140439089387655,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.010922297934880825
+          "wall_stddev_s": 0.006360561381796345
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "skjolber_laff",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.23085171007551253,
+          "p95_wall_s": 0.23123005800880492,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.009918159318917283
+          "wall_stddev_s": 0.006663567389749774
         },
         {
           "benchmark_id": "B27",
           "bins_stddev": 0.0,
           "implementation_id": "skjolber_plain",
           "mean_bins": 1.0,
-          "p95_wall_s": 0.23948126402683556,
+          "p95_wall_s": 0.23267468204721808,
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.008104801296487149
+          "wall_stddev_s": 0.003485809291372038
         }
       ],
       "scalability": [
@@ -2778,7 +2778,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.07658895594067872
+          "wall_s": 0.07827559998258948
         },
         {
           "benchmark_id": "B28",
@@ -2788,7 +2788,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.5671077209990472
+          "wall_s": 0.5941766840405762
         },
         {
           "benchmark_id": "B28",
@@ -2798,7 +2798,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 3.9619713351130486
+          "wall_s": 4.1414622471202165
         },
         {
           "benchmark_id": "B28",
@@ -2808,7 +2808,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.024178375024348497
+          "wall_s": 0.025460263015702367
         },
         {
           "benchmark_id": "B28",
@@ -2818,7 +2818,7 @@
           "peak_rss_bytes": null,
           "run_status": "ERROR",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 0.09277938399463892
+          "wall_s": 0.09468024899251759
         },
         {
           "benchmark_id": "B28",
@@ -2828,7 +2828,7 @@
           "peak_rss_bytes": null,
           "run_status": "ERROR",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 0.7638792819343507
+          "wall_s": 0.767444005003199
         },
         {
           "benchmark_id": "B28",
@@ -2838,7 +2838,7 @@
           "peak_rss_bytes": null,
           "run_status": "ERROR",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 6.110028560040519
+          "wall_s": 6.268327781930566
         },
         {
           "benchmark_id": "B28",
@@ -2848,7 +2848,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.02616151887923479
+          "wall_s": 0.027098610997200012
         },
         {
           "benchmark_id": "B28",
@@ -2858,7 +2858,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.06783947395160794
+          "wall_s": 0.07028334913775325
         },
         {
           "benchmark_id": "B28",
@@ -2868,7 +2868,7 @@
           "peak_rss_bytes": null,
           "run_status": "ERROR",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 0.331888813059777
+          "wall_s": 0.3407292370684445
         },
         {
           "benchmark_id": "B28",
@@ -2878,7 +2878,7 @@
           "peak_rss_bytes": null,
           "run_status": "ERROR",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 2.6982900470029563
+          "wall_s": 2.7989965840242803
         },
         {
           "benchmark_id": "B28",
@@ -2888,7 +2888,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.007184450048953295
+          "wall_s": 0.007934594992548227
         },
         {
           "benchmark_id": "B28",
@@ -2898,7 +2898,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.6150044267997146
+          "wall_s": 0.6160118940752
         },
         {
           "benchmark_id": "B28",
@@ -2908,7 +2908,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 10.246058069169521
+          "wall_s": 10.246469658100978
         },
         {
           "benchmark_id": "B28",
@@ -2918,7 +2918,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 11.775725051993504
+          "wall_s": 11.845353562152013
         },
         {
           "benchmark_id": "B28",
@@ -2928,7 +2928,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.019753944128751755
+          "wall_s": 0.019604507833719254
         },
         {
           "benchmark_id": "B28",
@@ -2938,7 +2938,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0013054120354354382
+          "wall_s": 0.0013922969810664654
         },
         {
           "benchmark_id": "B28",
@@ -2948,7 +2948,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0015127439983189106
+          "wall_s": 0.001593089895322919
         },
         {
           "benchmark_id": "B28",
@@ -2958,7 +2958,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.002265659859403968
+          "wall_s": 0.0023184078745543957
         },
         {
           "benchmark_id": "B28",
@@ -2968,7 +2968,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.001310523133724928
+          "wall_s": 0.0012818370014429092
         },
         {
           "benchmark_id": "B28",
@@ -2978,7 +2978,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.3983091451227665
+          "wall_s": 0.42024192214012146
         },
         {
           "benchmark_id": "B28",
@@ -2988,7 +2988,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.41063674283213913
+          "wall_s": 0.4321189729962498
         },
         {
           "benchmark_id": "B28",
@@ -2998,7 +2998,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.4830016160849482
+          "wall_s": 0.4842073570471257
         },
         {
           "benchmark_id": "B28",
@@ -3008,7 +3008,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.3938758810982108
+          "wall_s": 0.4037905549630523
         },
         {
           "benchmark_id": "B28",
@@ -3018,7 +3018,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0035825539380312
+          "wall_s": 1.0039195141289383
         },
         {
           "benchmark_id": "B28",
@@ -3028,7 +3028,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0036459800321609
+          "wall_s": 1.0038180029951036
         },
         {
           "benchmark_id": "B28",
@@ -3038,7 +3038,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0039001740515232
+          "wall_s": 1.0045918128453195
         },
         {
           "benchmark_id": "B28",
@@ -3048,7 +3048,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0032796110026538
+          "wall_s": 1.003263239050284
         },
         {
           "benchmark_id": "B28",
@@ -3058,7 +3058,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.007559964898973703
+          "wall_s": 0.007473475998267531
         },
         {
           "benchmark_id": "B28",
@@ -3068,7 +3068,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.016465592896565795
+          "wall_s": 0.016514559974893928
         },
         {
           "benchmark_id": "B28",
@@ -3078,7 +3078,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.04941441211849451
+          "wall_s": 0.06186827109195292
         },
         {
           "benchmark_id": "B28",
@@ -3088,7 +3088,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.004253017948940396
+          "wall_s": 0.004941876046359539
         },
         {
           "benchmark_id": "B28",
@@ -3098,7 +3098,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.003436157014221
+          "wall_s": 1.003910053987056
         },
         {
           "benchmark_id": "B28",
@@ -3108,7 +3108,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0036504501476884
+          "wall_s": 1.0041928989812732
         },
         {
           "benchmark_id": "B28",
@@ -3118,7 +3118,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.00412076106295
+          "wall_s": 1.0042451610788703
         },
         {
           "benchmark_id": "B28",
@@ -3128,47 +3128,47 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 1.0031412548851222
+          "wall_s": 1.003550780005753
         },
         {
           "benchmark_id": "B28",
-          "bins_used": null,
+          "bins_used": 2,
           "implementation_id": "packingsolver_upstream_boxstacks",
           "items": 16,
           "peak_rss_bytes": null,
-          "run_status": "ERROR",
-          "solution_status": "NO_SOLUTION",
-          "wall_s": 0.0
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.007372518070042133
         },
         {
           "benchmark_id": "B28",
-          "bins_used": null,
+          "bins_used": 4,
           "implementation_id": "packingsolver_upstream_boxstacks",
           "items": 32,
           "peak_rss_bytes": null,
-          "run_status": "ERROR",
-          "solution_status": "NO_SOLUTION",
-          "wall_s": 0.0
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.01794267282821238
         },
         {
           "benchmark_id": "B28",
-          "bins_used": null,
+          "bins_used": 8,
           "implementation_id": "packingsolver_upstream_boxstacks",
           "items": 64,
           "peak_rss_bytes": null,
-          "run_status": "ERROR",
-          "solution_status": "NO_SOLUTION",
-          "wall_s": 0.0
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.06212056498043239
         },
         {
           "benchmark_id": "B28",
-          "bins_used": null,
+          "bins_used": 1,
           "implementation_id": "packingsolver_upstream_boxstacks",
           "items": 8,
           "peak_rss_bytes": null,
-          "run_status": "ERROR",
-          "solution_status": "NO_SOLUTION",
-          "wall_s": 0.0
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.00478503480553627
         },
         {
           "benchmark_id": "B28",
@@ -3178,7 +3178,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.06833212007768452
+          "wall_s": 0.07182731991633773
         },
         {
           "benchmark_id": "B28",
@@ -3188,7 +3188,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.080590097932145
+          "wall_s": 0.08398601692169905
         },
         {
           "benchmark_id": "B28",
@@ -3198,7 +3198,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.12803702894598246
+          "wall_s": 0.1340657297987491
         },
         {
           "benchmark_id": "B28",
@@ -3208,7 +3208,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.06561447191052139
+          "wall_s": 0.06880604010075331
         },
         {
           "benchmark_id": "B28",
@@ -3218,7 +3218,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.006054544122889638
+          "wall_s": 0.00637815915979445
         },
         {
           "benchmark_id": "B28",
@@ -3228,7 +3228,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.013568747090175748
+          "wall_s": 0.014322709990665317
         },
         {
           "benchmark_id": "B28",
@@ -3238,7 +3238,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.040855826111510396
+          "wall_s": 0.04140014504082501
         },
         {
           "benchmark_id": "B28",
@@ -3248,7 +3248,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.002997014904394746
+          "wall_s": 0.0032482249662280083
         },
         {
           "benchmark_id": "B28",
@@ -3258,7 +3258,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0010296190157532692
+          "wall_s": 0.0012591269332915545
         },
         {
           "benchmark_id": "B28",
@@ -3268,7 +3268,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0010987978894263506
+          "wall_s": 0.0011390938889235258
         },
         {
           "benchmark_id": "B28",
@@ -3278,7 +3278,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0014320358168333769
+          "wall_s": 0.0017098789103329182
         },
         {
           "benchmark_id": "B28",
@@ -3288,7 +3288,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0009624140802770853
+          "wall_s": 0.001007518032565713
         },
         {
           "benchmark_id": "B28",
@@ -3298,7 +3298,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.011667110025882721
+          "wall_s": 0.011933291796594858
         },
         {
           "benchmark_id": "B28",
@@ -3308,7 +3308,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.026823137886822224
+          "wall_s": 0.027836469933390617
         },
         {
           "benchmark_id": "B28",
@@ -3318,7 +3318,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.06575368414632976
+          "wall_s": 0.06995195592753589
         },
         {
           "benchmark_id": "B28",
@@ -3328,7 +3328,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.005714982049539685
+          "wall_s": 0.005749305943027139
         },
         {
           "benchmark_id": "B28",
@@ -3338,7 +3338,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0008849520236253738
+          "wall_s": 0.0010499600321054459
         },
         {
           "benchmark_id": "B28",
@@ -3348,7 +3348,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0009568140376359224
+          "wall_s": 0.0009238419588655233
         },
         {
           "benchmark_id": "B28",
@@ -3358,7 +3358,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0011003890540450811
+          "wall_s": 0.0012156509328633547
         },
         {
           "benchmark_id": "B28",
@@ -3368,7 +3368,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.0009556610602885485
+          "wall_s": 0.0009076560381799936
         },
         {
           "benchmark_id": "B28",
@@ -3378,7 +3378,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.013111470965668559
+          "wall_s": 0.013398909941315651
         },
         {
           "benchmark_id": "B28",
@@ -3388,7 +3388,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.03164624096825719
+          "wall_s": 0.030681445030495524
         },
         {
           "benchmark_id": "B28",
@@ -3398,7 +3398,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.07360196183435619
+          "wall_s": 0.07519780588336289
         },
         {
           "benchmark_id": "B28",
@@ -3408,7 +3408,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.006574369966983795
+          "wall_s": 0.006350212963297963
         },
         {
           "benchmark_id": "B28",
@@ -3418,7 +3418,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 10.067301715025678
+          "wall_s": 10.071993218036368
         },
         {
           "benchmark_id": "B28",
@@ -3428,7 +3428,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 10.067094054073095
+          "wall_s": 10.082283523865044
         },
         {
           "benchmark_id": "B28",
@@ -3438,7 +3438,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "NO_SOLUTION",
-          "wall_s": 10.078189610969275
+          "wall_s": 10.081473959842697
         },
         {
           "benchmark_id": "B28",
@@ -3448,7 +3448,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.24465010315179825
+          "wall_s": 0.24433142482303083
         },
         {
           "benchmark_id": "B28",
@@ -3458,7 +3458,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.2317392269615084
+          "wall_s": 0.2380869439803064
         },
         {
           "benchmark_id": "B28",
@@ -3468,7 +3468,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.22490361612290144
+          "wall_s": 0.2327021029777825
         },
         {
           "benchmark_id": "B28",
@@ -3478,7 +3478,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.2023338540457189
+          "wall_s": 0.24344674195162952
         },
         {
           "benchmark_id": "B28",
@@ -3488,7 +3488,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.23164584417827427
+          "wall_s": 0.24895836203359067
         },
         {
           "benchmark_id": "B28",
@@ -3498,7 +3498,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.2371440469287336
+          "wall_s": 0.23210848891176283
         },
         {
           "benchmark_id": "B28",
@@ -3508,7 +3508,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.22581399395130575
+          "wall_s": 0.23606940195895731
         },
         {
           "benchmark_id": "B28",
@@ -3518,7 +3518,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.22618000907823443
+          "wall_s": 0.23066821391694248
         },
         {
           "benchmark_id": "B28",
@@ -3528,7 +3528,7 @@
           "peak_rss_bytes": null,
           "run_status": "COMPLETED",
           "solution_status": "VALID_COMPLETE",
-          "wall_s": 0.22133444901555777
+          "wall_s": 0.23025944409891963
         }
       ]
     },
@@ -3971,7 +3971,7 @@
     "results/comprehensive/b31-source-audit.json": "445b4c63cbf5a5b4bce389a8eb3d52f8e244211ef19741e163629089f78ef1d7",
     "results/comprehensive/b32-source-audit.json": "8f5bfff66d862c249b1988ac3dd94f1f9c1a5f773cc93a9c37747288895e963b",
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
-    "results/comprehensive/run-manifest.jsonl": "05d07aac78a194e7f4b4eb6885788083fbe3861cbedb05c67b0c6aae456a7859",
+    "results/comprehensive/run-manifest.jsonl": "51428bdd4e7d14914687dabbb8baaa434260e79fd749bccda85c3660b170e328",
     "results/comprehensive/runs/alonso-projection.jsonl": "deb50847109ef2ff350c442201f4c42a1e99f1fe696c1d2a11ae32cf165ced46",
     "results/comprehensive/suite-implementation-plan.jsonl": "3a1a0fb0c0589ac0d1d6cb5b7dea0f3838efac1330c0f50bb0a2544309d93f8c"
   },

@@ -99,10 +99,10 @@
         2.0
       ],
       "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
+      "rotation": "zyx",
+      "rotation_index": 5
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.670783
+  "elapsed_ms": 1.675241
 }

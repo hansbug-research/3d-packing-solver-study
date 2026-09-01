@@ -2,9 +2,9 @@
   "fault_command": [
     "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/box/packingsolver_box",
     "--items",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-shk2d7hm/items.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-9sbyt1wa/items.csv",
     "--bins",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-shk2d7hm/bins.csv",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-9sbyt1wa/bins.csv",
     "--objective",
     "bin-packing",
     "--time-limit",

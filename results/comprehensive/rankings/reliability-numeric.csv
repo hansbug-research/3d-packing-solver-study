@@ -16,7 +16,7 @@ B26,jerry,2,2,,1.0,0
 B26,packingsolver_fork_box,2,2,,1.0,0
 B26,packingsolver_fork_boxstacks,2,2,,1.0,0
 B26,packingsolver_upstream_box,2,2,,1.0,0
-B26,packingsolver_upstream_boxstacks,2,0,,0.0,2
+B26,packingsolver_upstream_boxstacks,2,2,,1.0,0
 B26,py3dbp,2,2,,1.0,0
 B26,rust_brkga,2,2,,1.0,0
 B26,rust_extreme_point,2,2,,1.0,0

@@ -1,4 +1,19 @@
 {
   "scenario": "fault-cancelled",
-  "fault": "cancelled"
+  "fault": "cancelled",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.cache/build-upstream-367/src/boxstacks/packingsolver_boxstacks",
+    "--items",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-owvmplz5/items.csv",
+    "--bins",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-owvmplz5/bins.csv",
+    "--objective",
+    "bin-packing",
+    "--time-limit",
+    "10",
+    "--memory-limit",
+    "512",
+    "--verbosity-level",
+    "0"
+  ]
 }

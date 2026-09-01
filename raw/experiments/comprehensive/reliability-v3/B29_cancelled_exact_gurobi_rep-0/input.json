@@ -7,6 +7,6 @@
     "--backend",
     "gurobi",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-_yquemti/input.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-c5t_dele/input.json"
   ]
 }

@@ -5,7 +5,7 @@
     "--backend",
     "cp_sat",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-yjp7daaz/invalid.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-3f6_7b8r/invalid.json"
   ],
   "objective": null,
   "placements": 0,

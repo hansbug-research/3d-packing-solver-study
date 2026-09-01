@@ -4,7 +4,7 @@
   "command": [
     "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-8xetyo17/invalid.json",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-n0w5juod/invalid.json",
     "brkga",
     "10000"
   ]

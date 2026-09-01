@@ -1,16 +1,16 @@
 {
-  "cancel_latency_s": 0.02035490400157869,
+  "cancel_latency_s": 0.020779507933184505,
   "fault_command": [
     "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-mtlbmyet/input.json",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-x6v7jhm3/input.json",
     "extremepoint",
     "10000"
   ],
   "objective": null,
   "placements": 0,
   "required_items": 512,
-  "status": "COMPLETED",
+  "status": "CANCELLED",
   "validation_error_count": 0,
   "validation_errors": []
 }

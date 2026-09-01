@@ -7,7 +7,7 @@
     "--library",
     "py3dbp",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-s_yeeik8/invalid.json",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-xrdf5bxa/invalid.json",
     "--order",
     "descending",
     "--projection"

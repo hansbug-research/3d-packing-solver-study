@@ -34,6 +34,8 @@ B30 完整源文件不随仓库再分发。准备 OR-Library 四个文件后，�
 
 B24-B29 reliability-v3 已完成 347 条全库记录，分别输出 metamorphic、numeric、repeatability、scalability 和 fault/cancellation 表；这些结果只回答工程稳定性、资源边界和托管行为，不与几何质量或成本排行合并。复现实验使用 `.venv/bin/python benchmarks/comprehensive/run_reliability.py`，输入和 runner hash 见 [`reliability-source-audit.json`](reliability-source-audit.json)，原始产物位于 `raw/experiments/comprehensive/reliability-v3/`。
 
+协议冻结后发现的 GoPackX 候选审计不改变当前 `32 x 19` 正式分母。其机器可读审计见 [`gopackx-audit.json`](gopackx-audit.json)，源码/fixture 结论见 [`research/gopackx-audit.md`](../../research/gopackx-audit.md)。Go 1.22.12 下 `go test ./...` 通过，独立 THPACK9 instance 1 几何校验通过但得到 50 箱；由于没有有限 copies/max-count、门洞/路线/轴荷等模型，当前只保留为未排名候选。
+
 B21 ESICUP VRPTW-CLP 的来源审计见 [`b21-source-audit.json`](b21-source-audit.json)。46 个实例文件中 23 个含缺失高度标志的 8 字段货物行，另有 1 个客户行缺字段，因此 suite catalog 使用 `SOURCE_INVALID`，所有 B21 cells 只保留 `SOURCE_PENDING` 状态记录；不得通过猜补或删除行后继续使用原 benchmark 名称。
 
 B19/B20 已新增 Alonso source-derived geometry projection 首轮：2019/2020 各取需求件数不超过 600 的最小实例，PY/JE/GO/RS 五策略按 1 s、升序/降序运行，共 84 条记录。该轨道明确删除层、托盘、交付日、成本和轴荷语义，结果仅用于几何迁移诊断；FULL 轨仍保持 `ADAPTER_MISSING`。排行见 [`industrial-projection.csv`](rankings/industrial-projection.csv)。

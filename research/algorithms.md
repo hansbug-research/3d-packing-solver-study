@@ -254,6 +254,12 @@ ExtremePoint 在 44 个 THPACK9 合法实例上得到 44/44 有效 certificate�
 
 Layer 在换层、重置 X/Y 后只重新检查 Z，没有再检查新姿态的 width/depth。`3x2x4` 物品和 `4x3x2` boundary 的最小反例返回 `3x4x2` placement；THPACK9-1 也越界。GA、BRKGA、SA 共用 `layer_place_items`，因此报告的 15-16 箱全部无效。`Config.seed=42` 没传到随机 runner，多数策略不读取 `time_limit_ms`；这两组问题适合拆成上游 issue 和小 PR，但在修复合并前不能进入质量排名。
 
+### 6.9 GoPackX：成本 API 候选，但能力边界较窄
+
+[GoPackX 审计](gopackx-audit.md) 针对 commit `5e316b83fd9ddf38eb665106234219a86c67f6a1` 完成。它是 Go 1.22、MIT、零第三方依赖的变尺寸箱型库，包含 Pivot/ExtremePoint/LAFF、TrialPacking、VNS、Branch & Bound、六种旋转、总重量、fragile、支撑比例、上压近似和 `context.Context` 取消。Go 1.22.12 下 `go test ./...` 全部通过，独立 fixture 的成本、旋转、超重、边界和 AABB 检查也通过。
+
+但 `model.Bin` 只有可无限 clone 的模板，没有有限 copies/max-count；成本与 VNS 是启发式，不提供可审计的全局 bound；gravity center 是四象限后验统计，不是轴荷模型；门洞、障碍、路线、卸货和一般载荷流均缺失。固定 THPACK9 instance 1 的普通/Optimize 均为 `70/70`、50 箱，远差于 PackingSolver fork 的 25 箱。故当前只保留为轻量成本/几何候选生成器或 sidecar，不修改正式 19 实现分母；完成统一 adapter 后再决定是否扩展为第 20 个实现。
+
 ## 7. 真实约束如何进入算法
 
 ### 7.1 姿态、边界与不相交

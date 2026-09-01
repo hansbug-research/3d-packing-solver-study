@@ -1,12 +1,12 @@
 {
-  "cancel_latency_s": 0.020844065118581057,
+  "cancel_latency_s": 0.0208461401052773,
   "fault_command": [
     "/home/zhangshaoang/packing-software-study/.venv/bin/python",
     "/home/zhangshaoang/packing-software-study/benchmarks/comprehensive/exact_reliability_worker.py",
     "--backend",
     "cplex",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-lz6ile17/input.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-f534uaeu/input.json"
   ],
   "objective": null,
   "placements": 0,

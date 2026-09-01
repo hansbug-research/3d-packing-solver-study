@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "protocol_version": "benchmark-protocol/3",
+  "candidate_status": "NOT_IN_FORMAL_DENOMINATOR",
+  "repository": "https://github.com/jcoruiz/gopackx",
+  "commit": "5e316b83fd9ddf38eb665106234219a86c67f6a1",
+  "license": "MIT",
+  "runtime": "go1.22.12 linux/amd64",
+  "go_test": {
+    "command": "go test ./...",
+    "status": "PASS",
+    "packages_failed": 0
+  },
+  "fixtures": [
+    {
+      "id": "cost-direction",
+      "fitted": 2,
+      "required": 2,
+      "bins": 2,
+      "total_cost": 2.0,
+      "external_aabb_weight_validation": "PASS"
+    },
+    {
+      "id": "rotation-and-weight",
+      "fitted": 1,
+      "required": 2,
+      "bins": 1,
+      "total_cost": 0.0,
+      "external_aabb_weight_validation": "PASS",
+      "note": "The 10-weight item is rejected by a 5-capacity bin."
+    },
+    {
+      "id": "optimized-cost",
+      "fitted": 2,
+      "required": 2,
+      "bins": 2,
+      "total_cost": 2.0,
+      "external_aabb_weight_validation": "PASS"
+    },
+    {
+      "id": "thpack9-instance1",
+      "fitted": 70,
+      "required": 70,
+      "bins": 50,
+      "total_cost": 0.0,
+      "external_aabb_weight_validation": "PASS",
+      "problem_scope": "FULL_PROBLEM",
+      "note": "Converted from the repository's canonical THPACK9 instance 1; no source rotation flags were removed because all flags are enabled."
+    },
+    {
+      "id": "thpack9-instance1-optimize",
+      "fitted": 70,
+      "required": 70,
+      "bins": 50,
+      "total_cost": 0.0,
+      "external_aabb_weight_validation": "PASS",
+      "problem_scope": "FULL_PROBLEM"
+    },
+    {
+      "id": "cancellation",
+      "run_status": "ERROR",
+      "error": "context deadline exceeded",
+      "expected_behavior": "CANCELLATION_PROPAGATED"
+    }
+  ],
+  "capability_summary": {
+    "variable_sized_unlimited_templates": "SUPPORTED",
+    "finite_bin_copies": "NOT_SUPPORTED",
+    "cost_objective": "SUPPORTED_HEURISTIC",
+    "six_axis_rotations": "SUPPORTED",
+    "twenty_four_face_semantics": "NOT_SUPPORTED",
+    "continuous_angle": "NOT_SUPPORTED",
+    "payload": "SUPPORTED_BASIC",
+    "support_and_load_bearing": "SUPPORTED_APPROXIMATE",
+    "axle_load": "NOT_SUPPORTED",
+    "obstacles_door_unloading_routing": "NOT_SUPPORTED",
+    "native_incremental_api": "NOT_SUPPORTED"
+  },
+  "decision": "RETAIN_AS_CANDIDATE_ONLY"
+}

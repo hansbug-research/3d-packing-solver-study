@@ -7,6 +7,6 @@
     "--backend",
     "cplex",
     "--input",
-    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-lz6ile17/input.json"
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-f534uaeu/input.json"
   ]
 }

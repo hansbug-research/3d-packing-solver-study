@@ -119,100 +119,12 @@
   ],
   "placements": [
     {
-      "item_id": "renamed-6",
-      "bin_id": "bin-000",
-      "position": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "original_size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
-    },
-    {
-      "item_id": "renamed-5",
-      "bin_id": "bin-000",
-      "position": [
-        5.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "original_size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "weight": 1.0,
-      "rotation": "zyx",
-      "rotation_index": 5
-    },
-    {
-      "item_id": "renamed-3",
-      "bin_id": "bin-000",
-      "position": [
-        0.0,
-        5.0,
-        0.0
-      ],
-      "size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "original_size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "weight": 1.0,
-      "rotation": "zyx",
-      "rotation_index": 5
-    },
-    {
       "item_id": "renamed-0",
       "bin_id": "bin-000",
       "position": [
-        5.0,
-        5.0,
+        0.0,
+        0.0,
         0.0
-      ],
-      "size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "original_size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
-    },
-    {
-      "item_id": "renamed-2",
-      "bin_id": "bin-000",
-      "position": [
-        0.0,
-        0.0,
-        5.0
       ],
       "size": [
         5.0,
@@ -234,7 +146,7 @@
       "position": [
         5.0,
         0.0,
-        5.0
+        0.0
       ],
       "size": [
         5.0,
@@ -247,15 +159,59 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "renamed-2",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
     },
     {
       "item_id": "renamed-4",
       "bin_id": "bin-000",
       "position": [
-        0.0,
         5.0,
+        5.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "renamed-6",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        0.0,
         5.0
       ],
       "size": [
@@ -273,7 +229,51 @@
       "rotation_index": 0
     },
     {
+      "item_id": "renamed-5",
+      "bin_id": "bin-000",
+      "position": [
+        5.0,
+        0.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "yxz",
+      "rotation_index": 2
+    },
+    {
       "item_id": "renamed-1",
+      "bin_id": "bin-000",
+      "position": [
+        0.0,
+        5.0,
+        5.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "yxz",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "renamed-3",
       "bin_id": "bin-000",
       "position": [
         5.0,
@@ -291,10 +291,10 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "xzy",
+      "rotation_index": 1
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 5.801501
+  "elapsed_ms": 5.733893
 }

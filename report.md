@@ -446,12 +446,12 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 
 | Benchmark | 适用库/算法 | 实测主结果 | 结果说明与边界 |
 |---|---|---|---|
-| B24 metamorphic | 全部 native/composed/exact；EX 作为 oracle | 除缺失 upstream `boxstacks` 二进制外，所有实际可运行实现均为 `3/3` invariant | 说明 item 顺序、ID 改名和对称轴变换不会改变小型几何目标；不代表复杂非对称实例的全局不变性 |
-| B25 cost/bin-order | PackingSolver fork/upstream、EX；其他库当前 `ADAPTER_MISSING` | fork `box`、fork `boxstacks`、四个 exact 后端均 `3/3` expected-cost；fork 成本为 `10/10/70`（base/permuted/scaled） | 旧结果 `25` 是 certificate row/index 被误当输入 bin ID 的 adapter bug，修复 parser 后消失；upstream `box` 三条为真实 `ERROR`，继续追踪 #536 |
-| B26 numeric | 全部可运行实现与独立 validator | 可运行实现均 `2/2` numeric consistency；upstream `boxstacks` 因 binary 缺失为 `ERROR` | 说明单位缩放在整数小 fixture 上稳定；尚未覆盖浮点极值、真实公差和大整数溢出 |
+| B24 metamorphic | 全部 native/composed/exact；EX 作为 oracle | 19/19 实现均为 `3/3` invariant；upstream `boxstacks` 本轮已实际运行 | 说明 item 顺序、ID 改名和对称轴变换不会改变小型几何目标；不代表复杂非对称实例的全局不变性 |
+| B25 cost/bin-order | PackingSolver fork/upstream、EX；其他库当前 `ADAPTER_MISSING` | fork `box`、fork `boxstacks`、四个 exact 后端均 `3/3` expected-cost；fork 成本为 `10/10/70`（base/permuted/scaled） | 旧结果 `25` 是 certificate row/index 被误当输入 bin ID 的 adapter bug，修复 parser 后消失；upstream `box` 与 `boxstacks` 各三条均为真实 `ERROR`，继续追踪 #536 |
+| B26 numeric | 全部可运行实现与独立 validator | 19/19 实现均 `2/2` numeric consistency；包括 upstream `boxstacks` | 说明单位缩放在整数小 fixture 上稳定；尚未覆盖浮点极值、真实公差和大整数溢出 |
 | B27 repeatability | 全部；随机 RS/EX 固定 seed，5 次重复 | 通过的实现均 `5/5`、`bins_stddev=0` | 这是对当前对称八立方体的稳定性结果；正式结论仍需 B05/B23 非对称实例和多 seed |
 | B28 scalability | 全部；EX 为小规模质量/证明参照，FastBruteForce 单独看 timeout | Go/Rust/py3dbp/Jerry/Skjolber Plain/LAFF/PackingSolver fork 在 8–64 件均产生完整或明确失败状态；exact 在 16–64 件出现许可证/时间边界；FastBruteForce 16–64 件约 10 s 无解 | 当前是 process/适配层拐点 smoke，不替代协议要求的 20/50/100/200/500/1000 件正式曲线；跨语言只比较各自 timing group |
-| B29 fault/cancellation | 全部 worker/sidecar/CLI | exact、Go、Python、Rust 多数实现为 `ERROR + CANCELLED`；PackingSolver fork/upstream `box` 取消约 21 ms；Skjolber 约 39–56 ms；Rust Layer 与 FastBruteForce 在 20 ms 门限内提前正常结束，记 `0.5` fault rate | 本轮只实测 malformed input 与 cancellation，没有把 OOM 当作已完成；正常退出但没有有效证书仍保留为处理结果，不冒充 crash recovery |
+| B29 fault/cancellation | 全部 worker/sidecar/CLI | exact、Go、Python、Rust 多数实现为 `ERROR + CANCELLED`；PackingSolver fork/upstream `box` 取消约 21 ms，两个 `boxstacks` 约 6 ms 内正常结束；Skjolber 约 39–56 ms；Rust Layer 与 FastBruteForce 在 20 ms 门限内提前正常结束，记 `0.5` fault rate | 本轮只实测 malformed input 与 cancellation，没有把 OOM 当作已完成；正常退出但没有有效证书仍保留为处理结果，不冒充 crash recovery |
 
 外部约束适配器运行前的中间快照仅用于追溯；当前权威数字见本节前的 `26/32`、`562/608` 和 `64,630`。无论哪个快照，都不代表 B05、B08、B10、B19-B23、B30-B31 已完成 ALL-libs FULL 轨；B21 还受 `SOURCE_INVALID` 阻断。B30/B31 的 exact calibration 仅校准小 fixture，B32 目前只有组合 projection，原生 incremental 仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨补齐。
 
@@ -496,6 +496,12 @@ B32 使用两个固定到货 trace（`ADVERSARIAL_ORDER`、`STACKED_ORDER`）、
 按实现的代表性 p95 决策延迟，Rust/Go 约 `0.003–0.010 s`，py3dbp 约 `0.166 s`，Jerry 约 `0.994–1.001 s`；这些数字包含本次组合 runner 的调用边界，不是库内部纯 solver time。该 fixture 只有 8 件物品、两个 trace，因而只能作为 policy/adapter 校准，不能推出大规模在线性能。完整记录、artifact 和聚合见 [`B32-online-composed.jsonl`](results/comprehensive/runs/B32-online-composed.jsonl)、[`industrial-online.csv`](results/comprehensive/rankings/industrial-online.csv) 和 [`b32-source-audit.json`](results/comprehensive/b32-source-audit.json)。
 
 可靠性结果不产生跨问题族总冠军：B24/B26/B27 是工程稳定性门，B25 是成本 comparator/parser 门，B28 是规模和资源边界，B29 是托管故障边界。质量、成本、硬约束和可靠性必须分别看表；`NOT_SUPPORTED`、`ADAPTER_MISSING`、`ERROR` 或 `TIME_LIMIT` 都是能力边界证据，不可用其他 benchmark 的高利用率抵消。
+
+### 7.12 GoPackX 候选库审计（不进入当前 19 实现分母）
+
+协议冻结后审计了 [GoPackX](research/gopackx-audit.md)：Go 1.22、MIT、零第三方依赖，提供变尺寸箱型、箱价、六种旋转、总重量、fragile、支撑比例、上压近似和 `context.Context` 取消。固定独立 fixture 的成本方向、旋转/超重、AABB/边界检查均通过；`go test ./...` 所有 package 通过，取消测试返回 `context deadline exceeded`。
+
+它不能替代当前主候选：`model.Bin` 只有无限复制的箱型模板，没有有限 copies/max-count；成本和 VNS 是启发式而非证明模型；没有门洞、障碍、路线、卸货、轴荷或一般载荷流。独立转换的 THPACK9 instance 1 在普通和 Optimize 路径都得到 `70/70`、`50` 箱（外部 AABB/重量校验通过），而 PackingSolver fork 为 `25` 箱。因此 GoPackX 目前定位为轻量成本/几何候选生成器或 sidecar，不进入正式质量排行；只有完成 44 例 THPACK9、unlimited-cost B08/B09、B12/B13 和 B24–B29 的统一 adapter 后，才重新评估是否扩展为第 20 个实现。
 
 ## 8. GUI 与三维产品原型
 
