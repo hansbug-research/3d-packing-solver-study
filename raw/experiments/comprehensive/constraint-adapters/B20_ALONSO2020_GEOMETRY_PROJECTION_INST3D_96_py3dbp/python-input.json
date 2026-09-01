@@ -1,0 +1,1 @@
+{"instance": {"family": "CONSTRAINT_ADAPTER", "instance_id": 1, "problem_kind": "single_container_knapsack", "objective": "minimize_bins", "container": [2572, 16015, 2743], "seed": 42, "source_line_errors": [], "item_types": [{"type_id": "1", "size": [1000, 1200, 933], "allowed_vertical_dimensions": [1, 1, 1], "copies": 364}]}}

@@ -213,17 +213,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62965
-    assert summary["protocol_v3_run_records"] == 60843
+    assert summary["combined_run_records"] == len(records) == 63049
+    assert summary["protocol_v3_run_records"] == 60927
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 24
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 538
+    assert aggregate["coverage"]["cells_with_evidence"] == 554
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 262
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 278
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 257
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60843}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60927}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -237,6 +237,9 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert {record["problem_variant"]: record["run_status"] for record in b29_exact} == {"invalid_json": "ERROR", "cancelled": "CANCELLED"}
     for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
         assert (comprehensive / "rankings" / ranking).exists()
+    projection = list(csv.DictReader((comprehensive / "rankings" / "industrial-projection.csv").open(newline="")))
+    assert len(projection) == 16
+    assert all(row["rank_scope"] == "BOUNDED_SMALLEST_SOURCE_SUBSET" for row in projection)
     baytp = list(csv.DictReader((comprehensive / "rankings" / "industrial-baytp.csv").open(newline="")))
     assert len(baytp) == 9
     baytp_projection = [row for row in baytp if row["problem_scope"] == "GEOMETRY_PROJECTION"]

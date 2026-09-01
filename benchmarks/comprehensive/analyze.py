@@ -792,6 +792,41 @@ def online_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return rows
 
 
+def industrial_projection_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Summarize bounded Alonso geometry projections separately from FULL tracks."""
+    groups: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if not executed(record) or record["benchmark_id"] not in {"B19", "B20"}:
+            continue
+        if record["problem_scope"] != "GEOMETRY_PROJECTION":
+            continue
+        key = (record["benchmark_id"], record["implementation_id"], record["comparison_track"])
+        groups[key].append(record)
+    rows: list[dict[str, Any]] = []
+    for key, group in sorted(groups.items()):
+        valid = [record for record in group if record["solution_status"] in VALID_SOLUTIONS]
+        complete = [record for record in group if record["solution_status"] == "VALID_COMPLETE"]
+        invalid = [record for record in group if record["solution_status"] in {"INVALID_CERTIFICATE", "CONSTRAINT_VIOLATION"}]
+        utilizations = [float(record["metrics"]["volume_utilization"]) for record in valid if record["metrics"].get("volume_utilization") is not None]
+        packed_items = [float(record["metrics"]["packed_items"]) for record in valid if record["metrics"].get("packed_items") is not None]
+        walls = [float(record["resources"]["wall_s"]) for record in group if record["resources"].get("wall_s") is not None]
+        rows.append({
+            "benchmark_id": key[0], "problem_variant": f"ALONSO{2019 if key[0] == 'B19' else 2020}_GEOMETRY_PROJECTION_SUBSET",
+            "implementation_id": key[1], "comparison_track": key[2], "problem_scope": "GEOMETRY_PROJECTION",
+            "rank_scope": "BOUNDED_SMALLEST_SOURCE_SUBSET",
+            "source_instances": len({record["instance_id"] for record in group}), "records": len(group),
+            "valid_records": len(valid), "valid_complete": len(complete), "valid_partial": len(valid) - len(complete),
+            "invalid_records": len(invalid), "no_solution": sum(record["solution_status"] == "NO_SOLUTION" for record in group),
+            "valid_rate": len(valid) / len(group) if group else 0.0,
+            "mean_volume_utilization": mean(utilizations), "median_volume_utilization": median(utilizations),
+            "p95_volume_utilization": nearest_rank(utilizations, 0.95), "mean_packed_items": mean(packed_items),
+            "mean_wall_s": mean(walls),
+            "projection_constraints_removed": len(group[0]["metrics"].get("projection_removed_constraints", [])) if group else 0,
+        })
+    rows.sort(key=lambda row: (row["benchmark_id"], -float(row["mean_volume_utilization"] or -1), row["invalid_records"], row["implementation_id"]))
+    return rows
+
+
 def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Rank only records carrying a validated variable-cost objective.
 
@@ -1013,6 +1048,7 @@ def generated_files() -> dict[Path, str]:
     industrial_baytp = industrial_baytp_rankings(records)
     industrial_mixed_pallet = industrial_mixed_pallet_rankings(records)
     online = online_rankings(records)
+    industrial_projection = industrial_projection_rankings(records)
     variable_cost = variable_cost_rankings(records)
     open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
@@ -1050,6 +1086,9 @@ def generated_files() -> dict[Path, str]:
             "results/comprehensive/b32-source-audit.json": sha256(ROOT / "results/comprehensive/b32-source-audit.json"),
             "benchmarks/comprehensive/audit_b21_source.py": sha256(ROOT / "benchmarks/comprehensive/audit_b21_source.py"),
             "results/comprehensive/b21-source-audit.json": sha256(ROOT / "results/comprehensive/b21-source-audit.json"),
+            "benchmarks/comprehensive/run_alonso_projection.py": sha256(ROOT / "benchmarks/comprehensive/run_alonso_projection.py"),
+            "results/comprehensive/runs/alonso-projection.jsonl": sha256(ROOT / "results/comprehensive/runs/alonso-projection.jsonl"),
+            "raw/experiments/comprehensive/Alonso-projection-1s.tar.gz": sha256(ROOT / "raw/experiments/comprehensive/Alonso-projection-1s.tar.gz"),
         },
         "coverage": {
             "planned_cells": len(coverage),
@@ -1080,6 +1119,7 @@ def generated_files() -> dict[Path, str]:
             "industrial_baytp": industrial_baytp,
             "industrial_mixed_pallet": industrial_mixed_pallet,
             "online": online,
+            "industrial_projection": industrial_projection,
             "reliability": reliability,
         },
         "warnings": [
@@ -1161,6 +1201,12 @@ def generated_files() -> dict[Path, str]:
         "mean_bins_used", "mean_total_cost", "mean_decision_latency_p95_s", "mean_deadline_hit_rate",
         "mean_candidate_failures",
     ]
+    industrial_projection_fields = [
+        "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "problem_scope", "rank_scope",
+        "source_instances", "records", "valid_records", "valid_complete", "valid_partial", "invalid_records",
+        "no_solution", "valid_rate", "mean_volume_utilization", "median_volume_utilization", "p95_volume_utilization",
+        "mean_packed_items", "mean_wall_s", "projection_constraints_removed",
+    ]
     variable_cost_fields = [
         "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "instances", "valid_complete",
         "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
@@ -1200,6 +1246,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "industrial-baytp.csv": write_csv(industrial_baytp, industrial_baytp_fields),
         RESULTS_DIR / "rankings" / "industrial-mixed-pallet.csv": write_csv(industrial_mixed_pallet, industrial_mixed_pallet_fields),
         RESULTS_DIR / "rankings" / "industrial-online.csv": write_csv(online, online_fields),
+        RESULTS_DIR / "rankings" / "industrial-projection.csv": write_csv(industrial_projection, industrial_projection_fields),
         RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
         RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
