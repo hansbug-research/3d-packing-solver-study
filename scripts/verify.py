@@ -78,6 +78,7 @@ def check_release_metadata() -> None:
         "raw/provenance.json", "benchmarks/frontend-three-smoke/package.json",
         "benchmarks/frontend-three-smoke/package-lock.json", "benchmarks/frontend-three-smoke/smoke.mjs",
         "benchmarks/data/public/thpack9_instance1.json", "raw/thpack9_instance1.json",
+        "benchmarks/comprehensive/parse_b30_source.py", "results/comprehensive/b30-canonical-source-audit.json",
         "raw/experiments/commercial/README.md", "references.bib", "scripts/check_markdown.py", "scripts/check_links.py",
     ]
     for relative in required_paths:
@@ -226,6 +227,15 @@ def check_campaign_results() -> None:
             fail(f"industrial dataset run status changed: {dataset}")
     if industrial["baytp"].get("capability_status") != "ESICUP_SNAPSHOT_INCOMPLETE" or industrial["baytp"].get("run_status") != "NOT_RUN":
         fail("industrial dataset run status changed: baytp")
+    b30_source = json.loads((ROOT / "results" / "comprehensive" / "b30-canonical-source-audit.json").read_text())
+    if b30_source.get("input_status") != "VALID" or b30_source.get("run_status") != "NOT_RUN":
+        fail("B30 canonical source audit status changed")
+    if b30_source.get("products", {}).get("rows") != 6000 or b30_source.get("products", {}).get("total_quantity") != 17793:
+        fail("B30 canonical product summary changed")
+    if b30_source.get("shelves", {}).get("rows") != 49:
+        fail("B30 canonical shelf summary changed")
+    if any(b30_source.get("bays", {}).get(name, {}).get("rows") != 350 for name in ("baytp1", "baytp2")):
+        fail("B30 canonical bay summary changed")
 
 
 def check_comprehensive_plan() -> None:

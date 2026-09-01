@@ -1,0 +1,108 @@
+{
+  "bays": {
+    "baytp1": {
+      "available_height_max": 3000,
+      "available_height_min": 3000,
+      "distinct_rows": 1,
+      "first": [
+        1200,
+        2400,
+        650,
+        3000
+      ],
+      "last": [
+        1200,
+        2400,
+        650,
+        3000
+      ],
+      "rows": 350
+    },
+    "baytp2": {
+      "available_height_max": 2500,
+      "available_height_min": 2500,
+      "distinct_rows": 10,
+      "first": [
+        900,
+        2450,
+        635,
+        2500
+      ],
+      "last": [
+        900,
+        2450,
+        635,
+        2500
+      ],
+      "rows": 350
+    }
+  },
+  "benchmark_id": "B30",
+  "input_status": "VALID",
+  "products": {
+    "dimension_max": 2414,
+    "dimension_min": 9,
+    "family_id_max": 67,
+    "family_id_min": 1,
+    "product_families": 67,
+    "quantity_max": 5,
+    "quantity_min": 1,
+    "rows": 6000,
+    "total_quantity": 17793
+  },
+  "record_kind": "B30_BAYTP_CANONICAL_SOURCE_AUDIT",
+  "run_status": "NOT_RUN",
+  "schema_version": 1,
+  "semantic_contract": {
+    "all_orientations_allowed": true,
+    "bay_fields": [
+      "width",
+      "height",
+      "depth",
+      "available_height"
+    ],
+    "bay_sequence_is_fixed": true,
+    "note": "This is a source audit only; no shelf assignment or quality result is implied.",
+    "product_fields": [
+      "family",
+      "quantity",
+      "length",
+      "width",
+      "height"
+    ],
+    "shelf_fields": [
+      "number",
+      "thickness",
+      "position",
+      "top_gap",
+      "left_gap",
+      "inter_gap",
+      "right_gap"
+    ],
+    "shelf_overhang_allowed": false,
+    "shelf_sequence_is_fixed": true
+  },
+  "shelves": {
+    "number_max": 49,
+    "number_min": 1,
+    "position_max": 2400,
+    "position_min": 0,
+    "rows": 49,
+    "thickness_values": [
+      40
+    ]
+  },
+  "source": {
+    "baytp1_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/baytp1.txt",
+    "baytp2_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/baytp2.txt",
+    "products_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/products.txt",
+    "repository": "OR-Library",
+    "sha256": {
+      "baytp1.txt": "9a9b06a40628e87d03fbe36e6a0db220043e4fe45891cc9c2d7498b394621c63",
+      "baytp2.txt": "f334858c23120de183424bbda24784435311b263ce8c730cd78c17b649bcc125",
+      "products.txt": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+      "shelves.txt": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7"
+    },
+    "shelves_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/shelves.txt"
+  }
+}

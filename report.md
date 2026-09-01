@@ -430,7 +430,7 @@ legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求
 
 ### 7.7 工业数据集状态
 
-Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。BAYTP 的完整 ESICUP 快照仍缺少公共 `products`/`shelves`，所以完整 corpus 继续保持 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`；本轮仅完成一个由 OR-Library `products.txt`、`shelves.txt` 和 `baytp1.txt` 派生的 2 件校准 fixture。8 个几何实现均输出布局，但 8/8 被 shelf 顶面、侧隙或层间距 validator 判为 `CONSTRAINT_VIOLATION`，详见 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv) 和 [`b30-source-audit.json`](results/comprehensive/b30-source-audit.json)。这只能证明自由几何库忽略货架语义，不能冒充完整 BAYTP 结果；删除字段后运行普通 3D 箱数算法会改变问题。
+Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。BAYTP 的 ESICUP shallow snapshot 仍缺少公共 `products`/`shelves`，但 OR-Library 四个官方源文件已恢复并通过 [`parse_b30_source.py`](benchmarks/comprehensive/parse_b30_source.py) 的逐文件格式、顺序和 hash 审计；完整 source audit 见 [`b30-canonical-source-audit.json`](results/comprehensive/b30-canonical-source-audit.json)。因此 B30 输入已是 `VALID`，完整 corpus 仍为 `ADAPTER_MISSING / NOT_RUN`；本轮仅完成一个由官方源派生的 2 件校准 fixture。8 个几何实现均输出布局，但 8/8 被 shelf 顶面、侧隙或层间距 validator 判为 `CONSTRAINT_VIOLATION`，详见 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv) 和 [`b30-source-audit.json`](results/comprehensive/b30-source-audit.json)。这只能证明自由几何库忽略货架语义，不能冒充完整 BAYTP 结果；删除字段后运行普通 3D 箱数算法会改变问题。
 
 ### 7.8 B24-B29 reliability-v3 全库实测
 

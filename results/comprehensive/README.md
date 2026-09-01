@@ -19,6 +19,19 @@ Wave-1 fresh exact/Skjolber 结果的执行与协议导入命令为：`bash benc
 
 B30/B31 的 `exact-calibrations.jsonl` 是四条可手工复核的小 fixture 真值记录：B30 证明两个声明 shelf 必须使用两个 shelf，B31 覆盖平铺/堆叠最优和总重量不可行。它们都带 `metrics.calibration_only=true`，只用于 validator/adapter 校准，不替代完整 BAYTP 或 mixed-SKU 订单 corpus。复现命令为 `python benchmarks/comprehensive/run_exact_calibrations.py`，然后依次运行 `python benchmarks/comprehensive/import_baseline.py` 和 `python benchmarks/comprehensive/analyze.py`。
 
+B30 完整源文件不随仓库再分发。准备 OR-Library 四个文件后，可用下面命令重建并检查 canonical source audit；输出的行数、产品族、总需求、bay/shelf 顺序和四个 SHA-256 必须与 [`b30-canonical-source-audit.json`](b30-canonical-source-audit.json) 一致：
+
+```bash
+.venv/bin/python benchmarks/comprehensive/parse_b30_source.py \
+  --source-dir .cache/baytp \
+  --output results/comprehensive/b30-canonical-source-audit.json
+.venv/bin/python benchmarks/comprehensive/parse_b30_source.py \
+  --source-dir .cache/baytp \
+  --output results/comprehensive/b30-canonical-source-audit.json --check
+```
+
+该 audit 证明 B30 的公开输入已经冻结，但不代表完成 shelf assignment，也不产生质量排行；完整 BAYTP adapter 仍须把 6000 个产品需求、shelf 选择、bay 顺序和间隙约束保留在 `FULL_PROBLEM` 中。
+
 B24-B29 reliability-v3 已完成 347 条全库记录，分别输出 metamorphic、numeric、repeatability、scalability 和 fault/cancellation 表；这些结果只回答工程稳定性、资源边界和托管行为，不与几何质量或成本排行合并。复现实验使用 `.venv/bin/python benchmarks/comprehensive/run_reliability.py`，输入和 runner hash 见 [`reliability-source-audit.json`](reliability-source-audit.json)，原始产物位于 `raw/experiments/comprehensive/reliability-v3/`。
 
 B21 ESICUP VRPTW-CLP 的来源审计见 [`b21-source-audit.json`](b21-source-audit.json)。46 个实例文件中 23 个含缺失高度标志的 8 字段货物行，另有 1 个客户行缺字段，因此 suite catalog 使用 `SOURCE_INVALID`，所有 B21 cells 只保留 `SOURCE_PENDING` 状态记录；不得通过猜补或删除行后继续使用原 benchmark 名称。

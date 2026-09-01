@@ -101,6 +101,34 @@ def test_b21_source_audit_preserves_format_anomalies() -> None:
     assert cells[("B21", "packingsolver_fork_box")]["termination_reason"] == "SOURCE_PENDING"
 
 
+def test_b30_canonical_source_audit_is_frozen() -> None:
+    audit = json.loads((ROOT / "results" / "comprehensive" / "b30-canonical-source-audit.json").read_text())
+    assert audit["benchmark_id"] == "B30"
+    assert audit["input_status"] == "VALID"
+    assert audit["run_status"] == "NOT_RUN"
+    assert audit["products"] == {
+        "dimension_max": 2414,
+        "dimension_min": 9,
+        "family_id_max": 67,
+        "family_id_min": 1,
+        "product_families": 67,
+        "quantity_max": 5,
+        "quantity_min": 1,
+        "rows": 6000,
+        "total_quantity": 17793,
+    }
+    assert audit["shelves"]["rows"] == 49
+    assert audit["shelves"]["number_min"] == 1
+    assert audit["shelves"]["number_max"] == 49
+    assert audit["bays"]["baytp1"]["rows"] == 350
+    assert audit["bays"]["baytp2"]["rows"] == 350
+    semantics = audit["semantic_contract"]
+    assert semantics["all_orientations_allowed"] is True
+    assert semantics["shelf_overhang_allowed"] is False
+    assert semantics["bay_sequence_is_fixed"] is True
+    assert semantics["shelf_sequence_is_fixed"] is True
+
+
 def test_status_materialization_only_emits_unexecutable_cells() -> None:
     unsupported = build_status_records("B22", "benchmarks/comprehensive/suites.json#B22")
     assert len(unsupported) == 19
