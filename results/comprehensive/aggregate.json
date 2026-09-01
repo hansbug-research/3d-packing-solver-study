@@ -686,7 +686,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "da38452dc4d1a0ad2d8c1cd72b625c2bb7b9714ad1e747ccaabf36c7abbc8023",
+    "results/comprehensive/run-manifest.jsonl": "0ca51329ab895ce435142293d7b11ddb09f87746ae8e88ff7de106cad0fdea2b",
     "results/comprehensive/suite-implementation-plan.jsonl": "814bd6a0e622beab16b43caaa38c48faf25ddc8dc01091d77bd12a46fcb9f099"
   },
   "warnings": [

@@ -19,7 +19,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.0016597278881818056,
+      "solver_time_s": 0.001584573881700635,
       "nodes_or_branches": 0.0,
       "used_bins": [
         "bin-0"
@@ -108,7 +108,7 @@
       ],
       "version": "13.0.3",
       "backend_log": "Restricted license - for non-production use only - expires 2027-11-29\n",
-      "wall_time_s": 0.018949767109006643,
+      "wall_time_s": 0.01782507891766727,
       "case": "grid_8",
       "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
       "expected_status": "OPTIMAL",
@@ -121,7 +121,7 @@
       "objective": 2.0,
       "bound": 2.0,
       "gap": 0.0,
-      "solver_time_s": 0.5045780821237713,
+      "solver_time_s": 0.49615440890192986,
       "nodes_or_branches": 1764.0,
       "used_bins": [
         "bin-0",
@@ -220,7 +220,7 @@
         }
       ],
       "version": "13.0.3",
-      "wall_time_s": 0.5190314489882439,
+      "wall_time_s": 0.5105210419278592,
       "case": "overflow_9",
       "purpose": "The ninth cube forces a second bin and gives a hand-checkable lower bound.",
       "expected_status": "OPTIMAL",
@@ -233,7 +233,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.00013374886475503445,
+      "solver_time_s": 0.00011284812353551388,
       "nodes_or_branches": 0.0,
       "used_bins": [
         "bin-0"
@@ -251,7 +251,7 @@
         }
       ],
       "version": "13.0.3",
-      "wall_time_s": 0.0005335418973118067,
+      "wall_time_s": 0.0004905781242996454,
       "case": "rotation_required",
       "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
       "expected_status": "OPTIMAL",
@@ -264,12 +264,12 @@
       "objective": null,
       "bound": null,
       "gap": null,
-      "solver_time_s": 5.59960026293993e-05,
+      "solver_time_s": 4.2652012780308723e-05,
       "nodes_or_branches": 0.0,
       "used_bins": [],
       "placements": [],
       "version": "13.0.3",
-      "wall_time_s": 0.0003315100912004709,
+      "wall_time_s": 0.00033412082120776176,
       "case": "rotation_forbidden",
       "purpose": "The same geometry must be rejected when the required orientation is absent.",
       "expected_status": "INFEASIBLE",
@@ -282,7 +282,7 @@
       "objective": 3.0,
       "bound": 3.0,
       "gap": 0.0,
-      "solver_time_s": 0.0004727609921246767,
+      "solver_time_s": 0.0004895820748060942,
       "nodes_or_branches": 0.0,
       "used_bins": [
         "bin-0",
@@ -322,7 +322,7 @@
         }
       ],
       "version": "13.0.3",
-      "wall_time_s": 0.002929436042904854,
+      "wall_time_s": 0.0028960530180484056,
       "case": "weight_split",
       "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
       "expected_status": "OPTIMAL",
@@ -335,7 +335,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.000935371033847332,
+      "solver_time_s": 0.0009240251965820789,
       "nodes_or_branches": 1.0,
       "used_bins": [
         "large-0"
@@ -363,7 +363,7 @@
         }
       ],
       "version": "13.0.3",
-      "wall_time_s": 0.002232647966593504,
+      "wall_time_s": 0.0022435940336436033,
       "case": "heterogeneous_large_cheaper",
       "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
       "expected_status": "OPTIMAL",
@@ -376,7 +376,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0008411691524088383,
+      "solver_time_s": 0.0008484579157084227,
       "nodes_or_branches": 1.0,
       "used_bins": [
         "small-0",
@@ -405,7 +405,7 @@
         }
       ],
       "version": "13.0.3",
-      "wall_time_s": 0.0020995449740439653,
+      "wall_time_s": 0.0021228650584816933,
       "case": "heterogeneous_small_cheaper",
       "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
       "expected_status": "OPTIMAL",

@@ -4543,8 +4543,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact/cp-sat.resources.txt",
-      "bytes": 960,
-      "sha256": "af06a7578cbae0972966e40ab992966c6469dc52221ccc67af2179fd25eca00f"
+      "bytes": 958,
+      "sha256": "582d28950b829785bbf6bbffeeb5cd29509e09f7258796cfd22d2276e9a2bed4"
     },
     {
       "path": "raw/experiments/campaign/exact/cp-sat.stderr",
@@ -4558,8 +4558,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact/cplex.resources.txt",
-      "bytes": 962,
-      "sha256": "e35589afcf0827605ac2370e00f7551581f664142af661a2758c59d1ef4fbb6b"
+      "bytes": 956,
+      "sha256": "f933bec1a44850ef6280e0201b0babbd563b4131afcb3c2f33666924afad0324"
     },
     {
       "path": "raw/experiments/campaign/exact/cplex.stderr",
@@ -4573,8 +4573,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact/gurobi.resources.txt",
-      "bytes": 960,
-      "sha256": "c0d90b5064994983371d25b2283b2ac6c967a6de8387ad712abf1ac6cdd1f82f"
+      "bytes": 954,
+      "sha256": "588c355e4c60ba14ede83a4c64162afbb1a69a18ad7039e21c20a38abf7d5657"
     },
     {
       "path": "raw/experiments/campaign/exact/gurobi.stderr",
@@ -4584,7 +4584,7 @@
     {
       "path": "raw/experiments/campaign/exact/pip-freeze.txt",
       "bytes": 901,
-      "sha256": "8a9a7064330263844cdb51d1a5eb4d59d390ad680b9483e80166404b704e483b"
+      "sha256": "f24e7c15269fb016bca2a46e79da08dfbdae4e34158cf63d944fd21df8aa606e"
     },
     {
       "path": "raw/experiments/campaign/exact/scip.exitcode",
@@ -4593,8 +4593,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact/scip.resources.txt",
-      "bytes": 962,
-      "sha256": "bf8932e2213b9dafe8d4245d5510101130e779b7b0803693553dd87c696751f6"
+      "bytes": 954,
+      "sha256": "0486aae50c981472fe75ee3802ccc625c43d229b97a8ffee578e7bba983d075c"
     },
     {
       "path": "raw/experiments/campaign/exact/scip.stderr",
@@ -4669,7 +4669,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-cp-sat.resources.txt",
       "bytes": 951,
-      "sha256": "db972b6c98fd338379d6b759c0b54c72c53009eaf57dd7de3b454991ed6a1eed"
+      "sha256": "2772e31b219ac7173b035a03e03f3d3a7262111ab990137052bc18924b1a4e9f"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-cp-sat.stderr",
@@ -4684,7 +4684,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-cplex.resources.txt",
       "bytes": 989,
-      "sha256": "10fc42cdb925cc19920afc9d16dafd5b134c704be82a3dfa204196fc57a59909"
+      "sha256": "2427dbde6d935552a7da755bac5bcfe7a4302a8203b069cd0df79342f630fe88"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-cplex.stderr",
@@ -4698,8 +4698,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-gurobi.resources.txt",
-      "bytes": 949,
-      "sha256": "fe8ab1fb9eec3e07a60aa47522a28504405f81da7d5b3d2a7453edb834e7e97b"
+      "bytes": 954,
+      "sha256": "3df18b6548741bb9f4b0d060302487df0f02d54b67dc25a881c08f81ad833847"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-gurobi.stderr",
@@ -4713,8 +4713,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-scip.resources.txt",
-      "bytes": 951,
-      "sha256": "5fdee49a6fe05481e82bccaaa7d06baf9f43824173e5ee86a53c6e4e274ee3f5"
+      "bytes": 952,
+      "sha256": "f9faca58e7dec85289d7c57c0b1c87885a761cf0294e368a1e6bf308f193f61a"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/legacy-scip.stderr",
@@ -4729,7 +4729,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-cp-sat.resources.txt",
       "bytes": 952,
-      "sha256": "6c133474e9d077b7f4b309e6df32d77e1e1e06716e6086db6ee5acdec71ea2ef"
+      "sha256": "a64aca78bc73ce0b6e9717e7dd32998d63f852d8c81bffb2af541207ec4f3b40"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-cp-sat.stderr",
@@ -4744,7 +4744,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-cplex.resources.txt",
       "bytes": 994,
-      "sha256": "927d810b9df2483746bf7fe3561beffeca7a3d87b51905b383a796086a233337"
+      "sha256": "4870692f9e7c44918473a5be4b8625eb7f4db4f26aaf9652aa3c60be6e49672b"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-cplex.stderr",
@@ -4759,7 +4759,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-gurobi.resources.txt",
       "bytes": 950,
-      "sha256": "1943e2d8da10797a0883f07e335f7d3a0a674ac80e3548a524185d15ad1ab80b"
+      "sha256": "26724027a8e118a200f6488a6b849840140f6cb393456df1400fcab2f73d87fa"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-gurobi.stderr",
@@ -4774,7 +4774,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-scip.resources.txt",
       "bytes": 990,
-      "sha256": "93f38d26fc4915c498b81e241213fe8d76126b95408e99ae499a60b4607fb894"
+      "sha256": "e7766be3f6481eaab1423020446799189a216461ec8248a8dcfc4ca1ddc11334"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/reduced-scip.stderr",
@@ -4789,7 +4789,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-cp-sat.resources.txt",
       "bytes": 957,
-      "sha256": "66a2c68acbbb6a400260544eb21551c341e20aa75b48884dbb8fc674ed17214d"
+      "sha256": "0c527436f8c12d62a147286b41014aab5ac0364b9c9724be4fe4fb29e9802f99"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-cp-sat.stderr",
@@ -4804,7 +4804,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-cplex.resources.txt",
       "bytes": 957,
-      "sha256": "9256b8f9aaa0c673a4522bec4156baa7721f2e014d0ee35c3f09776f3cf3572a"
+      "sha256": "b7c08ea8352b5625b69fcea1d70aba5d867fc2724121f6bb93601ac7e8be43c1"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-cplex.stderr",
@@ -4818,8 +4818,8 @@
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-gurobi.resources.txt",
-      "bytes": 954,
-      "sha256": "1bb48dd2f9e8c37e270a0fbebbdb05dbe43453732dcd3372b370718eb04908de"
+      "bytes": 955,
+      "sha256": "a18971d616ac4ba44c5a03cd215bfcdf5d4b0689ae3b6cd0567931fe516dfd32"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-gurobi.stderr",
@@ -4834,7 +4834,7 @@
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-scip.resources.txt",
       "bytes": 953,
-      "sha256": "f830da42e340b9ea9018c848f93b82652f243cad8cc7b452872e1266b0dfb3d5"
+      "sha256": "cde2360a69913eb394bd99270602a71ec87c8c9f0d194d53a097d4a5021efb5b"
     },
     {
       "path": "raw/experiments/campaign/exact-sensitivity/strengthened-scip.stderr",
@@ -4904,12 +4904,12 @@
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_boundary_regression.json",
       "bytes": 2227,
-      "sha256": "c31bf0133245d9fa084448b59334aef98637a3cb2d3a4308c9a83a73fb7b6d97"
+      "sha256": "fbd6b2f3c0cacbd17dfc66a345765c6d656c2c4ea58e803f7193cac697b4fe64"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_boundary_regression.resources.txt",
       "bytes": 1247,
-      "sha256": "26d980e197f8971f50a08175c6a483c3aa77ed3dfe9ec8c6f8cf79b6b7e104fd"
+      "sha256": "18868865893e12d20e87114efcd106d7824bda56cad1e182e60c5d1a3b92739d"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_boundary_regression.stderr",
@@ -4928,13 +4928,13 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_infeasible.json",
-      "bytes": 2226,
-      "sha256": "c0f90627a60b6c4b5b32c77b2205432f50bde3fbec9d3639f0e1a840aab3658e"
+      "bytes": 2227,
+      "sha256": "fa8f3d70e128a0700b8f13a32842985f4bb4b162328cc3abd1b0902f66a9a35b"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_infeasible.resources.txt",
       "bytes": 1250,
-      "sha256": "3cee3a7906ba05b30792eb4d598b5e0fab673d9c73ed518c633e25e95ef21a55"
+      "sha256": "524499f14ff67d496c3fcc4286be83f50e6c01fa00bf67b2ed26bf1b9bdb9a84"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_infeasible.stderr",
@@ -4954,12 +4954,12 @@
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_normal.json",
       "bytes": 3451,
-      "sha256": "dd9497a9187449037fe1e92674f321e3d4f47f2b7603508f8358385fe6c049af"
+      "sha256": "e2c0190ff2d79b0b66b7147efc5313a0a178c322b3d5b21814168321abe2da82"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_normal.resources.txt",
-      "bytes": 1238,
-      "sha256": "966e58b7ae4db64e82e267d8eae07b57bb0d1109872966fc58db9b9a5cd38015"
+      "bytes": 1237,
+      "sha256": "9831794ac69fcd9c9ebb59acd7a5d818255474dd9a1d08fc130c9b73172691e0"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/axle_normal.stderr",
@@ -4978,13 +4978,13 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/heterogeneous_cost.json",
-      "bytes": 4253,
-      "sha256": "e464b408881d1e5f88653bc8c1ec7927d90121719e3a051036b55fe2c5d13d88"
+      "bytes": 4251,
+      "sha256": "852083dcda1c13fbb3d17827d1b64ac812b6ad2f9c21010d9dee15106aad1161"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/heterogeneous_cost.resources.txt",
-      "bytes": 1269,
-      "sha256": "1db249c78b490f5fa62ae32b6c5c944486005042cbb96115193638f510ce7e4e"
+      "bytes": 1272,
+      "sha256": "adb98d046a866b4e6f15458df793322ea9a16d86b1be7b3ec9280f821d7bd1b4"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/heterogeneous_cost.stderr",
@@ -5003,13 +5003,13 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_stack_count.json",
-      "bytes": 3212,
-      "sha256": "191828ba0df56d1652d79d89b69cfb0f23daf48e0a8e1676dc41401f866a82b2"
+      "bytes": 3213,
+      "sha256": "a714583082ac81810e0e19ddb856b00c9df85d4a9b06da9394fd5adf7cb587a2"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_stack_count.resources.txt",
       "bytes": 1252,
-      "sha256": "25742054dd03341214feed0b1b2ada5b3aa7790d37f02ac62660a5b05a1a2b4d"
+      "sha256": "1a3ec9a985e970ae891218811502ceceafeac33da38e3a9c7b9b72413a08a644"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_stack_count.stderr",
@@ -5028,13 +5028,13 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_weight_above.json",
-      "bytes": 3208,
-      "sha256": "58856889ed49482b71721459dfbf6bf604eb3cee70a821ed5bb4d5cd7d3ae9cd"
+      "bytes": 3209,
+      "sha256": "d3297b588a86fcc5c42fe39e9814c25e900f6952f2d65114804b71f5fe2ebc14"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_weight_above.resources.txt",
-      "bytes": 1241,
-      "sha256": "a05096a7d711715907fc0c2588f1a847c80c48d8dd4b2565fd1003e86663650a"
+      "bytes": 1242,
+      "sha256": "5d91f4269fea472eb7d0512b829d14e827848d58726926cba05cf8da262140c4"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/maximum_weight_above.stderr",
@@ -5054,12 +5054,12 @@
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/nesting_height.json",
       "bytes": 3221,
-      "sha256": "29e5265d716e745537623371a77d64c74ced10e59319ab2fae79904ecca53527"
+      "sha256": "c24ba4fe22954c4922adcf2b5906d30bd9629409852b5877cb168d0c871638a0"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/nesting_height.resources.txt",
       "bytes": 1233,
-      "sha256": "05c9a333c2412ad8fb0c9437e81a18c8cc9e0fe4445554d7715d07a12b256b41"
+      "sha256": "672a9fe542a94b4cfe1acd01ebbc34a678c602b6fe762866ea68b5bb4507fa7e"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/nesting_height.stderr",
@@ -5078,8 +5078,8 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/suite.resources.txt",
-      "bytes": 1305,
-      "sha256": "9a92e45aa258704858bcd166a43ff4b9b1d7129c087a33bca07946aa8a3d717d"
+      "bytes": 1309,
+      "sha256": "5fcf0e9b6758350be7b521cb036bd69db4b7cfe7ed53fab4ab4a8ba69ea3e974"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/suite.stderr",
@@ -5099,12 +5099,12 @@
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_increasing_x.json",
       "bytes": 3207,
-      "sha256": "e73b3684b4cce1408fa36773bb1df5eff844378d0c9ba18a4a8f61e2d54185bf"
+      "sha256": "a179815e1abbb12c9857b3759937af1526f2f3e11117822bdd5ace7fe6bcd14a"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_increasing_x.resources.txt",
       "bytes": 1289,
-      "sha256": "2917fb6059c5dff1ea95270cd55d724ff5acd5599f42cd53cdd6c6e80fe9ffa4"
+      "sha256": "50bbe247a68d69373885bc2a72f7993d568cadb7afaf8cd74ebf2575f86124d3"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_increasing_x.stderr",
@@ -5123,13 +5123,13 @@
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_none.json",
-      "bytes": 3207,
-      "sha256": "e4a2d7ab771493ca8f10d15c41f5bcdab9ef84db76f680ac0b55c4d59ce12f47"
+      "bytes": 3206,
+      "sha256": "8b89e2c4a833ae020a527848522869b34cea40b010eb0403452860eb1e0c102b"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_none.resources.txt",
-      "bytes": 1236,
-      "sha256": "fb2b9c4ac858682045e22665a64ba51ea419560f0382a6c26f33f7c0dc61b6fa"
+      "bytes": 1237,
+      "sha256": "115ab2b6b219d17d5a61186307eada77420e6eb1f3217fb936495288e3b5d927"
     },
     {
       "path": "raw/experiments/campaign/packingsolver-boxstacks/unloading_none.stderr",

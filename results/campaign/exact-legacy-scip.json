@@ -19,7 +19,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.0164288601372391,
+      "solver_time_s": 0.015122835990041494,
       "nodes_or_branches": 1,
       "used_bins": [
         "bin-0"
@@ -107,7 +107,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.0658287419937551,
+      "wall_time_s": 0.06165858614258468,
       "case": "grid_8",
       "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
       "expected_status": "OPTIMAL",
@@ -120,7 +120,7 @@
       "objective": 2.0,
       "bound": 2.0,
       "gap": 0.0,
-      "solver_time_s": 12.462957938201725,
+      "solver_time_s": 11.679490097099915,
       "nodes_or_branches": 16999,
       "used_bins": [
         "bin-0",
@@ -219,7 +219,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 12.480495953932405,
+      "wall_time_s": 11.696557039860636,
       "case": "overflow_9",
       "purpose": "The ninth cube forces a second bin and gives a hand-checkable lower bound.",
       "expected_status": "OPTIMAL",
@@ -232,7 +232,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.0002451390027999878,
+      "solver_time_s": 0.00022994005121290684,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -250,7 +250,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.0018419770058244467,
+      "wall_time_s": 0.001759811071678996,
       "case": "rotation_required",
       "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
       "expected_status": "OPTIMAL",
@@ -263,12 +263,12 @@
       "objective": null,
       "bound": null,
       "gap": null,
-      "solver_time_s": 0.00010770582593977451,
+      "solver_time_s": 0.00010651396587491035,
       "nodes_or_branches": 0,
       "used_bins": [],
       "placements": [],
       "version": "6.2.1",
-      "wall_time_s": 0.0014947790186852217,
+      "wall_time_s": 0.001449650852009654,
       "case": "rotation_forbidden",
       "purpose": "The same geometry must be rejected when the required orientation is absent.",
       "expected_status": "INFEASIBLE",
@@ -281,7 +281,7 @@
       "objective": 3.0,
       "bound": 3.0,
       "gap": 0.0,
-      "solver_time_s": 0.0020545548759400845,
+      "solver_time_s": 0.0020325290970504284,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0",
@@ -321,7 +321,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.005441200919449329,
+      "wall_time_s": 0.005274877185001969,
       "case": "weight_split",
       "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
       "expected_status": "OPTIMAL",
@@ -334,7 +334,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0016189140733331442,
+      "solver_time_s": 0.0015220369677990675,
       "nodes_or_branches": 1,
       "used_bins": [
         "large-0"
@@ -362,7 +362,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.0037989600095897913,
+      "wall_time_s": 0.0038064010441303253,
       "case": "heterogeneous_large_cheaper",
       "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
       "expected_status": "OPTIMAL",
@@ -375,7 +375,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.001564796082675457,
+      "solver_time_s": 0.001552149886265397,
       "nodes_or_branches": 1,
       "used_bins": [
         "small-0",
@@ -404,7 +404,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.00375425280071795,
+      "wall_time_s": 0.0038471799343824387,
       "case": "heterogeneous_small_cheaper",
       "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
       "expected_status": "OPTIMAL",

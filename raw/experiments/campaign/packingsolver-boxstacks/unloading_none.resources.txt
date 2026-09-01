@@ -1,18 +1,18 @@
-	Command being timed: "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv --objective bin-packing --time-limit 10 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --output /tmp/boxstacks-suite-o8qk5fb4/unloading_none.json --certificate /tmp/boxstacks-suite-o8qk5fb4/unloading_none.csv"
+	Command being timed: "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv --objective bin-packing --time-limit 10 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --output /tmp/boxstacks-suite-q2q73dzz/unloading_none.json --certificate /tmp/boxstacks-suite-q2q73dzz/unloading_none.csv"
 	User time (seconds): 0.00
 	System time (seconds): 0.00
-	Percent of CPU this job got: 66%
+	Percent of CPU this job got: 150%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 10752
+	Maximum resident set size (kbytes): 11136
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 468
-	Voluntary context switches: 8
-	Involuntary context switches: 2
+	Minor (reclaiming a frame) page faults: 469
+	Voluntary context switches: 6
+	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 16

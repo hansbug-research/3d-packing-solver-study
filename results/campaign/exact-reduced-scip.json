@@ -19,7 +19,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.013710463186725974,
+      "solver_time_s": 0.01333789387717843,
       "nodes_or_branches": 1,
       "used_bins": [
         "bin-0"
@@ -107,7 +107,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.06029127910733223,
+      "wall_time_s": 0.05744511098600924,
       "case": "grid_8",
       "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
       "expected_status": "OPTIMAL",
@@ -120,8 +120,8 @@
       "objective": 2.0,
       "bound": 1.0000000000000002,
       "gap": 0.9999999999999996,
-      "solver_time_s": 20.000028725015,
-      "nodes_or_branches": 35151,
+      "solver_time_s": 20.000047700013965,
+      "nodes_or_branches": 36864,
       "used_bins": [
         "bin-0",
         "bin-1"
@@ -219,7 +219,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 20.013597786892205,
+      "wall_time_s": 20.01232565008104,
       "case": "overflow_9",
       "purpose": "The ninth cube forces a second bin and gives a hand-checkable lower bound.",
       "expected_status": "OPTIMAL",
@@ -234,7 +234,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.00024039996787905693,
+      "solver_time_s": 0.00023726490326225758,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -252,7 +252,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.0018457048572599888,
+      "wall_time_s": 0.0018670589197427034,
       "case": "rotation_required",
       "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
       "expected_status": "OPTIMAL",
@@ -265,12 +265,12 @@
       "objective": null,
       "bound": null,
       "gap": null,
-      "solver_time_s": 0.00011425698176026344,
+      "solver_time_s": 0.00010420195758342743,
       "nodes_or_branches": 0,
       "used_bins": [],
       "placements": [],
       "version": "6.2.1",
-      "wall_time_s": 0.0014842972159385681,
+      "wall_time_s": 0.0014636670239269733,
       "case": "rotation_forbidden",
       "purpose": "The same geometry must be rejected when the required orientation is absent.",
       "expected_status": "INFEASIBLE",
@@ -283,7 +283,7 @@
       "objective": 3.0,
       "bound": 3.0,
       "gap": 0.0,
-      "solver_time_s": 0.002974799834191799,
+      "solver_time_s": 0.0026779109612107277,
       "nodes_or_branches": 1,
       "used_bins": [
         "bin-0",
@@ -323,7 +323,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.005857136100530624,
+      "wall_time_s": 0.005313127068802714,
       "case": "weight_split",
       "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
       "expected_status": "OPTIMAL",
@@ -336,7 +336,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0016386578790843487,
+      "solver_time_s": 0.001521902158856392,
       "nodes_or_branches": 1,
       "used_bins": [
         "large-0"
@@ -364,7 +364,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.00386477611027658,
+      "wall_time_s": 0.003570589004084468,
       "case": "heterogeneous_large_cheaper",
       "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
       "expected_status": "OPTIMAL",
@@ -377,7 +377,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0019599730148911476,
+      "solver_time_s": 0.0017362290527671576,
       "nodes_or_branches": 1,
       "used_bins": [
         "small-0",
@@ -406,7 +406,7 @@
         }
       ],
       "version": "6.2.1",
-      "wall_time_s": 0.0040387429762631655,
+      "wall_time_s": 0.0037881771568208933,
       "case": "heterogeneous_small_cheaper",
       "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
       "expected_status": "OPTIMAL",

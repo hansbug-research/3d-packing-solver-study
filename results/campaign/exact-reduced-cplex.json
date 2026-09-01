@@ -20,7 +20,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.011707048863172531,
+      "solver_time_s": 0.011339605087414384,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -108,7 +108,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.24075429001823068,
+      "wall_time_s": 0.23003743193112314,
       "case": "grid_8",
       "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
       "expected_status": "OPTIMAL",
@@ -121,8 +121,8 @@
       "objective": 2.0,
       "bound": 1.0,
       "gap": 0.499999999975,
-      "solver_time_s": 20.001797744072974,
-      "nodes_or_branches": 32562,
+      "solver_time_s": 20.001562227029353,
+      "nodes_or_branches": 35853,
       "used_bins": [
         "bin-0",
         "bin-1"
@@ -220,7 +220,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 20.03463686397299,
+      "wall_time_s": 20.034338094992563,
       "case": "overflow_9",
       "purpose": "The ninth cube forces a second bin and gives a hand-checkable lower bound.",
       "expected_status": "OPTIMAL",
@@ -235,7 +235,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.0020778770558536053,
+      "solver_time_s": 0.0011133558582514524,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -253,7 +253,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.006415050942450762,
+      "wall_time_s": 0.004264516988769174,
       "case": "rotation_required",
       "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
       "expected_status": "OPTIMAL",
@@ -266,12 +266,12 @@
       "objective": null,
       "bound": null,
       "gap": NaN,
-      "solver_time_s": 0.0010236799716949463,
+      "solver_time_s": 0.0009404690936207771,
       "nodes_or_branches": 0,
       "used_bins": [],
       "placements": [],
       "version": "22.1.2.0",
-      "wall_time_s": 0.005186331924051046,
+      "wall_time_s": 0.0038549350574612617,
       "case": "rotation_forbidden",
       "purpose": "The same geometry must be rejected when the required orientation is absent.",
       "expected_status": "INFEASIBLE",
@@ -284,7 +284,7 @@
       "objective": 3.0,
       "bound": 3.0,
       "gap": 0.0,
-      "solver_time_s": 0.0023865471594035625,
+      "solver_time_s": 0.002190283965319395,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0",
@@ -324,7 +324,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.010417291894555092,
+      "wall_time_s": 0.009734289953485131,
       "case": "weight_split",
       "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
       "expected_status": "OPTIMAL",
@@ -337,7 +337,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0038383419159799814,
+      "solver_time_s": 0.003496617078781128,
       "nodes_or_branches": 0,
       "used_bins": [
         "large-0"
@@ -365,7 +365,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.009284876985475421,
+      "wall_time_s": 0.008510540006682277,
       "case": "heterogeneous_large_cheaper",
       "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
       "expected_status": "OPTIMAL",
@@ -378,7 +378,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0033070899080485106,
+      "solver_time_s": 0.002989714965224266,
       "nodes_or_branches": 0,
       "used_bins": [
         "small-0",
@@ -407,7 +407,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.008752587949857116,
+      "wall_time_s": 0.008044343907386065,
       "case": "heterogeneous_small_cheaper",
       "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
       "expected_status": "OPTIMAL",

@@ -20,7 +20,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.012705075088888407,
+      "solver_time_s": 0.011608853004872799,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -108,7 +108,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.24445472983643413,
+      "wall_time_s": 0.2399344800505787,
       "case": "grid_8",
       "purpose": "A full 2x2x2 grid checks assignment and pairwise non-overlap without rotation.",
       "expected_status": "OPTIMAL",
@@ -124,7 +124,7 @@
       "status": "ERROR",
       "error_type": "DOcplexLimitsExceeded",
       "error": "**** Promotional version. Problem size limits (1000 vars, 1000 consts) exceeded, model has 515 vars, 1489 consts, CPLEX code=1016",
-      "wall_time_s": 0.04943873989395797,
+      "wall_time_s": 0.04927164991386235,
       "validation_errors": [
         "solver did not return a checkable result"
       ]
@@ -134,7 +134,7 @@
       "objective": 1.0,
       "bound": 1.0,
       "gap": 0.0,
-      "solver_time_s": 0.0011343241203576326,
+      "solver_time_s": 0.0010892620775848627,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0"
@@ -152,7 +152,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.004174526082351804,
+      "wall_time_s": 0.0042495098896324635,
       "case": "rotation_required",
       "purpose": "The item fits only after choosing a permitted axis-aligned orientation.",
       "expected_status": "OPTIMAL",
@@ -165,12 +165,12 @@
       "objective": null,
       "bound": null,
       "gap": NaN,
-      "solver_time_s": 0.0010349499061703682,
+      "solver_time_s": 0.0009758949745446444,
       "nodes_or_branches": 0,
       "used_bins": [],
       "placements": [],
       "version": "22.1.2.0",
-      "wall_time_s": 0.003912664018571377,
+      "wall_time_s": 0.0036404659040272236,
       "case": "rotation_forbidden",
       "purpose": "The same geometry must be rejected when the required orientation is absent.",
       "expected_status": "INFEASIBLE",
@@ -183,7 +183,7 @@
       "objective": 3.0,
       "bound": 3.0,
       "gap": 0.0,
-      "solver_time_s": 0.003460970940068364,
+      "solver_time_s": 0.0033406971488147974,
       "nodes_or_branches": 0,
       "used_bins": [
         "bin-0",
@@ -223,7 +223,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.012785801896825433,
+      "wall_time_s": 0.01231054705567658,
       "case": "weight_split",
       "purpose": "Geometry permits one bin, but payload capacity forces one item per bin.",
       "expected_status": "OPTIMAL",
@@ -236,7 +236,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.003325563855469227,
+      "solver_time_s": 0.0029783390928059816,
       "nodes_or_branches": 0,
       "used_bins": [
         "large-0"
@@ -264,7 +264,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.009144869167357683,
+      "wall_time_s": 0.008570975856855512,
       "case": "heterogeneous_large_cheaper",
       "purpose": "One large bin is cheaper than two small bins, despite using fewer candidate rows last.",
       "expected_status": "OPTIMAL",
@@ -277,7 +277,7 @@
       "objective": 10.0,
       "bound": 10.0,
       "gap": 0.0,
-      "solver_time_s": 0.0022014400456100702,
+      "solver_time_s": 0.002007115865126252,
       "nodes_or_branches": 0,
       "used_bins": [
         "small-0",
@@ -306,7 +306,7 @@
         }
       ],
       "version": "22.1.2.0",
-      "wall_time_s": 0.008859165944159031,
+      "wall_time_s": 0.007479886058717966,
       "case": "heterogeneous_small_cheaper",
       "purpose": "Reversing costs must reverse the choice and rules out a hard-coded large-bin preference.",
       "expected_status": "OPTIMAL",
