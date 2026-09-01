@@ -9,6 +9,15 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "raw"
 OUT = RAW / "manifest.json"
 
+# Some campaigns unpack an archive beside its canonical tarball, and older
+# probe runs may remain in a developer worktree.  Those transient directories
+# are not evidence and must not make a clean checkout depend on local files.
+EXCLUDED_RAW_PREFIXES = (
+    "experiments/comprehensive/Alonso-projection/",
+    "experiments/comprehensive/B05-MPV-GEN-adapters/B05-MPV-GEN-probe-",
+    "experiments/comprehensive/packingsolver-thpack/B05-MPV-GEN-fork-box-1s",
+)
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -22,6 +31,9 @@ def main() -> None:
     files = []
     for path in sorted(RAW.rglob("*")):
         if not path.is_file() or path == OUT:
+            continue
+        relative = path.relative_to(RAW).as_posix()
+        if relative.startswith(EXCLUDED_RAW_PREFIXES):
             continue
         files.append({
             "path": path.relative_to(ROOT).as_posix(),

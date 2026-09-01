@@ -1,0 +1,16 @@
+{
+  "bins_used": 1,
+  "constraint_errors": [
+    "bin-0: incompatible groups COLD/HAZMAT share a compartment"
+  ],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 1,
+  "packed_items": 2,
+  "required_items": 2,
+  "total_cost": 1.0,
+  "validation_error_count": 1,
+  "validation_errors": [
+    "bin-0: incompatible groups COLD/HAZMAT share a compartment"
+  ]
+}

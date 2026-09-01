@@ -1,0 +1,1 @@
+{"library":"skjolber/3d-bin-container-packing","commit":"c73d52190c029a14e64f1bbdd2ea70452d1eb83d","algorithm":"plain","success":true,"timeout":false,"bins_used":1,"elapsed_s":0.189273524,"placements":[{"item_id":"cold:0","bin_id":"bin-0","position":[0,0,0],"size":[5,5,5]},{"item_id":"hazmat:0","bin_id":"bin-0","position":[5,0,0],"size":[5,5,5]}]}

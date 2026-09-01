@@ -1,0 +1,69 @@
+{
+  "scenario": "b14_maximum_stack_count",
+  "benchmark_id": "B14",
+  "problem_variant": "MAXIMUM_STACK_COUNT",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:1",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:2",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        6.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    },
+    {
+      "id": "0:1",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        6.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/packingsolver/stack_count_items.csv": "48a0d2ef841fac5b29bceda7da2416e8ecde5e9dfcedf42e72c703f1d1fc4360",
+    "benchmarks/data/packingsolver/stack_count_bins.csv": "4ee249e51980aee35536074700c8e142b92bab6c34b13e59bf7b43dbe4f19a5e"
+  }
+}

@@ -28,7 +28,7 @@
 
 ## 当前 execution gap
 
-以下是实验进度而非协议缺陷，必须在后续波次关闭：B05、B08、B10 的来源/全库 adapter；B11 的 SK/EX adapter；B12-B18 的 FULL conformance；Alonso/VRPTW-CLP full/projection；B22 irregular 边界记录；B23 脱敏真实订单；B30 shelf adapter；B31 FULL 生成器联合约束；B32 原生 online adapter。当前聚合是 `26/32` benchmark 实际执行、`32/32` benchmark 有状态记录、`554/608` cells 有证据，其中 `257` 个 cell 为 status-only、`278` 个 cell 已执行 protocol-v3，合计 `63,049` 条记录（legacy `2,122`，protocol-v3 `60,927`）。B32 新增 48 条组合 policy 记录，全部为 `VALID_COMPLETE`，但它们均为 `COMPOSED/GEOMETRY_PROJECTION`，不能写成全量 online 完成；B01/B02/B04 native revalidation 仍是已归档 certificate 的协议化重验，不能冒充新的 solver invocation。
+以下是实验进度而非协议缺陷，必须在后续波次关闭：B05、B08、B10 的来源/全库 adapter；B11 的 SK/EX adapter；B12-B18 的 FULL conformance；Alonso/VRPTW-CLP full/projection；B22 irregular 边界记录；B23 脱敏真实订单；B30 shelf adapter；B31 FULL 生成器联合约束；B32 原生 online adapter。当前聚合是 `26/32` benchmark 实际执行、`32/32` benchmark 有状态记录、`608/608` cells 有证据，其中 `229` 个 cell 为 status-only、`360` 个 cell 已执行 protocol-v3，另有 `19` 个 cell 只有 legacy 基线，合计 `64,822` 条记录（legacy `2,122`，protocol-v3 `62,700`）。B32 新增 48 条组合 policy 记录，全部为 `VALID_COMPLETE`，但它们均为 `COMPOSED/GEOMETRY_PROJECTION`，不能写成全量 online 完成；B01/B02/B04 native revalidation 仍是已归档 certificate 的协议化重验，不能冒充新的 solver invocation。
 
 ## 本次自审命令
 

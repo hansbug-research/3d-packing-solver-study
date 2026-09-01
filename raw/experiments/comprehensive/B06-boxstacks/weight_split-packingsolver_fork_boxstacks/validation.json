@@ -1,0 +1,12 @@
+{
+  "bins_used": 0,
+  "errors": [
+    "item 0: placed 0, required 1",
+    "item 1: placed 0, required 1",
+    "item 2: placed 0, required 1"
+  ],
+  "packed_items": 0,
+  "required_items": 3,
+  "total_cost": 0,
+  "validation_error_count": 3
+}

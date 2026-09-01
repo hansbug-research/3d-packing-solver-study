@@ -1,0 +1,80 @@
+{
+  "scenario": "b13_weight_limit",
+  "benchmark_id": "B13",
+  "problem_variant": "WEIGHT_LIMIT",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "weight": 6.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:1",
+      "type_id": "0",
+      "size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "weight": 6.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:2",
+      "type_id": "0",
+      "size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "weight": 6.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "max_weight": 10.0,
+      "cost": 1.0
+    },
+    {
+      "id": "0:1",
+      "type_id": "0",
+      "size": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "max_weight": 10.0,
+      "cost": 1.0
+    },
+    {
+      "id": "0:2",
+      "type_id": "0",
+      "size": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "max_weight": 10.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/packingsolver/weight_items.csv": "f5dd5c9236a5b64c3273d152823755f34ed7ce5ebd1aa05acf0cc60fa76002d0",
+    "benchmarks/data/packingsolver/weight_bins.csv": "da4ce4e145d0c6acfee7f970043cea7c68e2503659740aaa0b8070c3c18f3ffb"
+  }
+}

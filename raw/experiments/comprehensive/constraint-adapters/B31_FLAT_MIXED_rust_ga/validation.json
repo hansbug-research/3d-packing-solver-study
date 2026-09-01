@@ -1,20 +1,16 @@
 {
   "bins_used": 1,
   "constraint_errors": [
-    "A:1: support ratio 0.6666666666666666 below minimum",
-    "A:2: support ratio 0.0 below minimum",
-    "B:1: support ratio 0.0 below minimum"
+    "A:0: support ratio 0.4444444444444444 below minimum"
   ],
   "geometry_error_count": 0,
   "geometry_errors": [],
-  "hard_violation_count": 3,
+  "hard_violation_count": 1,
   "packed_items": 6,
   "required_items": 6,
   "total_cost": 1.0,
-  "validation_error_count": 3,
+  "validation_error_count": 1,
   "validation_errors": [
-    "A:1: support ratio 0.6666666666666666 below minimum",
-    "A:2: support ratio 0.0 below minimum",
-    "B:1: support ratio 0.0 below minimum"
+    "A:0: support ratio 0.4444444444444444 below minimum"
   ]
 }

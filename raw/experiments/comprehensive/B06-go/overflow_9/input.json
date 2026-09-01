@@ -1,0 +1,108 @@
+{
+  "bins": [
+    {
+      "cost": 1,
+      "id": "bin-0",
+      "max_weight": 100,
+      "size": [
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "cost": 1,
+      "id": "bin-1",
+      "max_weight": 100,
+      "size": [
+        10,
+        10,
+        10
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-0",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-1",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-2",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-3",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-4",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-5",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-6",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-7",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    },
+    {
+      "id": "cube-8",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1
+    }
+  ],
+  "scenario": "B06-overflow_9"
+}

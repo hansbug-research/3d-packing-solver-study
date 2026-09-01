@@ -1,0 +1,58 @@
+{
+  "scenario": "b14_maximum_weight_above",
+  "benchmark_id": "B14",
+  "problem_variant": "MAXIMUM_WEIGHT_ABOVE",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:0",
+      "type_id": "1",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 10.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "1:1",
+      "type_id": "1",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 10.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        6.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/packingsolver/stack_items.csv": "c45f39d90b6e98ebd038bbbb53d442e3cf75a0e22ba2044baa5deaa2b1fe9f17",
+    "benchmarks/data/packingsolver/stack_bins.csv": "7140ef6929564ab3b557ad87b9904e221fee8475515c0ce990dd80b44b672674"
+  }
+}

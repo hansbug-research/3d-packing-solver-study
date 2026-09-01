@@ -1,0 +1,26 @@
+{
+  "bins": [
+    {
+      "cost": 1,
+      "id": "bin-0",
+      "max_weight": 100,
+      "size": [
+        4,
+        3,
+        2
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "upright",
+      "size": [
+        3,
+        2,
+        4
+      ],
+      "weight": 1
+    }
+  ],
+  "scenario": "B06-rotation_forbidden"
+}

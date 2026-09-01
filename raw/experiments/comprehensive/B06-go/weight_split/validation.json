@@ -1,0 +1,8 @@
+{
+  "errors": [
+    "bin-0: weight 18 exceeds 10",
+    "cost 1 differs from expected 3"
+  ],
+  "objective": 1,
+  "packed_items": 3
+}

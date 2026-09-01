@@ -99,10 +99,32 @@
   ],
   "placements": [
     {
-      "item_id": "A:1",
+      "item_id": "B:0",
       "bin_id": "pallet-flat",
       "position": [
         0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "B:1",
+      "bin_id": "pallet-flat",
+      "position": [
+        600.0,
         0.0,
         0.0
       ],
@@ -116,34 +138,12 @@
         600.0,
         400.0
       ],
-      "weight": 10.0,
+      "weight": 25.0,
       "rotation": "zyx",
       "rotation_index": 5
     },
     {
       "item_id": "A:0",
-      "bin_id": "pallet-flat",
-      "position": [
-        400.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        600.0,
-        400.0,
-        600.0
-      ],
-      "original_size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "weight": 10.0,
-      "rotation": "xzy",
-      "rotation_index": 1
-    },
-    {
-      "item_id": "B:1",
       "bin_id": "pallet-flat",
       "position": [
         1000.0,
@@ -152,20 +152,20 @@
       ],
       "size": [
         600.0,
-        400.0,
-        600.0
+        600.0,
+        400.0
       ],
       "original_size": [
         600.0,
         600.0,
         400.0
       ],
-      "weight": 25.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "weight": 10.0,
+      "rotation": "yxz",
+      "rotation_index": 2
     },
     {
-      "item_id": "B:0",
+      "item_id": "A:1",
       "bin_id": "pallet-flat",
       "position": [
         0.0,
@@ -174,23 +174,45 @@
       ],
       "size": [
         600.0,
-        400.0,
-        600.0
+        600.0,
+        400.0
       ],
       "original_size": [
         600.0,
         600.0,
         400.0
       ],
-      "weight": 25.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "weight": 10.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "C:0",
+      "bin_id": "pallet-flat",
+      "position": [
+        600.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "rotation": "xyz",
+      "rotation_index": 0
     },
     {
       "item_id": "A:2",
       "bin_id": "pallet-flat",
       "position": [
-        600.0,
+        1200.0,
         600.0,
         0.0
       ],
@@ -207,30 +229,8 @@
       "weight": 10.0,
       "rotation": "xzy",
       "rotation_index": 1
-    },
-    {
-      "item_id": "C:0",
-      "bin_id": "pallet-flat",
-      "position": [
-        1200.0,
-        600.0,
-        0.0
-      ],
-      "size": [
-        400.0,
-        600.0,
-        600.0
-      ],
-      "original_size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "weight": 15.0,
-      "rotation": "zxy",
-      "rotation_index": 4
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 4.430441
+  "elapsed_ms": 4.47204
 }

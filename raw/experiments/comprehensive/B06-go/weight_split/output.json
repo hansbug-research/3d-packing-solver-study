@@ -1,0 +1,149 @@
+{
+  "algorithm": "pivot greedy",
+  "bins": [
+    {
+      "cost": 1,
+      "id": "bin-0",
+      "max_weight": 10,
+      "size": [
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "cost": 1,
+      "id": "bin-1",
+      "max_weight": 10,
+      "size": [
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "cost": 1,
+      "id": "bin-2",
+      "max_weight": 10,
+      "size": [
+        10,
+        10,
+        10
+      ]
+    }
+  ],
+  "campaign_version": "crosslang-1",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "elapsed_ms": 0.001369,
+  "items": [
+    {
+      "id": "heavy-0",
+      "orientation_requirement": "",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    },
+    {
+      "id": "heavy-1",
+      "orientation_requirement": "",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    },
+    {
+      "id": "heavy-2",
+      "orientation_requirement": "",
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    }
+  ],
+  "language": "Go",
+  "library": "gedex/bp3d",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 3
+  },
+  "placements": [
+    {
+      "bin_id": "bin-0",
+      "item_id": "heavy-0",
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0,
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    },
+    {
+      "bin_id": "bin-0",
+      "item_id": "heavy-1",
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "position": [
+        4,
+        0,
+        0
+      ],
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0,
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    },
+    {
+      "bin_id": "bin-0",
+      "item_id": "heavy-2",
+      "original_size": [
+        4,
+        4,
+        4
+      ],
+      "position": [
+        0,
+        4,
+        0
+      ],
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0,
+      "size": [
+        4,
+        4,
+        4
+      ],
+      "weight": 6
+    }
+  ],
+  "scenario": "B06-weight_split",
+  "toolchain": "go1.27.0",
+  "unplaced": []
+}

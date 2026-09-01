@@ -15,11 +15,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import subprocess
 import sys
 import tarfile
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from time import perf_counter
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,6 +33,7 @@ RUNNER = Path(__file__).resolve()
 
 sys.path.insert(0, str(ROOT / "benchmarks" / "comprehensive"))
 import run_constraint_adapters as constraint_runner  # noqa: E402
+from model import canonical_json  # noqa: E402
 
 # The two existing runners both import a module named ``model``.  Load the
 # comprehensive model first, then temporarily switch the module binding while
@@ -55,6 +59,19 @@ EXTERNAL_IMPLEMENTATIONS = {
     "rust_sa": ("rust_unesting", "sa"),
 }
 PYTHON_IMPLEMENTATIONS = {"py3dbp", "jerry"}
+PACKINGSOLVER_IMPLEMENTATIONS = {
+    "packingsolver_fork_box": ROOT / ".cache" / "build-fork" / "src" / "box" / "packingsolver_box",
+    "packingsolver_upstream_box": ROOT / ".cache" / "build-upstream-367" / "src" / "box" / "packingsolver_box",
+}
+PACKINGSOLVER_STACK_IMPLEMENTATIONS = {
+    "packingsolver_fork_boxstacks": ROOT / ".cache" / "build-fork" / "src" / "boxstacks" / "packingsolver_boxstacks",
+    "packingsolver_upstream_boxstacks": ROOT / ".cache" / "build-upstream-367" / "src" / "boxstacks" / "packingsolver_boxstacks",
+}
+SKJOLBER_IMPLEMENTATIONS = {
+    "skjolber_plain": "plain",
+    "skjolber_laff": "laff",
+    "skjolber_fast_bruteforce": "fast_brute_force",
+}
 
 
 def benchmark_id_for_year(year: int) -> str:
@@ -204,6 +221,122 @@ def run_python(implementation_id: str, spec: dict[str, Any], item_meta: dict[str
     return record
 
 
+def run_packingsolver(
+    implementation_id: str,
+    spec: dict[str, Any],
+    item_meta: dict[str, dict[str, str]],
+    bin_meta: dict[str, dict[str, str]],
+    source: dict[str, Any],
+    time_limit: float,
+    stack: bool = False,
+) -> dict[str, Any]:
+    """Run the C++ box binary after projecting an Alonso instance to geometry."""
+    binaries = PACKINGSOLVER_STACK_IMPLEMENTATIONS if stack else PACKINGSOLVER_IMPLEMENTATIONS
+    binary = binaries[implementation_id]
+    work = RAW_ROOT / f"{spec['scenario']}_{implementation_id}"
+    work.mkdir(parents=True, exist_ok=True)
+    input_path = work / "input.json"
+    output_path = work / "output.json"
+    certificate_path = work / "solution.csv"
+    stdout_path = work / "stdout.log"
+    stderr_path = work / "stderr.log"
+    validation_path = work / "validation.json"
+    items_path, bins_path = constraint_runner.write_packingsolver_csv(spec, work)
+    command = [str(binary), "--items", str(items_path), "--bins", str(bins_path), "--objective", "bin-packing" if stack else "knapsack", "--time-limit", str(time_limit), "--memory-limit", "1024", "--verbosity-level", "0", "--only-write-at-the-end", "--output", str(output_path), "--certificate", str(certificate_path)]
+    input_path.write_text(canonical_json(spec), encoding="utf-8")
+    started = perf_counter()
+    env = {**os.environ, "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1"}
+    try:
+        completed = subprocess.run(command, capture_output=True, text=True, timeout=time_limit + 20.0, env=env, check=False)
+        stdout_path.write_text(completed.stdout, encoding="utf-8")
+        stderr_path.write_text(completed.stderr, encoding="utf-8")
+        process_ok = completed.returncode == 0 and certificate_path.exists()
+    except subprocess.TimeoutExpired as exc:
+        stdout_path.write_text(exc.stdout or "", encoding="utf-8")
+        stderr_path.write_text(exc.stderr or "", encoding="utf-8")
+        process_ok = False
+    elapsed = perf_counter() - started
+    if process_ok:
+        payload = constraint_runner.parse_packingsolver_certificate(certificate_path, spec)
+        status, metrics = constraint_runner.independent_validate(spec, item_meta, bin_meta, payload)
+    else:
+        payload = {"placements": []}
+        status, metrics = "NO_SOLUTION", {"packed_items": 0, "required_items": len(spec["items"]), "bins_used": 0, "validation_error_count": 1, "validation_errors": ["solver process failed or omitted certificate"]}
+    validation_path.write_text(canonical_json(metrics), encoding="utf-8")
+    solution_status = "VALID_COMPLETE" if status == "VALID_COMPLETE" else "VALID_PARTIAL" if status == "VALID_PARTIAL" else "CONSTRAINT_VIOLATION" if status == "CONSTRAINT_VIOLATION" else "NO_SOLUTION" if status == "NO_SOLUTION" else "INVALID_CERTIFICATE" if process_ok else "NO_SOLUTION"
+    implementation = next(row for row in constraint_runner.load_catalogs()[1]["implementations"] if row["id"] == implementation_id)
+    record = {
+        "schema_version": 2, "protocol_version": "benchmark-protocol/3", "record_origin": "PROTOCOL_V3",
+        "run_id": f"{spec['benchmark_id']}/{spec['problem_variant']}/{spec['scenario']}/{implementation_id}/{time_limit:g}s/geometry-projection/rep-0",
+        "benchmark_id": spec["benchmark_id"], "problem_variant": spec["problem_variant"], "instance_id": spec["scenario"],
+        "implementation_id": implementation_id, "algorithm": implementation["algorithm"], "adapter": "alonso_geometry_projection_v1", "comparison_track": "COMPOSED", "problem_scope": "GEOMETRY_PROJECTION",
+        "budget": {"time_limit_s": time_limit, "memory_limit_bytes": 1073741824, "thread_limit": 1}, "item_order": "SOURCE", "bin_order": "SOURCE", "seed": 42, "repetition": 0,
+        "input_sha256": constraint_runner.digest(spec), "input_status": "VALID", "capability_status": "PROJECTION_ONLY", "run_status": "COMPLETED" if process_ok else "ERROR", "solution_status": solution_status,
+        "proof_status": "FEASIBLE" if solution_status in {"VALID_COMPLETE", "VALID_PARTIAL"} else "UNKNOWN", "termination_reason": "RETURNED_PROJECTION" if process_ok else "PROCESS_ERROR",
+        "resources": {"wall_s": elapsed, "solver_s": None, "peak_rss_bytes": None},
+        "metrics": {**metrics, "projection_removed_constraints": source["removed_constraints"], "source_file": source["path"], "source_instance_item_count": len(spec["items"]), "binary_family": "boxstacks" if stack else "box", "binary_sha256": constraint_runner.sha256(binary) if binary.exists() else None, "runner_sha256": constraint_runner.sha256(RUNNER)},
+        "artifacts": {"input": str(input_path.relative_to(ROOT)), "solver_output": str(output_path.relative_to(ROOT)) if output_path.exists() else None, "solution": str(certificate_path.relative_to(ROOT)) if certificate_path.exists() else None, "stdout": str(stdout_path.relative_to(ROOT)), "stderr": str(stderr_path.relative_to(ROOT)), "validation": str(validation_path.relative_to(ROOT))},
+    }
+    constraint_runner.validate_run_record(record)
+    return record
+
+
+def run_skjolber(
+    implementation_id: str,
+    spec: dict[str, Any],
+    item_meta: dict[str, dict[str, str]],
+    bin_meta: dict[str, dict[str, str]],
+    source: dict[str, Any],
+    time_limit: float,
+) -> dict[str, Any]:
+    """Run Plain/LAFF/FastBruteForce through the Java projection sidecar."""
+    work = RAW_ROOT / f"{spec['scenario']}_{implementation_id}"
+    work.mkdir(parents=True, exist_ok=True)
+    input_path = work / "input.json"
+    output_path = work / "output.json"
+    stdout_path = work / "stdout.log"
+    stderr_path = work / "stderr.log"
+    validation_path = work / "validation.json"
+    items_path, bins_path = constraint_runner.write_skjolber_csv(spec, work)
+    java = __import__("shutil").which("java") or "/usr/bin/java"
+    command = [java, "-Xms32m", "-Xmx512m", "-XX:ActiveProcessorCount=1", "-cp", constraint_runner.skjolber_classpath(), "study.SkjolberProjection", str(items_path), str(bins_path), SKJOLBER_IMPLEMENTATIONS[implementation_id], str(max(1, round(time_limit * 1000))), str(output_path)]
+    input_path.write_text(canonical_json(spec), encoding="utf-8")
+    started = perf_counter()
+    try:
+        completed = subprocess.run(command, capture_output=True, text=True, timeout=time_limit + 20.0, env={**os.environ, "JAVA_TOOL_OPTIONS": "-Djava.util.concurrent.ForkJoinPool.common.parallelism=1"}, check=False)
+        stdout_path.write_text(completed.stdout, encoding="utf-8")
+        stderr_path.write_text(completed.stderr, encoding="utf-8")
+        process_ok = completed.returncode == 0 and output_path.exists()
+    except subprocess.TimeoutExpired as exc:
+        stdout_path.write_text(exc.stdout or "", encoding="utf-8")
+        stderr_path.write_text(exc.stderr or "", encoding="utf-8")
+        process_ok = False
+    elapsed = perf_counter() - started
+    if process_ok:
+        payload = json.loads(output_path.read_text(encoding="utf-8"))
+        status, metrics = constraint_runner.independent_validate(spec, item_meta, bin_meta, payload)
+    else:
+        payload = {"placements": []}
+        status, metrics = "NO_SOLUTION", {"packed_items": 0, "required_items": len(spec["items"]), "bins_used": 0, "validation_error_count": 1, "validation_errors": ["sidecar failed or omitted output"]}
+    validation_path.write_text(canonical_json(metrics), encoding="utf-8")
+    solution_status = "VALID_COMPLETE" if status == "VALID_COMPLETE" else "VALID_PARTIAL" if status == "VALID_PARTIAL" else "CONSTRAINT_VIOLATION" if status == "CONSTRAINT_VIOLATION" else "NO_SOLUTION" if status == "NO_SOLUTION" else "INVALID_CERTIFICATE" if process_ok else "NO_SOLUTION"
+    implementation = next(row for row in constraint_runner.load_catalogs()[1]["implementations"] if row["id"] == implementation_id)
+    record = {
+        "schema_version": 2, "protocol_version": "benchmark-protocol/3", "record_origin": "PROTOCOL_V3",
+        "run_id": f"{spec['benchmark_id']}/{spec['problem_variant']}/{spec['scenario']}/{implementation_id}/{time_limit:g}s/geometry-projection/rep-0",
+        "benchmark_id": spec["benchmark_id"], "problem_variant": spec["problem_variant"], "instance_id": spec["scenario"],
+        "implementation_id": implementation_id, "algorithm": implementation["algorithm"], "adapter": "alonso_geometry_projection_v1", "comparison_track": "COMPOSED", "problem_scope": "GEOMETRY_PROJECTION",
+        "budget": {"time_limit_s": time_limit, "memory_limit_bytes": 1073741824, "thread_limit": 1}, "item_order": "SOURCE", "bin_order": "SOURCE", "seed": 42, "repetition": 0,
+        "input_sha256": constraint_runner.digest(spec), "input_status": "VALID", "capability_status": "PROJECTION_ONLY", "run_status": "COMPLETED" if process_ok else "ERROR", "solution_status": solution_status,
+        "proof_status": "FEASIBLE" if solution_status in {"VALID_COMPLETE", "VALID_PARTIAL"} else "UNKNOWN", "termination_reason": "RETURNED_PROJECTION" if process_ok else "PROCESS_ERROR",
+        "resources": {"wall_s": elapsed, "solver_s": payload.get("elapsed_s") if process_ok else None, "peak_rss_bytes": None},
+        "metrics": {**metrics, "projection_removed_constraints": source["removed_constraints"], "source_file": source["path"], "source_instance_item_count": len(spec["items"]), "runner_sha256": constraint_runner.sha256(RUNNER)},
+        "artifacts": {"input": str(input_path.relative_to(ROOT)), "solver_output": str(output_path.relative_to(ROOT)) if output_path.exists() else None, "stdout": str(stdout_path.relative_to(ROOT)), "stderr": str(stderr_path.relative_to(ROOT)), "validation": str(validation_path.relative_to(ROOT))},
+    }
+    constraint_runner.validate_run_record(record)
+    return record
+
+
 def run_external(
     implementation_id: str,
     instance: Instance,
@@ -260,6 +393,12 @@ def main() -> int:
         spec, item_meta, bin_meta = spec_for(instance, source, benchmark_id)
         for implementation_id in sorted(PYTHON_IMPLEMENTATIONS):
             records.append(run_python(implementation_id, spec, item_meta, bin_meta))
+        for implementation_id in sorted(PACKINGSOLVER_IMPLEMENTATIONS):
+            records.append(run_packingsolver(implementation_id, spec, item_meta, bin_meta, source, args.time_limit))
+        for implementation_id in sorted(PACKINGSOLVER_STACK_IMPLEMENTATIONS):
+            records.append(run_packingsolver(implementation_id, spec, item_meta, bin_meta, source, args.time_limit, stack=True))
+        for implementation_id in sorted(SKJOLBER_IMPLEMENTATIONS):
+            records.append(run_skjolber(implementation_id, spec, item_meta, bin_meta, source, args.time_limit))
         for implementation_id in sorted(EXTERNAL_IMPLEMENTATIONS):
             for order in ("descending", "ascending"):
                 external_jobs.append((implementation_id, instance, source, benchmark_id, order))

@@ -1,0 +1,47 @@
+{
+  "scenario": "b14_nesting_height",
+  "benchmark_id": "B14",
+  "problem_variant": "NESTING_HEIGHT",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:1",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        8.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "source_files": {
+    "benchmarks/data/packingsolver/nesting_items.csv": "18b2d23c0863b98aef8535cab64573bab12019380b1b5d2e9181e9416344681d",
+    "benchmarks/data/packingsolver/nesting_bins.csv": "5387e96e155cf5f6eec4f741a2529db9edf2f04a599324eac72b4b00dbd69420"
+  }
+}

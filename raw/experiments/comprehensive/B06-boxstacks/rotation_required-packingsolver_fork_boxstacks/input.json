@@ -1,0 +1,58 @@
+{
+  "bins": [
+    {
+      "capacity": 100,
+      "cost": 1,
+      "dimensions": [
+        4,
+        3,
+        2
+      ],
+      "ref": "bin-0"
+    }
+  ],
+  "case": "rotation_required",
+  "items": [
+    {
+      "dimensions": [
+        3,
+        2,
+        4
+      ],
+      "orientations": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          4,
+          3
+        ],
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          3,
+          4,
+          2
+        ],
+        [
+          4,
+          2,
+          3
+        ],
+        [
+          4,
+          3,
+          2
+        ]
+      ],
+      "ref": "rotated",
+      "weight": 1
+    }
+  ]
+}

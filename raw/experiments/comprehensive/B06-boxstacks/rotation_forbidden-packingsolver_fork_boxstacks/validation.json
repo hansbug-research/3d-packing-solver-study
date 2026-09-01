@@ -1,0 +1,10 @@
+{
+  "bins_used": 0,
+  "errors": [
+    "solver process failed or omitted output/certificate"
+  ],
+  "packed_items": 0,
+  "required_items": 1,
+  "total_cost": null,
+  "validation_error_count": 1
+}

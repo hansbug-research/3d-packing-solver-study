@@ -67,10 +67,10 @@
         200.0
       ],
       "weight": 2000.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "xyz",
+      "rotation_index": 0
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 0.355728
+  "elapsed_ms": 0.358922
 }

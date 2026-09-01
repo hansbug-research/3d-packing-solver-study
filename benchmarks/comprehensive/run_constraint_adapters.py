@@ -16,6 +16,7 @@ import json
 import os
 import subprocess
 import sys
+import shutil
 from collections import Counter
 from pathlib import Path
 from time import perf_counter
@@ -46,6 +47,9 @@ CASE_FILES: dict[str, tuple[str, str, bool]] = {
     "B12/ROTATION_REQUIRED": ("rotation_allowed_items.csv", "rotation_bins.csv", True),
     "B12/ROTATION_FORBIDDEN": ("rotation_forbidden_items.csv", "rotation_bins.csv", False),
     "B13/WEIGHT_LIMIT": ("weight_items.csv", "weight_bins.csv", True),
+    "B14/MAXIMUM_WEIGHT_ABOVE": ("stack_items.csv", "stack_bins.csv", True),
+    "B14/MAXIMUM_STACK_COUNT": ("stack_count_items.csv", "stack_count_bins.csv", True),
+    "B14/NESTING_HEIGHT": ("nesting_items.csv", "nesting_bins.csv", True),
     "B15/AXLE_NORMAL": ("axle_realistic_items.csv", "axle_normal_bins.csv", True),
     "B15/AXLE_BOUNDARY": ("axle_items.csv", "axle_bins.csv", False),
     "B15/AXLE_INFEASIBLE": ("axle_realistic_items.csv", "axle_infeasible_bins.csv", False),
@@ -63,6 +67,101 @@ RUST_STRATEGIES = {
     "rust_brkga": "brkga",
     "rust_sa": "sa",
 }
+
+SKJOLBER_ALGORITHMS = {
+    "skjolber_plain": "plain",
+    "skjolber_laff": "laff",
+    "skjolber_fast_bruteforce": "fast_brute_force",
+}
+PACKINGSOLVER_STACK_BINARIES = {
+    "packingsolver_fork_boxstacks": ROOT / ".cache" / "build-fork" / "src" / "boxstacks" / "packingsolver_boxstacks",
+    "packingsolver_upstream_boxstacks": ROOT / ".cache" / "build-upstream-367" / "src" / "boxstacks" / "packingsolver_boxstacks",
+}
+SKJOLBER_CLASSES = ROOT / "benchmarks" / "java-skjolber" / "target" / "classes"
+SKJOLBER_M2 = Path.home() / ".m2" / "repository"
+
+
+def skjolber_classpath() -> str:
+    jars = [
+        SKJOLBER_M2 / "com/github/skjolber/3d-bin-container-packing/core/4.2.2-SNAPSHOT/core-4.2.2-SNAPSHOT.jar",
+        SKJOLBER_M2 / "com/github/skjolber/3d-bin-container-packing/api/4.2.2-SNAPSHOT/api-4.2.2-SNAPSHOT.jar",
+        SKJOLBER_M2 / "com/github/skjolber/3d-bin-container-packing/points/4.2.2-SNAPSHOT/points-4.2.2-SNAPSHOT.jar",
+        SKJOLBER_M2 / "org/eclipse/collections/eclipse-collections/13.0.0/eclipse-collections-13.0.0.jar",
+        SKJOLBER_M2 / "org/eclipse/collections/eclipse-collections-api/13.0.0/eclipse-collections-api-13.0.0.jar",
+    ]
+    return os.pathsep.join(str(path) for path in [SKJOLBER_CLASSES, *jars])
+
+
+def write_skjolber_csv(spec: dict[str, Any], work: Path) -> tuple[Path, Path]:
+    """Write the minimal canonical CSV accepted by the Java sidecar."""
+    import csv
+    items_path = work / "skjolber-items.csv"
+    bins_path = work / "skjolber-bins.csv"
+    with items_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["ID", "X", "Y", "Z", "WEIGHT", "COPIES"])
+        for item in spec["items"]:
+            writer.writerow([item["id"], *[int(round(value)) for value in item["size"]], int(round(item.get("weight", 1))), 1])
+    with bins_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["ID", "X", "Y", "Z", "MAXIMUM_WEIGHT", "COPIES"])
+        for bin_spec in spec["bins"]:
+            max_weight = bin_spec.get("max_weight", 2**31 - 1)
+            if max_weight == float("inf"):
+                max_weight = 2**31 - 1
+            writer.writerow([bin_spec["id"], *[int(round(value)) for value in bin_spec["size"]], int(round(max_weight)), 1])
+    return items_path, bins_path
+
+
+def write_packingsolver_csv(spec: dict[str, Any], work: Path) -> tuple[Path, Path]:
+    """Create stack-compatible CSV while retaining a numeric-ID map.
+
+    PackingSolver certificates use contiguous numeric IDs even when the input
+    business IDs are strings.  The map is reconstructed by
+    ``parse_packingsolver_certificate`` before the independent validator runs.
+    """
+    import csv
+    items_path = work / "packingsolver-items.csv"
+    bins_path = work / "packingsolver-bins.csv"
+    with items_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["ID", "X", "Y", "Z", "ROTATION_XYZ", "ROTATION_YXZ", "ROTATION_ZYX", "ROTATION_YZX", "ROTATION_XZY", "ROTATION_ZXY", "WEIGHT", "COPIES", "GROUP_ID", "STACKABILITY_ID", "NESTING_HEIGHT", "MAXIMUM_STACKABILITY", "MAXIMUM_WEIGHT_ABOVE"])
+        for index, item in enumerate(spec["items"]):
+            writer.writerow([index, *[int(round(value)) for value in item["size"]], 1, 1, 1, 1, 1, 1, int(round(item.get("weight", 1))), 1, 0, 0, 0, 100, 2147483647])
+    with bins_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["ID", "X", "Y", "Z", "COST", "COPIES", "MAXIMUM_WEIGHT", "MAXIMUM_STACK_DENSITY"])
+        for index, bin_spec in enumerate(spec["bins"]):
+            maximum = bin_spec.get("max_weight", 2147483647)
+            if maximum == float("inf"):
+                maximum = 2147483647
+            writer.writerow([index, *[int(round(value)) for value in bin_spec["size"]], bin_spec.get("cost", 1), 1, int(round(maximum)), 100])
+    return items_path, bins_path
+
+
+def parse_packingsolver_certificate(path: Path, spec: dict[str, Any]) -> dict[str, Any]:
+    import csv
+    rows = list(csv.DictReader(path.open(newline="", encoding="utf-8")))
+    items = spec["items"]
+    bins = spec["bins"]
+    placements: list[dict[str, Any]] = []
+    for row in rows:
+        if row.get("TYPE") != "ITEM":
+            continue
+        try:
+            item_index = int(row["ID"])
+            bin_index = int(row.get("BIN", "0"))
+            item = items[item_index]
+            bin_spec = bins[bin_index]
+            placements.append({
+                "item_id": item["id"], "bin_id": bin_spec["id"],
+                "position": [float(row[key]) for key in ("X", "Y", "Z")],
+                "size": [float(row[key]) for key in ("LX", "LY", "LZ")],
+            })
+        except (KeyError, IndexError, ValueError):
+            # Preserve an explicit malformed placement for the validator.
+            placements.append({"item_id": "__unknown__", "bin_id": "__unknown__", "position": [0, 0, 0], "size": [0, 0, 0]})
+    return {"placements": placements}
 
 
 def digest(value: Any) -> str:
@@ -439,7 +538,7 @@ def independent_validate(
     return "VALID_PARTIAL" if seen else "NO_SOLUTION", metrics
 
 
-def command_for(implementation_id: str, input_path: Path, spec: dict[str, Any]) -> list[str] | None:
+def command_for(implementation_id: str, input_path: Path, spec: dict[str, Any], work: Path) -> list[str] | None:
     if implementation_id in {"py3dbp", "jerry"}:
         python_input_path = input_path.with_name("python-input.json")
         python_input_path.write_text(json.dumps(python_input(spec, {})) + "\n", encoding="utf-8")
@@ -452,6 +551,21 @@ def command_for(implementation_id: str, input_path: Path, spec: dict[str, Any]) 
         return [str(GO), "--input", str(input_path)]
     if implementation_id in RUST_STRATEGIES:
         return [str(RUST), "--input", str(input_path), RUST_STRATEGIES[implementation_id], "10000"]
+    if implementation_id in SKJOLBER_ALGORITHMS:
+        items_path, bins_path = write_skjolber_csv(spec, work)
+        java = shutil.which("java") or "/usr/bin/java"
+        return [
+            java, "-Xms32m", "-Xmx512m", "-XX:ActiveProcessorCount=1", "-cp", skjolber_classpath(),
+            "study.SkjolberProjection", str(items_path), str(bins_path), SKJOLBER_ALGORITHMS[implementation_id], "10000", str(work / "skjolber-output.json"),
+        ]
+    if implementation_id in PACKINGSOLVER_STACK_BINARIES:
+        items_path, bins_path = write_packingsolver_csv(spec, work)
+        binary = PACKINGSOLVER_STACK_BINARIES[implementation_id]
+        return [
+            str(binary), "--items", str(items_path), "--bins", str(bins_path), "--objective", "bin-packing",
+            "--time-limit", "10", "--memory-limit", "1024", "--verbosity-level", "0", "--only-write-at-the-end",
+            "--output", str(work / "packingsolver-output.json"), "--certificate", str(work / "packingsolver-solution.csv"),
+        ]
     return None
 
 
@@ -466,11 +580,11 @@ def run_one(implementation_id: str, spec: dict[str, Any], item_meta: dict[str, d
     stderr_path = work / "stderr.log"
     validation_path = work / "validation.json"
     input_path.write_text(json.dumps(spec, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    command = command_for(implementation_id, input_path, spec)
+    command = command_for(implementation_id, input_path, spec, work)
     started = perf_counter()
     env = os.environ.copy()
     env.update(OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1", NUMEXPR_NUM_THREADS="1", RAYON_NUM_THREADS="1", GOMAXPROCS="1")
-    if command is None or (command[0] in {str(GO), str(RUST)} and not Path(command[0]).exists()):
+    if command is None or (command[0] in {str(GO), str(RUST)} and not Path(command[0]).exists()) or (implementation_id in PACKINGSOLVER_STACK_BINARIES and not PACKINGSOLVER_STACK_BINARIES[implementation_id].exists()) or (implementation_id in SKJOLBER_ALGORITHMS and not SKJOLBER_CLASSES.exists()):
         run_status, solution_status, payload, stderr = "ERROR", "NO_SOLUTION", {"placements": []}, "adapter or binary unavailable"
         wall_s = 0.0
         return make_record(implementation_id, spec, run_status, solution_status, payload, stderr, wall_s, validation_path, stdout_path, stderr_path, work, item_meta, bin_meta, command)
@@ -483,10 +597,27 @@ def run_one(implementation_id: str, spec: dict[str, Any], item_meta: dict[str, d
         try:
             payload = json.loads(stdout)
         except json.JSONDecodeError:
-            payload = {"placements": []}
+            if implementation_id in PACKINGSOLVER_STACK_BINARIES:
+                certificate = work / "packingsolver-solution.csv"
+                payload = parse_packingsolver_certificate(certificate, spec) if certificate.exists() else {"placements": []}
+            else:
+                payload = {"placements": []}
+        # For stack binaries the CSV certificate is the auditable output. A
+        # clean process exit without that artifact is an adapter failure.
+        missing_certificate = (
+            implementation_id in PACKINGSOLVER_STACK_BINARIES
+            and not (work / "packingsolver-solution.csv").exists()
+        )
         solution_status, metrics = independent_validate(spec, item_meta, bin_meta, payload)
+        if missing_certificate:
+            solution_status = "NO_SOLUTION"
+            metrics = dict(metrics)
+            metrics["validation_errors"] = list(metrics.get("validation_errors", [])) + [
+                "missing PackingSolver certificate artifact"
+            ]
+            metrics["validation_error_count"] = int(metrics.get("validation_error_count", 0)) + 1
         validation_path.write_text(json.dumps(metrics, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-        if completed.returncode != 0 and solution_status == "NO_SOLUTION":
+        if (completed.returncode != 0 or missing_certificate) and solution_status == "NO_SOLUTION":
             run_status = "ERROR"
             solution_status = "NO_SOLUTION"
         else:
@@ -598,18 +729,26 @@ def make_record(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18", "B30", "B31"))
+    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B14", "B15", "B16", "B17", "B18", "B30", "B31"))
     parser.add_argument("--output", type=Path, default=RESULTS)
     args = parser.parse_args()
     RAW_ROOT.mkdir(parents=True, exist_ok=True)
     all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES) + ["B30/SHELF_SEQUENCE"] + sorted(B31_CASES)
     selected = [key for key in all_cases if not args.benchmark or key.split("/", 1)[0] in args.benchmark]
-    implementations = ["py3dbp", "jerry", "go_bp3d", *RUST_STRATEGIES]
+    implementations = ["py3dbp", "jerry", "go_bp3d", *RUST_STRATEGIES, *SKJOLBER_ALGORITHMS, *PACKINGSOLVER_STACK_BINARIES]
     records: list[dict[str, Any]] = []
     for key in selected:
         spec, item_meta, bin_meta, _, _ = load_case(key)
         for implementation_id in implementations:
             records.append(run_one(implementation_id, spec, item_meta, bin_meta))
+    # The runner is commonly invoked in benchmark-sized waves.  Preserve
+    # previously executed cases from the same JSONL while replacing exactly
+    # the selected benchmark IDs, so a B16-only rerun cannot erase B12/B13
+    # evidence.
+    if args.output.exists():
+        selected_benchmarks = {key.split("/", 1)[0] for key in selected}
+        previous = [json.loads(line) for line in args.output.read_text(encoding="utf-8").splitlines() if line]
+        records = [record for record in previous if record.get("benchmark_id") not in selected_benchmarks] + records
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("".join(json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n" for record in sorted(records, key=lambda row: row["run_id"])), encoding="utf-8")
     counts = Counter((row["benchmark_id"], row["implementation_id"], row["solution_status"]) for row in records)

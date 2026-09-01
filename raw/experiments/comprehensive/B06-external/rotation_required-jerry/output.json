@@ -1,0 +1,14 @@
+{
+  "placements": [
+    {
+      "bin_ref": "bin-0",
+      "dx": 4.0,
+      "dy": 3.0,
+      "dz": 2.0,
+      "item_ref": "rotated",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "bins": [
+    {
+      "capacity": 10,
+      "cost": 1,
+      "dimensions": [
+        10,
+        10,
+        10
+      ],
+      "ref": "bin-0"
+    },
+    {
+      "capacity": 10,
+      "cost": 1,
+      "dimensions": [
+        10,
+        10,
+        10
+      ],
+      "ref": "bin-1"
+    },
+    {
+      "capacity": 10,
+      "cost": 1,
+      "dimensions": [
+        10,
+        10,
+        10
+      ],
+      "ref": "bin-2"
+    }
+  ],
+  "case": "weight_split",
+  "items": [
+    {
+      "dimensions": [
+        4,
+        4,
+        4
+      ],
+      "orientations": [
+        [
+          4,
+          4,
+          4
+        ]
+      ],
+      "ref": "heavy-0",
+      "weight": 6
+    },
+    {
+      "dimensions": [
+        4,
+        4,
+        4
+      ],
+      "orientations": [
+        [
+          4,
+          4,
+          4
+        ]
+      ],
+      "ref": "heavy-1",
+      "weight": 6
+    },
+    {
+      "dimensions": [
+        4,
+        4,
+        4
+      ],
+      "orientations": [
+        [
+          4,
+          4,
+          4
+        ]
+      ],
+      "ref": "heavy-2",
+      "weight": 6
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "bins_used": 0,
+  "constraint_errors": [
+    "missing required items: 2"
+  ],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 1,
+  "packed_items": 0,
+  "required_items": 2,
+  "total_cost": 0,
+  "validation_error_count": 1,
+  "validation_errors": [
+    "missing required items: 2"
+  ]
+}

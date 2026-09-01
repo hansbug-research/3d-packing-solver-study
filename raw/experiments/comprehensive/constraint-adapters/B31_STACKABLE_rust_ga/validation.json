@@ -2,8 +2,8 @@
   "bins_used": 1,
   "constraint_errors": [
     "B:1: non-stackable SKU has an item above it",
-    "C:0: above weight 25.0 exceeds 20.0",
-    "C:1: support ratio 0.3333333333333333 below minimum"
+    "B:0: non-stackable SKU has an item above it",
+    "C:0: support ratio 0.0 below minimum"
   ],
   "geometry_error_count": 0,
   "geometry_errors": [],
@@ -14,7 +14,7 @@
   "validation_error_count": 3,
   "validation_errors": [
     "B:1: non-stackable SKU has an item above it",
-    "C:0: above weight 25.0 exceeds 20.0",
-    "C:1: support ratio 0.3333333333333333 below minimum"
+    "B:0: non-stackable SKU has an item above it",
+    "C:0: support ratio 0.0 below minimum"
   ]
 }

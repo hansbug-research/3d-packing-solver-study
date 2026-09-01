@@ -1,0 +1,34 @@
+{
+  "bins": [
+    {
+      "capacity": 100,
+      "cost": 1,
+      "dimensions": [
+        4,
+        3,
+        2
+      ],
+      "ref": "bin-0"
+    }
+  ],
+  "case": "rotation_forbidden",
+  "items": [
+    {
+      "dimensions": [
+        3,
+        2,
+        4
+      ],
+      "orientations": [
+        [
+          3,
+          2,
+          4
+        ]
+      ],
+      "ref": "upright",
+      "weight": 1
+    }
+  ],
+  "purpose": "The same geometry must be rejected when the required orientation is absent."
+}

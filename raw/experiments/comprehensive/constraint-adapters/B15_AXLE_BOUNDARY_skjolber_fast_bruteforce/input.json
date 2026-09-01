@@ -1,0 +1,36 @@
+{
+  "scenario": "b15_axle_boundary",
+  "benchmark_id": "B15",
+  "problem_variant": "AXLE_BOUNDARY",
+  "items": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 10.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "0:0",
+      "type_id": "0",
+      "size": [
+        100.0,
+        2.0,
+        2.0
+      ],
+      "max_weight": 100.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": false,
+  "source_files": {
+    "benchmarks/data/packingsolver/axle_items.csv": "fedab51a039be117dacb8d8b9a1299a160117201c97f9267df6861d30eb91120",
+    "benchmarks/data/packingsolver/axle_bins.csv": "84c5c2a2efc34d300d9fcf53b7ce6e0d718b70075742ad12c2c26800b2d09bee"
+  }
+}

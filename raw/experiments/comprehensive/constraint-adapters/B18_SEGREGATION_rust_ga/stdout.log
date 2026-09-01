@@ -58,7 +58,7 @@
   ],
   "placements": [
     {
-      "item_id": "hazmat:0",
+      "item_id": "cold:0",
       "bin_id": "bin-0",
       "position": [
         0.0,
@@ -76,11 +76,11 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
+      "rotation": "yzx",
+      "rotation_index": 3
     },
     {
-      "item_id": "cold:0",
+      "item_id": "hazmat:0",
       "bin_id": "bin-0",
       "position": [
         5.0,
@@ -103,5 +103,5 @@
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.515047
+  "elapsed_ms": 1.5449769999999998
 }

@@ -1,0 +1,23 @@
+{
+  "bins_used": 1,
+  "constraint_errors": [
+    "0:1: forbidden source rotation (2.0, 5.0, 2.0)",
+    "0:0: forbidden source rotation (5.0, 2.0, 2.0)"
+  ],
+  "geometry_error_count": 2,
+  "geometry_errors": [
+    "0:1: out of bounds on axis 1",
+    "0:0: out of bounds on axis 0"
+  ],
+  "hard_violation_count": 2,
+  "packed_items": 2,
+  "required_items": 2,
+  "total_cost": 1.0,
+  "validation_error_count": 4,
+  "validation_errors": [
+    "0:1: out of bounds on axis 1",
+    "0:0: out of bounds on axis 0",
+    "0:1: forbidden source rotation (2.0, 5.0, 2.0)",
+    "0:0: forbidden source rotation (5.0, 2.0, 2.0)"
+  ]
+}

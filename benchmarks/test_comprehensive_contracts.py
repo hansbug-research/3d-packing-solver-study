@@ -245,17 +245,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 64646
-    assert summary["protocol_v3_run_records"] == 62524
+    assert summary["combined_run_records"] == len(records) == 64822
+    assert summary["protocol_v3_run_records"] == 62700
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 566
+    assert aggregate["coverage"]["cells_with_evidence"] == 608
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 298
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 249
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62524}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 360
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 229
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62700}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34221
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -270,18 +270,22 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
         assert (comprehensive / "rankings" / ranking).exists()
     projection = list(csv.DictReader((comprehensive / "rankings" / "industrial-projection.csv").open(newline="")))
-    assert len(projection) == 16
+    assert len(projection) == 30
     assert all(row["rank_scope"] == "BOUNDED_SMALLEST_SOURCE_SUBSET" for row in projection)
     baytp = list(csv.DictReader((comprehensive / "rankings" / "industrial-baytp.csv").open(newline="")))
-    assert len(baytp) == 13
+    assert len(baytp) == 16
     baytp_projection = [row for row in baytp if row["problem_scope"] == "GEOMETRY_PROJECTION"]
-    assert len(baytp_projection) == 12
-    assert all(row["valid_complete"] == "0" and row["constraint_violation"] == "1" for row in baytp_projection)
+    assert len(baytp_projection) == 15
+    assert all(
+        row["valid_complete"] == "0"
+        and row["constraint_violation"] == row["records"]
+        for row in baytp_projection
+    )
     mixed = list(csv.DictReader((comprehensive / "rankings" / "industrial-mixed-pallet.csv").open(newline="")))
-    assert len(mixed) == 13
+    assert len(mixed) == 16
     mixed_projection = [row for row in mixed if row["problem_scope"] == "GEOMETRY_PROJECTION"]
-    assert len(mixed_projection) == 12
-    assert all(row["records"] == "3" for row in mixed_projection)
+    assert len(mixed_projection) == 15
+    assert all(row["records"] in {"3", "6"} for row in mixed_projection)
     calibrations = [
         record for record in records
         if record["adapter"] == "exact_calibration/manual_proof_v1"
@@ -555,11 +559,13 @@ def test_b07_projection_common_and_jerry_control_rankings() -> None:
 def test_constraint_adapter_projection_campaign_is_complete_and_independently_validated() -> None:
     path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl"
     records = [json.loads(line) for line in path.read_text().splitlines() if line]
-    assert len(records) == 112
-    assert len({record["run_id"] for record in records}) == 112
-    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18", "B30", "B31"}
+    assert len(records) == 221
+    assert len({record["run_id"] for record in records}) == 221
+    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B14", "B15", "B16", "B17", "B18", "B30", "B31"}
     assert {record["implementation_id"] for record in records} == {
         "py3dbp", "jerry", "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
+        "packingsolver_fork_boxstacks", "packingsolver_upstream_boxstacks",
+        "skjolber_plain", "skjolber_laff", "skjolber_fast_bruteforce",
     }
     assert all(record["capability_status"] == "PROJECTION_ONLY" for record in records)
     assert all(record["problem_scope"] == "GEOMETRY_PROJECTION" for record in records)
@@ -567,18 +573,18 @@ def test_constraint_adapter_projection_campaign_is_complete_and_independently_va
     b13 = [record for record in records if record["benchmark_id"] == "B13"]
     assert {record["solution_status"] for record in b13} == {"CONSTRAINT_VIOLATION", "VALID_COMPLETE"}
     b15_infeasible = [record for record in records if record["benchmark_id"] == "B15" and record["problem_variant"] == "AXLE_INFEASIBLE"]
-    assert len(b15_infeasible) == 8
+    assert len(b15_infeasible) == 13
     assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b15_infeasible)
     for benchmark_id in ("B16", "B18"):
         extension = [record for record in records if record["benchmark_id"] == benchmark_id]
-        assert len(extension) == 8
+        assert len(extension) == 13
         assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in extension)
     b30 = [record for record in records if record["benchmark_id"] == "B30"]
-    assert len(b30) == 8
+    assert len(b30) == 13
     assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b30)
     assert all("shelf_bay_sequence" in record["metrics"]["projection_removed_constraints"] for record in b30)
     b31 = [record for record in records if record["benchmark_id"] == "B31"]
-    assert len(b31) == 24
+    assert len(b31) == 39
     assert {record["problem_variant"] for record in b31} == {"FLAT_MIXED", "STACKABLE", "WEIGHT_INFEASIBLE"}
     assert all("pallet_stack_rules" in record["metrics"]["projection_removed_constraints"] for record in b31)
 

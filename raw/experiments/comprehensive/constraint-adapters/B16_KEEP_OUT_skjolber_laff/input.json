@@ -1,0 +1,50 @@
+{
+  "scenario": "b16_keep_out",
+  "benchmark_id": "B16",
+  "problem_variant": "KEEP_OUT",
+  "items": [
+    {
+      "id": "cargo:0",
+      "type_id": "cargo",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "bin-0",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 100,
+      "cost": 1
+    }
+  ],
+  "expected_complete": true,
+  "obstacles": [
+    {
+      "id": "pillar-0",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        10,
+        10
+      ]
+    }
+  ],
+  "incompatible_groups": [],
+  "source_files": {
+    "benchmarks/data/comprehensive/constraint-extension-fixture.json": "22fb8e42c787432916c1eac221214e2d7f33acc61db18e02f80d1d64d15b5c94"
+  }
+}

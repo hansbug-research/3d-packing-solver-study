@@ -1,0 +1,54 @@
+{
+  "scenario": "b18_segregation",
+  "benchmark_id": "B18",
+  "problem_variant": "SEGREGATION",
+  "items": [
+    {
+      "id": "cold:0",
+      "type_id": "cold",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any",
+      "compatibility_group": "COLD"
+    },
+    {
+      "id": "hazmat:0",
+      "type_id": "hazmat",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any",
+      "compatibility_group": "HAZMAT"
+    }
+  ],
+  "bins": [
+    {
+      "id": "bin-0",
+      "size": [
+        10,
+        5,
+        5
+      ],
+      "max_weight": 100,
+      "cost": 1
+    }
+  ],
+  "expected_complete": true,
+  "obstacles": [],
+  "incompatible_groups": [
+    [
+      "COLD",
+      "HAZMAT"
+    ]
+  ],
+  "source_files": {
+    "benchmarks/data/comprehensive/constraint-extension-fixture.json": "22fb8e42c787432916c1eac221214e2d7f33acc61db18e02f80d1d64d15b5c94"
+  }
+}
