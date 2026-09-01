@@ -121,6 +121,8 @@ B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表�
 
 B30 的 ESICUP 快照只含 README 与两个 bay 文件，但 OR-Library 的 `products.txt`、`shelves.txt`、`baytp1.txt` 和 `baytp2.txt` 已于 2026-08-31 重新取回并记录内容 SHA-256，因此输入来源为 `VALID`；当前缺口是完整模型/adapter，不再是源文件缺失。B31 是版本化工业 conformance/performance suite，不冒充公开学术数据集；每个生成实例必须保存父分布、seed 和约束参数。B32 的 arrival trace 从公共实例和 B23 订单确定性派生，离线重算必须单独记录 `OFFLINE_REBUILD`，不能写成库原生 online 能力。
 
+B30/B31 的 `SHELF_SEQUENCE_CALIBRATION`、`FLAT_MIXED_CALIBRATION`、`STACKABLE_CALIBRATION` 和 `WEIGHT_INFEASIBLE_CALIBRATION` 是协议维护的 hand-checkable exact fixtures。它们保留相应的 shelf、层、支撑和 payload 语义，用于校准独立 validator、投影 adapter 和小规模 exact truth；每条记录必须带 `metrics.calibration_only=true`、fixture hash、proof artifact，并与完整 BAYTP/订单 corpus 分开统计。校准记录可以进入 `industrial-baytp.csv` 或 `industrial-mixed-pallet.csv` 的 `EXACT_MODEL/FULL_PROBLEM` 子表，但不得被解释为完整数据集的质量排名，也不得提高对应 suite 的 source/corpus 完成率。
+
 ### 4.6 可靠性、扩展性和故障行为
 
 | ID | 套件 | 变换或规模 | 适用实现 | 该结果主要说明什么 |

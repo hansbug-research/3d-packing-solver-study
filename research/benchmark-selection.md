@@ -81,6 +81,8 @@ B01-B34 覆盖的是刚性长方体为主的正交装载产品。以下问题不
 | B31 | mixed-SKU pallet，层型、支撑、承压、托盘数 | PS-S/EX；JE/SK controls；其他 projection | legal complete rate、pallets/height | 高重复 SKU 与层/承压联合能力 | 版本化 synthetic truth，不冒充公开数据集 |
 | B32 | online/incremental，到货序列、lookahead、重排 | 有 incremental adapter 的全部；EX 小窗口；无 adapter = ADAPTER_MISSING | cumulative cost、deadline、relocation、offline loss | 实时延迟和顺序鲁棒性，不只是离线最优 | 离线 rebuild 必须单独标记，不能声称库原生 online |
 
+**B30/B31 校准边界。** `SHELF_SEQUENCE_CALIBRATION`、`FLAT_MIXED_CALIBRATION`、`STACKABLE_CALIBRATION` 和 `WEIGHT_INFEASIBLE_CALIBRATION` 是协议维护的 hand-checkable exact fixtures。它们用于校准独立 validator、投影 adapter 和小规模 exact truth，必须带 `metrics.calibration_only=true`、fixture hash 与 proof artifact。校准记录可以在对应工业结果表中单列展示，但不得冒充完整 BAYTP/订单 corpus 的质量排名，也不得提高 suite 的 source/corpus 完成率。
+
 ## 结果阅读规则
 
 每个套件至少发布 `capability_status`、`solution_status`、`proof_status`、主 objective、wall/CPU/RSS 和 artifact hash。质量排序先按 hard feasibility/完整性，再按主 objective；`INVALID_CERTIFICATE` 永远不能因为箱数少或 profit 高而进入排名。跨库只有在输入 hash、问题 variant、姿态语义、预算和验证器相同时才做配对比较。
