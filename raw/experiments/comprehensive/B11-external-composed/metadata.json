@@ -1,0 +1,20 @@
+{
+  "adapter_semantics": "COMPOSED_GEOMETRY_PROJECTION_OUTER_SEARCH",
+  "artifact_archive_sha256": "840b6360520170cf0a612692be8c2e47ddf0fa4ee9d18234c100e08019cb1457",
+  "benchmark_id": "B11",
+  "implementations": [
+    "py3dbp",
+    "jerry",
+    "go_bp3d",
+    "rust_extreme_point",
+    "rust_layer",
+    "rust_ga",
+    "rust_brkga",
+    "rust_sa"
+  ],
+  "protocol_version": "benchmark-protocol/3",
+  "run_jsonl_sha256": "d24c3ede7a8ce9a8de58583f35265cc990a5d71a3fa3b9ee14026ea8cfd59016",
+  "runner_sha256": "45e0ec897b20aea850a3f0869a8198654b0508a82094d3e9c43ba5f6fe01b26e",
+  "schema_version": 1,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"
+}

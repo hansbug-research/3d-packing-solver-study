@@ -58,7 +58,7 @@ B01-B34 覆盖的是刚性长方体为主的正交装载产品。以下问题不
 | B08 | 多箱型、价格、有限 copies 的公开成本集 | PS-F/PS-U（当前 #536 轨需单独记录）；EX；其他库 projection | total cost、箱型用量、bound | 成本目标是否被真正优化、箱型 dominance 是否正确 | PS issue #536 未修复前不能把异常当质量结果；普通 BPP 箱数不等价成本 |
 | B09 | 版本化 variable-cost exact truth | EX native；PS/PY/JE/SK/GO/RS 只作 conformance/projection | exact cost、hard compliance、proof | 成本、库存和分配模型的真值回归 | 小规模逻辑测试，不代表大规模速度 |
 | B10 | 固定异构箱型 MCLP，必须完整装载 | PS/EX native；SK/PY/JE/GO/RS 需 master + placement projection | complete feasible rate、未装需求、成本 | 异构容量、库存、完整性联合能力 | 数据源未齐前保持 SOURCE_INCOMPLETE |
-| B11 | Open-X/Y/Z / 3D strip，开放一个或多个维度 | PS rectangle/1D、EX；其他库需固定二分 adapter | used length/height、合法率 | 开放维度目标和截面利用率 | 不能用封闭箱数成绩代替开放维度 |
+| B11 | Open-X/Y/Z / 3D strip，开放一个或多个维度 | PS rectangle/1D 原生；PY/JE/GO/RS 通过固定整数 X 外层搜索作 `PROJECTION_ONLY/COMPOSED`；SK/EX 暂 `ADAPTER_MISSING` | used length/height、合法率；外层搜索候选数和 wall time | 开放维度目标和截面利用率，以及组合 adapter 的代价 | 投影放宽姿态，不能称原生；不能用封闭箱数成绩代替开放维度 |
 | B12 | 姿态 gauntlet：六排列、直立、固定面、离散 OBB | 全部先跑 capability/conformance；PS/SK/RS/EX 原生或 composed；PY/JE/GO 多为 projection | pose compliance、非法姿态率 | 区分“能旋转”与“遵守姿态子集” | 当前 AABB 轨不代表连续任意角 |
 | B13 | payload/inventory：重量、tare、copies、空箱 | PS/EX；SK/RS 部分；PY/JE 可做外层 hard validator；GO 作为失败对照 | hard compliance、漏件/超重率 | 字段是否进入硬约束而非仅存储 | GO `MaxWeight` 字段不执行，不能因几何合法而升级 |
 | B14 | 支撑、上压、堆数、nesting、脆弱件 | PS-S native；EX；JE/SK controls/近似；其他 validator/projection | hard violation rate、支撑/承压 margin | 几何接触、支撑图和载荷限制是否真实执行 | 面积比例或排序不是承压证明 |

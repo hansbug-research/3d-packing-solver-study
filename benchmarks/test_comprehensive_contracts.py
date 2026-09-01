@@ -199,17 +199,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62912
-    assert summary["protocol_v3_run_records"] == 60790
+    assert summary["combined_run_records"] == len(records) == 62928
+    assert summary["protocol_v3_run_records"] == 60806
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 23
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 537
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 244
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 274
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60790}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 252
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 266
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60806}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -241,6 +241,26 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     exact_rankings = json.loads((comprehensive / "aggregate.json").read_text())["headline"]["exact_proof"]
     assert all(row["instances"] == 5 for row in exact_rankings if row["benchmark_id"] == "B06")
     assert all(row["instances"] == 2 for row in exact_rankings if row["benchmark_id"] == "B09")
+    b11 = [row for row in csv.DictReader((comprehensive / "rankings" / "open-dimension.csv").open(newline="")) if row["benchmark_id"] == "B11"]
+    assert len(b11) == 11
+    executed_b11 = {
+        "packingsolver_fork_box",
+        "packingsolver_upstream_box",
+        "rust_extreme_point",
+        "go_bp3d",
+        "jerry",
+        "py3dbp",
+        "rust_ga",
+        "rust_sa",
+        "rust_brkga",
+    }
+    assert all(
+        int(row["valid_records"]) == int(row["planned_records"])
+        for row in b11
+        if row["implementation_id"] in executed_b11
+    )
+    layer = next(row for row in b11 if row["implementation_id"] == "rust_layer")
+    assert layer["valid_records"] == "2" and layer["planned_records"] == "3"
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):

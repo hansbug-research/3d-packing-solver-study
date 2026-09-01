@@ -111,7 +111,7 @@ B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有
 | B08 Multiple-bin-size/cost | 测真正的箱型选择和价格目标 | PackingSolver cost 轨、EX；其他 composed/projection | 总成本、箱型 dominance、库存影响 | 箱数最少不等于成本最低 |
 | B09 Variable-cost exact | 回归 comparator、价格方向和 copies 逻辑 | EX native；PackingSolver 对照 | 成本真值和 bug 定位 | 规模小，不能作吞吐榜 |
 | B10 Fixed heterogeneous MCLP | 测给定异构车辆/箱的完整分配 | PackingSolver/EX native；其他 master + placement | 完整率、未装件、箱型分配 | 删除异构字段后不是 MCLP |
-| B11 Open dimension/strip | 测最小长度/高度而非封闭箱数 | PackingSolver open-dimension、EX；其他 wrapper | 使用长度、截面利用率、开放维度目标 | 封闭箱成绩不能替代 |
+| B11 Open dimension/strip | 测最小长度/高度而非封闭箱数 | PackingSolver open-dimension 原生；PY/JE/GO/RS 通过逐整数 X 的外层搜索 projection；SK/EX 暂无 adapter | 使用长度、截面利用率、外层搜索代价和合法率 | 投影结果不代表原始 fixed-pose 语义；封闭箱成绩不能替代 |
 | B12 Pose gauntlet | 区分 6 尺寸排列和面语义姿态 | PS/Skjolber/Rust/EX；Python/Go projection | 姿态白名单遵守率 | 不证明连续任意角 |
 | B13 Payload/inventory | 检查重量、tare、copies 是否是硬约束 | PS/EX；其余 validator/conformance | 超重率、漏件率 | 存字段不等于执行约束 |
 | B14 Support/load-bearing | 检查接触、支撑面积、上压和堆数 | boxstacks/EX；部分 controls；其余 projection | 违反率和余量 | 排序或接触面积近似不是力学证明 |

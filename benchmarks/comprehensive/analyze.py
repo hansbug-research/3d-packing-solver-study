@@ -1005,6 +1005,9 @@ def generated_files() -> dict[Path, str]:
             "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json"),
             "results/comprehensive/b31-source-audit.json": sha256(ROOT / "results/comprehensive/b31-source-audit.json"),
             "benchmarks/comprehensive/run_constraint_adapters.py": sha256(ROOT / "benchmarks/comprehensive/run_constraint_adapters.py"),
+            "benchmarks/comprehensive/run_b11_external_composed.py": sha256(ROOT / "benchmarks/comprehensive/run_b11_external_composed.py"),
+            "benchmarks/data/comprehensive/b11-open-dimension/source.json": sha256(ROOT / "benchmarks/data/comprehensive/b11-open-dimension/source.json"),
+            "raw/experiments/comprehensive/B11-external-composed/artifacts.tar.gz": sha256(ROOT / "raw/experiments/comprehensive/B11-external-composed/artifacts.tar.gz"),
         },
         "coverage": {
             "planned_cells": len(coverage),

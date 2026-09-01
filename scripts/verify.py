@@ -301,7 +301,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62912, 2122, 62912, 62912):
+        ) != (62928, 2122, 62928, 62928):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -310,11 +310,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 537, 19, 244, 23, 19):
+        ) != (608, 537, 19, 252, 23, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 274:
+    if coverage.get("protocol_v3_status_only_cells") != 266:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60790}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60806}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)

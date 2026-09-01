@@ -56,7 +56,7 @@
     },
     {
       "id": "B11", "name": "Open-X/Y/Z / 3D strip", "category": "PUBLIC_QUALITY", "problem_family": "OPEN_DIMENSION", "primary_metric": "used_length", "input_status": "VALID", "ranking_kind": "QUALITY",
-      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
       "id": "B12", "name": "Pose/orientation gauntlet", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "POSE", "primary_metric": "pose_compliance", "input_status": "VALID", "ranking_kind": "CAPABILITY",
