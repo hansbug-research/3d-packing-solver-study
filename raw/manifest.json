@@ -177717,6 +177717,3706 @@
       "sha256": "968f6d37bd586f90fd1a6a1959945970d0ff1bfc4b3fcc6577146107859136bf"
     },
     {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-000/result.json",
+      "bytes": 747,
+      "sha256": "637d6c79ff8ee92a50c9b237cbd2100be9b5c9c1b5a2e8dd9c84248cd12fe9d3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-000/stdout.log",
+      "bytes": 1397,
+      "sha256": "c6691f54c5dc0718dae125301b6462874ad6c4fe0b2099a1ada78bdeef8bad09"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-001/result.json",
+      "bytes": 746,
+      "sha256": "720ba096f409743bc463893232ddfb995c26037a68093e46fed163637152c79b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-001/stdout.log",
+      "bytes": 1397,
+      "sha256": "77c9e5a9ae61614835c66cf4d3ea997fb5d54de87df457a2d0b1535bd22a2a26"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-002/result.json",
+      "bytes": 747,
+      "sha256": "69f3d76026c92cc485589e5e420106b9b34a55766f2f6e47875ac8c7babc75f7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-002/stdout.log",
+      "bytes": 1397,
+      "sha256": "c96a9f622a703cc0c945a97f141c4b4c320c5dd3cb7f53bfae81bc7eedd790bf"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-003/result.json",
+      "bytes": 746,
+      "sha256": "bdae91253793ace62edd98f6330e039fe3ec5b38fe5e95baa1050c511ca1d92a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-003/stdout.log",
+      "bytes": 1397,
+      "sha256": "383f9a6fef635e971d9e7448f52a51a667b792ece020f94ccdcd34279175b2b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-004/result.json",
+      "bytes": 1025,
+      "sha256": "71874c88527f3bca803db8f0c411edbc2f82865ce5c962aa8bef67186db96951"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-004/stdout.log",
+      "bytes": 1721,
+      "sha256": "09092986ed79b110f129e6507902f565be6581603684e84650e5201cc0ff882a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-005/result.json",
+      "bytes": 1023,
+      "sha256": "1e27b4293c0c15bb30d5774efccee3aff0685d5d5a59657d07fe14971773471d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-005/stdout.log",
+      "bytes": 1721,
+      "sha256": "81ecce4bd63670640e96ac97aedeeb26cca61dad952b11c662ecafe9e2c05919"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-006/result.json",
+      "bytes": 1049,
+      "sha256": "862ab8eabcf719de3049cceca03d1b88ce3a045876bb039a96d7b93f17f7b45c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-006/stdout.log",
+      "bytes": 1849,
+      "sha256": "bfec8e4d8a5f18a4f5503ecb869c4ad88f11846e5f190c0d84e329c7644c8dca"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-007/result.json",
+      "bytes": 1048,
+      "sha256": "f55ccb5be34945829e44f8b3241833e2e1f3ea5bf7300dd98e0b506c27c0e054"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-007/stdout.log",
+      "bytes": 1849,
+      "sha256": "07ed2485af3a1f89888eef04f283a1ecc61eaf808a3a25ee3c4fb66d15fe8fff"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-008/result.json",
+      "bytes": 1049,
+      "sha256": "ef691dad650c52b3f31e143673c7f8a5b5b8346a4faac8fb388765ba1cfd38fe"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-008/stdout.log",
+      "bytes": 1851,
+      "sha256": "f1e6a1259fc3a1db82544210d8586e2b6e55ea9ec0b610bf9607cdf9fb87f23c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-009/result.json",
+      "bytes": 1048,
+      "sha256": "e73feae83f3a2b9e8b642ef5d24658e222c59adedd0ec459b5c0939f04500494"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-009/stdout.log",
+      "bytes": 1851,
+      "sha256": "059f36ae662c2d38e8a22859bf8dbf33f54fc46c91b43826088f1275d0a0f04d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-010/result.json",
+      "bytes": 1049,
+      "sha256": "cd04ce01aa8b1852c1dbdb83d00cf8704559c1d98968d9916cfa3aa47a8a4ab6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-010/stdout.log",
+      "bytes": 1851,
+      "sha256": "fbcb786b7d4659a521a0b83940531c3edfef17798feed24169f813d3b41492aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-011/result.json",
+      "bytes": 1048,
+      "sha256": "67e52721150aa8295d9efc7c880f0961ab904afdf40643dca97e6607de46ff7d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-011/stdout.log",
+      "bytes": 1851,
+      "sha256": "4bf7ff1e0f88cf4d3f4444ac7bc2dab705cce119c3b0d38bf6e79f0a55c5912f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-012/result.json",
+      "bytes": 1059,
+      "sha256": "49a9bc355ec9d715e1882afdf8755233142833c7cf447771ad8bf9e99cb2c26d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-012/stdout.log",
+      "bytes": 1981,
+      "sha256": "0f51c6bff6f495531052128cf837ca7de59d48fdedfc26e0e5018714098caa1e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-013/result.json",
+      "bytes": 1059,
+      "sha256": "19843aa6b2f144d3b4f543587937f6285a7d4a34fc5cf774ca3b4b01ecc14ad1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/candidate-013/stdout.log",
+      "bytes": 1981,
+      "sha256": "9ab9b8a399a7dc9bcfcf0fe9d2be184717e0ab626e7216b9c53c321d98c843cf"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/effective-config.json",
+      "bytes": 613,
+      "sha256": "89bfaa791af75733c04e8916b2fde6d5baea9154f49033d2ec196debbff047a9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/go_bp3d/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-000/result.json",
+      "bytes": 745,
+      "sha256": "ff0f67d784b3b565f97f979dc684fc93241c6b95b1e0f11cd31a3cd10da569ea"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-000/stdout.log",
+      "bytes": 1838,
+      "sha256": "54cddcb2e407d6e99ff483b33f90b2e7d4233b34b71dff543c5db170d4473de2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "747ae5529d744c6879381d3120eb402e883354499c952255ea6353081820e111"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-001/stdout.log",
+      "bytes": 1838,
+      "sha256": "b057c600b54a88f5551dab506c0272f2a7cf724f7f786c2fa78707d47b8dec9e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-002/result.json",
+      "bytes": 744,
+      "sha256": "7c44908e0b84c791b6ddf8b87323755a24d3b0a4f80411e15becee6f304e618b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-002/stdout.log",
+      "bytes": 1827,
+      "sha256": "f38d0a28f001ed0584d9d7179f8502ec71f8cf8d849ebd0c0fd7eb3218a38490"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "a8eb1c1047632ba816d52f785bfd26018cf019f7db69635474a58afdf5e7b843"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-003/stdout.log",
+      "bytes": 1827,
+      "sha256": "754fae8a308466e5ab84db9ba7df8148f7ba797281bed519c0f95cc8b23abd6f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-004/result.json",
+      "bytes": 1023,
+      "sha256": "142da92066d623dc7123a30b58c7988c236fccdecfb098b44ec61b13643781c6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-004/stdout.log",
+      "bytes": 2160,
+      "sha256": "c106b3702aabc2886871deaddb932134b2eb31b0731cc3b25a2459009631d837"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-005/result.json",
+      "bytes": 1060,
+      "sha256": "c1f2d624a2983c2cbd353c7388891b3370fd02c6fd0095a43c8ddca829e10d84"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-005/stdout.log",
+      "bytes": 2150,
+      "sha256": "dcb30d9b9234ac0e3e3c935671d6335d59a8066cc9f525d84d46a68a6e532c6f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-006/result.json",
+      "bytes": 1084,
+      "sha256": "17576b40cb879d2d2b39822074a5fce54aa5176f6bce27dd18082dac64bbe9bc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-006/stdout.log",
+      "bytes": 2288,
+      "sha256": "88268b903746709fdf3b850f7e8c0b3591f8d4c0b33aec51a2c0a88b2749ec39"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-007/result.json",
+      "bytes": 1117,
+      "sha256": "0097a56afceef1494fe7d74d32c91314d1312c9398fb7450e91132902e66e395"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-007/stdout.log",
+      "bytes": 2288,
+      "sha256": "1c2a0eef10339d861dca2e8a5d103fd7739d5275dbcc8c0198fffb1a18ee34bc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-008/result.json",
+      "bytes": 1117,
+      "sha256": "67dfef569e1d622f1a1aa3eb1026686b5187dd118453211c9ec62c7cfa6756e4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-008/stdout.log",
+      "bytes": 2290,
+      "sha256": "197a848afacefa4b6e9f5f0d3d473005139b126e640bb402f1db51f84cdc61c4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-009/result.json",
+      "bytes": 1117,
+      "sha256": "480ffdd92c5c45c4157ba12a7b6452e4eca7624a10b999186412a761cf9a4f0f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-009/stdout.log",
+      "bytes": 2290,
+      "sha256": "27d3616fa1b368f4b4bbd2572616f6d464477e68d7eb1a9d4fe1a2b1e1ad475a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-010/result.json",
+      "bytes": 1117,
+      "sha256": "38bc026c42669d9cb2a3ec6ebb148b929e8359a4985ef160af2a22ad02588a3c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-010/stdout.log",
+      "bytes": 2290,
+      "sha256": "faefa8bd97b57425263009f3e56fc9447ac4e9548cfca032e1d54dc41b0903c2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-011/result.json",
+      "bytes": 1045,
+      "sha256": "feec1d54b89a1dd7a9b98700806b30d74df935dee5efd42d4faff526e641b20b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-011/stdout.log",
+      "bytes": 2290,
+      "sha256": "ee58b710f8228067849a0f53ac75aed6878875b8fd69efcb3964222a287b6dc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-012/result.json",
+      "bytes": 1095,
+      "sha256": "9f9a02ccdc121c697e327b9091a13259a6211a889bde10823be01eed4d1a56fe"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-012/stdout.log",
+      "bytes": 2430,
+      "sha256": "580b45f91563dfa013cacfc09a00afefa5915fc09e3aedd78d129c56299e0a1a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-013/result.json",
+      "bytes": 1057,
+      "sha256": "49c27169a2316b992aa4deb1596bc1b8256f0d0c4caf674aa75ca2be4f4459c4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/candidate-013/stdout.log",
+      "bytes": 2430,
+      "sha256": "3df1f6646c03c6e1b51c89ea55edf49d2df1428d31538d673aa04cc295c43964"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/effective-config.json",
+      "bytes": 636,
+      "sha256": "a51eadc79a712806bcdf562c9c14ced1a8931888d58f8b04ba33b446113cef0e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_brkga/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-000/result.json",
+      "bytes": 746,
+      "sha256": "2391db4029f4bcef856d874ebbe36d2b394871862571c30c9e352f2e839f67f5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-000/stdout.log",
+      "bytes": 1705,
+      "sha256": "d75aa72438c3d86a82bbe788fcb59101fe1d485a5833cde1752ef859e954f254"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-001/result.json",
+      "bytes": 745,
+      "sha256": "407e8427fb6ff748cc562fa6502e8ae388302428a39d5e03426e4c3642f2f32d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-001/stdout.log",
+      "bytes": 1705,
+      "sha256": "3378b329c66a3c10f834eaef84d64b2ddd8c93631c356cc4b1a012d3f9620342"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "07107c13e3e86747126f9fcd2b54083809b0576784bbd00dc75deff2c60fca31"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-002/stdout.log",
+      "bytes": 1705,
+      "sha256": "27529ec9a0660252c1b398e6056ad704ec923544075bf0eafe7d78b84189cb93"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "5a49aab7f5084707cc1eadee5f8f75cd235d1b2ab8f52a1c0fb75f380d6d9390"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-003/stdout.log",
+      "bytes": 1706,
+      "sha256": "11d33931655ced9072f2509ddf1dacab6f890a34c4964688db68e60a4cea9ef3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-004/result.json",
+      "bytes": 1023,
+      "sha256": "63b52cc361dd164461777ea7c7dd7b7793c33ad0592063f9f854d28079e28f8d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-004/stdout.log",
+      "bytes": 2029,
+      "sha256": "1c4c52903511bc0266117cf643a146aa33d595efbea4f752816df8b5121f83b5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-005/result.json",
+      "bytes": 1022,
+      "sha256": "07168ade9ddd7ca0d2dcd75669b62190998a4715b251e54575120350a15c35ae"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-005/stdout.log",
+      "bytes": 2029,
+      "sha256": "7abdcf05a4676a8a7a84a5db503013971a45f3db15ee2db487405e828820b7de"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-006/result.json",
+      "bytes": 1047,
+      "sha256": "4b452c553272f30d0d22d724af13655ea4adc07965938efc204365973e50b78a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-006/stdout.log",
+      "bytes": 2167,
+      "sha256": "63c51832babe5f0ae1955a0af82740afc46e2d733cc1fc3af141d6edc73497b1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-007/result.json",
+      "bytes": 1046,
+      "sha256": "0bac6c3eb6fc59f4ae8947d5b64784099c021029e627dc0176bbaab37a27a5f7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-007/stdout.log",
+      "bytes": 2167,
+      "sha256": "6ed74ab6b9b999e7102a4eac8d68e4cf8cab68a94fa271fb8265f255f22dbd0d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-008/result.json",
+      "bytes": 1047,
+      "sha256": "25e96af4c652c205b49a6fe3c9a5587c5fd74d3ae6a45603cc537ce829ef940f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-008/stdout.log",
+      "bytes": 2169,
+      "sha256": "8bc3c05ab89be6e3a5d74552cd6371fadb4c068c14fd09db44da23bc012f9454"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-009/result.json",
+      "bytes": 1046,
+      "sha256": "97f77e5161e61011b86e10f0f431503815b6b7ad8c05d24cab2a68c2ad0d032f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-009/stdout.log",
+      "bytes": 2169,
+      "sha256": "3ea23a24cdc88f674433b4012d2eafd73306428447de4eaed3756cb339653edc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-010/result.json",
+      "bytes": 1046,
+      "sha256": "fe446d89ec2824def96ab39184aa7a648ad1f1c85017f6ca0cfdd407c384e5d1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-010/stdout.log",
+      "bytes": 2169,
+      "sha256": "fff66697cc1da3ee23248cebbe63198e222b7be5348c52fb3eea3cdf119b41fe"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-011/result.json",
+      "bytes": 1045,
+      "sha256": "4d0c52d326ac981f314106b341950ceb7e828027f4318ba415b3aa8608c5b27f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-011/stdout.log",
+      "bytes": 2169,
+      "sha256": "c8f3044e3cd5529f7aa7db760cbac88c4ccbcceb48b4637e06b9d97acdec1dbb"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-012/result.json",
+      "bytes": 1057,
+      "sha256": "71d11cdcfac8869347f08af782ecf9355842a6c7dc1d05a36a1d27fd78fdf1c1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-012/stdout.log",
+      "bytes": 2321,
+      "sha256": "c1d38ddb34ceffcbeecd7b35b0d2f1186e84d1a26b878c121a1ce8a661c8bdd6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-013/result.json",
+      "bytes": 1056,
+      "sha256": "9a5cdc9eb2c68fc2e5785d14fa5d5737c552eefc385f0169f063200a6d6252f8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/candidate-013/stdout.log",
+      "bytes": 2309,
+      "sha256": "39ff179a4582f495d37f2ec513f762e52aa8f0f9236a808f3cfeb52064fcadfb"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/effective-config.json",
+      "bytes": 644,
+      "sha256": "6104a35846f2a2911c9002b5099622af5d8c4db2c18cadf21b271196feb17ac9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_extreme_point/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-000/result.json",
+      "bytes": 778,
+      "sha256": "7a042f0482670a5403ba43110061008344027cea9ada42083efa5322c72fbb9c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-000/stdout.log",
+      "bytes": 1812,
+      "sha256": "696cbfcab1eab5ec3be4a7d64f2d3557c82ebbea324e2bb6032a75e17d24ff30"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "968c51248093a744ad8b00a1bfff4494cf4c1adc0b5290980343dfe1af824635"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-001/stdout.log",
+      "bytes": 1802,
+      "sha256": "20ca761bd4bde5518ded6c7b0e49dff50273594768c5314a20296d76765775f4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "0784dc5a3f79276a01469b67eded28714d43807c0bfb130b4eba8dc64380b42b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-002/stdout.log",
+      "bytes": 1812,
+      "sha256": "bcd6d4a33e6bcc6d7e77c434896f8d400ee1bb95d8cbec71cb4b77aaa2dc82cd"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-003/result.json",
+      "bytes": 777,
+      "sha256": "5b8d90d8f5b74883de22947198588186e50d7aa0a5a2488f6884fdff2db24f31"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-003/stdout.log",
+      "bytes": 1812,
+      "sha256": "42a44009c038021d77b07f0f9a1ab9594732090bb51e867e703c902debc7f224"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-004/result.json",
+      "bytes": 1022,
+      "sha256": "69a9c444e015baf623f31e5a7ce9a8dacad82b9f7d717e0f9de656f6abac69aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-004/stdout.log",
+      "bytes": 2125,
+      "sha256": "2b010d79002b6239b2e82a209a0e8e1ec006ce8a4a683e84008d2f38612d7080"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-005/result.json",
+      "bytes": 1021,
+      "sha256": "89505a69e9c5135c9daf0cd3748c2025c3b50563c59962200b177a3388304a9e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-005/stdout.log",
+      "bytes": 2125,
+      "sha256": "fe29b2fc41eef052b12b456744cf748e4e58265e4941f8043d00423298d9657d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-006/result.json",
+      "bytes": 1085,
+      "sha256": "56c6f4862f3462b3591106474d50186ed99a0fdc43c833cc701b280ae3a38992"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-006/stdout.log",
+      "bytes": 2263,
+      "sha256": "a4605613f25b1daa666e1e08662c7e0c3c39d4aa65573782d21dc8475189b478"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-007/result.json",
+      "bytes": 1116,
+      "sha256": "d396674b9c2a52b6785e0fe2726877fe5ccd7953e88cbcb22918b8bb6d3ce08c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-007/stdout.log",
+      "bytes": 2263,
+      "sha256": "decde85b1151bb0e7ca7dfb78b0fc62921a29111a3b36903134ee523f7d5c51c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-008/result.json",
+      "bytes": 1117,
+      "sha256": "3fabfe365227e5403d254654624e7146e3a3ddbcd3ae8712d3e574b9a4052e8a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-008/stdout.log",
+      "bytes": 2275,
+      "sha256": "12b3f0608cf3b947808b257a4e682ab158e51d1f8e6219482f85165f07c8af4a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-009/result.json",
+      "bytes": 1044,
+      "sha256": "facbfda3f43fe55b0bc262aeeee0d9fae5c1c263d799e06e436a7ea7096e1113"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-009/stdout.log",
+      "bytes": 2265,
+      "sha256": "4830942deb5ebb77602b1d2cf28a895baf0e96316dc8d4aec9802ff4dfae0740"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-010/result.json",
+      "bytes": 1046,
+      "sha256": "213fb823f260db05389682cab5ec687cf7e9ff3520816fefbd283a4e0cc9735d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-010/stdout.log",
+      "bytes": 2275,
+      "sha256": "5d2e4ee88a5b54e238e5e4ee6040c61d0215f076b45d12753443a83f59e97345"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-011/result.json",
+      "bytes": 1082,
+      "sha256": "a46c263c27e6aaa4b1b0e53c4c7c4dab38d094a5c93b0bb288e254d7fbb8dd2e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-011/stdout.log",
+      "bytes": 2265,
+      "sha256": "f6583672bbf07ac60b9383f56e85a8cc6e12e80657b9ca7f6dbea5ceb6bce1b1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-012/result.json",
+      "bytes": 1057,
+      "sha256": "4eebc9314f01a550e6f3a85036a65948d536c256d201ebf23385d018d3daea03"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-012/stdout.log",
+      "bytes": 2405,
+      "sha256": "5913d80dca964693a552493ec6e0f0e11812cdc93e5f1164f842391d5ede9277"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-013/result.json",
+      "bytes": 1094,
+      "sha256": "adae69319995cf7e8d9d98d3a0ab80e88347b70079d9c079a664a761206b9915"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/candidate-013/stdout.log",
+      "bytes": 2405,
+      "sha256": "4c5a57d87a236f9be01d35858397272b0ba273272af8b755a1601514d2c24c18"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/effective-config.json",
+      "bytes": 633,
+      "sha256": "f9e93662eed8135c261e5b4c1e070980af707526e1588c59fb2cdec33a5fcf13"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_ga/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-000/result.json",
+      "bytes": 745,
+      "sha256": "7ba1aedce17adb46e5349fbe6125aa1424f862d360a028ce4acfbe97d8b17b13"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-000/stdout.log",
+      "bytes": 1673,
+      "sha256": "280f431e7ee90c2c4fe941cc5412e0f427456b066638d05da7175aa3391b62de"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-001/result.json",
+      "bytes": 745,
+      "sha256": "ea84d22e601186c9627810baed8eec8c6abae9b10a8279f7cb98cd297c0609bf"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-001/stdout.log",
+      "bytes": 1673,
+      "sha256": "84b05f851e2ba996bbfcec08cd0da9e965fdb8df7a3c59d5b98304c23c09d4e3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "6630de87c889c93866e37614ab9ddfb55fc89c6b793a94567c7684b3bd98dbfa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-002/stdout.log",
+      "bytes": 1661,
+      "sha256": "e6d4c16808cc5e38d1af4c8f6faea190c13c751acaef343707666e17599d119e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-003/result.json",
+      "bytes": 744,
+      "sha256": "61e025cc44ad73d06981e03c3b47731e3b4bc81b9ada93a5c32526486f064f09"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-003/stdout.log",
+      "bytes": 1661,
+      "sha256": "9eacac848e18fecb7333a3fb398b31c33fa6f7e7814f687c6a56525ff39ab043"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-004/result.json",
+      "bytes": 1022,
+      "sha256": "09991fd9966adbf7700d8219f2dbde39ee9f5fc92915f4901216fc3dc1f872e3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-004/stdout.log",
+      "bytes": 1984,
+      "sha256": "49a166edda79e7a073097456d1633456627ff8f2b0c13d39277db8a0a2312f67"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-005/result.json",
+      "bytes": 1022,
+      "sha256": "d4a0679cce7c450ffa964a46ce0bb488f1a7a15cd5edc945c8609cd2e0d85269"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-005/stdout.log",
+      "bytes": 1996,
+      "sha256": "b59c3c381ee3d6abeaede58f4e7bb852ed58d18aee181194d53e6956ed356ea0"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-006/result.json",
+      "bytes": 1046,
+      "sha256": "34230ae119e646c2fd332d8e5ef2e33c58ef2d502d314062637329aa5b8a7fa2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-006/stdout.log",
+      "bytes": 2122,
+      "sha256": "7afe55c9922615cc816219be528906e769e7d5c84651fd7bb9463444dd28704e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-007/result.json",
+      "bytes": 1046,
+      "sha256": "0b067075f5e7574493d2bb9840d43bfc5504e3c1fc242ee6f2e1fb240433b385"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-007/stdout.log",
+      "bytes": 2122,
+      "sha256": "0b5f3c471e96c25730dff48bbed3875995e307bd67d2418e2fff5b1e961a6f4e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-008/result.json",
+      "bytes": 1047,
+      "sha256": "781efc75412ab07d0de62dd9fefa3ea5a68d8f3af0715184df90edea09fd0683"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-008/stdout.log",
+      "bytes": 2136,
+      "sha256": "eb86074a82e20663e47bf890bc0b244eed55a20be2720a8b5b775340b173a8df"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-009/result.json",
+      "bytes": 1046,
+      "sha256": "4c97b86accd1b6cae92cbb60f74876e2a1cd5adf9a97e545370a46b1bd53c099"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-009/stdout.log",
+      "bytes": 2124,
+      "sha256": "b82a09105ce7491f00082422bb8b0120cc640991b2f268eda292795cf88c3dd9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-010/result.json",
+      "bytes": 1047,
+      "sha256": "ff5e4a1f6b8755cd1b0209a0b79d101e211f2a88708181be84d7855b073489f7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-010/stdout.log",
+      "bytes": 2124,
+      "sha256": "af430d86a077e05ecf894807c95e848666ad6df7d8ed610509b059ea40d76c32"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-011/result.json",
+      "bytes": 1046,
+      "sha256": "40a5eac0e1834f13984dc1f9875df0359ea3c102f1607b7b80979afcbab2a768"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-011/stdout.log",
+      "bytes": 2124,
+      "sha256": "f07a83a2eb7b528708e947f3b27b6c2b9f24205e953d1de20b5b39de190d7dcb"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-012/result.json",
+      "bytes": 1058,
+      "sha256": "8b2279fd98405d0caf37b54cf4cc9c65ac3b1584a867fabf965e58fe70774212"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-012/stdout.log",
+      "bytes": 2276,
+      "sha256": "4afdb35fd59019103c8745543fbc1268e29f811cfd7dc6480b7c71c27267e7ca"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-013/result.json",
+      "bytes": 1057,
+      "sha256": "e8055c5ff040cc9a3258f6549d55825c6500b2bf83a089b55ad664e363470cce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/candidate-013/stdout.log",
+      "bytes": 2264,
+      "sha256": "357bd610c09fef2538b4863ce288342ee5a2714ff9abc612e5d159508be16727"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/effective-config.json",
+      "bytes": 636,
+      "sha256": "a597c56c0084f7a89d70aaed29b6914f797bc276b45dbcb224fa701e9e7cf013"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_layer/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-000/result.json",
+      "bytes": 746,
+      "sha256": "add6155513cb536ceec6fea9d6808f4a9e569565a31ab9ba1a253f605f04ccc8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-000/stdout.log",
+      "bytes": 1860,
+      "sha256": "db061b88dcb51d1d32e53c3b44be50d370f1ffa1a862173870cff1d2511cd2d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "feb2ec72b3bcb12a0c306aa939219193246e7a152caa12f6369f1a76ae7c5856"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-001/stdout.log",
+      "bytes": 1860,
+      "sha256": "5085e2ebe0eebfb6fe1a3a5cd9c913ff4debeea4425cf018ea129e258338f26f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-002/result.json",
+      "bytes": 778,
+      "sha256": "d9a8ef6264bcdc086b86742b93d5cd19499c551ce014ae78a20a90c82e30719d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-002/stdout.log",
+      "bytes": 1860,
+      "sha256": "10ce0a068770bd1deeb6eb84d644859d5b6f86e5d50cf3df01c383ba7c6ddb69"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-003/result.json",
+      "bytes": 777,
+      "sha256": "9c5a53debd263b6058db233004400d2856d169612bab0da98f285805449fd6dc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-003/stdout.log",
+      "bytes": 1860,
+      "sha256": "731c5d984623bcd135d4aa8c6d4c4b0b7dde15e8243d613b159551671cb1fa0d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-004/result.json",
+      "bytes": 1060,
+      "sha256": "df86ff5b9a268814907bc484f2a14c67237db5476bcce74de3cced0a3cefef91"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-004/stdout.log",
+      "bytes": 2182,
+      "sha256": "25a87352a957f7422721b65ec6a6242758d411c3dfed21f7a81f0676e19252e1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-005/result.json",
+      "bytes": 1021,
+      "sha256": "efc2dbd2720adc16ac97605c3797822413178dad1ba434823fb6da20ac0b206a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-005/stdout.log",
+      "bytes": 2182,
+      "sha256": "7208fb337e234d76b9db6adfd02cd64d7f3879f67f3279702b13ed140e69a0c3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-006/result.json",
+      "bytes": 1084,
+      "sha256": "cbacf7d24d2f40a6de44b458aa49ed60e95314aaf8b1d388b446ddbc6e45e7f1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-006/stdout.log",
+      "bytes": 2321,
+      "sha256": "746a0d78b8d42c54026ccfd1a4200fa230594fee9398f21e1b8dbce88bdba59b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-007/result.json",
+      "bytes": 1045,
+      "sha256": "5e251d3caec98a638f2f3e9873578fe2554d8828114441329a09403fb5c50282"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-007/stdout.log",
+      "bytes": 2321,
+      "sha256": "f79293ee99ef38d124c54928c81de2d3db5da188e88d6c4decdb53a5d448aa90"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-008/result.json",
+      "bytes": 1046,
+      "sha256": "54416f1eee8e74ffbcf4ac07c6dc9f650db9c888e01395541b8812e40b263a49"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-008/stdout.log",
+      "bytes": 2323,
+      "sha256": "eec7ccc3b724a66ebc00c8f5f0fe7d98ecb919b5a70e97707c9986305c62e74e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-009/result.json",
+      "bytes": 1083,
+      "sha256": "641c0ecb6123f29e7abf4a6169812758b224f4127c5362d4d5de2d424d53f1a3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-009/stdout.log",
+      "bytes": 2323,
+      "sha256": "41553e0023021b6fa4d1763cb27d231c79f571be02782a284dd982e9bb7e5f36"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-010/result.json",
+      "bytes": 1085,
+      "sha256": "89ba55ad1549884649c3886498f3167b7f7627771fa56e3ebf0a052acec761e2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-010/stdout.log",
+      "bytes": 2323,
+      "sha256": "ad5664ed9bec487ec134d817ffe0dfbbdae60ae5084652323c95f19c17e4705b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-011/result.json",
+      "bytes": 1045,
+      "sha256": "9d20d82de34790375cc79f0bc2617fdb92c3f79fb3ac5e30ca6b6bcf4e824811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-011/stdout.log",
+      "bytes": 2323,
+      "sha256": "6a18d157bd81fe3b44225d49116ea5085779f7e13995372c7b8e4492bd4a2e82"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-012/result.json",
+      "bytes": 1057,
+      "sha256": "f2f583a62b25cd6a283a47ae6b4a6a1438c09235b26431b18967c022185c5c17"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-012/stdout.log",
+      "bytes": 2463,
+      "sha256": "41c357443e1e5178ce55ad727e7945d1651a0747a00d1100f25822cbeafd9b32"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-013/result.json",
+      "bytes": 1128,
+      "sha256": "85d49cd86a75db444b33a3a667e50951a39715580bc0d550991759934511cd80"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/candidate-013/stdout.log",
+      "bytes": 2473,
+      "sha256": "c3f25c090f28fbb931f6f46f2b765ff73c159c5b95d81ba69688067171f20bf4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/effective-config.json",
+      "bytes": 633,
+      "sha256": "df10184ccfb3683f9ba86bfb6dd4a69db232d6bb88e812aa0f6fe72283b5c9b3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/selected-validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_sa/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "8cb51e15d4bae153c6e8c5cbfc663628a9a5d8fffe0fd36e7731df47cb569b8b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-000/result.json",
+      "bytes": 353,
+      "sha256": "e32950f0b6826dc3fcef8171c14055baf816c0791a63ecce442470a684ebd1bc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "cd098de727564698a7d11814cf56bee3cf9f9dceb2566d304d30d72e26ed380f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-001/result.json",
+      "bytes": 352,
+      "sha256": "4d90c93d4c75dae8ae017f6a3af34d5b616472adee7d981c9f0cb12ea1e7abde"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "f033498eec19cb253fe73100e3f413a1e48fa654e1afcf58ae081ef384eb9917"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-002/result.json",
+      "bytes": 353,
+      "sha256": "41f9e8bea03154227d46edd9048733ff75647005d9a08515e5df9cce3f376590"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "d4de7b619d23be453c98adedbfbf1eddc652c1b4c7aea6b925fe9ab53a989602"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-003/result.json",
+      "bytes": 352,
+      "sha256": "847a2ea0054a1989d9f554b64a3c0e962c7ddd5cf91d8b2c67a958bb269cff30"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "ed04a0a88e022649294b9214b60debcb0d84813e656a5dcda773e67925c0711b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-004/result.json",
+      "bytes": 353,
+      "sha256": "4227a23e0ad3cb9b575139cb98c8e3a76e08d0e728ba068bd93107193eea53e1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "73ffbc8860f565d60fa72ff6e4cb2c09f43bae0385151f97225ccae583bbac6c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-005/result.json",
+      "bytes": 352,
+      "sha256": "b3d407f8cb7d64ebd7f59119fd296e25f30a848642175402f39d7e724e471b59"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "22bbcc6118e1aa239fd9eecc834d6863edcaea2b71058ec3b65cfe37b834a93c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-006/result.json",
+      "bytes": 365,
+      "sha256": "16780260325bea1aaa6204f9973f789676b5d92f8f6efe19a66ce2da2dca80ca"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "79ecbeb413674e0253ab01ddf23711f5ec0acb2e795f3ba2570fd49b741dc04e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-007/result.json",
+      "bytes": 364,
+      "sha256": "87878e24c9236f4d7abb47e7b0efa96c3d8a50aeabd1c12349ba061fcb5a39c8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "41c6b5d26b3f2bc1ec07fbb195d74d48505e20b730216542e7c9c922b5d44e47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-008/result.json",
+      "bytes": 364,
+      "sha256": "5d8a16c8557908fa24f6a6eeaed325a1696dd33b7c292a05ac5e54c8b968502d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "00fc74a55fa31f739178225600045ffe704d5247e7fbde7c17b934ba6ccd166a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-009/result.json",
+      "bytes": 363,
+      "sha256": "bd3373cb410fee3cce2ad90bf7991c5199daef10831dcdeb3a7f72f85efcc8dc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "272726305a7a940fad56955147a1a42d09ce57c1c8890c8bce4d07b78766b2aa"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-010/result.json",
+      "bytes": 365,
+      "sha256": "b85506d4d9b4cf2bf68d0b9526f91b48afe06d2c97a2354e1a32f833d2b738ea"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "17a5600b991b6a576fbaa8488766844e5aee090c07cb0fe4533d22e5584d0776"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-011/result.json",
+      "bytes": 363,
+      "sha256": "581bf248d005b8373601014384271c1b8325f7b29282b0cd3f540262678611b5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "17460ed7fb4e68f2e6a68540410501c6704c2916c8fe8313c66e3e9782134d52"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-012/result.json",
+      "bytes": 375,
+      "sha256": "d4b80c1b31f887578a81107859a202dd349c4a369bcce1f12b6b7dd5cd16a0a9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "3917814b7c886bcaf0c0c4509a3c021639a90191a4c3f2e27a21b8a2ac039477"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/candidate-013/result.json",
+      "bytes": 375,
+      "sha256": "1f6fc3629278a895434aca16c4d26a5a93d96e41759b30f3793fd4b7ca211eb1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/selected-validation.json",
+      "bytes": 172,
+      "sha256": "e90b0f2c35d424ea8c6dcb33b5d726da1fe52e4d147d34ebc726dee664001a83"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/LARGE_CHEAPER/rust_unesting/source-input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-000/result.json",
+      "bytes": 746,
+      "sha256": "6c924a94c39e88969a25b84beb388d525a97eb46d34efce60da2202a908bf018"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-000/stdout.log",
+      "bytes": 1397,
+      "sha256": "f51d8a13be493ebff66d79841fcb8fc406aa71f8192bc3147478d5f9f015809c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-001/result.json",
+      "bytes": 746,
+      "sha256": "8d21e8a47b6c978aa5027b3547b894b3d7a1f18ddec394294a0a5eae8963c5a9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-001/stdout.log",
+      "bytes": 1396,
+      "sha256": "02b9d5c49c68d94fc6b9a72beb8499703871aaed31897600becdaede7aaeaf2c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "45fa0aa5f71402f91b6ded76b5a497bd69653234a21c66dc1579c4fbcccea7da"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-002/stdout.log",
+      "bytes": 1397,
+      "sha256": "00c7deb4da177bb1621eeb36877aa78da9eee983ddfb6b78f99d7abde4553cb1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "955bebc214fe3225d5fdba2f2011bb4648b23d169efb5c349386c6ea04961263"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-003/stdout.log",
+      "bytes": 1397,
+      "sha256": "a1acfbc18265f44aba917f5ef817934e8a1ac4fb9450c0fe192168aa85548874"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-004/result.json",
+      "bytes": 1025,
+      "sha256": "554dda7f40502a5a137e0d32f4b30dbb5c9161f66df111a7e56591645f7c8dd3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-004/stdout.log",
+      "bytes": 1721,
+      "sha256": "d1f950af177d6d7e1f6fe6cb56c0c03449f8d409ec6b2e55ff8664c1390c7bf5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-005/result.json",
+      "bytes": 1023,
+      "sha256": "b6cf1835d686f2336386ce96521d740464ec6607fe6ae35cbf31a34a3d8476c2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-005/stdout.log",
+      "bytes": 1721,
+      "sha256": "355e850f2436130b0f593d34862eae82f351e1b78c2c0363ffca68d022db27ea"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-006/result.json",
+      "bytes": 1048,
+      "sha256": "4c666d79eb9752688dd66e925d0dcbe9443e31bf2af33b5481276d346abf2c4c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-006/stdout.log",
+      "bytes": 1849,
+      "sha256": "8220da335e8461b91e5aec6763ac5e1155a220ba1709121ccf2b2950e07d3b9d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-007/result.json",
+      "bytes": 1048,
+      "sha256": "19da6d85f682b8c64645f4845da6c222ad1131979c2c6a650e99c9c56a156eac"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-007/stdout.log",
+      "bytes": 1849,
+      "sha256": "9cd40d2a019228be088394c73fe7f11361afb0a30a0788ba054774174ff53565"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-008/result.json",
+      "bytes": 1048,
+      "sha256": "8e286a549730719704ca69b26d1d1dc555f5917a9d1b1de4989f8aae723ccaef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-008/stdout.log",
+      "bytes": 1851,
+      "sha256": "3086bd15bb8a905b97d09f61417ba8740d6ca86a773dcded2cc3267475f89e2d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-009/result.json",
+      "bytes": 1047,
+      "sha256": "e4c541ac9c2b072de77a9313db9b42cf2b50fcd1be7fd40622f778d7d29f46d4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-009/stdout.log",
+      "bytes": 1850,
+      "sha256": "4d984108fca311527359c497d89cd19c5c450b513c2965e12512458c4dee468f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-010/result.json",
+      "bytes": 1049,
+      "sha256": "0f0154df5069fa14adbb402692423f429a3a06a1aaa4f0aa12eb4dce01adb0b3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-010/stdout.log",
+      "bytes": 1851,
+      "sha256": "756d1aa263953175729d2fc58aa98c88760b57cf23de1b70ec7438dd4e286c41"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-011/result.json",
+      "bytes": 1048,
+      "sha256": "79c26ee36d32e48e020ebd0f56d0abc86dc01378fa5565664890652286c2c6a8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-011/stdout.log",
+      "bytes": 1851,
+      "sha256": "6d2fe8831de3e64e2da1b2e61b7af28fef2444d0c78174563d9ce6d6509449f6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-012/result.json",
+      "bytes": 1060,
+      "sha256": "e5349e261ae5f6b888478a248d8e11b9ee1d556436fb2bb13824cf8a9cd60c6e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-012/stdout.log",
+      "bytes": 1981,
+      "sha256": "765e90725c548117717ec7b1b43f0512db4123c0779e7551b0dde5816d4ccc8f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-013/result.json",
+      "bytes": 1059,
+      "sha256": "e45ee63b3970b9b542a330654c781fe75f0a3e0ba7e288cb8361d0a1ecf06c1a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/candidate-013/stdout.log",
+      "bytes": 1981,
+      "sha256": "f28672b9b66c340ec3c11692647ee70c60f30c93babb9d22acf90844a0a36d49"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/effective-config.json",
+      "bytes": 613,
+      "sha256": "cf558aa44e6adf3d303ee4a1c50a6c2d22eaf3ced9a2d81cb2f674c27573cbd6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/go_bp3d/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-000/result.json",
+      "bytes": 779,
+      "sha256": "16454c0688fb41910ce774ad532e7edec0f9adb99b1d78e153084a592012c653"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-000/stdout.log",
+      "bytes": 1827,
+      "sha256": "f8dd0cb92108ce25812ca30cde6072a443d90f592afb97e3449dc7b2ef1c84b3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "1e200e80b23ef9a23496dd9d864d54406c228d894d814bd7e6f3a8115a4fbd0e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-001/stdout.log",
+      "bytes": 1827,
+      "sha256": "868f6ea5694a92f020d4c452307e8aa474feb4815ef2921f2f0177e1a6091b89"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-002/result.json",
+      "bytes": 779,
+      "sha256": "5285b4ef43d385d70d4e3e3eb476a0f6e050cb4ae950478bae76636d0dff3e44"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-002/stdout.log",
+      "bytes": 1827,
+      "sha256": "cccf8273d8a13b588f2966f60d388f73d0667e9a51150b14b5d61ef097850c54"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "98b225fc9d24967a93b7b85048eb45e0d386885ad6ee45b73a3ddacd285ceef5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-003/stdout.log",
+      "bytes": 1827,
+      "sha256": "c40ecaa6aecb6e622089762a566b302cb991fd8fcbfc01aafbeaf6a9bd6f43d3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-004/result.json",
+      "bytes": 1060,
+      "sha256": "8831d47891973f4264534b14e2c86658b2fca8300d2583e5889282b84e170cc0"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-004/stdout.log",
+      "bytes": 2148,
+      "sha256": "3dc57fde09f782696660a5170906c919e3c203c8dacad92cf001bc6a9229dadd"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-005/result.json",
+      "bytes": 1059,
+      "sha256": "88ccd5932fcf583f4cf32208745866633dc21b683f752978d74c5ff5aee3a58e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-005/stdout.log",
+      "bytes": 2150,
+      "sha256": "4fe21b3744b62351665c7e0dc2d267c19906dbc86743df69d29e87fbc1163c4e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-006/result.json",
+      "bytes": 1085,
+      "sha256": "d33ff99b61517699789e86e399230d0f2f438ce21c6b6a27a4fe6829828ee079"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-006/stdout.log",
+      "bytes": 2298,
+      "sha256": "981952cdaac5ab065c6e7700c049eae0d7b2cf625542d673d67660c658d705e4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-007/result.json",
+      "bytes": 1045,
+      "sha256": "aa7b7960e18ecb8f3360189532d990eaaa7e95224df85a3aa8dd83695aacf385"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-007/stdout.log",
+      "bytes": 2288,
+      "sha256": "0fabc615b25742678bd989cfd45ca115df8bd763a74348cef8ec3b30ee493bb1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-008/result.json",
+      "bytes": 1085,
+      "sha256": "439e3457a2dddea8d2c826313309621134dd7370bdaf0cef060d7cc617d2491a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-008/stdout.log",
+      "bytes": 2290,
+      "sha256": "291f5889da3a0de0b322bd03b9171f9d6fa6a1d87f7989fd6280098f870a23b7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-009/result.json",
+      "bytes": 1083,
+      "sha256": "fb1b90799912d6fc482ae0e1ae8566f6b6ab2e4a37ad235a20e501f190e07db1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-009/stdout.log",
+      "bytes": 2289,
+      "sha256": "f839b195fb20c381401893b0af8bd3d6a10eacd717ea2d3a3153c8c7471b9557"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-010/result.json",
+      "bytes": 1118,
+      "sha256": "a3363abb698ec2768e329c050502862c7d567d4c4600b4ae57912d565e1ac130"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-010/stdout.log",
+      "bytes": 2290,
+      "sha256": "7424a28a2c77cf318300a82d6fb7ca9b0a32274c1f4379d005596105aaec2247"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-011/result.json",
+      "bytes": 1084,
+      "sha256": "45f2325d8b1bdf502adb6a8e4cd30af590b5e6333e43b811339682dee99359b5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-011/stdout.log",
+      "bytes": 2300,
+      "sha256": "c9b66ac64f999be6d33295562eba1eb081365b8fb08166c0e3c0cfa51ce98719"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-012/result.json",
+      "bytes": 1129,
+      "sha256": "6209e65a76c31bb36611b9786ce60285280b8a1c120c420f762c55dcb9e36408"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-012/stdout.log",
+      "bytes": 2430,
+      "sha256": "a40ab46c3285dd9520a7f1642c27b93d7584a7ae6cf35d4c34504dcad402f6d1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-013/result.json",
+      "bytes": 1128,
+      "sha256": "cbd3e139ffc32d4c51af86a27fbdef48d30746b4c3c44aafacd2282b4a6db266"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/candidate-013/stdout.log",
+      "bytes": 2430,
+      "sha256": "7858edfb7528b15a12b85168074c643796763913cb13564e2a7f22e3bc7e016a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/effective-config.json",
+      "bytes": 636,
+      "sha256": "26f3739714716fce848a3ebb327aed9a658a31bf968298af2966442c0d3145cc"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_brkga/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-000/result.json",
+      "bytes": 746,
+      "sha256": "713b49f9b2a33547624488d8755bd2d882ea24c5b25292df5b5d5d290fcd4507"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-000/stdout.log",
+      "bytes": 1706,
+      "sha256": "39d361068e30c84ff9de16e57b272c484594f38ed0d24d9fbd54d4ab4165302c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-001/result.json",
+      "bytes": 744,
+      "sha256": "2de7783bd9fa457225b0d18ffa941ac4c43fe5352315a623a24e1f97e55eea4a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-001/stdout.log",
+      "bytes": 1718,
+      "sha256": "78b8fda7f40ed34c3d08443b975dffa7ecda52b8970c29764158836a4db3f83e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-002/result.json",
+      "bytes": 746,
+      "sha256": "c5abf0d2fb79f86b11683d5cf3f5f939c25e97331cdb24f75330c2d64f94595b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-002/stdout.log",
+      "bytes": 1705,
+      "sha256": "209542b207115f5c805204904190ee51e3620f994b2f14ef319ec5a51f392cc2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-003/result.json",
+      "bytes": 744,
+      "sha256": "87bbfba7ed368e06523fb43c46d59c5be8d0a02b56368a945f2ff2be6f90fa8f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-003/stdout.log",
+      "bytes": 1706,
+      "sha256": "73f6e5d3f1f6d71714e40b0e6d0b82b4e10ed2661f523308f95bc12b1fcf040f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-004/result.json",
+      "bytes": 1023,
+      "sha256": "26adefa166a5de1991229c4d370b9332d1832da6072703d7e956d639599132c3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-004/stdout.log",
+      "bytes": 2029,
+      "sha256": "b3bea24db6d412d5d0040847dfc9a615f824ccaca63bc8dc6cb33ef6b3c51985"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-005/result.json",
+      "bytes": 1022,
+      "sha256": "c621b8cbd78e917cecf591adc1e6306affbee24bcd2b35c222d064966d8bd8f7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-005/stdout.log",
+      "bytes": 2029,
+      "sha256": "86955af94800404240ec589af89e140dd8ef4b4483241de5c29f0617caae3928"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-006/result.json",
+      "bytes": 1047,
+      "sha256": "f64a07d142bab068e95a0ef8f10ff4370b08157a98786a6145d45c592b6c6366"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-006/stdout.log",
+      "bytes": 2179,
+      "sha256": "f9cf368135a701e5d799e1796a1073360ba9ecd21876535c686955192f9ecd74"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-007/result.json",
+      "bytes": 1046,
+      "sha256": "3f735286a672ac9cd20bfe3c4aa7a164f83da5d59d56cd6b424b4d31a8d8f160"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-007/stdout.log",
+      "bytes": 2179,
+      "sha256": "39fa1f6b6fd53274edb3d59db47a128b9a4975580a8e6a54a429db0f96e6b400"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-008/result.json",
+      "bytes": 1047,
+      "sha256": "bbb4d17d6f27febb37bed7a531b65306892b9b75a5d842331287dcfa7fd180ae"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-008/stdout.log",
+      "bytes": 2181,
+      "sha256": "e9c84a14c7323958b84606aa1a704c6c149ffae1a525dc325e8d685aecb3d6be"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-009/result.json",
+      "bytes": 1045,
+      "sha256": "0c6e2f9b33e993e117e21f7a280d5e2469f717e006afd24c7572a1e8989b1bab"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-009/stdout.log",
+      "bytes": 2181,
+      "sha256": "b282461b7963523374164d803e793985722517799f43fdfa262b0d63fedc02d2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-010/result.json",
+      "bytes": 1046,
+      "sha256": "0a0da5df548f8ad78685b7378953d2b8e84f1a376c1670e1e4191af8d9aec937"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-010/stdout.log",
+      "bytes": 2169,
+      "sha256": "6760d5a0fee8c733ad364d272ba3a02d0605fcbb782e8d087fd16f0264ba3066"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-011/result.json",
+      "bytes": 1046,
+      "sha256": "7302185d9fbdd49c7f73aaa8be3900381f5e64151e0adb0de92f0989abda790b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-011/stdout.log",
+      "bytes": 2169,
+      "sha256": "e30d08adf4aa663ca56825bc82a269e0c4f1e2e91ab166b2f6181ad96a3a25c4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-012/result.json",
+      "bytes": 1058,
+      "sha256": "9291fcecf034f575c6d9ed83150215a4bbaefdfdf5f4d6138cb75a0a688c4a49"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-012/stdout.log",
+      "bytes": 2321,
+      "sha256": "05536cc1922d99b137f993a685a5876c3f81fa73a06b544f8ba36845a56068f8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-013/result.json",
+      "bytes": 1056,
+      "sha256": "307c050b917b9b733fad19bc35b6cb46bc5319ada15982afee0a56ce455d59df"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/candidate-013/stdout.log",
+      "bytes": 2309,
+      "sha256": "c7620c46bcbfe7656b5d7a2ef59e5ffa02521466388290ff93e050252e6d5257"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/effective-config.json",
+      "bytes": 644,
+      "sha256": "f4b5eea01d477a74101ceac672bb2dda5cd7accea7a4bbcd182489d740d58d7b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_extreme_point/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-000/result.json",
+      "bytes": 778,
+      "sha256": "e634f4070412a7ed893f4c832b100217449a30e8ecfb600d5c587113a4ad75f8"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-000/stdout.log",
+      "bytes": 1802,
+      "sha256": "b99cf3e87fde8ab7c8a0c5f2a2ccd9e8a1e8995b8c14f9b2428d7ae339d66261"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "7b7868d2e71b4dc91d9351f8ca4dfae6efab662523bd89117f6166e647066ab2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-001/stdout.log",
+      "bytes": 1812,
+      "sha256": "408e3d1aa4d0bd32d0723870ead8db7dec2799b596c04925226d16c7a82a72e7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "fa2f19f192bf513308f30765fb0c1efc3c96b91d6e346cc3b7c8409638ebd095"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-002/stdout.log",
+      "bytes": 1812,
+      "sha256": "c14d6ee3d0309aed85bb1cda7fc73042fa7aa43b70d795f2955b1fa9ba6f00d9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-003/result.json",
+      "bytes": 744,
+      "sha256": "d5c6c5a895ee2bb337eddbbc197f379301a54fa3e70a9bbe3403419002d4f088"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-003/stdout.log",
+      "bytes": 1802,
+      "sha256": "6cfb240d53934ca3d4e901050af685720fd975a3a4afff9499b72a4fb432094e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-004/result.json",
+      "bytes": 1022,
+      "sha256": "d9277b926f01534e240636cf4bd57acd1f151f042e6981eb93ae1e46f6533f61"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-004/stdout.log",
+      "bytes": 2125,
+      "sha256": "5dcf6139018c01a639cada5ca8e4b9320b551b857b72ee131fb46921d8790019"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-005/result.json",
+      "bytes": 1059,
+      "sha256": "22ce81cd386d22412c7abc6c9ad1e1824500afbd52e87a6afc3e3cbd64c3cfd1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-005/stdout.log",
+      "bytes": 2125,
+      "sha256": "74a9d42d9e44aadc31011f4d3be08abc0e2ad946fe6f6f85b9591f50f305e6f1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-006/result.json",
+      "bytes": 1117,
+      "sha256": "5390060a2d684061d95447f30de82f4c14e785c8f89fa47d793ad1cad37b6402"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-006/stdout.log",
+      "bytes": 2263,
+      "sha256": "3aa2cab1c4ee996b2820ae53c807c7de88ecbee718ab0f853bc8b02ba684dcf9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-007/result.json",
+      "bytes": 1045,
+      "sha256": "0783f259487b94c198eb06edbea8696eda8feeb28b4fdbfaf4713806fcb66cd2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-007/stdout.log",
+      "bytes": 2263,
+      "sha256": "71fa25c98b6d0255d1c44f1672ab11c7a1f7f072e837d5ddc5b55f5eee5da74b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-008/result.json",
+      "bytes": 1084,
+      "sha256": "fc5a10b6fac212da4a1e042d5084ec5dc1fe2bf4847c550b765417878349519c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-008/stdout.log",
+      "bytes": 2275,
+      "sha256": "142268c135895eee8dc6ab8f4cb3ea0486afc1fda7a7bf2a567bb5b51b06e8e2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-009/result.json",
+      "bytes": 1045,
+      "sha256": "cb8b4a896d763dc2a4ae3b625c55531ae87365f151c76b16e511998cf0a34b25"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-009/stdout.log",
+      "bytes": 2265,
+      "sha256": "b9db3f71189c3888533580ff73f57c0c98fa505b2bb7ab8d6f025dd9867ef97b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-010/result.json",
+      "bytes": 1084,
+      "sha256": "a7fb1aa837506f9589fffa12a36b028ea2a34df66119011befd122344d51ab39"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-010/stdout.log",
+      "bytes": 2265,
+      "sha256": "6d50eead25a192238a0b57df749898ae84a461703d614ec6e5b58833ee5f0e30"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-011/result.json",
+      "bytes": 1083,
+      "sha256": "e7c2fd89d1d3492ca7dc9dfcaddf7f58e69339f1bcd66af99a46ee3a5eff4626"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-011/stdout.log",
+      "bytes": 2265,
+      "sha256": "41ba31b20527b1ae4e22c7b3987c87055460dbe91371a997199a0bb716b78f43"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-012/result.json",
+      "bytes": 1096,
+      "sha256": "ec95a793b6d067d2801d9cd608c5d108acb49091edd7bbf864ba78a7c7eca390"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-012/stdout.log",
+      "bytes": 2405,
+      "sha256": "3ec63aaa9e43b5e61bfda1a28315bb9ce10a76f79c2f791922beb112b84f959a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-013/result.json",
+      "bytes": 1094,
+      "sha256": "eef4fff67cc34256c07b6b47ec9ace4b508f9c590bb3a3c3616b4f398c3fae86"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/candidate-013/stdout.log",
+      "bytes": 2415,
+      "sha256": "2babc6972118063e018d1c67a9a65657f53004164c1f3b22c1eca92853425f7c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/effective-config.json",
+      "bytes": 633,
+      "sha256": "7c365ceb8013136c2d6b7e5014f8bcf2963410832a19fbc4edf3ad3c60d181b9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_ga/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-000/result.json",
+      "bytes": 745,
+      "sha256": "d559abeb371962b9f58fe2d15e6f69a0353204c6bc237909a7418d3f667083f0"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-000/stdout.log",
+      "bytes": 1661,
+      "sha256": "194ed3db2dc374cc3c84f8f0c1736ca24031d489d85cac8e8d343274ac57ddff"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-001/result.json",
+      "bytes": 745,
+      "sha256": "41e600beed42e0bd1bf7695963e3565a62dfffbd3a080661c4acd1bf501a5116"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-001/stdout.log",
+      "bytes": 1673,
+      "sha256": "d8dccfe47fd1e29207dad963a20b64febff50edf67ec7dd3dc36a4f414edaeb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "c66a1fba8c7099a14f61b521f39d1145b0a2a2ee1c50105123142e1982298136"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-002/stdout.log",
+      "bytes": 1661,
+      "sha256": "1308b9136c91de79c7400a27e093c2b97eef88f215ef905629d60b5fcfa0b295"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "ca620efa5bbde29d97583d1258de19efaeb231c448b713affab8f4b41134a101"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-003/stdout.log",
+      "bytes": 1661,
+      "sha256": "6e4c205a23b53b54e1c00a63d1b98a5cfa6c11787ce0c244cab67f9b07420814"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-004/result.json",
+      "bytes": 1022,
+      "sha256": "427a6bb92934366510df1e583a85e6734f72711af8e6cf881cee307ffb82fb03"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-004/stdout.log",
+      "bytes": 1984,
+      "sha256": "8ce89e17b20a022ac0d045ec11171f9d613a26d8cda90219ba81875c431d8e16"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-005/result.json",
+      "bytes": 1021,
+      "sha256": "1c79ea5f41b06c40fe7202464400ac98e2cb892624fb6231523aa016da44172c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-005/stdout.log",
+      "bytes": 1984,
+      "sha256": "2370f3c2715341358173efb7f2b9d04e6386c4b5598769e0465fc06bbe0ef665"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-006/result.json",
+      "bytes": 1046,
+      "sha256": "a92d50650a6c3f0ff8b04f205ffa76359779964054de88349d3b35c7c08dd74b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-006/stdout.log",
+      "bytes": 2122,
+      "sha256": "8f7018e5054dfbe3f4136fbc71f448d24d5207533fa53f3e9dce5915e428cbd9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-007/result.json",
+      "bytes": 1044,
+      "sha256": "14c9dcf37173de2b6649e3275fc5c2480b1ca20c7f1a557f977b7752ebe3690d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-007/stdout.log",
+      "bytes": 2122,
+      "sha256": "d6a03199cab64855c4b70df49920ce9264d3f0f79c126d8cd1a2ddab9d3bcf63"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-008/result.json",
+      "bytes": 1046,
+      "sha256": "4e9491e55ab3f49239583dd1ec899d99b0c4842d696e764f69be6b746824e006"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-008/stdout.log",
+      "bytes": 2136,
+      "sha256": "d0d4fd0c9d71428b69fe80fe19fc8c4e78e42db635ba394e778d93394863a945"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-009/result.json",
+      "bytes": 1046,
+      "sha256": "89d60021719114bbde7087dbd1eda83654e7201f4918c3bb2469df4590328a47"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-009/stdout.log",
+      "bytes": 2124,
+      "sha256": "c58b9a3c751c2cb2cf6966387b9e7c526c0c9f90e9a950a40870cf53c1087c68"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-010/result.json",
+      "bytes": 1046,
+      "sha256": "03ffd8d74679d2ac17f7ac149dd5b5664634f4217fd70127586c4c6c6ef0090d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-010/stdout.log",
+      "bytes": 2124,
+      "sha256": "e6750ba0cfe5437e7c98ffd1376c26f5b87bef26dad95c69123985feaf3f391c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-011/result.json",
+      "bytes": 1046,
+      "sha256": "b10a2b2c3c7546d93b59fb3b116b8878d83e2265da44935e3228268016d48b72"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-011/stdout.log",
+      "bytes": 2136,
+      "sha256": "4cc0041adb807a13619d09c20357dfe5919025b7a956916e9d5c6311e5f949ea"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-012/result.json",
+      "bytes": 1058,
+      "sha256": "3145971199ed5aceb8b32b2ee945849eaecd68fd2b10821c3e12913cce58c603"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-012/stdout.log",
+      "bytes": 2264,
+      "sha256": "5099eb5fed1e5582abe10a7b0768e9781456672cbc8d564a97f31e73a70ba04a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-013/result.json",
+      "bytes": 1056,
+      "sha256": "0658bd34c805d11339e5e620620910616d273196639ed36a30ff9a43a8151be2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/candidate-013/stdout.log",
+      "bytes": 2264,
+      "sha256": "e8db06e5ad6e88cc176890640c02b35ebc244bb50db9de3220f9507b568d9810"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/effective-config.json",
+      "bytes": 636,
+      "sha256": "141e89a4dccf6c44ad2a04624d5a7afdc47b3177f42119af8f7aa474651d058f"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_layer/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-000/input.json",
+      "bytes": 521,
+      "sha256": "5b32d430a3f9ed879f5598da2e68072c3b1d0c5c21d834cea6f732cae9a65811"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-000/result.json",
+      "bytes": 745,
+      "sha256": "da9c062e57b302be7166d370492e9501d0419af1fb5152f4b8207be0284d0a25"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-000/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-000/stdout.log",
+      "bytes": 1860,
+      "sha256": "184c860e462420e7f392b51d639baebbcb0d312f8c16aed3368570a8120c751c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-001/input.json",
+      "bytes": 521,
+      "sha256": "8d3b495f061b996c6f42bd8e1d7ec7ee21a6dcecc4155c0b72d9cb10fbe3a3d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-001/result.json",
+      "bytes": 777,
+      "sha256": "61bade3d9944b76e198f1e58542666a320cc608121aee4bc9edf31bbcc6adf99"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-001/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-001/stdout.log",
+      "bytes": 1860,
+      "sha256": "878ab5d6766b73f541ceababaa9fa3a5218d5933857b889efb50fff8aa9cc2dd"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-002/input.json",
+      "bytes": 521,
+      "sha256": "1c046ec476fe2faf5fc55619763837a40ce3529726f97ff4a64ffd80ac65bf76"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-002/result.json",
+      "bytes": 745,
+      "sha256": "95657940bf92f46a52f9d2954ab941e72c50983d6cddee4c60145de1b39107ad"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-002/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-002/stdout.log",
+      "bytes": 1860,
+      "sha256": "e55b5887cdd6055e4899d048461aa83dff592c044aafe1a2bd0956f18c1b01a6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-003/input.json",
+      "bytes": 521,
+      "sha256": "bea0bd7fb12503d428f708895a7944f1e79cf803bd9e62d1568bc7c6d1bba5d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-003/result.json",
+      "bytes": 745,
+      "sha256": "c0a986adbe03bf25ea4c273969f9809d04e083ae12269908f39cebbc0abbb678"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-003/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-003/stdout.log",
+      "bytes": 1860,
+      "sha256": "ab912356aba4ebd6b0dde1e78c432a247d242337083c0108329d164e3960d5bb"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-004/input.json",
+      "bytes": 523,
+      "sha256": "0242c2634c195e0a911866023db1ccb8523b960c9f32ebfc7fd3de97b12b2794"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-004/result.json",
+      "bytes": 1060,
+      "sha256": "c51ee581f0b3ebd7b3be3478137312b26f1313e239bce05967871f07efabe2ad"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-004/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-004/stdout.log",
+      "bytes": 2193,
+      "sha256": "aa6461f3174a90f8016472388615a7cd824a11f82c586c546d1b34ed2212345e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-005/input.json",
+      "bytes": 523,
+      "sha256": "357d9b044ec9db220b2ac1bebef049a05f2ff1b3cbf690c30c1eb04baa19c17d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-005/result.json",
+      "bytes": 1060,
+      "sha256": "1a6b8bb1781b23146042857e8fa9bec147433633420b8027f3cea8d5d7807dfd"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-005/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-005/stdout.log",
+      "bytes": 2183,
+      "sha256": "24580c0656ce87f20637c719ac2ab2e1f33c865a881b7ac7dbabfa152049f966"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-006/input.json",
+      "bytes": 661,
+      "sha256": "100e28497d85df2f03c65e27a2f03fa2c52f092207a5dc3c942db15c11d3c86c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-006/result.json",
+      "bytes": 1084,
+      "sha256": "d54ca10bbdce015eac8a2bf428dad3ede47445ec7eb6a9bceffda3207b0bcaaf"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-006/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-006/stdout.log",
+      "bytes": 2320,
+      "sha256": "fa823bb9435cce85bfaf55f02cf7794549b77fb656ae65dfde5b36e3ba25e83b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-007/input.json",
+      "bytes": 661,
+      "sha256": "24a700e85347d1358c9e04ccec868f08c9c1fcdb8eac78fb17cff769c3d78b8e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-007/result.json",
+      "bytes": 1046,
+      "sha256": "71c0bef0947676484541aca1b5a62a040b434a9389c00d516ebd0042159e1dc2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-007/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-007/stdout.log",
+      "bytes": 2321,
+      "sha256": "8d5b351db0f9f08a26d5cdcd26d01dabb5237a4164a8ec3df6bf447c802706ca"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-008/input.json",
+      "bytes": 663,
+      "sha256": "bca95ea16115adbd7aab851b4703b883f6dde2374e94b2b4f1613128a0c993b4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-008/result.json",
+      "bytes": 1084,
+      "sha256": "09ca2feaa7eb3d2664114219eb372b53f0fab4a69418af68cd04a588df06dc3a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-008/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-008/stdout.log",
+      "bytes": 2323,
+      "sha256": "0cd25dc63503c782458c7689ad9f83030d18cae038d006a013bf78e768202ff3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-009/input.json",
+      "bytes": 663,
+      "sha256": "9b1d040556297011beb57111a296dacd729e984cf86d01c42a22416e2fd2c64c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-009/result.json",
+      "bytes": 1045,
+      "sha256": "a8e0d0ea940534ab89b48c9ade5948fb554256167a30ac756ea25159165e9c51"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-009/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-009/stdout.log",
+      "bytes": 2323,
+      "sha256": "fdbb03cd896ee699ae46a887d4dd5641831c4c17d316f7237e5e039bfb970b19"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-010/input.json",
+      "bytes": 663,
+      "sha256": "13087920ea8754e9abb15481e20596dee623511f55131cfd035822d0924ed4f3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-010/result.json",
+      "bytes": 1084,
+      "sha256": "af9a279569e53a927afd6e000f0f9084406d40b7d9606945246213aaf097c023"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-010/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-010/stdout.log",
+      "bytes": 2323,
+      "sha256": "e75cc976cf65d3e6cb7394bc660303d3a64e84c2cef596b9e7d7bc2806b11a58"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-011/input.json",
+      "bytes": 663,
+      "sha256": "0d7e212815864cc176da30104b317cb426aceda383003d694ebd1fef1de7478b"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-011/result.json",
+      "bytes": 1117,
+      "sha256": "8bf3e26a4533925423ff83d0ba37bafc483bde88382bda7738c744c193f5b3f9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-011/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-011/stdout.log",
+      "bytes": 2333,
+      "sha256": "b247e0be636596b61c3e7084a98a95aa3625325cb1edcc25e8f77196fd1b419a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-012/input.json",
+      "bytes": 803,
+      "sha256": "334e5096dd8a8a6d1c07446383032a6cf8a1164594317b1e1995b872e6095eb4"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-012/result.json",
+      "bytes": 1095,
+      "sha256": "7dbd195d58dc3b765d687beede25d6279542eea2d14cc946785ed83431a33e41"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-012/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-012/stdout.log",
+      "bytes": 2463,
+      "sha256": "c552f62a71efa3beddd97d35830e73cef9e8854beaed2978c594abace95ee48c"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-013/input.json",
+      "bytes": 803,
+      "sha256": "42a0211b37cd7c34278b5b8c23ae66822621d732cc8a9e5f2a6b29055fae2309"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-013/result.json",
+      "bytes": 1055,
+      "sha256": "10dcb3431f7073be78452d1876743b9d08192acd712a99cacc1c9c52a4878d72"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-013/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/candidate-013/stdout.log",
+      "bytes": 2463,
+      "sha256": "6a1903c59c82f462688583eb0a8294426482a3f46cbfa60fd201f21787b56ae3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/effective-config.json",
+      "bytes": 633,
+      "sha256": "821a3952ae8f7fb3d4c9d8ba209d106712eef79b37b3223bb1e57ef9114407b2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/selected-validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/SMALL_CHEAPER/rust_sa/source-input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/artifacts.tar.gz",
+      "bytes": 44814,
+      "sha256": "785adad0b86c9c8412bb7cf0f3f2649c3f79c3d7bec1a998dd96ff02040dbf1a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-external-composed/metadata.json",
+      "bytes": 1183,
+      "sha256": "4a56748b828693e49013d0ca453522efbf2567913fbb2df4158fdf744c019719"
+    },
+    {
       "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/jerry/effective-config.json",
       "bytes": 741,
       "sha256": "9aa0420f2bbefde224b40abbee2d1a480111fbe21bafeb39567231e957a3339d"

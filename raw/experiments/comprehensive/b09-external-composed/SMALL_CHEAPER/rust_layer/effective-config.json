@@ -1,0 +1,13 @@
+{
+  "benchmark_id": "B09",
+  "binary": "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
+  "binary_sha256": "9d80df0a411d8515dc2db458ae52c4eb81a91af145823ec2d6481f37e8ebfe00",
+  "implementation_id": "rust_layer",
+  "input_sha256": "f1f1a566ce3fb61a07b767e13c170f5585e3ff9c04cfabaf4f574359b58a4f22",
+  "pose_semantics": "SOURCE_ROTATION_FLAGS",
+  "problem_variant": "SMALL_CHEAPER",
+  "process_isolation": true,
+  "runner_sha256": "d7d4097aceebf312831001078a1e00231ade32fe6f5f1009a62888346a0739c3",
+  "time_limit_s": 10.0,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"
+}

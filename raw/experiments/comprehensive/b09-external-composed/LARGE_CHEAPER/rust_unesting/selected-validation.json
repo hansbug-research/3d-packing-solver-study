@@ -1,0 +1,11 @@
+{
+  "bins_used": 0,
+  "complete": false,
+  "errors": [
+    "no valid candidate"
+  ],
+  "packed_items": 0,
+  "required_items": 2,
+  "status": "FAIL",
+  "total_cost": null
+}

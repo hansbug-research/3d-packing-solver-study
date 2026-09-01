@@ -48,7 +48,7 @@
     },
     {
       "id": "B09", "name": "Variable-cost exact truth", "category": "CONSTRAINT_CONFORMANCE", "problem_family": "VARIABLE_COST_BIN_PACKING", "primary_metric": "total_cost", "input_status": "VALID", "ranking_kind": "EXACT",
-      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_COMPOSED", "jerry": "SUPPORTED_COMPOSED", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "SUPPORTED_NATIVE"}
+      "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_COMPOSED", "jerry": "SUPPORTED_COMPOSED", "skjolber": "ADAPTER_MISSING", "go_bp3d": "SUPPORTED_COMPOSED", "rust_unesting": "SUPPORTED_COMPOSED", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
       "id": "B10", "name": "Fixed heterogeneous MCLP", "category": "PUBLIC_QUALITY", "problem_family": "FIXED_HETEROGENEOUS_LOADING", "primary_metric": "complete_feasible_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "QUALITY",

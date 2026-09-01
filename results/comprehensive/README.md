@@ -17,9 +17,20 @@ Wave-1 fresh exact/Skjolber 结果的执行与协议导入命令为：`bash benc
 
 `run-manifest.jsonl` 通过 Git LFS 跟踪（当前对象约 141 MB）；检出仓库后请执行 `git lfs install` 与 `git lfs pull`，否则工作区中会只看到 pointer 文件，不能运行本目录的导入、分析和验证脚本。
 
-当前导入 2,078 条已有运行，并合并 B03、B07、B09 composed cost-master、约束 gauntlet、来源/能力状态、B01/B02 Python/Go/Rust projection、B01/B02/B04 PackingSolver native certificate revalidation，以及 116 条 Wave-1 fresh exact/Skjolber 记录的 60,403 条 protocol-v3 记录，形成 `12/32` 个实际执行 benchmark、`32/32` 个有状态记录的 benchmark、19 个实现/算法变体和 `515/608` 个有证据计划单元；其中 `419` 个单元是 status-only，`19` 个单元仍只有历史基线。B01/B02 projection 有 22,880 条实例记录，PackingSolver native revalidation 新增 1,524 条 BR/LN/IMM 记录，B07 projection 新增 30,600 条实例记录（Go/Rust 21,600，Python 7,200，Jerry `fix_point=False` control 1,800）；B07 又增加 4 条 source-rotation exact calibration 记录；B09 composed runner 为 py3dbp/Jerry 各生成两个成本方向记录，并保留全部箱型组合候选。Wave-1 fresh 记录覆盖 B06/B09 四个 exact backend 的 20 个 case 行和 B04 Skjolber Plain/LAFF 的 88 个有效源行，并明确标为 `FRESH_SOLVER_INVOCATION`；它们保留结果 hash、runner hash、输入 hash 和独立验证引用。projection 显式标为 `RELAXED_ALL_ROTATIONS`、`GEOMETRY_PROJECTION`，exact calibration 保留 `SOURCE_ROTATION_FLAGS`，三者均不覆盖另一条语义轨。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，不是一次新的 solver invocation；其输入 hash、fork commit、binary hash 和原始验证行均保留。Go/Rust 文件使用 external CLI adapter，Rust 的五个策略分别绑定计划中的实现 ID；B07 额外记录每个 `BR*.txt_*` 来源 CSV 的 SHA-256 和 fork commit。B09 composed 记录明确是外层成本 master 加几何 packer，不等同库原生 comparator。status-only 记录只证明来源/能力边界，不是求解运行；其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
+当前导入 2,078 条已有运行，并合并 B03、B07、B09 composed cost-master、约束 gauntlet、来源/能力状态、B01/B02 Python/Go/Rust projection、B01/B02/B04 PackingSolver native certificate revalidation，以及 116 条 Wave-1 fresh exact/Skjolber 记录的 60,409 条 protocol-v3 记录，形成 `12/32` 个实际执行 benchmark、`32/32` 个有状态记录的 benchmark、19 个实现/算法变体和 `515/608` 个有证据计划单元；其中 `413` 个单元是 status-only，`19` 个单元仍只有历史基线。B01/B02 projection 有 22,880 条实例记录，PackingSolver native revalidation 新增 1,524 条 BR/LN/IMM 记录，B07 projection 新增 30,600 条实例记录（Go/Rust 21,600，Python 7,200，Jerry `fix_point=False` control 1,800）；B07 又增加 4 条 source-rotation exact calibration 记录；B09 composed runner 为 py3dbp/Jerry/Go/Rust 各生成两个成本方向记录，并保留全部箱型组合候选。Wave-1 fresh 记录覆盖 B06/B09 四个 exact backend 的 20 个 case 行和 B04 Skjolber Plain/LAFF 的 88 个有效源行，并明确标为 `FRESH_SOLVER_INVOCATION`；它们保留结果 hash、runner hash、输入 hash 和独立验证引用。projection 显式标为 `RELAXED_ALL_ROTATIONS`、`GEOMETRY_PROJECTION`，exact calibration 保留 `SOURCE_ROTATION_FLAGS`，三者均不覆盖另一条语义轨。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，不是一次新的 solver invocation；其输入 hash、fork commit、binary hash 和原始验证行均保留。Go/Rust 文件使用 external CLI adapter，Rust 的五个策略分别绑定计划中的实现 ID；B07 额外记录每个 `BR*.txt_*` 来源 CSV 的 SHA-256 和 fork commit。B09 composed 记录明确是外层成本 master 加几何 packer，不等同库原生 comparator。status-only 记录只证明来源/能力边界，不是求解运行；其余单元在 `coverage.csv` 中继续显示 `SOURCE_PENDING`、`ADAPTER_MISSING`、`NOT_SUPPORTED` 或 `PLANNED`，不得把其中任何一种改写成已经实测。
 
 现有排行按问题语义拆分：`volume-knapsack.csv` 显式保留 `problem_variant/problem_scope`，`volume-knapsack-common.csv` 只比较共同实例，`B07-version-pairwise.csv` 比较 fork/upstream 的相同 BR 桶和预算，`B07-projection-common.csv` 比较八个 projection 实现的共同合法实例，`B07-jerry-fixpoint-pairwise.csv` 记录 Jerry `fix_point` 参数的合法性/质量权衡，`identical-bin-packing.csv` 与 pairwise 表比较 B04 的共同 44 例，`profit-knapsack.csv` 分开比较 B03 的固定姿态/全旋转投影，`exact-proof.csv` 比较 B03/B06/B07/B09 的统一模型或校准模型证明能力，`variable-cost.csv` 只比较带独立验证 `total_cost` 的 B08/B09 记录，`constraint-conformance.csv` 保留 hard-case 行为，`resource-summary.csv` 使用独立计时组而不制造跨语言统一速度榜。B05 当前只有来源审计和状态记录，没有质量排行。约束 gauntlet runner 和 fixture 说明见 [`research/constraint-gauntlet.md`](../../research/constraint-gauntlet.md)。所有表都是阶段性结果；尚无运行的 B05、B08、B10-B11、B16、B18-B32 不会出现伪造的数值排行。
+
+B09 composed cost-master 的复现命令为：
+
+```bash
+python3 benchmarks/comprehensive/run_b09_python_composed.py
+python3 benchmarks/comprehensive/run_b09_external_composed.py
+python3 benchmarks/comprehensive/import_baseline.py
+python3 benchmarks/comprehensive/analyze.py
+```
+
+外部 runner 默认使用已固定的 Go binary 和 Rust release binary；若本机没有对应构建，应保持 `ADAPTER_MISSING`，不能改用未审计的 rolling binary。两个 runner 都把每一个箱型组合和 item order 的失败候选保存在 artifact archive，只有独立 validator 通过的完整候选才参与成本选择。
 
 B07 source-rotation exact calibration 可复现为：
 

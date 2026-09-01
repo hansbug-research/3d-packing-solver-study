@@ -1,0 +1,20 @@
+{
+  "elapsed_s": 3.827037289738655e-06,
+  "order": "ASCENDING",
+  "placements": [],
+  "portfolio": [
+    "0:1"
+  ],
+  "unplaced": [],
+  "validation": {
+    "bins_used": 0,
+    "complete": false,
+    "errors": [
+      "KeyError: 'rust_unesting'"
+    ],
+    "packed_items": 0,
+    "required_items": 2,
+    "status": "ERROR",
+    "total_cost": null
+  }
+}

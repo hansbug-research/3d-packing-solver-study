@@ -1,0 +1,113 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "BottomLeftFill (Layer); repeated single-boundary adapter",
+  "scenario": "B09-LARGE_CHEAPER",
+  "capability_status": "ADAPTER_MULTI_BIN",
+  "capability_note": "u-nesting accepts one Boundary3D; full THPACK9 is repeated single-boundary adapter calls",
+  "parameters": {
+    "decoder": "layer/row",
+    "rayon_num_threads_env": "1",
+    "seed_applicable": false,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "bottomleftfill",
+    "time_limit_effective": true,
+    "time_limit_ms_requested_per_bin": 10000
+  },
+  "bins": [
+    {
+      "id": "0:0",
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "max_weight": 100.0,
+      "cost": 7.0
+    },
+    {
+      "id": "0:1",
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "max_weight": 100.0,
+      "cost": 7.0
+    }
+  ],
+  "items": [
+    {
+      "id": "0:0",
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "0:1",
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "0:0",
+      "bin_id": "0:0",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "0:1",
+      "bin_id": "0:1",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.015837
+}

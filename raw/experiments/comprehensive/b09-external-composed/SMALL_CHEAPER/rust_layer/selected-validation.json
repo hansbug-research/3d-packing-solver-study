@@ -1,0 +1,13 @@
+{
+  "bins_used": 2,
+  "complete": true,
+  "errors": [],
+  "packed_items": 2,
+  "required_items": 2,
+  "status": "PASS",
+  "total_cost": 10.0,
+  "used_bin_ids": [
+    "0:0",
+    "0:1"
+  ]
+}

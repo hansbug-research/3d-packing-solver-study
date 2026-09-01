@@ -1,0 +1,48 @@
+{
+  "elapsed_s": 0.0027150320820510387,
+  "order": "ASCENDING",
+  "placements": [
+    {
+      "bin_id": "0:1",
+      "item_id": "0:0",
+      "original_size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "portfolio": [
+    "0:1"
+  ],
+  "unplaced": [
+    "0:1"
+  ],
+  "validation": {
+    "bins_used": 1,
+    "complete": false,
+    "errors": [
+      "item 0:1: placed 0, required 1"
+    ],
+    "packed_items": 1,
+    "required_items": 2,
+    "status": "FAIL",
+    "total_cost": 5.0,
+    "used_bin_ids": [
+      "0:1"
+    ]
+  }
+}

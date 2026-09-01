@@ -1,0 +1,48 @@
+{
+  "elapsed_s": 0.0034581779036670923,
+  "order": "DESCENDING",
+  "placements": [
+    {
+      "bin_id": "0:0",
+      "item_id": "0:1",
+      "original_size": [
+        6,
+        5,
+        5
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0,
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1
+    }
+  ],
+  "portfolio": [
+    "0:0"
+  ],
+  "unplaced": [
+    "0:0"
+  ],
+  "validation": {
+    "bins_used": 1,
+    "complete": false,
+    "errors": [
+      "item 0:0: placed 0, required 1"
+    ],
+    "packed_items": 1,
+    "required_items": 2,
+    "status": "FAIL",
+    "total_cost": 7.0,
+    "used_bin_ids": [
+      "0:0"
+    ]
+  }
+}

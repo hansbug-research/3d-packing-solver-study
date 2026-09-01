@@ -1,0 +1,66 @@
+{
+  "elapsed_s": 0.0025721092242747545,
+  "order": "ASCENDING",
+  "placements": [
+    {
+      "bin_id": "1:0",
+      "item_id": "0:0",
+      "original_size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    },
+    {
+      "bin_id": "1:0",
+      "item_id": "0:1",
+      "original_size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "position": [
+        6.0,
+        0.0,
+        0.0
+      ],
+      "rotation": "xyz",
+      "rotation_index": 0,
+      "size": [
+        6.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0
+    }
+  ],
+  "portfolio": [
+    "1:0"
+  ],
+  "unplaced": [],
+  "validation": {
+    "bins_used": 1,
+    "complete": true,
+    "errors": [],
+    "packed_items": 2,
+    "required_items": 2,
+    "status": "PASS",
+    "total_cost": 20.0,
+    "used_bin_ids": [
+      "1:0"
+    ]
+  }
+}
