@@ -1,0 +1,1986 @@
+{
+  "corpus": "MPV_OFFICIAL_GENERATOR_DERIVED",
+  "corpus_sha256": "2deb28215b99a3412f0b065e8d5888e21de604a57129ba53230a1883f4f08411",
+  "generator_binary_sha256": "952a56bbb2d5bc4d332d9aef91bb6e51fb9e1268fd50a0cb9883b2d37259814e",
+  "instances": [
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R01",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R01.json",
+      "seed": 31,
+      "sha256": "43ebac9d2d1375a09649fd1175467970b2f6d4d55dc5ebcbf92d3070f39a8f24",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R02",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R02.json",
+      "seed": 32,
+      "sha256": "86ed417d029efb69a433a2a61cca433798ff082cd01c5df9bb4522ffc18305f6",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R03",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R03.json",
+      "seed": 33,
+      "sha256": "261b7c8aa496fc9f5fbcdae31d0a0160f3ed1c20d28336b47fd337d36d53a253",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R04",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R04.json",
+      "seed": 34,
+      "sha256": "c4856dffd80c11dfe2ea9e3e6cec1814dcc34d78c60d6aae5d89de2866dcff26",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R05",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R05.json",
+      "seed": 35,
+      "sha256": "98e443fec094523be5171178141c83a4ba07226e25a07d00125554d05ddad439",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R06",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R06.json",
+      "seed": 36,
+      "sha256": "54d520b5af07cef1b247ea4deaf8e0b464b21dc8043b9b4cac8fcfcd1cd4f47b",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R07",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R07.json",
+      "seed": 37,
+      "sha256": "a8b7afb3c848b25645a7ccdb9a55f7a35bbc908550ad9b607cf2531af97aacfc",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R08",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R08.json",
+      "seed": 38,
+      "sha256": "b5749b751e9c485ae40263a17c22ddd6e1cddc4d2b32b58f033c7b9d1e48a602",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R09",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R09.json",
+      "seed": 39,
+      "sha256": "e6455cdfc979a92ee68687072ec4cfdb3f23bfe1bf045cf5d9ea0669e5ebe9cd",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N30-R10",
+      "item_count": 30,
+      "path": "MPV-GEN-T1-N30-R10.json",
+      "seed": 40,
+      "sha256": "afcb22de8738faabef16f37f7984ae5807cd4498d27019d34d5541a843d8bc1e",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R01",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R01.json",
+      "seed": 61,
+      "sha256": "0488ff466e6432bfffcd547d96a7f3fff21c5f3c8c6b19056052d7c1fc35acbc",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R02",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R02.json",
+      "seed": 62,
+      "sha256": "c3e338e1652b863fdd2f3458a783e0c1b5cc89eb0a9d8b980db3cfc2c8061c2c",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R03",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R03.json",
+      "seed": 63,
+      "sha256": "c7d1836f9966b9fb21a0cf0f3a9025a50019666e3c4b951970adfd51f5d71e42",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R04",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R04.json",
+      "seed": 64,
+      "sha256": "6988578e072d2b3137e3280e489a4366acf606022ad9b17df667b0cbe938120d",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R05",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R05.json",
+      "seed": 65,
+      "sha256": "bcaeb6e1bb4b2401f8756750948e6065f986fb3c4156de5735f4823038b6f2c7",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R06",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R06.json",
+      "seed": 66,
+      "sha256": "1a83e3bc13fa0e89f4607270429fe1b4e0c2e79fba662fb7768c1c24e7e77cfa",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R07",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R07.json",
+      "seed": 67,
+      "sha256": "3dd9d133aefe7c27c6c2a2195f245fe6e9bba37baf4e0a46621b8e446f4f3f8e",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R08",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R08.json",
+      "seed": 68,
+      "sha256": "e614d4debc0107e2bf516337c17212159aa4abaeb58b65cf46366ae316e7ea33",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R09",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R09.json",
+      "seed": 69,
+      "sha256": "a34c0b4b5a814169be2e6501ba7a070c4944f0ce022f3c69d75a224662aaa7c9",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N60-R10",
+      "item_count": 60,
+      "path": "MPV-GEN-T1-N60-R10.json",
+      "seed": 70,
+      "sha256": "d5cd06ee38664c49f800330a4be7ef6b8809907f2444fb6b90b35247519860c4",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R01",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R01.json",
+      "seed": 91,
+      "sha256": "280454cebdd6df1119c3d8471417a3561c463afa33b2f5a23c22aa01c173d19c",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R02",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R02.json",
+      "seed": 92,
+      "sha256": "10963c8a4c4be5c3538e90a0a2a97110e1c03993535e9b43bb760683e98c54fe",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R03",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R03.json",
+      "seed": 93,
+      "sha256": "1c69fbb773cbbf8c07e29977191abd5889d30e51670c1b257b4f23e13edd0ac2",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R04",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R04.json",
+      "seed": 94,
+      "sha256": "504586ea88ac8856c3e11d8078cb7fe40cef2056d7eaf122a6223b2496477c8e",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R05",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R05.json",
+      "seed": 95,
+      "sha256": "44742f22397d873293b5286aac24ec68ae18f0c8e9f19ba47af0d3091d7ee3e6",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R06",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R06.json",
+      "seed": 96,
+      "sha256": "f6cece10f0ecd1238dc8fac59116250c67ad9e1477173d4fd505c6e572cda70d",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R07",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R07.json",
+      "seed": 97,
+      "sha256": "cb1ac15e151082b1e6f6a159b3431e470e7bbf5129d60c0b6f689631d83fc380",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R08",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R08.json",
+      "seed": 98,
+      "sha256": "37acde91ec1ced25f5bad956e9cf44204cc107d36a8e69d6d7f9c25862dd0a15",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R09",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R09.json",
+      "seed": 99,
+      "sha256": "916a8ab2d5cd0dcf9f1b4b9a16af10bbdff5853054f003ceed507e4685377a06",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T1-N90-R10",
+      "item_count": 90,
+      "path": "MPV-GEN-T1-N90-R10.json",
+      "seed": 100,
+      "sha256": "b119becd7590e970145c0bed83aaf1e032c4b6d614db9206bc33e344117ea80b",
+      "type": 1
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R01",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R01.json",
+      "seed": 31,
+      "sha256": "dbf0f8ad71759957bf5be47c04ade33e60eef5b0dd3b16674e8cfa602c73ef7a",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R02",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R02.json",
+      "seed": 32,
+      "sha256": "6e0f1cb038f27c3c4af823dbcf5cc2876bec5a77ad3d49361a785ee8e5931feb",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R03",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R03.json",
+      "seed": 33,
+      "sha256": "e9dd4570b6b76c5b14e3ae36d986b5fa1b99969a0e2f0107b90c4ea45c6c12fb",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R04",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R04.json",
+      "seed": 34,
+      "sha256": "a9edf1e768a5ce61536b3059d3d1d72ad40a0135971e846efe00338a1207532b",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R05",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R05.json",
+      "seed": 35,
+      "sha256": "2eb7c6564d10b095a1384e2e97ccbeb3517b98567dc09ced279537b9bc9dd8f7",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R06",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R06.json",
+      "seed": 36,
+      "sha256": "cd99cbada7b93262a0470ba51c55b2604aa7faa61d3c020b537c2c9257614236",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R07",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R07.json",
+      "seed": 37,
+      "sha256": "9d3df001008d1e930fb530c513759bcba25d34748b1e54a41555cbf9fc464f80",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R08",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R08.json",
+      "seed": 38,
+      "sha256": "40f022b3ca7e7cc376b76d997202688d1d5d33de19ec1bcf9a3cb6438c189f7e",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R09",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R09.json",
+      "seed": 39,
+      "sha256": "ccf8e2561b7cbb1aba5e54d5814dec6e1e7f56170d2f1dbfc33d896ac4686ccc",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N30-R10",
+      "item_count": 30,
+      "path": "MPV-GEN-T6-N30-R10.json",
+      "seed": 40,
+      "sha256": "a822887912a0be80cdd0c2351c232b7673f51f43656a371585a152991d22b288",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R01",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R01.json",
+      "seed": 61,
+      "sha256": "3f9dc717b686c167ce1ff313de410d41546be42a65469b88dde1bd5fd4267b43",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R02",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R02.json",
+      "seed": 62,
+      "sha256": "5e5dadabd5393de1373ca1fb17d66c36ec046dd6eddad9585675ac8856ef1b1e",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R03",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R03.json",
+      "seed": 63,
+      "sha256": "01186b8054566f751e043bb5a4f98afe8488f258de38941ee99f1c295ecf2ae6",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R04",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R04.json",
+      "seed": 64,
+      "sha256": "88e8d24083299021647ca9124d0e7177442aec015fb188d6e0bf5ed031254b46",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R05",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R05.json",
+      "seed": 65,
+      "sha256": "ae8425a19574d287b306b15ac3fc59d7d53ffc68107dc25f07e1457715fbaf19",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R06",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R06.json",
+      "seed": 66,
+      "sha256": "2e583381b7e8e1df6c314d4986485e6c1ee695eaad0704ea1bf5e77d09aa0c4a",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R07",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R07.json",
+      "seed": 67,
+      "sha256": "2515de9824d178201c44a032ad8900dc8ddb3e1dac4acefea17154db4ed1ba20",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R08",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R08.json",
+      "seed": 68,
+      "sha256": "7f3a77906dc627520912f187fc7b1561ca9573a4ebc471db4e678bb385a8516f",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R09",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R09.json",
+      "seed": 69,
+      "sha256": "defb80bd0e0e61ae5072eef8674e47dad1673d891692584f4e36924c70c593c7",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N60-R10",
+      "item_count": 60,
+      "path": "MPV-GEN-T6-N60-R10.json",
+      "seed": 70,
+      "sha256": "59a0f2f381bcf6763bd05b455798b6f5515984b6867704810b541c5e705c4383",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R01",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R01.json",
+      "seed": 91,
+      "sha256": "7be20a6e7f76be27573225475c6370ad77245285035bec2b7a489641989b6180",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R02",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R02.json",
+      "seed": 92,
+      "sha256": "8a92d5119ac8f2358db551f2361ab4dd3da33ba0d860653caf5828b7227d94d3",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R03",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R03.json",
+      "seed": 93,
+      "sha256": "f181768593d7fd9cd8f620d3e497a3b2d957bb3ea4fd08846d5b7776af4b0a74",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R04",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R04.json",
+      "seed": 94,
+      "sha256": "dc14eb2526fd844ae1969ac1b3287ac3fd9c9c0401e679b7669087c41323e441",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R05",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R05.json",
+      "seed": 95,
+      "sha256": "3c0606be3303655e0d6aaa1dfacb034b99b189319bb2872d97eb9862b0049aa1",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R06",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R06.json",
+      "seed": 96,
+      "sha256": "5e5db7b72892f27855018a5534fe4a5af474af93674a5b532af4da2f1c31408b",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R07",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R07.json",
+      "seed": 97,
+      "sha256": "fdd1e8587c96449d5a2910c201a99be0653ffeffad4234bf29a4865b68d3e4df",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R08",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R08.json",
+      "seed": 98,
+      "sha256": "ec86b40005b21b74da6b862d7e6262566ef048609723a97fd3a9e24b6f1c0283",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R09",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R09.json",
+      "seed": 99,
+      "sha256": "ad294cf40b8c65495065b88ec00367f5d45eda6bc88deec235fe23a79e7fba72",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T6-N90-R10",
+      "item_count": 90,
+      "path": "MPV-GEN-T6-N90-R10.json",
+      "seed": 100,
+      "sha256": "f633030123e3e61cb7f8b0ac83f007ecbf488b3a750b57ae160310f798f2fdf9",
+      "type": 6
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R01",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R01.json",
+      "seed": 31,
+      "sha256": "baee14b43f5350a48ba9292b14e87777748bd90f5f9361ae2bd55c1a603895a5",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R02",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R02.json",
+      "seed": 32,
+      "sha256": "06e54f055bb7fd9cdee27e5be05a4bf689a4de7ac6912fd1c1a34c57aaa245b3",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R03",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R03.json",
+      "seed": 33,
+      "sha256": "5f9c49e108e8087f18282a38e000e4f43b93e6cb931d1f5cb7d69b2574d8f182",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R04",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R04.json",
+      "seed": 34,
+      "sha256": "3b09cf7224ae8ca887df33ae9c48cca6eb0acde32d4d062eb08c28a80f7df5a6",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R05",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R05.json",
+      "seed": 35,
+      "sha256": "b97c536af1831c61e6ee27344548cf4707a76db1a288599da8b4878f87b53a9f",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R06",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R06.json",
+      "seed": 36,
+      "sha256": "94e0eb1ce0fb52d52917b69e838c492d5c73683de929c3ad116827f6df489b8f",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R07",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R07.json",
+      "seed": 37,
+      "sha256": "3805c86a2e9d6ac0a8942247a0e1b13256007f6b88a4d64811f01ead11316b83",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R08",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R08.json",
+      "seed": 38,
+      "sha256": "82420beddc2d654c29d747d7291e345c088b3162eb7a957765b1fb608e72dbbb",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R09",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R09.json",
+      "seed": 39,
+      "sha256": "f686c314c6c43862a15bb30d52bb06a163832e2185845a47b7d11e3963137b0f",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N30-R10",
+      "item_count": 30,
+      "path": "MPV-GEN-T7-N30-R10.json",
+      "seed": 40,
+      "sha256": "02073dd8a4ca42c54c72b92eba598545878ed8df809efb1be183138e1c3855bb",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R01",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R01.json",
+      "seed": 61,
+      "sha256": "1a3259993b8d29031588751604d298cb88b9a1d8655e8b750674933da6856ee6",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R02",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R02.json",
+      "seed": 62,
+      "sha256": "36a601c5599fdd4eb5b8c729239e70172b90a5405148fca863b6957d744a5e59",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R03",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R03.json",
+      "seed": 63,
+      "sha256": "b1880724b0da2a141d0c7f3f8988bd9cc866ae8d6bccda9a9e82b514bba3af64",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R04",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R04.json",
+      "seed": 64,
+      "sha256": "cb5ff646cb06c9797fb027337d9458696cdc33652a477f489ce79bb09b8d9c60",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R05",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R05.json",
+      "seed": 65,
+      "sha256": "89e8f682527778eed5ec78bb4833bd63641a609c6652b197b7c704ee8f171359",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R06",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R06.json",
+      "seed": 66,
+      "sha256": "698bdd085bb6027d9fd126095d5a467db12838e19478a7bebea6b443378c2f3c",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R07",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R07.json",
+      "seed": 67,
+      "sha256": "091a35bb0fcfa65c00dcd69b323c5bf592dac605c8173e8386b5ac58ba12b6c8",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R08",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R08.json",
+      "seed": 68,
+      "sha256": "e4e6c83e5fa60785ce1c0242df3d785921ec73006ce48a56d87c0cbec42310b8",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R09",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R09.json",
+      "seed": 69,
+      "sha256": "676307d27c2b47f03fa3a540604daa553af64dc0bb2d49440c256b1702f8626e",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N60-R10",
+      "item_count": 60,
+      "path": "MPV-GEN-T7-N60-R10.json",
+      "seed": 70,
+      "sha256": "dc48cb8cf0518e16144f98b349bd089192c981a59cf62c2166065122122643a1",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R01",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R01.json",
+      "seed": 91,
+      "sha256": "b94a29bc43de2ecd09c265f7e6ad66de1710b79ea1f826bad69d01ccd02fdce6",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R02",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R02.json",
+      "seed": 92,
+      "sha256": "242564feabbaa2e45142e9c592d98bf8848fef61a1fdc5adcb31780526e58056",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R03",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R03.json",
+      "seed": 93,
+      "sha256": "d5b49faa8b1aa727c8e33b58bcfca725551572c3479fd3d9ec44086826bf6369",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R04",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R04.json",
+      "seed": 94,
+      "sha256": "db7d326d852c5938bc87490a24b1e87e69df97eb4ed9ef9b114750c5849c4785",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R05",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R05.json",
+      "seed": 95,
+      "sha256": "8cdf97eef7123805b4a77e47479e010a2b63e6c6f19b89c35d351fa483c5b4fd",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R06",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R06.json",
+      "seed": 96,
+      "sha256": "65e8ca6776725d8561782c19cccf0a4971cc173439a5e4ea0fed0ac1ea6674b1",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R07",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R07.json",
+      "seed": 97,
+      "sha256": "241b4049c4b43e9875d4580bb05764eeb826802304781046a8acf3f0aacaec70",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R08",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R08.json",
+      "seed": 98,
+      "sha256": "9cbc30c8812fe847f40213b6e7226584bb0c73f3e4eb04883aa885045425e4cd",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R09",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R09.json",
+      "seed": 99,
+      "sha256": "63af987d368851cd90263b138c7870d5bcf9cc221884f1841316877f6f492c4b",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T7-N90-R10",
+      "item_count": 90,
+      "path": "MPV-GEN-T7-N90-R10.json",
+      "seed": 100,
+      "sha256": "81b21207e263f78d2bf589232a50c6d9c1287385284b5c080d1dda0a100dac97",
+      "type": 7
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R01",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R01.json",
+      "seed": 31,
+      "sha256": "10d1820a6ef33ca85cb4d63c18c16755a3716f1e0db017d9c4d33e7c6e743dbb",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R02",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R02.json",
+      "seed": 32,
+      "sha256": "a2f81f8fa7a9f29c7decbe577a249eb55fcddf2e5ddd018c76b8a566a167ed27",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R03",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R03.json",
+      "seed": 33,
+      "sha256": "9f40a1a989dc7bcc7c6b156989be9cad254456a8966a41765ba1984370cbe8b2",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R04",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R04.json",
+      "seed": 34,
+      "sha256": "4fb9953fe4629bface38724ce8dad0a8bf8730fe97ad5fc2d7092a8727262888",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R05",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R05.json",
+      "seed": 35,
+      "sha256": "4bcb7886772f831ecec168fb5259650495b4f1c3b2fd7676441fb9c71a32b737",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R06",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R06.json",
+      "seed": 36,
+      "sha256": "8eaecf997b8043ec4a761a9eaff6f26ed3a04379085b6fbe810e06c4074309da",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R07",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R07.json",
+      "seed": 37,
+      "sha256": "4995751b736e895387edaa13e6b5009535ea45a0212b7a1a5a28f0ac23423a74",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R08",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R08.json",
+      "seed": 38,
+      "sha256": "38f55823ff8b0b0c414a4e593a5daf35a15863bb39be7ebbaa33c300677c594d",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R09",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R09.json",
+      "seed": 39,
+      "sha256": "232084cfc7cd227e667623eafe08296f631a3ef0b582b15449bf398fd5c9a748",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N30-R10",
+      "item_count": 30,
+      "path": "MPV-GEN-T8-N30-R10.json",
+      "seed": 40,
+      "sha256": "292474f50f4dd9f56e43cf8678d7aeb1cbe69a99c54e3288fb3f4c4431e7cc42",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R01",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R01.json",
+      "seed": 61,
+      "sha256": "817d351a3581e074a62ec033405739de2ff673cbaa9d7f31e43f0cfad57969f8",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R02",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R02.json",
+      "seed": 62,
+      "sha256": "b5f3ef503dde48e1a8aa34253a60d7d6da253e143158b406157555435cbbf481",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R03",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R03.json",
+      "seed": 63,
+      "sha256": "e8a0ec65ee2e35889880aa16baa47919f3ad2aec391a49f612b645e51ab86851",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R04",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R04.json",
+      "seed": 64,
+      "sha256": "9cae4457296e1bc96dfbfeb013dcd643b0054e90087219e91a2e55ab93072b65",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R05",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R05.json",
+      "seed": 65,
+      "sha256": "8f00de6f3bce284b6ff62ba047d9158e968bee8bf7ec3fdf5d222f8aff3e043b",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R06",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R06.json",
+      "seed": 66,
+      "sha256": "9115c390a1313cadde0d489c9c4b910a5fad765bf430d87702baf684733b9962",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R07",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R07.json",
+      "seed": 67,
+      "sha256": "18028caff4148c54ee0a89198f7518ec22f62b4b7f6d6f9694d96ef618dcabe4",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R08",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R08.json",
+      "seed": 68,
+      "sha256": "904b1fb14e81479e5a5a9b13e6f288d56e3106f363b20a7caefd5b872d5924e7",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R09",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R09.json",
+      "seed": 69,
+      "sha256": "aee1c726b8ece94374c0577cf9d1a60aa74ea14e482a9be438994acd954f61f0",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N60-R10",
+      "item_count": 60,
+      "path": "MPV-GEN-T8-N60-R10.json",
+      "seed": 70,
+      "sha256": "e94fdae2b5931cdb738b6aee8eae975886cc006b3caed9a64f44b3266b6a58d5",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R01",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R01.json",
+      "seed": 91,
+      "sha256": "16438a31a3f2329ffd9c949f545c9f77236b3efb7e7d1dd6b94199b09a6b88e6",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R02",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R02.json",
+      "seed": 92,
+      "sha256": "6dc9dc841bbcf9e978ae96157a01a2faa1db6f921ed3e37942748f6e675719e8",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R03",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R03.json",
+      "seed": 93,
+      "sha256": "eee161f47f38d71b22f66a1920526e30375718cc141f6efa391d721599b6ce72",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R04",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R04.json",
+      "seed": 94,
+      "sha256": "ce165f76d338c21d2c9423b46a428089d8a18dfb859ce55a881ada55f02ed487",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R05",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R05.json",
+      "seed": 95,
+      "sha256": "dc8875ce9b3e110c9760445c1890f23d87bce32de24a2f106a6bc234117cdd6c",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R06",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R06.json",
+      "seed": 96,
+      "sha256": "e3aa100fa51530d92b9dbf5638660c1e5f56933f705f72fbd0e1df8a7b186897",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R07",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R07.json",
+      "seed": 97,
+      "sha256": "e30e5b3b48e8a68171c55f4e25307b3558e7035bb5b418dd7d9efe7a86f2c9f9",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R08",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R08.json",
+      "seed": 98,
+      "sha256": "1c80305bf1a93879560fed11527210a8f95002affdd09244f335317fc7cd8d53",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R09",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R09.json",
+      "seed": 99,
+      "sha256": "76c1e46af05b0fd6fc3c04b628ce4d747502de71ebac7b67688c0620e09112af",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T8-N90-R10",
+      "item_count": 90,
+      "path": "MPV-GEN-T8-N90-R10.json",
+      "seed": 100,
+      "sha256": "5e089f72bb8eaa972759fef6796aa641db17647f31da42f7cf7fb78c2ab81d68",
+      "type": 8
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R01",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R01.json",
+      "seed": 31,
+      "sha256": "06023a36c581baa562de7e5bc4749eccc8df60af56d77bd6972365f0bbbbcd9f",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R02",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R02.json",
+      "seed": 32,
+      "sha256": "d306f52dbce7d5eabdc0a742255f486fa46f714fdeb28057c8da2f75d19c11f0",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R03",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R03.json",
+      "seed": 33,
+      "sha256": "d3b346bd0fa0a39a08ed6d08188f3953b4710a3ef9d8e141354eda5302188a2e",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R04",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R04.json",
+      "seed": 34,
+      "sha256": "89ed7c99e72e46c4ce0cc095dab5a18cf5d09985367550c0541b3d9b429016e5",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R05",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R05.json",
+      "seed": 35,
+      "sha256": "02923295b0f131577cd5fa8a5523a363cd03a3d54bb4d526bad6e1fcca5dea5a",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R06",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R06.json",
+      "seed": 36,
+      "sha256": "c9d363f9569bfc53e5f81a7ac8a7d06c17de650e485589ff76061fa43c5fa4c3",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R07",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R07.json",
+      "seed": 37,
+      "sha256": "421287474b90ecf859b237b86040c591fa529c9892b3f71939586050c8fd515e",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R08",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R08.json",
+      "seed": 38,
+      "sha256": "9e7f69e19eb7c6a6db85d836e5095e57fdf8eb31cbf775144bff6e8da958f95f",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R09",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R09.json",
+      "seed": 39,
+      "sha256": "d9f33bff924932193bf3474ba871f42ae772dffb28990e8e91450c77b09e0eaa",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N30-R10",
+      "item_count": 30,
+      "path": "MPV-GEN-T9-N30-R10.json",
+      "seed": 40,
+      "sha256": "071299bcad95643bbf095175ddb5d3a9f1382d8904da76aada58341fb243acf6",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R01",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R01.json",
+      "seed": 61,
+      "sha256": "f01bc675accdf51df74a88f255c7d831086e3e3942e53df882745742c13a9039",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R02",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R02.json",
+      "seed": 62,
+      "sha256": "82afd75948cc93381500a89ec44b6b71382b526933941fc599837b1196014870",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R03",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R03.json",
+      "seed": 63,
+      "sha256": "908ae39f7956e3a602b30e963fff3fafb10c013e07daf06040e2e88aa7f78b31",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R04",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R04.json",
+      "seed": 64,
+      "sha256": "b7fa1f0df7d395bbe91ee9224d52b63084b8963a8490bfaa7dd2f61ba48a3609",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R05",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R05.json",
+      "seed": 65,
+      "sha256": "5a78668be41af50a35fda5fbfc9b2b4ce1742fb86e305b3e987dd5dece5f8ba1",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R06",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R06.json",
+      "seed": 66,
+      "sha256": "f656adf61791b37b9c9f52da2aa88f4fac592b478404328e968f81f240a5d637",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R07",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R07.json",
+      "seed": 67,
+      "sha256": "209b0a5950d54f1c25467125278759ce2391dbbac82a611e77ae033f303d7aa6",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R08",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R08.json",
+      "seed": 68,
+      "sha256": "57219ce54a55b08c2d14448354d2a5f85092c23af1b8576af6eb58e15fcb8835",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R09",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R09.json",
+      "seed": 69,
+      "sha256": "26528c03b6407fa2e9fc6eb36ce931b98522add1234b96f84631ccec575dbb33",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N60-R10",
+      "item_count": 60,
+      "path": "MPV-GEN-T9-N60-R10.json",
+      "seed": 70,
+      "sha256": "8e442386904f77098f68ff918fedeb345d479b0100e1ee404e1e4ee0a4d9ca4d",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R01",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R01.json",
+      "seed": 91,
+      "sha256": "16cb7f6639ed6e12d4235abf934fe84d414dad10cf98631b6ebd9066185583b5",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R02",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R02.json",
+      "seed": 92,
+      "sha256": "fdc1f2ed38718d355aa2de44f854964d9a5a8e223113e82e57367528cb0968f2",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R03",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R03.json",
+      "seed": 93,
+      "sha256": "74a452bb4015fb6019bc9d5da4d67ad3dee5754c638ed4ef2836fe15159b9399",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R04",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R04.json",
+      "seed": 94,
+      "sha256": "de00abd497a131eaf9748127332b0206ba45fd3c9bd70b5c1622e04b9209ce74",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R05",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R05.json",
+      "seed": 95,
+      "sha256": "bdaee9551bc4a295320e441be11ca86d2a439587b240c965c3987841e634c5be",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R06",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R06.json",
+      "seed": 96,
+      "sha256": "4b0b9728522da0fa19303906dbc627627c4e6092eed1bce04da24f0c7942879c",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R07",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R07.json",
+      "seed": 97,
+      "sha256": "06776d2ba24db4bcec6fb85fff7ca96809b78106087c514d73e75800b13b2dc7",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R08",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R08.json",
+      "seed": 98,
+      "sha256": "c7cb621796dcea27fddb1f33b19ced7effd530bb59c739d43a4970118169f701",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R09",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R09.json",
+      "seed": 99,
+      "sha256": "2a0bf91ea48c24f4cc1d5a213984423eccd981a5e5eff329b631749218df6f2a",
+      "type": 9
+    },
+    {
+      "container": [
+        100,
+        100,
+        100
+      ],
+      "instance_id": "MPV-GEN-T9-N90-R10",
+      "item_count": 90,
+      "path": "MPV-GEN-T9-N90-R10.json",
+      "seed": 100,
+      "sha256": "939b36d55b3dd38ad72999f1d2bce745d75e9958882087c5ba23d067b9780ded",
+      "type": 9
+    }
+  ],
+  "license_note": "official DIKU code states research and academic use only",
+  "parameters": {
+    "bindim": 100,
+    "replicates": 10,
+    "sizes": [
+      30,
+      60,
+      90
+    ],
+    "types": [
+      1,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "schema_version": 1,
+  "seed_rule": "seed=n+replicate, matching official v+n for v=1..10",
+  "source_sha256": {
+    "3dbpp.c": "eb67adddba4c201a42654be04cd9b2316a8e2825c398d79531d0d9884833c0c3",
+    "readme.3dbpp": "96d061562afa161629aa52370abe0d8d4f1c0e5b4dc6561e64a340cd3e7251ec",
+    "test3dbpp.c": "f7fbe2238b54862b4bafaa3d7f0e9120072f1730860b534d7f17f566da2b82ed"
+  },
+  "source_urls": {
+    "3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/3dbpp.c",
+    "readme.3dbpp": "https://di.ku.dk/~pisinger/new3dbpp/readme.3dbpp",
+    "test3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/test3dbpp.c"
+  }
+}

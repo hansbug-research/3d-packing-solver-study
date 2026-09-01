@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": "dddf65af64c8bb9a826e01fa3065879e5cbc4d7fd2d29a5fa0c63491840bc498",
+  "benchmark_id": "B05-MPV-OFFICIAL-GEN",
+  "implementation": "jerry",
+  "label": "B05-MPV-GEN-jerry-any-1s",
+  "output_sha256": "ea1322e2d494584d499fe9d00d9dbb2c7c972f610083319f9e6b406efd26ff15",
+  "pose": "any",
+  "records": 150,
+  "runner_sha256": "d5ec34eb9093dda2a3d4b312a725e001fa4f9d17064d845e17cbf7985dcd1acc",
+  "schema_version": 1,
+  "strategy": "extremepoint",
+  "time_limit_s": 1.0
+}

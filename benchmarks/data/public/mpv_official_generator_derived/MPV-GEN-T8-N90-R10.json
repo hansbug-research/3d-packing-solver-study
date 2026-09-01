@@ -1,0 +1,843 @@
+{
+  "container": [
+    100,
+    100,
+    100
+  ],
+  "corpus": "MPV_OFFICIAL_GENERATOR_DERIVED",
+  "generator": {
+    "bindim": 100,
+    "license_note": "official DIKU code states research and academic use only",
+    "n": 90,
+    "packingtype": "not used by generator probe",
+    "replicate": 10,
+    "seed": 100,
+    "seed_rule": "official main uses srand(v+n), with v=1..10; wrapper reproduces seed=n+replicate",
+    "source_sha256": {
+      "3dbpp.c": "eb67adddba4c201a42654be04cd9b2316a8e2825c398d79531d0d9884833c0c3",
+      "readme.3dbpp": "96d061562afa161629aa52370abe0d8d4f1c0e5b4dc6561e64a340cd3e7251ec",
+      "test3dbpp.c": "f7fbe2238b54862b4bafaa3d7f0e9120072f1730860b534d7f17f566da2b82ed"
+    },
+    "source_urls": {
+      "3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/3dbpp.c",
+      "readme.3dbpp": "https://di.ku.dk/~pisinger/new3dbpp/readme.3dbpp",
+      "test3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/test3dbpp.c"
+    },
+    "type": 8
+  },
+  "instance_id": "MPV-GEN-T8-N90-R10",
+  "items": [
+    {
+      "id": "item-000",
+      "orientation": "fixed",
+      "size": [
+        89,
+        83,
+        1
+      ]
+    },
+    {
+      "id": "item-001",
+      "orientation": "fixed",
+      "size": [
+        36,
+        39,
+        53
+      ]
+    },
+    {
+      "id": "item-002",
+      "orientation": "fixed",
+      "size": [
+        76,
+        9,
+        41
+      ]
+    },
+    {
+      "id": "item-003",
+      "orientation": "fixed",
+      "size": [
+        15,
+        27,
+        26
+      ]
+    },
+    {
+      "id": "item-004",
+      "orientation": "fixed",
+      "size": [
+        62,
+        3,
+        97
+      ]
+    },
+    {
+      "id": "item-005",
+      "orientation": "fixed",
+      "size": [
+        45,
+        38,
+        24
+      ]
+    },
+    {
+      "id": "item-006",
+      "orientation": "fixed",
+      "size": [
+        51,
+        72,
+        45
+      ]
+    },
+    {
+      "id": "item-007",
+      "orientation": "fixed",
+      "size": [
+        56,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "item-008",
+      "orientation": "fixed",
+      "size": [
+        21,
+        96,
+        77
+      ]
+    },
+    {
+      "id": "item-009",
+      "orientation": "fixed",
+      "size": [
+        91,
+        90,
+        72
+      ]
+    },
+    {
+      "id": "item-010",
+      "orientation": "fixed",
+      "size": [
+        54,
+        93,
+        86
+      ]
+    },
+    {
+      "id": "item-011",
+      "orientation": "fixed",
+      "size": [
+        83,
+        21,
+        39
+      ]
+    },
+    {
+      "id": "item-012",
+      "orientation": "fixed",
+      "size": [
+        54,
+        72,
+        91
+      ]
+    },
+    {
+      "id": "item-013",
+      "orientation": "fixed",
+      "size": [
+        31,
+        90,
+        23
+      ]
+    },
+    {
+      "id": "item-014",
+      "orientation": "fixed",
+      "size": [
+        49,
+        40,
+        77
+      ]
+    },
+    {
+      "id": "item-015",
+      "orientation": "fixed",
+      "size": [
+        41,
+        48,
+        93
+      ]
+    },
+    {
+      "id": "item-016",
+      "orientation": "fixed",
+      "size": [
+        6,
+        94,
+        77
+      ]
+    },
+    {
+      "id": "item-017",
+      "orientation": "fixed",
+      "size": [
+        32,
+        39,
+        5
+      ]
+    },
+    {
+      "id": "item-018",
+      "orientation": "fixed",
+      "size": [
+        29,
+        45,
+        39
+      ]
+    },
+    {
+      "id": "item-019",
+      "orientation": "fixed",
+      "size": [
+        87,
+        60,
+        6
+      ]
+    },
+    {
+      "id": "item-020",
+      "orientation": "fixed",
+      "size": [
+        67,
+        54,
+        93
+      ]
+    },
+    {
+      "id": "item-021",
+      "orientation": "fixed",
+      "size": [
+        45,
+        17,
+        69
+      ]
+    },
+    {
+      "id": "item-022",
+      "orientation": "fixed",
+      "size": [
+        10,
+        32,
+        21
+      ]
+    },
+    {
+      "id": "item-023",
+      "orientation": "fixed",
+      "size": [
+        1,
+        6,
+        86
+      ]
+    },
+    {
+      "id": "item-024",
+      "orientation": "fixed",
+      "size": [
+        1,
+        78,
+        98
+      ]
+    },
+    {
+      "id": "item-025",
+      "orientation": "fixed",
+      "size": [
+        32,
+        41,
+        52
+      ]
+    },
+    {
+      "id": "item-026",
+      "orientation": "fixed",
+      "size": [
+        44,
+        41,
+        48
+      ]
+    },
+    {
+      "id": "item-027",
+      "orientation": "fixed",
+      "size": [
+        9,
+        67,
+        83
+      ]
+    },
+    {
+      "id": "item-028",
+      "orientation": "fixed",
+      "size": [
+        23,
+        71,
+        83
+      ]
+    },
+    {
+      "id": "item-029",
+      "orientation": "fixed",
+      "size": [
+        100,
+        52,
+        32
+      ]
+    },
+    {
+      "id": "item-030",
+      "orientation": "fixed",
+      "size": [
+        92,
+        24,
+        7
+      ]
+    },
+    {
+      "id": "item-031",
+      "orientation": "fixed",
+      "size": [
+        14,
+        3,
+        54
+      ]
+    },
+    {
+      "id": "item-032",
+      "orientation": "fixed",
+      "size": [
+        88,
+        62,
+        17
+      ]
+    },
+    {
+      "id": "item-033",
+      "orientation": "fixed",
+      "size": [
+        67,
+        20,
+        56
+      ]
+    },
+    {
+      "id": "item-034",
+      "orientation": "fixed",
+      "size": [
+        89,
+        12,
+        70
+      ]
+    },
+    {
+      "id": "item-035",
+      "orientation": "fixed",
+      "size": [
+        100,
+        49,
+        14
+      ]
+    },
+    {
+      "id": "item-036",
+      "orientation": "fixed",
+      "size": [
+        90,
+        41,
+        85
+      ]
+    },
+    {
+      "id": "item-037",
+      "orientation": "fixed",
+      "size": [
+        23,
+        94,
+        16
+      ]
+    },
+    {
+      "id": "item-038",
+      "orientation": "fixed",
+      "size": [
+        52,
+        13,
+        13
+      ]
+    },
+    {
+      "id": "item-039",
+      "orientation": "fixed",
+      "size": [
+        29,
+        15,
+        60
+      ]
+    },
+    {
+      "id": "item-040",
+      "orientation": "fixed",
+      "size": [
+        90,
+        41,
+        88
+      ]
+    },
+    {
+      "id": "item-041",
+      "orientation": "fixed",
+      "size": [
+        71,
+        45,
+        43
+      ]
+    },
+    {
+      "id": "item-042",
+      "orientation": "fixed",
+      "size": [
+        52,
+        31,
+        57
+      ]
+    },
+    {
+      "id": "item-043",
+      "orientation": "fixed",
+      "size": [
+        12,
+        1,
+        86
+      ]
+    },
+    {
+      "id": "item-044",
+      "orientation": "fixed",
+      "size": [
+        26,
+        62,
+        76
+      ]
+    },
+    {
+      "id": "item-045",
+      "orientation": "fixed",
+      "size": [
+        19,
+        49,
+        94
+      ]
+    },
+    {
+      "id": "item-046",
+      "orientation": "fixed",
+      "size": [
+        67,
+        15,
+        87
+      ]
+    },
+    {
+      "id": "item-047",
+      "orientation": "fixed",
+      "size": [
+        46,
+        59,
+        60
+      ]
+    },
+    {
+      "id": "item-048",
+      "orientation": "fixed",
+      "size": [
+        95,
+        30,
+        28
+      ]
+    },
+    {
+      "id": "item-049",
+      "orientation": "fixed",
+      "size": [
+        71,
+        13,
+        28
+      ]
+    },
+    {
+      "id": "item-050",
+      "orientation": "fixed",
+      "size": [
+        42,
+        27,
+        88
+      ]
+    },
+    {
+      "id": "item-051",
+      "orientation": "fixed",
+      "size": [
+        7,
+        16,
+        10
+      ]
+    },
+    {
+      "id": "item-052",
+      "orientation": "fixed",
+      "size": [
+        70,
+        65,
+        60
+      ]
+    },
+    {
+      "id": "item-053",
+      "orientation": "fixed",
+      "size": [
+        53,
+        27,
+        12
+      ]
+    },
+    {
+      "id": "item-054",
+      "orientation": "fixed",
+      "size": [
+        3,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "item-055",
+      "orientation": "fixed",
+      "size": [
+        95,
+        91,
+        83
+      ]
+    },
+    {
+      "id": "item-056",
+      "orientation": "fixed",
+      "size": [
+        99,
+        82,
+        63
+      ]
+    },
+    {
+      "id": "item-057",
+      "orientation": "fixed",
+      "size": [
+        30,
+        17,
+        39
+      ]
+    },
+    {
+      "id": "item-058",
+      "orientation": "fixed",
+      "size": [
+        49,
+        16,
+        91
+      ]
+    },
+    {
+      "id": "item-059",
+      "orientation": "fixed",
+      "size": [
+        9,
+        100,
+        76
+      ]
+    },
+    {
+      "id": "item-060",
+      "orientation": "fixed",
+      "size": [
+        82,
+        67,
+        46
+      ]
+    },
+    {
+      "id": "item-061",
+      "orientation": "fixed",
+      "size": [
+        63,
+        62,
+        43
+      ]
+    },
+    {
+      "id": "item-062",
+      "orientation": "fixed",
+      "size": [
+        49,
+        66,
+        5
+      ]
+    },
+    {
+      "id": "item-063",
+      "orientation": "fixed",
+      "size": [
+        41,
+        82,
+        92
+      ]
+    },
+    {
+      "id": "item-064",
+      "orientation": "fixed",
+      "size": [
+        74,
+        38,
+        54
+      ]
+    },
+    {
+      "id": "item-065",
+      "orientation": "fixed",
+      "size": [
+        29,
+        5,
+        86
+      ]
+    },
+    {
+      "id": "item-066",
+      "orientation": "fixed",
+      "size": [
+        61,
+        38,
+        94
+      ]
+    },
+    {
+      "id": "item-067",
+      "orientation": "fixed",
+      "size": [
+        86,
+        25,
+        59
+      ]
+    },
+    {
+      "id": "item-068",
+      "orientation": "fixed",
+      "size": [
+        79,
+        48,
+        61
+      ]
+    },
+    {
+      "id": "item-069",
+      "orientation": "fixed",
+      "size": [
+        51,
+        38,
+        44
+      ]
+    },
+    {
+      "id": "item-070",
+      "orientation": "fixed",
+      "size": [
+        75,
+        72,
+        68
+      ]
+    },
+    {
+      "id": "item-071",
+      "orientation": "fixed",
+      "size": [
+        63,
+        48,
+        70
+      ]
+    },
+    {
+      "id": "item-072",
+      "orientation": "fixed",
+      "size": [
+        28,
+        59,
+        98
+      ]
+    },
+    {
+      "id": "item-073",
+      "orientation": "fixed",
+      "size": [
+        86,
+        12,
+        79
+      ]
+    },
+    {
+      "id": "item-074",
+      "orientation": "fixed",
+      "size": [
+        36,
+        51,
+        42
+      ]
+    },
+    {
+      "id": "item-075",
+      "orientation": "fixed",
+      "size": [
+        43,
+        90,
+        81
+      ]
+    },
+    {
+      "id": "item-076",
+      "orientation": "fixed",
+      "size": [
+        2,
+        67,
+        32
+      ]
+    },
+    {
+      "id": "item-077",
+      "orientation": "fixed",
+      "size": [
+        26,
+        8,
+        96
+      ]
+    },
+    {
+      "id": "item-078",
+      "orientation": "fixed",
+      "size": [
+        54,
+        98,
+        70
+      ]
+    },
+    {
+      "id": "item-079",
+      "orientation": "fixed",
+      "size": [
+        3,
+        78,
+        52
+      ]
+    },
+    {
+      "id": "item-080",
+      "orientation": "fixed",
+      "size": [
+        29,
+        31,
+        2
+      ]
+    },
+    {
+      "id": "item-081",
+      "orientation": "fixed",
+      "size": [
+        16,
+        13,
+        43
+      ]
+    },
+    {
+      "id": "item-082",
+      "orientation": "fixed",
+      "size": [
+        32,
+        16,
+        54
+      ]
+    },
+    {
+      "id": "item-083",
+      "orientation": "fixed",
+      "size": [
+        77,
+        64,
+        86
+      ]
+    },
+    {
+      "id": "item-084",
+      "orientation": "fixed",
+      "size": [
+        53,
+        66,
+        53
+      ]
+    },
+    {
+      "id": "item-085",
+      "orientation": "fixed",
+      "size": [
+        43,
+        36,
+        25
+      ]
+    },
+    {
+      "id": "item-086",
+      "orientation": "fixed",
+      "size": [
+        24,
+        38,
+        79
+      ]
+    },
+    {
+      "id": "item-087",
+      "orientation": "fixed",
+      "size": [
+        4,
+        66,
+        84
+      ]
+    },
+    {
+      "id": "item-088",
+      "orientation": "fixed",
+      "size": [
+        20,
+        41,
+        97
+      ]
+    },
+    {
+      "id": "item-089",
+      "orientation": "fixed",
+      "size": [
+        44,
+        90,
+        19
+      ]
+    }
+  ],
+  "problem": "fixed-orientation identical-bin 3D bin packing",
+  "schema_version": 1
+}

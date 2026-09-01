@@ -74,6 +74,8 @@ B01-B11 是公共质量、目标函数和精确真值主线；B12-B18 是约束 
 
 B05 在正式运行前必须完成官方实例、姿态规则、known optimum/best-known 和许可证审计；来源未冻结时使用 `input_status=SOURCE_INCOMPLETE`、`run_status=NOT_RUN` 和 `termination_reason=SOURCE_PENDING`，不得用自生成实例冒名替代。B03 本地固定 PackingSolver fork 已含 60 个转换实例；生成器区分 5 类形状、clustered/random 和 50%/90% 容量档，转换 CSV 没有旋转列，协议暂按固定方向解释。正式运行前仍需把原始文件、格式说明和引用纳入仓库级来源 manifest，并由论文/格式审计确认姿态规则。
 
+官方 DIKU generator 已另行冻结为 supplemental `B05-MPV-OFFICIAL-GEN`：`type=1,6,7,8,9`、`n=30/60/90`、每组 10 个 replicate，共 150 个 `FIXED_XYZ` 输入；源码 SHA、seed 规则和逐文件 hash 见 [官方生成器派生轨](b05-official-generator-derived.md)。它可以支持可复现实验和官方 C lower/upper-bound 对照，但不能改变正式 B05 的 `SOURCE_INCOMPLETE`，也不能回写 protocol-v3 计划分母。
+
 ### 4.2 异构容器、成本与开放维度
 
 | ID | 套件 | 原问题与主指标 | 适用实现 | 该结果主要说明什么 |

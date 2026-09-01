@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-fastbrute-fixed-10s-final.certificate.csv",
+      "certificate_groups": 60,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-fastbrute-fixed-10s-final.jsonl",
+      "status": "PASS"
+    },
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-fastbrute-fixed-1s-final.certificate.csv",
+      "certificate_groups": 60,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-fastbrute-fixed-1s-final.jsonl",
+      "status": "PASS"
+    },
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-laff-fixed-10s.certificate.csv",
+      "certificate_groups": 150,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-laff-fixed-10s.jsonl",
+      "status": "PASS"
+    },
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-laff-fixed-1s.certificate.csv",
+      "certificate_groups": 150,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-laff-fixed-1s.jsonl",
+      "status": "PASS"
+    },
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-plain-fixed-10s.certificate.csv",
+      "certificate_groups": 150,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-plain-fixed-10s.jsonl",
+      "status": "PASS"
+    },
+    {
+      "certificate": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-plain-fixed-1s.certificate.csv",
+      "certificate_groups": 150,
+      "checked_records": 150,
+      "failures": [],
+      "run": "/home/zhangshaoang/packing-software-study/results/comprehensive/runs/B05-MPV-GEN-skjolber-plain-fixed-1s.jsonl",
+      "status": "PASS"
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS"
+}

@@ -278,6 +278,7 @@ def run_instance(
     time_limit: float,
     work_dir: Path,
     extra_args: tuple[str, ...] = (),
+    infinite_bin_copies: bool = True,
 ) -> tuple[dict[str, Any], dict[str, Path]]:
     safe_id = instance["instance_id"].replace(":", "_").replace(".", "_")
     case_dir = work_dir / safe_id
@@ -300,7 +301,7 @@ def run_instance(
         "--output", str(output),
         "--certificate", str(certificate),
     ]
-    if instance["objective"] == "bin-packing":
+    if instance["objective"] == "bin-packing" and infinite_bin_copies:
         command.append("--bin-infinite-copies")
     command.extend(extra_args)
     started = perf_counter()

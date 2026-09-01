@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": "41c8b6449dedea5f6632ea872c6da12397a258e03952bd38ee2fffd4cc1891f3",
+  "benchmark_id": "B05-MPV-OFFICIAL-GEN",
+  "implementation": "go_bp3d",
+  "label": "B05-MPV-GEN-go-bp3d-any-10s",
+  "output_sha256": "adeba96dd573fbb44e5d07d4307aa867dc0aa4787e56a116c27c7cab242efe58",
+  "pose": "any",
+  "records": 150,
+  "runner_sha256": "d5ec34eb9093dda2a3d4b312a725e001fa4f9d17064d845e17cbf7985dcd1acc",
+  "schema_version": 1,
+  "strategy": "extremepoint",
+  "time_limit_s": 10.0
+}

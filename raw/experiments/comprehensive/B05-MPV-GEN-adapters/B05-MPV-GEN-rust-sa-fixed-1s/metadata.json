@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": "1210a2921104d8180dd4dd6d1ce2fd3c585041fe70b88269651bd1f92f55bfc2",
+  "benchmark_id": "B05-MPV-OFFICIAL-GEN",
+  "implementation": "rust_unesting",
+  "label": "B05-MPV-GEN-rust-sa-fixed-1s",
+  "output_sha256": "f4bc6c88e7258fcbc17d97363887ecde2f45c2d946504952a1c7be9e79babe8e",
+  "pose": "fixed",
+  "records": 150,
+  "runner_sha256": "d5ec34eb9093dda2a3d4b312a725e001fa4f9d17064d845e17cbf7985dcd1acc",
+  "schema_version": 1,
+  "strategy": "sa",
+  "time_limit_s": 1.0
+}

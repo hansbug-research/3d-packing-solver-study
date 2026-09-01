@@ -65,16 +65,22 @@ def one_record(
     benchmark_id = BENCHMARKS[instance["family"]]
     source_valid = instance["source_status"] == "VALID"
     errors = list(result.get("validation_errors", []))
-    process_ok = result.get("returncode") == 0 and result.get("status") == "VALID"
+    process_returned = result.get("returncode") == 0
     if not source_valid:
         run_status, solution_status, proof_status, termination = "NOT_RUN", "NOT_APPLICABLE", "NOT_APPLICABLE", "SOURCE_PENDING"
-    elif not process_ok:
+    elif not process_returned:
         run_status, solution_status, proof_status, termination = "ERROR", "NO_SOLUTION", "UNKNOWN", "PROCESS_ERROR"
     else:
         solver_time = float(result.get("solver_time_s") or 0.0)
         run_status = "TIME_LIMIT" if solver_time >= time_limit * 0.95 else "COMPLETED"
         if errors:
-            solution_status, proof_status, termination = "INVALID_CERTIFICATE", "UNKNOWN", "INVALID_CERTIFICATE"
+            # A successful solver process can legitimately have no feasible
+            # complete incumbent under a short budget.  Preserve it as a
+            # solve outcome rather than manufacturing a process error.
+            if int(result.get("packed_items") or 0) == 0:
+                solution_status, proof_status, termination = "NO_SOLUTION", "UNKNOWN", "NO_FEASIBLE_INCUMBENT"
+            else:
+                solution_status, proof_status, termination = "INVALID_CERTIFICATE", "UNKNOWN", "INVALID_CERTIFICATE"
         elif instance["family"] in {"BR", "LN"}:
             solution_status = "VALID_PARTIAL"
             proof_status = "INCUMBENT_WITH_BOUND" if result.get("proof_status") == "SOLVER_REPORTED_BOUND_CLOSED" else "FEASIBLE"
@@ -148,6 +154,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--binary", type=Path, required=True)
     parser.add_argument("--source-commit", required=True)
+    parser.add_argument(
+        "--data-commit",
+        help="commit of the checkout that owns --data-root; defaults to --source-commit",
+    )
     parser.add_argument("--data-root", type=Path, required=True)
     parser.add_argument(
         "--implementation-id",
@@ -163,13 +173,19 @@ def main() -> int:
     parser.add_argument("--label", required=True)
     parser.add_argument("--family", choices=("BR", "LN", "IMM"), action="append")
     parser.add_argument("--jobs", type=int, default=8)
+    parser.add_argument(
+        "--finite-bin-copies",
+        action="store_true",
+        help="keep finite bin COPIES instead of adding --bin-infinite-copies",
+    )
     parser.add_argument("--results-root", type=Path, default=ROOT / "results" / "comprehensive")
     parser.add_argument("--raw-root", type=Path, default=ROOT / "raw" / "experiments" / "comprehensive")
     args = parser.parse_args()
     if args.jobs < 1 or not args.binary.is_file():
         raise SystemExit("--jobs must be positive and --binary must exist")
-    if checkout_commit(args.data_root) != args.source_commit:
-        raise SystemExit("data checkout does not match --source-commit")
+    data_commit = args.data_commit or args.source_commit
+    if checkout_commit(args.data_root) != data_commit:
+        raise SystemExit("data checkout does not match --data-commit")
     suites, implementations = load_catalogs()
     implementation = next(row for row in implementations["implementations"] if row["id"] == args.implementation_id)
     instances = discover(args.data_root)
@@ -190,7 +206,15 @@ def main() -> int:
             for instance in instances:
                 if instance["source_status"] != "VALID":
                     continue
-                futures[executor.submit(run_instance, instance, args.binary, args.time_limit, work_root)] = instance
+                futures[executor.submit(
+                    run_instance,
+                    instance,
+                    args.binary,
+                    args.time_limit,
+                    work_root,
+                    (),
+                    not args.finite_bin_copies,
+                )] = instance
             for count, future in enumerate(as_completed(futures), 1):
                 instance = futures[future]
                 result, files = future.result()
@@ -210,7 +234,7 @@ def main() -> int:
     output.write_text("".join(json.dumps(row, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n" for row in records), encoding="utf-8")
     (raw_dir / "metadata.json").write_text(canonical_json({
         "schema_version": 1, "protocol_version": "benchmark-protocol/3", "implementation_id": args.implementation_id,
-        "source_commit": args.source_commit, "binary_sha256": binary_hash, "runner_sha256": runner_hash,
+        "source_commit": args.source_commit, "data_commit": data_commit, "binary_sha256": binary_hash, "runner_sha256": runner_hash,
         "time_limit_s": args.time_limit, "families": sorted(families), "records": len(records),
         "output_sha256": sha256(output), "archive_sha256": sha256(archive_path),
     }), encoding="utf-8")

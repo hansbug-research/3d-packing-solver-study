@@ -1,0 +1,27 @@
+track,implementation,algorithm,budget_s,valid_complete,total_records,mean_bins,median_bins,p95_bins
+FIXED,packingsolver_fork_box,box portfolio,1.0,90,150,10.188889,8.500000,24.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,150,150,6.460000,4.000000,21.000000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,89,150,10.202247,9.000000,24.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,150,150,6.460000,4.000000,21.000000
+FIXED,rust_brkga,brkga,1.0,150,150,8.326667,6.000000,25.000000
+FIXED,rust_brkga,brkga,10.0,150,150,8.373333,6.000000,25.000000
+FIXED,rust_extremepoint,extremepoint,1.0,150,150,7.013333,5.000000,23.000000
+FIXED,rust_extremepoint,extremepoint,10.0,150,150,7.013333,5.000000,23.000000
+FIXED,rust_ga,ga,1.0,150,150,8.073333,6.000000,24.000000
+FIXED,rust_ga,ga,10.0,150,150,8.126667,6.000000,25.000000
+FIXED,rust_layer,bottomleftfill,1.0,150,150,8.786667,7.000000,26.000000
+FIXED,rust_layer,bottomleftfill,10.0,150,150,8.786667,7.000000,26.000000
+FIXED,rust_sa,sa,1.0,150,150,7.986667,6.000000,24.000000
+FIXED,rust_sa,sa,10.0,150,150,7.973333,5.500000,25.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,60,150,1.000000,1.000000,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,60,150,1.000000,1.000000,1.000000
+FIXED,skjolber_laff,laff,1.0,150,150,8.320000,5.000000,25.000000
+FIXED,skjolber_laff,laff,10.0,150,150,8.320000,5.000000,25.000000
+FIXED,skjolber_plain,plain,1.0,150,150,6.953333,4.000000,23.000000
+FIXED,skjolber_plain,plain,10.0,150,150,6.953333,4.000000,23.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,150,150,6.806667,5.000000,23.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,150,150,6.806667,5.000000,23.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,150,150,6.360000,4.000000,21.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,150,150,6.360000,4.000000,21.000000
+PROJECTION,py3dbp,pivot greedy,1.0,150,150,6.360000,4.000000,21.000000
+PROJECTION,py3dbp,pivot greedy,10.0,150,150,6.360000,4.000000,21.000000

@@ -105,7 +105,7 @@ B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有
 | B02 LN | 与 BR 不同的尺寸分布和直立语义 | 同 B01，保留原姿态规则 | 分布迁移、初解和空解率 | 仍不是 3D-BPP |
 | B03 Profit-KP | 把体积目标和价值目标分开 | PackingSolver native；Rust 固定姿态 composed；其他多为全旋转 projection；EX 小规模 | 是否真正优化 profit；小规模 exact 校准 | 无效 best-known 表不能算 gap；姿态轨不可混排 |
 | B04 IMM/THPACK9 | 基础同型多箱装完 | 全库几何实现；Rust 为 composed | 箱数和完整性 | 不含成本、路线或力学 |
-| B05 MPV 3D-BPP | 防止只对 THPACK9 过拟合 | 同 B04；EX 小规模 | 外部分布的箱数质量和 known-result gap | 来源未冻结前不能排名 |
+| B05 MPV 3D-BPP | 防止只对 THPACK9 过拟合 | 同 B04；EX 小规模 | 外部分布的箱数质量和 known-result gap | 原始 archive 未冻结前不能排名；已固定独立 `B05-MPV-OFFICIAL-GEN` 150 例派生参考轨，但不回写 protocol-v3 分母 |
 | B06 Exact oracle | 给启发式一个可信真值 | CP-SAT/SCIP/Gurobi/CPLEX；启发式作 incumbent | objective gap、下界、证明率和不可行识别 | 合成小实例不代表生产分布 |
 | B07 BR0/BR8-15 | 扩大公开单箱困难桶 | 同 B01 | 困难尺寸的鲁棒性 | 不能推出任意角或业务约束能力 |
 | B08 Multiple-bin-size/cost | 测真正的箱型选择和价格目标 | PackingSolver cost 轨、EX；其他 composed/projection | 总成本、箱型 dominance、库存影响 | 箱数最少不等于成本最低 |

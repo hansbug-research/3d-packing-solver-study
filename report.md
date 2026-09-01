@@ -303,7 +303,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 |---|---|---|---|
 | 单箱体积与困难分布 | B01 BR、B02 LN、B07 BR0/BR8–15 | PackingSolver 原生；Python/Go/Jerry、Rust/Skjolber 在语义一致时作 composed/projection；exact 只跑小子集 | 合法率、体积利用率、姿态/排序敏感性和 anytime 预算响应 |
 | 价值目标 | B03 Profit-KP | PackingSolver 原生；固定姿态 Rust composed；其他库只能放宽旋转 projection；exact 20 件 | 是否真正优化 profit，而非只优化体积；小规模 objective gap/proof |
-| 同型多箱 | B04 IMM、B05 MPV 3D-BPP | 全部几何库；exact 小规模；B05 来源冻结后才排名 | 装完完整性、箱数质量和分布迁移；THPACK9 单独结果不够 |
+| 同型多箱 | B04 IMM、B05 MPV 3D-BPP；另有 MPV official-generator-derived 独立轨 | 全部几何库；exact 小规模；原始 B05 来源冻结后才排名，派生轨单独运行 | 装完完整性、箱数质量和分布迁移；THPACK9 单独结果不够；派生轨不能冒充论文 archive |
 | 真值与成本 | B06 exact oracle、B08 多箱型成本、B09 variable-cost exact、B10 固定异构、B11 open dimension | CP-SAT/SCIP/Gurobi/CPLEX 原生；PackingSolver cost/open 轨；B11 其他库用明确的外层搜索 projection；其余只能 projection | 成本方向、箱型/库存选择、开放维度目标和启发式距真值的差距 |
 | 约束合规 | B12 姿态、B13 重量/库存、B14 支撑/承压、B15 重心/轴荷、B16 障碍/门洞、B17 卸货、B18 相容性 | 原生能表达者进入 FULL；其余只作 post-validator/projection，并保留 NOT_SUPPORTED | 硬约束是否真的执行；违反率先于箱数/体积进入门禁 |
 | 工业 full | B19 Alonso 2019、B20 Alonso 2020、B21 VRPTW-CLP、B22 irregular、B23 脱敏真实订单、B30 BAYTP | 只有保留车辆/托盘/路线/货架/非规则字段的 adapter 才能进 FULL；其余明确 projection 或 NOT_SUPPORTED；B21 当前 source-invalid | 从公开正交数据到真实应用的分布迁移和端到端可行率；B30 首要看 `stockroom_space`，不能把删字段后的分数叫工业能力 |
@@ -315,7 +315,7 @@ B21 的来源审计发现，ESICUP pinned 快照包含 46 个实例文件，但�
 
 当前综合证据仍不是全套件完成：`26/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`562/608` cell 有证据，其中 `290` 个 cell 已执行 protocol-v3、`253` 个是 status-only，合计 `64,630` 条记录（legacy `2,122`，protocol-v3 `62,508`）。B11 新增 24 条外层搜索 projection 记录，23/24 为完整合法证书；Rust Layer 的 `open_dimension_x_xz` 无完整候选，保留为 `NO_SOLUTION`。B21 由于源格式异常现在全量保留为 `SOURCE_INVALID/SOURCE_PENDING`，没有伪造求解记录，证据见 [`b21-source-audit.json`](results/comprehensive/b21-source-audit.json)。B30 新增 8 条 source-derived shelf/bay projection，并补充 1 条 exact calibration；projection 仍为 8/8 几何布局但被独立 validator 判为 `CONSTRAINT_VIOLATION`，exact calibration 在两个声明 shelf 上完整通过，结果单列于 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)。B31 新增 24 条 mixed-SKU pallet projection，并补充 3 条 exact calibration（平铺/堆叠最优、重量不可行证明）；projection 结果仍单列于 [`industrial-mixed-pallet.csv`](results/comprehensive/rankings/industrial-mixed-pallet.csv)。B32 新增 48 条组合 online policy 记录（2 条 arrival trace × 8 个实现 × 3 个 policy），全部为 `VALID_COMPLETE`，结果单列于 [`industrial-online.csv`](results/comprehensive/rankings/industrial-online.csv)。本轮又从固定 upstream commit 构建并运行 `boxstacks`：B04 THPACK9 两档预算各 44/44 `ERROR/NO_SOLUTION`，B11 三例也全部 `ERROR/NO_SOLUTION`，原因是普通 IMM/open-X 输入不满足其同底面 stack 语义；这些记录保留为负向能力/接口证据，不能解释为 `PROVEN_INFEASIBLE`。B31 fixture 的来源已冻结并通过独立审计，但完整订单分布和生产级 FULL `boxstacks` adapter 尚未完成；B32 的原生 incremental adapter 仍未完成。projection 与原始姿态语义分轨，不能覆盖 native 结果；status-only 记录只表示能力边界，不能视为求解运行。B05 来源仍未冻结，B08、B10 和 B19+ 尚未形成全库共同适配器；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
-历史快照（12/32、13/32、21/32 等）仅用于追溯，不再作为当前统计。当前权威数字以 [`aggregate.json`](results/comprehensive/aggregate.json)、[`coverage.csv`](results/comprehensive/coverage.csv) 和 [`baseline-import-summary.json`](results/comprehensive/baseline-import-summary.json) 为准。B11 的原生/投影三例 open-X 校准单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，两条轨道不互相混排，也不与 BR/LN 或封闭箱数混排；B04 FastBruteForce 仍为 7/44 合法、37/44 非法/不完整证书。
+历史快照（12/32、13/32、21/32 等）仅用于追溯，不再作为当前统计。当前权威数字以 [`aggregate.json`](results/comprehensive/aggregate.json)、[`coverage.csv`](results/comprehensive/coverage.csv) 和 [`baseline-import-summary.json`](results/comprehensive/baseline-import-summary.json) 为准。B11 的原生/投影三例 open-X 校准单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，两条轨道不互相混排，也不与 BR/LN 或封闭箱数混排；B04 FastBruteForce 仍为 7/44 合法、37/44 非法/不完整证书。B05 原始 archive 仍未冻结，但已经生成独立的 150 例 MPV official-generator-derived corpus，详情和审计见 [`b05-official-generator-derived.md`](research/b05-official-generator-derived.md)。
 
 ### 7.1.2.1 B11 open-X 外层搜索 projection
 
@@ -338,6 +338,35 @@ B11 的 fork fixture 只有 3 个四件实例，属于来源可追溯的校准�
 ### 7.1.2.2 B19/B20 Alonso source-derived geometry projection
 
 Alonso 2019/2020 的原始文件已经通过字段、行数和需求恒等式审计。本轮对每个年份需求件数不超过 600 的三个最小实例运行了 PY/JE/GO/RS 五个几何实现的 1 s 升序/降序 projection，共 84 条 protocol-v3 记录；所有记录通过几何独立 validator，但均为 `VALID_PARTIAL`，因为单车几何投影不能表达原问题的层、托盘、交付日、成本和轴荷语义。按库的体积利用率、合法率和资源汇总见 [`industrial-projection.csv`](results/comprehensive/rankings/industrial-projection.csv)。这组结果只能说明公共工业尺寸分布上的几何迁移和预算响应，不能替代 B19/B20 FULL 轨；FULL 仍保持 `ADAPTER_MISSING`。
+
+### 7.1.2.2 MPV official-generator-derived 参考轨
+
+由于论文原始 MPV 三维 archive 仍未找到，本轮没有把派生实例改名为 B05，而是固定官方 DIKU generator 的 `type=1,6,7,8,9`、`n=30/60/90`、每组 10 个 replicate，生成 150 个 `FIXED_XYZ` 实例。官方 `3dbpp.c` 以 1 秒、单线程、general-packing 参数运行，所有实例都有可追溯的源码、输入和 stdout hash。完整证据见 [`b05-official-generator-derived.md`](research/b05-official-generator-derived.md)、[`B05-MPV-GEN-official-1s.jsonl`](results/comprehensive/runs/B05-MPV-GEN-official-1s.jsonl) 和 [`b05-official-generator-audit.json`](results/comprehensive/b05-official-generator-audit.json)。
+
+| generator type | n=30 mean LB/UB | n=60 mean LB/UB | n=90 mean LB/UB |
+|---|---:|---:|---:|
+| 1：Martello/Vigo 混合 | `8.2 / 8.6` | `14.1 / 15.6` | `22.9 / 25.1` |
+| 6：Berkey/Wang 小尺寸 | `1.0 / 1.0` | `1.0 / 1.0` | `1.0 / 1.0` |
+| 7：Berkey/Wang 中尺寸 | `1.0 / 1.0` | `1.0 / 1.9` | `1.0 / 2.0` |
+| 8：Berkey/Wang 大尺寸 | `5.8 / 6.1` | `10.5 / 12.0` | `12.9 / 17.2` |
+| 9：三段 guillotine | `3.0 / 4.0` | `3.0 / 5.9` | `3.0 / 6.9` |
+
+整体官方 C 轨为 `66/150` 在预算内闭合、`84/150` 到达时间上限、`0` 个进程错误。type 9 的构造体积下界恒为 3，但 1 秒时较大实例的 incumbent 明显高于 3，正好说明该轨道可用于测 lower/upper-bound 和规模拐点，不能把官方 solver 自报的 `UB` 直接当成 optimum。补充的全库 adapter 轨共 4,050 条记录（150 C reference、600 PackingSolver、1,500 Rust、900 Skjolber、900 Python/Go/Jerry projection）；所有可比较实现均有 150/150 实例状态。固定姿态只在完整合法证书上统计，projection 单独统计：
+
+| 轨道/实现 | 预算 | 合法完整/总数 | mean bins（合法完整） | 解释 |
+|---|---:|---:|---:|---|
+| PackingSolver fork `box` | 1 s | 90/150 | 10.188889 | 短预算下部分 type 6/7 无 incumbent；10 s 达到 150/150 |
+| PackingSolver upstream `box` | 1 s | 89/150 | 10.202247 | 与 fork 同一输入；只作版本配对，不称官方 release 最优 |
+| PackingSolver fork/upstream `box` | 10 s | 150/150 | 6.460000 | fixed-pose native 多箱 incumbent |
+| Rust ExtremePoint / GA / BRKGA / SA / Layer | 1/10 s | 各 150/150 | 7.013333 / 8.073333 / 8.326667 / 7.986667 / 8.786667 | composed fixed-pose；算法策略分开，不能当原生多箱接口 |
+| Skjolber Plain / LAFF | 1/10 s | 各 150/150 | 6.953333 / 8.320000 | Java sidecar；1 s 与 10 s 构造结果相同 |
+| Skjolber FastBruteForce | 1/10 s | 各 60/150 | 1.000000（仅 type 6/7） | 90 个实例无完整证书；该轨主要说明时间/可行率边界 |
+| py3dbp / Jerry（projection） | 1/10 s | 各 150/150 | 6.360000 | 放宽为 all rotations，严格标 `GEOMETRY_PROJECTION` |
+| Go `bp3d`（projection） | 1/10 s | 各 150/150 | 6.806667 | 同上；不能与 fixed-pose native 箱数直接比较 |
+
+这些数字只描述官方生成器派生分布的 incumbent 和证书质量，不能改写正式 B05 的 `SOURCE_INCOMPLETE`，也不计入 protocol-v3 `32 x 19` 分母。完整逐实例汇总和按 type/件数分层表见 [`B05-MPV-OFFICIAL-GEN-all-runs.csv`](results/comprehensive/rankings/B05-MPV-OFFICIAL-GEN-all-runs.csv)、[`B05-MPV-OFFICIAL-GEN-rankings.csv`](results/comprehensive/rankings/B05-MPV-OFFICIAL-GEN-rankings.csv) 和 [`B05-MPV-OFFICIAL-GEN-rankings-by-type.csv`](results/comprehensive/rankings/B05-MPV-OFFICIAL-GEN-rankings-by-type.csv)；原始 stdout、配置、资源和 validator artifact 仍按实现分目录保存。官方 C 的 lower/upper bound 与这些 heuristic/projection 结果不合并，也不将其未闭合 incumbent 写为 `PROVEN_OPTIMAL`。
+
+Skjolber 的 900 条 Java sidecar 记录另有 placement CSV；独立 Python validator 对 6 个算法/预算文件共 900 个实例组重算身份、固定姿态、边界、重叠和完整性，结果为 `PASS`，见 [`b05-skjolber-certificate-validation.json`](results/comprehensive/b05-skjolber-certificate-validation.json)。
 
 ### 7.1.3 新发现的公开现实约束数据
 

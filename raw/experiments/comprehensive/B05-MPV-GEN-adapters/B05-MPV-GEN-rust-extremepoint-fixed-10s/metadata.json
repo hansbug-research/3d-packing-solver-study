@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": "2ec40bac62d0f3e739d712aae36c9ebe8aaf8ce1c0a37862c707c6de7b400095",
+  "benchmark_id": "B05-MPV-OFFICIAL-GEN",
+  "implementation": "rust_unesting",
+  "label": "B05-MPV-GEN-rust-extremepoint-fixed-10s",
+  "output_sha256": "e213521c9175bfaf8b9bd2007819062ce418ef56b8c374863452047fdc6f3c02",
+  "pose": "fixed",
+  "records": 150,
+  "runner_sha256": "d5ec34eb9093dda2a3d4b312a725e001fa4f9d17064d845e17cbf7985dcd1acc",
+  "schema_version": 1,
+  "strategy": "extremepoint",
+  "time_limit_s": 10.0
+}

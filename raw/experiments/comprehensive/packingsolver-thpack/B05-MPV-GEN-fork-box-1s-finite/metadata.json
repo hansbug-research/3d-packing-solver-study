@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "6cc3b3698a224498b7c8d9eff93a3c11f764f890684fff1a27ee24ba9541b4c4",
+  "binary_sha256": "69df39eb0a9796b659d229b881506e32bdab484536319054d7ddec85e90b8236",
+  "data_commit": "e51c8416f2b1b6e2c0b98be236fef027fbea52c5",
+  "families": [
+    "IMM"
+  ],
+  "implementation_id": "packingsolver_fork_box",
+  "output_sha256": "3fa87336c4b1ac4f17eb73e5aec91b137ee428013b01f0e0b31e93f8f1443995",
+  "protocol_version": "benchmark-protocol/3",
+  "records": 150,
+  "runner_sha256": "cedd927146f2d316e0e231d9c6822c2d5a4fab194950c0a70d0286cd27d7f370",
+  "schema_version": 1,
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "time_limit_s": 1.0
+}

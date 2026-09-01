@@ -19,6 +19,8 @@ Martello、Pisinger 与 Vigo 的论文 *The Three-Dimensional Bin Packing Proble
 
 以下替代均被禁止：把二维 `martello1998` 目录当成三维数据；把 THPACK9、BR/LN 或自行生成的实例改名为 MPV；用论文中的表格数字反推实例并宣称可复现。未来找到公开文件后，必须先新增文件哈希、姿态语义、许可证和独立 parser，再将 B05 状态从 `SOURCE_INCOMPLETE` 改为 `VALID`。
 
+官方 DIKU 页面后来确认提供了 MPV 配套 generator 和 exact solver。由于它仍不是论文原始 archive，本仓库新增独立的 [官方生成器派生轨](b05-official-generator-derived.md)：固定 `type=1,6,7,8,9`、`n=30,60,90`、每组 10 个 replicate，共 150 个 `FIXED_XYZ` 实例。该轨道可作为协议 v4 的可复现实验集，但不改变本文件对原始 B05 archive 的 `SOURCE_INCOMPLETE` 判定。
+
 ## 独立补充轨
 
 这不意味着多箱能力不测。THPACK9（B04）继续作为公开同型多箱基线；小规模 exact-oracle（B06）用于真值校准。若要增加独立的现代公开数据，应以新的明确名称和独立审计加入，例如 Q4RealBPP（Mendeley Data DOI [10.17632/y258s6d939.2](https://doi.org/10.17632/y258s6d939.2)，12 个带重量/相容/相对位置/重心限制的合成实例）或 3DBPPsi（Science Data Bank DOI [10.57760/sciencedb.42066](https://doi.org/10.57760/sciencedb.42066)，异构车辆与可堆叠物品）。它们不是 MPV，应分别记录问题族和约束语义，不能覆盖 B05 的名称。

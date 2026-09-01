@@ -1,0 +1,22 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B05-MPV-GEN-official/artifacts-1s.tar.gz",
+  "artifact_archive_sha256": "6347921fc06e828e0761692d02132a82292328ac22977907e41fc6c81b505d3f",
+  "benchmark_id": "B05-MPV-OFFICIAL-GEN",
+  "bound_closed": 66,
+  "output_sha256": "4101f78745dcaad96388b08134983a75dbe742497e0b7fb86cf7852ae910cba1",
+  "record_kind": "SUPPLEMENTAL_REFERENCE_RUN_SUMMARY",
+  "records": 150,
+  "runner_sha256": "426c38914693682bd10f94bc7a64aedb311170630403687fd3609cfd62b1c25f",
+  "schema_version": 1,
+  "source_sha256": {
+    "3dbpp.c": "eb67adddba4c201a42654be04cd9b2316a8e2825c398d79531d0d9884833c0c3",
+    "readme.3dbpp": "96d061562afa161629aa52370abe0d8d4f1c0e5b4dc6561e64a340cd3e7251ec",
+    "test3dbpp.c": "f7fbe2238b54862b4bafaa3d7f0e9120072f1730860b534d7f17f566da2b82ed"
+  },
+  "status_counts": {
+    "COMPLETED": 66,
+    "ERROR": 0,
+    "TIME_LIMIT": 84
+  },
+  "time_limit_s": 1
+}

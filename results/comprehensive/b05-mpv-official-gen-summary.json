@@ -1,0 +1,245 @@
+{
+  "corpus": "MPV_OFFICIAL_GENERATOR_DERIVED",
+  "files": [
+    "B05-MPV-GEN-fork-box-10s-finite.jsonl",
+    "B05-MPV-GEN-fork-box-1s-finite.jsonl",
+    "B05-MPV-GEN-go-bp3d-any-10s.jsonl",
+    "B05-MPV-GEN-go-bp3d-any-1s.jsonl",
+    "B05-MPV-GEN-jerry-any-10s.jsonl",
+    "B05-MPV-GEN-jerry-any-1s.jsonl",
+    "B05-MPV-GEN-official-1s.jsonl",
+    "B05-MPV-GEN-py3dbp-any-10s.jsonl",
+    "B05-MPV-GEN-py3dbp-any-1s.jsonl",
+    "B05-MPV-GEN-rust-brkga-fixed-10s.jsonl",
+    "B05-MPV-GEN-rust-brkga-fixed-1s.jsonl",
+    "B05-MPV-GEN-rust-extremepoint-fixed-10s.jsonl",
+    "B05-MPV-GEN-rust-extremepoint-fixed-1s.jsonl",
+    "B05-MPV-GEN-rust-ga-fixed-10s.jsonl",
+    "B05-MPV-GEN-rust-ga-fixed-1s.jsonl",
+    "B05-MPV-GEN-rust-layer-fixed-10s.jsonl",
+    "B05-MPV-GEN-rust-layer-fixed-1s.jsonl",
+    "B05-MPV-GEN-rust-sa-fixed-10s.jsonl",
+    "B05-MPV-GEN-rust-sa-fixed-1s.jsonl",
+    "B05-MPV-GEN-skjolber-fastbrute-fixed-10s-final.jsonl",
+    "B05-MPV-GEN-skjolber-fastbrute-fixed-1s-final.jsonl",
+    "B05-MPV-GEN-skjolber-laff-fixed-10s.jsonl",
+    "B05-MPV-GEN-skjolber-laff-fixed-1s.jsonl",
+    "B05-MPV-GEN-skjolber-plain-fixed-10s.jsonl",
+    "B05-MPV-GEN-skjolber-plain-fixed-1s.jsonl",
+    "B05-MPV-GEN-upstream-box-10s-finite.jsonl",
+    "B05-MPV-GEN-upstream-box-1s-finite.jsonl"
+  ],
+  "groupings": [
+    {
+      "algorithm": "box portfolio",
+      "budget_s": "1.0",
+      "implementation": "packingsolver_fork_box",
+      "records": 90,
+      "track": "FIXED",
+      "valid_complete": 90
+    },
+    {
+      "algorithm": "box portfolio",
+      "budget_s": "10.0",
+      "implementation": "packingsolver_fork_box",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "box portfolio",
+      "budget_s": "1.0",
+      "implementation": "packingsolver_upstream_box",
+      "records": 89,
+      "track": "FIXED",
+      "valid_complete": 89
+    },
+    {
+      "algorithm": "box portfolio",
+      "budget_s": "10.0",
+      "implementation": "packingsolver_upstream_box",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "brkga",
+      "budget_s": "1.0",
+      "implementation": "rust_brkga",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "brkga",
+      "budget_s": "10.0",
+      "implementation": "rust_brkga",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "extremepoint",
+      "budget_s": "1.0",
+      "implementation": "rust_extremepoint",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "extremepoint",
+      "budget_s": "10.0",
+      "implementation": "rust_extremepoint",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "ga",
+      "budget_s": "1.0",
+      "implementation": "rust_ga",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "ga",
+      "budget_s": "10.0",
+      "implementation": "rust_ga",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "bottomleftfill",
+      "budget_s": "1.0",
+      "implementation": "rust_layer",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "bottomleftfill",
+      "budget_s": "10.0",
+      "implementation": "rust_layer",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "sa",
+      "budget_s": "1.0",
+      "implementation": "rust_sa",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "sa",
+      "budget_s": "10.0",
+      "implementation": "rust_sa",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "fast_brute_force",
+      "budget_s": "1.0",
+      "implementation": "skjolber_fast_brute_force",
+      "records": 60,
+      "track": "FIXED",
+      "valid_complete": 60
+    },
+    {
+      "algorithm": "fast_brute_force",
+      "budget_s": "10.0",
+      "implementation": "skjolber_fast_brute_force",
+      "records": 60,
+      "track": "FIXED",
+      "valid_complete": 60
+    },
+    {
+      "algorithm": "laff",
+      "budget_s": "1.0",
+      "implementation": "skjolber_laff",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "laff",
+      "budget_s": "10.0",
+      "implementation": "skjolber_laff",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "plain",
+      "budget_s": "1.0",
+      "implementation": "skjolber_plain",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "plain",
+      "budget_s": "10.0",
+      "implementation": "skjolber_plain",
+      "records": 150,
+      "track": "FIXED",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "pivot greedy",
+      "budget_s": "1.0",
+      "implementation": "go_bp3d",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "pivot greedy",
+      "budget_s": "10.0",
+      "implementation": "go_bp3d",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "Jerry pivot/fix-point greedy",
+      "budget_s": "1.0",
+      "implementation": "jerry",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "Jerry pivot/fix-point greedy",
+      "budget_s": "10.0",
+      "implementation": "jerry",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "pivot greedy",
+      "budget_s": "1.0",
+      "implementation": "py3dbp",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    },
+    {
+      "algorithm": "pivot greedy",
+      "budget_s": "10.0",
+      "implementation": "py3dbp",
+      "records": 150,
+      "track": "PROJECTION",
+      "valid_complete": 150
+    }
+  ],
+  "quality_records": 3599,
+  "quality_rule": "Only VALID_COMPLETE independent certificates; official C lower/upper bound is separate and not a certificate quality rank.",
+  "records": 4050
+}

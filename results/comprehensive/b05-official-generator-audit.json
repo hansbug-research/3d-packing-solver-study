@@ -1,0 +1,48 @@
+{
+  "corpus": "MPV_OFFICIAL_GENERATOR_DERIVED",
+  "corpus_sha256": "2deb28215b99a3412f0b065e8d5888e21de604a57129ba53230a1883f4f08411",
+  "errors": [],
+  "instance_count": 150,
+  "license_note": "official DIKU code states research and academic use only",
+  "original_mpv_archive_status": "SOURCE_INCOMPLETE",
+  "parameters": {
+    "bindim": 100,
+    "replicates": 10,
+    "sizes": [
+      30,
+      60,
+      90
+    ],
+    "types": [
+      1,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "schema_version": 1,
+  "size_counts": {
+    "30": 50,
+    "60": 50,
+    "90": 50
+  },
+  "source_sha256": {
+    "3dbpp.c": "eb67adddba4c201a42654be04cd9b2316a8e2825c398d79531d0d9884833c0c3",
+    "readme.3dbpp": "96d061562afa161629aa52370abe0d8d4f1c0e5b4dc6561e64a340cd3e7251ec",
+    "test3dbpp.c": "f7fbe2238b54862b4bafaa3d7f0e9120072f1730860b534d7f17f566da2b82ed"
+  },
+  "source_urls": {
+    "3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/3dbpp.c",
+    "readme.3dbpp": "https://di.ku.dk/~pisinger/new3dbpp/readme.3dbpp",
+    "test3dbpp.c": "https://di.ku.dk/~pisinger/new3dbpp/test3dbpp.c"
+  },
+  "status": "VALID",
+  "type_counts": {
+    "1": 30,
+    "6": 30,
+    "7": 30,
+    "8": 30,
+    "9": 30
+  }
+}

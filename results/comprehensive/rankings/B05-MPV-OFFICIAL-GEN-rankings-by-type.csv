@@ -1,0 +1,361 @@
+track,implementation,algorithm,budget_s,generator_type,items_n,valid_complete,mean_bins
+FIXED,packingsolver_fork_box,box portfolio,1.0,1,30,10,8.600000
+FIXED,packingsolver_fork_box,box portfolio,1.0,1,60,10,15.400000
+FIXED,packingsolver_fork_box,box portfolio,1.0,1,90,10,24.500000
+FIXED,packingsolver_fork_box,box portfolio,1.0,8,30,10,6.000000
+FIXED,packingsolver_fork_box,box portfolio,1.0,8,60,10,11.200000
+FIXED,packingsolver_fork_box,box portfolio,1.0,8,90,10,15.000000
+FIXED,packingsolver_fork_box,box portfolio,1.0,9,30,10,3.000000
+FIXED,packingsolver_fork_box,box portfolio,1.0,9,60,10,3.900000
+FIXED,packingsolver_fork_box,box portfolio,1.0,9,90,10,4.100000
+FIXED,packingsolver_fork_box,box portfolio,10.0,1,30,10,8.600000
+FIXED,packingsolver_fork_box,box portfolio,10.0,1,60,10,15.200000
+FIXED,packingsolver_fork_box,box portfolio,10.0,1,90,10,24.400000
+FIXED,packingsolver_fork_box,box portfolio,10.0,6,30,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,6,60,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,6,90,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,7,30,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,7,60,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,7,90,10,1.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,8,30,10,6.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,8,60,10,11.100000
+FIXED,packingsolver_fork_box,box portfolio,10.0,8,90,10,14.700000
+FIXED,packingsolver_fork_box,box portfolio,10.0,9,30,10,3.000000
+FIXED,packingsolver_fork_box,box portfolio,10.0,9,60,10,3.900000
+FIXED,packingsolver_fork_box,box portfolio,10.0,9,90,10,4.000000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,1,30,9,8.666667
+FIXED,packingsolver_upstream_box,box portfolio,1.0,1,60,10,15.300000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,1,90,10,24.600000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,8,30,10,6.000000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,8,60,10,11.100000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,8,90,10,15.000000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,9,30,10,3.000000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,9,60,10,3.900000
+FIXED,packingsolver_upstream_box,box portfolio,1.0,9,90,10,4.100000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,1,30,10,8.600000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,1,60,10,15.200000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,1,90,10,24.400000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,6,30,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,6,60,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,6,90,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,7,30,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,7,60,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,7,90,10,1.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,8,30,10,6.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,8,60,10,11.100000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,8,90,10,14.700000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,9,30,10,3.000000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,9,60,10,3.900000
+FIXED,packingsolver_upstream_box,box portfolio,10.0,9,90,10,4.000000
+FIXED,rust_brkga,brkga,1.0,1,30,10,9.300000
+FIXED,rust_brkga,brkga,1.0,1,60,10,17.100000
+FIXED,rust_brkga,brkga,1.0,1,90,10,27.400000
+FIXED,rust_brkga,brkga,1.0,6,30,10,1.400000
+FIXED,rust_brkga,brkga,1.0,6,60,10,2.000000
+FIXED,rust_brkga,brkga,1.0,6,90,10,2.000000
+FIXED,rust_brkga,brkga,1.0,7,30,10,1.500000
+FIXED,rust_brkga,brkga,1.0,7,60,10,2.100000
+FIXED,rust_brkga,brkga,1.0,7,90,10,2.400000
+FIXED,rust_brkga,brkga,1.0,8,30,10,7.400000
+FIXED,rust_brkga,brkga,1.0,8,60,10,15.000000
+FIXED,rust_brkga,brkga,1.0,8,90,10,19.700000
+FIXED,rust_brkga,brkga,1.0,9,30,10,5.100000
+FIXED,rust_brkga,brkga,1.0,9,60,10,5.700000
+FIXED,rust_brkga,brkga,1.0,9,90,10,6.800000
+FIXED,rust_brkga,brkga,10.0,1,30,10,9.300000
+FIXED,rust_brkga,brkga,10.0,1,60,10,17.600000
+FIXED,rust_brkga,brkga,10.0,1,90,10,27.600000
+FIXED,rust_brkga,brkga,10.0,6,30,10,1.500000
+FIXED,rust_brkga,brkga,10.0,6,60,10,2.000000
+FIXED,rust_brkga,brkga,10.0,6,90,10,2.000000
+FIXED,rust_brkga,brkga,10.0,7,30,10,1.700000
+FIXED,rust_brkga,brkga,10.0,7,60,10,2.000000
+FIXED,rust_brkga,brkga,10.0,7,90,10,2.500000
+FIXED,rust_brkga,brkga,10.0,8,30,10,7.400000
+FIXED,rust_brkga,brkga,10.0,8,60,10,15.000000
+FIXED,rust_brkga,brkga,10.0,8,90,10,19.600000
+FIXED,rust_brkga,brkga,10.0,9,30,10,5.200000
+FIXED,rust_brkga,brkga,10.0,9,60,10,5.600000
+FIXED,rust_brkga,brkga,10.0,9,90,10,6.600000
+FIXED,rust_extremepoint,extremepoint,1.0,1,30,10,9.000000
+FIXED,rust_extremepoint,extremepoint,1.0,1,60,10,16.100000
+FIXED,rust_extremepoint,extremepoint,1.0,1,90,10,26.000000
+FIXED,rust_extremepoint,extremepoint,1.0,6,30,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,6,60,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,6,90,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,7,30,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,7,60,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,7,90,10,1.000000
+FIXED,rust_extremepoint,extremepoint,1.0,8,30,10,6.200000
+FIXED,rust_extremepoint,extremepoint,1.0,8,60,10,12.000000
+FIXED,rust_extremepoint,extremepoint,1.0,8,90,10,16.000000
+FIXED,rust_extremepoint,extremepoint,1.0,9,30,10,4.200000
+FIXED,rust_extremepoint,extremepoint,1.0,9,60,10,4.600000
+FIXED,rust_extremepoint,extremepoint,1.0,9,90,10,5.100000
+FIXED,rust_extremepoint,extremepoint,10.0,1,30,10,9.000000
+FIXED,rust_extremepoint,extremepoint,10.0,1,60,10,16.100000
+FIXED,rust_extremepoint,extremepoint,10.0,1,90,10,26.000000
+FIXED,rust_extremepoint,extremepoint,10.0,6,30,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,6,60,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,6,90,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,7,30,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,7,60,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,7,90,10,1.000000
+FIXED,rust_extremepoint,extremepoint,10.0,8,30,10,6.200000
+FIXED,rust_extremepoint,extremepoint,10.0,8,60,10,12.000000
+FIXED,rust_extremepoint,extremepoint,10.0,8,90,10,16.000000
+FIXED,rust_extremepoint,extremepoint,10.0,9,30,10,4.200000
+FIXED,rust_extremepoint,extremepoint,10.0,9,60,10,4.600000
+FIXED,rust_extremepoint,extremepoint,10.0,9,90,10,5.100000
+FIXED,rust_ga,ga,1.0,1,30,10,9.300000
+FIXED,rust_ga,ga,1.0,1,60,10,17.000000
+FIXED,rust_ga,ga,1.0,1,90,10,27.600000
+FIXED,rust_ga,ga,1.0,6,30,10,1.000000
+FIXED,rust_ga,ga,1.0,6,60,10,1.000000
+FIXED,rust_ga,ga,1.0,6,90,10,1.000000
+FIXED,rust_ga,ga,1.0,7,30,10,1.000000
+FIXED,rust_ga,ga,1.0,7,60,10,1.600000
+FIXED,rust_ga,ga,1.0,7,90,10,2.000000
+FIXED,rust_ga,ga,1.0,8,30,10,7.400000
+FIXED,rust_ga,ga,1.0,8,60,10,14.800000
+FIXED,rust_ga,ga,1.0,8,90,10,19.700000
+FIXED,rust_ga,ga,1.0,9,30,10,5.000000
+FIXED,rust_ga,ga,1.0,9,60,10,5.700000
+FIXED,rust_ga,ga,1.0,9,90,10,7.000000
+FIXED,rust_ga,ga,10.0,1,30,10,9.300000
+FIXED,rust_ga,ga,10.0,1,60,10,17.200000
+FIXED,rust_ga,ga,10.0,1,90,10,27.500000
+FIXED,rust_ga,ga,10.0,6,30,10,1.000000
+FIXED,rust_ga,ga,10.0,6,60,10,1.000000
+FIXED,rust_ga,ga,10.0,6,90,10,1.000000
+FIXED,rust_ga,ga,10.0,7,30,10,1.000000
+FIXED,rust_ga,ga,10.0,7,60,10,1.900000
+FIXED,rust_ga,ga,10.0,7,90,10,2.000000
+FIXED,rust_ga,ga,10.0,8,30,10,7.200000
+FIXED,rust_ga,ga,10.0,8,60,10,15.300000
+FIXED,rust_ga,ga,10.0,8,90,10,19.900000
+FIXED,rust_ga,ga,10.0,9,30,10,5.000000
+FIXED,rust_ga,ga,10.0,9,60,10,5.700000
+FIXED,rust_ga,ga,10.0,9,90,10,6.900000
+FIXED,rust_layer,bottomleftfill,1.0,1,30,10,10.100000
+FIXED,rust_layer,bottomleftfill,1.0,1,60,10,18.500000
+FIXED,rust_layer,bottomleftfill,1.0,1,90,10,28.700000
+FIXED,rust_layer,bottomleftfill,1.0,6,30,10,1.000000
+FIXED,rust_layer,bottomleftfill,1.0,6,60,10,1.000000
+FIXED,rust_layer,bottomleftfill,1.0,6,90,10,1.000000
+FIXED,rust_layer,bottomleftfill,1.0,7,30,10,1.000000
+FIXED,rust_layer,bottomleftfill,1.0,7,60,10,2.000000
+FIXED,rust_layer,bottomleftfill,1.0,7,90,10,2.300000
+FIXED,rust_layer,bottomleftfill,1.0,8,30,10,8.500000
+FIXED,rust_layer,bottomleftfill,1.0,8,60,10,15.700000
+FIXED,rust_layer,bottomleftfill,1.0,8,90,10,21.700000
+FIXED,rust_layer,bottomleftfill,1.0,9,30,10,5.900000
+FIXED,rust_layer,bottomleftfill,1.0,9,60,10,6.800000
+FIXED,rust_layer,bottomleftfill,1.0,9,90,10,7.600000
+FIXED,rust_layer,bottomleftfill,10.0,1,30,10,10.100000
+FIXED,rust_layer,bottomleftfill,10.0,1,60,10,18.500000
+FIXED,rust_layer,bottomleftfill,10.0,1,90,10,28.700000
+FIXED,rust_layer,bottomleftfill,10.0,6,30,10,1.000000
+FIXED,rust_layer,bottomleftfill,10.0,6,60,10,1.000000
+FIXED,rust_layer,bottomleftfill,10.0,6,90,10,1.000000
+FIXED,rust_layer,bottomleftfill,10.0,7,30,10,1.000000
+FIXED,rust_layer,bottomleftfill,10.0,7,60,10,2.000000
+FIXED,rust_layer,bottomleftfill,10.0,7,90,10,2.300000
+FIXED,rust_layer,bottomleftfill,10.0,8,30,10,8.500000
+FIXED,rust_layer,bottomleftfill,10.0,8,60,10,15.700000
+FIXED,rust_layer,bottomleftfill,10.0,8,90,10,21.700000
+FIXED,rust_layer,bottomleftfill,10.0,9,30,10,5.900000
+FIXED,rust_layer,bottomleftfill,10.0,9,60,10,6.800000
+FIXED,rust_layer,bottomleftfill,10.0,9,90,10,7.600000
+FIXED,rust_sa,sa,1.0,1,30,10,9.200000
+FIXED,rust_sa,sa,1.0,1,60,10,17.400000
+FIXED,rust_sa,sa,1.0,1,90,10,27.400000
+FIXED,rust_sa,sa,1.0,6,30,10,1.000000
+FIXED,rust_sa,sa,1.0,6,60,10,1.000000
+FIXED,rust_sa,sa,1.0,6,90,10,1.000000
+FIXED,rust_sa,sa,1.0,7,30,10,1.000000
+FIXED,rust_sa,sa,1.0,7,60,10,1.200000
+FIXED,rust_sa,sa,1.0,7,90,10,2.000000
+FIXED,rust_sa,sa,1.0,8,30,10,7.500000
+FIXED,rust_sa,sa,1.0,8,60,10,14.800000
+FIXED,rust_sa,sa,1.0,8,90,10,19.600000
+FIXED,rust_sa,sa,1.0,9,30,10,4.900000
+FIXED,rust_sa,sa,1.0,9,60,10,5.500000
+FIXED,rust_sa,sa,1.0,9,90,10,6.300000
+FIXED,rust_sa,sa,10.0,1,30,10,9.200000
+FIXED,rust_sa,sa,10.0,1,60,10,17.500000
+FIXED,rust_sa,sa,10.0,1,90,10,27.400000
+FIXED,rust_sa,sa,10.0,6,30,10,1.000000
+FIXED,rust_sa,sa,10.0,6,60,10,1.000000
+FIXED,rust_sa,sa,10.0,6,90,10,1.000000
+FIXED,rust_sa,sa,10.0,7,30,10,1.000000
+FIXED,rust_sa,sa,10.0,7,60,10,1.200000
+FIXED,rust_sa,sa,10.0,7,90,10,2.000000
+FIXED,rust_sa,sa,10.0,8,30,10,7.400000
+FIXED,rust_sa,sa,10.0,8,60,10,14.600000
+FIXED,rust_sa,sa,10.0,8,90,10,19.800000
+FIXED,rust_sa,sa,10.0,9,30,10,5.000000
+FIXED,rust_sa,sa,10.0,9,60,10,5.300000
+FIXED,rust_sa,sa,10.0,9,90,10,6.200000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,6,30,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,6,60,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,6,90,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,7,30,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,7,60,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,1.0,7,90,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,6,30,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,6,60,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,6,90,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,7,30,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,7,60,10,1.000000
+FIXED,skjolber_fast_brute_force,fast_brute_force,10.0,7,90,10,1.000000
+FIXED,skjolber_laff,laff,1.0,1,30,10,10.700000
+FIXED,skjolber_laff,laff,1.0,1,60,10,18.400000
+FIXED,skjolber_laff,laff,1.0,1,90,10,28.900000
+FIXED,skjolber_laff,laff,1.0,6,30,10,1.000000
+FIXED,skjolber_laff,laff,1.0,6,60,10,1.000000
+FIXED,skjolber_laff,laff,1.0,6,90,10,1.000000
+FIXED,skjolber_laff,laff,1.0,7,30,10,1.600000
+FIXED,skjolber_laff,laff,1.0,7,60,10,1.700000
+FIXED,skjolber_laff,laff,1.0,7,90,10,2.100000
+FIXED,skjolber_laff,laff,1.0,8,30,10,8.100000
+FIXED,skjolber_laff,laff,1.0,8,60,10,14.300000
+FIXED,skjolber_laff,laff,1.0,8,90,10,19.800000
+FIXED,skjolber_laff,laff,1.0,9,30,10,4.800000
+FIXED,skjolber_laff,laff,1.0,9,60,10,5.400000
+FIXED,skjolber_laff,laff,1.0,9,90,10,6.000000
+FIXED,skjolber_laff,laff,10.0,1,30,10,10.700000
+FIXED,skjolber_laff,laff,10.0,1,60,10,18.400000
+FIXED,skjolber_laff,laff,10.0,1,90,10,28.900000
+FIXED,skjolber_laff,laff,10.0,6,30,10,1.000000
+FIXED,skjolber_laff,laff,10.0,6,60,10,1.000000
+FIXED,skjolber_laff,laff,10.0,6,90,10,1.000000
+FIXED,skjolber_laff,laff,10.0,7,30,10,1.600000
+FIXED,skjolber_laff,laff,10.0,7,60,10,1.700000
+FIXED,skjolber_laff,laff,10.0,7,90,10,2.100000
+FIXED,skjolber_laff,laff,10.0,8,30,10,8.100000
+FIXED,skjolber_laff,laff,10.0,8,60,10,14.300000
+FIXED,skjolber_laff,laff,10.0,8,90,10,19.800000
+FIXED,skjolber_laff,laff,10.0,9,30,10,4.800000
+FIXED,skjolber_laff,laff,10.0,9,60,10,5.400000
+FIXED,skjolber_laff,laff,10.0,9,90,10,6.000000
+FIXED,skjolber_plain,plain,1.0,1,30,10,9.100000
+FIXED,skjolber_plain,plain,1.0,1,60,10,16.300000
+FIXED,skjolber_plain,plain,1.0,1,90,10,25.600000
+FIXED,skjolber_plain,plain,1.0,6,30,10,1.000000
+FIXED,skjolber_plain,plain,1.0,6,60,10,1.000000
+FIXED,skjolber_plain,plain,1.0,6,90,10,1.000000
+FIXED,skjolber_plain,plain,1.0,7,30,10,1.000000
+FIXED,skjolber_plain,plain,1.0,7,60,10,1.000000
+FIXED,skjolber_plain,plain,1.0,7,90,10,1.000000
+FIXED,skjolber_plain,plain,1.0,8,30,10,6.300000
+FIXED,skjolber_plain,plain,1.0,8,60,10,12.100000
+FIXED,skjolber_plain,plain,1.0,8,90,10,15.900000
+FIXED,skjolber_plain,plain,1.0,9,30,10,4.300000
+FIXED,skjolber_plain,plain,1.0,9,60,10,4.100000
+FIXED,skjolber_plain,plain,1.0,9,90,10,4.600000
+FIXED,skjolber_plain,plain,10.0,1,30,10,9.100000
+FIXED,skjolber_plain,plain,10.0,1,60,10,16.300000
+FIXED,skjolber_plain,plain,10.0,1,90,10,25.600000
+FIXED,skjolber_plain,plain,10.0,6,30,10,1.000000
+FIXED,skjolber_plain,plain,10.0,6,60,10,1.000000
+FIXED,skjolber_plain,plain,10.0,6,90,10,1.000000
+FIXED,skjolber_plain,plain,10.0,7,30,10,1.000000
+FIXED,skjolber_plain,plain,10.0,7,60,10,1.000000
+FIXED,skjolber_plain,plain,10.0,7,90,10,1.000000
+FIXED,skjolber_plain,plain,10.0,8,30,10,6.300000
+FIXED,skjolber_plain,plain,10.0,8,60,10,12.100000
+FIXED,skjolber_plain,plain,10.0,8,90,10,15.900000
+FIXED,skjolber_plain,plain,10.0,9,30,10,4.300000
+FIXED,skjolber_plain,plain,10.0,9,60,10,4.100000
+FIXED,skjolber_plain,plain,10.0,9,90,10,4.600000
+PROJECTION,go_bp3d,pivot greedy,1.0,1,30,10,8.300000
+PROJECTION,go_bp3d,pivot greedy,1.0,1,60,10,15.900000
+PROJECTION,go_bp3d,pivot greedy,1.0,1,90,10,24.800000
+PROJECTION,go_bp3d,pivot greedy,1.0,6,30,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,6,60,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,6,90,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,7,30,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,7,60,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,7,90,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,8,30,10,5.700000
+PROJECTION,go_bp3d,pivot greedy,1.0,8,60,10,11.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,8,90,10,14.900000
+PROJECTION,go_bp3d,pivot greedy,1.0,9,30,10,4.600000
+PROJECTION,go_bp3d,pivot greedy,1.0,9,60,10,5.000000
+PROJECTION,go_bp3d,pivot greedy,1.0,9,90,10,5.900000
+PROJECTION,go_bp3d,pivot greedy,10.0,1,30,10,8.300000
+PROJECTION,go_bp3d,pivot greedy,10.0,1,60,10,15.900000
+PROJECTION,go_bp3d,pivot greedy,10.0,1,90,10,24.800000
+PROJECTION,go_bp3d,pivot greedy,10.0,6,30,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,6,60,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,6,90,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,7,30,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,7,60,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,7,90,10,1.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,8,30,10,5.700000
+PROJECTION,go_bp3d,pivot greedy,10.0,8,60,10,11.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,8,90,10,14.900000
+PROJECTION,go_bp3d,pivot greedy,10.0,9,30,10,4.600000
+PROJECTION,go_bp3d,pivot greedy,10.0,9,60,10,5.000000
+PROJECTION,go_bp3d,pivot greedy,10.0,9,90,10,5.900000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,1,30,10,8.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,1,60,10,14.800000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,1,90,10,23.800000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,6,30,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,6,60,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,6,90,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,7,30,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,7,60,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,7,90,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,8,30,10,5.600000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,8,60,10,10.600000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,8,90,10,14.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,9,30,10,4.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,9,60,10,4.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,1.0,9,90,10,4.300000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,1,30,10,8.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,1,60,10,14.800000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,1,90,10,23.800000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,6,30,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,6,60,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,6,90,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,7,30,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,7,60,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,7,90,10,1.000000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,8,30,10,5.600000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,8,60,10,10.600000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,8,90,10,14.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,9,30,10,4.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,9,60,10,4.100000
+PROJECTION,jerry,Jerry pivot/fix-point greedy,10.0,9,90,10,4.300000
+PROJECTION,py3dbp,pivot greedy,1.0,1,30,10,8.000000
+PROJECTION,py3dbp,pivot greedy,1.0,1,60,10,14.800000
+PROJECTION,py3dbp,pivot greedy,1.0,1,90,10,23.800000
+PROJECTION,py3dbp,pivot greedy,1.0,6,30,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,6,60,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,6,90,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,7,30,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,7,60,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,7,90,10,1.000000
+PROJECTION,py3dbp,pivot greedy,1.0,8,30,10,5.600000
+PROJECTION,py3dbp,pivot greedy,1.0,8,60,10,10.600000
+PROJECTION,py3dbp,pivot greedy,1.0,8,90,10,14.100000
+PROJECTION,py3dbp,pivot greedy,1.0,9,30,10,4.100000
+PROJECTION,py3dbp,pivot greedy,1.0,9,60,10,4.100000
+PROJECTION,py3dbp,pivot greedy,1.0,9,90,10,4.300000
+PROJECTION,py3dbp,pivot greedy,10.0,1,30,10,8.000000
+PROJECTION,py3dbp,pivot greedy,10.0,1,60,10,14.800000
+PROJECTION,py3dbp,pivot greedy,10.0,1,90,10,23.800000
+PROJECTION,py3dbp,pivot greedy,10.0,6,30,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,6,60,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,6,90,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,7,30,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,7,60,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,7,90,10,1.000000
+PROJECTION,py3dbp,pivot greedy,10.0,8,30,10,5.600000
+PROJECTION,py3dbp,pivot greedy,10.0,8,60,10,10.600000
+PROJECTION,py3dbp,pivot greedy,10.0,8,90,10,14.100000
+PROJECTION,py3dbp,pivot greedy,10.0,9,30,10,4.100000
+PROJECTION,py3dbp,pivot greedy,10.0,9,60,10,4.100000
+PROJECTION,py3dbp,pivot greedy,10.0,9,90,10,4.300000
