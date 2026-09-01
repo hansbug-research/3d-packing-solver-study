@@ -5,25 +5,25 @@
     "cells_with_evidence": 549,
     "evidence_cell_rate": 0.9029605263157895,
     "executed_implementations": 19,
-    "legacy_baseline_only_cells": 30,
+    "legacy_baseline_only_cells": 20,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.08881578947368421,
-    "protocol_v3_executed_cells": 54,
+    "protocol_v3_executed_cell_rate": 0.10526315789473684,
+    "protocol_v3_executed_cells": 64,
     "protocol_v3_status_only_cells": 465,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2078,
-      "PROTOCOL_V3": 60245
+      "PROTOCOL_V3": 60361
     },
     "records_by_benchmark": {
       "B01": 25283,
       "B02": 579,
       "B03": 1234,
-      "B04": 476,
+      "B04": 564,
       "B05": 19,
-      "B06": 30,
+      "B06": 50,
       "B07": 34209,
       "B08": 19,
-      "B09": 32,
+      "B09": 40,
       "B10": 19,
       "B11": 19,
       "B12": 37,
@@ -48,9 +48,9 @@
       "B31": 19,
       "B32": 19
     },
-    "run_records": 62323,
+    "run_records": 62439,
     "run_status_counts": {
-      "COMPLETED": 48387,
+      "COMPLETED": 48503,
       "ERROR": 3,
       "NOT_RUN": 481,
       "TIME_LIMIT": 13452
@@ -58,8 +58,8 @@
     "solution_status_counts": {
       "INVALID_CERTIFICATE": 263,
       "NOT_APPLICABLE": 481,
-      "NO_SOLUTION": 6884,
-      "VALID_COMPLETE": 684,
+      "NO_SOLUTION": 6888,
+      "VALID_COMPLETE": 796,
       "VALID_PARTIAL": 54011
     }
   },
@@ -201,8 +201,8 @@
         "invalid": 0,
         "invalid_rate": 0.0,
         "mean_bins": 17.795454545454547,
-        "mean_solver_s": 0.0007954545454545455,
-        "mean_wall_s": 0.0009117087954545456,
+        "mean_solver_s": 0.0007272727272727273,
+        "mean_wall_s": 0.0008215836136363636,
         "median_bins": 14.0,
         "p95_bins": 55.0,
         "valid_complete": 44
@@ -261,8 +261,8 @@
         "invalid": 0,
         "invalid_rate": 0.0,
         "mean_bins": 20.84090909090909,
-        "mean_solver_s": 0.0027954545454545454,
-        "mean_wall_s": 0.005459475659090909,
+        "mean_solver_s": 0.0025227272727272724,
+        "mean_wall_s": 0.004607853522727273,
         "median_bins": 17.0,
         "p95_bins": 61.0,
         "valid_complete": 44
@@ -686,7 +686,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "b0287b67fb8f18dac7f15177193be61e949f4bc9d90326b4962f8bbd1833d6b0",
+    "results/comprehensive/run-manifest.jsonl": "d6028f18ad50eb79a9a061f78ba0d283d6ab6b44b8019579d5042fc9e4286b7a",
     "results/comprehensive/suite-implementation-plan.jsonl": "814bd6a0e622beab16b43caaa38c48faf25ddc8dc01091d77bd12a46fcb9f099"
   },
   "warnings": [

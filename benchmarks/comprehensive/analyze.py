@@ -525,11 +525,38 @@ def identical_bin_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str
 
 
 def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    # A fresh protocol run supersedes an archived baseline for the same
+    # logical case.  Keeping one record per case prevents re-runs from
+    # inflating proof rates or sample counts.
+    selected: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+    for record in records:
+        if not executed(record) or record["benchmark_id"] not in {"B03", "B06", "B07", "B09"} or record["comparison_track"] != "EXACT_MODEL":
+            continue
+        key = (
+            record["benchmark_id"],
+            record["implementation_id"],
+            record["problem_variant"],
+            canonical_instance(record),
+        )
+        provenance = record.get("metrics", {}).get("provenance_kind")
+        priority = (
+            2 if provenance == "FRESH_SOLVER_INVOCATION" else
+            1 if record["record_origin"] == "PROTOCOL_V3" else
+            0
+        )
+        previous = selected.get(key)
+        if previous is None or priority > (
+            2 if previous.get("metrics", {}).get("provenance_kind") == "FRESH_SOLVER_INVOCATION" else
+            1 if previous["record_origin"] == "PROTOCOL_V3" else
+            0
+        ):
+            selected[key] = record
+
     rows: list[dict[str, Any]] = []
     for benchmark_id in ("B03", "B06", "B07", "B09"):
         groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
-        for record in records:
-            if executed(record) and record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":
+        for record in selected.values():
+            if record["benchmark_id"] == benchmark_id:
                 groups[record["implementation_id"]].append(record)
         for implementation_id, group in groups.items():
             proven = sum(record["proof_status"] in {"PROVEN_OPTIMAL", "PROVEN_INFEASIBLE"} for record in group)

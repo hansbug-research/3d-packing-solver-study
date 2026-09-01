@@ -129,11 +129,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.216200825991109,
-          "mean": 0.036922731869188805,
-          "median": 0.002587206894531846,
-          "min": 0.0007441970519721508,
-          "p95": 0.1584127269219606
+          "max": 0.21002654591575265,
+          "mean": 0.03524268179067543,
+          "median": 0.0026094859931617975,
+          "min": 0.000664647901430726,
+          "p95": 0.1531696764985098
         }
       },
       "cplex": {
@@ -145,11 +145,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.2479341421276331,
-          "mean": 0.04651942716113159,
-          "median": 0.00782897905446589,
-          "min": 0.0037397018168121576,
-          "p95": 0.18695769072510288
+          "max": 0.2599096051417291,
+          "mean": 0.04788505588658154,
+          "median": 0.007727697025984526,
+          "min": 0.003643128788098693,
+          "p95": 0.1945021450053899
         }
       },
       "gurobi": {
@@ -161,11 +161,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.02012840611860156,
-          "mean": 0.006725621143622058,
-          "median": 0.002235662890598178,
-          "min": 0.00034472602419555187,
-          "p95": 0.01950128993485123
+          "max": 0.031602550065144897,
+          "mean": 0.009128259827515908,
+          "median": 0.002100515877828002,
+          "min": 0.00057434500195086,
+          "p95": 0.028805134934373193
         }
       },
       "scip": {
@@ -177,11 +177,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.06317742704413831,
-          "mean": 0.020340051435466324,
-          "median": 0.0037029359955340624,
-          "min": 0.0015581671614199877,
-          "p95": 0.06294990167953074
+          "max": 0.08470900193788111,
+          "mean": 0.023357062400983914,
+          "median": 0.0036725730169564486,
+          "min": 0.0014752480201423168,
+          "p95": 0.07775588000658898
         }
       }
     },
@@ -1107,11 +1107,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 205.500027,
-          "mean": 5.459475659090909,
-          "median": 0.5025,
-          "min": 0.293579,
-          "p95": 3.458706450000001
+          "max": 174.372372,
+          "mean": 4.607853522727273,
+          "median": 0.38009899999999996,
+          "min": 0.231716,
+          "p95": 3.0689900500000014
         }
       },
       "plain": {
@@ -1127,11 +1127,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 4.648473,
-          "mean": 0.9117087954545454,
-          "median": 0.6030880000000001,
-          "min": 0.354159,
-          "p95": 2.846391
+          "max": 4.481247,
+          "mean": 0.8215836136363636,
+          "median": 0.547384,
+          "min": 0.262077,
+          "p95": 3.1277343000000024
         }
       }
     },
@@ -1158,9 +1158,9 @@
     "results/campaign/crosslang_rust_unesting_strategies/results.json": "9e893ebcab43c58a53469cb089984a0fd114bd015f31f4a345ef9a5ab27b5990",
     "results/campaign/crosslang_rust_unesting_strategy_repeats/results.json": "bcc2b9bd0a97452d2b9ff84f3b1d1495a5155bc8c3852de7ebeae42ecafbaa86",
     "results/campaign/crosslang_rust_unesting_thpack9/results.json": "03a09275741f050b53cff33bc16f97c7ac16710c7c12beb2832840f45316f42b",
-    "results/campaign/exact-cp-sat.json": "23e3395e03fee361e8a02ada19ead19f98c49585e5c605ecf7257615adf27edf",
-    "results/campaign/exact-cplex.json": "531b7be2c4b9166dc2a9062b87c6368b08e4f645b65aa40e089341759fbf9a52",
-    "results/campaign/exact-gurobi.json": "7e309c27462e3119f1b7f8ef1db9c005bf8d5f3aaddf598d14044ee5df1038fb",
+    "results/campaign/exact-cp-sat.json": "e42f1948d6b8dd6d0b18cb93d97ee57f42d886499122a5bf885ac578ce8beec4",
+    "results/campaign/exact-cplex.json": "c4f74fa1b8a8bf6542e17c66af74dbff3d2841abcc486275fd56ad47b77366c6",
+    "results/campaign/exact-gurobi.json": "08b587dd71984db56f3d4fa8a3c0246839245f94918f07d3b294ccad86686600",
     "results/campaign/exact-legacy-cp-sat.json": "8cea13c24ce90f2edd60ded924f4dced4d66f278c97d44e747e76b1775836b13",
     "results/campaign/exact-legacy-cplex.json": "df662228f5fb522751036b5e339ed29387c494334e77eaf254b061e7820b9427",
     "results/campaign/exact-legacy-gurobi.json": "006f684d3cdde090f32db11aa564860b2eb12d63be8540966fcff67a2b9c36b7",
@@ -1169,7 +1169,7 @@
     "results/campaign/exact-reduced-cplex.json": "6a1a3246c7813a7df93a800b6bde4ca7f3bb38c4fe98bd397c35b6b2096d9f96",
     "results/campaign/exact-reduced-gurobi.json": "7ff50e1f0f754ad232e30fff766fb7cdeb462d254bdfc8904deda00e1d99b02f",
     "results/campaign/exact-reduced-scip.json": "f82736b26c59d398630270e777ebb9e9245f65b88e2695d6a651ac571484012c",
-    "results/campaign/exact-scip.json": "f79b287452fc31fd353424a5e67b7a75ce5f65286d7f26b5da352d28e195ac90",
+    "results/campaign/exact-scip.json": "561f955a804e7914a859102e9ad5e2dd943c49a11867972821280dea55e81c62",
     "results/campaign/exact-strengthened-cp-sat.json": "8f371f3ee521fe6c6bc9ccbb2b808c74f7a7324ed38ac3e69cfaf0f7e0b94808",
     "results/campaign/exact-strengthened-cplex.json": "5e71c542be970abefb10028d2fec4bb3c4444c96cad02578b459fac057a7f606",
     "results/campaign/exact-strengthened-gurobi.json": "bffc0525d83d231548bf90d2ee38680e5e7780953a4fb22ded323e746b0c6bdd",
@@ -1183,7 +1183,7 @@
     "results/campaign/packingsolver-thpack.jsonl": "9226e8475541565e194ea62d7ec136d39e28e07a885c562c660fbd22f8c47cad",
     "results/campaign/python_thpack/summary.json": "b398272c7745b32531f8611600de0d2a59efb6fda606df29cffda23274e3c121",
     "results/campaign/skjolber-algorithms.json": "8292f048c4765963caf95cd128fb91256b2f85d6f1efaa1931435c1c39ba193f",
-    "results/campaign/skjolber-thpack9.json": "1615ee10a511a6a37f97cf56ebcaeefd67b90bc89c65dae024a07c676f829f59"
+    "results/campaign/skjolber-thpack9.json": "03a9d94d97e548ff1f4bab76a3eff94cd0f63d721ded2a740194ba870f1880ae"
   },
   "targeted_suites": {
     "packingsolver_boxstacks": {

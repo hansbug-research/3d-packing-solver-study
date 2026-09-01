@@ -1,21 +1,21 @@
 	Command being timed: "/home/zhangshaoang/packing-software-study/.cache/apache-maven/bin/mvn -q -o -f /home/zhangshaoang/packing-software-study/benchmarks/java-skjolber/pom.xml compile"
-	User time (seconds): 3.45
-	System time (seconds): 0.20
-	Percent of CPU this job got: 331%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.10
+	User time (seconds): 3.30
+	System time (seconds): 0.22
+	Percent of CPU this job got: 353%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.00
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 197084
+	Maximum resident set size (kbytes): 201920
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 56364
-	Voluntary context switches: 36635
-	Involuntary context switches: 233
+	Minor (reclaiming a frame) page faults: 57711
+	Voluntary context switches: 38273
+	Involuntary context switches: 192
 	Swaps: 0
 	File system inputs: 0
-	File system outputs: 208
+	File system outputs: 176
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

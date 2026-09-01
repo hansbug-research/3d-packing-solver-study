@@ -22,7 +22,7 @@ matplotlib==3.11.1
 numpy==2.5.2
 ortools==9.15.6755
 packaging==26.3
--e git+https://github.com/hansbug-research/3d-packing-solver-study.git@a427a46fb299925d2d15ea8cbaa2956f6f63bd1d#egg=packing_software_study
+-e git+https://github.com/hansbug-research/3d-packing-solver-study.git@27a68ad59e40d0b4f8aa095a31e17e09dc2c80ab#egg=packing_software_study
 pandas==3.0.5
 pillow==12.3.0
 pluggy==1.6.0

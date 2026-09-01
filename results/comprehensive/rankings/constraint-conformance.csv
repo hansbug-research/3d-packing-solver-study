@@ -1,8 +1,8 @@
 benchmark_id,implementation_id,records,valid_complete,valid_partial,no_solution,invalid_certificate,constraint_violation,process_errors,expected_behavior_pass_rate
-B09,exact_cp_sat,2,2,0,0,0,0,0,
-B09,exact_cplex,2,2,0,0,0,0,0,
-B09,exact_gurobi,2,2,0,0,0,0,0,
-B09,exact_scip,2,2,0,0,0,0,0,
+B09,exact_cp_sat,4,4,0,0,0,0,0,
+B09,exact_cplex,4,4,0,0,0,0,0,
+B09,exact_gurobi,4,4,0,0,0,0,0,
+B09,exact_scip,4,4,0,0,0,0,0,
 B09,packingsolver_fork_box,4,4,0,0,0,0,0,1.0
 B09,packingsolver_fork_boxstacks,3,3,0,0,0,0,0,1.0
 B09,packingsolver_upstream_boxstacks,2,2,0,0,0,0,0,1.0

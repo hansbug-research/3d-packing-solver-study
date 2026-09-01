@@ -10,6 +10,7 @@ import pytest
 
 from comprehensive.model import build_plan_rows, load_catalogs, validate_plan_rows, validate_run_record
 from comprehensive.import_packingsolver_protocol import build_records as build_packingsolver_protocol_records
+from comprehensive.import_fresh_protocol import build_records as build_fresh_protocol_records
 from comprehensive.record_source_status import build_records as build_status_records
 
 
@@ -115,6 +116,16 @@ def test_packingsolver_thpack_protocol_revalidation_is_explicit() -> None:
     assert all(record["input_sha256"] and len(record["input_sha256"]) == 64 for record in records)
 
 
+def test_fresh_wave1_protocol_records_are_explicit_and_finite() -> None:
+    records = build_fresh_protocol_records()
+    assert len(records) == 116
+    assert {record["record_origin"] for record in records} == {"PROTOCOL_V3"}
+    assert {record["metrics"]["provenance_kind"] for record in records} == {"FRESH_SOLVER_INVOCATION"}
+    assert {record["benchmark_id"] for record in records} == {"B04", "B06", "B09"}
+    assert {record["implementation_id"] for record in records if record["benchmark_id"] == "B04"} == {"skjolber_plain", "skjolber_laff"}
+    assert all(record["input_sha256"] and len(record["input_sha256"]) == 64 for record in records)
+
+
 def test_run_record_contract_rejects_false_results() -> None:
     record = valid_run_record()
     validate_run_record(record)
@@ -166,17 +177,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 62323
-    assert summary["protocol_v3_run_records"] == 60245
+    assert summary["combined_run_records"] == len(records) == 62439
+    assert summary["protocol_v3_run_records"] == 60361
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 12
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 549
-    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 30
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 54
+    assert aggregate["coverage"]["legacy_baseline_only_cells"] == 20
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 64
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 465
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60245}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 60361}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
 
@@ -188,6 +199,9 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert {record["problem_variant"] for record in exact_b07} == {"SOURCE_ROTATION_FLAGS"}
     assert all(record["solution_status"] == "VALID_PARTIAL" for record in exact_b07)
     assert all(record["proof_status"] == "FEASIBLE" for record in exact_b07)
+    exact_rankings = json.loads((comprehensive / "aggregate.json").read_text())["headline"]["exact_proof"]
+    assert all(row["instances"] == 5 for row in exact_rankings if row["benchmark_id"] == "B06")
+    assert all(row["instances"] == 2 for row in exact_rankings if row["benchmark_id"] == "B09")
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):
