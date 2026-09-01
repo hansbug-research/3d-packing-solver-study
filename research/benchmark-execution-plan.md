@@ -55,8 +55,8 @@ Q4RealBPP 和 3DBPPsi 是协议 v3 冻结后发现的公开数据源，建议分
 
 | 候选 | 首轮执行波次 | 适用实现/算法 | 首轮门禁 | 主要回答的问题 |
 |---|---|---|---|---|
-| B33 Q4RealBPP | Wave 2 后半段（硬约束 conformance） | 能保留重量、相容、相对位置和重心字段的 PS/boxstacks、exact；其他库输出 projection/status | GPLv3 再分发审计、12 个文件 hash、字段语义映射、逐约束 validator；无 published optimum 时只报 incumbent/合规率 | 现实业务约束是否被真正执行，公共几何结果能否迁移到现实分布 |
-| B34 3DBPPsi | Wave 3（工业异构+堆叠 scalability） | PS/boxstacks、exact 和有 controls 的引擎跑 FULL；其他库 projection/status | CC BY 4.0 署名、V1 文件 hash、stack master、density/payload/forced-pose validator；小实例先做 exact 校准 | 异构车队选型、stackable 约束和数千件规模的质量-延迟拐点 |
+| B33 Q4RealBPP | Wave 2 后半段（硬约束 conformance） | 能保留重量、相容、相对位置和重心字段的 PS/boxstacks、exact；其他库输出 projection/status | GPLv3 再分发审计、15 个必要文件 hash、字段语义映射、逐约束 validator；输入 quantity 是 canonical 件数；无 published optimum 时只报 incumbent/合规率 | 现实业务约束是否被真正执行，公共几何结果能否迁移到现实分布 |
+| B34 3DBPPsi | Wave 3（工业异构+堆叠 scalability） | PS/boxstacks、exact 和有 controls 的引擎跑 FULL；其他库 projection/status | CC BY 4.0 署名、20 个 CSV hash、stack master、density/payload/forced-pose validator；小实例先做 exact 校准 | 异构车队选型、stackable 约束和数千件规模的质量-延迟拐点 |
 
 两套数据都要保留 `FULL` 与 `PROJECTION` 轨道；projection 必须列出被删除的字段，且不进入 FULL 排行。B33 的 GPLv3 约束尤其需要在打包/分发前由许可证审计确认，B34 的 CC BY 4.0 至少要在归档和界面导出中保留署名与许可证。
 

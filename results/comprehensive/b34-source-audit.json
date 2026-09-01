@@ -1,0 +1,251 @@
+{
+  "audit_date": "2026-09-01",
+  "dataset": {
+    "doi": "10.57760/sciencedb.42066",
+    "file_tree_api": "https://www.scidb.cn/api/sdb-filetree-service/getAllUrl?dataSetId=d290275c2f3142ed967acc479723cbd1&type=&version=V1&global=CN",
+    "license": "CC-BY-4.0",
+    "name": "3D Bin Packing Problem with Stackable Items (3DBPPsi)",
+    "source_file_count": 20,
+    "url": "https://www.scidb.cn/detail?dataSetId=d290275c2f3142ed967acc479723cbd1",
+    "version": "V1"
+  },
+  "dataset_counts": {
+    "datasetA": {
+      "item_rows": 8402,
+      "vehicle_rows": 7
+    },
+    "datasetB": {
+      "item_rows": 4000,
+      "vehicle_rows": 7
+    },
+    "datasetC": {
+      "item_rows": 4000,
+      "vehicle_rows": 8
+    },
+    "datasetD": {
+      "item_rows": 2666,
+      "vehicle_rows": 8
+    },
+    "datasetE": {
+      "item_rows": 6276,
+      "vehicle_rows": 8
+    },
+    "datasetF": {
+      "item_rows": 50,
+      "vehicle_rows": 7
+    },
+    "datasetG": {
+      "item_rows": 5000,
+      "vehicle_rows": 8
+    },
+    "datasetH": {
+      "item_rows": 5000,
+      "vehicle_rows": 8
+    },
+    "datasetI": {
+      "item_rows": 6452,
+      "vehicle_rows": 8
+    },
+    "datasetJ": {
+      "item_rows": 4000,
+      "vehicle_rows": 8
+    }
+  },
+  "decision": {
+    "input_status": "SOURCE_INCOMPLETE",
+    "not_mpV_substitute": true,
+    "published_optimum": "not established by the source metadata; report incumbent and bounds only",
+    "reason": "The public CSV source is structurally auditable, but canonical stack master, independent hard validator and exact-small calibration are pending.",
+    "run_status": "NOT_RUN"
+  },
+  "files": [
+    {
+      "actual_sha256": "092f1aa3bce788c0a0fce855461889bc5847f6bd6e74dbcb1b4d572f25b3ade4",
+      "download_url": "https://download.scidb.cn/download?fileId=387adf6ee8f40df8a160588b2f0a54c4&path=/V1/datasetA/items.csv&fileName=items.csv",
+      "file_id": "387adf6ee8f40df8a160588b2f0a54c4",
+      "hash_status": "PASS",
+      "observed_sha256": "092f1aa3bce788c0a0fce855461889bc5847f6bd6e74dbcb1b4d572f25b3ade4",
+      "path": "datasetA/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "05173324c721dbe16c56cf3787d2980bb02ec53f6e65d087a2cfcb59ef9d322a",
+      "download_url": "https://download.scidb.cn/download?fileId=c34381b469843808b4185182c4494c5c&path=/V1/datasetA/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "c34381b469843808b4185182c4494c5c",
+      "hash_status": "PASS",
+      "observed_sha256": "05173324c721dbe16c56cf3787d2980bb02ec53f6e65d087a2cfcb59ef9d322a",
+      "path": "datasetA/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "befa8e20387e9a692f6afdf27a5185def02e27c4842c5b645c8a63a0ad3734c0",
+      "download_url": "https://download.scidb.cn/download?fileId=5a183b555671545f7f1d6ca5d14cddfa&path=/V1/datasetB/items.csv&fileName=items.csv",
+      "file_id": "5a183b555671545f7f1d6ca5d14cddfa",
+      "hash_status": "PASS",
+      "observed_sha256": "befa8e20387e9a692f6afdf27a5185def02e27c4842c5b645c8a63a0ad3734c0",
+      "path": "datasetB/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "9ace9b95943dfe0956655f59b5dae11df7d19b8a0890bc9ca0dc069b2048dd0b",
+      "download_url": "https://download.scidb.cn/download?fileId=c2cf8b82149c579a5c9cbc94db58a637&path=/V1/datasetB/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "c2cf8b82149c579a5c9cbc94db58a637",
+      "hash_status": "PASS",
+      "observed_sha256": "9ace9b95943dfe0956655f59b5dae11df7d19b8a0890bc9ca0dc069b2048dd0b",
+      "path": "datasetB/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "772301d93c6d0f5286be4e885dfcf79263145f96e6ff94697b714db655595024",
+      "download_url": "https://download.scidb.cn/download?fileId=c522e74c904071a2b9a06cfa21aec2de&path=/V1/datasetC/items.csv&fileName=items.csv",
+      "file_id": "c522e74c904071a2b9a06cfa21aec2de",
+      "hash_status": "PASS",
+      "observed_sha256": "772301d93c6d0f5286be4e885dfcf79263145f96e6ff94697b714db655595024",
+      "path": "datasetC/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "6c1d53dad0e3931c1c6c612c4d59db8539e1d0df41472284e702a30355d5a506",
+      "download_url": "https://download.scidb.cn/download?fileId=717a636331f7f072c114e6cb9d40729e&path=/V1/datasetC/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "717a636331f7f072c114e6cb9d40729e",
+      "hash_status": "PASS",
+      "observed_sha256": "6c1d53dad0e3931c1c6c612c4d59db8539e1d0df41472284e702a30355d5a506",
+      "path": "datasetC/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "ef1fea209f0ad14201ff55ca1b799d0ec21de04f7fdd72c9178b06d90e6ff740",
+      "download_url": "https://download.scidb.cn/download?fileId=5ce2dbf8f0129dfd88f7513c9f97223e&path=/V1/datasetD/items.csv&fileName=items.csv",
+      "file_id": "5ce2dbf8f0129dfd88f7513c9f97223e",
+      "hash_status": "PASS",
+      "observed_sha256": "ef1fea209f0ad14201ff55ca1b799d0ec21de04f7fdd72c9178b06d90e6ff740",
+      "path": "datasetD/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "71de8dae95e326239c86e8d668e83a94761c11622ceb94621393a120757461af",
+      "download_url": "https://download.scidb.cn/download?fileId=c44ad662a13eb9813e5a121f304466a6&path=/V1/datasetD/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "c44ad662a13eb9813e5a121f304466a6",
+      "hash_status": "PASS",
+      "observed_sha256": "71de8dae95e326239c86e8d668e83a94761c11622ceb94621393a120757461af",
+      "path": "datasetD/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "36449b1d28056c9a9fb61dc81095ad87b4d4eb890155788882173e7df571df92",
+      "download_url": "https://download.scidb.cn/download?fileId=129c8e3829163d4abbd9080a2e2bc3ca&path=/V1/datasetE/items.csv&fileName=items.csv",
+      "file_id": "129c8e3829163d4abbd9080a2e2bc3ca",
+      "hash_status": "PASS",
+      "observed_sha256": "36449b1d28056c9a9fb61dc81095ad87b4d4eb890155788882173e7df571df92",
+      "path": "datasetE/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "ca740b96a1688b0e2ce67a5825b6051e3450dae91deb4284d90a62b6b921725c",
+      "download_url": "https://download.scidb.cn/download?fileId=09aa8960d1f3da109d12a3c30a512a85&path=/V1/datasetE/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "09aa8960d1f3da109d12a3c30a512a85",
+      "hash_status": "PASS",
+      "observed_sha256": "ca740b96a1688b0e2ce67a5825b6051e3450dae91deb4284d90a62b6b921725c",
+      "path": "datasetE/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "817a978be5dacbb4b0ae3864b2d611c7d06511e377b132e7e35793ada43bfad8",
+      "download_url": "https://download.scidb.cn/download?fileId=ead333ac97e2cfa71c9a7c6663c71e13&path=/V1/datasetF/items.csv&fileName=items.csv",
+      "file_id": "ead333ac97e2cfa71c9a7c6663c71e13",
+      "hash_status": "PASS",
+      "observed_sha256": "817a978be5dacbb4b0ae3864b2d611c7d06511e377b132e7e35793ada43bfad8",
+      "path": "datasetF/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "05173324c721dbe16c56cf3787d2980bb02ec53f6e65d087a2cfcb59ef9d322a",
+      "download_url": "https://download.scidb.cn/download?fileId=098f908c943384d670414c4ea4545ff9&path=/V1/datasetF/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "098f908c943384d670414c4ea4545ff9",
+      "hash_status": "PASS",
+      "observed_sha256": "05173324c721dbe16c56cf3787d2980bb02ec53f6e65d087a2cfcb59ef9d322a",
+      "path": "datasetF/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "3e538ad6c60a87e45b19843fa8466a1a9dfd435516afba5fff12453b896fa2ff",
+      "download_url": "https://download.scidb.cn/download?fileId=a9fc1f222085ad1822736830b6900e18&path=/V1/datasetG/items.csv&fileName=items.csv",
+      "file_id": "a9fc1f222085ad1822736830b6900e18",
+      "hash_status": "PASS",
+      "observed_sha256": "3e538ad6c60a87e45b19843fa8466a1a9dfd435516afba5fff12453b896fa2ff",
+      "path": "datasetG/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "3dc990d55b5c6dcc3bbdcab443da64f779f3939073ed9d397762f74f72ba7901",
+      "download_url": "https://download.scidb.cn/download?fileId=ddce0ac34809de6574ccb14973101732&path=/V1/datasetG/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "ddce0ac34809de6574ccb14973101732",
+      "hash_status": "PASS",
+      "observed_sha256": "3dc990d55b5c6dcc3bbdcab443da64f779f3939073ed9d397762f74f72ba7901",
+      "path": "datasetG/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "09432f14f733de8d3b6fe20e470ef021936009fc4e17da69183b19060f1b14d0",
+      "download_url": "https://download.scidb.cn/download?fileId=3436f6fb0ac7b13dd09b2efadbeff1e1&path=/V1/datasetH/items.csv&fileName=items.csv",
+      "file_id": "3436f6fb0ac7b13dd09b2efadbeff1e1",
+      "hash_status": "PASS",
+      "observed_sha256": "09432f14f733de8d3b6fe20e470ef021936009fc4e17da69183b19060f1b14d0",
+      "path": "datasetH/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "3dc990d55b5c6dcc3bbdcab443da64f779f3939073ed9d397762f74f72ba7901",
+      "download_url": "https://download.scidb.cn/download?fileId=0d93c3cfb30405ce8c4e11b877ed5af7&path=/V1/datasetH/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "0d93c3cfb30405ce8c4e11b877ed5af7",
+      "hash_status": "PASS",
+      "observed_sha256": "3dc990d55b5c6dcc3bbdcab443da64f779f3939073ed9d397762f74f72ba7901",
+      "path": "datasetH/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "da99bb507ed9c8ef526b435d7322ec750ea083249e127a79d54225fdf2c491db",
+      "download_url": "https://download.scidb.cn/download?fileId=1c56c9ba3baeee77ad8e3e40bd19aee0&path=/V1/datasetI/items.csv&fileName=items.csv",
+      "file_id": "1c56c9ba3baeee77ad8e3e40bd19aee0",
+      "hash_status": "PASS",
+      "observed_sha256": "da99bb507ed9c8ef526b435d7322ec750ea083249e127a79d54225fdf2c491db",
+      "path": "datasetI/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "b9ac4f76f651c78eac65f6bceed2199f73246da707a32244a106692920a4dc50",
+      "download_url": "https://download.scidb.cn/download?fileId=d06411761848c9b615e84550297fb08f&path=/V1/datasetI/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "d06411761848c9b615e84550297fb08f",
+      "hash_status": "PASS",
+      "observed_sha256": "b9ac4f76f651c78eac65f6bceed2199f73246da707a32244a106692920a4dc50",
+      "path": "datasetI/vehicles.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "9697b971f1e9a513aac16226bb44ffa826b8779bf6525af23cd3b169b6086189",
+      "download_url": "https://download.scidb.cn/download?fileId=3758803ddee50e09ef8e96a0f14433eb&path=/V1/datasetJ/items.csv&fileName=items.csv",
+      "file_id": "3758803ddee50e09ef8e96a0f14433eb",
+      "hash_status": "PASS",
+      "observed_sha256": "9697b971f1e9a513aac16226bb44ffa826b8779bf6525af23cd3b169b6086189",
+      "path": "datasetJ/items.csv",
+      "present": true
+    },
+    {
+      "actual_sha256": "3a9c8f00e29ed595542faf37e25548b1352181da36135f34c6f469fabaeb6d95",
+      "download_url": "https://download.scidb.cn/download?fileId=3f5248385c69c84589b053c4da27727f&path=/V1/datasetJ/vehicles.csv&fileName=vehicles.csv",
+      "file_id": "3f5248385c69c84589b053c4da27727f",
+      "hash_status": "PASS",
+      "observed_sha256": "3a9c8f00e29ed595542faf37e25548b1352181da36135f34c6f469fabaeb6d95",
+      "path": "datasetJ/vehicles.csv",
+      "present": true
+    }
+  ],
+  "record_kind": "B34_SOURCE_AUDIT",
+  "source_verification": {
+    "all_csv_parse": true,
+    "all_files_present": true,
+    "all_hashes_match_local_manifest": true,
+    "downloaded_source_dir": "external temporary directory (not committed)",
+    "file_count": 20
+  }
+}

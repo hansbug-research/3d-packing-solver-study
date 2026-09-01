@@ -1,0 +1,456 @@
+{
+  "audit_date": "2026-09-01",
+  "dataset": {
+    "doi": "10.17632/y258s6d939.2",
+    "license": "GPL-3.0",
+    "name": "Q4RealBPP",
+    "redistribution": "Do not copy raw GPL dataset into a closed distribution without license review.",
+    "source_api": "Mendeley public API v1 media metadata",
+    "url": "https://data.mendeley.com/datasets/y258s6d939/2",
+    "version": 2
+  },
+  "decision": {
+    "canonical_count_source": "input quantity column, not Description.txt prose",
+    "input_status": "SOURCE_INCOMPLETE",
+    "not_mpV_substitute": true,
+    "reason": "Source bytes and hashes are verified, but the canonical converter, independent validator and GPL redistribution review are still pending.",
+    "run_status": "NOT_RUN"
+  },
+  "files": [
+    {
+      "actual_sha256": "c29d6a0206ebac99e25065fe2de1e77eb5325edc0eb344947940d5d60b45f32b",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/2fba8b11-2916-4a73-bfc5-41578335a4fc/file_downloaded",
+      "expected_sha256": "c29d6a0206ebac99e25065fe2de1e77eb5325edc0eb344947940d5d60b45f32b",
+      "file_id": "2fba8b11-2916-4a73-bfc5-41578335a4fc",
+      "filename": "Constraints_and_variables.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "65ebbb961da33745dc8a7e0e9eb9c6243a3be0d6cce05844595cf0229f83ecf4",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/19ef1a83-1ba5-4fcc-94d8-1883f76d23f8/file_downloaded",
+      "expected_sha256": "65ebbb961da33745dc8a7e0e9eb9c6243a3be0d6cce05844595cf0229f83ecf4",
+      "file_id": "19ef1a83-1ba5-4fcc-94d8-1883f76d23f8",
+      "filename": "Description.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "fa812f7f437cf3e793f8721fd29c138068357e7e7de207509dae238965bb3913",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/9f154613-95b7-4d13-948b-55ed74de79ae/file_downloaded",
+      "expected_sha256": "fa812f7f437cf3e793f8721fd29c138068357e7e7de207509dae238965bb3913",
+      "file_id": "9f154613-95b7-4d13-948b-55ed74de79ae",
+      "filename": "Q4RealBPP-DataGen.py",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "97d62d38f65dc23729cca2904232170f2c641150044974df244f27f5b77bee0e",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/9de04c51-c6a9-4cca-a065-c039149bc42d/file_downloaded",
+      "expected_sha256": "97d62d38f65dc23729cca2904232170f2c641150044974df244f27f5b77bee0e",
+      "file_id": "9de04c51-c6a9-4cca-a065-c039149bc42d",
+      "filename": "3dBPP_1.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "0a31f3c87ca6458c145f64c9f8f594bbd2ca0558e0962912f34f613974bc30f5",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/98d79022-2c33-4c0d-bf05-fe137d143bc0/file_downloaded",
+      "expected_sha256": "0a31f3c87ca6458c145f64c9f8f594bbd2ca0558e0962912f34f613974bc30f5",
+      "file_id": "98d79022-2c33-4c0d-bf05-fe137d143bc0",
+      "filename": "3dBPP_2.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "c723c24d530ca61d9d0d67fff0ad8423761b66cfc071efb28ff8d487b6647034",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/092c974e-8556-413b-8d79-90d0006d948c/file_downloaded",
+      "expected_sha256": "c723c24d530ca61d9d0d67fff0ad8423761b66cfc071efb28ff8d487b6647034",
+      "file_id": "092c974e-8556-413b-8d79-90d0006d948c",
+      "filename": "3dBPP_3.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "224e62e317eecfb6c837eb5ddbd73b60b2900e45c996ae7ddb40cebe9120768c",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/4a743abc-7829-4c9a-918f-ed9b22014641/file_downloaded",
+      "expected_sha256": "224e62e317eecfb6c837eb5ddbd73b60b2900e45c996ae7ddb40cebe9120768c",
+      "file_id": "4a743abc-7829-4c9a-918f-ed9b22014641",
+      "filename": "3dBPP_4.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "78dfddd4f5370c753cb247d799b3ab66eb927a1788098ca15a6883024c330d3f",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/519287ae-dd5f-48b5-acd0-cb3c49b5d01f/file_downloaded",
+      "expected_sha256": "78dfddd4f5370c753cb247d799b3ab66eb927a1788098ca15a6883024c330d3f",
+      "file_id": "519287ae-dd5f-48b5-acd0-cb3c49b5d01f",
+      "filename": "3dBPP_5.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "313e6d43dc35ba833fb0364e096985ec1a7ef579110d3ca56a423dea41623cc9",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/8d60b2af-7cae-467f-8aba-6c185df4d340/file_downloaded",
+      "expected_sha256": "313e6d43dc35ba833fb0364e096985ec1a7ef579110d3ca56a423dea41623cc9",
+      "file_id": "8d60b2af-7cae-467f-8aba-6c185df4d340",
+      "filename": "3dBPP_6.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "6e06fd72a8459c6a27706ec062cbd20556e2fff1b71e0f8e58c0ba1209564fac",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/a564f2e3-54de-4d16-ba8d-94aed153db9a/file_downloaded",
+      "expected_sha256": "6e06fd72a8459c6a27706ec062cbd20556e2fff1b71e0f8e58c0ba1209564fac",
+      "file_id": "a564f2e3-54de-4d16-ba8d-94aed153db9a",
+      "filename": "3dBPP_7.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "4391c8342a2952c2903542e31a7ab11116a3e3e718366ac5272b0ea6b1d7bb96",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/eb2eea4e-ea3b-4087-829c-05311d84a31b/file_downloaded",
+      "expected_sha256": "4391c8342a2952c2903542e31a7ab11116a3e3e718366ac5272b0ea6b1d7bb96",
+      "file_id": "eb2eea4e-ea3b-4087-829c-05311d84a31b",
+      "filename": "3dBPP_8.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "a501d469e9143b081ca7110cb3acaef392b3903cef58ea4211ae92940da026aa",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/c20b0cb1-8199-4f23-a2d9-e54d81ee90a2/file_downloaded",
+      "expected_sha256": "a501d469e9143b081ca7110cb3acaef392b3903cef58ea4211ae92940da026aa",
+      "file_id": "c20b0cb1-8199-4f23-a2d9-e54d81ee90a2",
+      "filename": "3dBPP_9.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "bf9b1d0c00b61fafed393f54a7cf07b0225c4ca0b534a4e8b1a01104bb039b03",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/37e73cd2-3032-4bee-835e-5b55805e6134/file_downloaded",
+      "expected_sha256": "bf9b1d0c00b61fafed393f54a7cf07b0225c4ca0b534a4e8b1a01104bb039b03",
+      "file_id": "37e73cd2-3032-4bee-835e-5b55805e6134",
+      "filename": "3dBPP_10.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "f58c104ad2049ea676bb9014cfb4f36c7accb5e258c4da1a3b91e0c84a5f1af2",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/f944baa6-b25b-44de-ac43-e2d6936bb1f4/file_downloaded",
+      "expected_sha256": "f58c104ad2049ea676bb9014cfb4f36c7accb5e258c4da1a3b91e0c84a5f1af2",
+      "file_id": "f944baa6-b25b-44de-ac43-e2d6936bb1f4",
+      "filename": "3dBPP_11.txt",
+      "hash_status": "PASS",
+      "present": true
+    },
+    {
+      "actual_sha256": "e4a2c44792c2b6175f5f4ea8957f9c27bb841f76f6b3ef26a8cde98635dfa621",
+      "download_url": "https://data.mendeley.com/public-files/datasets/y258s6d939/files/0d4553b2-ee2d-48e7-9431-a21fbb423867/file_downloaded",
+      "expected_sha256": "e4a2c44792c2b6175f5f4ea8957f9c27bb841f76f6b3ef26a8cde98635dfa621",
+      "file_id": "0d4553b2-ee2d-48e7-9431-a21fbb423867",
+      "filename": "3dBPP_12.txt",
+      "hash_status": "PASS",
+      "present": true
+    }
+  ],
+  "instances": [
+    {
+      "bin_dimensions": [
+        1200,
+        1200,
+        1200
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_1.txt",
+      "item_count": 51,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1200,
+        1200,
+        1200
+      ],
+      "declared_max_bins": 2,
+      "file": "3dBPP_2.txt",
+      "item_count": 51,
+      "item_type_rows": 10,
+      "max_weight": 1000,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1100,
+        1100,
+        1100
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_3.txt",
+      "item_count": 52,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1100,
+        1100,
+        1100
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_4.txt",
+      "item_count": 52,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": true
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1100,
+        1100,
+        1100
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_5.txt",
+      "item_count": 53,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1100,
+        1100,
+        1100
+      ],
+      "declared_max_bins": 2,
+      "file": "3dBPP_6.txt",
+      "item_count": 53,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": true,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1200,
+        1200,
+        1200
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_7.txt",
+      "item_count": 46,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1200,
+        1200,
+        1200
+      ],
+      "declared_max_bins": 2,
+      "file": "3dBPP_8.txt",
+      "item_count": 46,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": false,
+        "incompatibilities": true,
+        "positive_affinities": true,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1500,
+        1500,
+        1500
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_9.txt",
+      "item_count": 47,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": true,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1500,
+        1500,
+        1500
+      ],
+      "declared_max_bins": 1,
+      "file": "3dBPP_10.txt",
+      "item_count": 51,
+      "item_type_rows": 10,
+      "max_weight": null,
+      "nonempty_constraint_headers": {
+        "center_of_mass": true,
+        "incompatibilities": false,
+        "positive_affinities": false,
+        "relative_pos": false
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        900,
+        900,
+        900
+      ],
+      "declared_max_bins": 2,
+      "file": "3dBPP_11.txt",
+      "item_count": 38,
+      "item_type_rows": 10,
+      "max_weight": 800,
+      "nonempty_constraint_headers": {
+        "center_of_mass": true,
+        "incompatibilities": true,
+        "positive_affinities": true,
+        "relative_pos": true
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    },
+    {
+      "bin_dimensions": [
+        1000,
+        1000,
+        1000
+      ],
+      "declared_max_bins": 2,
+      "file": "3dBPP_12.txt",
+      "item_count": 38,
+      "item_type_rows": 10,
+      "max_weight": 900,
+      "nonempty_constraint_headers": {
+        "center_of_mass": true,
+        "incompatibilities": true,
+        "positive_affinities": true,
+        "relative_pos": true
+      },
+      "parse_errors": [],
+      "parse_status": "PASS"
+    }
+  ],
+  "metadata_inconsistencies": [
+    {
+      "description_item_count": 54,
+      "file": "3dBPP_5.txt",
+      "input_quantity_sum": 53
+    },
+    {
+      "description_item_count": 54,
+      "file": "3dBPP_6.txt",
+      "input_quantity_sum": 53
+    },
+    {
+      "description_item_count": 47,
+      "file": "3dBPP_10.txt",
+      "input_quantity_sum": 51
+    }
+  ],
+  "record_kind": "B33_SOURCE_AUDIT",
+  "source_verification": {
+    "all_declared_hashes_match": true,
+    "all_input_files_parse": true,
+    "downloaded_source_dir": "external temporary directory (not committed)",
+    "file_count": 15
+  },
+  "summary": {
+    "description_item_counts": {
+      "3dBPP_1.txt": 51,
+      "3dBPP_10.txt": 47,
+      "3dBPP_11.txt": 38,
+      "3dBPP_12.txt": 38,
+      "3dBPP_2.txt": 51,
+      "3dBPP_3.txt": 52,
+      "3dBPP_4.txt": 52,
+      "3dBPP_5.txt": 54,
+      "3dBPP_6.txt": 54,
+      "3dBPP_7.txt": 46,
+      "3dBPP_8.txt": 46,
+      "3dBPP_9.txt": 47
+    },
+    "input_instance_count": 12,
+    "item_counts_by_file": {
+      "3dBPP_1.txt": 51,
+      "3dBPP_10.txt": 51,
+      "3dBPP_11.txt": 38,
+      "3dBPP_12.txt": 38,
+      "3dBPP_2.txt": 51,
+      "3dBPP_3.txt": 52,
+      "3dBPP_4.txt": 52,
+      "3dBPP_5.txt": 53,
+      "3dBPP_6.txt": 53,
+      "3dBPP_7.txt": 46,
+      "3dBPP_8.txt": 46,
+      "3dBPP_9.txt": 47
+    },
+    "max_item_count": 53,
+    "min_item_count": 38,
+    "total_item_count": 578
+  }
+}

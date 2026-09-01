@@ -11,10 +11,14 @@
 | **ESICUP Alonso 2019** | Alonso et al. 2019，DOI [10.1016/j.cie.2018.11.012](https://doi.org/10.1016/j.cie.2018.11.012) | 多容器、托盘/层、交付日和实际车辆约束；报告车辆数、需求完成、轴荷等 | 最接近业务：交付日、层/托盘、重量、轴距离；格式复杂，需专门 adapter |
 | **ESICUP Alonso 2020** | Alonso, Alvarez-Valdes & Parreño 2020，DOI [10.1007/s10288-018-0397-z](https://doi.org/10.1007/s10288-018-0397-z) | GRASP 多容器装载；库存托盘/案例托盘/剩余货物和日序 | 堆叠、分组、站点/日序；仍没有通用任意角和完整力学 |
 | **PackingSolver 自带 `data/box`/`boxstacks`** | 上游仓库 `data/box/{bischoff1995,ivancic1989,loh1992,tests}`、`data/boxstacks` | 与其 CLI 直接兼容，适合回归与证书校验 | 旋转、箱重、同底面 stack、上压、轴荷/卸货专项；不是跨库标准 |
+| **Q4RealBPP** | Mendeley Data DOI [10.17632/y258s6d939.2](https://doi.org/10.17632/y258s6d939.2)，版本 2；GPLv3 | 12 个现实导向实例；输入 quantity 合计 578 件，包含尺寸、重量、箱数/重量上限、相对位置、不相容/亲和与重心字段 | 适合现实约束 conformance 和小规模端到端回归；不能替代 MPV，也不能作为唯一吞吐集；官方 `Description.txt` 对 `3dBPP_5`、`3dBPP_6`、`3dBPP_10` 的件数与输入 quantity 不一致，canonical 以输入文件为准 |
+| **3DBPPsi** | Science Data Bank DOI [10.57760/sciencedb.42066](https://doi.org/10.57760/sciencedb.42066)，V1；CC BY 4.0 | 20 个 CSV（A–J 的 items/vehicles）；异构车队、价格、payload、stacked-weight、density、nesting height、stackability class、forced orientation；item 行数 50–8,402 | 适合异构车队、stackable 约束和大规模 scalability；公开元数据未给统一 optimum，先报合法 incumbent/下界；不能替代同型多箱、门洞路径或路线时间窗 |
 
 数据集语义必须保持原样：THPACK1–8 是单箱 knapsack（可漏装以最大体积），THPACK9 是多箱 BPP（必须装完以最少箱）；把前者当“最少箱”或把启发式漏件当“高利用率”会产生错误排名。ESICUP 总 README 明确要求每个数据集带来源、论文/DOI、格式说明，并接受通过 issue/PR 修订格式问题。
 
 本次已下载 ESICUP shallow snapshot，并转换 `THPACK9 instance 1`：容器 `10x6x16`，20 件 `2x6x8` 和 50 件 `8x4x10`，总 70 件。统一输入见 [`benchmarks/data/public/thpack9_instance1.json`](../benchmarks/data/public/thpack9_instance1.json)；PackingSolver CSV adapter 见同目录两个 CSV。
+
+Q4RealBPP 和 3DBPPsi 的源文件没有复制进仓库：本仓库只提交来源文件 ID、下载 URL、SHA-256 和结构审计结果，避免在未完成许可证审计前把 GPL 数据打包进发布物。审计脚本与结果分别见 [`benchmarks/comprehensive/audit_b33_source.py`](../benchmarks/comprehensive/audit_b33_source.py)、[`results/comprehensive/b33-source-audit.json`](../results/comprehensive/b33-source-audit.json)、[`benchmarks/comprehensive/audit_b34_source.py`](../benchmarks/comprehensive/audit_b34_source.py) 和 [`results/comprehensive/b34-source-audit.json`](../results/comprehensive/b34-source-audit.json)。两者当前仍是 `SOURCE_INCOMPLETE / NOT_RUN`，待 canonical converter、独立 hard validator 和 exact-small 校准后再进入下一版 ALL-libs 计划。
 
 ## 常用指标定义
 
