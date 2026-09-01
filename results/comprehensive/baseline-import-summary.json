@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 64630,
+  "combined_run_records": 64646,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -91,6 +91,7 @@
     "results/comprehensive/runs/B09-python-composed.jsonl": "879b062a591497e3a79131c4b1561fc8b4cdb2250821364f226690dbac31f66f",
     "results/comprehensive/runs/B11-external-composed.jsonl": "d24c3ede7a8ce9a8de58583f35265cc990a5d71a3fa3b9ee14026ea8cfd59016",
     "results/comprehensive/runs/B11-packingsolver.jsonl": "faea9c3dad6ed8ba7a51b7b6dec4ca068922fbba32ff92ab053d8c4a3129c599",
+    "results/comprehensive/runs/B30-B31-packingsolver-projection.jsonl": "61ab9d860cb8fbd25c883521190607b5da20fa256b8acfc30801227e73db6536",
     "results/comprehensive/runs/B32-online-composed.jsonl": "edd7835dbf2ca3be7058fc8181b4321ce463207b5108f6e7a9f86eaaeb0a518d",
     "results/comprehensive/runs/alonso-projection.jsonl": "deb50847109ef2ff350c442201f4c42a1e99f1fe696c1d2a11ae32cf165ced46",
     "results/comprehensive/runs/constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl": "24e2876f19929d184266e46c7b6472d72b2ab258e6c00955ef0f6f1d507804c4",
@@ -133,7 +134,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "8451bb523f828a21a4b67a8d91941431b940ae09992961e28b9e37c1e9a23e64"
   },
-  "protocol_v3_run_records": 62508,
+  "protocol_v3_run_records": 62524,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -148,7 +149,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "51428bdd4e7d14914687dabbb8baaa434260e79fd749bccda85c3660b170e328",
+  "run_manifest_sha256": "587832a26b586a651786d97da4365a9ad2cc5e655ba614bfab9beb36d106b412",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

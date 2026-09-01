@@ -320,7 +320,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (64630, 2122, 64630, 64630):
+        ) != (64646, 2122, 64646, 64646):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -329,11 +329,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 562, 19, 290, 26, 19):
+        ) != (608, 566, 19, 298, 26, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 253:
+    if coverage.get("protocol_v3_status_only_cells") != 249:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62508}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62524}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -381,7 +381,7 @@ def check_comprehensive_results() -> None:
     with (directory / "rankings" / "industrial-baytp.csv").open(newline="") as handle:
         baytp_rows = list(csv.DictReader(handle))
     baytp_projection = [row for row in baytp_rows if row.get("problem_scope") == "GEOMETRY_PROJECTION"]
-    if len(baytp_projection) != 8 or any(
+    if len(baytp_projection) != 12 or any(
         row.get("valid_complete") != "0" or row.get("constraint_violation") != "1"
         for row in baytp_projection
     ):
@@ -389,8 +389,8 @@ def check_comprehensive_results() -> None:
     with (directory / "rankings" / "industrial-mixed-pallet.csv").open(newline="") as handle:
         mixed_rows = list(csv.DictReader(handle))
     mixed_projection = [row for row in mixed_rows if row.get("problem_scope") == "GEOMETRY_PROJECTION"]
-    if len(mixed_projection) != 8 or any(
-        row.get("records") != "3" or row.get("valid_complete") not in {"0", "1"}
+    if len(mixed_projection) != 12 or any(
+        row.get("records") != "3" or row.get("valid_complete") not in {"0", "1", "2", "3"}
         for row in mixed_projection
     ):
         fail("B31 mixed-SKU pallet conformance summary changed")

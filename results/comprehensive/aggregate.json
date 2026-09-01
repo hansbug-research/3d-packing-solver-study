@@ -2,17 +2,17 @@
   "coverage": {
     "benchmarks_with_runs": 26,
     "benchmarks_with_status_records": 32,
-    "cells_with_evidence": 562,
-    "evidence_cell_rate": 0.9243421052631579,
+    "cells_with_evidence": 566,
+    "evidence_cell_rate": 0.930921052631579,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 19,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.4769736842105263,
-    "protocol_v3_executed_cells": 290,
-    "protocol_v3_status_only_cells": 253,
+    "protocol_v3_executed_cell_rate": 0.4901315789473684,
+    "protocol_v3_executed_cells": 298,
+    "protocol_v3_status_only_cells": 249,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2122,
-      "PROTOCOL_V3": 62508
+      "PROTOCOL_V3": 62524
     },
     "records_by_benchmark": {
       "B01": 26683,
@@ -44,24 +44,24 @@
       "B27": 95,
       "B28": 76,
       "B29": 38,
-      "B30": 20,
-      "B31": 31,
+      "B30": 24,
+      "B31": 43,
       "B32": 59
     },
-    "run_records": 64630,
+    "run_records": 64646,
     "run_status_counts": {
       "CANCELLED": 17,
-      "COMPLETED": 49229,
+      "COMPLETED": 49245,
       "ERROR": 177,
       "NOT_RUN": 271,
       "TIME_LIMIT": 14936
     },
     "solution_status_counts": {
-      "CONSTRAINT_VIOLATION": 76,
+      "CONSTRAINT_VIOLATION": 86,
       "INVALID_CERTIFICATE": 346,
       "NOT_APPLICABLE": 271,
       "NO_SOLUTION": 7088,
-      "VALID_COMPLETE": 1320,
+      "VALID_COMPLETE": 1326,
       "VALID_PARTIAL": 55529
     }
   },
@@ -425,6 +425,62 @@
         "comparison_track": "COMPOSED",
         "complete_rate": 0.0,
         "constraint_violation": 1,
+        "implementation_id": "packingsolver_fork_box",
+        "invalid_certificate": 0,
+        "max_hard_violation_count": 2.0,
+        "mean_hard_violation_count": 2.0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "process_errors": 0,
+        "records": 1,
+        "valid_complete": 0
+      },
+      {
+        "benchmark_id": "B30",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.0,
+        "constraint_violation": 1,
+        "implementation_id": "packingsolver_fork_boxstacks",
+        "invalid_certificate": 0,
+        "max_hard_violation_count": 2.0,
+        "mean_hard_violation_count": 2.0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "process_errors": 0,
+        "records": 1,
+        "valid_complete": 0
+      },
+      {
+        "benchmark_id": "B30",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.0,
+        "constraint_violation": 1,
+        "implementation_id": "packingsolver_upstream_box",
+        "invalid_certificate": 0,
+        "max_hard_violation_count": 2.0,
+        "mean_hard_violation_count": 2.0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "process_errors": 0,
+        "records": 1,
+        "valid_complete": 0
+      },
+      {
+        "benchmark_id": "B30",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.0,
+        "constraint_violation": 1,
+        "implementation_id": "packingsolver_upstream_boxstacks",
+        "invalid_certificate": 0,
+        "max_hard_violation_count": 2.0,
+        "mean_hard_violation_count": 2.0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "process_errors": 0,
+        "records": 1,
+        "valid_complete": 0
+      },
+      {
+        "benchmark_id": "B30",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.0,
+        "constraint_violation": 1,
         "implementation_id": "py3dbp",
         "invalid_certificate": 0,
         "max_hard_violation_count": 2.0,
@@ -523,6 +579,34 @@
       {
         "benchmark_id": "B31",
         "comparison_track": "COMPOSED",
+        "complete_rate": 0.6666666666666666,
+        "constraint_violation": 1,
+        "implementation_id": "packingsolver_fork_boxstacks",
+        "invalid_certificate": 0,
+        "mean_hard_violation_count": 0.3333333333333333,
+        "mean_packed_items": 4.0,
+        "no_solution": 0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "records": 3,
+        "valid_complete": 2
+      },
+      {
+        "benchmark_id": "B31",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.6666666666666666,
+        "constraint_violation": 1,
+        "implementation_id": "packingsolver_upstream_boxstacks",
+        "invalid_certificate": 0,
+        "mean_hard_violation_count": 0.3333333333333333,
+        "mean_packed_items": 4.0,
+        "no_solution": 0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "records": 3,
+        "valid_complete": 2
+      },
+      {
+        "benchmark_id": "B31",
+        "comparison_track": "COMPOSED",
         "complete_rate": 0.3333333333333333,
         "constraint_violation": 2,
         "implementation_id": "go_bp3d",
@@ -543,6 +627,34 @@
         "invalid_certificate": 0,
         "mean_hard_violation_count": 1.0,
         "mean_packed_items": 5.0,
+        "no_solution": 0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "records": 3,
+        "valid_complete": 1
+      },
+      {
+        "benchmark_id": "B31",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.3333333333333333,
+        "constraint_violation": 2,
+        "implementation_id": "packingsolver_fork_box",
+        "invalid_certificate": 0,
+        "mean_hard_violation_count": 0.6666666666666666,
+        "mean_packed_items": 4.0,
+        "no_solution": 0,
+        "problem_scope": "GEOMETRY_PROJECTION",
+        "records": 3,
+        "valid_complete": 1
+      },
+      {
+        "benchmark_id": "B31",
+        "comparison_track": "COMPOSED",
+        "complete_rate": 0.3333333333333333,
+        "constraint_violation": 2,
+        "implementation_id": "packingsolver_upstream_box",
+        "invalid_certificate": 0,
+        "mean_hard_violation_count": 0.6666666666666666,
+        "mean_packed_items": 4.0,
         "no_solution": 0,
         "problem_scope": "GEOMETRY_PROJECTION",
         "records": 3,
@@ -2579,7 +2691,7 @@
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.0005087857303872772
+          "wall_stddev_s": 0.0005087857303872773
         },
         {
           "benchmark_id": "B27",
@@ -2623,7 +2735,7 @@
           "repetitions": 5,
           "valid_rate": 1.0,
           "valid_repetitions": 5,
-          "wall_stddev_s": 0.009060975491045314
+          "wall_stddev_s": 0.009060975491045316
         },
         {
           "benchmark_id": "B27",
@@ -3971,7 +4083,7 @@
     "results/comprehensive/b31-source-audit.json": "445b4c63cbf5a5b4bce389a8eb3d52f8e244211ef19741e163629089f78ef1d7",
     "results/comprehensive/b32-source-audit.json": "8f5bfff66d862c249b1988ac3dd94f1f9c1a5f773cc93a9c37747288895e963b",
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
-    "results/comprehensive/run-manifest.jsonl": "51428bdd4e7d14914687dabbb8baaa434260e79fd749bccda85c3660b170e328",
+    "results/comprehensive/run-manifest.jsonl": "587832a26b586a651786d97da4365a9ad2cc5e655ba614bfab9beb36d106b412",
     "results/comprehensive/runs/alonso-projection.jsonl": "deb50847109ef2ff350c442201f4c42a1e99f1fe696c1d2a11ae32cf165ced46",
     "results/comprehensive/suite-implementation-plan.jsonl": "3a1a0fb0c0589ac0d1d6cb5b7dea0f3838efac1330c0f50bb0a2544309d93f8c"
   },

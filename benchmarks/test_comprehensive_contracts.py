@@ -4,6 +4,8 @@ import copy
 import csv
 import json
 import math
+import tarfile
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -243,17 +245,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 64630
-    assert summary["protocol_v3_run_records"] == 62508
+    assert summary["combined_run_records"] == len(records) == 64646
+    assert summary["protocol_v3_run_records"] == 62524
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 562
+    assert aggregate["coverage"]["cells_with_evidence"] == 566
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 290
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 253
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62508}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 298
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 249
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62524}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34221
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -271,14 +273,14 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert len(projection) == 16
     assert all(row["rank_scope"] == "BOUNDED_SMALLEST_SOURCE_SUBSET" for row in projection)
     baytp = list(csv.DictReader((comprehensive / "rankings" / "industrial-baytp.csv").open(newline="")))
-    assert len(baytp) == 9
+    assert len(baytp) == 13
     baytp_projection = [row for row in baytp if row["problem_scope"] == "GEOMETRY_PROJECTION"]
-    assert len(baytp_projection) == 8
+    assert len(baytp_projection) == 12
     assert all(row["valid_complete"] == "0" and row["constraint_violation"] == "1" for row in baytp_projection)
     mixed = list(csv.DictReader((comprehensive / "rankings" / "industrial-mixed-pallet.csv").open(newline="")))
-    assert len(mixed) == 9
+    assert len(mixed) == 13
     mixed_projection = [row for row in mixed if row["problem_scope"] == "GEOMETRY_PROJECTION"]
-    assert len(mixed_projection) == 8
+    assert len(mixed_projection) == 12
     assert all(row["records"] == "3" for row in mixed_projection)
     calibrations = [
         record for record in records
@@ -579,6 +581,43 @@ def test_constraint_adapter_projection_campaign_is_complete_and_independently_va
     assert len(b31) == 24
     assert {record["problem_variant"] for record in b31} == {"FLAT_MIXED", "STACKABLE", "WEIGHT_INFEASIBLE"}
     assert all("pallet_stack_rules" in record["metrics"]["projection_removed_constraints"] for record in b31)
+
+
+def test_packingsolver_industrial_projection_keeps_scope_and_maps_dense_ids() -> None:
+    run_path = ROOT / "results" / "comprehensive" / "runs" / "B30-B31-packingsolver-projection.jsonl"
+    records = [json.loads(line) for line in run_path.read_text().splitlines() if line]
+    assert len(records) == 16
+    assert {record["capability_status"] for record in records} == {"PROJECTION_ONLY"}
+    assert {record["problem_scope"] for record in records} == {"GEOMETRY_PROJECTION"}
+    assert {record["comparison_track"] for record in records} == {"COMPOSED"}
+    assert all(record["metrics"]["provenance_kind"] == "FRESH_SOLVER_INVOCATION" for record in records)
+    b30 = [record for record in records if record["benchmark_id"] == "B30"]
+    assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b30)
+    assert all(record["metrics"]["packed_items"] == record["metrics"]["required_items"] == 2 for record in b30)
+    stackable_box = next(
+        record for record in records
+        if record["benchmark_id"] == "B31"
+        and record["problem_variant"] == "STACKABLE"
+        and record["implementation_id"] == "packingsolver_fork_box"
+    )
+    stackable_stacks = next(
+        record for record in records
+        if record["benchmark_id"] == "B31"
+        and record["problem_variant"] == "STACKABLE"
+        and record["implementation_id"] == "packingsolver_fork_boxstacks"
+    )
+    assert stackable_box["solution_status"] == "CONSTRAINT_VIOLATION"
+    assert stackable_stacks["solution_status"] == "VALID_COMPLETE"
+    with tempfile.TemporaryDirectory(prefix="projection-contract-") as temp_dir:
+        with tarfile.open(ROOT / "raw/experiments/comprehensive/B30-B31-packingsolver-projection/artifacts.tar.gz") as archive:
+            archive.extractall(temp_dir)
+        certificate = Path(temp_dir) / "B31_STACKABLE/packingsolver_fork_box/solution.csv"
+        from comprehensive.run_b30_b31_packingsolver_projection import parse_certificate
+
+        payload = parse_certificate("B31/STACKABLE", certificate)
+    assert payload["placements"]
+    assert {placement["item_id"] for placement in payload["placements"]} <= {"A:0", "A:1", "B:0", "B:1", "C:0", "C:1"}
+    assert {placement["bin_id"] for placement in payload["placements"]} == {"pallet-stack"}
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:
