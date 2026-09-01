@@ -11,6 +11,7 @@ import pytest
 from comprehensive.model import build_plan_rows, load_catalogs, validate_plan_rows, validate_run_record
 from comprehensive.import_packingsolver_protocol import build_records as build_packingsolver_protocol_records
 from comprehensive.import_fresh_protocol import build_records as build_fresh_protocol_records
+from comprehensive.import_baseline import SUPPLEMENTAL_RUN_PREFIXES
 from comprehensive.record_source_status import build_records as build_status_records
 
 
@@ -376,6 +377,29 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
                 assert_finite_json(child)
 
     assert_finite_json(records)
+
+
+def test_supplemental_runs_are_not_imported_into_protocol_v3_manifest() -> None:
+    """Official-generator outputs have a separate schema/ranking boundary."""
+    comprehensive = ROOT / "results" / "comprehensive"
+    summary = json.loads((comprehensive / "baseline-import-summary.json").read_text())
+    imported_sources = set(summary["protocol_source_sha256"])
+    supplemental = sorted(
+        path.name for path in (comprehensive / "runs").glob("*.jsonl")
+        if path.name.startswith(SUPPLEMENTAL_RUN_PREFIXES)
+    )
+    assert supplemental
+    assert all(f"results/comprehensive/runs/{name}" not in imported_sources for name in supplemental)
+    # The supplemental files remain consumable by their dedicated analyzer;
+    # this assertion prevents a future schema upgrade from silently mixing it
+    # into B04 or the 608-cell protocol-v3 denominator.
+    rows = [
+        json.loads(line)
+        for name in supplemental
+        for line in ((comprehensive / "runs") / name).read_text().splitlines()
+        if line
+    ]
+    assert any(row["protocol_version"].endswith("-supplemental") for row in rows)
 
 
 def test_b01_b02_projection_campaign_keeps_semantics_and_invalid_certificates() -> None:

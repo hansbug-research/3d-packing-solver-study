@@ -10,11 +10,20 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Iterable
 
-from model import RESULTS_DIR, ROOT, canonical_json, load_catalogs, validate_run_record
+try:
+    from .model import RESULTS_DIR, ROOT, canonical_json, load_catalogs, validate_run_record
+except ImportError:  # pragma: no cover - direct script execution
+    from model import RESULTS_DIR, ROOT, canonical_json, load_catalogs, validate_run_record
 
 
 CAMPAIGN = ROOT / "results" / "campaign"
 RAW_CAMPAIGN = ROOT / "raw" / "experiments" / "campaign"
+
+# Supplemental campaigns have their own schema and rankings.  Keeping their
+# JSONL beside protocol-v3 runs is useful for provenance, but importing them
+# into the v3 manifest would either fail validation (v1 supplemental records)
+# or, worse, relabel official-generator instances as THPACK9/B04.
+SUPPLEMENTAL_RUN_PREFIXES = ("B05-MPV-GEN-",)
 
 
 def jsonl(path: Path) -> Iterable[tuple[int, dict[str, Any]]]:
@@ -695,6 +704,8 @@ def generated_files() -> dict[Path, str]:
     protocol_sources: dict[str, str] = {}
     runs_dir = RESULTS_DIR / "runs"
     for path in sorted(runs_dir.glob("*.jsonl")) if runs_dir.exists() else []:
+        if path.name.startswith(SUPPLEMENTAL_RUN_PREFIXES):
+            continue
         content = path.read_text(encoding="utf-8")
         protocol_sources[str(path.relative_to(ROOT))] = hashlib.sha256(content.encode("utf-8")).hexdigest()
         for line in content.splitlines():
