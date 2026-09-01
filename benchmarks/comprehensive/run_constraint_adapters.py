@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = ROOT / "benchmarks" / "data" / "packingsolver"
 RESULTS = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b17.jsonl"
 RAW_ROOT = ROOT / "raw" / "experiments" / "comprehensive" / "constraint-adapters"
+EXTENSION_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "constraint-extension-fixture.json"
 RUNNER = Path(__file__).resolve()
 sys.path.insert(0, str(ROOT / "benchmarks"))
 sys.path.insert(0, str(ROOT / "benchmarks" / "comprehensive"))
@@ -49,6 +50,8 @@ CASE_FILES: dict[str, tuple[str, str, bool]] = {
     "B17/UNLOADING_NONE": ("unloading_items.csv", "unloading_bins.csv", True),
     "B17/INCREASING_X": ("unloading_items.csv", "unloading_bins.csv", True),
 }
+
+EXTENSION_CASES = {"B16/KEEP_OUT", "B18/SEGREGATION"}
 
 RUST_STRATEGIES = {
     "rust_extreme_point": "extremepoint",
@@ -86,6 +89,26 @@ def rotation_sizes(row: dict[str, str]) -> set[tuple[float, float, float]]:
 
 
 def load_case(key: str) -> tuple[dict[str, Any], dict[str, dict[str, str]], dict[str, dict[str, str]], str, str]:
+    if key in EXTENSION_CASES:
+        extension = json.loads(EXTENSION_FIXTURE.read_text(encoding="utf-8"))
+        case = extension["cases"][key]
+        item_meta = {}
+        for item in case["items"]:
+            item_meta[item["id"]] = {
+                "ID": item["type_id"], "X": str(item["size"][0]), "Y": str(item["size"][1]), "Z": str(item["size"][2]),
+                "WEIGHT": str(item.get("weight", 0)), "COPIES": "1",
+                "ROTATION_XYZ": "1", "ROTATION_YXZ": "1", "ROTATION_ZYX": "1",
+                "ROTATION_YZX": "1", "ROTATION_XZY": "1", "ROTATION_ZXY": "1",
+                "GROUP_ID": "0",
+            }
+        bin_meta = {item["id"]: {"ID": item["id"], "X": str(item["size"][0]), "Y": str(item["size"][1]), "Z": str(item["size"][2]), "COPIES": "1", "COST": str(item.get("cost", 0)), "MAXIMUM_WEIGHT": str(item.get("max_weight", 0))} for item in case["bins"]}
+        spec = {
+            "scenario": key.replace("/", "_").lower(), "benchmark_id": key.split("/", 1)[0], "problem_variant": key.split("/", 1)[1],
+            "items": case["items"], "bins": case["bins"], "expected_complete": bool(case["expected_complete"]),
+            "obstacles": case.get("obstacles", []), "incompatible_groups": case.get("incompatible_groups", []),
+            "source_files": {str(EXTENSION_FIXTURE.relative_to(ROOT)): sha256(EXTENSION_FIXTURE)},
+        }
+        return spec, item_meta, bin_meta, str(EXTENSION_FIXTURE), str(EXTENSION_FIXTURE)
     items_name, bins_name, expected_complete = CASE_FILES[key]
     item_path = DATA_ROOT / items_name
     bin_path = DATA_ROOT / bins_name
@@ -254,6 +277,14 @@ def independent_validate(
             constraint_errors.append(f"{bin_id}: middle axle {middle} exceeds limit")
         if rear > float_value(source_bin, "REAR_AXLE_MAXIMUM_WEIGHT", float("inf")) + 1e-7:
             constraint_errors.append(f"{bin_id}: rear axle {rear} exceeds limit")
+        for obstacle in spec.get("obstacles", []):
+            obstacle_row = {"position": obstacle["position"], "size": obstacle["size"]}
+            if any(intersects(row, obstacle_row) for row in rows):
+                constraint_errors.append(f"{bin_id}: keep-out {obstacle['id']} intersects cargo")
+        groups = {str(next(item for item in spec["items"] if item["id"] == row["item_id"]).get("compatibility_group", "")) for row in rows}
+        for left, right in spec.get("incompatible_groups", []):
+            if left in groups and right in groups:
+                constraint_errors.append(f"{bin_id}: incompatible groups {left}/{right} share a compartment")
     if spec["problem_variant"] == "INCREASING_X":
         groups: dict[int, list[float]] = {}
         for item_id in seen:
@@ -383,6 +414,11 @@ def make_record(
         proof = "UNKNOWN"
     if run_status in {"ERROR", "TIME_LIMIT"}:
         proof = "UNKNOWN"
+    projection_removed_constraints = ["source_pose_whitelist", "payload", "axle_statics", "unloading_order"]
+    if spec["benchmark_id"] == "B16":
+        projection_removed_constraints.append("keep_out")
+    if spec["benchmark_id"] == "B18":
+        projection_removed_constraints.append("compatibility_segregation")
     run_id = f"{spec['benchmark_id']}/{spec['problem_variant']}/{implementation_id}/10s/constraint-projection/rep-0"
     normalized_command = None
     if command:
@@ -421,7 +457,7 @@ def make_record(
         "resources": {"wall_s": wall_s, "solver_s": None, "peak_rss_bytes": None},
         "metrics": {
             **metrics,
-            "projection_removed_constraints": ["source_pose_whitelist", "payload", "axle_statics", "unloading_order"],
+            "projection_removed_constraints": projection_removed_constraints,
             "projection_reason": "library adapter accepts geometry only; independent validator retains original hard fields",
             "provenance_kind": "FRESH_SOLVER_INVOCATION" if run_status != "ERROR" or command else "ADAPTER_ATTEMPT",
             "runner_sha256": sha256(RUNNER),
@@ -441,11 +477,12 @@ def make_record(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B17"))
+    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18"))
     parser.add_argument("--output", type=Path, default=RESULTS)
     args = parser.parse_args()
     RAW_ROOT.mkdir(parents=True, exist_ok=True)
-    selected = [key for key in CASE_FILES if not args.benchmark or key.split("/", 1)[0] in args.benchmark]
+    all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES)
+    selected = [key for key in all_cases if not args.benchmark or key.split("/", 1)[0] in args.benchmark]
     implementations = ["py3dbp", "jerry", "go_bp3d", *RUST_STRATEGIES]
     records: list[dict[str, Any]] = []
     for key in selected:

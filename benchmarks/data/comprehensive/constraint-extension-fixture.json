@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "record_kind": "CONSTRAINT_EXTENSION_FIXTURE",
+  "cases": {
+    "B16/KEEP_OUT": {
+      "expected_complete": true,
+      "bins": [
+        {"id": "bin-0", "size": [10, 10, 10], "max_weight": 100, "cost": 1}
+      ],
+      "items": [
+        {"id": "cargo:0", "type_id": "cargo", "size": [5, 5, 5], "weight": 1, "orientation_requirement": "any"}
+      ],
+      "obstacles": [
+        {"id": "pillar-0", "position": [0, 0, 0], "size": [5, 10, 10]}
+      ],
+      "semantic_note": "The keep-out occupies the first half of the bin; a geometry-only solver normally chooses the first pivot and must be rejected by the independent validator."
+    },
+    "B18/SEGREGATION": {
+      "expected_complete": true,
+      "bins": [
+        {"id": "bin-0", "size": [10, 5, 5], "max_weight": 100, "cost": 1}
+      ],
+      "items": [
+        {"id": "cold:0", "type_id": "cold", "size": [5, 5, 5], "weight": 1, "orientation_requirement": "any", "compatibility_group": "COLD"},
+        {"id": "hazmat:0", "type_id": "hazmat", "size": [5, 5, 5], "weight": 1, "orientation_requirement": "any", "compatibility_group": "HAZMAT"}
+      ],
+      "incompatible_groups": [["COLD", "HAZMAT"]],
+      "semantic_note": "Both items fit geometrically in one bin, but the declared groups may not share a compartment."
+    }
+  }
+}

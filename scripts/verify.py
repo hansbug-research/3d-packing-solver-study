@@ -307,9 +307,9 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 529, 19, 212, 19, 19):
+        ) != (608, 529, 19, 228, 21, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 298:
+    if coverage.get("protocol_v3_status_only_cells") != 282:
         fail("comprehensive status-only coverage changed")
     if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60758}:
         fail("comprehensive run origin counts changed")

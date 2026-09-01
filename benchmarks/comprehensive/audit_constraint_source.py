@@ -18,6 +18,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = ROOT / "benchmarks" / "data" / "packingsolver"
+EXTENSION_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "constraint-extension-fixture.json"
 
 CASES: dict[str, tuple[str, str]] = {
     "B09/LARGE_CHEAPER": ("heterogeneous_items.csv", "heterogeneous_bins.csv"),
@@ -111,6 +112,14 @@ def audit() -> dict[str, Any]:
             "required_items": item_stats["total_copies"],
             "bin_copies": bin_stats["total_copies"],
         }
+    extension = json.loads(EXTENSION_FIXTURE.read_text(encoding="utf-8"))
+    if extension.get("schema_version") != 1 or set(extension.get("cases", {})) != {"B16/KEEP_OUT", "B18/SEGREGATION"}:
+        raise ValueError("constraint extension fixture schema mismatch")
+    extension_stats = {
+        "path": str(EXTENSION_FIXTURE.relative_to(ROOT)),
+        "sha256": sha256(EXTENSION_FIXTURE),
+        "cases": sorted(extension["cases"]),
+    }
     return {
         "schema_version": 1,
         "record_kind": "CONSTRAINT_FIXTURE_SOURCE_AUDIT",
@@ -120,6 +129,7 @@ def audit() -> dict[str, Any]:
         "input_status": "VALID",
         "cases": case_stats,
         "files": file_stats,
+        "extension_fixture": extension_stats,
         "semantic_note": "Repository-owned adversarial conformance fixtures, not published quality benchmarks. Expected behavior and independent validation are defined by run_constraint_gauntlet.py.",
     }
 

@@ -59,31 +59,31 @@
   ],
   "placements": [
     {
-      "item_id": "1:0",
-      "bin_id": "0:0",
-      "position": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        2.0,
-        2.0,
-        2.0
-      ],
-      "original_size": [
-        2.0,
-        2.0,
-        2.0
-      ],
-      "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
-    },
-    {
       "item_id": "0:0",
       "bin_id": "0:0",
       "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "original_size": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "weight": 1.0,
+      "rotation": "yxz",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "1:0",
+      "bin_id": "0:0",
+      "position": [
         2.0,
         0.0,
         0.0
@@ -99,10 +99,10 @@
         2.0
       ],
       "weight": 1.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "zyx",
+      "rotation_index": 5
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.638017
+  "elapsed_ms": 1.6973019999999999
 }

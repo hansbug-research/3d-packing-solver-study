@@ -80,6 +80,14 @@
       "required_items": 2
     }
   },
+  "extension_fixture": {
+    "cases": [
+      "B16/KEEP_OUT",
+      "B18/SEGREGATION"
+    ],
+    "path": "benchmarks/data/comprehensive/constraint-extension-fixture.json",
+    "sha256": "22fb8e42c787432916c1eac221214e2d7f33acc61db18e02f80d1d64d15b5c94"
+  },
   "files": {
     "axle_bins.csv": {
       "rows": 1,

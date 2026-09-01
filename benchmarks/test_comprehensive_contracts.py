@@ -203,12 +203,12 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert summary["protocol_v3_run_records"] == 60758
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 19
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 21
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 529
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 212
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 298
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 228
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 282
     assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60758}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
@@ -400,9 +400,9 @@ def test_b07_projection_common_and_jerry_control_rankings() -> None:
 def test_constraint_adapter_projection_campaign_is_complete_and_independently_validated() -> None:
     path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b17.jsonl"
     records = [json.loads(line) for line in path.read_text().splitlines() if line]
-    assert len(records) == 64
-    assert len({record["run_id"] for record in records}) == 64
-    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B17"}
+    assert len(records) == 80
+    assert len({record["run_id"] for record in records}) == 80
+    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18"}
     assert {record["implementation_id"] for record in records} == {
         "py3dbp", "jerry", "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
     }
@@ -414,6 +414,10 @@ def test_constraint_adapter_projection_campaign_is_complete_and_independently_va
     b15_infeasible = [record for record in records if record["benchmark_id"] == "B15" and record["problem_variant"] == "AXLE_INFEASIBLE"]
     assert len(b15_infeasible) == 8
     assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b15_infeasible)
+    for benchmark_id in ("B16", "B18"):
+        extension = [record for record in records if record["benchmark_id"] == benchmark_id]
+        assert len(extension) == 8
+        assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in extension)
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

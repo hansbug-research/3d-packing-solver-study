@@ -89,52 +89,8 @@
   ],
   "placements": [
     {
-      "item_id": "0:0",
-      "bin_id": "0:0",
-      "position": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        4.0,
-        4.0,
-        4.0
-      ],
-      "original_size": [
-        4.0,
-        4.0,
-        4.0
-      ],
-      "weight": 6.0,
-      "rotation": "xyz",
-      "rotation_index": 0
-    },
-    {
-      "item_id": "0:1",
-      "bin_id": "0:1",
-      "position": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        4.0,
-        4.0,
-        4.0
-      ],
-      "original_size": [
-        4.0,
-        4.0,
-        4.0
-      ],
-      "weight": 6.0,
-      "rotation": "zyx",
-      "rotation_index": 5
-    },
-    {
       "item_id": "0:2",
-      "bin_id": "0:2",
+      "bin_id": "0:0",
       "position": [
         0.0,
         0.0,
@@ -153,8 +109,52 @@
       "weight": 6.0,
       "rotation": "zxy",
       "rotation_index": 4
+    },
+    {
+      "item_id": "0:0",
+      "bin_id": "0:1",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "original_size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "weight": 6.0,
+      "rotation": "xzy",
+      "rotation_index": 1
+    },
+    {
+      "item_id": "0:1",
+      "bin_id": "0:2",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "original_size": [
+        4.0,
+        4.0,
+        4.0
+      ],
+      "weight": 6.0,
+      "rotation": "xzy",
+      "rotation_index": 1
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.269252
+  "elapsed_ms": 1.2989849999999998
 }

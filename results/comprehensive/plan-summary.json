@@ -1,26 +1,26 @@
 {
   "capability_status_counts": {
-    "ADAPTER_MISSING": 219,
-    "NOT_SUPPORTED": 44,
-    "PROJECTION_ONLY": 153,
+    "ADAPTER_MISSING": 214,
+    "NOT_SUPPORTED": 36,
+    "PROJECTION_ONLY": 166,
     "SUPPORTED_COMPOSED": 23,
     "SUPPORTED_NATIVE": 169
   },
   "catalog_sha256": {
     "benchmarks/comprehensive/implementations.json": "2f7bba7eabd81940fb0b956694d2b673fc3c328fa790ac8049b57d3a031bbcb9",
-    "benchmarks/comprehensive/suites.json": "e770dda7c541991d04e40dc1e6d8dec02bbffb9241c4161ded99258f387aa86f"
+    "benchmarks/comprehensive/suites.json": "69d6fe671551a7592806e5c1de3e4431894d51b60d45f85438027dff9b332487"
   },
   "comparison_track_counts": {
-    "COMPOSED": 176,
+    "COMPOSED": 189,
     "EXACT_MODEL": 124,
-    "NATIVE": 264,
-    "NOT_APPLICABLE": 44
+    "NATIVE": 259,
+    "NOT_APPLICABLE": 36
   },
   "executed_cells": 0,
   "implementation_count": 19,
   "input_status_counts": {
-    "SOURCE_INCOMPLETE": 152,
-    "VALID": 456
+    "SOURCE_INCOMPLETE": 114,
+    "VALID": 494
   },
   "planned_cells": 608,
   "protocol_version": "benchmark-protocol/3",

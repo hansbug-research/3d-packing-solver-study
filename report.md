@@ -427,20 +427,22 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 
 外部约束适配器运行前的中间快照为 `19/32` benchmark、`180/608` protocol-v3 cell 和 `62,824` 条记录；该快照仅用于追溯，当前权威数字见下方 7.9 节。无论哪个快照，都不代表 B05、B08、B10-B23、B30-B32 已完成 ALL-libs；这些问题仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨逐项补齐。
 
-### 7.9 B12/B13/B15/B17 外部库 projection conformance
+### 7.9 B12/B13/B15/B16/B17/B18 外部库 projection conformance
 
-为避免只测试 PackingSolver，本轮新增 `constraint_adapters/projection_v1`，对 py3dbp、Jerry、Go bp3d 以及 u-nesting 的 ExtremePoint/Layer/GA/BRKGA/SA 实际启动 64 次。输入保留原始姿态、重量、轴荷和卸货字段；外部库收到的是几何 projection，所有硬字段由独立 validator 重算。因此这里的 `CONSTRAINT_VIOLATION` 表示“几何库给出了布局，但删掉的原问题约束没有满足”，不表示进程崩溃。
+为避免只测试 PackingSolver，本轮新增 `constraint_adapters/projection_v1`，对 py3dbp、Jerry、Go bp3d 以及 u-nesting 的 ExtremePoint/Layer/GA/BRKGA/SA 实际启动 80 次。输入保留原始姿态、重量、轴荷、卸货、keep-out 和相容组字段；外部库收到的是几何 projection，所有硬字段由独立 validator 重算。因此这里的 `CONSTRAINT_VIOLATION` 表示“几何库给出了布局，但删掉的原问题约束没有满足”，不表示进程崩溃。
 
 | 套件 | 实测结果 | 结论 |
 |---|---|---|
-| B12 姿态 | `ROTATION_REQUIRED`：py3dbp、Jerry、Go、Rust ExtremePoint/GA/BRKGA/SA 各得到合法几何；Rust Layer 的部分策略越界。`ROTATION_FORBIDDEN`：所有几何投影库均放置了被原始姿态白名单禁止的旋转，记 `CONSTRAINT_VIOLATION`；Layer/GA/SA 同时有越界证书 | 这些库能做六轴排列几何，但不能原生保证本题的面语义/姿态白名单；不能把 projection 合规率当作 native 姿态能力 |
+| B12 姿态 | 本次固定运行中，`ROTATION_REQUIRED` 的 py3dbp、Jerry、Go、Rust ExtremePoint 通过；Rust BRKGA/GA/Layer/SA 产生无效几何证书。`ROTATION_FORBIDDEN` 的 py3dbp、Jerry、Go、Rust ExtremePoint 返回的几何布局被 validator 判为姿态约束违规，Rust BRKGA/GA/Layer/SA 为无效几何证书 | 这些投影库不能原生保证本题的面语义/姿态白名单；不能把某次随机策略的无效证书或 projection 合规率当作 native 姿态能力 |
 | B13 重量 | Go、py3dbp、Jerry 的布局在独立总重检查下超出 `10` 的箱载荷；Rust 五个策略各把 3 件分到 3 个箱并通过 | Go 的 `MaxWeight` 字段确实未执行；Python 库也没有载荷约束模型；Rust 结果只是外层重复单箱分配通过，不能外推到复杂载荷策略 |
 | B15 轴荷 | 正常例所有外部库通过；边界例均触发 middle axle 超限；不可行例均触发 middle/rear 超限 | 轴荷必须后验硬校验；仅有几何坐标的库不能宣称车辆静力可行 |
-| B17 卸货 | `UNLOADING_NONE` 均完整；`INCREASING_X` 中 Go、Jerry、py3dbp、Rust ExtremePoint/GA/Layer/SA 违反顺序，Rust BRKGA 通过 | 离线几何装满不等于卸货顺序可执行；BRKGA 的单例通过不能升级为原生 multi-drop 支持 |
+| B17 卸货 | `UNLOADING_NONE` 均完整；本次固定运行的 `INCREASING_X` 中 Go、Jerry、py3dbp、Rust ExtremePoint/Layer/SA 违反顺序，Rust GA/BRKGA 通过 | ⚠️ u-nesting 记录明确 `seed_effective=false`，重跑可能改变 GA/BRKGA 结果；离线几何装满不等于卸货顺序可执行，单次通过不能升级为原生 multi-drop 支持 |
+| B16 障碍/keep-out | 8 个 projection 实现均在独立 validator 中触发 keep-out 碰撞 | 这些库没有障碍语义；AABB 终点结果不能证明门洞或连续路径可达 |
+| B18 相容性 | 8 个 projection 实现均把 COLD/HAZMAT 放入同一 compartment，触发隔离冲突 | 几何库没有温区/危化隔离模型；必须由上层 master 或专用 exact 模型处理 |
 
-这 64 条记录已经合并进 [`constraint-conformance.csv`](results/comprehensive/rankings/constraint-conformance.csv) 和总 manifest。B17 目录现将可运行的几何库标为 `PROJECTION_ONLY`，PS `box` 与 exact 仍为 `NOT_SUPPORTED/ADAPTER_MISSING`；这样“计划状态”和“真实 projection 运行”一致。该波次不改变硬门禁：先按 hard violation 和完整率筛选，再比较目标值。
+这 80 条记录已经合并进 [`constraint-conformance.csv`](results/comprehensive/rankings/constraint-conformance.csv) 和总 manifest。B16/B17/B18 目录现将可运行的几何库标为 `PROJECTION_ONLY`，PS 与 exact 仍为 `NOT_SUPPORTED/ADAPTER_MISSING`；这样“计划状态”和“真实 projection 运行”一致。该波次不改变硬门禁：先按 hard violation 和完整率筛选，再比较目标值。
 
-本轮更新后的综合覆盖为 `19/32` benchmark 有实际运行、`32/32` 有状态记录、`212/608` protocol-v3 cell 已执行、`298` 个为 status-only，记录总数 `62,880`（legacy `2,122`、protocol-v3 `60,758`）。B05、B08、B10-B23、B30-B32 仍未形成完整 ALL-libs FULL 轨，不能据此宣布最终 ready。
+本轮更新后的综合覆盖为 `21/32` benchmark 有实际运行、`32/32` 有状态记录、`228/608` protocol-v3 cell 已执行、`282` 个为 status-only，记录总数 `62,880`（legacy `2,122`、protocol-v3 `60,758`）。B05、B08、B10-B15、B19-B23、B30-B32 仍未形成完整 ALL-libs FULL 轨，不能据此宣布最终 ready。
 
 可靠性结果不产生跨问题族总冠军：B24/B26/B27 是工程稳定性门，B25 是成本 comparator/parser 门，B28 是规模和资源边界，B29 是托管故障边界。质量、成本、硬约束和可靠性必须分别看表；`NOT_SUPPORTED`、`ADAPTER_MISSING`、`ERROR` 或 `TIME_LIMIT` 都是能力边界证据，不可用其他 benchmark 的高利用率抵消。
 

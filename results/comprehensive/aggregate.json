@@ -1,15 +1,15 @@
 {
   "coverage": {
-    "benchmarks_with_runs": 19,
+    "benchmarks_with_runs": 21,
     "benchmarks_with_status_records": 32,
     "cells_with_evidence": 529,
     "evidence_cell_rate": 0.8700657894736842,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 19,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.34868421052631576,
-    "protocol_v3_executed_cells": 212,
-    "protocol_v3_status_only_cells": 298,
+    "protocol_v3_executed_cell_rate": 0.375,
+    "protocol_v3_executed_cells": 228,
+    "protocol_v3_status_only_cells": 282,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2122,
       "PROTOCOL_V3": 60758
@@ -51,17 +51,17 @@
     "run_records": 62880,
     "run_status_counts": {
       "CANCELLED": 16,
-      "COMPLETED": 48993,
+      "COMPLETED": 49009,
       "ERROR": 46,
-      "NOT_RUN": 310,
+      "NOT_RUN": 294,
       "TIME_LIMIT": 13515
     },
     "solution_status_counts": {
-      "CONSTRAINT_VIOLATION": 31,
-      "INVALID_CERTIFICATE": 345,
-      "NOT_APPLICABLE": 310,
+      "CONSTRAINT_VIOLATION": 46,
+      "INVALID_CERTIFICATE": 349,
+      "NOT_APPLICABLE": 294,
       "NO_SOLUTION": 6955,
-      "VALID_COMPLETE": 1228,
+      "VALID_COMPLETE": 1225,
       "VALID_PARTIAL": 54011
     }
   },
@@ -2681,8 +2681,8 @@
     "benchmarks/comprehensive/run_reliability.py": "0817746c5af3fee7938fdc34d688e63b2558af641eb18bfcb8f3a0757fa73691",
     "benchmarks/data/comprehensive/reliability-fixture.json": "43e6b3c200ee39b362e9b8675cb2b696203cb70669bc1d8c3931a9f1562e5fe7",
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
-    "results/comprehensive/run-manifest.jsonl": "f28882f9ae2e914c4243172b4299eec65182c43c5aced2b19dac8689e8f41418",
-    "results/comprehensive/suite-implementation-plan.jsonl": "f2f2495226e278e8c2ec5e200e1d1079f4b32a8dcc8b5535a5daf01fc062b4af"
+    "results/comprehensive/run-manifest.jsonl": "05e0467d30bbe0d6394966a717a0d900336e36905bc7fb710c81b8c800e9e355",
+    "results/comprehensive/suite-implementation-plan.jsonl": "592805beb10589316da02c605281b8fa1a5ae4bb030c33afa660d0e49423a6fd"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

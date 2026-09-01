@@ -41,7 +41,7 @@ BR/LN 只回答“单个固定容器里，几何启发式能塞进多少体积�
 |---|---|---|---|---|
 | Wave 1A 公共几何 | B01–B07 | 每个库都生成 `NATIVE`、`COMPOSED`、`PROJECTION_ONLY` 或 `NOT_SUPPORTED` 状态；可表达者全跑 | 输入 hash、姿态语义、预算和 validator 完全相同；B03 固定姿态与全旋转分榜 | B07 已有大规模 projection；补 Skjolber adapter 和 exact 小子集，随后全库复跑 |
 | Wave 1B 真值校准 | B06、B09 | CP-SAT/SCIP/Gurobi/CPLEX；启发式只作 incumbent 对照 | primal/dual bound 闭合才显示 `PROVEN_OPTIMAL` | B06 有局部记录；先完成统一 B09 exact truth |
-| Wave 2 目标与硬约束 | B08–B18 | 能保真表达者原生/组合运行，其余登记状态；B12/B13/B15/B17 已补外部几何 projection | hard violation=0 且必装件完整后，才比较成本/箱数 | B08/B10/B11 先冻结来源；B12/B13/B15/B17 仍需 FULL adapter，B16/B18 尚缺 source/语义适配 |
+| Wave 2 目标与硬约束 | B08–B18 | 能保真表达者原生/组合运行，其余登记状态；B12/B13/B15/B16/B17/B18 已补外部几何 projection | hard violation=0 且必装件完整后，才比较成本/箱数 | B08/B10/B11 先冻结来源；B12–B18 仍需 FULL adapter 才能回答生产约束 |
 | Wave 3 工业专项 | B19–B23、B30–B32 | 只对有 FULL adapter 的库做 full；其他做明确 projection/status | full 轨保留车辆、站点、日期、货架或 online 语义 | 当前多为 `ADAPTER_MISSING`/`SOURCE_PENDING`，不得用几何投影填数 |
 | Wave 4 可靠性 | B24–B29 | 全部实际部署候选及其 worker/sidecar | 原始 artifact、取消和恢复状态完整；随机算法至少 5 seed | 在 Wave 1–3 代表实例上重复，形成 release gate |
 
@@ -78,7 +78,7 @@ B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有
 
 ### Wave 2：成本、异构和硬约束
 
-运行 B08-B18，先做 capability/conformance，再做质量。推荐顺序：B09（小规模 exact truth） -> B08/B10/B11（公开或固定异构输入） -> B12-B18（逐约束 gauntlet）。当前 B12/B13/B15/B17 已有 64 条外部库 projection 实测；这些记录只说明几何布局经过原始硬约束后验检查的结果，不替代 FULL 语义。
+运行 B08-B18，先做 capability/conformance，再做质量。推荐顺序：B09（小规模 exact truth） -> B08/B10/B11（公开或固定异构输入） -> B12-B18（逐约束 gauntlet）。当前 B12/B13/B15/B16/B17/B18 已有 80 条外部库 projection 实测；这些记录只说明几何布局经过原始硬约束后验检查的结果，不替代 FULL 语义。
 
 这波的门禁是词典序：硬约束违反率必须为 0，必装件必须完整，之后才比较成本/箱数/利用率。一个库即使箱数很好，只要重量、支撑、轴荷或卸货硬校验失败，也不能被标为生产可用。
 
