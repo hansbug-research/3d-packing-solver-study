@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62957,
+  "combined_run_records": 62965,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -106,7 +106,7 @@
     "results/comprehensive/runs/status-B18.jsonl": "96eab0a92e2209f9f4fbb902476f2ff25a051be0c9283df725bb2e0a1fca952d",
     "results/comprehensive/runs/status-B19.jsonl": "c49de4a6defcb4ad0560b6e04b35651d84167ba9d04b11fb3261057c33c15b91",
     "results/comprehensive/runs/status-B20.jsonl": "ca3957a5a66dd26d280511c2e6c2443f524af57f515eabe35bfa2dbe9e6517b3",
-    "results/comprehensive/runs/status-B21.jsonl": "8cfb7709f1a60a364e43bd963974b77d63bb7eb6e544aadea64362616125842c",
+    "results/comprehensive/runs/status-B21.jsonl": "c56e4a32ee7b11c3a9862706f3ea3142faa24c5d77721f9e1aeeefb0b83d487f",
     "results/comprehensive/runs/status-B22.jsonl": "b3dbbc767799ac54b0d1f54c2416bee2922ae833582dcc5a6bad59b5170a51f7",
     "results/comprehensive/runs/status-B23.jsonl": "5c45110db9ed132d41e59a98f405ab13e8428b7fc26926abdfa07e75fa581b7b",
     "results/comprehensive/runs/status-B24.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -120,7 +120,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "2b851f066fb0028db02dc762a19734ee1aa8e0dc26da9a6a01b2b903259f68b4"
   },
-  "protocol_v3_run_records": 60835,
+  "protocol_v3_run_records": 60843,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -135,7 +135,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "6a26b1953d87b5fd847b8448bd533e1c110da0a6b3cd8abd7742217abfb174e2",
+  "run_manifest_sha256": "9745fe7511c31580cc4960844490db5ba5531779813b811c099dad494496e609",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

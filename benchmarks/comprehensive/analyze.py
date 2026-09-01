@@ -1048,6 +1048,8 @@ def generated_files() -> dict[Path, str]:
             "benchmarks/comprehensive/run_b32_online_composed.py": sha256(ROOT / "benchmarks/comprehensive/run_b32_online_composed.py"),
             "benchmarks/data/comprehensive/b32-online-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/b32-online-fixture.json"),
             "results/comprehensive/b32-source-audit.json": sha256(ROOT / "results/comprehensive/b32-source-audit.json"),
+            "benchmarks/comprehensive/audit_b21_source.py": sha256(ROOT / "benchmarks/comprehensive/audit_b21_source.py"),
+            "results/comprehensive/b21-source-audit.json": sha256(ROOT / "results/comprehensive/b21-source-audit.json"),
         },
         "coverage": {
             "planned_cells": len(coverage),

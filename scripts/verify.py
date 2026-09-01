@@ -277,6 +277,7 @@ def check_comprehensive_results() -> None:
         "rankings/resource-summary.csv",
         "b31-source-audit.json",
         "b32-source-audit.json",
+        "b21-source-audit.json",
         "b05-source-audit.json",
         "runs/exact-calibrations.jsonl",
     ]
@@ -304,7 +305,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62957, 2122, 62957, 62957):
+        ) != (62965, 2122, 62965, 62965):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -313,11 +314,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 530, 19, 262, 24, 19):
+        ) != (608, 538, 19, 262, 24, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 249:
+    if coverage.get("protocol_v3_status_only_cells") != 257:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60835}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60843}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -331,6 +332,20 @@ def check_comprehensive_results() -> None:
         decision.get("termination_reason"),
     ) != ("B05", "SOURCE_INCOMPLETE", "NOT_RUN", "SOURCE_PENDING"):
         fail("B05 source audit decision changed")
+    try:
+        b21_audit = json.loads((directory / "b21-source-audit.json").read_text(), parse_constant=reject_constant)
+    except (json.JSONDecodeError, ValueError) as exc:
+        fail(f"B21 source audit is not strict JSON: {exc}")
+    b21_decision = b21_audit.get("decision", {})
+    if (
+        b21_audit.get("benchmark_id"),
+        b21_audit.get("observed_instance_files"),
+        b21_decision.get("input_status"),
+        b21_decision.get("run_status"),
+        b21_decision.get("termination_reason"),
+        b21_audit.get("anomaly_counts", {}).get("MALFORMED_ITEM_ROWS"),
+    ) != ("B21", 46, "SOURCE_INVALID", "NOT_RUN", "SOURCE_PENDING", 23):
+        fail("B21 source audit decision changed")
     if coverage.get("records_by_benchmark", {}).get("B07") != 34209:
         fail("comprehensive B07 record count changed")
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]

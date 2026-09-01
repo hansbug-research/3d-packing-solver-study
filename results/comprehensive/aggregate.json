@@ -2,17 +2,17 @@
   "coverage": {
     "benchmarks_with_runs": 24,
     "benchmarks_with_status_records": 32,
-    "cells_with_evidence": 530,
-    "evidence_cell_rate": 0.8717105263157895,
+    "cells_with_evidence": 538,
+    "evidence_cell_rate": 0.8848684210526315,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 19,
     "planned_cells": 608,
     "protocol_v3_executed_cell_rate": 0.4309210526315789,
     "protocol_v3_executed_cells": 262,
-    "protocol_v3_status_only_cells": 249,
+    "protocol_v3_status_only_cells": 257,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2122,
-      "PROTOCOL_V3": 60835
+      "PROTOCOL_V3": 60843
     },
     "records_by_benchmark": {
       "B01": 25283,
@@ -35,7 +35,7 @@
       "B18": 19,
       "B19": 4,
       "B20": 4,
-      "B21": 11,
+      "B21": 19,
       "B22": 19,
       "B23": 19,
       "B24": 76,
@@ -48,18 +48,18 @@
       "B31": 31,
       "B32": 59
     },
-    "run_records": 62957,
+    "run_records": 62965,
     "run_status_counts": {
       "CANCELLED": 16,
       "COMPLETED": 49116,
       "ERROR": 47,
-      "NOT_RUN": 263,
+      "NOT_RUN": 271,
       "TIME_LIMIT": 13515
     },
     "solution_status_counts": {
       "CONSTRAINT_VIOLATION": 72,
       "INVALID_CERTIFICATE": 347,
-      "NOT_APPLICABLE": 263,
+      "NOT_APPLICABLE": 271,
       "NO_SOLUTION": 6957,
       "VALID_COMPLETE": 1307,
       "VALID_PARTIAL": 54011
@@ -3520,6 +3520,7 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
+    "benchmarks/comprehensive/audit_b21_source.py": "84cdce301cac21d347be3f31dcec0778929657bf5fdd4daed7d6e4406ff7c0e4",
     "benchmarks/comprehensive/run_b11_external_composed.py": "45e0ec897b20aea850a3f0869a8198654b0508a82094d3e9c43ba5f6fe01b26e",
     "benchmarks/comprehensive/run_b32_online_composed.py": "15c0aa519cbb9064cd37e6af126968f99b200f6df0d0d5146a0936b3c41ffcfa",
     "benchmarks/comprehensive/run_constraint_adapters.py": "ce991ae79e1a9df9a3977ec25b14f680983619abec1a085a55afd5f289dd83b9",
@@ -3529,11 +3530,12 @@
     "benchmarks/data/comprehensive/b32-online-fixture.json": "47fd423c14238a17a1abb22f2a2ddb848dc75e2391cc5b9c50ae9b30cc321320",
     "benchmarks/data/comprehensive/reliability-fixture.json": "43e6b3c200ee39b362e9b8675cb2b696203cb70669bc1d8c3931a9f1562e5fe7",
     "raw/experiments/comprehensive/B11-external-composed/artifacts.tar.gz": "840b6360520170cf0a612692be8c2e47ddf0fa4ee9d18234c100e08019cb1457",
+    "results/comprehensive/b21-source-audit.json": "00cb55580c316dd02f518fddfd5a3b4db8dd167d5be5fb0d62b04eac87f0a85e",
     "results/comprehensive/b31-source-audit.json": "445b4c63cbf5a5b4bce389a8eb3d52f8e244211ef19741e163629089f78ef1d7",
     "results/comprehensive/b32-source-audit.json": "8f5bfff66d862c249b1988ac3dd94f1f9c1a5f773cc93a9c37747288895e963b",
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
-    "results/comprehensive/run-manifest.jsonl": "6a26b1953d87b5fd847b8448bd533e1c110da0a6b3cd8abd7742217abfb174e2",
-    "results/comprehensive/suite-implementation-plan.jsonl": "feaf55ae8d7e0f53630eedc1f813b4e0c91ab71c98e73f097f6d57b03e7df2a4"
+    "results/comprehensive/run-manifest.jsonl": "9745fe7511c31580cc4960844490db5ba5531779813b811c099dad494496e609",
+    "results/comprehensive/suite-implementation-plan.jsonl": "5eccc26e0b5b70eadd821da348a6171ab1f2538344adc6996e69067d2f143e16"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

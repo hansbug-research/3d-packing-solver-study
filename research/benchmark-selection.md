@@ -68,7 +68,7 @@ B01-B34 覆盖的是刚性长方体为主的正交装载产品。以下问题不
 | B18 | compatibility/segregation，温区/危化/相容组 | EX/group master；PS/SK/其他只在字段可表达时 | hard compliance、分组正确率 | 业务隔离规则是否被明确建模 | 几何偶然分开不是合规证明；缺数据默认拒绝 |
 | B19 | Alonso 2019，多容器、托盘、交付日、重量 | PS-S/EX full；其他仅 geometry projection | full feasible rate、需求完整率、成本 | 工业层级约束的综合覆盖 | 删除车辆/交付字段后的结果不能叫 full |
 | B20 | Alonso 2020，多周期需求和 pallet 类型 | PS/EX full；其他 projection | demand completion、资源和日期违约 | 需求分解、日序和托盘类别联合能力 | 不是普通单日 BPP |
-| B21 | ESICUP VRPTW-CLP，路线/时间窗/装载 | PS/SK/EX full；其他 fixed-route projection | full feasible rate、路由与装载违约 | 路线、时间窗、三维装载耦合 | 只跑装载不代表解决 VRPTW-CLP |
+| B21 | ESICUP VRPTW-CLP，路线/时间窗/装载 | PS/SK/EX full；其他 fixed-route projection | full feasible rate、路由与装载违约 | 路线、时间窗、三维装载耦合 | 当前 pinned 快照 `SOURCE_INVALID`：23 个文件缺一项高度标志，1 个文件有客户行缺字段；未修复前不排名 |
 | B22 | ESICUP irregular，mesh/voxel/polytope/斜边界 | irregular 专用引擎；当前正交 PS/PY/JE/SK/GO/RS/EX 通常 NOT_SUPPORTED | capability coverage、OBB/SAT 合法率 | 明确任意角和非长方体能力边界 | NOT_SUPPORTED 是有效结论，不是缺少一次 smoke |
 | B23 | 脱敏真实订单，按件数/密度/站点分层 | 所有语义适配的实现；full 与 projection 分开 | objective by stratum、完整率、延迟 | 公共随机集到真实分布的 distribution shift | 无可发布脱敏数据时不伪造 REAL_ORDER 结果 |
 | B24 | metamorphic：置换、ID、copies、轴置换、镜像 | 全部；EX 作为 oracle | invariance rate、目标/合法性差异 | 表示变化是否错误改变解质量或合法性 | 对随机算法需固定 seed/统计容差 |

@@ -42,7 +42,7 @@ BR/LN 只回答“单个固定容器里，几何启发式能塞进多少体积�
 | Wave 1A 公共几何 | B01–B07 | 每个库都生成 `NATIVE`、`COMPOSED`、`PROJECTION_ONLY` 或 `NOT_SUPPORTED` 状态；可表达者全跑 | 输入 hash、姿态语义、预算和 validator 完全相同；B03 固定姿态与全旋转分榜 | B07 已有大规模 projection；补 Skjolber adapter 和 exact 小子集，随后全库复跑 |
 | Wave 1B 真值校准 | B06、B09 | CP-SAT/SCIP/Gurobi/CPLEX；启发式只作 incumbent 对照 | primal/dual bound 闭合才显示 `PROVEN_OPTIMAL` | B06 有局部记录；先完成统一 B09 exact truth |
 | Wave 2 目标与硬约束 | B08–B18 | 能保真表达者原生/组合运行，其余登记状态；B12/B13/B15/B16/B17/B18 已补外部几何 projection | hard violation=0 且必装件完整后，才比较成本/箱数 | B08/B10/B11 先冻结来源；B12–B18 仍需 FULL adapter 才能回答生产约束 |
-| Wave 3 工业专项 | B19–B23、B30–B32 | 只对有 FULL adapter 的库做 full；其他做明确 projection/status | full 轨保留车辆、站点、日期、货架或 online 语义 | 当前多为 `ADAPTER_MISSING`/`SOURCE_PENDING`，不得用几何投影填数 |
+| Wave 3 工业专项 | B19–B23、B30–B32 | 只对有 FULL adapter 的库做 full；其他做明确 projection/status | full 轨保留车辆、站点、日期、货架或 online 语义 | B21 当前 `SOURCE_INVALID/SOURCE_PENDING`（原始文件格式异常）；其他多为 `ADAPTER_MISSING`，不得用几何投影填数 |
 | Wave 4 可靠性 | B24–B29 | 全部实际部署候选及其 worker/sidecar | 原始 artifact、取消和恢复状态完整；随机算法至少 5 seed | 在 Wave 1–3 代表实例上重复，形成 release gate |
 
 所以“ALL libs”应当有两个同时成立的条件：一是每个库对每个 benchmark 都有可追溯状态行；二是每个可比轨道都完成同一输入和 validator 的实例级运行。仅有第一条只能叫 capability census，只有第二条才可以发布该轨道的质量/性能排行。

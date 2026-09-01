@@ -109,7 +109,7 @@ B12-B18 使用版本化 synthetic truth cases 补足公共数据缺字段的问�
 | B22 | ESICUP 3D irregular | mesh/voxel/polytope、连续或离散非正交姿态，以及非长方体容器边界 | 当前正交长方体库通常 `NOT_SUPPORTED`；未来 irregular engine | 明确任意角、多面体、voxel 与真实斜壁 ULD 的能力边界 |
 | B23 | De-identified real orders | 按件数、类型数、箱型数、姿态受限率、重量密度、站点数分层 | 适用语义的全部实现 | 公共随机实例到真实订单的 distribution shift |
 
-B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表不得合并。删除层、托盘、轴荷、路线或日序字段后的成绩不属于原始工业 benchmark。B22 即使当前全部候选都是 `NOT_SUPPORTED` 也必须保留，因为这证明当前选型边界，而不是测试缺失。
+B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表不得合并。删除层、托盘、轴荷、路线或日序字段后的成绩不属于原始工业 benchmark。B21 的 pinned ESICUP 快照目前标记为 `SOURCE_INVALID`：46 个实例文件中有 23 个重复的 8 字段货物行（格式要求 9 字段），另有 1 个客户行缺字段；在上游修订或单独的 source-repaired 变体获得差分证明前，所有 B21 cells 保持 `SOURCE_PENDING`，不运行数值排行。B22 即使当前全部候选都是 `NOT_SUPPORTED` 也必须保留，因为这证明当前选型边界，而不是测试缺失。
 
 ### 4.5 仓储、托盘与在线作业
 

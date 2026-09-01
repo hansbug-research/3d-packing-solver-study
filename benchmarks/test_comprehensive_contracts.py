@@ -85,6 +85,20 @@ def test_source_readiness_is_not_inferred_from_solver_capability() -> None:
     assert cells[("B05", "packingsolver_fork_box")]["termination_reason"] == "SOURCE_PENDING"
     assert cells[("B30", "packingsolver_fork_box")]["input_status"] == "VALID"
     assert cells[("B30", "packingsolver_fork_box")]["termination_reason"] == "ADAPTER_MISSING"
+    assert cells[("B21", "packingsolver_fork_box")]["input_status"] == "SOURCE_INVALID"
+    assert cells[("B21", "packingsolver_fork_box")]["termination_reason"] == "SOURCE_PENDING"
+
+
+def test_b21_source_audit_preserves_format_anomalies() -> None:
+    cells = plan_cells()
+    audit = json.loads((ROOT / "results" / "comprehensive" / "b21-source-audit.json").read_text())
+    assert audit["benchmark_id"] == "B21"
+    assert audit["observed_instance_files"] == 46
+    assert audit["anomaly_counts"]["MALFORMED_ITEM_ROWS"] == 23
+    assert audit["decision"]["input_status"] == "SOURCE_INVALID"
+    assert audit["decision"]["run_status"] == "NOT_RUN"
+    assert cells[("B21", "packingsolver_fork_box")]["input_status"] == "SOURCE_INVALID"
+    assert cells[("B21", "packingsolver_fork_box")]["termination_reason"] == "SOURCE_PENDING"
 
 
 def test_status_materialization_only_emits_unexecutable_cells() -> None:
@@ -199,17 +213,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62957
-    assert summary["protocol_v3_run_records"] == 60835
+    assert summary["combined_run_records"] == len(records) == 62965
+    assert summary["protocol_v3_run_records"] == 60843
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 24
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 530
+    assert aggregate["coverage"]["cells_with_evidence"] == 538
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
     assert aggregate["coverage"]["protocol_v3_executed_cells"] == 262
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 249
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60835}
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 257
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60843}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]

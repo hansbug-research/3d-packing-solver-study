@@ -1,0 +1,1341 @@
+{
+  "anomaly_counts": {
+    "MALFORMED_CUSTOMER_ROW": 1,
+    "MALFORMED_ITEM_ROWS": 23
+  },
+  "benchmark_id": "B21",
+  "decision": {
+    "forbidden_substitutions": [
+      "silently adding the missing height flag",
+      "dropping malformed demand rows and calling the result B21",
+      "using a repaired projection as the original integrated VRPTW-CLP problem"
+    ],
+    "input_status": "SOURCE_INVALID",
+    "next_action": "Ask upstream for a corrected archive or create a separately named, explicitly source-repaired variant with a diff and validator proof.",
+    "reason": "The pinned corpus has a reproducible format and count mismatch; a converter must not infer missing height flags from repeated values.",
+    "run_status": "NOT_RUN",
+    "termination_reason": "SOURCE_PENDING"
+  },
+  "group_summary": {
+    "GII_I1": {
+      "info_sha256": "4ed26703294d2d8b4c5e85bbed778ccdc57f9ea25e67ca1d0d62c2e0112e8f0c",
+      "instance_files": 12
+    },
+    "GII_I2": {
+      "info_sha256": "4ed26703294d2d8b4c5e85bbed778ccdc57f9ea25e67ca1d0d62c2e0112e8f0c",
+      "instance_files": 11
+    },
+    "GI_I1": {
+      "info_sha256": "4ed26703294d2d8b4c5e85bbed778ccdc57f9ea25e67ca1d0d62c2e0112e8f0c",
+      "instance_files": 12
+    },
+    "GI_I2": {
+      "info_sha256": "4ed26703294d2d8b4c5e85bbed778ccdc57f9ea25e67ca1d0d62c2e0112e8f0c",
+      "instance_files": 11
+    }
+  },
+  "instances": [
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "01"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_01.txt",
+      "sha256": "18303c42b42dcd704ee97e06851dec44b6ac380c96e0aaacc4ca9c8aa9e8095e"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "02"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_02.txt",
+      "sha256": "30955f3649fef9e6336210d5d987f5e4718bc76483dbb45c9122de98b7a1a76d"
+    },
+    {
+      "anomalies": [
+        {
+          "field_count": 5,
+          "kind": "MALFORMED_CUSTOMER_ROW",
+          "line": 21,
+          "raw": "18      20         40        204         10"
+        },
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "03"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_03.txt",
+      "sha256": "dd44cf1366aa438584c9ac1396269d97997668a70c0d6d7c78b537a01970af2d"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "04"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_04.txt",
+      "sha256": "e7970e84682c0e36955911ad8aa96725a77f8d1fa98f9408b4dfff49db0cd82f"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "05"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_05.txt",
+      "sha256": "f7a48e1f65f1d553e9b1cb5f80fb7987a828354f58ecb6bb20a98fbd42481c21"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "06"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_06.txt",
+      "sha256": "35088268dcf418d97b41cd8881b374be8b4f68b23a0ca9e1f13bf3512d373f44"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "07"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_07.txt",
+      "sha256": "f0829de2349479f4e7df991b5d577e54df7eb21f346ef49c2877acf96af5648e"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "08"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_08.txt",
+      "sha256": "ab341af85a8636c043a3bee7aecdfcc6a84957758917dffce99d32056d75476c"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "09"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_09.txt",
+      "sha256": "3a94f1b97c2bfc04509df6c4bcf9099274a6bec25a1ae8c680129935d27fe73e"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "10"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_10.txt",
+      "sha256": "b9792bca2bae6d1062f7e53e8c09f9b6c6cb2c8f0bb4da00b370e5ddb7420a4f"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "11"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_11.txt",
+      "sha256": "897763b18b55c8c0dafbf9359eb63e5decdc93024918f311dc6dd41ea8635542"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I1",
+        "12"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I1/GI_I1_12.txt",
+      "sha256": "4123cbd9c3254a52d573c6c2ebc4e249f0fcc91bac7e08b782707c82e4874ab8"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "01"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_01.txt",
+      "sha256": "84284f88511c774a86aa377d7bb3cc6266b8ada1bf93e6770af3c166f4eb95b0"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "02"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_02.txt",
+      "sha256": "6622cd382199479fb1274efc0a4e32ee61d12c53ef48793b7c02abf5ec74e616"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "03"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_03.txt",
+      "sha256": "ff40d4cdcc3ead676f4b8b03f251537a801c28a77f3b7d03e9b3c931376b0641"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "04"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_04.txt",
+      "sha256": "57c6a779c892fc27ab3daf89930106223930fee19dd1bb2876a989a2087ef859"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "05"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_05.txt",
+      "sha256": "7250bdf62e75b22912d00448889e16b5e69a2083831ff1c953dd6cc771035699"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "06"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_06.txt",
+      "sha256": "178bc2254d478f129b85cc2ee3d56e8c9fd55241a161b177012f80b58ee5f7cc"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "07"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_07.txt",
+      "sha256": "ec685be57d1926170f9c146c817a17100fd7a2f04ff44900ba9aecf761049cb4"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "08"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_08.txt",
+      "sha256": "2cca17ed11e53b28603c40ade4c1a143f35d9eb4ad8ec917e5a82df76d62b608"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "09"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_09.txt",
+      "sha256": "b4ad938bb2942bea82941d39bb21f5c988d7caf3950ddcfb82986af53345939c"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "10"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_10.txt",
+      "sha256": "d1c99c0ed797cbeb5a9cd9eb9f7d16798c1a7a78910bdcf60a99a457c27af7eb"
+    },
+    {
+      "anomalies": [
+        {
+          "count": 1,
+          "kind": "MALFORMED_ITEM_ROWS",
+          "rows": [
+            {
+              "field_count": 8,
+              "line": 35,
+              "raw": "3\t 5 120 1 99 1 73 10"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "11"
+      ],
+      "item_rows": 38,
+      "malformed_item_rows": [
+        {
+          "field_count": 8,
+          "line": 35,
+          "raw": "3\t 5 120 1 99 1 73 10"
+        }
+      ],
+      "parsed_copies": 1040,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GI_I2/GI_I2_11.txt",
+      "sha256": "9ba98f8184ddc6351091ea1d053a9ba745eb2e43491d10eb90f0fb62ecb8b41f"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "01"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_01.txt",
+      "sha256": "bf2b09e3910851cbaef9365c2cefdc873949313212974eb6734f22e258c88bf5"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "02"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_02.txt",
+      "sha256": "18275e6903a6c778e1df9d897a6db3ec1290957b39ca7c9e4291bc1702d4ca36"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "03"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_03.txt",
+      "sha256": "3e4a4c1db160b3105810b7be1c1065fd23a20b182a206946d6e05ad552c449e8"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "04"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_04.txt",
+      "sha256": "9a4dd14e374fdaaa44cf0373d066317b2ee0edf9866b7ad4bd96e11bb273f174"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "05"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_05.txt",
+      "sha256": "8f41ca6b5831cab3db0f8d006676c37acf912d874c291b2e846e940e6560bdc3"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "06"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_06.txt",
+      "sha256": "0e3659f5b7ea98e43133cad3d64a3fe1bb0a4246c48545cbf43f7c1aac983685"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "07"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_07.txt",
+      "sha256": "a2573e6fd34d3bd4f11da603a689a038b629d05f75d9d5035fadb1bd3b5132f5"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "08"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_08.txt",
+      "sha256": "8a219261d130f446d37d65e327d2db7cd98c6be276a383796c3094ae9ac92c86"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "09"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_09.txt",
+      "sha256": "e4e29735326162687cb360cbcc669a52cd9cadc93c0b6234ee070b9aba3ee614"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "10"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_10.txt",
+      "sha256": "c108d959765450b8cd1f7218575ec19f009fc9380ce31d0c9b99da1a5215c538"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "11"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_11.txt",
+      "sha256": "3080765a45d581c1603026c7edab42ca2c690f2a93b40035cffeb8dd93626f24"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I1",
+        "12"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I1/GII_I1_12.txt",
+      "sha256": "074b9c7e382d7da3734df017985d032c1fe0534a7ca2c302a6563be7925e4490"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GI",
+        "I2",
+        "01"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_01.txt",
+      "sha256": "9d99fd19fcbcb53b2ac3360f0410f90407283889d23945c41ead283aac453ede"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "02"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_02.txt",
+      "sha256": "a4d7fdac5269fe66e49c2ce6eb2ca7baa2e4956ed13d5b80cebca1db6f376291"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "03"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_03.txt",
+      "sha256": "c1bbc3266e185ea746eb6c06738485a5cd677f7b9245d6e262285d7921a224c5"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "04"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_04.txt",
+      "sha256": "90d0df37362b81194b5bfb9cf071c6f8bf07a1909c3e169b9687055418bc675e"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "05"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_05.txt",
+      "sha256": "b3d458d831d720fc82fa4adc90520bb07f4a59744ee9bd5270128293f69b3588"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "06"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_06.txt",
+      "sha256": "79fa22da6388dd0c785d682de4169fea9905cdab9c692770a7d4293f30aa6a8e"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "07"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_07.txt",
+      "sha256": "f85fb008efde601daf24799b159954576d986618bbdb05f637f9a7a2ec0492b4"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "08"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_08.txt",
+      "sha256": "d9bb1eb325e8e13b871943c91724ae31f1cc8d562aa307ba37c93d37f341bde3"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "09"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_09.txt",
+      "sha256": "92c79ac58c51b133ffcf5a826622ea6ffa3e9b404bb1151ad8f3887fca84ecce"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "10"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_10.txt",
+      "sha256": "01cd284a23f87f8532d1850c95de4730b0a003e39d489ab3dd045b83a761beb2"
+    },
+    {
+      "anomalies": [],
+      "container": [
+        "1360",
+        "245",
+        "300"
+      ],
+      "customer_rows": 26,
+      "header": [
+        "GII",
+        "I2",
+        "11"
+      ],
+      "item_rows": 35,
+      "malformed_item_rows": [],
+      "parsed_copies": 1550,
+      "path": ".cache/esicup-datasets/misc/vrptw_clp/GII_I2/GII_I2_11.txt",
+      "sha256": "090356d12a663d5f94406f3e949c3536f1bb543c0f5bc55406adb2a3f5bd592e"
+    }
+  ],
+  "observed_instance_files": 46,
+  "readme_declared_instances": 46,
+  "readme_sha256": "5f1f012e810d1017923166222486a58adf51c30267ca824b3e00c631666fb3bd",
+  "record_kind": "B21_SOURCE_AUDIT",
+  "schema_version": 1,
+  "source_commit": "154a8f006a8e72f65d734f2d1e36777f678f31f8",
+  "source_repository": "ESICUP/datasets",
+  "source_root": ".cache/esicup-datasets/misc/vrptw_clp"
+}
