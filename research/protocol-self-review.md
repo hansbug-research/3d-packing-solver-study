@@ -1,6 +1,7 @@
 # Protocol v3 自审记录
 
-审阅日期：2026-09-01  
+审阅日期：2026-09-01
+
 审阅对象：[`test-protocol.md`](test-protocol.md)、[`suites.json`](../benchmarks/comprehensive/suites.json)、[`implementations.json`](../benchmarks/comprehensive/implementations.json)、[`run-record.schema.json`](../benchmarks/comprehensive/run-record.schema.json)、执行计划和验证脚本。
 
 ## 审阅结论
