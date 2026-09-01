@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 60427,
+  "combined_run_records": 60431,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -62,6 +62,7 @@
     "results/comprehensive/runs/B03-rust_sa-10s.jsonl": "9e5c226ddf11677c447f1cc4cd60461c11c051415e53c18f091fba09a7124272",
     "results/comprehensive/runs/B03-rust_sa-1s.jsonl": "18a9beca9595fc3df457ea43234f074503eb2a3e43601ec2c8def668f13df1a1",
     "results/comprehensive/runs/B05-source-pending.jsonl": "4fa0897e7f5948328d056d1d4b3af03fe14d5ce747b12c320d3f0426a83ee9da",
+    "results/comprehensive/runs/B07-exact_cp_sat-20s.jsonl": "ff93e3cd5e96f8a26e066bfd25933dcb7f6d36e70c68247aa247f90e1a27986c",
     "results/comprehensive/runs/B07-external-projection-go_bp3d-rust_extreme_point-rust_layer-rust_ga-rust_brkga-rust_sa-10s-rep-0.jsonl": "68dc1ff919a826a4473b771808ee23f1a5fff603e4fc72d725b800b39759d84e",
     "results/comprehensive/runs/B07-external-projection-go_bp3d-rust_extreme_point-rust_layer-rust_ga-rust_brkga-rust_sa-1s-rep-0.jsonl": "95c780234fa027554f18bc9aa123e7ab82d93577a1884b8fb0e625a41c23a81a",
     "results/comprehensive/runs/B07-packingsolver_fork_box-10s.jsonl": "d7fa06bf9ef7b94fdcb6b44d4cef10ebde32b84d0663affd1b4897385713de98",
@@ -78,7 +79,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813"
   },
-  "protocol_v3_run_records": 58349,
+  "protocol_v3_run_records": 58353,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -93,7 +94,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "6ca05b462e07ad5ad4ab9a4d84f120849e0f776f45010cccc92c1b6beffecb1e",
+  "run_manifest_sha256": "9ad7ded7143ee7d4a2aaf8fb1b794494b30f4e97b70f6cde85212f3ab048d491",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

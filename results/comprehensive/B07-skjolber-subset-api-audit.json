@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "B07",
+  "problem_variant": "SOURCE_ROTATION_FLAGS",
+  "implementation_ids": ["skjolber_plain", "skjolber_laff"],
+  "library": "skjolber/3d-bin-container-packing",
+  "library_commit": "c73d52190c029a14e64f1bbdd2ea70452d1eb83d",
+  "attempted_instances": 900,
+  "attempted_algorithm_runs": 1800,
+  "container_semantics": "single_container",
+  "required_semantics": "maximum_packed_volume_with_optional_items",
+  "observed_runs": 1800,
+  "no_solution_runs": 1800,
+  "valid_certificates": 0,
+  "certificate_rows": 0,
+  "native_capability_status": "ADAPTER_MISSING",
+  "reason": "The native Packager API requires all supplied BoxItems to fit and does not expose an optional-subset objective. A one-container B07 call therefore returns no result when the full item multiset does not fit.",
+  "interpretation": "This is a capability boundary, not a quality score. A composed optional-subset adapter must be implemented and separately benchmarked before Skjolber can enter B07 numerical rankings.",
+  "resource_wall_s": 22.38,
+  "jvm_memory_limit_bytes": 536870912,
+  "active_processor_count": 1,
+  "artifacts": {
+    "output_jsonl": "raw/experiments/comprehensive/B07/skjolber/10s/output.jsonl",
+    "certificate_csv": "raw/experiments/comprehensive/B07/skjolber/10s/certificate.csv",
+    "resources": "raw/experiments/comprehensive/B07/skjolber/10s/resources.txt",
+    "stderr": "raw/experiments/comprehensive/B07/skjolber/10s/stderr.log",
+    "sha256": {
+      "output_jsonl": "f499a4868a570fcb9ffc007b20a6991816ce19f2c18f15859d2c9b7bcb971897",
+      "certificate_csv": "dd5b62fb49f86e9b3788fa0009e237613f80bef058768b0e6ca5560b905365d1",
+      "resources": "9961494d399fde6574e4accf0557885d3cbcadc8ae681130c87546b8ba17c059",
+      "stderr": "e4f09e95032039502a481b8065a3128983c37d25d1a0b89b0149faa1550829da"
+    }
+  }
+}

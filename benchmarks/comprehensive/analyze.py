@@ -506,7 +506,7 @@ def identical_bin_rankings(records: list[dict[str, Any]]) -> tuple[list[dict[str
 
 def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for benchmark_id in ("B03", "B06", "B09"):
+    for benchmark_id in ("B03", "B06", "B07", "B09"):
         groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for record in records:
             if record["benchmark_id"] == benchmark_id and record["comparison_track"] == "EXACT_MODEL":

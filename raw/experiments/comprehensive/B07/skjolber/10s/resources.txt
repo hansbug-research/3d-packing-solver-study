@@ -1,0 +1,23 @@
+	Command being timed: "java -Xmx512m -XX:ActiveProcessorCount=1 -cp /home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/core/4.2.2-SNAPSHOT/core-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/api/4.2.2-SNAPSHOT/api-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/points/4.2.2-SNAPSHOT/points-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/org/eclipse/collections/eclipse-collections/13.0.0/eclipse-collections-13.0.0.jar:/home/zhangshaoang/.m2/repository/org/eclipse/collections/eclipse-collections-api/13.0.0/eclipse-collections-api-13.0.0.jar:benchmarks/java-skjolber/target/skjolber-benchmark-0.1.0.jar study.SkjolberThpackCampaign .cache/packingsolver-fork/data/box/davies1999 raw/experiments/comprehensive/B07/skjolber/10s/output.jsonl raw/experiments/comprehensive/B07/skjolber/10s/certificate.csv B07"
+	User time (seconds): 25.92
+	System time (seconds): 0.36
+	Percent of CPU this job got: 117%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 250876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 86811
+	Voluntary context switches: 10568
+	Involuntary context switches: 5560
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 2048
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -37,7 +37,7 @@ public class SkjolberThpackCampaign {
     };
 
     private record ItemSpec(String id, int x, int y, int z, int copies, Set<String> rotations) {}
-    private record Instance(int number, Path items, Path bins) {}
+    private record Instance(String sourceId, int number, Path items, Path bins) {}
     private record Validation(List<String> errors, int placements, long packedVolume, long binVolume) {}
 
     private static Map<String, String> csvRow(String header, String row) {
@@ -145,7 +145,8 @@ public class SkjolberThpackCampaign {
             Container emptyContainer,
             BufferedWriter certificate,
             String instance,
-            String algorithm) throws IOException {
+            String algorithm,
+            boolean requireComplete) throws IOException {
         List<String> errors = new ArrayList<>();
         Map<String, ItemSpec> byId = new HashMap<>();
         Map<String, Integer> counts = new HashMap<>();
@@ -193,11 +194,11 @@ public class SkjolberThpackCampaign {
         int required = 0;
         for (ItemSpec item : itemSpecs) {
             required += item.copies();
-            if (counts.getOrDefault(item.id(), 0) != item.copies()) {
+            if (requireComplete && counts.getOrDefault(item.id(), 0) != item.copies()) {
                 errors.add("item count differs for " + item.id());
             }
         }
-        if (placements != required) {
+        if (requireComplete && placements != required) {
             errors.add("placed " + placements + " of " + required);
         }
         long binVolume = (long) result.size() * emptyContainer.getLoadVolume();
@@ -225,11 +226,12 @@ public class SkjolberThpackCampaign {
         return out.toString();
     }
 
-    private static void writeExcluded(BufferedWriter output, Instance instance, String algorithm) throws IOException {
+    private static void writeExcluded(BufferedWriter output, Instance instance, String algorithm, String benchmarkId) throws IOException {
+        String instanceId = "B07".equals(benchmarkId) ? instance.sourceId() : String.format("THPACK9-%03d", instance.number());
         output.write(String.format(
-                "{\"schema_version\":1,\"instance_id\":\"THPACK9-%03d\",\"algorithm\":\"%s\","
+                "{\"schema_version\":1,\"benchmark_id\":\"%s\",\"instance_id\":\"%s\",\"algorithm\":\"%s\","
                         + "\"status\":\"MALFORMED_SOURCE_EXCLUDED\",\"source_line_valid\":false}",
-                instance.number(), algorithm));
+                benchmarkId, jsonEscape(instanceId), algorithm));
         output.newLine();
     }
 
@@ -237,34 +239,38 @@ public class SkjolberThpackCampaign {
             BufferedWriter output,
             BufferedWriter certificate,
             Instance instance,
-            String algorithm) throws Exception {
+            String algorithm,
+            String benchmarkId) throws Exception {
         List<ItemSpec> specs = itemSpecs(instance.items());
         List<BoxItem> items = specs.stream().map(SkjolberThpackCampaign::boxItem).toList();
         int required = specs.stream().mapToInt(ItemSpec::copies).sum();
         Container emptyContainer = container(instance.bins());
+        boolean requireComplete = !benchmarkId.equals("B07");
+        int availableContainers = requireComplete ? required : 1;
         long started = System.nanoTime();
         PackagerResult result;
         try (Packager<?> selected = packager(algorithm)) {
             PackagerResultBuilder builder = selected.newResultBuilder();
             result = builder
-                    .withContainerItems(ContainerItem.newListBuilder().withContainer(emptyContainer, required).build())
+                    .withContainerItems(ContainerItem.newListBuilder().withContainer(emptyContainer, availableContainers).build())
                     .withBoxItems(items)
-                    .withMaxContainerCount(required)
+                    .withMaxContainerCount(availableContainers)
                     .withDeadline(System.currentTimeMillis() + 10_000)
                     .build();
         }
         long wallNanos = System.nanoTime() - started;
-        Validation validation = validate(result, specs, emptyContainer, certificate,
-                String.format("THPACK9-%03d", instance.number()), algorithm);
-        String status = validation.errors().isEmpty() && result.isSuccess() ? "VALID" : "INVALID";
+        String instanceId = "B07".equals(benchmarkId) ? instance.sourceId() : String.format("THPACK9-%03d", instance.number());
+        Validation validation = validate(result, specs, emptyContainer, certificate, instanceId, algorithm, requireComplete);
+        boolean success = requireComplete ? result.isSuccess() : !validation.errors().isEmpty() ? false : validation.placements() > 0;
+        String status = validation.errors().isEmpty() && success ? "VALID" : "INVALID";
         output.write(String.format(
-                "{\"schema_version\":1,\"instance_id\":\"THPACK9-%03d\",\"algorithm\":\"%s\","
+                "{\"schema_version\":1,\"benchmark_id\":\"%s\",\"instance_id\":\"%s\",\"algorithm\":\"%s\","
                         + "\"status\":\"%s\",\"source_line_valid\":true,\"success\":%s,\"timeout\":%s,"
                         + "\"bins_used\":%d,\"placements\":%d,\"required_items\":%d,"
                         + "\"packed_volume\":%d,\"bin_volume\":%d,\"library_duration_ms\":%d,"
                         + "\"wall_time_ms\":%.6f,\"items_sha256\":\"%s\",\"bins_sha256\":\"%s\","
                         + "\"validation_errors\":%s}",
-                instance.number(), algorithm, status, result.isSuccess(), result.isTimeout(), result.size(),
+                benchmarkId, jsonEscape(instanceId), algorithm, status, success, result.isTimeout(), result.size(),
                 validation.placements(), required, validation.packedVolume(), validation.binVolume(), result.getDuration(),
                 wallNanos / 1_000_000.0, sha256(instance.items()), sha256(instance.bins()),
                 jsonArray(validation.errors())));
@@ -281,20 +287,24 @@ public class SkjolberThpackCampaign {
                 String prefix = name.substring(0, name.length() - "_items.csv".length());
                 int number = Integer.parseInt(prefix.substring(prefix.lastIndexOf('_') + 1));
                 Path bins = dataRoot.resolve(prefix + "_bins.csv");
-                if (Files.exists(bins)) result.add(new Instance(number, items, bins));
+                if (Files.exists(bins)) result.add(new Instance(prefix, number, items, bins));
             }
         }
-        result.sort(Comparator.comparingInt(Instance::number));
+        result.sort(Comparator.comparing(Instance::sourceId));
         return result;
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 3) {
-            throw new IllegalArgumentException("usage: DATA_ROOT OUTPUT_JSONL CERTIFICATE_CSV");
+        if (args.length < 3 || args.length > 4) {
+            throw new IllegalArgumentException("usage: DATA_ROOT OUTPUT_JSONL CERTIFICATE_CSV [BENCHMARK_ID]");
         }
         Path dataRoot = Path.of(args[0]);
         Path outputPath = Path.of(args[1]);
         Path certificatePath = Path.of(args[2]);
+        String benchmarkId = args.length == 4 ? args[3] : "B04";
+        if (!benchmarkId.equals("B04") && !benchmarkId.equals("B07")) {
+            throw new IllegalArgumentException("benchmark id must be B04 or B07");
+        }
         Files.createDirectories(outputPath.getParent());
         Files.createDirectories(certificatePath.getParent());
         List<Instance> instances = discover(dataRoot);
@@ -304,12 +314,12 @@ public class SkjolberThpackCampaign {
             certificate.newLine();
             for (Instance instance : instances) {
                 for (String algorithm : Arrays.asList("laff", "plain")) {
-                    if (MALFORMED.contains(instance.number())) {
-                        writeExcluded(output, instance, algorithm);
+                    if (benchmarkId.equals("B04") && MALFORMED.contains(instance.number())) {
+                        writeExcluded(output, instance, algorithm, benchmarkId);
                     } else {
-                        solve(output, certificate, instance, algorithm);
+                        solve(output, certificate, instance, algorithm, benchmarkId);
                     }
-                    System.err.printf("THPACK9 %d/47 %s%n", instance.number(), algorithm);
+                    System.err.printf("%s %s %s%n", benchmarkId, instance.sourceId(), algorithm);
                 }
             }
         }

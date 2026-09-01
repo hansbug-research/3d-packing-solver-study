@@ -1,0 +1,21 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B07/exact_cp_sat/20s/artifacts.tar.gz",
+  "artifact_archive_sha256": "91595e04b18e7492f169e48cc1d056941b5bc6bdc47374b4be0d87500fa108db",
+  "benchmark_id": "B07",
+  "comparison_track": "EXACT_MODEL",
+  "implementation_id": "exact_cp_sat",
+  "implementation_version": "9.15.6755",
+  "instances": 4,
+  "max_items": 60,
+  "problem_variant": "SOURCE_ROTATION_FLAGS",
+  "protocol_version": "benchmark-protocol/3",
+  "proven_optimal": 0,
+  "python_version": "3.12.1",
+  "run_jsonl_sha256": "ff93e3cd5e96f8a26e066bfd25933dcb7f6d36e70c68247aa247f90e1a27986c",
+  "runner_sha256": "ba911bfa388f8bdc05e9e412047eef6f25becbd3a7cbe91c36d179ffff0ab4d8",
+  "schema_version": 1,
+  "shared_validator_sha256": "136e7812f00f5a34477ec28f35cc9bf1e787e837c56f26df36829030983cb49d",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "time_limit_s": 20.0,
+  "valid_records": 4
+}

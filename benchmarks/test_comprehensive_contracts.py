@@ -135,18 +135,27 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2078
-    assert summary["combined_run_records"] == len(records) == 60427
-    assert summary["protocol_v3_run_records"] == 58349
+    assert summary["combined_run_records"] == len(records) == 60431
+    assert summary["protocol_v3_run_records"] == 58353
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 13
-    assert aggregate["coverage"]["cells_with_evidence"] == 112
+    assert aggregate["coverage"]["cells_with_evidence"] == 113
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 42
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 51
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 52
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 19
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58349}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58353}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1220
-    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34200
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34204
+
+    exact_b07 = [
+        record for record in records
+        if record["benchmark_id"] == "B07" and record["comparison_track"] == "EXACT_MODEL"
+    ]
+    assert len(exact_b07) == 4
+    assert {record["problem_variant"] for record in exact_b07} == {"SOURCE_ROTATION_FLAGS"}
+    assert all(record["solution_status"] == "VALID_PARTIAL" for record in exact_b07)
+    assert all(record["proof_status"] == "FEASIBLE" for record in exact_b07)
 
     def assert_finite_json(value: object) -> None:
         if isinstance(value, float):

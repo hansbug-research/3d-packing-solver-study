@@ -298,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (60427, 2078, 60427, 60427):
+        ) != (60431, 2078, 60431, 60431):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +307,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 112, 42, 51, 13, 19):
+        ) != (608, 113, 42, 52, 13, 19):
         fail("comprehensive execution coverage changed")
     if coverage.get("protocol_v3_status_only_cells") != 19:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58349}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2078, "PROTOCOL_V3": 58353}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -325,8 +325,22 @@ def check_comprehensive_results() -> None:
         decision.get("termination_reason"),
     ) != ("B05", "SOURCE_INCOMPLETE", "NOT_RUN", "SOURCE_PENDING"):
         fail("B05 source audit decision changed")
-    if coverage.get("records_by_benchmark", {}).get("B07") != 34200:
+    if coverage.get("records_by_benchmark", {}).get("B07") != 34204:
         fail("comprehensive B07 record count changed")
+    subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
+    if not subset_audit_path.exists():
+        fail("B07 Skjolber subset API audit is missing")
+    subset_audit = json.loads(subset_audit_path.read_text(), parse_constant=reject_constant)
+    for key, expected_hash in subset_audit.get("artifacts", {}).get("sha256", {}).items():
+        relative = subset_audit["artifacts"].get(key)
+        if not relative or not (ROOT / relative).exists() or sha256(ROOT / relative) != expected_hash:
+            fail(f"B07 Skjolber subset audit artifact hash mismatch: {key}")
+    if (
+        subset_audit.get("attempted_algorithm_runs"),
+        subset_audit.get("no_solution_runs"),
+        subset_audit.get("certificate_rows"),
+    ) != (1800, 1800, 0):
+        fail("B07 Skjolber subset API audit counts changed")
     manifest_hash = sha256(directory / "run-manifest.jsonl")
     if summary.get("run_manifest_sha256") != manifest_hash:
         fail("comprehensive baseline summary manifest hash mismatch")
