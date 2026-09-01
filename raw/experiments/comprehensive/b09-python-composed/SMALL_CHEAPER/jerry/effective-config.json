@@ -1,0 +1,15 @@
+{
+  "benchmark_id": "B09",
+  "implementation_id": "jerry",
+  "input_sha256": "f1f1a566ce3fb61a07b767e13c170f5585e3ff9c04cfabaf4f574359b58a4f22",
+  "pose_semantics": "SOURCE_ROTATION_FLAGS",
+  "problem_variant": "SMALL_CHEAPER",
+  "process_isolation": false,
+  "runner_sha256": "c4aa01517c7e6c597344b74e82633a435fa296f14958e1d686effa8ab89de39e",
+  "source_files": {
+    "benchmarks/data/packingsolver/heterogeneous_bins_reverse.csv": "1e7f4616ba3ec04b91b5decc5e9cc9e7ffb6f8a652460468b10d5447a9aebd4c",
+    "benchmarks/data/packingsolver/heterogeneous_items.csv": "5e62afa0910c92c803cef00b52c4852be7245634741d5acbeec06021b617c070"
+  },
+  "time_limit_s": 10.0,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"
+}

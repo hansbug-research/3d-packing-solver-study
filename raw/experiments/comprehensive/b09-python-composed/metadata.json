@@ -1,0 +1,18 @@
+{
+  "adapter_semantics": "COMPOSED_FULL_PROBLEM",
+  "artifact_archive_sha256": "2c68d7537aca6684f4ede6e62c73b688075ac5fc868d30e8cfe5d141f99f8bf6",
+  "benchmark_id": "B09",
+  "implementations": [
+    "py3dbp",
+    "jerry"
+  ],
+  "protocol_version": "benchmark-protocol/3",
+  "run_jsonl_sha256": "879b062a591497e3a79131c4b1561fc8b4cdb2250821364f226690dbac31f66f",
+  "runner_sha256": "c4aa01517c7e6c597344b74e82633a435fa296f14958e1d686effa8ab89de39e",
+  "schema_version": 1,
+  "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec",
+  "variants": [
+    "LARGE_CHEAPER",
+    "SMALL_CHEAPER"
+  ]
+}

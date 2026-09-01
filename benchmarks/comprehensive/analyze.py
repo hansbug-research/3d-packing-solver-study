@@ -685,6 +685,44 @@ def constraint_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return rows
 
 
+def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Rank only records carrying a validated variable-cost objective.
+
+    A geometric run without ``metrics.total_cost`` is intentionally omitted:
+    bin count or a solver-reported objective cannot be substituted for the
+    canonical cost metric.
+    """
+    groups: dict[tuple[str, str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if not executed(record) or record["benchmark_id"] not in {"B08", "B09"}:
+            continue
+        if record["metrics"].get("total_cost") is None:
+            continue
+        groups[(record["benchmark_id"], record["problem_variant"], record["implementation_id"], record["comparison_track"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for (benchmark_id, variant, implementation_id, track), group in groups.items():
+        valid = [record for record in group if record["solution_status"] == "VALID_COMPLETE"]
+        costs = [float(record["metrics"]["total_cost"]) for record in valid]
+        expected = [float(record["metrics"]["expected_cost"]) for record in valid if record["metrics"].get("expected_cost") is not None]
+        rows.append({
+            "benchmark_id": benchmark_id,
+            "problem_variant": variant,
+            "implementation_id": implementation_id,
+            "comparison_track": track,
+            "instances": len(group),
+            "valid_complete": len(valid),
+            "invalid_or_incomplete": len(group) - len(valid),
+            "valid_rate": len(valid) / len(group) if group else 0.0,
+            "mean_total_cost": mean(costs),
+            "median_total_cost": median(costs),
+            "expected_cost": mean(expected),
+            "mean_cost_delta": mean([cost - target for cost, target in zip(costs, expected)]) if len(expected) == len(costs) else None,
+            "mean_solver_s": mean(record["resources"].get("solver_s") for record in valid),
+        })
+    rows.sort(key=lambda row: (row["benchmark_id"], row["problem_variant"], row["mean_total_cost"] or math.inf, row["implementation_id"]))
+    return rows
+
+
 def resource_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     selected = canonical_b04(records)
     timing_group = {
@@ -736,6 +774,7 @@ def generated_files() -> dict[Path, str]:
     profit, profit_pairwise = profit_knapsack_rankings(records)
     exact = exact_rankings(records)
     constraints = constraint_rankings(records)
+    variable_cost = variable_cost_rankings(records)
     resources = resource_rankings(records)
 
     solution_counts = Counter(record["solution_status"] for record in records)
@@ -781,6 +820,7 @@ def generated_files() -> dict[Path, str]:
             "volume_knapsack_common": volume_common,
             "profit_knapsack": profit,
             "exact_proof": exact,
+            "variable_cost": variable_cost,
         },
         "warnings": [
             "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",
@@ -845,6 +885,11 @@ def generated_files() -> dict[Path, str]:
         "benchmark_id", "implementation_id", "records", "valid_complete", "valid_partial", "no_solution",
         "invalid_certificate", "constraint_violation", "process_errors", "expected_behavior_pass_rate",
     ]
+    variable_cost_fields = [
+        "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "instances", "valid_complete",
+        "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
+        "mean_cost_delta", "mean_solver_s",
+    ]
     resource_fields = [
         "implementation_id", "timing_comparison_group", "valid_instances", "wall_samples", "median_wall_s", "p95_wall_s",
         "solver_samples", "median_solver_s", "p95_solver_s", "peak_rss_bytes",
@@ -863,6 +908,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "profit-knapsack-pairwise.csv": write_csv(profit_pairwise, profit_pairwise_fields),
         RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
+        RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
     }
 

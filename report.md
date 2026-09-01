@@ -309,7 +309,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`12/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`515/608` cell 有证据，其中 `65` 个 cell 已执行 protocol-v3、`421` 个是 status-only，合计 `62,479` 条记录（legacy `2,078`，protocol-v3 `60,401`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）、B01/B02/B04 PackingSolver native certificate revalidation（`1,524` 条）、B07 BR0/BR8–15 的 projection（`30,600` 条）、4 条 B07 source-rotation exact calibration，以及 Wave-1 fresh exact/Skjolber 记录（B06/B09 四个 exact backend 共 20 个 case 行，B04 Skjolber Plain/LAFF 共 88 个有效源行）；projection 与原始姿态语义分轨，不能覆盖 native 结果。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，复用了已归档并独立重验的 certificate，不是一次新的 solver invocation；fresh 记录明确标为 `FRESH_SOLVER_INVOCATION`，并保留输入、结果、runner hash 和独立验证引用。B07 projection 覆盖 900 个来源实例、八个 Python/Go/Rust projection 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。新增 status-only 记录只表示来源/能力边界，不能视为求解运行，也不计入 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`12/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`515/608` cell 有证据，其中 `67` 个 cell 已执行 protocol-v3、`419` 个是 status-only，合计 `62,481` 条记录（legacy `2,078`，protocol-v3 `60,403`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）、B01/B02/B04 PackingSolver native certificate revalidation（`1,524` 条）、B07 BR0/BR8–15 的 projection（`30,600` 条）、4 条 B07 source-rotation exact calibration、B09 py3dbp/Jerry composed cost-master 记录，以及 Wave-1 fresh exact/Skjolber 记录（B06/B09 四个 exact backend 共 20 个 case 行，B04 Skjolber Plain/LAFF 共 88 个有效源行）；projection 与原始姿态语义分轨，不能覆盖 native 结果。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，复用了已归档并独立重验的 certificate，不是一次新的 solver invocation；fresh 记录明确标为 `FRESH_SOLVER_INVOCATION`，并保留输入、结果、runner hash 和独立验证引用。B07 projection 覆盖 900 个来源实例、八个 Python/Go/Rust projection 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。B09 composed runner 枚举全部有限箱型组合和两种 item order，所有候选均经过独立 AABB/copies/重量 validator；它证明的是外层 master + 几何库的组合行为，不是 py3dbp/Jerry 原生 variable-cost comparator。新增 status-only 记录只表示来源/能力边界，不能视为求解运行，也不计入 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
 ### 7.1.3 新发现的公开现实约束数据
 
@@ -324,7 +324,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
-本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；总计 30 条 protocol-v3 记录，均为 10 s 预算。
+本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；PackingSolver 原生部分为 30 条 protocol-v3 记录，均为 10 s 预算。
 
 | 问题族 | fork `box` | fork `boxstacks` | upstream patched `box` | upstream patched `boxstacks` | 结论 |
 |---|---|---|---|---|---|
@@ -336,6 +336,17 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 | B17 卸货 | 不适用 | 2/2 `VALID_COMPLETE` | 不适用 | 2/2 `VALID_COMPLETE` | 无约束和 Increasing-X 顺序均通过；不等于完整路线/时间窗优化 |
 
 `constraint-conformance.csv` 同时包含历史 baseline 和本轮 protocol-v3 记录；正式比较必须按 `record_origin`、轨道和实例交集拆开。upstream 轴荷错误保留为 `run_status=ERROR`，没有被写成 `PROVEN_INFEASIBLE`。完整 runner、fixture 说明和复现命令见 [`research/constraint-gauntlet.md`](research/constraint-gauntlet.md) 与 [`results/comprehensive/README.md`](results/comprehensive/README.md)。
+
+#### B09 py3dbp/Jerry composed cost-master
+
+为避免把 Python 几何库的单箱接口误称为 variable-cost solver，本轮新增 `run_b09_python_composed.py`。它对 fixture 中所有非空箱型组合和升/降序候选分别调用 py3dbp/Jerry，再由外层 master 选择通过独立 validator 的最低成本完整解；记录标记为 `SUPPORTED_COMPOSED / COMPOSED / FULL_PROBLEM`，并将每个候选的证书和失败原因写入 artifact archive。
+
+| 实现 | LARGE_CHEAPER | SMALL_CHEAPER | 解释 |
+|---|---:|---:|---|
+| py3dbp | 1/1 合法完整，cost=10 | 1/1 合法完整，cost=10 | 外层枚举得到正确成本；不是库原生 comparator |
+| Jerry（`fix_point=False`） | 1/1 合法完整，cost=10 | 1/1 合法完整，cost=10 | 同上；fix-point overlap 风险不在本轨隐藏 |
+
+该结果只进入 [`variable-cost.csv`](results/comprehensive/rankings/variable-cost.csv) 的 `COMPOSED` 行，与 PackingSolver/Exact 的 `NATIVE`、`EXACT_MODEL` 行分开。B09 仍只有两个小 fixture，不能外推到大规模成本优化；B08 的公开多箱型成本集和 B10/B11 仍需完成来源冻结与 adapter。
 
 ### 7.3 THPACK9 44 例跨实现质量
 

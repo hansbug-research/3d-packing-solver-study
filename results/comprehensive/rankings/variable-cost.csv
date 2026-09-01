@@ -1,0 +1,14 @@
+benchmark_id,problem_variant,implementation_id,comparison_track,instances,valid_complete,invalid_or_incomplete,valid_rate,mean_total_cost,median_total_cost,expected_cost,mean_cost_delta,mean_solver_s
+B09,LARGE_CHEAPER,jerry,COMPOSED,1,1,0,1.0,10.0,10.0,10.0,0.0,0.35678520798683167
+B09,LARGE_CHEAPER,packingsolver_fork_box,NATIVE,2,2,0,1.0,10.0,10.0,10.0,,0.5025
+B09,LARGE_CHEAPER,packingsolver_fork_boxstacks,NATIVE,1,1,0,1.0,10.0,10.0,10.0,0.0,0.0
+B09,LARGE_CHEAPER,packingsolver_upstream_box,NATIVE,2,2,0,1.0,10.0,10.0,10.0,,0.5025
+B09,LARGE_CHEAPER,packingsolver_upstream_boxstacks,NATIVE,1,1,0,1.0,10.0,10.0,10.0,0.0,0.0
+B09,LARGE_CHEAPER,py3dbp,COMPOSED,1,1,0,1.0,10.0,10.0,10.0,0.0,0.008027419913560152
+B09,SMALL_CHEAPER,jerry,COMPOSED,1,1,0,1.0,10.0,10.0,10.0,0.0,0.02584263402968645
+B09,SMALL_CHEAPER,packingsolver_fork_box,NATIVE,2,2,0,1.0,10.0,10.0,10.0,,0.5025
+B09,SMALL_CHEAPER,packingsolver_fork_boxstacks,NATIVE,1,1,0,1.0,10.0,10.0,10.0,0.0,0.0
+B09,SMALL_CHEAPER,packingsolver_upstream_box,NATIVE,2,1,1,0.5,10.0,10.0,10.0,0.0,0.0
+B09,SMALL_CHEAPER,packingsolver_upstream_boxstacks,NATIVE,1,1,0,1.0,10.0,10.0,10.0,0.0,0.0
+B09,SMALL_CHEAPER,py3dbp,COMPOSED,1,1,0,1.0,10.0,10.0,10.0,0.0,0.008078538114205003
+B09,VARIABLE_COST,packingsolver_fork_boxstacks,NATIVE,1,1,0,1.0,10.0,10.0,,,

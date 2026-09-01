@@ -1,0 +1,714 @@
+{
+  "adapter": "b09_cost_master_python_v1",
+  "benchmark_id": "B09",
+  "candidate_count": 14,
+  "candidates": [
+    {
+      "elapsed_s": 0.00014863885007798672,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": false,
+        "errors": [
+          "item 0:1: placed 0, required 1"
+        ],
+        "packed_items": 1,
+        "required_items": 2,
+        "status": "FAIL",
+        "total_cost": 7.0,
+        "used_bin_ids": [
+          "0:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00012170104309916496,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": false,
+        "errors": [
+          "item 0:1: placed 0, required 1"
+        ],
+        "packed_items": 1,
+        "required_items": 2,
+        "status": "FAIL",
+        "total_cost": 7.0,
+        "used_bin_ids": [
+          "0:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00013339892029762268,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "0:1",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:1"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": false,
+        "errors": [
+          "item 0:1: placed 0, required 1"
+        ],
+        "packed_items": 1,
+        "required_items": 2,
+        "status": "FAIL",
+        "total_cost": 7.0,
+        "used_bin_ids": [
+          "0:1"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.0001299879513680935,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:1",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:1"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": false,
+        "errors": [
+          "item 0:1: placed 0, required 1"
+        ],
+        "packed_items": 1,
+        "required_items": 2,
+        "status": "FAIL",
+        "total_cost": 7.0,
+        "used_bin_ids": [
+          "0:1"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.0001304179895669222,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "1:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 10.0,
+        "used_bin_ids": [
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00013493606820702553,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "1:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 10.0,
+        "used_bin_ids": [
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00015270709991455078,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "0:1",
+          "item_id": "0:1",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "0:1"
+      ],
+      "validation": {
+        "bins_used": 2,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 14.0,
+        "used_bin_ids": [
+          "0:0",
+          "0:1"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00015826080925762653,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "0:1",
+          "item_id": "0:1",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "0:1"
+      ],
+      "validation": {
+        "bins_used": 2,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 14.0,
+        "used_bin_ids": [
+          "0:0",
+          "0:1"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00013365480117499828,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "1:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 10.0,
+        "used_bin_ids": [
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00015171105042099953,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 2,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 17.0,
+        "used_bin_ids": [
+          "0:0",
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.0001304240431636572,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "1:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:1",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 10.0,
+        "used_bin_ids": [
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00015423004515469074,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:1",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:1",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 2,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 17.0,
+        "used_bin_ids": [
+          "0:1",
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00014443392865359783,
+      "order": "DESCENDING",
+      "placements": [
+        {
+          "bin_id": "1:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "1:0",
+          "item_id": "0:1",
+          "position": [
+            6.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "0:1",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 1,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 10.0,
+        "used_bin_ids": [
+          "1:0"
+        ]
+      }
+    },
+    {
+      "elapsed_s": 0.00017805304378271103,
+      "order": "ASCENDING",
+      "placements": [
+        {
+          "bin_id": "0:0",
+          "item_id": "0:0",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "bin_id": "0:1",
+          "item_id": "0:1",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "size": [
+            6.0,
+            5.0,
+            5.0
+          ]
+        }
+      ],
+      "portfolio": [
+        "0:0",
+        "0:1",
+        "1:0"
+      ],
+      "validation": {
+        "bins_used": 2,
+        "complete": true,
+        "errors": [],
+        "packed_items": 2,
+        "required_items": 2,
+        "status": "PASS",
+        "total_cost": 14.0,
+        "used_bin_ids": [
+          "0:0",
+          "0:1"
+        ]
+      }
+    }
+  ],
+  "elapsed_s": 0.35678520798683167,
+  "implementation_id": "jerry",
+  "master_policy": "enumerate every non-empty source-bin portfolio and both item orders; choose cheapest valid complete certificate",
+  "problem_variant": "LARGE_CHEAPER",
+  "process_error": null,
+  "selected": {
+    "elapsed_s": 0.00013493606820702553,
+    "order": "ASCENDING",
+    "placements": [
+      {
+        "bin_id": "1:0",
+        "item_id": "0:0",
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          6.0,
+          5.0,
+          5.0
+        ]
+      },
+      {
+        "bin_id": "1:0",
+        "item_id": "0:1",
+        "position": [
+          6.0,
+          0.0,
+          0.0
+        ],
+        "size": [
+          6.0,
+          5.0,
+          5.0
+        ]
+      }
+    ],
+    "portfolio": [
+      "1:0"
+    ],
+    "validation": {
+      "bins_used": 1,
+      "complete": true,
+      "errors": [],
+      "packed_items": 2,
+      "required_items": 2,
+      "status": "PASS",
+      "total_cost": 10.0,
+      "used_bin_ids": [
+        "1:0"
+      ]
+    }
+  }
+}

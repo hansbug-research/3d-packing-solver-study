@@ -177717,6 +177717,96 @@
       "sha256": "968f6d37bd586f90fd1a6a1959945970d0ff1bfc4b3fcc6577146107859136bf"
     },
     {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/jerry/effective-config.json",
+      "bytes": 741,
+      "sha256": "9aa0420f2bbefde224b40abbee2d1a480111fbe21bafeb39567231e957a3339d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/jerry/input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/jerry/output.json",
+      "bytes": 13443,
+      "sha256": "67ff4886df311bc43e51926eb15fd81e4d90b1a5ed8d992e4b2c964a2a36df5e"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/jerry/validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/py3dbp/effective-config.json",
+      "bytes": 742,
+      "sha256": "1897b78f52e85eebcac61f3cca363229e65e15fbb16bb67fee27520dc2e48a3a"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/py3dbp/input.json",
+      "bytes": 2069,
+      "sha256": "b1cc9e3f12ff7b78179b3cc47f1738cb708f5fbbdf6459f7568c73b1ac296d40"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/py3dbp/output.json",
+      "bytes": 13434,
+      "sha256": "a7af0adda0f1371ba4b92f4180a88c0a8e1c53d8071773fe409ff53804af7565"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/LARGE_CHEAPER/py3dbp/validation.json",
+      "bytes": 178,
+      "sha256": "1caf33e0522dadeb796298000c2e45d67d7f99c4fa8b2edce65d31e8f7589bc5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/jerry/effective-config.json",
+      "bytes": 749,
+      "sha256": "038e68ec0a92a2cac3f0887898e3036467bf09767433aa0cd7dea4eadf40d7e9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/jerry/input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/jerry/output.json",
+      "bytes": 13467,
+      "sha256": "3a8847d2c8bda9e976ef2637f421d086ae9721766576a7a158faed3870fbd1b5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/jerry/validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/py3dbp/effective-config.json",
+      "bytes": 750,
+      "sha256": "ee4778bb490cc683edf5274dcbfad69c9c9e112e4ec76591df1d6f0de4d49c24"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/py3dbp/input.json",
+      "bytes": 2077,
+      "sha256": "34aaac80b1d1e1006f0569a7f67aef3ed2931d71cb133ebe7f8195a29d712dce"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/py3dbp/output.json",
+      "bytes": 13458,
+      "sha256": "31973570b42fdd547f2f9eaeddd68538382ee579d489b9e8cd8bbc7ce94a0423"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/SMALL_CHEAPER/py3dbp/validation.json",
+      "bytes": 189,
+      "sha256": "1dcb2dfb315eb5b6c3c9a58b6a207ee0802b0d5d984f8c33584188593c30b7ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/artifacts.tar.gz",
+      "bytes": 3969,
+      "sha256": "2c68d7537aca6684f4ede6e62c73b688075ac5fc868d30e8cfe5d141f99f8bf6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/b09-python-composed/metadata.json",
+      "bytes": 625,
+      "sha256": "6e533202f88c112e449732008f0801d8307b083003bd2b2f11da3e6bea18b6ce"
+    },
+    {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_fork_box/10s/artifacts.tar.gz",
       "bytes": 5809,
       "sha256": "df2528567fb029568c87cf3f14b18503a60ce17c8afb5bc32b2257310f363d9b"
