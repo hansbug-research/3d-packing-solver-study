@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "05835d5be8b42a0c17a679fbedce453d4ce2d894fe129cf345f4620daabe2380",
+  "backend": "cplex",
+  "benchmark_id": "B07",
+  "implementation_id": "exact_cplex",
+  "instances": 4,
+  "output_sha256": "37f9f9a671eeea3e5d91df4c468e4c1702c7976f81f0ca28a7058bca3993e4f8",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "bb7b7052830ed36bfb9a7409a5dc6912c620c6f30f5872e250938a4abad10c2d",
+  "schema_version": 1,
+  "shared_validator_sha256": "136e7812f00f5a34477ec28f35cc9bf1e787e837c56f26df36829030983cb49d",
+  "time_limit_s": 20.0
+}

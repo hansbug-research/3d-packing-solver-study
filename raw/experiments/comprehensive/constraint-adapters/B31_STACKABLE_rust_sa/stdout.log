@@ -99,7 +99,7 @@
   ],
   "placements": [
     {
-      "item_id": "B:0",
+      "item_id": "B:1",
       "bin_id": "pallet-stack",
       "position": [
         0.0,
@@ -107,8 +107,8 @@
         0.0
       ],
       "size": [
-        600.0,
         400.0,
+        600.0,
         600.0
       ],
       "original_size": [
@@ -117,14 +117,14 @@
         400.0
       ],
       "weight": 25.0,
-      "rotation": "yzx",
-      "rotation_index": 3
+      "rotation": "zxy",
+      "rotation_index": 4
     },
     {
       "item_id": "A:0",
       "bin_id": "pallet-stack",
       "position": [
-        600.0,
+        400.0,
         0.0,
         0.0
       ],
@@ -139,14 +139,36 @@
         400.0
       ],
       "weight": 10.0,
+      "rotation": "yxz",
+      "rotation_index": 2
+    },
+    {
+      "item_id": "B:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
       "rotation": "xyz",
       "rotation_index": 0
     },
     {
-      "item_id": "C:0",
+      "item_id": "C:1",
       "bin_id": "pallet-stack",
       "position": [
-        0.0,
+        600.0,
         600.0,
         0.0
       ],
@@ -165,12 +187,12 @@
       "rotation_index": 4
     },
     {
-      "item_id": "C:1",
+      "item_id": "C:0",
       "bin_id": "pallet-stack",
       "position": [
-        400.0,
-        600.0,
-        0.0
+        0.0,
+        0.0,
+        600.0
       ],
       "size": [
         600.0,
@@ -185,28 +207,6 @@
       "weight": 15.0,
       "rotation": "yzx",
       "rotation_index": 3
-    },
-    {
-      "item_id": "B:1",
-      "bin_id": "pallet-stack",
-      "position": [
-        0.0,
-        0.0,
-        600.0
-      ],
-      "size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "original_size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "weight": 25.0,
-      "rotation": "xyz",
-      "rotation_index": 0
     },
     {
       "item_id": "A:1",
@@ -227,10 +227,10 @@
         400.0
       ],
       "weight": 10.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "xyz",
+      "rotation_index": 0
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 4.374895
+  "elapsed_ms": 4.555019000000001
 }

@@ -66,8 +66,8 @@
         0.0
       ],
       "size": [
-        402.0,
         734.0,
+        402.0,
         536.0
       ],
       "original_size": [
@@ -76,21 +76,21 @@
         402.0
       ],
       "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
+      "rotation": "xzy",
+      "rotation_index": 1
     },
     {
       "item_id": "product-14:1",
       "bin_id": "bay-0",
       "position": [
-        402.0,
         0.0,
+        402.0,
         0.0
       ],
       "size": [
-        402.0,
+        536.0,
         734.0,
-        536.0
+        402.0
       ],
       "original_size": [
         734.0,
@@ -98,10 +98,10 @@
         402.0
       ],
       "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
+      "rotation": "yxz",
+      "rotation_index": 2
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.5327819999999999
+  "elapsed_ms": 1.580199
 }

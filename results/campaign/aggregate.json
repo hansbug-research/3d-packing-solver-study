@@ -129,11 +129,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.21370028983801603,
-          "mean": 0.035673329107729454,
-          "median": 0.002477227943018079,
-          "min": 0.0006566529627889395,
-          "p95": 0.15573806175962077
+          "max": 0.42681351490318775,
+          "mean": 0.06762180640362203,
+          "median": 0.003089783014729619,
+          "min": 0.0009643039666116238,
+          "p95": 0.3060294450959188
         }
       },
       "cplex": {
@@ -145,11 +145,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.23628871096298099,
-          "mean": 0.04501455323770642,
-          "median": 0.008182739140465856,
-          "min": 0.00400875392369926,
-          "p95": 0.1782821536529808
+          "max": 0.30272682197391987,
+          "mean": 0.05507641960866749,
+          "median": 0.009482958121225238,
+          "min": 0.0042261481285095215,
+          "p95": 0.22565206966828535
         }
       },
       "gurobi": {
@@ -161,11 +161,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.019570425851270556,
-          "mean": 0.006492958071508578,
-          "median": 0.002010514959692955,
-          "min": 0.0003171118441969156,
-          "p95": 0.019046930666081607
+          "max": 0.05118211195804179,
+          "mean": 0.011904958469261016,
+          "median": 0.002658471930772066,
+          "min": 0.00035056681372225285,
+          "p95": 0.042429411271586996
         }
       },
       "scip": {
@@ -177,11 +177,11 @@
         "suite_status": "PASS",
         "validation_error_cases": 0,
         "wall_time_s": {
-          "max": 0.06255049095489085,
-          "mean": 0.02009731900346066,
-          "median": 0.0036390991881489754,
-          "min": 0.0014760599005967379,
-          "p95": 0.062291276897303766
+          "max": 0.12320252391509712,
+          "mean": 0.03145558510108718,
+          "median": 0.005514219868928194,
+          "min": 0.0019523689989000559,
+          "p95": 0.10878693289123473
         }
       }
     },
@@ -1126,11 +1126,11 @@
         "records": 47,
         "validated": 7,
         "wall_time_ms": {
-          "max": 9419.887896,
-          "mean": 1760.9049892857142,
-          "median": 430.988454,
-          "min": 5.281333,
-          "p95": 6915.854973899995
+          "max": 9540.635066,
+          "mean": 1806.7487312857143,
+          "median": 444.937991,
+          "min": 5.764145,
+          "p95": 7024.880367199995
         }
       },
       "laff": {
@@ -1146,11 +1146,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 177.804696,
-          "mean": 4.60315675,
-          "median": 0.40640149999999997,
-          "min": 0.257109,
-          "p95": 2.517374100000002
+          "max": 217.877912,
+          "mean": 5.564124613636364,
+          "median": 0.436606,
+          "min": 0.246855,
+          "p95": 2.739670250000002
         }
       },
       "plain": {
@@ -1166,11 +1166,11 @@
         "records": 47,
         "validated": 44,
         "wall_time_ms": {
-          "max": 4.235173,
-          "mean": 0.58682425,
-          "median": 0.4121395,
-          "min": 0.203066,
-          "p95": 1.4337057000000009
+          "max": 4.069459,
+          "mean": 0.6381285681818182,
+          "median": 0.4240165,
+          "min": 0.229519,
+          "p95": 2.043983000000002
         }
       }
     },
@@ -1197,9 +1197,9 @@
     "results/campaign/crosslang_rust_unesting_strategies/results.json": "9e893ebcab43c58a53469cb089984a0fd114bd015f31f4a345ef9a5ab27b5990",
     "results/campaign/crosslang_rust_unesting_strategy_repeats/results.json": "bcc2b9bd0a97452d2b9ff84f3b1d1495a5155bc8c3852de7ebeae42ecafbaa86",
     "results/campaign/crosslang_rust_unesting_thpack9/results.json": "03a09275741f050b53cff33bc16f97c7ac16710c7c12beb2832840f45316f42b",
-    "results/campaign/exact-cp-sat.json": "5a999ad880ee6e8d067477ad9c1da6e318668221ee0fb4db3fd8be395a7d7e33",
-    "results/campaign/exact-cplex.json": "6ad107e59aa1dae057b40128a5bde17f027f5c07a189724c08ac09a98b9a07dd",
-    "results/campaign/exact-gurobi.json": "514af41acc829019ccb73a39ee8cd82a99786ac3597765f78cb3e3b18fb4ddef",
+    "results/campaign/exact-cp-sat.json": "e8e6ed482c6538f1697075f3e5a293a4466bae998146a2e581c53186fa661b77",
+    "results/campaign/exact-cplex.json": "cc818372131f4b878b9c1c6ea6dc3129dbcc2b1791b9df9e75e69c715ebc087e",
+    "results/campaign/exact-gurobi.json": "32c86507191e6328743177dcf4805f4a7c917980c83d95da275bb898970c932c",
     "results/campaign/exact-legacy-cp-sat.json": "3e406b0ea6692cb3d5fe51454c6ff626ae0fc012a65cdde759c7ae6ed4368ac4",
     "results/campaign/exact-legacy-cplex.json": "a99eef40214c5a96d6f2a3a4a86177c1506f6c57c8ae3c5871526f7da6e1a2de",
     "results/campaign/exact-legacy-gurobi.json": "8e1f1917bcb1a8398e8ba055523275f3d27ed35fd48a5c674ff12dcc032e2d2d",
@@ -1208,7 +1208,7 @@
     "results/campaign/exact-reduced-cplex.json": "b485e4bd61886b104338815be95fb5135bb7de033cedbe75de3d84c1b0086780",
     "results/campaign/exact-reduced-gurobi.json": "9a93eb13b1097eef998a49e70e1c79e67a21b43331e13fe14b6d5a11cc0f3923",
     "results/campaign/exact-reduced-scip.json": "47dda45ddb06aaa045ae0c9338b3a476afbf93657d9add5147ca0e457862940a",
-    "results/campaign/exact-scip.json": "9f2c44eb038de9c811756baae040c384782a465ec57b11f1cbaed1cf90faeb08",
+    "results/campaign/exact-scip.json": "2146fb6244d54a64484d4e5c601ce3ed7317b8f03242382574e849e9637484ec",
     "results/campaign/exact-strengthened-cp-sat.json": "b05949982eadd7ddf61428eb868656ce0726a042b3b9cbd1da5feec023003078",
     "results/campaign/exact-strengthened-cplex.json": "372bdc607a1828d13742fc871defc858f28610925606c8a30527d0667ed4868f",
     "results/campaign/exact-strengthened-gurobi.json": "09c1733255eb946769f001a8c70185b44b2b4564ac98afb926dfa48e9b8c7c4c",
@@ -1222,7 +1222,7 @@
     "results/campaign/packingsolver-thpack.jsonl": "9226e8475541565e194ea62d7ec136d39e28e07a885c562c660fbd22f8c47cad",
     "results/campaign/python_thpack/summary.json": "b398272c7745b32531f8611600de0d2a59efb6fda606df29cffda23274e3c121",
     "results/campaign/skjolber-algorithms.json": "8292f048c4765963caf95cd128fb91256b2f85d6f1efaa1931435c1c39ba193f",
-    "results/campaign/skjolber-thpack9.json": "2932ff601699bb9a1efa2030d58f498ecc57ba61e6f53464876c573570b28a6e"
+    "results/campaign/skjolber-thpack9.json": "452d18a71183fde000638893d141763c4e8a9a926cf9fff0cb89d73136c2577e"
   },
   "targeted_suites": {
     "packingsolver_boxstacks": {

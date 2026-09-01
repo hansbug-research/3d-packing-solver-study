@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "5b4633b0272beac300822bcde2e828678b24f5b5b12e9b8f05c0cfdcf5790768",
+  "binary_sha256": "4095913a369399df053ad6d8c4f3ef8873496f2903ba2a0aeeb699081c9edbec",
+  "families": [
+    "BR",
+    "LN"
+  ],
+  "implementation_id": "packingsolver_upstream_box",
+  "output_sha256": "047f331ab301a221937d072c1effdd57c83dc7b5722c160a9a3def9b21387e46",
+  "protocol_version": "benchmark-protocol/3",
+  "records": 715,
+  "runner_sha256": "88df224c70c049add4087f38e127351bb1fe6445e7eb693934008a82da772018",
+  "schema_version": 1,
+  "source_commit": "367ebfdaad11424ded3696b7dae799a30c1375d0",
+  "time_limit_s": 10.0
+}

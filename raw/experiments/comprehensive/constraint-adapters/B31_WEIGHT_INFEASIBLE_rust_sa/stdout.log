@@ -78,8 +78,8 @@
       ],
       "size": [
         600.0,
-        600.0,
-        400.0
+        400.0,
+        600.0
       ],
       "original_size": [
         600.0,
@@ -87,13 +87,13 @@
         400.0
       ],
       "weight": 25.0,
-      "rotation": "xyz",
-      "rotation_index": 0
+      "rotation": "xzy",
+      "rotation_index": 1
     }
   ],
   "unplaced": [
     "A:0",
     "A:1"
   ],
-  "elapsed_ms": 1.376157
+  "elapsed_ms": 1.3587740000000001
 }

@@ -320,7 +320,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (63049, 2122, 63049, 63049):
+        ) != (64491, 2122, 64491, 64491):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -329,11 +329,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 554, 19, 278, 26, 19):
+        ) != (608, 559, 19, 283, 26, 19):
         fail("comprehensive execution coverage changed")
     if coverage.get("protocol_v3_status_only_cells") != 257:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60927}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62369}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -361,7 +361,7 @@ def check_comprehensive_results() -> None:
         b21_audit.get("anomaly_counts", {}).get("MALFORMED_ITEM_ROWS"),
     ) != ("B21", 46, "SOURCE_INVALID", "NOT_RUN", "SOURCE_PENDING", 23):
         fail("B21 source audit decision changed")
-    if coverage.get("records_by_benchmark", {}).get("B07") != 34209:
+    if coverage.get("records_by_benchmark", {}).get("B07") != 34221:
         fail("comprehensive B07 record count changed")
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
     if len(reliability) != 347 or {record["benchmark_id"] for record in reliability} != {"B24", "B25", "B26", "B27", "B28", "B29"}:

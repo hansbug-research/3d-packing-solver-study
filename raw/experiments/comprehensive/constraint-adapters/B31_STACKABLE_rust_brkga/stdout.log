@@ -99,7 +99,7 @@
   ],
   "placements": [
     {
-      "item_id": "B:0",
+      "item_id": "B:1",
       "bin_id": "pallet-stack",
       "position": [
         0.0,
@@ -117,11 +117,11 @@
         400.0
       ],
       "weight": 25.0,
-      "rotation": "zyx",
-      "rotation_index": 5
+      "rotation": "zxy",
+      "rotation_index": 4
     },
     {
-      "item_id": "B:1",
+      "item_id": "C:1",
       "bin_id": "pallet-stack",
       "position": [
         400.0,
@@ -129,9 +129,31 @@
         0.0
       ],
       "size": [
+        400.0,
+        600.0,
+        600.0
+      ],
+      "original_size": [
         600.0,
         600.0,
         400.0
+      ],
+      "weight": 15.0,
+      "rotation": "zxy",
+      "rotation_index": 4
+    },
+    {
+      "item_id": "B:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        400.0,
+        600.0
       ],
       "original_size": [
         600.0,
@@ -139,16 +161,38 @@
         400.0
       ],
       "weight": 25.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "yzx",
+      "rotation_index": 3
+    },
+    {
+      "item_id": "C:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        600.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        400.0,
+        600.0,
+        600.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "rotation": "zyx",
+      "rotation_index": 5
     },
     {
       "item_id": "A:0",
       "bin_id": "pallet-stack",
       "position": [
         0.0,
-        600.0,
-        0.0
+        0.0,
+        600.0
       ],
       "size": [
         400.0,
@@ -169,12 +213,12 @@
       "bin_id": "pallet-stack",
       "position": [
         400.0,
-        600.0,
-        0.0
+        0.0,
+        600.0
       ],
       "size": [
-        600.0,
         400.0,
+        600.0,
         600.0
       ],
       "original_size": [
@@ -183,54 +227,10 @@
         400.0
       ],
       "weight": 10.0,
-      "rotation": "xzy",
-      "rotation_index": 1
-    },
-    {
-      "item_id": "C:0",
-      "bin_id": "pallet-stack",
-      "position": [
-        0.0,
-        0.0,
-        600.0
-      ],
-      "size": [
-        600.0,
-        400.0,
-        600.0
-      ],
-      "original_size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "weight": 15.0,
-      "rotation": "yzx",
-      "rotation_index": 3
-    },
-    {
-      "item_id": "C:1",
-      "bin_id": "pallet-stack",
-      "position": [
-        600.0,
-        0.0,
-        600.0
-      ],
-      "size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "original_size": [
-        600.0,
-        600.0,
-        400.0
-      ],
-      "weight": 15.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "zxy",
+      "rotation_index": 4
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.629791
+  "elapsed_ms": 1.5934059999999999
 }

@@ -1,0 +1,12 @@
+{
+  "bound": null,
+  "error": "DOcplexLimitsExceeded: **** Promotional version. Problem size limits (1000 vars, 1000 consts) exceeded, model has 8000 vars, 8925 consts, CPLEX code=1016",
+  "gap": null,
+  "nodes": null,
+  "objective": null,
+  "packed_volume": null,
+  "placements": [],
+  "solver_time_s": 0.0,
+  "status": "ERROR",
+  "validation_errors": []
+}

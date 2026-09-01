@@ -242,19 +242,19 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 63049
-    assert summary["protocol_v3_run_records"] == 60927
+    assert summary["combined_run_records"] == len(records) == 64491
+    assert summary["protocol_v3_run_records"] == 62369
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 554
+    assert aggregate["coverage"]["cells_with_evidence"] == 559
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 278
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 283
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 257
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60927}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62369}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
-    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
+    assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34221
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
     assert len(reliability) == 347
     assert {record["benchmark_id"] for record in reliability} == {"B24", "B25", "B26", "B27", "B28", "B29"}
@@ -294,10 +294,20 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
         record for record in records
         if record["benchmark_id"] == "B07" and record["comparison_track"] == "EXACT_MODEL"
     ]
-    assert len(exact_b07) == 4
+    assert len(exact_b07) == 16
     assert {record["problem_variant"] for record in exact_b07} == {"SOURCE_ROTATION_FLAGS"}
-    assert all(record["solution_status"] == "VALID_PARTIAL" for record in exact_b07)
-    assert all(record["proof_status"] == "FEASIBLE" for record in exact_b07)
+    by_backend = {}
+    for record in exact_b07:
+        by_backend.setdefault(record["implementation_id"], []).append(record)
+    assert {key: len(value) for key, value in by_backend.items()} == {
+        "exact_cp_sat": 4,
+        "exact_scip": 4,
+        "exact_gurobi": 4,
+        "exact_cplex": 4,
+    }
+    assert all(record["solution_status"] == "VALID_PARTIAL" for key in ("exact_cp_sat", "exact_scip") for record in by_backend[key])
+    assert all(record["proof_status"] == "FEASIBLE" for key in ("exact_cp_sat", "exact_scip") for record in by_backend[key])
+    assert all(record["run_status"] == "ERROR" and record["solution_status"] == "NO_SOLUTION" for key in ("exact_gurobi", "exact_cplex") for record in by_backend[key])
     exact_rankings = json.loads((comprehensive / "aggregate.json").read_text())["headline"]["exact_proof"]
     assert all(row["instances"] == 5 for row in exact_rankings if row["benchmark_id"] == "B06")
     assert all(row["instances"] == 2 for row in exact_rankings if row["benchmark_id"] == "B09")

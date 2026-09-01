@@ -58,31 +58,31 @@
   ],
   "placements": [
     {
-      "item_id": "cold:0",
-      "bin_id": "bin-0",
-      "position": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "original_size": [
-        5.0,
-        5.0,
-        5.0
-      ],
-      "weight": 1.0,
-      "rotation": "zxy",
-      "rotation_index": 4
-    },
-    {
       "item_id": "hazmat:0",
       "bin_id": "bin-0",
       "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "original_size": [
+        5.0,
+        5.0,
+        5.0
+      ],
+      "weight": 1.0,
+      "rotation": "zyx",
+      "rotation_index": 5
+    },
+    {
+      "item_id": "cold:0",
+      "bin_id": "bin-0",
+      "position": [
         5.0,
         0.0,
         0.0
@@ -98,10 +98,10 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "xzy",
+      "rotation_index": 1
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.5078330000000002
+  "elapsed_ms": 1.517355
 }

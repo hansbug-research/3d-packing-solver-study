@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "83572c91c6e8ec62ac56c2c25705bb19901b760bc00fd610685ca06265ec316d",
+  "backend": "gurobi",
+  "benchmark_id": "B07",
+  "implementation_id": "exact_gurobi",
+  "instances": 4,
+  "output_sha256": "220141ec2c9a998256f81a31ed88ec096fca64989edbfc0d75e10bdfac592948",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "bb7b7052830ed36bfb9a7409a5dc6912c620c6f30f5872e250938a4abad10c2d",
+  "schema_version": 1,
+  "shared_validator_sha256": "136e7812f00f5a34477ec28f35cc9bf1e787e837c56f26df36829030983cb49d",
+  "time_limit_s": 20.0
+}

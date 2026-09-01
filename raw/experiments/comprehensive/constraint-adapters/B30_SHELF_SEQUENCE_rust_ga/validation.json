@@ -2,7 +2,7 @@
   "bins_used": 1,
   "constraint_errors": [
     "product-14:0: shelf side gap/overhang violation",
-    "shelf shelf-1: inter-gap 0.0 below 10"
+    "product-14:1: placement y=402.0 is not a declared shelf top"
   ],
   "geometry_error_count": 0,
   "geometry_errors": [],
@@ -13,6 +13,6 @@
   "validation_error_count": 2,
   "validation_errors": [
     "product-14:0: shelf side gap/overhang violation",
-    "shelf shelf-1: inter-gap 0.0 below 10"
+    "product-14:1: placement y=402.0 is not a declared shelf top"
   ]
 }

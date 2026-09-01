@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "B07",
+  "container": [
+    587,
+    233,
+    220
+  ],
+  "items": [
+    {
+      "allowed_vertical_dimensions": [
+        1,
+        1,
+        1
+      ],
+      "copies": 48,
+      "size": [
+        96,
+        95,
+        68
+      ],
+      "type_id": "0"
+    }
+  ],
+  "problem_variant": "SOURCE_ROTATION_FLAGS",
+  "source_bins_sha256": "8187e12bc1e9201309a40943806cae4c0cf790f2c09af4dace8aecbb49d21a68",
+  "source_commit": "d953148b8f710c06fa6c410949b7272f9e36327b",
+  "source_group": "BR0",
+  "source_id": "BR0.txt_72",
+  "source_items_sha256": "e4511d11bc83c575cfa243e9cc537420b8b5ff1720e6e8dbefac893594994569"
+}
