@@ -1,0 +1,11 @@
+{
+  "scenario": "fault-invalid_json",
+  "fault": "invalid_json",
+  "command": [
+    "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-fqrgvqav/invalid.json",
+    "ga",
+    "10000"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "scenario": "fault-cancelled",
+  "fault": "cancelled",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/comprehensive/exact_reliability_worker.py",
+    "--backend",
+    "cp_sat",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-ivrd0yhy/input.json"
+  ]
+}

@@ -107,27 +107,27 @@
       "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "ADAPTER_MISSING"}
     },
     {
-      "id": "B24", "name": "Metamorphic", "category": "RELIABILITY", "problem_family": "METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "id": "B24", "name": "Metamorphic", "category": "RELIABILITY", "problem_family": "METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "VALID", "ranking_kind": "RELIABILITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B25", "name": "Cost/bin-order metamorphic", "category": "RELIABILITY", "problem_family": "COST_METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "id": "B25", "name": "Cost/bin-order metamorphic", "category": "RELIABILITY", "problem_family": "COST_METAMORPHIC", "primary_metric": "invariance_rate", "input_status": "VALID", "ranking_kind": "RELIABILITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "ADAPTER_MISSING", "jerry": "ADAPTER_MISSING", "skjolber": "ADAPTER_MISSING", "go_bp3d": "ADAPTER_MISSING", "rust_unesting": "ADAPTER_MISSING", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B26", "name": "Unit/numeric", "category": "RELIABILITY", "problem_family": "NUMERIC", "primary_metric": "numeric_consistency", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "id": "B26", "name": "Unit/numeric", "category": "RELIABILITY", "problem_family": "NUMERIC", "primary_metric": "numeric_consistency", "input_status": "VALID", "ranking_kind": "RELIABILITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B27", "name": "Seed/order repeatability", "category": "RELIABILITY", "problem_family": "REPEATABILITY", "primary_metric": "quality_variance", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "id": "B27", "name": "Seed/order repeatability", "category": "RELIABILITY", "problem_family": "REPEATABILITY", "primary_metric": "quality_variance", "input_status": "VALID", "ranking_kind": "RELIABILITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B28", "name": "Scalability", "category": "RELIABILITY", "problem_family": "SCALABILITY", "primary_metric": "time_quality_curve", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "PERFORMANCE",
+      "id": "B28", "name": "Scalability", "category": "RELIABILITY", "problem_family": "SCALABILITY", "primary_metric": "time_quality_curve", "input_status": "VALID", "ranking_kind": "PERFORMANCE",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B29", "name": "Fault/cancellation", "category": "RELIABILITY", "problem_family": "FAULT_HANDLING", "primary_metric": "fault_recovery_rate", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "RELIABILITY",
+      "id": "B29", "name": "Fault/cancellation", "category": "RELIABILITY", "problem_family": "FAULT_HANDLING", "primary_metric": "fault_recovery_rate", "input_status": "VALID", "ranking_kind": "RELIABILITY",
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {

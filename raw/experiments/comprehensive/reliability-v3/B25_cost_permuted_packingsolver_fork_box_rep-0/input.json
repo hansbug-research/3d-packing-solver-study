@@ -1,0 +1,57 @@
+{
+  "scenario": "reliability-cost_permuted",
+  "bins": [
+    {
+      "id": "large-0",
+      "size": [
+        12,
+        5,
+        5
+      ],
+      "max_weight": 100.0,
+      "cost": 20.0
+    },
+    {
+      "id": "small-1",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "max_weight": 100.0,
+      "cost": 5.0
+    },
+    {
+      "id": "small-0",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "max_weight": 100.0,
+      "cost": 5.0
+    }
+  ],
+  "items": [
+    {
+      "id": "cost-0",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cost-1",
+      "size": [
+        6,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ]
+}

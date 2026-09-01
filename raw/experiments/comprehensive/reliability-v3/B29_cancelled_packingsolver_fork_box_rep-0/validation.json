@@ -1,0 +1,24 @@
+{
+  "cancel_latency_s": 0.02084587304852903,
+  "fault_command": [
+    "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/box/packingsolver_box",
+    "--items",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-5qywn7fg/items.csv",
+    "--bins",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-5qywn7fg/bins.csv",
+    "--objective",
+    "bin-packing",
+    "--time-limit",
+    "10",
+    "--memory-limit",
+    "512",
+    "--verbosity-level",
+    "0"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 512,
+  "status": "CANCELLED",
+  "validation_error_count": 0,
+  "validation_errors": []
+}

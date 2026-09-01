@@ -1,0 +1,20 @@
+{
+  "cancel_latency_s": 0.020859745796769857,
+  "fault_command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py",
+    "--library",
+    "jerry",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-wvltvl_1/input.json",
+    "--order",
+    "descending",
+    "--projection"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 512,
+  "status": "CANCELLED",
+  "validation_error_count": 0,
+  "validation_errors": []
+}

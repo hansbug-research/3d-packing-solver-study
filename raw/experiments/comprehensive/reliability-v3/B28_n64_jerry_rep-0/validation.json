@@ -1,0 +1,13 @@
+{
+  "bins_used": 8,
+  "library_reported": "FEASIBLE_COMPLETE",
+  "objective": 8,
+  "placements": 64,
+  "required_items": 64,
+  "scale": 1,
+  "status": "VALID_COMPLETE",
+  "total_cost": 8.0,
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "n64"
+}

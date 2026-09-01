@@ -1,0 +1,12 @@
+{
+  "bins_used": 2,
+  "library_reported": true,
+  "objective": 2,
+  "placements": 16,
+  "required_items": 16,
+  "scale": 1,
+  "status": "VALID_COMPLETE",
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "n16"
+}

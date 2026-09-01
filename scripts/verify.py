@@ -298,7 +298,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62580, 2122, 62580, 62580):
+        ) != (62824, 2122, 62824, 62824):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +307,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 515, 29, 77, 13, 19):
+        ) != (608, 515, 29, 180, 19, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 409:
+    if coverage.get("protocol_v3_status_only_cells") != 306:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60458}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60702}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -327,6 +327,21 @@ def check_comprehensive_results() -> None:
         fail("B05 source audit decision changed")
     if coverage.get("records_by_benchmark", {}).get("B07") != 34209:
         fail("comprehensive B07 record count changed")
+    reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
+    if len(reliability) != 347 or {record["benchmark_id"] for record in reliability} != {"B24", "B25", "B26", "B27", "B28", "B29"}:
+        fail("reliability-v3 record coverage changed")
+    runner_hashes = {record.get("metrics", {}).get("runner_sha256") for record in reliability}
+    if len(runner_hashes) != 1 or not next(iter(runner_hashes), "") or len(next(iter(runner_hashes), "")) != 64:
+        fail("reliability runner hash evidence missing")
+    b25_fork = {record["problem_variant"]: record for record in reliability if record["implementation_id"] == "packingsolver_fork_box" and record["benchmark_id"] == "B25"}
+    if any(not math.isclose(float(b25_fork[variant]["metrics"]["total_cost"]), expected, abs_tol=1e-9) for variant, expected in {"cost_base": 10.0, "cost_permuted": 10.0, "cost_scaled": 70.0}.items()):
+        fail("reliability B25 certificate cost mapping changed")
+    b29_exact = [record for record in reliability if record["benchmark_id"] == "B29" and record["implementation_id"] == "exact_cp_sat"]
+    if {record["problem_variant"]: record["run_status"] for record in b29_exact} != {"invalid_json": "ERROR", "cancelled": "CANCELLED"}:
+        fail("reliability exact B29 process boundary changed")
+    for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
+        if not (directory / "rankings" / ranking).exists():
+            fail(f"comprehensive reliability ranking is missing: {ranking}")
     subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
     if not subset_audit_path.exists():
         fail("B07 Skjolber subset API audit is missing")

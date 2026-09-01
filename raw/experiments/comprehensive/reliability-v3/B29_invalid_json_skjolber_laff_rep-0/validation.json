@@ -1,0 +1,23 @@
+{
+  "fault_command": [
+    "java",
+    "-Xms32m",
+    "-Xmx512m",
+    "-XX:ActiveProcessorCount=1",
+    "-cp",
+    "/home/zhangshaoang/packing-software-study/benchmarks/java-skjolber/target/classes:/home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/core/4.2.2-SNAPSHOT/core-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/api/4.2.2-SNAPSHOT/api-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/com/github/skjolber/3d-bin-container-packing/points/4.2.2-SNAPSHOT/points-4.2.2-SNAPSHOT.jar:/home/zhangshaoang/.m2/repository/org/eclipse/collections/eclipse-collections/13.0.0/eclipse-collections-13.0.0.jar:/home/zhangshaoang/.m2/repository/org/eclipse/collections/eclipse-collections-api/13.0.0/eclipse-collections-api-13.0.0.jar",
+    "study.SkjolberReliability",
+    "laff",
+    "512",
+    "1",
+    "base"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 8,
+  "status": "INVALID_CERTIFICATE",
+  "validation_error_count": 1,
+  "validation_errors": [
+    "malformed input rejected"
+  ]
+}

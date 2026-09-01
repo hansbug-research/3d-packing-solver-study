@@ -1,0 +1,289 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "reliability-base-8-1",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 1
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 9,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-0",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-1",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-2",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-3",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-4",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-5",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-6",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-7",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "cube-0",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-1",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-2",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-3",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-4",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-5",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-6",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-7",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.00579
+}

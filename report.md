@@ -412,6 +412,23 @@ legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求
 
 Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP 的 BAYTP 快照缺少公共 `products`/`shelves`；虽从 OR-Library 核对了对应文件与 SHA-256，仍标为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。删除字段后运行普通 3D 箱数算法会改变问题，不能作为完整 benchmark 分数。
 
+### 7.8 B24-B29 reliability-v3 全库实测
+
+本轮对 19 个实现/算法变体执行了 347 条 reliability-v3 记录：B24 置换/改名/轴置换 76 条，B25 成本与箱序 35 条，B26 数值缩放 38 条，B27 五次重复 95 条，B28 8/16/32/64 件扩展 76 条，B29 非法输入与取消 38 条。每条记录都绑定 fixture/input SHA-256、runner SHA-256、stdout/stderr、validator 结果；PackingSolver 记录另归档 `solution.csv` 和 `solver.json`。汇总见 [`aggregate.json`](results/comprehensive/aggregate.json)，分项表见 [`reliability-metamorphic.csv`](results/comprehensive/rankings/reliability-metamorphic.csv)、[`reliability-numeric.csv`](results/comprehensive/rankings/reliability-numeric.csv)、[`reliability-repeatability.csv`](results/comprehensive/rankings/reliability-repeatability.csv)、[`reliability-scalability.csv`](results/comprehensive/rankings/reliability-scalability.csv) 和 [`reliability-fault.csv`](results/comprehensive/rankings/reliability-fault.csv)。
+
+| Benchmark | 适用库/算法 | 实测主结果 | 结果说明与边界 |
+|---|---|---|---|
+| B24 metamorphic | 全部 native/composed/exact；EX 作为 oracle | 除缺失 upstream `boxstacks` 二进制外，所有实际可运行实现均为 `3/3` invariant | 说明 item 顺序、ID 改名和对称轴变换不会改变小型几何目标；不代表复杂非对称实例的全局不变性 |
+| B25 cost/bin-order | PackingSolver fork/upstream、EX；其他库当前 `ADAPTER_MISSING` | fork `box`、fork `boxstacks`、四个 exact 后端均 `3/3` expected-cost；fork 成本为 `10/10/70`（base/permuted/scaled） | 旧结果 `25` 是 certificate row/index 被误当输入 bin ID 的 adapter bug，修复 parser 后消失；upstream `box` 三条为真实 `ERROR`，继续追踪 #536 |
+| B26 numeric | 全部可运行实现与独立 validator | 可运行实现均 `2/2` numeric consistency；upstream `boxstacks` 因 binary 缺失为 `ERROR` | 说明单位缩放在整数小 fixture 上稳定；尚未覆盖浮点极值、真实公差和大整数溢出 |
+| B27 repeatability | 全部；随机 RS/EX 固定 seed，5 次重复 | 通过的实现均 `5/5`、`bins_stddev=0` | 这是对当前对称八立方体的稳定性结果；正式结论仍需 B05/B23 非对称实例和多 seed |
+| B28 scalability | 全部；EX 为小规模质量/证明参照，FastBruteForce 单独看 timeout | Go/Rust/py3dbp/Jerry/Skjolber Plain/LAFF/PackingSolver fork 在 8–64 件均产生完整或明确失败状态；exact 在 16–64 件出现许可证/时间边界；FastBruteForce 16–64 件约 10 s 无解 | 当前是 process/适配层拐点 smoke，不替代协议要求的 20/50/100/200/500/1000 件正式曲线；跨语言只比较各自 timing group |
+| B29 fault/cancellation | 全部 worker/sidecar/CLI | exact、Go、Python、Rust 多数实现为 `ERROR + CANCELLED`；PackingSolver fork/upstream `box` 取消约 21 ms；Skjolber 约 39–56 ms；Rust Layer 与 FastBruteForce 在 20 ms 门限内提前正常结束，记 `0.5` fault rate | 本轮只实测 malformed input 与 cancellation，没有把 OOM 当作已完成；正常退出但没有有效证书仍保留为处理结果，不冒充 crash recovery |
+
+本轮新增后综合覆盖为 `19/32` benchmark 有实际运行、`32/32` 有状态记录、`180/608` protocol-v3 cell 已执行、`306` 个为 status-only，记录总数 `62,824`（legacy `2,122`、protocol-v3 `60,702`）。这些数字代表已形成可复现证据的子集，不代表 B05、B08、B10-B23、B30-B32 已完成 ALL-libs；后续仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 中每个问题族的 FULL/projection 轨逐项补齐。
+
+可靠性结果不产生跨问题族总冠军：B24/B26/B27 是工程稳定性门，B25 是成本 comparator/parser 门，B28 是规模和资源边界，B29 是托管故障边界。质量、成本、硬约束和可靠性必须分别看表；`NOT_SUPPORTED`、`ADAPTER_MISSING`、`ERROR` 或 `TIME_LIMIT` 都是能力边界证据，不可用其他 benchmark 的高利用率抵消。
+
 ## 8. GUI 与三维产品原型
 
 ### 8.1 主工作流

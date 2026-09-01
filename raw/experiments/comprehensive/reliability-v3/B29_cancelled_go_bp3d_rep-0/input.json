@@ -1,0 +1,9 @@
+{
+  "scenario": "fault-cancelled",
+  "fault": "cancelled",
+  "command": [
+    "/tmp/packing-crosslang-go-build/crosslang_go_bp3d",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-wlh0vgjg/input.json"
+  ]
+}

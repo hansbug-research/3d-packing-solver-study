@@ -1,0 +1,15 @@
+{
+  "scenario": "fault-invalid_json",
+  "fault": "invalid_json",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py",
+    "--library",
+    "jerry",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-mkbo2syn/invalid.json",
+    "--order",
+    "descending",
+    "--projection"
+  ]
+}

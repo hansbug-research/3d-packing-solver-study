@@ -1,0 +1,19 @@
+{
+  "scenario": "fault-invalid_json",
+  "fault": "invalid_json",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+    "--items",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-pkjfa40z/items.csv",
+    "--bins",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-pkjfa40z/bins.csv",
+    "--objective",
+    "bin-packing",
+    "--time-limit",
+    "1",
+    "--memory-limit",
+    "128",
+    "--verbosity-level",
+    "0"
+  ]
+}

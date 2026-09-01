@@ -1,0 +1,10 @@
+{
+  "objective": null,
+  "placements": 0,
+  "required_items": 16,
+  "status": "ERROR",
+  "validation_error_count": 1,
+  "validation_errors": [
+    "exact backend error: **** Promotional version. Problem size limits (1000 vars, 1000 consts) exceeded, model has 1586 vars, 1895 consts, CPLEX code=1016"
+  ]
+}

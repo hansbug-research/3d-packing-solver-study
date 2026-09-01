@@ -1,0 +1,13 @@
+{
+  "bins_used": 0,
+  "bound": 4.000000000000001,
+  "gap": null,
+  "objective": null,
+  "placements": 0,
+  "proof_status": "TIME_LIMIT",
+  "required_items": 32,
+  "status": "NO_SOLUTION",
+  "total_cost": 0,
+  "validation_error_count": 0,
+  "validation_errors": []
+}

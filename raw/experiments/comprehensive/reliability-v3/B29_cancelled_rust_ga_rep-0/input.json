@@ -1,0 +1,11 @@
+{
+  "scenario": "fault-cancelled",
+  "fault": "cancelled",
+  "command": [
+    "/tmp/packing-crosslang-u-build/target/release/crosslang-rust-unesting",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-84iqwt5s/input.json",
+    "ga",
+    "10000"
+  ]
+}

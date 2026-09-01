@@ -1,0 +1,13 @@
+{
+  "bins_used": 4,
+  "library_reported": "FEASIBLE_COMPLETE",
+  "objective": 4,
+  "placements": 32,
+  "required_items": 32,
+  "scale": 1,
+  "status": "VALID_COMPLETE",
+  "total_cost": 4.0,
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "n32"
+}

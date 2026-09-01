@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62580,
+  "combined_run_records": 62824,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -82,6 +82,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_boxstacks-10s.jsonl": "a197d7b06c40cffce15a66f077459d7edacaca612b8227080fad2a43deb097a7",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813",
+    "results/comprehensive/runs/reliability-v3.jsonl": "5f581db84d8ce0981c746e0a144132ef58ebf59c732d533583f34de67f92fdae",
     "results/comprehensive/runs/status-B01.jsonl": "7731c082b9ee8366605eb7ccb7f235a4e50a2213cc0652335d8ca944cbcc8abb",
     "results/comprehensive/runs/status-B02.jsonl": "87bb50dc8429d2c74a5d1fb41831f931069ded993d8ecd037366474fc02c565f",
     "results/comprehensive/runs/status-B03.jsonl": "a55246b534bf83b20f6d424baa90b48e058bc7fba24ba15d1c1ea4d9bafaca68",
@@ -104,18 +105,18 @@
     "results/comprehensive/runs/status-B21.jsonl": "8cfb7709f1a60a364e43bd963974b77d63bb7eb6e544aadea64362616125842c",
     "results/comprehensive/runs/status-B22.jsonl": "b3dbbc767799ac54b0d1f54c2416bee2922ae833582dcc5a6bad59b5170a51f7",
     "results/comprehensive/runs/status-B23.jsonl": "5c45110db9ed132d41e59a98f405ab13e8428b7fc26926abdfa07e75fa581b7b",
-    "results/comprehensive/runs/status-B24.jsonl": "87bafec8e00c50e6dcd748a4c26cde8bd1540cd24c2f8a1567317032d2ee3024",
-    "results/comprehensive/runs/status-B25.jsonl": "82ac43a9c2950069d5fd5e930f5bd37af7c3224ef0d9eab5f4996174e0f4fb08",
-    "results/comprehensive/runs/status-B26.jsonl": "a832ceda262175b75ae3cc9a8cca9dc2f72e97ddad82d89078b1a261b36fad6c",
-    "results/comprehensive/runs/status-B27.jsonl": "49ad5b94284603770c0d251bedce0fb0e719ac45dbff5139436f19a35c056e00",
-    "results/comprehensive/runs/status-B28.jsonl": "35848caa012da13204bfeedb6ea56140c0d02d5cc354789c83d5697885a3ea80",
-    "results/comprehensive/runs/status-B29.jsonl": "3edda3982375c55d73d551771ec6a686bcaaaa92917f62107233a6b954b157b7",
+    "results/comprehensive/runs/status-B24.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/comprehensive/runs/status-B25.jsonl": "cb93c2c1b974a114e5ed9eafaad5b52a02279f3a69d1d1f39273a252fa0062eb",
+    "results/comprehensive/runs/status-B26.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/comprehensive/runs/status-B27.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/comprehensive/runs/status-B28.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/comprehensive/runs/status-B29.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "results/comprehensive/runs/status-B30.jsonl": "26d53031c0174d1554931be55d09bc43e42f4a3ffa9c207cf004a164ddd74656",
     "results/comprehensive/runs/status-B31.jsonl": "36898ccf7f4f3188013571c18228a11044367426435f9b9493a540d394ccd853",
     "results/comprehensive/runs/status-B32.jsonl": "7bd1d06e96f1273aa0f0f4756481775387b0b4200e58120f0b0e05fa23107c53",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "2b851f066fb0028db02dc762a19734ee1aa8e0dc26da9a6a01b2b903259f68b4"
   },
-  "protocol_v3_run_records": 60458,
+  "protocol_v3_run_records": 60702,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -130,7 +131,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "202e57031d3b2501e45b98f90b2a7d9ba7d9d3d697da7841d631104879d99ba5",
+  "run_manifest_sha256": "d495d7092f7726e32e0c69f648874c3b353514f6bbf7152c64c2b2a7e35b0529",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

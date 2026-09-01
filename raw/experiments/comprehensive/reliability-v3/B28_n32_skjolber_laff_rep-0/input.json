@@ -1,0 +1,367 @@
+{
+  "scenario": "reliability-base-32-1",
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-001",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-002",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33.0,
+      "cost": 1.0
+    },
+    {
+      "id": "bin-003",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-0",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-1",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-2",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-3",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-4",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-5",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-6",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-7",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-8",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-9",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-10",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-11",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-12",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-13",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-14",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-15",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-16",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-17",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-18",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-19",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-20",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-21",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-22",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-23",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-24",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-25",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-26",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-27",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-28",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-29",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-30",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-31",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ]
+}

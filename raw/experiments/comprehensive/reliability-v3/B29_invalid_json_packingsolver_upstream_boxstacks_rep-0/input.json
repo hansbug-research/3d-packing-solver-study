@@ -1,0 +1,4 @@
+{
+  "scenario": "fault-invalid_json",
+  "fault": "invalid_json"
+}

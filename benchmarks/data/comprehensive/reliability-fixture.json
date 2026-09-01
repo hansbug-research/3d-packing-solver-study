@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "fixture_id": "protocol-v3-reliability",
+  "units": {"length": "integer fixture units", "mass": "unit weight"},
+  "base": {
+    "container": [10, 10, 10],
+    "items": [{"id": "cube-0", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-1", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-2", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-3", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-4", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-5", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-6", "size": [5, 5, 5], "weight": 1, "copies": 1}, {"id": "cube-7", "size": [5, 5, 5], "weight": 1, "copies": 1}]
+  },
+  "derived_variants": {
+    "permuted": "reverse item sequence",
+    "renamed": "replace cube-i identifiers with renamed-i",
+    "axis_swap": "swap canonical x/y axes",
+    "scale10": "multiply all lengths by 10",
+    "n16_n32_n64": "repeat the eight-item block and use ceil(n/8) bins"
+  },
+  "expected_invariants": [
+    "all geometric variants remain complete and collision-free",
+    "permutation and renaming do not change bins_used",
+    "uniform length scaling does not change bins_used",
+    "larger n increases bins_used only at multiples of eight"
+  ],
+  "generator": "benchmarks/comprehensive/run_reliability.py"
+}

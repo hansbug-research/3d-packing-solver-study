@@ -1,0 +1,13 @@
+{
+  "bins_used": 1,
+  "bound": 1.0,
+  "gap": 0.0,
+  "objective": 1.0,
+  "placements": 8,
+  "proof_status": "OPTIMAL",
+  "required_items": 8,
+  "status": "VALID_COMPLETE",
+  "total_cost": 1.0,
+  "validation_error_count": 0,
+  "validation_errors": []
+}

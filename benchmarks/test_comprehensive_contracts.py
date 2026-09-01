@@ -199,19 +199,30 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62580
-    assert summary["protocol_v3_run_records"] == 60458
+    assert summary["combined_run_records"] == len(records) == 62824
+    assert summary["protocol_v3_run_records"] == 60702
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 13
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 19
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 515
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 29
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 77
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 409
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60458}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 180
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 306
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60702}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
+    reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
+    assert len(reliability) == 347
+    assert {record["benchmark_id"] for record in reliability} == {"B24", "B25", "B26", "B27", "B28", "B29"}
+    assert len({record["metrics"].get("runner_sha256") for record in reliability}) == 1
+    b25_fork = {record["problem_variant"]: record for record in reliability if record["implementation_id"] == "packingsolver_fork_box" and record["benchmark_id"] == "B25"}
+    for variant, expected in {"cost_base": 10.0, "cost_permuted": 10.0, "cost_scaled": 70.0}.items():
+        assert math.isclose(float(b25_fork[variant]["metrics"]["total_cost"]), expected, abs_tol=1e-9)
+    b29_exact = [record for record in reliability if record["benchmark_id"] == "B29" and record["implementation_id"] == "exact_cp_sat"]
+    assert {record["problem_variant"]: record["run_status"] for record in b29_exact} == {"invalid_json": "ERROR", "cancelled": "CANCELLED"}
+    for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
+        assert (comprehensive / "rankings" / ranking).exists()
 
     exact_b07 = [
         record for record in records

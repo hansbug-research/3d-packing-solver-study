@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "benchmark_ids": ["B24", "B25", "B26", "B27", "B28", "B29"],
+  "input_status": "VALID",
+  "fixture": "benchmarks/data/comprehensive/reliability-fixture.json",
+  "fixture_sha256": "43e6b3c200ee39b362e9b8675cb2b696203cb70669bc1d8c3931a9f1562e5fe7",
+  "generator": "benchmarks/comprehensive/run_reliability.py",
+  "semantic_scope": "repository-owned deterministic conformance and reliability fixture; not a public quality distribution",
+  "audit": [
+    "integer dimensions and coordinates",
+    "complete eight-cube base case",
+    "derived transforms are deterministic and hashable",
+    "malformed-input and cancellation cases preserve raw process evidence"
+  ]
+}

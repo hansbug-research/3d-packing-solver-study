@@ -1,0 +1,15 @@
+{
+  "scenario": "fault-cancelled",
+  "fault": "cancelled",
+  "command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/campaign/python_thpack/worker.py",
+    "--library",
+    "py3dbp",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-jdzjir52/input.json",
+    "--order",
+    "descending",
+    "--projection"
+  ]
+}

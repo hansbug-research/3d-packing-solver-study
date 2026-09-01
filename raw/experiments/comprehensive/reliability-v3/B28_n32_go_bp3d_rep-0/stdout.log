@@ -1,0 +1,1087 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "reliability-base-32-1",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 4
+  },
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33,
+      "cost": 1
+    },
+    {
+      "id": "bin-001",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33,
+      "cost": 1
+    },
+    {
+      "id": "bin-002",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33,
+      "cost": 1
+    },
+    {
+      "id": "bin-003",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 33,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-0",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-1",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-2",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-3",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-4",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-5",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-6",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-7",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-8",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-9",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-10",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-11",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-12",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-13",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-14",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-15",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-16",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-17",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-18",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-19",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-20",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-21",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-22",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-23",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-24",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-25",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-26",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-27",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-28",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-29",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-30",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-31",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "cube-0",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-1",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-2",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-3",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-4",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-5",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-6",
+      "bin_id": "bin-000",
+      "position": [
+        0,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-7",
+      "bin_id": "bin-000",
+      "position": [
+        5,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-10",
+      "bin_id": "bin-001",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-11",
+      "bin_id": "bin-001",
+      "position": [
+        5,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-12",
+      "bin_id": "bin-001",
+      "position": [
+        0,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-13",
+      "bin_id": "bin-001",
+      "position": [
+        5,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-14",
+      "bin_id": "bin-001",
+      "position": [
+        0,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-15",
+      "bin_id": "bin-001",
+      "position": [
+        5,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-8",
+      "bin_id": "bin-001",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-9",
+      "bin_id": "bin-001",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-16",
+      "bin_id": "bin-002",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-17",
+      "bin_id": "bin-002",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-18",
+      "bin_id": "bin-002",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-19",
+      "bin_id": "bin-002",
+      "position": [
+        5,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-20",
+      "bin_id": "bin-002",
+      "position": [
+        0,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-21",
+      "bin_id": "bin-002",
+      "position": [
+        5,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-22",
+      "bin_id": "bin-002",
+      "position": [
+        0,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-23",
+      "bin_id": "bin-002",
+      "position": [
+        5,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-24",
+      "bin_id": "bin-003",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-25",
+      "bin_id": "bin-003",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-26",
+      "bin_id": "bin-003",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-27",
+      "bin_id": "bin-003",
+      "position": [
+        5,
+        5,
+        0
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-28",
+      "bin_id": "bin-003",
+      "position": [
+        0,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-29",
+      "bin_id": "bin-003",
+      "position": [
+        5,
+        0,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-30",
+      "bin_id": "bin-003",
+      "position": [
+        0,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "cube-31",
+      "bin_id": "bin-003",
+      "position": [
+        5,
+        5,
+        5
+      ],
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "original_size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.168023
+}

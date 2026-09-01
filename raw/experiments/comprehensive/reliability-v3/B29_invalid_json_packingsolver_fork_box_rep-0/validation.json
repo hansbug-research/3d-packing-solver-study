@@ -1,0 +1,25 @@
+{
+  "fault_command": [
+    "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/box/packingsolver_box",
+    "--items",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-shk2d7hm/items.csv",
+    "--bins",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-shk2d7hm/bins.csv",
+    "--objective",
+    "bin-packing",
+    "--time-limit",
+    "1",
+    "--memory-limit",
+    "128",
+    "--verbosity-level",
+    "0"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 8,
+  "status": "INVALID_CERTIFICATE",
+  "validation_error_count": 1,
+  "validation_errors": [
+    "malformed input rejected"
+  ]
+}

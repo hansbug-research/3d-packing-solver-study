@@ -1,0 +1,97 @@
+{
+  "scenario": "reliability-scale10",
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        100,
+        100,
+        100
+      ],
+      "max_weight": 9.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "cube-0",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-1",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-2",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-3",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-4",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-5",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-6",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "cube-7",
+      "size": [
+        50,
+        50,
+        50
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ]
+}

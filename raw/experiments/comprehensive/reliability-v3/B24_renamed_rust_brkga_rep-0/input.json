@@ -1,0 +1,97 @@
+{
+  "scenario": "reliability-renamed-8-1",
+  "bins": [
+    {
+      "id": "bin-000",
+      "size": [
+        10,
+        10,
+        10
+      ],
+      "max_weight": 9.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "renamed-0",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-1",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-2",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-3",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-4",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-5",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-6",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "renamed-7",
+      "size": [
+        5,
+        5,
+        5
+      ],
+      "weight": 1.0,
+      "orientation_requirement": "any"
+    }
+  ]
+}

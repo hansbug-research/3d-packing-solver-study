@@ -1,18 +1,18 @@
 {
   "coverage": {
-    "benchmarks_with_runs": 13,
+    "benchmarks_with_runs": 19,
     "benchmarks_with_status_records": 32,
     "cells_with_evidence": 515,
     "evidence_cell_rate": 0.8470394736842105,
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 29,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.12664473684210525,
-    "protocol_v3_executed_cells": 77,
-    "protocol_v3_status_only_cells": 409,
+    "protocol_v3_executed_cell_rate": 0.29605263157894735,
+    "protocol_v3_executed_cells": 180,
+    "protocol_v3_status_only_cells": 306,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2122,
-      "PROTOCOL_V3": 60458
+      "PROTOCOL_V3": 60702
     },
     "records_by_benchmark": {
       "B01": 25283,
@@ -38,28 +38,29 @@
       "B21": 11,
       "B22": 19,
       "B23": 19,
-      "B24": 19,
-      "B25": 19,
-      "B26": 19,
-      "B27": 19,
-      "B28": 19,
-      "B29": 19,
+      "B24": 76,
+      "B25": 35,
+      "B26": 38,
+      "B27": 95,
+      "B28": 76,
+      "B29": 38,
       "B30": 11,
       "B31": 19,
       "B32": 19
     },
-    "run_records": 62580,
+    "run_records": 62824,
     "run_status_counts": {
-      "COMPLETED": 48638,
-      "ERROR": 6,
-      "NOT_RUN": 421,
+      "CANCELLED": 16,
+      "COMPLETED": 48929,
+      "ERROR": 46,
+      "NOT_RUN": 318,
       "TIME_LIMIT": 13515
     },
     "solution_status_counts": {
-      "INVALID_CERTIFICATE": 337,
-      "NOT_APPLICABLE": 421,
-      "NO_SOLUTION": 6891,
-      "VALID_COMPLETE": 920,
+      "INVALID_CERTIFICATE": 342,
+      "NOT_APPLICABLE": 318,
+      "NO_SOLUTION": 6955,
+      "VALID_COMPLETE": 1198,
       "VALID_PARTIAL": 54011
     }
   },
@@ -699,6 +700,1545 @@
         "valid_rate": 1.0
       }
     ],
+    "reliability": {
+      "fault": [
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020855993032455444,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "exact_cp_sat",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020844065118581057,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "exact_cplex",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020802040118724108,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "exact_gurobi",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020840781973674893,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "exact_scip",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020585978869348764,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "go_bp3d",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020859745796769857,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "jerry",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.02084587304852903,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "packingsolver_fork_box",
+          "invalid_input_status": "COMPLETED"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.006250024074688554,
+          "cancel_status": "COMPLETED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 0.5,
+          "handled_cases": 1,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "invalid_input_status": "COMPLETED"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020912639098241925,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "packingsolver_upstream_box",
+          "invalid_input_status": "COMPLETED"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": null,
+          "cancel_status": "ERROR",
+          "fault_cases": 2,
+          "fault_recovery_rate": 0.5,
+          "handled_cases": 1,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020800697850063443,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "py3dbp",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020615265937522054,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "rust_brkga",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.02035490400157869,
+          "cancel_status": "COMPLETED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 0.5,
+          "handled_cases": 1,
+          "implementation_id": "rust_extreme_point",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.020704675931483507,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "rust_ga",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.007400767877697945,
+          "cancel_status": "COMPLETED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 0.5,
+          "handled_cases": 1,
+          "implementation_id": "rust_layer",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.02058260189369321,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "rust_sa",
+          "invalid_input_status": "ERROR"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.04964263387955725,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 0.5,
+          "handled_cases": 1,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "invalid_input_status": "CANCELLED"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.04946414497680962,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "skjolber_laff",
+          "invalid_input_status": "COMPLETED"
+        },
+        {
+          "benchmark_id": "B29",
+          "cancel_latency_s": 0.03926979401148856,
+          "cancel_status": "CANCELLED",
+          "fault_cases": 2,
+          "fault_recovery_rate": 1.0,
+          "handled_cases": 2,
+          "implementation_id": "skjolber_plain",
+          "invalid_input_status": "COMPLETED"
+        }
+      ],
+      "metamorphic": [
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "exact_cp_sat",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "exact_cplex",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "exact_gurobi",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "exact_scip",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "go_bp3d",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "jerry",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "packingsolver_fork_box",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "packingsolver_upstream_box",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "NO_SOLUTION",
+          "benchmark_id": "B24",
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "invariance_rate": 0.0,
+          "invariant_cases": 0,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "py3dbp",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "rust_brkga",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "rust_extreme_point",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "rust_ga",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "rust_layer",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "rust_sa",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "skjolber_fast_bruteforce",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "skjolber_laff",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        },
+        {
+          "base_status": "VALID_COMPLETE",
+          "benchmark_id": "B24",
+          "implementation_id": "skjolber_plain",
+          "invariance_rate": 1.0,
+          "invariant_cases": 3,
+          "transform_cases": 3
+        }
+      ],
+      "numeric": [
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "exact_cp_sat",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "exact_cplex",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "exact_gurobi",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "exact_scip",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "packingsolver_fork_box",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 1.0,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "invalid_or_missing": 0,
+          "passing_cases": 3
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 0.0,
+          "implementation_id": "packingsolver_upstream_box",
+          "invalid_or_missing": 3,
+          "passing_cases": 0
+        },
+        {
+          "benchmark_id": "B25",
+          "cases": 3,
+          "expected_cost_rate": 0.0,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "invalid_or_missing": 3,
+          "passing_cases": 0
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "exact_cp_sat",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "exact_cplex",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "exact_gurobi",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "exact_scip",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "go_bp3d",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "jerry",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "packingsolver_fork_box",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "packingsolver_upstream_box",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "invalid_or_missing": 2,
+          "numeric_consistency_rate": 0.0,
+          "passing_cases": 0
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "py3dbp",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "rust_brkga",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "rust_extreme_point",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "rust_ga",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "rust_layer",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "rust_sa",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "skjolber_laff",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        },
+        {
+          "benchmark_id": "B26",
+          "cases": 2,
+          "implementation_id": "skjolber_plain",
+          "invalid_or_missing": 0,
+          "numeric_consistency_rate": 1.0,
+          "passing_cases": 2
+        }
+      ],
+      "repeatability": [
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "exact_cp_sat",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.010285206837579608,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.00036113702817479765
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "exact_cplex",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.028875567950308323,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.0010275196792187754
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "exact_gurobi",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.007690187077969313,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.00013205297281096353
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "exact_scip",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.022620772942900658,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.0009832957306120122
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "go_bp3d",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.0013403322082012892,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 3.8111063404383796e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "jerry",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.3974889600649476,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.0025979260485820424
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "packingsolver_fork_box",
+          "mean_bins": 1.0,
+          "p95_wall_s": 1.0035640599671751,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 8.76971291956637e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.004584847018122673,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 3.905970782667364e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "packingsolver_upstream_box",
+          "mean_bins": 1.0,
+          "p95_wall_s": 1.0032776999287307,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 6.939496007496291e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": null,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "mean_bins": null,
+          "p95_wall_s": null,
+          "repetitions": 5,
+          "valid_rate": 0.0,
+          "valid_repetitions": 0,
+          "wall_stddev_s": null
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "py3dbp",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.06632494297809899,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.0009812250976428082
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "rust_brkga",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.0034468090161681175,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.00014640343340771822
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "rust_extreme_point",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.0010473839938640594,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 4.762722280594389e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "rust_ga",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.005950432037934661,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.0001526774922842943
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "rust_layer",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.00089788599871099,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 2.7512374113291053e-05
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "rust_sa",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.006859543034806848,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.00010911913026781675
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.2405324960127473,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.010922297934880825
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "skjolber_laff",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.23085171007551253,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.009918159318917283
+        },
+        {
+          "benchmark_id": "B27",
+          "bins_stddev": 0.0,
+          "implementation_id": "skjolber_plain",
+          "mean_bins": 1.0,
+          "p95_wall_s": 0.23948126402683556,
+          "repetitions": 5,
+          "valid_rate": 1.0,
+          "valid_repetitions": 5,
+          "wall_stddev_s": 0.008104801296487149
+        }
+      ],
+      "scalability": [
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "exact_cp_sat",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.07658895594067872
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "exact_cp_sat",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.5671077209990472
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "exact_cp_sat",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 3.9619713351130486
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "exact_cp_sat",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.024178375024348497
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "exact_cplex",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.09277938399463892
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "exact_cplex",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.7638792819343507
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "exact_cplex",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 6.110028560040519
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "exact_cplex",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.02616151887923479
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "exact_gurobi",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.06783947395160794
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "exact_gurobi",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.331888813059777
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "exact_gurobi",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 2.6982900470029563
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "exact_gurobi",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.007184450048953295
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "exact_scip",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.6150044267997146
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 0,
+          "implementation_id": "exact_scip",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 10.246058069169521
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 0,
+          "implementation_id": "exact_scip",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 11.775725051993504
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "exact_scip",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.019753944128751755
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "go_bp3d",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0013054120354354382
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "go_bp3d",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0015127439983189106
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "go_bp3d",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.002265659859403968
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "go_bp3d",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.001310523133724928
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "jerry",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.3983091451227665
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "jerry",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.41063674283213913
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "jerry",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.4830016160849482
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "jerry",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.3938758810982108
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "packingsolver_fork_box",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0035825539380312
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "packingsolver_fork_box",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0036459800321609
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "packingsolver_fork_box",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0039001740515232
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "packingsolver_fork_box",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0032796110026538
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.007559964898973703
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.016465592896565795
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.04941441211849451
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "packingsolver_fork_boxstacks",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.004253017948940396
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "packingsolver_upstream_box",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.003436157014221
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "packingsolver_upstream_box",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0036504501476884
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "packingsolver_upstream_box",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.00412076106295
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "packingsolver_upstream_box",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 1.0031412548851222
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.0
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.0
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.0
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": null,
+          "implementation_id": "packingsolver_upstream_boxstacks",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "ERROR",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 0.0
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "py3dbp",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.06833212007768452
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "py3dbp",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.080590097932145
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "py3dbp",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.12803702894598246
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "py3dbp",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.06561447191052139
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "rust_brkga",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.006054544122889638
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "rust_brkga",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.013568747090175748
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "rust_brkga",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.040855826111510396
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "rust_brkga",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.002997014904394746
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "rust_extreme_point",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0010296190157532692
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "rust_extreme_point",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0010987978894263506
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "rust_extreme_point",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0014320358168333769
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "rust_extreme_point",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0009624140802770853
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "rust_ga",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.011667110025882721
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "rust_ga",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.026823137886822224
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "rust_ga",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.06575368414632976
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "rust_ga",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.005714982049539685
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "rust_layer",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0008849520236253738
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "rust_layer",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0009568140376359224
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "rust_layer",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0011003890540450811
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "rust_layer",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.0009556610602885485
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "rust_sa",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.013111470965668559
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "rust_sa",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.03164624096825719
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "rust_sa",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.07360196183435619
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "rust_sa",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.006574369966983795
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 0,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 10.067301715025678
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 0,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 10.067094054073095
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 0,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "NO_SOLUTION",
+          "wall_s": 10.078189610969275
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "skjolber_fast_bruteforce",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.24465010315179825
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "skjolber_laff",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.2317392269615084
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "skjolber_laff",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.22490361612290144
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "skjolber_laff",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.2023338540457189
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "skjolber_laff",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.23164584417827427
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 2,
+          "implementation_id": "skjolber_plain",
+          "items": 16,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.2371440469287336
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 4,
+          "implementation_id": "skjolber_plain",
+          "items": 32,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.22581399395130575
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 8,
+          "implementation_id": "skjolber_plain",
+          "items": 64,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.22618000907823443
+        },
+        {
+          "benchmark_id": "B28",
+          "bins_used": 1,
+          "implementation_id": "skjolber_plain",
+          "items": 8,
+          "peak_rss_bytes": null,
+          "run_status": "COMPLETED",
+          "solution_status": "VALID_COMPLETE",
+          "wall_s": 0.22133444901555777
+        }
+      ]
+    },
     "variable_cost": [
       {
         "benchmark_id": "B09",
@@ -1137,8 +2677,11 @@
   "protocol_version": "benchmark-protocol/3",
   "schema_version": 1,
   "source_sha256": {
-    "results/comprehensive/run-manifest.jsonl": "202e57031d3b2501e45b98f90b2a7d9ba7d9d3d697da7841d631104879d99ba5",
-    "results/comprehensive/suite-implementation-plan.jsonl": "ab94cf73c7a7674f64a089c7491b6e11aadc37144ca8de9034ca7d7226340e72"
+    "benchmarks/comprehensive/run_reliability.py": "a7ac015c2d83ef48337fbdd7bc99c452da22465c915fc29da2498d0a02f3cc57",
+    "benchmarks/data/comprehensive/reliability-fixture.json": "43e6b3c200ee39b362e9b8675cb2b696203cb70669bc1d8c3931a9f1562e5fe7",
+    "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
+    "results/comprehensive/run-manifest.jsonl": "d495d7092f7726e32e0c69f648874c3b353514f6bbf7152c64c2b2a7e35b0529",
+    "results/comprehensive/suite-implementation-plan.jsonl": "306396cf80603c77814f889363e4cfe0a5695f0d1101c64c4465e05c29fa6705"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

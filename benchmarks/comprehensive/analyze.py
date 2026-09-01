@@ -790,6 +790,103 @@ def resource_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return rows
 
 
+def reliability_rankings(records: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Summarize B24-B29 without combining unlike reliability questions."""
+    grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if executed(record) and record["benchmark_id"] in {"B24", "B25", "B26", "B27", "B28", "B29"}:
+            grouped[(record["benchmark_id"], record["implementation_id"])].append(record)
+
+    invariance: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in sorted(grouped.items()):
+        if benchmark_id != "B24":
+            continue
+        by_variant = {record["problem_variant"]: record for record in group}
+        base = by_variant.get("base")
+        checks = []
+        for variant in ("permuted", "renamed", "axis_swap"):
+            candidate = by_variant.get(variant)
+            checks.append(bool(base and candidate and base["solution_status"] == "VALID_COMPLETE"
+                               and candidate["solution_status"] == "VALID_COMPLETE"
+                               and base["metrics"].get("bins_used") == candidate["metrics"].get("bins_used")))
+        invariance.append({"benchmark_id": "B24", "implementation_id": implementation_id,
+                           "transform_cases": len(checks), "invariant_cases": sum(checks),
+                           "invariance_rate": sum(checks) / len(checks) if checks else 0.0,
+                           "base_status": base["solution_status"] if base else "MISSING"})
+
+    numeric: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in sorted(grouped.items()):
+        if benchmark_id not in {"B25", "B26"}:
+            continue
+        by_variant = {record["problem_variant"]: record for record in group}
+        if benchmark_id == "B25":
+            expected = {"cost_base": 10.0, "cost_permuted": 10.0, "cost_scaled": 70.0}
+            variants = tuple(expected)
+            label = "expected_cost_rate"
+        else:
+            expected = {"base": None, "scale10": None}
+            variants = tuple(expected)
+            label = "numeric_consistency_rate"
+        checks = []
+        for variant in variants:
+            record = by_variant.get(variant)
+            if not record or record["solution_status"] != "VALID_COMPLETE":
+                checks.append(False)
+                continue
+            if benchmark_id == "B25":
+                checks.append(abs(float(record["metrics"].get("total_cost", math.inf)) - expected[variant]) <= 1e-7)
+            else:
+                checks.append(record["metrics"].get("bins_used") == 1)
+        numeric.append({"benchmark_id": benchmark_id, "implementation_id": implementation_id,
+                        "cases": len(checks), "passing_cases": sum(checks), label: sum(checks) / len(checks) if checks else 0.0,
+                        "invalid_or_missing": len(checks) - sum(checks)})
+
+    repeatability: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in sorted(grouped.items()):
+        if benchmark_id != "B27":
+            continue
+        valid = [record for record in group if record["solution_status"] == "VALID_COMPLETE"]
+        bins = [float(record["metrics"].get("bins_used")) for record in valid if record["metrics"].get("bins_used") is not None]
+        wall = [float(record["resources"].get("wall_s")) for record in valid if record["resources"].get("wall_s") is not None]
+        repeatability.append({"benchmark_id": benchmark_id, "implementation_id": implementation_id,
+                              "repetitions": len(group), "valid_repetitions": len(valid),
+                              "valid_rate": len(valid) / len(group) if group else 0.0,
+                              "mean_bins": mean(bins), "bins_stddev": statistics.pstdev(bins) if len(bins) > 1 else 0.0 if bins else None,
+                              "p95_wall_s": nearest_rank(wall, 0.95), "wall_stddev_s": statistics.pstdev(wall) if len(wall) > 1 else 0.0 if wall else None})
+
+    scalability: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in sorted(grouped.items()):
+        if benchmark_id != "B28":
+            continue
+        for record in sorted(group, key=lambda row: row["problem_variant"]):
+            count = int(record["problem_variant"].removeprefix("n")) if record["problem_variant"].startswith("n") else None
+            scalability.append({"benchmark_id": benchmark_id, "implementation_id": implementation_id, "items": count,
+                                "run_status": record["run_status"], "solution_status": record["solution_status"],
+                                "bins_used": record["metrics"].get("bins_used"), "wall_s": record["resources"].get("wall_s"),
+                                "peak_rss_bytes": record["resources"].get("peak_rss_bytes")})
+
+    fault: list[dict[str, Any]] = []
+    for (benchmark_id, implementation_id), group in sorted(grouped.items()):
+        if benchmark_id != "B29":
+            continue
+        by_variant = {record["problem_variant"]: record for record in group}
+        invalid = by_variant.get("invalid_json")
+        cancelled = by_variant.get("cancelled")
+        # A CLI that exits zero while returning no valid certificate still
+        # handled malformed input; retain that distinction from a crash.
+        invalid_ok = bool(invalid and (invalid["run_status"] == "ERROR" or invalid["solution_status"] == "INVALID_CERTIFICATE"))
+        cancel_ok = bool(cancelled and cancelled["run_status"] == "CANCELLED")
+        latency = cancelled["metrics"].get("cancel_latency_s") if cancelled else None
+        fault.append({"benchmark_id": benchmark_id, "implementation_id": implementation_id,
+                      "fault_cases": 2, "handled_cases": int(invalid_ok) + int(cancel_ok),
+                      "fault_recovery_rate": (int(invalid_ok) + int(cancel_ok)) / 2,
+                      "invalid_input_status": invalid["run_status"] if invalid else "MISSING",
+                      "cancel_status": cancelled["run_status"] if cancelled else "MISSING",
+                      "cancel_latency_s": latency})
+    return {"metamorphic": invariance, "numeric": numeric, "repeatability": repeatability,
+            "scalability": scalability, "fault": fault}
+
+
 def generated_files() -> dict[Path, str]:
     manifest_path = RESULTS_DIR / "run-manifest.jsonl"
     plan_path = RESULTS_DIR / "suite-implementation-plan.jsonl"
@@ -809,6 +906,7 @@ def generated_files() -> dict[Path, str]:
     variable_cost = variable_cost_rankings(records)
     open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
+    reliability = reliability_rankings(records)
 
     solution_counts = Counter(record["solution_status"] for record in records)
     run_counts = Counter(record["run_status"] for record in records)
@@ -828,6 +926,9 @@ def generated_files() -> dict[Path, str]:
         "source_sha256": {
             "results/comprehensive/run-manifest.jsonl": sha256(manifest_path),
             "results/comprehensive/suite-implementation-plan.jsonl": sha256(plan_path),
+            "benchmarks/comprehensive/run_reliability.py": sha256(ROOT / "benchmarks/comprehensive/run_reliability.py"),
+            "benchmarks/data/comprehensive/reliability-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/reliability-fixture.json"),
+            "results/comprehensive/reliability-source-audit.json": sha256(ROOT / "results/comprehensive/reliability-source-audit.json"),
         },
         "coverage": {
             "planned_cells": len(coverage),
@@ -855,6 +956,7 @@ def generated_files() -> dict[Path, str]:
             "exact_proof": exact,
             "variable_cost": variable_cost,
             "open_dimension": open_dimension,
+            "reliability": reliability,
         },
         "warnings": [
             "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",
@@ -934,7 +1036,14 @@ def generated_files() -> dict[Path, str]:
         "implementation_id", "timing_comparison_group", "valid_instances", "wall_samples", "median_wall_s", "p95_wall_s",
         "solver_samples", "median_solver_s", "p95_solver_s", "peak_rss_bytes",
     ]
-    return {
+    reliability_fields = {
+        "metamorphic": ["benchmark_id", "implementation_id", "transform_cases", "invariant_cases", "invariance_rate", "base_status"],
+        "numeric": ["benchmark_id", "implementation_id", "cases", "passing_cases", "expected_cost_rate", "numeric_consistency_rate", "invalid_or_missing"],
+        "repeatability": ["benchmark_id", "implementation_id", "repetitions", "valid_repetitions", "valid_rate", "mean_bins", "bins_stddev", "p95_wall_s", "wall_stddev_s"],
+        "scalability": ["benchmark_id", "implementation_id", "items", "run_status", "solution_status", "bins_used", "wall_s", "peak_rss_bytes"],
+        "fault": ["benchmark_id", "implementation_id", "fault_cases", "handled_cases", "fault_recovery_rate", "invalid_input_status", "cancel_status", "cancel_latency_s"],
+    }
+    output = {
         RESULTS_DIR / "aggregate.json": canonical_json(aggregate),
         RESULTS_DIR / "coverage.csv": write_csv(coverage, coverage_fields),
         RESULTS_DIR / "rankings" / "volume-knapsack.csv": write_csv(volume, volume_fields),
@@ -952,6 +1061,9 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
     }
+    for kind, rows in reliability.items():
+        output[RESULTS_DIR / "rankings" / f"reliability-{kind}.csv"] = write_csv(rows, reliability_fields[kind])
+    return output
 
 
 def main() -> int:

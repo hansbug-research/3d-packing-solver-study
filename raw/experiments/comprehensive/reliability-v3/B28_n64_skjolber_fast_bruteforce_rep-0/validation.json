@@ -1,0 +1,12 @@
+{
+  "bins_used": 0,
+  "library_reported": false,
+  "objective": 0,
+  "placements": 0,
+  "required_items": 64,
+  "scale": 1,
+  "status": "NO_SOLUTION",
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "n64"
+}

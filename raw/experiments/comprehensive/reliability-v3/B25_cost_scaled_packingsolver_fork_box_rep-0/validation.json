@@ -1,0 +1,13 @@
+{
+  "bins_used": 2,
+  "library_reported": null,
+  "objective": 2,
+  "placements": 2,
+  "required_items": 2,
+  "scale": 1,
+  "status": "VALID_COMPLETE",
+  "total_cost": 70.0,
+  "validation_error_count": 0,
+  "validation_errors": [],
+  "variant": "cost_scaled"
+}

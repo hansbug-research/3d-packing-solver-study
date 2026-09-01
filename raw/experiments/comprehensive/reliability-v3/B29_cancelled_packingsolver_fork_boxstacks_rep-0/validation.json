@@ -1,0 +1,24 @@
+{
+  "cancel_latency_s": 0.006250024074688554,
+  "fault_command": [
+    "/home/zhangshaoang/packing-software-study/.cache/build-fork/src/boxstacks/packingsolver_boxstacks",
+    "--items",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-82ysq1el/items.csv",
+    "--bins",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-82ysq1el/bins.csv",
+    "--objective",
+    "bin-packing",
+    "--time-limit",
+    "10",
+    "--memory-limit",
+    "512",
+    "--verbosity-level",
+    "0"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 512,
+  "status": "COMPLETED",
+  "validation_error_count": 0,
+  "validation_errors": []
+}

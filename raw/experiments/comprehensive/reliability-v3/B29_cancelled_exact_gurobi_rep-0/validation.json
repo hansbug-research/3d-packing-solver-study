@@ -1,0 +1,17 @@
+{
+  "cancel_latency_s": 0.020802040118724108,
+  "fault_command": [
+    "/home/zhangshaoang/packing-software-study/.venv/bin/python",
+    "/home/zhangshaoang/packing-software-study/benchmarks/comprehensive/exact_reliability_worker.py",
+    "--backend",
+    "gurobi",
+    "--input",
+    "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/reliability-v3/fault-_yquemti/input.json"
+  ],
+  "objective": null,
+  "placements": 0,
+  "required_items": 512,
+  "status": "CANCELLED",
+  "validation_error_count": 0,
+  "validation_errors": []
+}
