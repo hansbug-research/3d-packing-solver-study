@@ -7,7 +7,7 @@
 - Alonso 2019 与 Alonso 2020 在固定 ESICUP 提交中自包含，分别有 111 和 107 个实例；本轮已经完成格式、字段分布和需求恒等式审计，但没有运行完整优化 benchmark。
 - 两套 Alonso 数据都不是普通 3D bin packing。原问题包含产品、层、托盘堆和车辆之间的联合决策，还包含交付日期、重量/轴荷、重心和动态稳定等约束。当前五种实现均不能无损表达完整问题，状态应为 `NOT_SUPPORTED`。
 - 固定 ESICUP 提交中的 BAYTP 只有 `README.txt`、`baytp1.txt` 和 `baytp2.txt`，缺少 README 明确要求的共享 `products` 与 `shelves` 文件。因此该快照内的 BAYTP 状态是 `ESICUP_SNAPSHOT_INCOMPLETE` 和 `NOT_RUN`。
-- BAYTP 缺失文件仍可从官方 OR-Library 公开地址恢复；本审计核对了内容哈希和统计，但没有把临时下载物写进仓库，也没有把它们视为已经固定归档的数据依赖。
+- BAYTP 缺失文件仍可从官方 OR-Library 公开地址恢复；本审计核对了内容哈希和统计，并由 [`parse_b30_source.py`](../benchmarks/comprehensive/parse_b30_source.py) 生成固定 canonical audit。原始字节不写入仓库，运行时仍须按登记 hash 下载；这证明输入可复现，但不等于完整求解器已经运行。
 - 可以运行的普通 packer 实验必须命名为 `RELAXED_GEOMETRIC_SUBPROBLEM`，并显式列出外部固定或删除的原始决策。此类结果不能进入完整 Alonso/BAYTP 排名。
 
 ## 状态口径
@@ -237,6 +237,6 @@ python benchmarks/audit_industrial_datasets.py \
 |---|---|---|---|
 | Alonso 2019 | 固定 ESICUP commit 自包含 | 已解析、统计和字段审计 | `NOT_SUPPORTED / NOT_RUN`（完整问题） |
 | Alonso 2020 | 固定 ESICUP commit 自包含；第 2 列存在文档/文件冲突 | 已解析、验证需求恒等式和字段分布 | `NOT_SUPPORTED / NOT_RUN`（完整问题） |
-| BAYTP | ESICUP 快照不完整；官方 OR-Library 可按哈希恢复 | 已核对恢复文件，未纳入仓库数据归档 | `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN` |
+| BAYTP | ESICUP 快照不完整；官方 OR-Library 四文件可按哈希恢复 | 已通过 canonical parser 核对恢复文件，原始字节未纳入仓库；完整 shelf adapter 未完成 | `input_status=VALID; ADAPTER_MISSING / NOT_RUN` |
 
 后续若实现新模型，进入完整排名的最低条件是：逐字段说明映射、对所有原始约束生成可独立验证的 certificate、报告主目标与完整性、保留固定数据 provenance，并把任何预处理固定的决策从完整 benchmark 中剔除。

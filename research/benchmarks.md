@@ -112,7 +112,7 @@ Exact-small 用 7 个手工真值场景测试网格、溢出拆箱、需旋转�
 
 ### 工业数据集只审计、未降格求解
 
-Alonso 2019/2020 已解析并核对字段、行数和需求恒等式，但现有 adapter 不能保真表达完整车辆、托盘、层、交付日和实际约束，状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP BAYTP 快照缺公共 `products`/`shelves`，状态为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。本轮没有删除字段后用普通 3D BPP 冒充完整工业 benchmark。
+Alonso 2019/2020 已解析并核对字段、行数和需求恒等式，但现有 adapter 不能保真表达完整车辆、托盘、层、交付日和实际约束，状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP BAYTP shallow 快照仍缺公共 `products`/`shelves`，但 OR-Library 四个官方文件已按 [`parse_b30_source.py`](../benchmarks/comprehensive/parse_b30_source.py) 完成逐文件格式、顺序和 hash 审计；因此输入源已冻结，完整求解仍为 `ADAPTER_MISSING / NOT_RUN`。本轮没有删除字段后用普通 3D BPP 冒充完整工业 benchmark。
 
 所有 benchmark 的目的、结果路径和库覆盖矩阵见 [`../results/campaign/README.md`](../results/campaign/README.md)。
 

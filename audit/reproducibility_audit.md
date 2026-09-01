@@ -20,7 +20,7 @@
 | Java THPACK9 | `bash benchmarks/campaign/run_skjolber_thpack.sh` | Plain/LAFF 各 44/44 合法 |
 | Go/Rust THPACK9 | `bash benchmarks/campaign/crosslang_run_thpack9.sh` | Go 与 Rust ExtremePoint adapter 各 44/44 合法 |
 | Rust 策略重复 | 跨语言 strategy adapter，每策略 THPACK9-1 重复 5 次 | ExtremePoint 5/5 合法；Layer/GA/BRKGA/SA 各 0/5 |
-| 工业数据审计 | `.venv/bin/python benchmarks/audit_industrial_datasets.py --esicup-root .cache/esicup-datasets` | Alonso 2019/2020 解析通过；BAYTP 快照缺文件状态保留 |
+| 工业数据审计 | `.venv/bin/python benchmarks/audit_industrial_datasets.py --esicup-root .cache/esicup-datasets`；`.venv/bin/python benchmarks/comprehensive/parse_b30_source.py --source-dir .cache/baytp --output results/comprehensive/b30-canonical-source-audit.json --check` | Alonso 2019/2020 解析通过；BAYTP shallow 快照缺公共文件，但 OR-Library 四文件 canonical audit 通过，完整 adapter 仍未运行 |
 | Campaign 汇总 | `.venv/bin/python benchmarks/campaign/analyze_campaign.py` | `results/campaign/aggregate.json` 绑定 35 个输入 SHA-256 |
 
 ## 证据边界
