@@ -1,0 +1,49 @@
+{
+  "benchmark_id": "B31",
+  "cases": [
+    {
+      "id": "B31/FLAT_MIXED",
+      "items": 6,
+      "max_layers": 2,
+      "max_weight": 200.0,
+      "pallet_size": [
+        1800,
+        1200,
+        1200
+      ],
+      "required_items": 6
+    },
+    {
+      "id": "B31/STACKABLE",
+      "items": 6,
+      "max_layers": 2,
+      "max_weight": 200.0,
+      "pallet_size": [
+        1200,
+        1200,
+        1200
+      ],
+      "required_items": 6
+    },
+    {
+      "id": "B31/WEIGHT_INFEASIBLE",
+      "items": 3,
+      "max_layers": 1,
+      "max_weight": 40.0,
+      "pallet_size": [
+        1800,
+        1200,
+        1200
+      ],
+      "required_items": 3
+    }
+  ],
+  "fixture": "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json",
+  "fixture_sha256": "6b1cad8afd20d8e4a316787570cb63d8de02f0076417248a110b884ad5d0b9d8",
+  "input_status": "VALID",
+  "license": "CC0-1.0",
+  "record_kind": "B31_SOURCE_AUDIT",
+  "run_status": "NOT_RUN",
+  "schema_version": 1,
+  "semantic_note": "Three small cases isolate flat mixed-SKU placement, bounded stacking, and pallet payload infeasibility."
+}

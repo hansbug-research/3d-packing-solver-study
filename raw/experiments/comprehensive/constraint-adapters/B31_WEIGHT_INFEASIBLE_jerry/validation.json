@@ -1,0 +1,16 @@
+{
+  "bins_used": 1,
+  "constraint_errors": [
+    "pallet-light: weight 75.0 exceeds 40.0"
+  ],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 1,
+  "packed_items": 3,
+  "required_items": 3,
+  "total_cost": 1.0,
+  "validation_error_count": 1,
+  "validation_errors": [
+    "pallet-light: weight 75.0 exceeds 40.0"
+  ]
+}

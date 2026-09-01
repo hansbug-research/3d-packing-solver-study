@@ -725,6 +725,37 @@ def industrial_baytp_rankings(records: list[dict[str, Any]]) -> list[dict[str, A
     return rows
 
 
+def industrial_mixed_pallet_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Summarize B31 mixed-SKU pallet cases and their stack constraints."""
+    groups: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if executed(record) and record["benchmark_id"] == "B31":
+            groups[(record["implementation_id"], record["comparison_track"], record["problem_scope"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for (implementation_id, track, scope), group in groups.items():
+        statuses = Counter(record["solution_status"] for record in group)
+        packed = [record["metrics"].get("packed_items") for record in group if record["metrics"].get("packed_items") is not None]
+        hard = [record["metrics"].get("hard_violation_count") for record in group if record["metrics"].get("hard_violation_count") is not None]
+        rows.append(
+            {
+                "benchmark_id": "B31",
+                "implementation_id": implementation_id,
+                "comparison_track": track,
+                "problem_scope": scope,
+                "records": len(group),
+                "valid_complete": statuses["VALID_COMPLETE"],
+                "constraint_violation": statuses["CONSTRAINT_VIOLATION"],
+                "invalid_certificate": statuses["INVALID_CERTIFICATE"],
+                "no_solution": statuses["NO_SOLUTION"],
+                "complete_rate": statuses["VALID_COMPLETE"] / len(group) if group else 0.0,
+                "mean_packed_items": mean(packed),
+                "mean_hard_violation_count": mean(hard),
+            }
+        )
+    rows.sort(key=lambda row: (-row["complete_rate"], row["constraint_violation"], row["invalid_certificate"], row["implementation_id"]))
+    return rows
+
+
 def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Rank only records carrying a validated variable-cost objective.
 
@@ -944,6 +975,7 @@ def generated_files() -> dict[Path, str]:
     exact = exact_rankings(records)
     constraints = constraint_rankings(records)
     industrial_baytp = industrial_baytp_rankings(records)
+    industrial_mixed_pallet = industrial_mixed_pallet_rankings(records)
     variable_cost = variable_cost_rankings(records)
     open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
@@ -970,6 +1002,9 @@ def generated_files() -> dict[Path, str]:
             "benchmarks/comprehensive/run_reliability.py": sha256(ROOT / "benchmarks/comprehensive/run_reliability.py"),
             "benchmarks/data/comprehensive/reliability-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/reliability-fixture.json"),
             "results/comprehensive/reliability-source-audit.json": sha256(ROOT / "results/comprehensive/reliability-source-audit.json"),
+            "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json": sha256(ROOT / "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json"),
+            "results/comprehensive/b31-source-audit.json": sha256(ROOT / "results/comprehensive/b31-source-audit.json"),
+            "benchmarks/comprehensive/run_constraint_adapters.py": sha256(ROOT / "benchmarks/comprehensive/run_constraint_adapters.py"),
         },
         "coverage": {
             "planned_cells": len(coverage),
@@ -996,7 +1031,9 @@ def generated_files() -> dict[Path, str]:
             "profit_knapsack": profit,
             "exact_proof": exact,
             "variable_cost": variable_cost,
-            "open_dimension": open_dimension,
+        "open_dimension": open_dimension,
+            "industrial_baytp": industrial_baytp,
+            "industrial_mixed_pallet": industrial_mixed_pallet,
             "reliability": reliability,
         },
         "warnings": [
@@ -1067,6 +1104,11 @@ def generated_files() -> dict[Path, str]:
         "constraint_violation", "invalid_certificate", "process_errors", "complete_rate",
         "mean_hard_violation_count", "max_hard_violation_count",
     ]
+    industrial_mixed_pallet_fields = [
+        "benchmark_id", "implementation_id", "comparison_track", "problem_scope", "records", "valid_complete",
+        "constraint_violation", "invalid_certificate", "no_solution", "complete_rate", "mean_packed_items",
+        "mean_hard_violation_count",
+    ]
     variable_cost_fields = [
         "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "instances", "valid_complete",
         "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
@@ -1104,6 +1146,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
         RESULTS_DIR / "rankings" / "industrial-baytp.csv": write_csv(industrial_baytp, industrial_baytp_fields),
+        RESULTS_DIR / "rankings" / "industrial-mixed-pallet.csv": write_csv(industrial_mixed_pallet, industrial_mixed_pallet_fields),
         RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
         RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),

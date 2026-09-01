@@ -1,0 +1,231 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "iyulab/u-nesting",
+  "commit": "8cde85b029e4ade663185dacb93fd74440af170d",
+  "language": "Rust",
+  "toolchain": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+  "algorithm": "ExtremePoint; repeated single-boundary adapter",
+  "scenario": "b31_stackable",
+  "capability_status": "ADAPTER_MULTI_BIN",
+  "capability_note": "u-nesting accepts one Boundary3D; full THPACK9 is repeated single-boundary adapter calls",
+  "parameters": {
+    "placement_rule": "first feasible orientation at first feasible extreme point",
+    "rayon_num_threads_env": "1",
+    "seed_applicable": false,
+    "seed_effective": false,
+    "seed_requested": 42,
+    "strategy_requested": "extremepoint",
+    "time_limit_effective": false,
+    "time_limit_ms_requested_per_bin": 10000
+  },
+  "bins": [
+    {
+      "id": "pallet-stack",
+      "size": [
+        1200.0,
+        1200.0,
+        1200.0
+      ],
+      "max_weight": 200.0,
+      "cost": 1.0
+    }
+  ],
+  "items": [
+    {
+      "id": "A:0",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 10.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "A:1",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 10.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "B:0",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "B:1",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "C:0",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "C:1",
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "A:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 10.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "A:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 10.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "B:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "B:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600.0,
+        600.0,
+        0.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 25.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "C:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "C:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600.0,
+        0.0,
+        400.0
+      ],
+      "size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "original_size": [
+        600.0,
+        600.0,
+        400.0
+      ],
+      "weight": 15.0,
+      "rotation": "xyz",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.022188000000000003
+}

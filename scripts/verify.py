@@ -272,7 +272,9 @@ def check_comprehensive_results() -> None:
         "rankings/exact-proof.csv",
         "rankings/constraint-conformance.csv",
         "rankings/industrial-baytp.csv",
+        "rankings/industrial-mixed-pallet.csv",
         "rankings/resource-summary.csv",
+        "b31-source-audit.json",
         "b05-source-audit.json",
     ]
     for relative in required:
@@ -299,7 +301,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62888, 2122, 62888, 62888):
+        ) != (62912, 2122, 62912, 62912):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -308,11 +310,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 537, 19, 236, 22, 19):
+        ) != (608, 537, 19, 244, 23, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 282:
+    if coverage.get("protocol_v3_status_only_cells") != 274:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60766}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60790}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -350,6 +352,13 @@ def check_comprehensive_results() -> None:
         for row in baytp_rows
     ):
         fail("B30 industrial shelf/bay conformance summary changed")
+    with (directory / "rankings" / "industrial-mixed-pallet.csv").open(newline="") as handle:
+        mixed_rows = list(csv.DictReader(handle))
+    if len(mixed_rows) != 8 or any(
+        row.get("records") != "3" or row.get("valid_complete") not in {"0", "1"}
+        for row in mixed_rows
+    ):
+        fail("B31 mixed-SKU pallet conformance summary changed")
     subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
     if not subset_audit_path.exists():
         fail("B07 Skjolber subset API audit is missing")

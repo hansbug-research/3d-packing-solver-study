@@ -199,17 +199,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62888
-    assert summary["protocol_v3_run_records"] == 60766
+    assert summary["combined_run_records"] == len(records) == 62912
+    assert summary["protocol_v3_run_records"] == 60790
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 22
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 23
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
     assert aggregate["coverage"]["cells_with_evidence"] == 537
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 236
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 282
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60766}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 244
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 274
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60790}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -226,6 +226,9 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     baytp = list(csv.DictReader((comprehensive / "rankings" / "industrial-baytp.csv").open(newline="")))
     assert len(baytp) == 8
     assert all(row["valid_complete"] == "0" and row["constraint_violation"] == "1" for row in baytp)
+    mixed = list(csv.DictReader((comprehensive / "rankings" / "industrial-mixed-pallet.csv").open(newline="")))
+    assert len(mixed) == 8
+    assert all(row["records"] == "3" for row in mixed)
 
     exact_b07 = [
         record for record in records
@@ -403,9 +406,9 @@ def test_b07_projection_common_and_jerry_control_rankings() -> None:
 def test_constraint_adapter_projection_campaign_is_complete_and_independently_validated() -> None:
     path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl"
     records = [json.loads(line) for line in path.read_text().splitlines() if line]
-    assert len(records) == 88
-    assert len({record["run_id"] for record in records}) == 88
-    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18", "B30"}
+    assert len(records) == 112
+    assert len({record["run_id"] for record in records}) == 112
+    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18", "B30", "B31"}
     assert {record["implementation_id"] for record in records} == {
         "py3dbp", "jerry", "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
     }
@@ -425,6 +428,10 @@ def test_constraint_adapter_projection_campaign_is_complete_and_independently_va
     assert len(b30) == 8
     assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b30)
     assert all("shelf_bay_sequence" in record["metrics"]["projection_removed_constraints"] for record in b30)
+    b31 = [record for record in records if record["benchmark_id"] == "B31"]
+    assert len(b31) == 24
+    assert {record["problem_variant"] for record in b31} == {"FLAT_MIXED", "STACKABLE", "WEIGHT_INFEASIBLE"}
+    assert all("pallet_stack_rules" in record["metrics"]["projection_removed_constraints"] for record in b31)
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

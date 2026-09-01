@@ -1,0 +1,68 @@
+{
+  "scenario": "b31_weight_infeasible",
+  "benchmark_id": "B31",
+  "problem_variant": "WEIGHT_INFEASIBLE",
+  "items": [
+    {
+      "id": "A:0",
+      "type_id": "A",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25.0,
+      "sku": "A",
+      "stackable": true,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "A:1",
+      "type_id": "A",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25.0,
+      "sku": "A",
+      "stackable": true,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "B:0",
+      "type_id": "B",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25.0,
+      "sku": "B",
+      "stackable": true,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "pallet-light",
+      "type_id": "pallet-light",
+      "size": [
+        1800,
+        1200,
+        1200
+      ],
+      "max_weight": 40.0,
+      "cost": 1.0
+    }
+  ],
+  "expected_complete": true,
+  "stack_rules": {
+    "max_layers": 1,
+    "max_above_weight": 40.0,
+    "min_support_ratio": 1.0
+  },
+  "source_files": {
+    "benchmarks/data/comprehensive/b31-mixed-sku-fixture.json": "6b1cad8afd20d8e4a316787570cb63d8de02f0076417248a110b884ad5d0b9d8"
+  }
+}

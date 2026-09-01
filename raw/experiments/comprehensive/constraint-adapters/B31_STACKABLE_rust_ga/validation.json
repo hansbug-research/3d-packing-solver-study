@@ -1,0 +1,22 @@
+{
+  "bins_used": 1,
+  "constraint_errors": [
+    "A:1: above weight 40.0 exceeds 20.0",
+    "C:0: above weight 25.0 exceeds 20.0",
+    "C:1: support ratio 0.6666666666666666 below minimum",
+    "B:0: support ratio 0.2222222222222222 below minimum"
+  ],
+  "geometry_error_count": 0,
+  "geometry_errors": [],
+  "hard_violation_count": 4,
+  "packed_items": 6,
+  "required_items": 6,
+  "total_cost": 1.0,
+  "validation_error_count": 4,
+  "validation_errors": [
+    "A:1: above weight 40.0 exceeds 20.0",
+    "C:0: above weight 25.0 exceeds 20.0",
+    "C:1: support ratio 0.6666666666666666 below minimum",
+    "B:0: support ratio 0.2222222222222222 below minimum"
+  ]
+}

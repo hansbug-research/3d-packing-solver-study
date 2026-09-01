@@ -27,6 +27,7 @@ RESULTS = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12
 RAW_ROOT = ROOT / "raw" / "experiments" / "comprehensive" / "constraint-adapters"
 EXTENSION_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "constraint-extension-fixture.json"
 B30_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "b30-baytp-fixture.json"
+B31_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "b31-mixed-sku-fixture.json"
 RUNNER = Path(__file__).resolve()
 sys.path.insert(0, str(ROOT / "benchmarks"))
 sys.path.insert(0, str(ROOT / "benchmarks" / "comprehensive"))
@@ -53,6 +54,7 @@ CASE_FILES: dict[str, tuple[str, str, bool]] = {
 }
 
 EXTENSION_CASES = {"B16/KEEP_OUT", "B18/SEGREGATION"}
+B31_CASES = {"B31/FLAT_MIXED", "B31/STACKABLE", "B31/WEIGHT_INFEASIBLE"}
 
 RUST_STRATEGIES = {
     "rust_extreme_point": "extremepoint",
@@ -90,6 +92,34 @@ def rotation_sizes(row: dict[str, str]) -> set[tuple[float, float, float]]:
 
 
 def load_case(key: str) -> tuple[dict[str, Any], dict[str, dict[str, str]], dict[str, dict[str, str]], str, str]:
+    if key in B31_CASES:
+        fixture = json.loads(B31_FIXTURE.read_text(encoding="utf-8"))
+        case = next(case for case in fixture["cases"] if case["id"] == key)
+        item_meta: dict[str, dict[str, str]] = {}
+        for item in case["items"]:
+            item_meta[item["id"]] = {
+                "ID": item["id"],
+                "X": str(item["size"][0]), "Y": str(item["size"][1]), "Z": str(item["size"][2]),
+                "WEIGHT": str(item.get("weight", 0.0)), "COPIES": "1", "GROUP_ID": "0",
+                "ROTATION_XYZ": "1", "ROTATION_YXZ": "1", "ROTATION_ZYX": "1",
+                "ROTATION_YZX": "1", "ROTATION_XZY": "1", "ROTATION_ZXY": "1",
+            }
+        pallet = case["pallet"]
+        bin_meta = {
+            pallet["id"]: {
+                "ID": pallet["id"], "X": str(pallet["size"][0]), "Y": str(pallet["size"][1]), "Z": str(pallet["size"][2]),
+                "COPIES": "1", "COST": str(pallet.get("cost", 1.0)),
+                "MAXIMUM_WEIGHT": str(pallet.get("max_weight", float("inf"))),
+            }
+        }
+        spec = {
+            "scenario": key.replace("/", "_").lower(), "benchmark_id": "B31", "problem_variant": key.split("/", 1)[1],
+            "items": case["items"], "bins": [{"id": pallet["id"], "type_id": pallet["id"], "size": pallet["size"],
+                                                   "max_weight": pallet.get("max_weight", float("inf")), "cost": pallet.get("cost", 1.0)}],
+            "expected_complete": bool(case["expected_complete"]), "stack_rules": case["rules"],
+            "source_files": {str(B31_FIXTURE.relative_to(ROOT)): sha256(B31_FIXTURE)},
+        }
+        return spec, item_meta, bin_meta, str(B31_FIXTURE), str(B31_FIXTURE)
     if key == "B30/SHELF_SEQUENCE":
         fixture = json.loads(B30_FIXTURE.read_text(encoding="utf-8"))
         case = fixture["case"]
@@ -330,6 +360,48 @@ def independent_validate(
                 gap = right_row["position"][0] - (left_row["position"][0] + left_row["size"][0])
                 if gap < float(shelf["inter_gap"]) - 1e-7:
                     constraint_errors.append(f"shelf {shelf['id']}: inter-gap {gap} below {shelf['inter_gap']}")
+    if spec["benchmark_id"] == "B31":
+        # B31 uses the canonical y axis as pallet height.  This is a small
+        # deterministic stack validator, not a material-mechanics model.
+        rules = spec.get("stack_rules", {})
+        max_layers = int(rules.get("max_layers", 1))
+        levels = sorted({round(float(row["position"][1]), 7) for row in placements})
+        if len(levels) > max_layers:
+            constraint_errors.append(f"pallet has {len(levels)} layers, maximum is {max_layers}")
+        item_by_id = {str(item["id"]): item for item in spec["items"]}
+        max_above = float(rules.get("max_above_weight", float("inf")))
+        for lower in placements:
+            lower_item = item_by_id[lower["item_id"]]
+            lower_top = lower["position"][1] + lower["size"][1]
+            above_weight = 0.0
+            for upper in placements:
+                if upper is lower or upper["position"][1] < lower_top - 1e-7:
+                    continue
+                overlap_x = max(0.0, min(lower["position"][0] + lower["size"][0], upper["position"][0] + upper["size"][0]) - max(lower["position"][0], upper["position"][0]))
+                overlap_z = max(0.0, min(lower["position"][2] + lower["size"][2], upper["position"][2] + upper["size"][2]) - max(lower["position"][2], upper["position"][2]))
+                if overlap_x > 1e-7 and overlap_z > 1e-7:
+                    above_weight += float(item_by_id[upper["item_id"]].get("weight", 0.0))
+                    if not lower_item.get("stackable", True):
+                        constraint_errors.append(f"{lower['item_id']}: non-stackable SKU has an item above it")
+            if above_weight > max_above + 1e-7:
+                constraint_errors.append(f"{lower['item_id']}: above weight {above_weight} exceeds {max_above}")
+        min_support_ratio = float(rules.get("min_support_ratio", 1.0))
+        for upper in placements:
+            if upper["position"][1] <= 1e-7:
+                continue
+            upper_bottom = upper["position"][1]
+            upper_area = upper["size"][0] * upper["size"][2]
+            support_area = 0.0
+            for lower in placements:
+                lower_top = lower["position"][1] + lower["size"][1]
+                if abs(lower_top - upper_bottom) > 1e-7:
+                    continue
+                overlap_x = max(0.0, min(lower["position"][0] + lower["size"][0], upper["position"][0] + upper["size"][0]) - max(lower["position"][0], upper["position"][0]))
+                overlap_z = max(0.0, min(lower["position"][2] + lower["size"][2], upper["position"][2] + upper["size"][2]) - max(lower["position"][2], upper["position"][2]))
+                support_area += overlap_x * overlap_z
+            support_ratio = min(1.0, support_area / upper_area) if upper_area else 0.0
+            if support_ratio + 1e-7 < min_support_ratio:
+                constraint_errors.append(f"{upper['item_id']}: support ratio {support_ratio} below minimum")
     if spec["problem_variant"] == "INCREASING_X":
         groups: dict[int, list[float]] = {}
         for item_id in seen:
@@ -466,6 +538,8 @@ def make_record(
         projection_removed_constraints.append("compatibility_segregation")
     if spec["benchmark_id"] == "B30":
         projection_removed_constraints.append("shelf_bay_sequence")
+    if spec["benchmark_id"] == "B31":
+        projection_removed_constraints.append("pallet_stack_rules")
     run_id = f"{spec['benchmark_id']}/{spec['problem_variant']}/{implementation_id}/10s/constraint-projection/rep-0"
     normalized_command = None
     if command:
@@ -524,11 +598,11 @@ def make_record(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18", "B30"))
+    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18", "B30", "B31"))
     parser.add_argument("--output", type=Path, default=RESULTS)
     args = parser.parse_args()
     RAW_ROOT.mkdir(parents=True, exist_ok=True)
-    all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES) + ["B30/SHELF_SEQUENCE"]
+    all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES) + ["B30/SHELF_SEQUENCE"] + sorted(B31_CASES)
     selected = [key for key in all_cases if not args.benchmark or key.split("/", 1)[0] in args.benchmark]
     implementations = ["py3dbp", "jerry", "go_bp3d", *RUST_STRATEGIES]
     records: list[dict[str, Any]] = []

@@ -1,0 +1,225 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "b31_stackable",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 1
+  },
+  "bins": [
+    {
+      "id": "pallet-stack",
+      "size": [
+        1200,
+        1200,
+        1200
+      ],
+      "max_weight": 200,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "A:0",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 10,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "A:1",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 10,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "B:0",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "B:1",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "C:0",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 15,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "C:1",
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 15,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "A:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "A:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600,
+        0,
+        0
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 10,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "B:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0,
+        600,
+        0
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "B:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600,
+        600,
+        0
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 25,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "C:0",
+      "bin_id": "pallet-stack",
+      "position": [
+        0,
+        0,
+        400
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 15,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "C:1",
+      "bin_id": "pallet-stack",
+      "position": [
+        600,
+        0,
+        400
+      ],
+      "size": [
+        600,
+        600,
+        400
+      ],
+      "original_size": [
+        600,
+        600,
+        400
+      ],
+      "weight": 15,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.00364
+}
