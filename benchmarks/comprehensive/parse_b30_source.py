@@ -134,6 +134,7 @@ def audit(source_dir: Path) -> dict[str, Any]:
         },
         "bays": bay_summary,
         "semantic_contract": {
+            "primary_objective": "minimize_stockroom_space",
             "all_orientations_allowed": True,
             "shelf_overhang_allowed": False,
             "bay_sequence_is_fixed": True,

@@ -130,7 +130,7 @@ B03 已证明姿态语义必须单独分轨；B04 的 THPACK9 不能代表所有
 | B27 Repeatability | 衡量 seed、顺序敏感性和方差 | 全库；随机算法 >=5 seed | median/p95、方差、合法率 | seed 不是额外独立样本 |
 | B28 Scalability | 找质量-延迟-内存拐点 | 全库；EX 到预算上限 | time-quality curve、RSS、timeout | 不同进程边界需分组 |
 | B29 Fault/cancellation | 判断能否安全托管到 Python/Tauri | 全部 worker/sidecar/CLI | 取消延迟、恢复率、artifact 完整性 | 不评价布局质量 |
-| B30 BAYTP | 覆盖货架/bay 顺序和间隙 | shelf master/EX；其他 projection | bay/shelf 数和顺序违约 | 不是自由 3D-BPP |
+| B30 BAYTP | 覆盖货架/bay 顺序和间隙 | shelf master/EX；其他 projection | `stockroom_space`、bay/shelf 数和顺序违约 | 不是自由 3D-BPP |
 | B31 Mixed-SKU pallet | 覆盖高重复 SKU、层型和托盘 | boxstacks/EX；controls；其他 projection | 托盘数、高度、支撑/承压 | synthetic truth 不冒充公开集 |
 | B32 Online/incremental | 覆盖到货序列、lookahead 和重排 | 有 incremental adapter 的库；EX 小窗口 | 累计成本、deadline、offline loss | 离线 rebuild 不能叫原生 online |
 

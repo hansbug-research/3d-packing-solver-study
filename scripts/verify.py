@@ -236,6 +236,10 @@ def check_campaign_results() -> None:
         fail("B30 canonical shelf summary changed")
     if any(b30_source.get("bays", {}).get(name, {}).get("rows") != 350 for name in ("baytp1", "baytp2")):
         fail("B30 canonical bay summary changed")
+    suites = json.loads((ROOT / "benchmarks" / "comprehensive" / "suites.json").read_text())
+    b30_catalog = next(row for row in suites["suites"] if row["id"] == "B30")
+    if b30_catalog.get("primary_metric") != "stockroom_space":
+        fail("B30 primary metric must remain stockroom_space")
 
 
 def check_comprehensive_plan() -> None:

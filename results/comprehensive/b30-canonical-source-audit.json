@@ -63,6 +63,7 @@
     ],
     "bay_sequence_is_fixed": true,
     "note": "This is a source audit only; no shelf assignment or quality result is implied.",
+    "primary_objective": "minimize_stockroom_space",
     "product_fields": [
       "family",
       "quantity",

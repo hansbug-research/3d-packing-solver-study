@@ -115,7 +115,7 @@ B19-B21 同时发布 `FULL_PROBLEM` 和 `GEOMETRY_PROJECTION`，两个结果表�
 
 | ID | 套件 | 原问题与主指标 | 适用实现 | 该结果主要说明什么 |
 |---|---|---|---|---|
-| B30 | OR-Library BAYTP | 产品按给定 bay 顺序进入可选 shelf；考虑 shelf 厚度、位置和 top/left/inter/right gap；主指标为使用 bay/shelf 和完整装载 | EX 完整模型；PS/SK + shelf master；PY/JE/GO/RS 只能进入逐 shelf 几何投影 | 仓储货架不是自由 3D-BPP；检验 shelf 选择、bay 顺序、间隙和禁止越架 |
+| B30 | OR-Library BAYTP | 产品按给定 bay 顺序进入可选 shelf；考虑 shelf 厚度、位置和 top/left/inter/right gap；主指标为 `stockroom_space`，bay/shelf 数为诊断指标 | EX 完整模型；PS/SK + shelf master；PY/JE/GO/RS 只能进入逐 shelf 几何投影 | 仓储货架不是自由 3D-BPP；检验 shelf 选择、bay 顺序、间隙和禁止越架 |
 | B31 | Mixed-SKU pallet building | 由 BR 类型重复分层、Alonso 托盘字段和脱敏订单生成；固定托盘底面、最大高度、完整需求、全支撑/最小支撑、承压和层型；主指标为合法完整率、托盘数或使用高度 | PS `boxstacks`；EX 小规模；Jerry/Skjolber 近似或 controls；其余仅 `GEOMETRY_PROJECTION` | 高重复 SKU、层模式、支撑和承压联合后，普通箱体积排名是否仍成立 |
 | B32 | Online/incremental 3D packing | 固定到货序列、有限 lookahead/buffer、不可移动或有预算重排；报告累计箱数/成本、每件决策延迟和 relocation | 当前离线候选均通过统一 rebuild/incremental adapter；EX 只到小规模窗口；无 adapter 时 `ADAPTER_MISSING` | 离线最优质量不能回答实时装箱；检验延迟、重排代价、顺序鲁棒性和离线损失 |
 

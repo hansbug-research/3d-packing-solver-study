@@ -3892,7 +3892,7 @@
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
     "results/comprehensive/run-manifest.jsonl": "5928bd4a1846d302cda3e02688bac3e512ecf7c0ed6981d025e30c8693e58994",
     "results/comprehensive/runs/alonso-projection.jsonl": "deb50847109ef2ff350c442201f4c42a1e99f1fe696c1d2a11ae32cf165ced46",
-    "results/comprehensive/suite-implementation-plan.jsonl": "5eccc26e0b5b70eadd821da348a6171ab1f2538344adc6996e69067d2f143e16"
+    "results/comprehensive/suite-implementation-plan.jsonl": "efcc069cdfa6ae9a2727bb9eccda1123533cf49015f80eab18a9aa7e63adf24b"
   },
   "warnings": [
     "Imported v1/v2 baselines do not satisfy the new raw/experiments/comprehensive directory layout.",

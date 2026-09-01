@@ -304,7 +304,7 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 | 同型多箱 | B04 IMM、B05 MPV 3D-BPP | 全部几何库；exact 小规模；B05 来源冻结后才排名 | 装完完整性、箱数质量和分布迁移；THPACK9 单独结果不够 |
 | 真值与成本 | B06 exact oracle、B08 多箱型成本、B09 variable-cost exact、B10 固定异构、B11 open dimension | CP-SAT/SCIP/Gurobi/CPLEX 原生；PackingSolver cost/open 轨；B11 其他库用明确的外层搜索 projection；其余只能 projection | 成本方向、箱型/库存选择、开放维度目标和启发式距真值的差距 |
 | 约束合规 | B12 姿态、B13 重量/库存、B14 支撑/承压、B15 重心/轴荷、B16 障碍/门洞、B17 卸货、B18 相容性 | 原生能表达者进入 FULL；其余只作 post-validator/projection，并保留 NOT_SUPPORTED | 硬约束是否真的执行；违反率先于箱数/体积进入门禁 |
-| 工业 full | B19 Alonso 2019、B20 Alonso 2020、B21 VRPTW-CLP、B22 irregular、B23 脱敏真实订单、B30 BAYTP | 只有保留车辆/托盘/路线/货架/非规则字段的 adapter 才能进 FULL；其余明确 projection 或 NOT_SUPPORTED；B21 当前 source-invalid | 从公开正交数据到真实应用的分布迁移和端到端可行率；不能把删字段后的分数叫工业能力 |
+| 工业 full | B19 Alonso 2019、B20 Alonso 2020、B21 VRPTW-CLP、B22 irregular、B23 脱敏真实订单、B30 BAYTP | 只有保留车辆/托盘/路线/货架/非规则字段的 adapter 才能进 FULL；其余明确 projection 或 NOT_SUPPORTED；B21 当前 source-invalid | 从公开正交数据到真实应用的分布迁移和端到端可行率；B30 首要看 `stockroom_space`，不能把删字段后的分数叫工业能力 |
 | 可靠性与在线 | B24–B29 metamorphic、numeric、repeatability、scalability、fault/cancellation；B31 mixed-SKU pallet；B32 online/incremental | 所有库都需 capability/conformance；随机算法至少 5 seed；online 需原生增量 adapter | 表示/单位/顺序一致性、质量-延迟-RSS 拐点、取消恢复和在线重排代价 |
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。

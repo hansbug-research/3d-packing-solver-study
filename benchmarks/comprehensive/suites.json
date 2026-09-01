@@ -131,7 +131,7 @@
       "capability_by_profile": {"ps_fork_box": "SUPPORTED_NATIVE", "ps_fork_boxstacks": "SUPPORTED_NATIVE", "ps_upstream_box": "SUPPORTED_NATIVE", "ps_upstream_boxstacks": "SUPPORTED_NATIVE", "py3dbp": "SUPPORTED_NATIVE", "jerry": "SUPPORTED_NATIVE", "skjolber": "SUPPORTED_NATIVE", "go_bp3d": "SUPPORTED_NATIVE", "rust_unesting": "SUPPORTED_NATIVE", "exact_model": "SUPPORTED_NATIVE"}
     },
     {
-      "id": "B30", "name": "OR-Library BAYTP", "category": "INDUSTRIAL", "problem_family": "SHELF_BAY", "primary_metric": "bays_used", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
+      "id": "B30", "name": "OR-Library BAYTP", "category": "INDUSTRIAL", "problem_family": "SHELF_BAY", "primary_metric": "stockroom_space", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
       "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {

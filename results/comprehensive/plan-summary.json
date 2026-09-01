@@ -8,7 +8,7 @@
   },
   "catalog_sha256": {
     "benchmarks/comprehensive/implementations.json": "2f7bba7eabd81940fb0b956694d2b673fc3c328fa790ac8049b57d3a031bbcb9",
-    "benchmarks/comprehensive/suites.json": "465893f119d84974756fe88f65de08d59e17254c22f2c1757bb7c8b73563fdb8"
+    "benchmarks/comprehensive/suites.json": "504eb0f2e2fd226b0946de533b0ed2c530a15609e5acb55ad68ba97abf31af06"
   },
   "comparison_track_counts": {
     "COMPOSED": 205,

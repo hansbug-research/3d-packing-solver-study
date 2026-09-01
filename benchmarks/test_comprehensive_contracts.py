@@ -123,6 +123,7 @@ def test_b30_canonical_source_audit_is_frozen() -> None:
     assert audit["bays"]["baytp1"]["rows"] == 350
     assert audit["bays"]["baytp2"]["rows"] == 350
     semantics = audit["semantic_contract"]
+    assert semantics["primary_objective"] == "minimize_stockroom_space"
     assert semantics["all_orientations_allowed"] is True
     assert semantics["shelf_overhang_allowed"] is False
     assert semantics["bay_sequence_is_fixed"] is True

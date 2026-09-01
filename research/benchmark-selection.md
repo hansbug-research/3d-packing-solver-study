@@ -77,7 +77,7 @@ B01-B34 覆盖的是刚性长方体为主的正交装载产品。以下问题不
 | B27 | seed/order repeatability，5 次重复、多 seed | 全部；随机 RS/EX 至少 5 seed | best/median/p95、方差、合法率 | seed 是否生效、顺序敏感性和稳定性 | 不能把 seed 当额外独立实例扩大样本量 |
 | B28 | scalability，20/50/100/200/500/1000 件 | 全部；EX 到预算允许规模 | time-quality curve、RSS、timeout | 质量-延迟-内存拐点与部署上限 | 不同语言启动边界需分 timing group |
 | B29 | fault/cancellation/OOM/非法输出/恢复 | 全部 worker、sidecar、CLI | recovery rate、取消延迟、残留 artifact | 是否适合被 Python/Tauri 安全托管 | 不评价布局质量；失败必须保留原始证据 |
-| B30 | OR-Library BAYTP shelf/bay，间隙和 bay 顺序 | EX full；PS/SK + shelf master；其他 projection | bays/shelves、完整率、顺序违约 | 仓储货架选择而非自由 3D-BPP | 当前输入已恢复；完整 shelf adapter 仍需实现 |
+| B30 | OR-Library BAYTP shelf/bay，间隙和 bay 顺序 | EX full；PS/SK + shelf master；其他 projection | `stockroom_space`（主指标）、bays/shelves、完整率、顺序违约 | 仓储货架选择而非自由 3D-BPP | 当前输入已恢复；完整 shelf adapter 仍需实现 |
 | B31 | mixed-SKU pallet，层型、支撑、承压、托盘数 | PS-S/EX；JE/SK controls；其他 projection | legal complete rate、pallets/height | 高重复 SKU 与层/承压联合能力 | 版本化 synthetic truth，不冒充公开数据集 |
 | B32 | online/incremental，到货序列、lookahead、重排 | 有 incremental adapter 的全部；EX 小窗口；无 adapter = ADAPTER_MISSING | cumulative cost、deadline、relocation、offline loss | 实时延迟和顺序鲁棒性，不只是离线最优 | 离线 rebuild 必须单独标记，不能声称库原生 online |
 
