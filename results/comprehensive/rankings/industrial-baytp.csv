@@ -1,0 +1,9 @@
+benchmark_id,implementation_id,comparison_track,problem_scope,records,valid_complete,constraint_violation,invalid_certificate,process_errors,complete_rate,mean_hard_violation_count,max_hard_violation_count
+B30,go_bp3d,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,jerry,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,py3dbp,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,rust_brkga,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,rust_extreme_point,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,rust_ga,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,rust_layer,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
+B30,rust_sa,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0

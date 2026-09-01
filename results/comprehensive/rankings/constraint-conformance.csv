@@ -20,9 +20,9 @@ B12,jerry,2,1,0,0,0,1,0,
 B12,packingsolver_fork_box,4,2,0,2,0,0,0,1.0
 B12,packingsolver_upstream_box,4,2,0,2,0,0,0,1.0
 B12,py3dbp,2,1,0,0,0,1,0,
+B12,rust_brkga,4,2,0,1,0,1,0,1.0
 B12,rust_extreme_point,4,2,0,1,0,1,0,1.0
-B12,rust_brkga,4,1,0,1,1,1,0,1.0
-B12,rust_sa,4,1,0,1,2,0,0,1.0
+B12,rust_sa,4,1,0,1,1,1,0,1.0
 B12,rust_ga,4,0,0,1,3,0,0,0.5
 B12,rust_layer,4,0,0,1,3,0,0,0.5
 B13,go_bp3d,1,0,0,0,0,1,0,
@@ -60,11 +60,11 @@ B17,jerry,2,1,0,0,0,1,0,
 B17,packingsolver_fork_boxstacks,4,4,0,0,0,0,0,1.0
 B17,packingsolver_upstream_boxstacks,2,2,0,0,0,0,0,1.0
 B17,py3dbp,2,1,0,0,0,1,0,
-B17,rust_brkga,2,2,0,0,0,0,0,
+B17,rust_brkga,2,1,0,0,0,1,0,
 B17,rust_extreme_point,2,1,0,0,0,1,0,
 B17,rust_ga,2,2,0,0,0,0,0,
 B17,rust_layer,2,1,0,0,0,1,0,
-B17,rust_sa,2,1,0,0,0,1,0,
+B17,rust_sa,2,2,0,0,0,0,0,
 B18,go_bp3d,1,0,0,0,0,1,0,
 B18,jerry,1,0,0,0,0,1,0,
 B18,py3dbp,1,0,0,0,0,1,0,

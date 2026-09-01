@@ -23,9 +23,10 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = ROOT / "benchmarks" / "data" / "packingsolver"
-RESULTS = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b17.jsonl"
+RESULTS = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl"
 RAW_ROOT = ROOT / "raw" / "experiments" / "comprehensive" / "constraint-adapters"
 EXTENSION_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "constraint-extension-fixture.json"
+B30_FIXTURE = ROOT / "benchmarks" / "data" / "comprehensive" / "b30-baytp-fixture.json"
 RUNNER = Path(__file__).resolve()
 sys.path.insert(0, str(ROOT / "benchmarks"))
 sys.path.insert(0, str(ROOT / "benchmarks" / "comprehensive"))
@@ -89,6 +90,26 @@ def rotation_sizes(row: dict[str, str]) -> set[tuple[float, float, float]]:
 
 
 def load_case(key: str) -> tuple[dict[str, Any], dict[str, dict[str, str]], dict[str, dict[str, str]], str, str]:
+    if key == "B30/SHELF_SEQUENCE":
+        fixture = json.loads(B30_FIXTURE.read_text(encoding="utf-8"))
+        case = fixture["case"]
+        item_meta = {}
+        for item in case["items"]:
+            item_meta[item["id"]] = {
+                "ID": item["type_id"], "X": str(item["size"][0]), "Y": str(item["size"][1]), "Z": str(item["size"][2]),
+                "WEIGHT": str(item.get("weight", 0)), "COPIES": "1",
+                "ROTATION_XYZ": "1", "ROTATION_YXZ": "1", "ROTATION_ZYX": "1",
+                "ROTATION_YZX": "1", "ROTATION_XZY": "1", "ROTATION_ZXY": "1", "GROUP_ID": "0",
+            }
+        bay = case["bay"]
+        bin_meta = {bay["id"]: {"ID": bay["id"], "X": str(bay["size"][0]), "Y": str(bay["size"][1]), "Z": str(bay["size"][2]), "COPIES": "1", "COST": "1", "MAXIMUM_WEIGHT": "100000"}}
+        spec = {
+            "scenario": "b30_shelf_sequence", "benchmark_id": "B30", "problem_variant": "SHELF_SEQUENCE",
+            "items": case["items"], "bins": [{"id": bay["id"], "type_id": bay["id"], "size": bay["size"], "max_weight": bay.get("max_weight", 100000), "cost": bay.get("cost", 1)}],
+            "expected_complete": bool(case["expected_complete"]), "shelves": case["shelves"],
+            "source_files": {str(B30_FIXTURE.relative_to(ROOT)): sha256(B30_FIXTURE), **{f"source/{name}": value for name, value in fixture["source"]["source_sha256"].items()}},
+        }
+        return spec, item_meta, bin_meta, str(B30_FIXTURE), str(B30_FIXTURE)
     if key in EXTENSION_CASES:
         extension = json.loads(EXTENSION_FIXTURE.read_text(encoding="utf-8"))
         case = extension["cases"][key]
@@ -285,6 +306,30 @@ def independent_validate(
         for left, right in spec.get("incompatible_groups", []):
             if left in groups and right in groups:
                 constraint_errors.append(f"{bin_id}: incompatible groups {left}/{right} share a compartment")
+    if spec["benchmark_id"] == "B30":
+        # BAYTP is a shelf sequence problem: a placement must sit on a declared
+        # shelf top and remain within that shelf's side/depth clearances.
+        shelves = spec.get("shelves", [])
+        bin_spec = spec["bins"][0]
+        for placement in placements:
+            matching = [shelf for shelf in shelves if abs(placement["position"][1] - float(shelf["top_y"])) <= 1e-7]
+            if not matching:
+                constraint_errors.append(f"{placement['item_id']}: placement y={placement['position'][1]} is not a declared shelf top")
+                continue
+            shelf = matching[0]
+            left = float(shelf["left_gap"])
+            right = float(shelf["right_gap"])
+            if placement["position"][0] < left - 1e-7 or placement["position"][0] + placement["size"][0] > float(bin_spec["size"][0]) - right + 1e-7:
+                constraint_errors.append(f"{placement['item_id']}: shelf side gap/overhang violation")
+            if placement["position"][2] < -1e-7 or placement["position"][2] + placement["size"][2] > float(bin_spec["size"][2]) + 1e-7:
+                constraint_errors.append(f"{placement['item_id']}: shelf depth overhang violation")
+        for shelf in shelves:
+            rows = [row for row in placements if abs(row["position"][1] - float(shelf["top_y"])) <= 1e-7]
+            rows.sort(key=lambda row: row["position"][0])
+            for left_row, right_row in zip(rows, rows[1:]):
+                gap = right_row["position"][0] - (left_row["position"][0] + left_row["size"][0])
+                if gap < float(shelf["inter_gap"]) - 1e-7:
+                    constraint_errors.append(f"shelf {shelf['id']}: inter-gap {gap} below {shelf['inter_gap']}")
     if spec["problem_variant"] == "INCREASING_X":
         groups: dict[int, list[float]] = {}
         for item_id in seen:
@@ -419,6 +464,8 @@ def make_record(
         projection_removed_constraints.append("keep_out")
     if spec["benchmark_id"] == "B18":
         projection_removed_constraints.append("compatibility_segregation")
+    if spec["benchmark_id"] == "B30":
+        projection_removed_constraints.append("shelf_bay_sequence")
     run_id = f"{spec['benchmark_id']}/{spec['problem_variant']}/{implementation_id}/10s/constraint-projection/rep-0"
     normalized_command = None
     if command:
@@ -477,11 +524,11 @@ def make_record(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18"))
+    parser.add_argument("--benchmark", action="append", choices=("B12", "B13", "B15", "B16", "B17", "B18", "B30"))
     parser.add_argument("--output", type=Path, default=RESULTS)
     args = parser.parse_args()
     RAW_ROOT.mkdir(parents=True, exist_ok=True)
-    all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES)
+    all_cases = list(CASE_FILES) + sorted(EXTENSION_CASES) + ["B30/SHELF_SEQUENCE"]
     selected = [key for key in all_cases if not args.benchmark or key.split("/", 1)[0] in args.benchmark]
     implementations = ["py3dbp", "jerry", "go_bp3d", *RUST_STRATEGIES]
     records: list[dict[str, Any]] = []

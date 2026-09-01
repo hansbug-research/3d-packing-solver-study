@@ -1,0 +1,73 @@
+{
+  "scenario": "b30_shelf_sequence",
+  "benchmark_id": "B30",
+  "problem_variant": "SHELF_SEQUENCE",
+  "items": [
+    {
+      "id": "product-14:0",
+      "type_id": "product-14",
+      "source_family": 14,
+      "size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "product-14:1",
+      "type_id": "product-14",
+      "source_family": 14,
+      "size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "bins": [
+    {
+      "id": "bay-0",
+      "type_id": "bay-0",
+      "size": [
+        1200,
+        2400,
+        650
+      ],
+      "max_weight": 100000,
+      "cost": 1
+    }
+  ],
+  "expected_complete": true,
+  "shelves": [
+    {
+      "id": "shelf-1",
+      "number": 1,
+      "thickness": 40,
+      "top_y": 0,
+      "top_gap": 15,
+      "left_gap": 10,
+      "inter_gap": 10,
+      "right_gap": 10
+    },
+    {
+      "id": "shelf-11",
+      "number": 11,
+      "thickness": 40,
+      "top_y": 500,
+      "top_gap": 15,
+      "left_gap": 10,
+      "inter_gap": 10,
+      "right_gap": 10
+    }
+  ],
+  "source_files": {
+    "benchmarks/data/comprehensive/b30-baytp-fixture.json": "876427305e259fa7e24b750e84f0d5e3abc5bc214c0cae4f50f4dae9433e3a56",
+    "source/products.txt": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+    "source/shelves.txt": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7",
+    "source/baytp1.txt": "9a9b06a40628e87d03fbe36e6a0db220043e4fe45891cc9c2d7498b394621c63"
+  }
+}

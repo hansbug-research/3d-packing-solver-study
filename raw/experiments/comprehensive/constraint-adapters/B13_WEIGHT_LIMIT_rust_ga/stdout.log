@@ -88,7 +88,7 @@
   ],
   "placements": [
     {
-      "item_id": "0:1",
+      "item_id": "0:2",
       "bin_id": "0:0",
       "position": [
         0.0,
@@ -106,11 +106,11 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "yzx",
-      "rotation_index": 3
+      "rotation": "yxz",
+      "rotation_index": 2
     },
     {
-      "item_id": "0:2",
+      "item_id": "0:1",
       "bin_id": "0:1",
       "position": [
         0.0,
@@ -155,5 +155,5 @@
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 3.737726
+  "elapsed_ms": 3.79729
 }

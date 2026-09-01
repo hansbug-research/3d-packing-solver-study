@@ -76,8 +76,8 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "zxy",
+      "rotation_index": 4
     },
     {
       "item_id": "hazmat:0",
@@ -103,5 +103,5 @@
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.50438
+  "elapsed_ms": 1.5078330000000002
 }

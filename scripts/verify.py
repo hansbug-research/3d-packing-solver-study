@@ -271,6 +271,7 @@ def check_comprehensive_results() -> None:
         "rankings/profit-knapsack-pairwise.csv",
         "rankings/exact-proof.csv",
         "rankings/constraint-conformance.csv",
+        "rankings/industrial-baytp.csv",
         "rankings/resource-summary.csv",
         "b05-source-audit.json",
     ]
@@ -298,7 +299,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62880, 2122, 62880, 62880):
+        ) != (62888, 2122, 62888, 62888):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -307,11 +308,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 529, 19, 228, 21, 19):
+        ) != (608, 537, 19, 236, 22, 19):
         fail("comprehensive execution coverage changed")
     if coverage.get("protocol_v3_status_only_cells") != 282:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60758}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60766}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -342,6 +343,13 @@ def check_comprehensive_results() -> None:
     for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
         if not (directory / "rankings" / ranking).exists():
             fail(f"comprehensive reliability ranking is missing: {ranking}")
+    with (directory / "rankings" / "industrial-baytp.csv").open(newline="") as handle:
+        baytp_rows = list(csv.DictReader(handle))
+    if len(baytp_rows) != 8 or any(
+        row.get("valid_complete") != "0" or row.get("constraint_violation") != "1"
+        for row in baytp_rows
+    ):
+        fail("B30 industrial shelf/bay conformance summary changed")
     subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
     if not subset_audit_path.exists():
         fail("B07 Skjolber subset API audit is missing")

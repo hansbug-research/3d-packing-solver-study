@@ -1,0 +1,39 @@
+{
+  "benchmark_id": "B30",
+  "case": {
+    "bay_size": [
+      1200,
+      2400,
+      650
+    ],
+    "id": "B30/SHELF_SEQUENCE",
+    "items": 2,
+    "required_items": 2,
+    "shelves": 2,
+    "source_product_family": 14
+  },
+  "fixture": "benchmarks/data/comprehensive/b30-baytp-fixture.json",
+  "fixture_sha256": "876427305e259fa7e24b750e84f0d5e3abc5bc214c0cae4f50f4dae9433e3a56",
+  "input_status": "VALID",
+  "record_kind": "B30_BAYTP_SOURCE_AUDIT",
+  "run_status": "NOT_RUN",
+  "schema_version": 1,
+  "semantic_note": "Small source-derived calibration only; it does not claim the complete 6000-product BAYTP corpus has been executed.",
+  "source": {
+    "bay_line": 1,
+    "bay_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/baytp1.txt",
+    "products_line": 504,
+    "products_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/products.txt",
+    "repository": "OR-Library",
+    "shelves_lines": [
+      1,
+      11
+    ],
+    "shelves_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/shelves.txt",
+    "source_sha256": {
+      "baytp1.txt": "9a9b06a40628e87d03fbe36e6a0db220043e4fe45891cc9c2d7498b394621c63",
+      "products.txt": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+      "shelves.txt": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7"
+    }
+  }
+}

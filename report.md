@@ -309,11 +309,9 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 因此“ALL libs”不是让每个库都输出一个数字，而是让每个 `benchmark × implementation × variant × budget` 都有明确状态：`SUPPORTED_NATIVE`、`SUPPORTED_COMPOSED`、`PROJECTION_ONLY`、`NOT_SUPPORTED`、`ADAPTER_MISSING` 或运行失败。只有输入 hash、姿态语义、预算和 validator 完全一致且 certificate 合法的记录才进入对应问题族排行。
 
-当前综合证据仍不是全套件完成：`12/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`515/608` cell 有证据，其中 `73` 个 cell 已执行 protocol-v3、`413` 个是 status-only，合计 `62,487` 条记录（legacy `2,078`，protocol-v3 `60,409`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）、B01/B02/B04 PackingSolver native certificate revalidation（`1,524` 条）、B07 BR0/BR8–15 的 projection（`30,600` 条）、4 条 B07 source-rotation exact calibration、B09 py3dbp/Jerry/Go/Rust composed cost-master 记录，以及 Wave-1 fresh exact/Skjolber 记录（B06/B09 四个 exact backend 共 20 个 case 行，B04 Skjolber Plain/LAFF 共 88 个有效源行）；projection 与原始姿态语义分轨，不能覆盖 native 结果。native revalidation 明确标为 `ARCHIVED_CERTIFICATE_REVALIDATION`，复用了已归档并独立重验的 certificate，不是一次新的 solver invocation；fresh 记录明确标为 `FRESH_SOLVER_INVOCATION`，并保留输入、结果、runner hash 和独立验证引用。B07 projection 覆盖 900 个来源实例、八个 Python/Go/Rust projection 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。B09 composed runner 枚举全部有限箱型组合和两种 item order，所有候选均经过独立 AABB/copies/重量 validator；它证明的是外层 master + 几何库的组合行为，不是 py3dbp/Jerry/Go/Rust 原生 variable-cost comparator。新增 status-only 记录只表示来源/能力边界，不能视为求解运行，也不计入 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
+当前综合证据仍不是全套件完成：`22/32` benchmark 有实际执行，`32/32` benchmark 有状态记录，`537/608` cell 有证据，其中 `236` 个 cell 已执行 protocol-v3、`282` 个是 status-only，合计 `62,888` 条记录（legacy `2,122`，protocol-v3 `60,766`）。B30 新增 8 条 source-derived shelf/bay projection；8/8 均完成几何布局但被独立 validator 判为 `CONSTRAINT_VIOLATION`，结果单列于 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)。projection 与原始姿态语义分轨，不能覆盖 native 结果；status-only 记录只表示来源/能力边界，不能视为求解运行。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
-上述统计在 B11 运行后更新为：`13/32` benchmark 有实际执行，`32/32` 有状态记录，`514/608` cell 有证据，`76` 个 protocol-v3 cell 已执行，`409` 个为 status-only，合计 `62,492` 条记录（protocol-v3 `60,414`）。B11 是 fork-owned 三例 open-X 校准：fork/upstream `box` 各 `3/3` 通过，fork `boxstacks` `0/3`（非同底面 stack fixture 导致进程错误）；上游 `boxstacks` 因缺少同源二进制保持 `PLANNED`。其 `used_length` 单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，不与 BR/LN 或封闭箱数混排。
-
-FastBruteForce 后的当前权威统计为：`13/32` benchmark 有实际执行，`32/32` 有状态记录，`515/608` cell 有证据，`77` 个 protocol-v3 cell 已执行，`409` 个为 status-only，合计 `62,580` 条记录（legacy `2,122`，protocol-v3 `60,458`）。B04 的 FastBruteForce 为 7/44 合法、37/44 非法/不完整证书；它进入共同实例表的失败计数，但不以 7 条成功结果冒充完整质量排行。
+历史快照（12/32、13/32、21/32 等）仅用于追溯，不再作为当前统计。当前权威数字以 [`aggregate.json`](results/comprehensive/aggregate.json)、[`coverage.csv`](results/comprehensive/coverage.csv) 和 [`baseline-import-summary.json`](results/comprehensive/baseline-import-summary.json) 为准。B11 的三例 open-X 校准仍单独见 [`open-dimension.csv`](results/comprehensive/rankings/open-dimension.csv)，不与 BR/LN 或封闭箱数混排；B04 FastBruteForce 仍为 7/44 合法、37/44 非法/不完整证书。
 
 ### 7.1.3 新发现的公开现实约束数据
 
@@ -324,9 +322,7 @@ FastBruteForce 后的当前权威统计为：`13/32` benchmark 有实际执行�
 | B33 Q4RealBPP | Mendeley Data DOI `10.17632/y258s6d939.2`；12 个实例，输入 quantity 合计 578 件、单实例 38–53 件；尺寸、重量、箱数/重量上限、不相容/亲和、相对位置和重心字段；附 Python generator；GPLv3 | PS/boxstacks、exact model 做 `FULL`；py3dbp/Jerry/Go/Rust/Skjolber 只能做明确 projection 或 post-validator | 现实约束 conformance、完整率和违规幅度；小规模端到端回归和分布迁移 | 官方 `Description.txt` 与输入 quantity 在 `3dBPP_5`、`3dBPP_6`、`3dBPP_10` 有不一致，canonical 以输入文件为准；先冻结文件 UUID/SHA-256、字段语义和 GPLv3 再分发审计，再跑 FULL/projection 双轨 |
 | B34 3DBPPsi | Science Data Bank DOI `10.57760/sciencedb.42066`，V1/20 个文件，CC BY 4.0；异构车辆尺寸、价格、payload、stacked-weight、density；物品 nesting height、stackability class、forced orientation、最大堆叠层级；规模可到数千件 | `boxstacks`/exact model 和有 stack controls 的引擎做 `FULL`；其他实现做几何 projection；大实例重点跑 B28 scalability | 异构车队成本、堆叠/密度/姿态硬合规，以及质量-延迟-RSS 拐点 | 候选 B34；先做 stack master、密度/载荷 validator 和小实例 exact 校准，再进入工业 Wave |
 
-这两个候选不会改变当前 `12/32` 实际执行、`32/32` 状态记录和 `515/608` 有证据 cell 的 protocol-v3 进度数字。B33 的源审计已验证 15 个必要文件的 SHA-256 和 12 个输入的结构，但发现 3 条官方描述件数不一致；B34 的 20 个 CSV 已通过列、数值和重复 ID 审计。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。审计证据见 [`b33-source-audit.json`](results/comprehensive/b33-source-audit.json) 和 [`b34-source-audit.json`](results/comprehensive/b34-source-audit.json)。
-
-上段候选数据审计文字沿用 protocol-v3 冻结时的快照；FastBruteForce 补跑后，当前覆盖数字以本节前的最新权威统计为准（`13/32`、`515/608`、`62,580` 条）。
+这两个候选不会改变当前 `22/32` 实际执行、`32/32` 状态记录和 `537/608` 有证据 cell 的 protocol-v3 进度数字。B33 的源审计已验证 15 个必要文件的 SHA-256 和 12 个输入的结构，但发现 3 条官方描述件数不一致；B34 的 20 个 CSV 已通过列、数值和重复 ID 审计。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。审计证据见 [`b33-source-audit.json`](results/comprehensive/b33-source-audit.json) 和 [`b34-source-audit.json`](results/comprehensive/b34-source-audit.json)。
 
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
@@ -410,7 +406,7 @@ legacy/reduced/strengthened 三种 formulation 用于模型敏感性，不是求
 
 ### 7.7 工业数据集状态
 
-Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。ESICUP 的 BAYTP 快照缺少公共 `products`/`shelves`；虽从 OR-Library 核对了对应文件与 SHA-256，仍标为 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`。删除字段后运行普通 3D 箱数算法会改变问题，不能作为完整 benchmark 分数。
+Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、行数、需求恒等式和语义审计，但现有库没有保真表达其完整车辆/托盘/交付约束，因此状态为 `NOT_SUPPORTED / NOT_RUN`。BAYTP 的完整 ESICUP 快照仍缺少公共 `products`/`shelves`，所以完整 corpus 继续保持 `ESICUP_SNAPSHOT_INCOMPLETE / NOT_RUN`；本轮仅完成一个由 OR-Library `products.txt`、`shelves.txt` 和 `baytp1.txt` 派生的 2 件校准 fixture。8 个几何实现均输出布局，但 8/8 被 shelf 顶面、侧隙或层间距 validator 判为 `CONSTRAINT_VIOLATION`，详见 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv) 和 [`b30-source-audit.json`](results/comprehensive/b30-source-audit.json)。这只能证明自由几何库忽略货架语义，不能冒充完整 BAYTP 结果；删除字段后运行普通 3D 箱数算法会改变问题。
 
 ### 7.8 B24-B29 reliability-v3 全库实测
 
@@ -425,7 +421,7 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 | B28 scalability | 全部；EX 为小规模质量/证明参照，FastBruteForce 单独看 timeout | Go/Rust/py3dbp/Jerry/Skjolber Plain/LAFF/PackingSolver fork 在 8–64 件均产生完整或明确失败状态；exact 在 16–64 件出现许可证/时间边界；FastBruteForce 16–64 件约 10 s 无解 | 当前是 process/适配层拐点 smoke，不替代协议要求的 20/50/100/200/500/1000 件正式曲线；跨语言只比较各自 timing group |
 | B29 fault/cancellation | 全部 worker/sidecar/CLI | exact、Go、Python、Rust 多数实现为 `ERROR + CANCELLED`；PackingSolver fork/upstream `box` 取消约 21 ms；Skjolber 约 39–56 ms；Rust Layer 与 FastBruteForce 在 20 ms 门限内提前正常结束，记 `0.5` fault rate | 本轮只实测 malformed input 与 cancellation，没有把 OOM 当作已完成；正常退出但没有有效证书仍保留为处理结果，不冒充 crash recovery |
 
-外部约束适配器运行前的中间快照为 `19/32` benchmark、`180/608` protocol-v3 cell 和 `62,824` 条记录；该快照仅用于追溯，当前权威数字见下方 7.9 节。无论哪个快照，都不代表 B05、B08、B10-B23、B30-B32 已完成 ALL-libs；这些问题仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨逐项补齐。
+外部约束适配器运行前的中间快照仅用于追溯；当前权威数字见本节前的 `22/32`、`537/608` 和 `62,888`。无论哪个快照，都不代表 B05、B08、B10-B23、B30-B32 已完成 ALL-libs；这些问题仍须按 [`research/benchmark-selection.md`](research/benchmark-selection.md) 的 FULL/projection 轨逐项补齐。
 
 ### 7.9 B12/B13/B15/B16/B17/B18 外部库 projection conformance
 
@@ -440,9 +436,9 @@ Alonso 2019 的 111 个实例和 Alonso 2020 的 107 个实例已完成字段、
 | B16 障碍/keep-out | 8 个 projection 实现均在独立 validator 中触发 keep-out 碰撞 | 这些库没有障碍语义；AABB 终点结果不能证明门洞或连续路径可达 |
 | B18 相容性 | 8 个 projection 实现均把 COLD/HAZMAT 放入同一 compartment，触发隔离冲突 | 几何库没有温区/危化隔离模型；必须由上层 master 或专用 exact 模型处理 |
 
-这 80 条记录已经合并进 [`constraint-conformance.csv`](results/comprehensive/rankings/constraint-conformance.csv) 和总 manifest。B16/B17/B18 目录现将可运行的几何库标为 `PROJECTION_ONLY`，PS 与 exact 仍为 `NOT_SUPPORTED/ADAPTER_MISSING`；这样“计划状态”和“真实 projection 运行”一致。该波次不改变硬门禁：先按 hard violation 和完整率筛选，再比较目标值。
+这 80 条 B12/B13/B15/B16/B17/B18 记录已经合并进 [`constraint-conformance.csv`](results/comprehensive/rankings/constraint-conformance.csv) 和总 manifest。另有 8 条 B30 shelf/bay projection 记录单独进入 [`industrial-baytp.csv`](results/comprehensive/rankings/industrial-baytp.csv)，避免与自由 3D 箱数或一般约束榜混排。B16/B17/B18 目录现将可运行的几何库标为 `PROJECTION_ONLY`，PS 与 exact 仍为 `NOT_SUPPORTED/ADAPTER_MISSING`；这样“计划状态”和“真实 projection 运行”一致。该波次不改变硬门禁：先按 hard violation 和完整率筛选，再比较目标值。
 
-本轮更新后的综合覆盖为 `21/32` benchmark 有实际运行、`32/32` 有状态记录、`228/608` protocol-v3 cell 已执行、`282` 个为 status-only，记录总数 `62,880`（legacy `2,122`、protocol-v3 `60,758`）。B05、B08、B10-B15、B19-B23、B30-B32 仍未形成完整 ALL-libs FULL 轨，不能据此宣布最终 ready。
+本轮更新后的综合覆盖为 `22/32` benchmark 有实际运行、`32/32` 有状态记录、`236/608` protocol-v3 cell 已执行、`282` 个为 status-only，记录总数 `62,888`（legacy `2,122`、protocol-v3 `60,766`）。B05、B08、B10-B15、B19-B23、B30-B32 仍未形成完整 ALL-libs FULL 轨，不能据此宣布最终 ready；B30 目前只有 source-derived calibration 和 projection 失败证据。
 
 可靠性结果不产生跨问题族总冠军：B24/B26/B27 是工程稳定性门，B25 是成本 comparator/parser 门，B28 是规模和资源边界，B29 是托管故障边界。质量、成本、硬约束和可靠性必须分别看表；`NOT_SUPPORTED`、`ADAPTER_MISSING`、`ERROR` 或 `TIME_LIMIT` 都是能力边界证据，不可用其他 benchmark 的高利用率抵消。
 

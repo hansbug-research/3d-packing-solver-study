@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "record_kind": "B30_BAYTP_SHELF_SEQUENCE_FIXTURE",
+  "source": {
+    "repository": "OR-Library",
+    "products_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/products.txt",
+    "products_line": 504,
+    "shelves_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/shelves.txt",
+    "shelves_lines": [1, 11],
+    "bay_url": "https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/baytp1.txt",
+    "bay_line": 1,
+    "source_sha256": {
+      "products.txt": "f814947ad7f2cfe2bf43fa3a5ee8d087ecf35f442376a25afa50f72f6147e52e",
+      "shelves.txt": "914231bd5a53ad890a4e9817e7381d967658bffed4989343eabbc623a845cef7",
+      "baytp1.txt": "9a9b06a40628e87d03fbe36e6a0db220043e4fe45891cc9c2d7498b394621c63"
+    }
+  },
+  "case": {
+    "id": "B30/SHELF_SEQUENCE",
+    "expected_complete": true,
+    "bay": {"id": "bay-0", "size": [1200, 2400, 650], "available_height": 3000},
+    "shelves": [
+      {"id": "shelf-1", "number": 1, "thickness": 40, "top_y": 0, "top_gap": 15, "left_gap": 10, "inter_gap": 10, "right_gap": 10},
+      {"id": "shelf-11", "number": 11, "thickness": 40, "top_y": 500, "top_gap": 15, "left_gap": 10, "inter_gap": 10, "right_gap": 10}
+    ],
+    "items": [
+      {"id": "product-14:0", "type_id": "product-14", "source_family": 14, "size": [734, 536, 402], "weight": 1, "orientation_requirement": "any"},
+      {"id": "product-14:1", "type_id": "product-14", "source_family": 14, "size": [734, 536, 402], "weight": 1, "orientation_requirement": "any"}
+    ],
+    "semantic_note": "The two source products cannot share one 1180-unit shelf along X; a valid shelf-aware solution must place one on top_y=0 and one on top_y=500. A geometry-only projection may stack at y=402 or otherwise ignore shelf gaps and is rejected by the validator."
+  }
+}

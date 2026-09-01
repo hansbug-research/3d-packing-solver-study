@@ -199,17 +199,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 62880
-    assert summary["protocol_v3_run_records"] == 60758
+    assert summary["combined_run_records"] == len(records) == 62888
+    assert summary["protocol_v3_run_records"] == 60766
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
-    assert aggregate["coverage"]["benchmarks_with_runs"] == 21
+    assert aggregate["coverage"]["benchmarks_with_runs"] == 22
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 529
+    assert aggregate["coverage"]["cells_with_evidence"] == 537
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 228
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 236
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 282
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60758}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60766}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34209
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -223,6 +223,9 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert {record["problem_variant"]: record["run_status"] for record in b29_exact} == {"invalid_json": "ERROR", "cancelled": "CANCELLED"}
     for ranking in ("reliability-metamorphic.csv", "reliability-numeric.csv", "reliability-repeatability.csv", "reliability-scalability.csv", "reliability-fault.csv"):
         assert (comprehensive / "rankings" / ranking).exists()
+    baytp = list(csv.DictReader((comprehensive / "rankings" / "industrial-baytp.csv").open(newline="")))
+    assert len(baytp) == 8
+    assert all(row["valid_complete"] == "0" and row["constraint_violation"] == "1" for row in baytp)
 
     exact_b07 = [
         record for record in records
@@ -398,11 +401,11 @@ def test_b07_projection_common_and_jerry_control_rankings() -> None:
 
 
 def test_constraint_adapter_projection_campaign_is_complete_and_independently_validated() -> None:
-    path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b17.jsonl"
+    path = ROOT / "results" / "comprehensive" / "runs" / "constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl"
     records = [json.loads(line) for line in path.read_text().splitlines() if line]
-    assert len(records) == 80
-    assert len({record["run_id"] for record in records}) == 80
-    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18"}
+    assert len(records) == 88
+    assert len({record["run_id"] for record in records}) == 88
+    assert {record["benchmark_id"] for record in records} == {"B12", "B13", "B15", "B16", "B17", "B18", "B30"}
     assert {record["implementation_id"] for record in records} == {
         "py3dbp", "jerry", "go_bp3d", "rust_extreme_point", "rust_layer", "rust_ga", "rust_brkga", "rust_sa",
     }
@@ -418,6 +421,10 @@ def test_constraint_adapter_projection_campaign_is_complete_and_independently_va
         extension = [record for record in records if record["benchmark_id"] == benchmark_id]
         assert len(extension) == 8
         assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in extension)
+    b30 = [record for record in records if record["benchmark_id"] == "B30"]
+    assert len(b30) == 8
+    assert all(record["solution_status"] == "CONSTRAINT_VIOLATION" for record in b30)
+    assert all("shelf_bay_sequence" in record["metrics"]["projection_removed_constraints"] for record in b30)
 
 
 def test_b03_rankings_keep_pose_tracks_and_exact_scale_separate() -> None:

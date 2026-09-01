@@ -107,8 +107,8 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "zxy",
-      "rotation_index": 4
+      "rotation": "xzy",
+      "rotation_index": 1
     },
     {
       "item_id": "0:0",
@@ -129,8 +129,8 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "yxz",
+      "rotation_index": 2
     },
     {
       "item_id": "0:1",
@@ -151,10 +151,10 @@
         4.0
       ],
       "weight": 6.0,
-      "rotation": "xzy",
-      "rotation_index": 1
+      "rotation": "yzx",
+      "rotation_index": 3
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 1.2989849999999998
+  "elapsed_ms": 1.276631
 }

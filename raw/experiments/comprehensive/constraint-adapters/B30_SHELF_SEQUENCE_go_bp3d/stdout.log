@@ -1,0 +1,97 @@
+{
+  "campaign_version": "crosslang-1",
+  "library": "gedex/bp3d",
+  "commit": "0ba3dcda7ab334c19b0979b1cf1fa05e09f33bc7",
+  "language": "Go",
+  "toolchain": "go1.27.0",
+  "algorithm": "pivot greedy",
+  "scenario": "b30_shelf_sequence",
+  "capability_status": "SUPPORTED_NATIVE_MULTI_BIN",
+  "capability_note": "THPACK9 multi-container BPP expressed with one physical Bin object per candidate container",
+  "parameters": {
+    "library_sort": "ascending bin volume / descending item volume",
+    "physical_bin_objects": 1
+  },
+  "bins": [
+    {
+      "id": "bay-0",
+      "size": [
+        1200,
+        2400,
+        650
+      ],
+      "max_weight": 100000,
+      "cost": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "product-14:0",
+      "size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    },
+    {
+      "id": "product-14:1",
+      "size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "orientation_requirement": "any"
+    }
+  ],
+  "placements": [
+    {
+      "item_id": "product-14:0",
+      "bin_id": "bay-0",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        734,
+        536,
+        402
+      ],
+      "original_size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "rotation": "RotationType_WHD (w,h,d)",
+      "rotation_index": 0
+    },
+    {
+      "item_id": "product-14:1",
+      "bin_id": "bay-0",
+      "position": [
+        734,
+        0,
+        0
+      ],
+      "size": [
+        402,
+        734,
+        536
+      ],
+      "original_size": [
+        734,
+        536,
+        402
+      ],
+      "weight": 1,
+      "rotation": "RotationType_DWH (d,w,h)",
+      "rotation_index": 4
+    }
+  ],
+  "unplaced": [],
+  "elapsed_ms": 0.001516
+}

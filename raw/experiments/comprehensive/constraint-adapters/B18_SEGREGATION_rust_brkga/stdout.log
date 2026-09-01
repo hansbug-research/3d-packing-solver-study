@@ -77,8 +77,8 @@
         5.0
       ],
       "weight": 1.0,
-      "rotation": "yxz",
-      "rotation_index": 2
+      "rotation": "zyx",
+      "rotation_index": 5
     },
     {
       "item_id": "cold:0",
@@ -104,5 +104,5 @@
     }
   ],
   "unplaced": [],
-  "elapsed_ms": 0.508357
+  "elapsed_ms": 0.477083
 }

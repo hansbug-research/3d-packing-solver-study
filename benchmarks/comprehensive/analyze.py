@@ -685,6 +685,46 @@ def constraint_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return rows
 
 
+def industrial_baytp_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Summarize B30 shelf/bay semantics separately from free-space packing.
+
+    B30 is a warehouse placement conformance case.  A geometrically complete
+    layout is not a successful result when it violates a declared shelf top,
+    side gap, or bay spacing rule, so the ranking is deliberately led by hard
+    constraint status rather than bins/volume.
+    """
+    groups: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        if executed(record) and record["benchmark_id"] == "B30":
+            groups[(record["implementation_id"], record["comparison_track"], record["problem_scope"])].append(record)
+    rows: list[dict[str, Any]] = []
+    for (implementation_id, track, scope), group in groups.items():
+        statuses = Counter(record["solution_status"] for record in group)
+        hard_counts = [
+            float(record["metrics"].get("hard_violation_count", 0))
+            for record in group
+            if record["metrics"].get("hard_violation_count") is not None
+        ]
+        rows.append(
+            {
+                "benchmark_id": "B30",
+                "implementation_id": implementation_id,
+                "comparison_track": track,
+                "problem_scope": scope,
+                "records": len(group),
+                "valid_complete": statuses["VALID_COMPLETE"],
+                "constraint_violation": statuses["CONSTRAINT_VIOLATION"],
+                "invalid_certificate": statuses["INVALID_CERTIFICATE"],
+                "process_errors": sum(record["run_status"] == "ERROR" for record in group),
+                "complete_rate": statuses["VALID_COMPLETE"] / len(group) if group else 0.0,
+                "mean_hard_violation_count": mean(hard_counts),
+                "max_hard_violation_count": max(hard_counts) if hard_counts else None,
+            }
+        )
+    rows.sort(key=lambda row: (row["constraint_violation"], row["invalid_certificate"], row["process_errors"], row["implementation_id"]))
+    return rows
+
+
 def variable_cost_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Rank only records carrying a validated variable-cost objective.
 
@@ -903,6 +943,7 @@ def generated_files() -> dict[Path, str]:
     profit, profit_pairwise = profit_knapsack_rankings(records)
     exact = exact_rankings(records)
     constraints = constraint_rankings(records)
+    industrial_baytp = industrial_baytp_rankings(records)
     variable_cost = variable_cost_rankings(records)
     open_dimension = open_dimension_rankings(records)
     resources = resource_rankings(records)
@@ -1021,6 +1062,11 @@ def generated_files() -> dict[Path, str]:
         "benchmark_id", "implementation_id", "records", "valid_complete", "valid_partial", "no_solution",
         "invalid_certificate", "constraint_violation", "process_errors", "expected_behavior_pass_rate",
     ]
+    industrial_baytp_fields = [
+        "benchmark_id", "implementation_id", "comparison_track", "problem_scope", "records", "valid_complete",
+        "constraint_violation", "invalid_certificate", "process_errors", "complete_rate",
+        "mean_hard_violation_count", "max_hard_violation_count",
+    ]
     variable_cost_fields = [
         "benchmark_id", "problem_variant", "implementation_id", "comparison_track", "instances", "valid_complete",
         "invalid_or_incomplete", "valid_rate", "mean_total_cost", "median_total_cost", "expected_cost",
@@ -1057,6 +1103,7 @@ def generated_files() -> dict[Path, str]:
         RESULTS_DIR / "rankings" / "profit-knapsack-pairwise.csv": write_csv(profit_pairwise, profit_pairwise_fields),
         RESULTS_DIR / "rankings" / "exact-proof.csv": write_csv(exact, exact_fields),
         RESULTS_DIR / "rankings" / "constraint-conformance.csv": write_csv(constraints, constraint_fields),
+        RESULTS_DIR / "rankings" / "industrial-baytp.csv": write_csv(industrial_baytp, industrial_baytp_fields),
         RESULTS_DIR / "rankings" / "variable-cost.csv": write_csv(variable_cost, variable_cost_fields),
         RESULTS_DIR / "rankings" / "open-dimension.csv": write_csv(open_dimension, open_dimension_fields),
         RESULTS_DIR / "rankings" / "resource-summary.csv": write_csv(resources, resource_fields),
