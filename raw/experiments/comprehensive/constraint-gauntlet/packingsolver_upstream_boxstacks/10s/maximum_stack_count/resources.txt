@@ -1,18 +1,18 @@
-	Command being timed: "/home/zhangshaoang/packing-software-study/.cache/packingsolver-build-patched-highs/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_bins.csv --objective bin-packing --time-limit 10.0 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --linear-programming-solver highs --output /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/output.json --certificate /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/solution.csv"
-	User time (seconds): 0.04
+	Command being timed: "/tmp/ps-upstream-build-367.3AQ4qE/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/stack_count_bins.csv --objective bin-packing --time-limit 10.0 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --linear-programming-solver highs --output /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/output.json --certificate /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/solution.csv"
+	User time (seconds): 0.03
 	System time (seconds): 0.00
-	Percent of CPU this job got: 625%
+	Percent of CPU this job got: 614%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 10112
+	Maximum resident set size (kbytes): 11392
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 576
-	Voluntary context switches: 44
-	Involuntary context switches: 11
+	Minor (reclaiming a frame) page faults: 609
+	Voluntary context switches: 33
+	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 16

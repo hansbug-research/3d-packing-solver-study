@@ -1,9 +1,11 @@
 {
-  "bins_used": 1,
-  "errors": [],
-  "packed_items": 2,
+  "bins_used": 0,
+  "errors": [
+    "solver failed, timed out, or omitted output/certificate"
+  ],
+  "packed_items": 0,
   "required_items": 2,
-  "status": "PASS",
-  "total_cost": 10.0,
-  "validation_error_count": 0
+  "status": "FAIL",
+  "total_cost": null,
+  "validation_error_count": 1
 }

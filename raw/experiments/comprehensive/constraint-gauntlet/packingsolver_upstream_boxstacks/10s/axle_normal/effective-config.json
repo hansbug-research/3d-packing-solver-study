@@ -1,12 +1,12 @@
 {
   "benchmark_id": "B15",
-  "binary_sha256": "6b940a4660d25479058f01b6d3d873855bec9d5158097b67493b4baabdaa1a11",
+  "binary_sha256": "7954a507b895e0c42fa2a73d361fb22898a5e9693c818ce30d6a0fce48aa5c46",
   "command": [
     "/usr/bin/time",
     "-v",
     "-o",
     "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/resources.txt",
-    "/home/zhangshaoang/packing-software-study/.cache/packingsolver-build-patched-highs/src/boxstacks/packingsolver_boxstacks",
+    "/tmp/ps-upstream-build-367.3AQ4qE/src/boxstacks/packingsolver_boxstacks",
     "--items",
     "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/axle_realistic_items.csv",
     "--bins",
@@ -39,7 +39,7 @@
     "benchmarks/data/packingsolver/axle_normal_bins.csv": "5549c459d8206442ac0cdbf74da63470c2dca80f7bd028864e8d69c247871893",
     "benchmarks/data/packingsolver/axle_realistic_items.csv": "48ea2b1b6ade3df37a6505b10842213063c430e2e59b977a1531a3c52cea22bf"
   },
-  "source_root": "/home/zhangshaoang/packing-software-study/.cache/packingsolver-src",
+  "source_root": "/home/zhangshaoang/packing-software-study/.cache/packingsolver-upstream-367",
   "thread_limit": 1,
   "time_limit_s": 10.0,
   "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"

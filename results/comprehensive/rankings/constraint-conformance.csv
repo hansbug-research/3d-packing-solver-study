@@ -7,13 +7,13 @@ B09,go_bp3d,2,2,0,0,0,0,0,
 B09,jerry,2,2,0,0,0,0,0,
 B09,packingsolver_fork_box,4,4,0,0,0,0,0,1.0
 B09,packingsolver_fork_boxstacks,3,3,0,0,0,0,0,1.0
-B09,packingsolver_upstream_boxstacks,2,2,0,0,0,0,0,1.0
 B09,py3dbp,2,2,0,0,0,0,0,
 B09,rust_brkga,2,2,0,0,0,0,0,
 B09,rust_extreme_point,2,2,0,0,0,0,0,
 B09,rust_ga,2,2,0,0,0,0,0,
 B09,rust_layer,2,2,0,0,0,0,0,
 B09,rust_sa,2,2,0,0,0,0,0,
+B09,packingsolver_upstream_boxstacks,2,1,0,1,0,0,1,0.5
 B09,packingsolver_upstream_box,4,3,0,0,1,0,1,0.75
 B12,go_bp3d,2,1,0,0,0,1,0,
 B12,jerry,2,1,0,0,0,1,0,

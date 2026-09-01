@@ -178032,6 +178032,16 @@
       "sha256": "968f6d37bd586f90fd1a6a1959945970d0ff1bfc4b3fcc6577146107859136bf"
     },
     {
+      "path": "raw/experiments/comprehensive/B11/packingsolver/10s/artifacts.tar.gz",
+      "bytes": 5344,
+      "sha256": "39f2c13a2b919ed80fd8f861d1a938fd5a95bd5f5fb45577f735d60385eef8d6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B11/packingsolver/10s/metadata.json",
+      "bytes": 551,
+      "sha256": "3841d8b080d5c7c097d4c1c3a23953c0a723787db61eb449dd4d6494991bed1e"
+    },
+    {
       "path": "raw/experiments/comprehensive/B11/packingsolver/2s/artifacts.tar.gz",
       "bytes": 5119,
       "sha256": "fbc2740bc509a5af8c6069cea287d2b0e456febafee2d64a912e9c98628309c1"
@@ -199483,13 +199493,13 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/artifacts.tar.gz",
-      "bytes": 9348,
-      "sha256": "6fdbc4660a59787900e3a63fc308e40fd60117511c1ddee8df807e1d85169b37"
+      "bytes": 9872,
+      "sha256": "db08c1150110269211178926853864b948796f996fc2e5ab1c784e64c158e681"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_boundary_regression/effective-config.json",
-      "bytes": 2250,
-      "sha256": "bda97ef239a15155d3accf23a48c8ed19b5a0fbcd6e1658c732112b281cb5c92"
+      "bytes": 2210,
+      "sha256": "a892eab090a1a0a56fb7a11ae692ecf18c094d1621439536cda62375848c17e1"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_boundary_regression/input.json",
@@ -199498,8 +199508,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_boundary_regression/resources.txt",
-      "bytes": 1558,
-      "sha256": "3681b4e53dab3f743eaaad4cbe9bda11aec1a3ded832c910b5ba17f29302b8fb"
+      "bytes": 1509,
+      "sha256": "4631fabdd75b4f8c206941931cbc327b302a5f56953901b8713c5a72a5ecec1a"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_boundary_regression/stderr.log",
@@ -199518,8 +199528,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_infeasible/effective-config.json",
-      "bytes": 2258,
-      "sha256": "ede71ffbbc2d2a5e98bb5106d76a117972a3a41a5a21e36418dc8b18913db546"
+      "bytes": 2218,
+      "sha256": "717ad70e220bc37d4ff072f37ca4b61d62f34224bdecf35425e9da10a4cd3921"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_infeasible/input.json",
@@ -199528,8 +199538,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_infeasible/resources.txt",
-      "bytes": 1561,
-      "sha256": "13d06306173cee4fa0a092d6204e27a2438b2e231a63a37d49ea1ebc3a4694ed"
+      "bytes": 1512,
+      "sha256": "aa83ce944bfa07eaf2a4e691250c500a68c44337a996fd85ca1f8542661584c4"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_infeasible/stderr.log",
@@ -199548,8 +199558,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/effective-config.json",
-      "bytes": 2230,
-      "sha256": "33f57e93eb65e1b4cd4f6a79c0efd70f1a59bef10663a5e3407e403b77c69565"
+      "bytes": 2190,
+      "sha256": "8e9037d12989b22359ca42fb0acc21702e881021277de046304b2b7bf540514f"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/input.json",
@@ -199558,13 +199568,13 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/output.json",
-      "bytes": 3450,
-      "sha256": "c7df231c354985fd8d3df4ba88ba6da64b87ce2005cab901b64431662cfe6517"
+      "bytes": 3451,
+      "sha256": "4ec96bafbdf9a0a63d2695bd991c77dc120cd4e3339d4c1cdc99e985af47fba4"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/resources.txt",
-      "bytes": 1511,
-      "sha256": "45984a583caeb086122bd2c8c4a80c8cf9f594c79220e1fd93334cfb84db40f4"
+      "bytes": 1463,
+      "sha256": "e01859f92a0ecd74bc818829683051391bdc020e768917b2eb47551f05efd6c9"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/axle_normal/solution.csv",
@@ -199588,8 +199598,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/effective-config.json",
-      "bytes": 2313,
-      "sha256": "2d23fc10bbda4e45ab9a89460e6af9ddde0e44ff9d6d5926d49f78fa16a19bac"
+      "bytes": 2273,
+      "sha256": "e47cc1383f8fb29626c5240323363ae5821afdd012d80776628004dfa6a9da8e"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/input.json",
@@ -199597,24 +199607,14 @@
       "sha256": "3a0ecb61483dcd7408538f1423e10c06299a4314077d1528670f47ebd20c5bfb"
     },
     {
-      "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/output.json",
-      "bytes": 4251,
-      "sha256": "10f78f20b9e90abb2652a67ed867f0d52ec12b376af2ef75e10754a7103d2214"
-    },
-    {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/resources.txt",
-      "bytes": 1560,
-      "sha256": "674582bff3cc1b54bc7746abe6f07be8c26dd5d22eb6147ab038ac43464b37f5"
-    },
-    {
-      "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/solution.csv",
-      "bytes": 184,
-      "sha256": "d75a4a53ebbc2353b9908663e66da84eb47e9f61edf9a0a65197e2c24a943176"
+      "bytes": 1548,
+      "sha256": "2beddb89888cdd5ba4bc7f0c5d6819fd6184248c19d19e7950e88fe5ce9622b8"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/stderr.log",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "bytes": 174,
+      "sha256": "5b50bc41495b6c2b66b4dac751f7bcb377b23b018eb7e9420483cc951b0a5197"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/stdout.log",
@@ -199623,13 +199623,13 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_large_cheaper/validation.json",
-      "bytes": 154,
-      "sha256": "7afc49f3765781a4e38faadc49881c24aca5851d52db25677f7ac67307a6a166"
+      "bytes": 219,
+      "sha256": "7281bbc517efae5d01689e2c08a1b16cd53f7309939d86eb768785983962cc18"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_small_cheaper/effective-config.json",
-      "bytes": 2329,
-      "sha256": "1e2a1058c90f958a99d8b73edea4d7fcc877f7ccd77782c7bfa6848b68b0cecb"
+      "bytes": 2289,
+      "sha256": "6ccd190d6c07ea418673bdba99831978ee099cc3772b95a2b2a5967dab2f92ec"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_small_cheaper/input.json",
@@ -199639,12 +199639,12 @@
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_small_cheaper/output.json",
       "bytes": 3254,
-      "sha256": "148750b29780db292b28bfdb29eff0b80493879f4c69cc2860ebb54e01764fb4"
+      "sha256": "22df3996b616bf5b5764ae7dcb356e5e2fde7d43ba37311a8e3bed024cbe4c87"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_small_cheaper/resources.txt",
-      "bytes": 1568,
-      "sha256": "fbc7d9c92f7b43437667d7081f6d5836189bbbbff061919cf713ae4edb8a0af8"
+      "bytes": 1519,
+      "sha256": "76d7f761203dbf4e45473e11a57de8401bc58e697ede864410b395e4cee6e522"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/heterogeneous_small_cheaper/solution.csv",
@@ -199668,8 +199668,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/effective-config.json",
-      "bytes": 2264,
-      "sha256": "ff4f0ca6538fe19ab7a24a7d573341930c0eab543ecb360a38b098d047a2ad20"
+      "bytes": 2224,
+      "sha256": "3e54e6787e7d9b6a80aa9d825fb237277d7cca6981c18889fbebcf690313277c"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/input.json",
@@ -199679,12 +199679,12 @@
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/output.json",
       "bytes": 3213,
-      "sha256": "ff1c94e7d29e86cc7e058b29800324fe0a86baacb6d3d35de6d3ef527404be0f"
+      "sha256": "3dce472b486dd05d497bf0079f051addbb9406f3f08d3d2612e9846b11586ce8"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/resources.txt",
-      "bytes": 1526,
-      "sha256": "535916fc8bb1ea9a4769bf8b2ac7c84b7bc7b6ad14bb45ec0dd49df6779fbea0"
+      "bytes": 1476,
+      "sha256": "1a0af049392a531418c6b7e9de0d4d7eec71302dfe5c04c0fed8751349389806"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_stack_count/solution.csv",
@@ -199708,8 +199708,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_weight_above/effective-config.json",
-      "bytes": 2245,
-      "sha256": "ce1d311a633209ba859f2eb774f777cc986b37d0ff2de75b229d1cb88ef8ade2"
+      "bytes": 2205,
+      "sha256": "00322d694db1280a5e34f5abcea8d65ec1c5e2fadc3078153d17c71af464c7ff"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_weight_above/input.json",
@@ -199719,12 +199719,12 @@
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_weight_above/output.json",
       "bytes": 3209,
-      "sha256": "f623a2b97d376aeadc057a7beddae5731d14cdac1cc8c1a8ac9342ae40f3f3e0"
+      "sha256": "ac006108a0d9ee5b1ce0ace4652be07d1aaee5d274142cd23e6b804698f9f310"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_weight_above/resources.txt",
-      "bytes": 1515,
-      "sha256": "b69b21374a805b87c926d79bff2726d551625a93baacdcd0d9a3df0b8d9c9bd2"
+      "bytes": 1465,
+      "sha256": "2a18a149789215969133b7b522a6a4bc3b1cab9b7595c8ce1862d89a619fb0ea"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/maximum_weight_above/solution.csv",
@@ -199748,13 +199748,13 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/metadata.json",
-      "bytes": 1216,
-      "sha256": "ab9922ec8b5549eb1f226fa68868fdf4619e5e311430e7ceaf755962e907d71d"
+      "bytes": 1154,
+      "sha256": "217494a940e4ae7df1f711e633dd014941bb16cd82c181a3018b3da6d8461ac9"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/effective-config.json",
-      "bytes": 2223,
-      "sha256": "dc8b20757f6c2c8710daa30902217bf1355d94098e165140fffcddf77ae06265"
+      "bytes": 2183,
+      "sha256": "d62ceca45a6762d8518ea10235e70e10b8f487dd62e05b320ceaa0bf1fec1c71"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/input.json",
@@ -199763,13 +199763,13 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/output.json",
-      "bytes": 3221,
-      "sha256": "6e9775123bcb6270a655a0a6cb188e23278cee89d7c0aa42977dc1b4593f9921"
+      "bytes": 3220,
+      "sha256": "2b4ee734ae27310dbe518a2feb3e1af469ef592895aed683729ba1420d8fdd2d"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/resources.txt",
-      "bytes": 1507,
-      "sha256": "5dc84c73a4ecde41301c4859020424848d45593f40429e200a417763d1003e5e"
+      "bytes": 1458,
+      "sha256": "804b8a8d1b4357b4cbb3294518614345ed691b73399a4440554828adf170e7f9"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/solution.csv",
@@ -199793,8 +199793,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_increasing_x/effective-config.json",
-      "bytes": 2311,
-      "sha256": "0c499a376d55bd7de5600c8b89ed79b15bd143ea3b194d8f52d571c67ba5e1b3"
+      "bytes": 2271,
+      "sha256": "a6ff89accc9b4332d4005f6b6eb3b1f79a34a843d0a3dcdee7503de76d7e089f"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_increasing_x/input.json",
@@ -199804,12 +199804,12 @@
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_increasing_x/output.json",
       "bytes": 3207,
-      "sha256": "0a4d3a29b22d30eca296b290731a741865d67c8e81693c9211f8d3d3063a4b8f"
+      "sha256": "ffc92a9abcd4b6b8a83f01916f1a8050336151918d41b443247a4fb457a5c1ac"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_increasing_x/resources.txt",
-      "bytes": 1562,
-      "sha256": "29e8ab0ed895fc8039a694d01d0b5ed0209aebba52b7a443f1f629c1209ca701"
+      "bytes": 1514,
+      "sha256": "1a29d1b4d67299e513eb680fa0bb38b1bcfcffa4e5a1e2885ed2e29f07eadf89"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_increasing_x/solution.csv",
@@ -199833,8 +199833,8 @@
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/effective-config.json",
-      "bytes": 2231,
-      "sha256": "621d4ea542eab638889d5778af359b333231a9dee0a05ccbe0e994f28573651d"
+      "bytes": 2191,
+      "sha256": "72b37d8712732eb0903a45d658fd78a6f553717350aaad1db877be7caa672345"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/input.json",
@@ -199844,12 +199844,12 @@
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/output.json",
       "bytes": 3207,
-      "sha256": "2aa256d079f68a22d40e729cc00b07b9d306ab5a6a4bff2e20c30452019e9305"
+      "sha256": "b6f3b5b941a7adf04158d6e3d5dd3a1f72492f2dbdfe656b43157575c97b5082"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/resources.txt",
-      "bytes": 1511,
-      "sha256": "c928df2b7a79cb43afd87480cdd0b1af2eff069b652a99c67e9bd12f0607f62b"
+      "bytes": 1462,
+      "sha256": "a09795fa8536f6ac7b4c877a6927854bc5438161acfcaf93739162edebe055fe"
     },
     {
       "path": "raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/solution.csv",
@@ -199960,6 +199960,26 @@
       "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-fork-boxstacks-1s/metadata.json",
       "bytes": 610,
       "sha256": "1ae2509e572476506f7ac21aaa0b9e2eed68052ef5fe93d9e3f5c58babc62cc6"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-upstream-boxstacks-10s/artifacts.tar.gz",
+      "bytes": 19945,
+      "sha256": "ca13f886e33938538b51b54cd2f87febe8e0ffa5e0e0194056ffd18b60c65db3"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-upstream-boxstacks-10s/metadata.json",
+      "bytes": 615,
+      "sha256": "11bf82cef24cc62b9ccf33d6b4f7db535a2a6bfd16ec7ee8db681228131f36db"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-upstream-boxstacks-1s/artifacts.tar.gz",
+      "bytes": 17857,
+      "sha256": "5f40cc9d702416f4b39fcfb68e4d62c44f30e68b095c70d529d6182b90109e0d"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-upstream-boxstacks-1s/metadata.json",
+      "bytes": 614,
+      "sha256": "c86ca84df7439a24614047acf62f3e6f7c30154824dabab5cfa41760f2415d45"
     },
     {
       "path": "raw/experiments/comprehensive/reliability-v3/B24_axis_swap_exact_cp_sat_rep-0/input.json",

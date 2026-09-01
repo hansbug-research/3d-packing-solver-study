@@ -1,12 +1,12 @@
 {
   "benchmark_id": "B14",
-  "binary_sha256": "6b940a4660d25479058f01b6d3d873855bec9d5158097b67493b4baabdaa1a11",
+  "binary_sha256": "7954a507b895e0c42fa2a73d361fb22898a5e9693c818ce30d6a0fce48aa5c46",
   "command": [
     "/usr/bin/time",
     "-v",
     "-o",
     "/home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/nesting_height/resources.txt",
-    "/home/zhangshaoang/packing-software-study/.cache/packingsolver-build-patched-highs/src/boxstacks/packingsolver_boxstacks",
+    "/tmp/ps-upstream-build-367.3AQ4qE/src/boxstacks/packingsolver_boxstacks",
     "--items",
     "/home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/nesting_items.csv",
     "--bins",
@@ -39,7 +39,7 @@
     "benchmarks/data/packingsolver/nesting_bins.csv": "5387e96e155cf5f6eec4f741a2529db9edf2f04a599324eac72b4b00dbd69420",
     "benchmarks/data/packingsolver/nesting_items.csv": "18b2d23c0863b98aef8535cab64573bab12019380b1b5d2e9181e9416344681d"
   },
-  "source_root": "/home/zhangshaoang/packing-software-study/.cache/packingsolver-src",
+  "source_root": "/home/zhangshaoang/packing-software-study/.cache/packingsolver-upstream-367",
   "thread_limit": 1,
   "time_limit_s": 10.0,
   "validator_sha256": "ca140dbf10f1e9f375b05e0c040fb0d7d91767950132fd8db075c0f427d8b3ec"

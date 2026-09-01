@@ -57,7 +57,7 @@
                 "XMax": 200,
                 "YMax": 200
             },
-            "Time": 0.001649199,
+            "Time": 0.001800894,
             "VariableSizedBinPackingBound": 0.0
         }
     ],
@@ -88,7 +88,7 @@
             "XMax": 200,
             "YMax": 200
         },
-        "Time": 0.00166855,
+        "Time": 0.001818781,
         "VariableSizedBinPackingBound": 0.0
     },
     "Parameters": {

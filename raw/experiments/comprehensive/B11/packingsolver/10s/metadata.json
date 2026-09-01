@@ -1,0 +1,11 @@
+{
+  "artifact_archive": "raw/experiments/comprehensive/B11/packingsolver/10s/artifacts.tar.gz",
+  "artifact_archive_sha256": "39f2c13a2b919ed80fd8f861d1a938fd5a95bd5f5fb45577f735d60385eef8d6",
+  "benchmark_id": "B11",
+  "protocol_version": "benchmark-protocol/3",
+  "record_count": 12,
+  "run_jsonl_sha256": "faea9c3dad6ed8ba7a51b7b6dec4ca068922fbba32ff92ab053d8c4a3129c599",
+  "runner_sha256": "7ce68e14e2ba4e769ebc89b564d8f4be690ceca3db8812a002b43b12776ed872",
+  "schema_version": 1,
+  "source_scope": "REPOSITORY_FIXTURE_DERIVED_FROM_FORK_TESTS"
+}

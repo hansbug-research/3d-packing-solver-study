@@ -242,17 +242,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 64539
-    assert summary["protocol_v3_run_records"] == 62417
+    assert summary["combined_run_records"] == len(records) == 64630
+    assert summary["protocol_v3_run_records"] == 62508
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 560
+    assert aggregate["coverage"]["cells_with_evidence"] == 562
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 288
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 290
     assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 253
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62417}
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62508}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34221
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -322,7 +322,30 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert all(row["instances"] == 5 for row in exact_rankings if row["benchmark_id"] == "B06")
     assert all(row["instances"] == 2 for row in exact_rankings if row["benchmark_id"] == "B09")
     b11 = [row for row in csv.DictReader((comprehensive / "rankings" / "open-dimension.csv").open(newline="")) if row["benchmark_id"] == "B11"]
-    assert len(b11) == 11
+    assert len(b11) == 12
+    b04_upstream_stacks = []
+    for name in ("B04-packingsolver-upstream-boxstacks-1s.jsonl", "B04-packingsolver-upstream-boxstacks-10s.jsonl"):
+        b04_upstream_stacks.extend(
+            json.loads(line)
+            for line in (comprehensive / "runs" / name).read_text().splitlines()
+            if line
+        )
+    assert len(b04_upstream_stacks) == 88
+    assert all(
+        record["implementation_id"] == "packingsolver_upstream_boxstacks"
+        and record["run_status"] == "ERROR"
+        and record["solution_status"] == "NO_SOLUTION"
+        and record["termination_reason"] == "PROCESS_ERROR"
+        for record in b04_upstream_stacks
+    )
+    b11_upstream_stacks = [
+        record
+        for record in records
+        if record["benchmark_id"] == "B11"
+        and record["implementation_id"] == "packingsolver_upstream_boxstacks"
+    ]
+    assert len(b11_upstream_stacks) == 3
+    assert all(record["run_status"] == "ERROR" and record["solution_status"] == "NO_SOLUTION" for record in b11_upstream_stacks)
     executed_b11 = {
         "packingsolver_fork_box",
         "packingsolver_upstream_box",

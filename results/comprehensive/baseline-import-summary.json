@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 64539,
+  "combined_run_records": 64630,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -70,6 +70,8 @@
     "results/comprehensive/runs/B04-exact_gurobi-20s-exact-calibration.jsonl": "c451fb6c0878a0993706e0b41b5bdf9eeb15baccfd9ecfba2288b982b050ac37",
     "results/comprehensive/runs/B04-exact_scip-20s-exact-calibration.jsonl": "2db7da974a602c68f47eaa13685ec743bc398db8c055fcc6666fa7af799fe41b",
     "results/comprehensive/runs/B04-packingsolver-fork-boxstacks-1s.jsonl": "cbf7483ba068bab103fa532f3b965a807c74c12392e95e7b50dba9eb97f3553c",
+    "results/comprehensive/runs/B04-packingsolver-upstream-boxstacks-10s.jsonl": "78e4329a509d6c858ee6f53b062a05e4037301b2a4fbb869510a24e3d7852754",
+    "results/comprehensive/runs/B04-packingsolver-upstream-boxstacks-1s.jsonl": "feacb4bc9c0377026d164d2681648f656115abcbfca78792c3c30c2824dea9c4",
     "results/comprehensive/runs/B07-exact_cp_sat-20s.jsonl": "ff93e3cd5e96f8a26e066bfd25933dcb7f6d36e70c68247aa247f90e1a27986c",
     "results/comprehensive/runs/B07-exact_cplex-20s.jsonl": "37f9f9a671eeea3e5d91df4c468e4c1702c7976f81f0ca28a7058bca3993e4f8",
     "results/comprehensive/runs/B07-exact_gurobi-20s.jsonl": "220141ec2c9a998256f81a31ed88ec096fca64989edbfc0d75e10bdfac592948",
@@ -88,14 +90,14 @@
     "results/comprehensive/runs/B09-external-composed.jsonl": "c81e7a9b3e80e91b3f77ebdb43fe5ce3ea4b4e403a7dc9c652c08d0eff6362b7",
     "results/comprehensive/runs/B09-python-composed.jsonl": "879b062a591497e3a79131c4b1561fc8b4cdb2250821364f226690dbac31f66f",
     "results/comprehensive/runs/B11-external-composed.jsonl": "d24c3ede7a8ce9a8de58583f35265cc990a5d71a3fa3b9ee14026ea8cfd59016",
-    "results/comprehensive/runs/B11-packingsolver.jsonl": "41a60a2c119c954cddbe8fa5f8a22348fac574b6e278b7ad71170efd8e57c54e",
+    "results/comprehensive/runs/B11-packingsolver.jsonl": "faea9c3dad6ed8ba7a51b7b6dec4ca068922fbba32ff92ab053d8c4a3129c599",
     "results/comprehensive/runs/B32-online-composed.jsonl": "edd7835dbf2ca3be7058fc8181b4321ce463207b5108f6e7a9f86eaaeb0a518d",
     "results/comprehensive/runs/alonso-projection.jsonl": "deb50847109ef2ff350c442201f4c42a1e99f1fe696c1d2a11ae32cf165ced46",
     "results/comprehensive/runs/constraint-adapters-b12-b13-b15-b16-b17-b18-b30.jsonl": "276638667bb2efe724f825c0fa458a5f73560765fc9e9bb4cb8e09ef61937346",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_box-10s.jsonl": "1fc82dea95deb565c7ecc759983b1cad9390b6e48dc736ffa76222c78ae712c1",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_boxstacks-10s.jsonl": "a197d7b06c40cffce15a66f077459d7edacaca612b8227080fad2a43deb097a7",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
-    "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813",
+    "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "579a1968e2dcd05f6d80f80f51c37269e4b29efa0416f6faa42c8f15dec03659",
     "results/comprehensive/runs/exact-calibrations.jsonl": "aae12a2aa8e551120352338788e10c6cd37b34bce6909ca3769b746fcc42e2a1",
     "results/comprehensive/runs/reliability-v3.jsonl": "5f581db84d8ce0981c746e0a144132ef58ebf59c732d533583f34de67f92fdae",
     "results/comprehensive/runs/status-B01.jsonl": "7731c082b9ee8366605eb7ccb7f235a4e50a2213cc0652335d8ca944cbcc8abb",
@@ -131,7 +133,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "8451bb523f828a21a4b67a8d91941431b940ae09992961e28b9e37c1e9a23e64"
   },
-  "protocol_v3_run_records": 62417,
+  "protocol_v3_run_records": 62508,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -146,7 +148,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "177cc7e8503b49f7c3e9d78e5d8e684867d8bc7ae3f8c5231f6cc549cba841ab",
+  "run_manifest_sha256": "05d07aac78a194e7f4b4eb6885788083fbe3861cbedb05c67b0c6aae456a7859",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

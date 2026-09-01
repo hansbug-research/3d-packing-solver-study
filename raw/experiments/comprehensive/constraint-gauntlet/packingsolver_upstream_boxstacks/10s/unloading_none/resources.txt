@@ -1,18 +1,18 @@
-	Command being timed: "/home/zhangshaoang/packing-software-study/.cache/packingsolver-build-patched-highs/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv --objective bin-packing --time-limit 10.0 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --linear-programming-solver highs --output /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/output.json --certificate /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/solution.csv"
+	Command being timed: "/tmp/ps-upstream-build-367.3AQ4qE/src/boxstacks/packingsolver_boxstacks --items /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_items.csv --bins /home/zhangshaoang/packing-software-study/benchmarks/data/packingsolver/unloading_bins.csv --objective bin-packing --time-limit 10.0 --memory-limit 1024 --verbosity-level 0 --only-write-at-the-end --linear-programming-solver highs --output /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/output.json --certificate /home/zhangshaoang/packing-software-study/raw/experiments/comprehensive/constraint-gauntlet/packingsolver_upstream_boxstacks/10s/unloading_none/solution.csv"
 	User time (seconds): 0.01
 	System time (seconds): 0.00
-	Percent of CPU this job got: 450%
+	Percent of CPU this job got: 425%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 10368
+	Maximum resident set size (kbytes): 11136
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 489
-	Voluntary context switches: 14
-	Involuntary context switches: 3
+	Minor (reclaiming a frame) page faults: 532
+	Voluntary context switches: 12
+	Involuntary context switches: 1
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 16

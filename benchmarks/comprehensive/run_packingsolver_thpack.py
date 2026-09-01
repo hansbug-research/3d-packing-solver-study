@@ -149,7 +149,16 @@ def main() -> int:
     parser.add_argument("--binary", type=Path, required=True)
     parser.add_argument("--source-commit", required=True)
     parser.add_argument("--data-root", type=Path, required=True)
-    parser.add_argument("--implementation-id", choices=("packingsolver_fork_box", "packingsolver_upstream_box", "packingsolver_fork_boxstacks"), required=True)
+    parser.add_argument(
+        "--implementation-id",
+        choices=(
+            "packingsolver_fork_box",
+            "packingsolver_upstream_box",
+            "packingsolver_fork_boxstacks",
+            "packingsolver_upstream_boxstacks",
+        ),
+        required=True,
+    )
     parser.add_argument("--time-limit", type=float, choices=(1.0, 10.0), required=True)
     parser.add_argument("--label", required=True)
     parser.add_argument("--family", choices=("BR", "LN", "IMM"), action="append")
