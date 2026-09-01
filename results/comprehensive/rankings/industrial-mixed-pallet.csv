@@ -1,4 +1,5 @@
 benchmark_id,implementation_id,comparison_track,problem_scope,records,valid_complete,constraint_violation,invalid_certificate,no_solution,complete_rate,mean_packed_items,mean_hard_violation_count
+B31,exact_cp_sat,EXACT_MODEL,FULL_PROBLEM,3,2,0,0,1,0.6666666666666666,4.0,0.3333333333333333
 B31,go_bp3d,COMPOSED,GEOMETRY_PROJECTION,3,1,2,0,0,0.3333333333333333,5.0,1.0
 B31,jerry,COMPOSED,GEOMETRY_PROJECTION,3,1,2,0,0,0.3333333333333333,5.0,1.0
 B31,py3dbp,COMPOSED,GEOMETRY_PROJECTION,3,1,2,0,0,0.3333333333333333,5.0,1.0

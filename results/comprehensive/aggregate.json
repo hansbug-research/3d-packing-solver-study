@@ -7,12 +7,12 @@
     "executed_implementations": 19,
     "legacy_baseline_only_cells": 19,
     "planned_cells": 608,
-    "protocol_v3_executed_cell_rate": 0.4276315789473684,
-    "protocol_v3_executed_cells": 260,
-    "protocol_v3_status_only_cells": 251,
+    "protocol_v3_executed_cell_rate": 0.4309210526315789,
+    "protocol_v3_executed_cells": 262,
+    "protocol_v3_status_only_cells": 249,
     "record_origin_counts": {
       "LEGACY_BASELINE": 2122,
-      "PROTOCOL_V3": 60831
+      "PROTOCOL_V3": 60835
     },
     "records_by_benchmark": {
       "B01": 25283,
@@ -44,14 +44,14 @@
       "B27": 95,
       "B28": 76,
       "B29": 38,
-      "B30": 19,
-      "B31": 28,
+      "B30": 20,
+      "B31": 31,
       "B32": 59
     },
-    "run_records": 62953,
+    "run_records": 62957,
     "run_status_counts": {
       "CANCELLED": 16,
-      "COMPLETED": 49112,
+      "COMPLETED": 49116,
       "ERROR": 47,
       "NOT_RUN": 263,
       "TIME_LIMIT": 13515
@@ -60,8 +60,8 @@
       "CONSTRAINT_VIOLATION": 72,
       "INVALID_CERTIFICATE": 347,
       "NOT_APPLICABLE": 263,
-      "NO_SOLUTION": 6956,
-      "VALID_COMPLETE": 1304,
+      "NO_SOLUTION": 6957,
+      "VALID_COMPLETE": 1307,
       "VALID_PARTIAL": 54011
     }
   },
@@ -303,6 +303,20 @@
     "industrial_baytp": [
       {
         "benchmark_id": "B30",
+        "comparison_track": "EXACT_MODEL",
+        "complete_rate": 1.0,
+        "constraint_violation": 0,
+        "implementation_id": "exact_cp_sat",
+        "invalid_certificate": 0,
+        "max_hard_violation_count": 0.0,
+        "mean_hard_violation_count": 0.0,
+        "problem_scope": "FULL_PROBLEM",
+        "process_errors": 0,
+        "records": 1,
+        "valid_complete": 1
+      },
+      {
+        "benchmark_id": "B30",
         "comparison_track": "COMPOSED",
         "complete_rate": 0.0,
         "constraint_violation": 1,
@@ -415,6 +429,20 @@
       }
     ],
     "industrial_mixed_pallet": [
+      {
+        "benchmark_id": "B31",
+        "comparison_track": "EXACT_MODEL",
+        "complete_rate": 0.6666666666666666,
+        "constraint_violation": 0,
+        "implementation_id": "exact_cp_sat",
+        "invalid_certificate": 0,
+        "mean_hard_violation_count": 0.3333333333333333,
+        "mean_packed_items": 4.0,
+        "no_solution": 1,
+        "problem_scope": "FULL_PROBLEM",
+        "records": 3,
+        "valid_complete": 2
+      },
       {
         "benchmark_id": "B31",
         "comparison_track": "COMPOSED",
@@ -3504,7 +3532,7 @@
     "results/comprehensive/b31-source-audit.json": "445b4c63cbf5a5b4bce389a8eb3d52f8e244211ef19741e163629089f78ef1d7",
     "results/comprehensive/b32-source-audit.json": "8f5bfff66d862c249b1988ac3dd94f1f9c1a5f773cc93a9c37747288895e963b",
     "results/comprehensive/reliability-source-audit.json": "9325055b51caaf1101eacb6bfacaf6817834012c3c0f9edcfa48a09a9e4ba1b7",
-    "results/comprehensive/run-manifest.jsonl": "e31c322f3bef3c12ad7bbc99dc1564be240ca03e2c73787bff9fd416790ebbde",
+    "results/comprehensive/run-manifest.jsonl": "6a26b1953d87b5fd847b8448bd533e1c110da0a6b3cd8abd7742217abfb174e2",
     "results/comprehensive/suite-implementation-plan.jsonl": "feaf55ae8d7e0f53630eedc1f813b4e0c91ab71c98e73f097f6d57b03e7df2a4"
   },
   "warnings": [

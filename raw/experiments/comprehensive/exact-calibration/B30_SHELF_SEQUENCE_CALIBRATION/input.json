@@ -1,0 +1,32 @@
+{
+  "placements": [
+    {
+      "bin_id": "bay-0",
+      "item_id": "product-14:0",
+      "position": [
+        10,
+        0,
+        0
+      ],
+      "size": [
+        734,
+        402,
+        536
+      ]
+    },
+    {
+      "bin_id": "bay-0",
+      "item_id": "product-14:1",
+      "position": [
+        10,
+        500,
+        0
+      ],
+      "size": [
+        734,
+        402,
+        536
+      ]
+    }
+  ]
+}

@@ -17,6 +17,8 @@ Wave-1 fresh exact/Skjolber 结果的执行与协议导入命令为：`bash benc
 
 `run-manifest.jsonl` 通过 Git LFS 跟踪（当前对象约 141 MB）；检出仓库后请执行 `git lfs install` 与 `git lfs pull`，否则工作区中会只看到 pointer 文件，不能运行本目录的导入、分析和验证脚本。
 
+B30/B31 的 `exact-calibrations.jsonl` 是四条可手工复核的小 fixture 真值记录：B30 证明两个声明 shelf 必须使用两个 shelf，B31 覆盖平铺/堆叠最优和总重量不可行。它们都带 `metrics.calibration_only=true`，只用于 validator/adapter 校准，不替代完整 BAYTP 或 mixed-SKU 订单 corpus。复现命令为 `python benchmarks/comprehensive/run_exact_calibrations.py`，然后依次运行 `python benchmarks/comprehensive/import_baseline.py` 和 `python benchmarks/comprehensive/analyze.py`。
+
 B24-B29 reliability-v3 已完成 347 条全库记录，分别输出 metamorphic、numeric、repeatability、scalability 和 fault/cancellation 表；这些结果只回答工程稳定性、资源边界和托管行为，不与几何质量或成本排行合并。复现实验使用 `.venv/bin/python benchmarks/comprehensive/run_reliability.py`，输入和 runner hash 见 [`reliability-source-audit.json`](reliability-source-audit.json)，原始产物位于 `raw/experiments/comprehensive/reliability-v3/`。
 
 B11 已完成 fork-owned open-X 校准运行：fork/upstream `box` 各 3/3 个 case 通过独立 validator，fork `boxstacks` 3/3 因非同底面 stack 语义报错并保留原始证据；上游 `boxstacks` 因当前工作区缺少对应二进制保持未运行。另对 py3dbp、Jerry、Go `bp3d` 和 u-nesting 五策略运行逐整数 X 外层搜索，共 24 条 projection 记录，其中 23/24 为完整合法证书；Rust Layer 的 `open_dimension_x_xz` 无完整候选。结果见 [`open-dimension.csv`](rankings/open-dimension.csv)，原生与投影不与 BR/LN 或封闭箱数排行混排。

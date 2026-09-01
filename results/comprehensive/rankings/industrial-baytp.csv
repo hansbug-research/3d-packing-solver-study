@@ -1,4 +1,5 @@
 benchmark_id,implementation_id,comparison_track,problem_scope,records,valid_complete,constraint_violation,invalid_certificate,process_errors,complete_rate,mean_hard_violation_count,max_hard_violation_count
+B30,exact_cp_sat,EXACT_MODEL,FULL_PROBLEM,1,1,0,0,0,1.0,0.0,0.0
 B30,go_bp3d,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
 B30,jerry,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0
 B30,py3dbp,COMPOSED,GEOMETRY_PROJECTION,1,0,1,0,0,0.0,2.0,2.0

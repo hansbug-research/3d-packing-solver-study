@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62953,
+  "combined_run_records": 62957,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -85,6 +85,7 @@
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_fork_boxstacks-10s.jsonl": "a197d7b06c40cffce15a66f077459d7edacaca612b8227080fad2a43deb097a7",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_box-10s.jsonl": "b524d5767d992407d46975e2a525b4c83106cf0d286a3929970b5c238f659b26",
     "results/comprehensive/runs/constraint-gauntlet-packingsolver_upstream_boxstacks-10s.jsonl": "db07d65c15d30afa8b2fcd422cac93afa3f259ee54a0567dc0dcf29dcf891813",
+    "results/comprehensive/runs/exact-calibrations.jsonl": "aae12a2aa8e551120352338788e10c6cd37b34bce6909ca3769b746fcc42e2a1",
     "results/comprehensive/runs/reliability-v3.jsonl": "5f581db84d8ce0981c746e0a144132ef58ebf59c732d533583f34de67f92fdae",
     "results/comprehensive/runs/status-B01.jsonl": "7731c082b9ee8366605eb7ccb7f235a4e50a2213cc0652335d8ca944cbcc8abb",
     "results/comprehensive/runs/status-B02.jsonl": "87bb50dc8429d2c74a5d1fb41831f931069ded993d8ecd037366474fc02c565f",
@@ -119,7 +120,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "2b851f066fb0028db02dc762a19734ee1aa8e0dc26da9a6a01b2b903259f68b4"
   },
-  "protocol_v3_run_records": 60831,
+  "protocol_v3_run_records": 60835,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -134,7 +135,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "e31c322f3bef3c12ad7bbc99dc1564be240ca03e2c73787bff9fd416790ebbde",
+  "run_manifest_sha256": "6a26b1953d87b5fd847b8448bd533e1c110da0a6b3cd8abd7742217abfb174e2",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

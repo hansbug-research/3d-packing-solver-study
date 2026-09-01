@@ -278,6 +278,7 @@ def check_comprehensive_results() -> None:
         "b31-source-audit.json",
         "b32-source-audit.json",
         "b05-source-audit.json",
+        "runs/exact-calibrations.jsonl",
     ]
     for relative in required:
         if not (directory / relative).exists():
@@ -303,7 +304,7 @@ def check_comprehensive_results() -> None:
         summary.get("run_records"),
         summary.get("combined_run_records"),
         coverage.get("run_records"),
-        ) != (62953, 2122, 62953, 62953):
+        ) != (62957, 2122, 62957, 62957):
         fail("comprehensive combined record count changed")
     if (
         coverage.get("planned_cells"),
@@ -312,11 +313,11 @@ def check_comprehensive_results() -> None:
         coverage.get("protocol_v3_executed_cells"),
         coverage.get("benchmarks_with_runs"),
         coverage.get("executed_implementations"),
-        ) != (608, 530, 19, 260, 24, 19):
+        ) != (608, 530, 19, 262, 24, 19):
         fail("comprehensive execution coverage changed")
-    if coverage.get("protocol_v3_status_only_cells") != 251:
+    if coverage.get("protocol_v3_status_only_cells") != 249:
         fail("comprehensive status-only coverage changed")
-    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60831}:
+    if coverage.get("record_origin_counts") != {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 60835}:
         fail("comprehensive run origin counts changed")
     try:
         b05_audit = json.loads((directory / "b05-source-audit.json").read_text(), parse_constant=reject_constant)
@@ -349,18 +350,23 @@ def check_comprehensive_results() -> None:
             fail(f"comprehensive reliability ranking is missing: {ranking}")
     with (directory / "rankings" / "industrial-baytp.csv").open(newline="") as handle:
         baytp_rows = list(csv.DictReader(handle))
-    if len(baytp_rows) != 8 or any(
+    baytp_projection = [row for row in baytp_rows if row.get("problem_scope") == "GEOMETRY_PROJECTION"]
+    if len(baytp_projection) != 8 or any(
         row.get("valid_complete") != "0" or row.get("constraint_violation") != "1"
-        for row in baytp_rows
+        for row in baytp_projection
     ):
         fail("B30 industrial shelf/bay conformance summary changed")
     with (directory / "rankings" / "industrial-mixed-pallet.csv").open(newline="") as handle:
         mixed_rows = list(csv.DictReader(handle))
-    if len(mixed_rows) != 8 or any(
+    mixed_projection = [row for row in mixed_rows if row.get("problem_scope") == "GEOMETRY_PROJECTION"]
+    if len(mixed_projection) != 8 or any(
         row.get("records") != "3" or row.get("valid_complete") not in {"0", "1"}
-        for row in mixed_rows
+        for row in mixed_projection
     ):
         fail("B31 mixed-SKU pallet conformance summary changed")
+    calibrations = [record for record in records if record.get("adapter") == "exact_calibration/manual_proof_v1"]
+    if len(calibrations) != 4 or not all(record.get("metrics", {}).get("calibration_only") is True for record in calibrations):
+        fail("exact calibration evidence changed")
     subset_audit_path = directory / "B07-skjolber-subset-api-audit.json"
     if not subset_audit_path.exists():
         fail("B07 Skjolber subset API audit is missing")
