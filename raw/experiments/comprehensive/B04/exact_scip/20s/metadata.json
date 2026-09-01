@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "c548356057a32b2838847b7c2ec236f5157b98f9ee148ed18474024d8f7c2f54",
+  "backend": "scip",
+  "benchmark_id": "B04",
+  "calibration_only": true,
+  "implementation_id": "exact_scip",
+  "output_sha256": "2db7da974a602c68f47eaa13685ec743bc398db8c055fcc6666fa7af799fe41b",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "c8f694e53fc77657b6e99e4aca075278dbfe1ddffcd9c1e4a858fecc31b0ea42",
+  "schema_version": 1,
+  "source_instance": "THPACK9_18",
+  "time_limit_s": 20.0
+}

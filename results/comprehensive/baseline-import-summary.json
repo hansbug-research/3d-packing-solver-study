@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 64491,
+  "combined_run_records": 64539,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -65,6 +65,11 @@
     "results/comprehensive/runs/B03-rust_layer-1s.jsonl": "3d4e0bec4c1c486ea6e40f859bff66d34c9b179176a20a554cf6c5aa4a284d0c",
     "results/comprehensive/runs/B03-rust_sa-10s.jsonl": "9e5c226ddf11677c447f1cc4cd60461c11c051415e53c18f091fba09a7124272",
     "results/comprehensive/runs/B03-rust_sa-1s.jsonl": "18a9beca9595fc3df457ea43234f074503eb2a3e43601ec2c8def668f13df1a1",
+    "results/comprehensive/runs/B04-exact_cp_sat-20s-exact-calibration.jsonl": "0c8434450dcd5a3e6959d484bf18aa69082007d6eb0f626ffe470a877d9bc9a4",
+    "results/comprehensive/runs/B04-exact_cplex-20s-exact-calibration.jsonl": "7a8aa2b6dc0182bd95bf60b5243997bb3a53da8906eb6d89caa883d4a94b4bb3",
+    "results/comprehensive/runs/B04-exact_gurobi-20s-exact-calibration.jsonl": "c451fb6c0878a0993706e0b41b5bdf9eeb15baccfd9ecfba2288b982b050ac37",
+    "results/comprehensive/runs/B04-exact_scip-20s-exact-calibration.jsonl": "2db7da974a602c68f47eaa13685ec743bc398db8c055fcc6666fa7af799fe41b",
+    "results/comprehensive/runs/B04-packingsolver-fork-boxstacks-1s.jsonl": "cbf7483ba068bab103fa532f3b965a807c74c12392e95e7b50dba9eb97f3553c",
     "results/comprehensive/runs/B07-exact_cp_sat-20s.jsonl": "ff93e3cd5e96f8a26e066bfd25933dcb7f6d36e70c68247aa247f90e1a27986c",
     "results/comprehensive/runs/B07-exact_cplex-20s.jsonl": "37f9f9a671eeea3e5d91df4c468e4c1702c7976f81f0ca28a7058bca3993e4f8",
     "results/comprehensive/runs/B07-exact_gurobi-20s.jsonl": "220141ec2c9a998256f81a31ed88ec096fca64989edbfc0d75e10bdfac592948",
@@ -126,7 +131,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "e71e8378076b138b8c5cbc21b29ca8dcf955d30acbc55f94e79a47ca06d74b1e",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "8451bb523f828a21a4b67a8d91941431b940ae09992961e28b9e37c1e9a23e64"
   },
-  "protocol_v3_run_records": 62369,
+  "protocol_v3_run_records": 62417,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -141,7 +146,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 132
   },
-  "run_manifest_sha256": "af7aa12650f1d50dc1387271b30462c3b3a8eca78de9050aa0a818f76f8e0bf3",
+  "run_manifest_sha256": "177cc7e8503b49f7c3e9d78e5d8e684867d8bc7ae3f8c5231f6cc549cba841ab",
   "run_records": 2122,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

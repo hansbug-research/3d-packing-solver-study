@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "49ab610fe8b795d71fa40845030a82dab74ac86035352605d70b0690cd7117e2",
+  "backend": "cplex",
+  "benchmark_id": "B04",
+  "calibration_only": true,
+  "implementation_id": "exact_cplex",
+  "output_sha256": "7a8aa2b6dc0182bd95bf60b5243997bb3a53da8906eb6d89caa883d4a94b4bb3",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "c8f694e53fc77657b6e99e4aca075278dbfe1ddffcd9c1e4a858fecc31b0ea42",
+  "schema_version": 1,
+  "source_instance": "THPACK9_18",
+  "time_limit_s": 20.0
+}

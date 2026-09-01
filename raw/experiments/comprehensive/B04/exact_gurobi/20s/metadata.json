@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "576796e5b2ff67781713f5078650a031808f4f4c781b089c64bd0827e29d9174",
+  "backend": "gurobi",
+  "benchmark_id": "B04",
+  "calibration_only": true,
+  "implementation_id": "exact_gurobi",
+  "output_sha256": "c451fb6c0878a0993706e0b41b5bdf9eeb15baccfd9ecfba2288b982b050ac37",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "c8f694e53fc77657b6e99e4aca075278dbfe1ddffcd9c1e4a858fecc31b0ea42",
+  "schema_version": 1,
+  "source_instance": "THPACK9_18",
+  "time_limit_s": 20.0
+}

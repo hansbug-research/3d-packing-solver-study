@@ -530,7 +530,7 @@ def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     # inflating proof rates or sample counts.
     selected: dict[tuple[str, str, str, str], dict[str, Any]] = {}
     for record in records:
-        if not executed(record) or record["benchmark_id"] not in {"B03", "B06", "B07", "B09"} or record["comparison_track"] != "EXACT_MODEL":
+        if not executed(record) or record["benchmark_id"] not in {"B03", "B04", "B06", "B07", "B09"} or record["comparison_track"] != "EXACT_MODEL":
             continue
         key = (
             record["benchmark_id"],
@@ -553,7 +553,7 @@ def exact_rankings(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
             selected[key] = record
 
     rows: list[dict[str, Any]] = []
-    for benchmark_id in ("B03", "B06", "B07", "B09"):
+    for benchmark_id in ("B03", "B04", "B06", "B07", "B09"):
         groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for record in selected.values():
             if record["benchmark_id"] == benchmark_id:

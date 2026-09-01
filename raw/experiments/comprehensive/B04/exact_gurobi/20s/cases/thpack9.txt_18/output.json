@@ -1,0 +1,12 @@
+{
+  "bound": null,
+  "error": "GurobiError: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information",
+  "gap": null,
+  "nodes_or_branches": null,
+  "objective": null,
+  "placements": [],
+  "solver_time_s": 0.0,
+  "status": "ERROR",
+  "used_bins": [],
+  "validation_errors": []
+}

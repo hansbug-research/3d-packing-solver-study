@@ -177542,6 +177542,106 @@
       "sha256": "7667fac70b0d0b310601321814f1fbbc23dd30ce9782c1e7fdd0b6d522d1235f"
     },
     {
+      "path": "raw/experiments/comprehensive/B04/exact_cp_sat/20s/artifacts.tar.gz",
+      "bytes": 1696,
+      "sha256": "e5ddd5bb000e88b2b4b8a409628c980041af13056b08ec4891110906792e00d7"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cp_sat/20s/cases/thpack9.txt_18/input.json",
+      "bytes": 21189,
+      "sha256": "0e238d8a22142eca6cf3e316dbd634360efa438c5c125e11a0c620fea445ba68"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cp_sat/20s/cases/thpack9.txt_18/output.json",
+      "bytes": 7432,
+      "sha256": "2e8edfea64b5ce9e184429f1bb5ed9180b2e425ac03cf64461576bfededbb6f5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cp_sat/20s/cases/thpack9.txt_18/validation.json",
+      "bytes": 39,
+      "sha256": "63329c246310f84fae7bf56d94b411a6825e37082c99ebeaa0d2e59b50860426"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cp_sat/20s/metadata.json",
+      "bytes": 538,
+      "sha256": "92b282ece23dd1804dc9dcae34440b4ddb8ee0c27e2f4e010d99d90abea0a9ef"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cplex/20s/artifacts.tar.gz",
+      "bytes": 1233,
+      "sha256": "49ab610fe8b795d71fa40845030a82dab74ac86035352605d70b0690cd7117e2"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cplex/20s/cases/thpack9.txt_18/input.json",
+      "bytes": 21189,
+      "sha256": "0e238d8a22142eca6cf3e316dbd634360efa438c5c125e11a0c620fea445ba68"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cplex/20s/cases/thpack9.txt_18/output.json",
+      "bytes": 368,
+      "sha256": "5124752c0a704a15b5b4b772fce1b2e3284405ed43038aaf2ad66552a3dd1fe0"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cplex/20s/cases/thpack9.txt_18/validation.json",
+      "bytes": 39,
+      "sha256": "63329c246310f84fae7bf56d94b411a6825e37082c99ebeaa0d2e59b50860426"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_cplex/20s/metadata.json",
+      "bytes": 536,
+      "sha256": "263d252c60868f1b619cfb9737ff00b1d2af66666ba89473036180387b84c6b9"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_gurobi/20s/artifacts.tar.gz",
+      "bytes": 1209,
+      "sha256": "576796e5b2ff67781713f5078650a031808f4f4c781b089c64bd0827e29d9174"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_gurobi/20s/cases/thpack9.txt_18/input.json",
+      "bytes": 21189,
+      "sha256": "0e238d8a22142eca6cf3e316dbd634360efa438c5c125e11a0c620fea445ba68"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_gurobi/20s/cases/thpack9.txt_18/output.json",
+      "bytes": 324,
+      "sha256": "88387455e7fff085923905bb26104f3be7b6ebdf951f31a52629b341c90111b5"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_gurobi/20s/cases/thpack9.txt_18/validation.json",
+      "bytes": 39,
+      "sha256": "63329c246310f84fae7bf56d94b411a6825e37082c99ebeaa0d2e59b50860426"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_gurobi/20s/metadata.json",
+      "bytes": 538,
+      "sha256": "2ed2c1a722883567d5248ca0bc455b58b630d0c48680942816edf4d0e7ee8230"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_scip/20s/artifacts.tar.gz",
+      "bytes": 1158,
+      "sha256": "c548356057a32b2838847b7c2ec236f5157b98f9ee148ed18474024d8f7c2f54"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_scip/20s/cases/thpack9.txt_18/input.json",
+      "bytes": 21189,
+      "sha256": "0e238d8a22142eca6cf3e316dbd634360efa438c5c125e11a0c620fea445ba68"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_scip/20s/cases/thpack9.txt_18/output.json",
+      "bytes": 235,
+      "sha256": "4a7caa5137bdc6e391269013e23fd5dde32a8517f185d4f578e576559901b418"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_scip/20s/cases/thpack9.txt_18/validation.json",
+      "bytes": 39,
+      "sha256": "63329c246310f84fae7bf56d94b411a6825e37082c99ebeaa0d2e59b50860426"
+    },
+    {
+      "path": "raw/experiments/comprehensive/B04/exact_scip/20s/metadata.json",
+      "bytes": 534,
+      "sha256": "a1c682b746c7584b76ab7c505cf19794e842513cb0f07a517b08240e69a98ef0"
+    },
+    {
       "path": "raw/experiments/comprehensive/B07/exact_cp_sat/20s/artifacts.tar.gz",
       "bytes": 2821,
       "sha256": "91595e04b18e7492f169e48cc1d056941b5bc6bdc47374b4be0d87500fa108db"
@@ -199850,6 +199950,16 @@
       "path": "raw/experiments/comprehensive/packingsolver-thpack/B01-B02-packingsolver-upstream-1s/metadata.json",
       "bytes": 618,
       "sha256": "3f50a7695020b1cbacc4eb452e3c73d72d9aa4a26a9b0b2ba85c7b51b5dc0a69"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-fork-boxstacks-1s/artifacts.tar.gz",
+      "bytes": 17923,
+      "sha256": "a9d92b9c8ef1e459bf4a3fc7059c5625bc92b7da65f0846ef545befa4c21aae1"
+    },
+    {
+      "path": "raw/experiments/comprehensive/packingsolver-thpack/B04-packingsolver-fork-boxstacks-1s/metadata.json",
+      "bytes": 610,
+      "sha256": "1ae2509e572476506f7ac21aaa0b9e2eed68052ef5fe93d9e3f5c58babc62cc6"
     },
     {
       "path": "raw/experiments/comprehensive/reliability-v3/B24_axis_swap_exact_cp_sat_rep-0/input.json",

@@ -242,17 +242,17 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     records = [json.loads(line) for line in (comprehensive / "run-manifest.jsonl").read_text().splitlines()]
 
     assert summary["run_records"] == 2122
-    assert summary["combined_run_records"] == len(records) == 64491
-    assert summary["protocol_v3_run_records"] == 62369
+    assert summary["combined_run_records"] == len(records) == 64539
+    assert summary["protocol_v3_run_records"] == 62417
     assert len(summary["implementation_ids"]) == 18
     assert aggregate["coverage"]["executed_implementations"] == 19
     assert aggregate["coverage"]["benchmarks_with_runs"] == 26
     assert aggregate["coverage"]["benchmarks_with_status_records"] == 32
-    assert aggregate["coverage"]["cells_with_evidence"] == 559
+    assert aggregate["coverage"]["cells_with_evidence"] == 560
     assert aggregate["coverage"]["legacy_baseline_only_cells"] == 19
-    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 283
-    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 257
-    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62369}
+    assert aggregate["coverage"]["protocol_v3_executed_cells"] == 288
+    assert aggregate["coverage"]["protocol_v3_status_only_cells"] == 253
+    assert aggregate["coverage"]["record_origin_counts"] == {"LEGACY_BASELINE": 2122, "PROTOCOL_V3": 62417}
     assert aggregate["coverage"]["records_by_benchmark"]["B03"] == 1234
     assert aggregate["coverage"]["records_by_benchmark"]["B07"] == 34221
     reliability = [record for record in records if record.get("adapter") == "reliability_v3/parameterized_fixture"]
@@ -308,6 +308,16 @@ def test_legacy_baseline_import_and_aggregate_regression() -> None:
     assert all(record["solution_status"] == "VALID_PARTIAL" for key in ("exact_cp_sat", "exact_scip") for record in by_backend[key])
     assert all(record["proof_status"] == "FEASIBLE" for key in ("exact_cp_sat", "exact_scip") for record in by_backend[key])
     assert all(record["run_status"] == "ERROR" and record["solution_status"] == "NO_SOLUTION" for key in ("exact_gurobi", "exact_cplex") for record in by_backend[key])
+    exact_b04 = [
+        record for record in records
+        if record["benchmark_id"] == "B04" and record["comparison_track"] == "EXACT_MODEL" and record["run_status"] != "NOT_RUN"
+    ]
+    assert len(exact_b04) == 4
+    cp_sat_b04 = next(record for record in exact_b04 if record["implementation_id"] == "exact_cp_sat")
+    assert cp_sat_b04["solution_status"] == "VALID_COMPLETE"
+    assert cp_sat_b04["proof_status"] == "PROVEN_OPTIMAL"
+    assert cp_sat_b04["metrics"]["calibration_only"] is True
+    assert {record["run_status"] for record in exact_b04 if record["implementation_id"] != "exact_cp_sat"} == {"ERROR"}
     exact_rankings = json.loads((comprehensive / "aggregate.json").read_text())["headline"]["exact_proof"]
     assert all(row["instances"] == 5 for row in exact_rankings if row["benchmark_id"] == "B06")
     assert all(row["instances"] == 2 for row in exact_rankings if row["benchmark_id"] == "B09")

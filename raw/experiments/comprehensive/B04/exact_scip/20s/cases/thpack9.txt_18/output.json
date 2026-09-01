@@ -1,0 +1,12 @@
+{
+  "bound": -1e+20,
+  "gap": null,
+  "nodes_or_branches": 0,
+  "objective": null,
+  "placements": [],
+  "solver_time_s": 0.5615988029167056,
+  "status": "MEMLIMIT",
+  "used_bins": [],
+  "validation_errors": [],
+  "version": "6.2.1"
+}

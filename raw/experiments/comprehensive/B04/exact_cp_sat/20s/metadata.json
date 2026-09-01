@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "e5ddd5bb000e88b2b4b8a409628c980041af13056b08ec4891110906792e00d7",
+  "backend": "cp-sat",
+  "benchmark_id": "B04",
+  "calibration_only": true,
+  "implementation_id": "exact_cp_sat",
+  "output_sha256": "0c8434450dcd5a3e6959d484bf18aa69082007d6eb0f626ffe470a877d9bc9a4",
+  "protocol_version": "benchmark-protocol/3",
+  "python_version": "3.12.1",
+  "runner_sha256": "8872246a5fe895573ff8bb14855b9e4cbfd33e11670eb88387ec45489ade4b1c",
+  "schema_version": 1,
+  "source_instance": "THPACK9_18",
+  "time_limit_s": 20.0
+}
