@@ -311,6 +311,17 @@ Python 1 s 轨的可行 incumbent 很少：py3dbp 为 `33/1,800`，Jerry 为 `0/
 
 当前综合证据仍不是全套件完成：`13/32` benchmark 有记录、`113/608` cell 有证据，其中 `52` 个 cell 已执行 protocol-v3，合计 `60,431` 条记录（legacy `2,078`，protocol-v3 `58,353`）。新增记录包括 B01/B02 的 `RELAXED_ALL_ROTATIONS` projection（`22,880` 条）、B07 BR0/BR8–15 的 projection（`30,600` 条）以及 4 条 B07 source-rotation exact calibration；projection 与原始姿态语义分轨，不能覆盖 native 结果。B07 projection 覆盖 900 个来源实例、八个 Python/Go/Rust projection 实现、两种排序和 1 s/10 s 预算，并在每条记录中固定来源 commit 与 CSV hash。B05 新增的 19 条记录是经来源审计生成的 `SOURCE_INCOMPLETE / NOT_RUN / SOURCE_PENDING` 状态记录，不是实际求解运行，也不计入 executed cells。本轮约束 gauntlet 覆盖四个 PackingSolver 版本变体和 30 条实例记录；它补充了硬约束行为证据，不能替代其他库的全量 adapter。B05 来源仍未冻结，B08、B10–B11 和 B19+ 尚未形成全库共同适配器，B24–B32 也只完成局部专项；在这些门禁完成前，报告只宣称“已完成子集结果 + 覆盖计划”，不宣称 ALL-libs 全量完成。
 
+### 7.1.3 新发现的公开现实约束数据
+
+在 protocol-v3 冻结后又审计了两个公开数据源。它们对“BR/LN 之外还缺什么”的回答是互补的：Q4RealBPP 适合检验现实约束字段有没有被当作硬约束执行，3DBPPsi 适合检验异构车队、堆叠规则和大规模性能。两者都不能替代 MPV 的经典同型多箱分布，也不能把 projection 轨升级成原题能力。
+
+| 候选 | 事实核查 | 适合参加的库/算法 | 主要结果含义 | 当前处理 |
+|---|---|---|---|---|
+| B33 Q4RealBPP | Mendeley Data DOI `10.17632/y258s6d939.2`；12 个实例、每个 38–53 件；尺寸、重量、箱数/重量上限、不相容/亲和、相对位置和重心字段；附 Python generator；GPLv3 | PS/boxstacks、exact model 做 `FULL`；py3dbp/Jerry/Go/Rust/Skjolber 只能做明确 projection 或 post-validator | 现实约束 conformance、完整率和违规幅度；小规模端到端回归和分布迁移 | 候选 B33；先冻结文件 UUID/SHA-256、字段语义和 GPLv3 再分发审计，再跑 FULL/projection 双轨 |
+| B34 3DBPPsi | Science Data Bank DOI `10.57760/sciencedb.42066`，V1/20 个文件，CC BY 4.0；异构车辆尺寸、价格、payload、stacked-weight、density；物品 nesting height、stackability class、forced orientation、最大堆叠层级；规模可到数千件 | `boxstacks`/exact model 和有 stack controls 的引擎做 `FULL`；其他实现做几何 projection；大实例重点跑 B28 scalability | 异构车队成本、堆叠/密度/姿态硬合规，以及质量-延迟-RSS 拐点 | 候选 B34；先做 stack master、密度/载荷 validator 和小实例 exact 校准，再进入工业 Wave |
+
+这两个候选不会改变当前 `13/32`、`113/608` 的 protocol-v3 进度数字。只有完成 source audit、canonical converter、独立 validator，并为每个库产生状态行后，才可把它们加入下一版 `B01–B34` 的 ALL-libs 覆盖统计。B33 的 GPLv3 和 B34 的 CC BY 4.0 许可信息必须随结果归档，不能在闭源发布物中无条件复制原始数据。
+
 ### 7.2 Protocol-v3 约束 gauntlet 实测
 
 本轮新增 runner 对已冻结的异构成本、姿态、重量、堆叠、轴荷和卸货 fixture 进行了四条 PackingSolver 原生轨复测。每条记录都有 canonical 输入、源码/二进制 hash、配置、stdout/stderr、资源、CSV certificate 和独立 validator；总计 30 条 protocol-v3 记录，均为 10 s 预算。

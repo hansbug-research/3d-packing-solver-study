@@ -49,9 +49,20 @@ BR/LN 只回答“单个固定容器里，几何启发式能塞进多少体积�
 
 ## 2. 建议的运行波次
 
+### 2.0 B33/B34 的位置：扩展候选，不回写 protocol-v3
+
+Q4RealBPP 和 3DBPPsi 是协议 v3 冻结后发现的公开数据源，建议分别登记为 B33/B34，进入下一版协议或扩展波次。它们不能在 converter、许可证和独立 validator 完成前直接加入当前 `32 x 19 = 608` 的完成率，也不能替代 B05 的 MPV 同型多箱复核。
+
+| 候选 | 首轮执行波次 | 适用实现/算法 | 首轮门禁 | 主要回答的问题 |
+|---|---|---|---|---|
+| B33 Q4RealBPP | Wave 2 后半段（硬约束 conformance） | 能保留重量、相容、相对位置和重心字段的 PS/boxstacks、exact；其他库输出 projection/status | GPLv3 再分发审计、12 个文件 hash、字段语义映射、逐约束 validator；无 published optimum 时只报 incumbent/合规率 | 现实业务约束是否被真正执行，公共几何结果能否迁移到现实分布 |
+| B34 3DBPPsi | Wave 3（工业异构+堆叠 scalability） | PS/boxstacks、exact 和有 controls 的引擎跑 FULL；其他库 projection/status | CC BY 4.0 署名、V1 文件 hash、stack master、density/payload/forced-pose validator；小实例先做 exact 校准 | 异构车队选型、stackable 约束和数千件规模的质量-延迟拐点 |
+
+两套数据都要保留 `FULL` 与 `PROJECTION` 轨道；projection 必须列出被删除的字段，且不进入 FULL 排行。B33 的 GPLv3 约束尤其需要在打包/分发前由许可证审计确认，B34 的 CC BY 4.0 至少要在归档和界面导出中保留署名与许可证。
+
 ### Wave 0：来源和语义门禁
 
-先冻结 B05、B08、B10、B11、B23、B30 的原始文件、许可证、姿态规则、输入 hash 和 canonical 转换。B31/B32 固定生成器版本、父实例 hash、seed 和参数。来源不完整时保持 `SOURCE_INCOMPLETE/SOURCE_PENDING`，不能用自生成数据冒充公开 benchmark。
+先冻结 B05、B08、B10、B11、B23、B30 以及候选 B33/B34 的原始文件、许可证、姿态规则、输入 hash 和 canonical 转换。B31/B32 固定生成器版本、父实例 hash、seed 和参数。来源不完整时保持 `SOURCE_INCOMPLETE/SOURCE_PENDING`，不能用自生成数据冒充公开 benchmark。
 
 ### Wave 1：公共质量主线，全库优先
 

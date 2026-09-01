@@ -8,6 +8,42 @@
 
 同一套件中的“适用”不是“必须全部纳入同一排行榜”。例如 B03 的固定姿态与全旋转投影必须分开，B21 的完整路线-装载与只做几何装载必须分开，B14/B15 的 hard validator 失败不能用体积或箱数抵消。
 
+## BR/LN 之外的补充讨论与新增数据集决策
+
+BR/LN 是必要的单箱几何起点，但它们只回答“一个固定箱里最多装多少体积”。即使把 BR/LN 的实例数量扩大一个数量级，也仍然不会回答以下问题：是否必须装完全部需求、箱型价格如何选择、有限库存如何分配、堆叠和上压是否合规、车辆轴荷是否可行、货物能否按站点卸出、非规则物体是否可碰撞验证，以及到货顺序变化后的累计代价。因此本项目采用“问题族覆盖”而不是“单一大样本替代所有问题”的原则。
+
+### 1.1 最小可接受覆盖集
+
+下表是发布第一版选型结论前的硬覆盖门。每一行至少需要一个原问题语义保持不变的 benchmark；如果某个库无法表达该语义，仍需输出 `NOT_SUPPORTED` 或 `ADAPTER_MISSING`，不能用删字段后的漂亮数字填补空位。
+
+| 主要应用/问题族 | 必须有的套件 | 参加方式 | 结果能够回答 | 缺失时最容易出现的误判 |
+|---|---|---|---|---|
+| 单箱正交装载与困难尺寸 | B01、B02、B07 | native/composed/projection 分轨 | 基础几何、旋转、排序和预算响应 | 把一个尺寸分布上的好成绩当成通用能力 |
+| 价值/利润取舍 | B03、B06 | B03 保持 fixed-pose；B06 给 exact oracle | 是否优化业务价值，小规模能否闭合 bound | 体积高但价值低，或把 incumbent 误称最优 |
+| 同型多箱和外部复核 | B04、B05 | 必须装完；B05 来源完整后才排名 | 箱数、完整性、分布迁移 | 只对 THPACK9 调参造成过拟合 |
+| 异构车队、价格、库存、开放尺寸 | B08-B11 | cost/open 语义单独排行 | 总成本、箱型选择、有限 copies、开放长度 | 用最少箱数代替成本，或把封闭箱结果叫 strip |
+| 姿态、重量、支撑和车辆静力 | B12-B15 | 先 hard conformance，再比较目标 | 姿态白名单、重量、承压、重心/轴荷是否执行 | 仅检查 AABB 就宣称可运输 |
+| 入口、障碍、卸货和相容性 | B16-B18 | 保留门洞、站点、隔离字段 | 装入/取出、重搬、温区/危化隔离 | 终点几何可行但现场无法装卸或不合规 |
+| 工业组合、路线、非规则和真实分布 | B19-B23、B30-B32 | `FULL` 与 projection 严格分轨 | 端到端工业可行率和分布迁移 | 删除业务字段后仍称“工业能力” |
+| 工程可靠性与托管 | B24-B29 | 所有部署候选都测 | 单位/顺序/seed/规模/取消/崩溃行为 | 平均质量好看但无法安全集成 |
+
+这张表不是跨问题族加权评分表。B14/B15/B17/B18 的硬约束失败不能由 B01 的利用率或 B04 的箱数抵消；B22 的 `NOT_SUPPORTED` 也是重要能力边界。
+
+### 1.2 Q4RealBPP 与 3DBPPsi：建议新增但不替代经典套件
+
+在协议 v3 冻结后又发现两个可复现的公开数据源。它们应作为下一版协议的 B33/B34 候选，先完成许可证、文件哈希、canonical converter 和独立 validator，再进入 ALL-libs 运行。它们不应直接改名覆盖 B05，也不应在未完成 source audit 前混入当前 `32 x 19 = 608` 的完成率。
+
+| 候选 | 数据与许可证 | 适用库/算法轨道 | 建议指标 | 结果主要说明 | 明确不能外推 | 当前决策 |
+|---|---|---|---|---|---|---|
+| **B33 Q4RealBPP**（Mendeley Data DOI [10.17632/y258s6d939.2](https://doi.org/10.17632/y258s6d939.2)，S125） | 12 个 real-world-oriented 实例，每个约 38–53 件；尺寸、重量、最大箱数/重量、incompatibility、positive affinity、相对位置、中心位置等字段，并附 `Q4RealBPP-DataGen.py`；数据集标注 GPLv3 | PackingSolver/boxstacks 与 exact model 进入 `FULL`（能保留的约束逐项记录）；py3dbp、Jerry、Go、Rust、Skjolber 只有保留字段的 projection 或 post-validator；全部实现都必须有状态行 | 完整率、总成本/箱数、逐约束 `PASS/FAIL/UNKNOWN`、违规幅度、time-to-first-feasible；没有可靠 optimum 时不报 gap | 现实约束字段是否真正被执行，以及公共几何集到业务分布的迁移；适合 conformance 和小规模端到端回归 | 12 个实例太小，不能作为吞吐/泛化唯一依据；量子求解器导向的生成分布不能代表所有订单；GPLv3 需要审计衍生数据和再分发义务；不能替代 MPV 的经典同型多箱 | **加入 B33 候选；先做许可证和语义审计，再跑 FULL/projection 双轨** |
+| **B34 3DBPPsi**（Science Data Bank DOI [10.57760/sciencedb.42066](https://doi.org/10.57760/sciencedb.42066)，S126） | V1，20 个文件，CC BY 4.0；异构车队、车辆尺寸/价格/payload/stacked-weight/density、物品重量、nesting height、stackability class、forced orientation、最大 stackability；规模从小中型到数千件 | `boxstacks`/exact model 进入 `FULL`；PackingSolver `box`、Skjolber controls 等只有删去堆叠/成本字段后的 projection；py3dbp/Jerry/Go/Rust 作为几何对照；大实例优先测 scalability | 完整率、总运输成本、车辆组合、堆叠/密度/姿态硬合规、time-quality-RSS 曲线；小实例先由 exact oracle 校准 | 异构车队选择、stackable item 规则和大规模部署拐点；这是 B31/B19 的公开现实化补充 | 公开元数据没有给出统一 published optimum，先按合法 incumbent/下界报告；它不测门洞连续路径、路线时间窗或任意角；不能替代 B05 的同型多箱分布 | **加入 B34 候选；先实现 stack master 和 hard validator，再进入工业 Wave** |
+
+两者的使用方式应明确分层：B33 主要是“现实约束是否被正确执行”的 conformance suite，B34 主要是“异构车队与堆叠在中大规模上是否可部署”的 industrial/performance suite。两者都不产生跨问题族总分；B33 的 GPLv3 数据也不能未经审计直接复制进一个闭源安装包，B34 的 CC BY 4.0 则至少要保留署名和许可证信息。
+
+### 1.3 覆盖缺口与范围外项目
+
+B01-B34 覆盖的是刚性长方体为主的正交装载产品。以下问题不是再加几条 BR/LN 样例就能覆盖，应该在产品范围确认后另立 suite：尺寸/重量不确定性的 robust/stochastic packing；成本、碳排、服务水平和装卸代价的 Pareto 多目标；软包装、可压缩物和液体晃动；机器人连续运动、系固和运输加速度；以及 2D cutting/nesting。当前应在报告中显式标记为 out-of-scope，不能用 B26、B16 或 B22 的结果替代。
+
 ## 逐套件选择表
 
 | ID | 问题/数据形态 | 适用实现与轨道 | 首要输出 | 结果主要说明什么 | 不能外推/缺口 |
