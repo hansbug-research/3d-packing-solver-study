@@ -12,7 +12,7 @@
     "B15",
     "B17"
   ],
-  "combined_run_records": 62533,
+  "combined_run_records": 62479,
   "implementation_ids": [
     "exact_cp_sat",
     "exact_cplex",
@@ -89,12 +89,12 @@
     "results/comprehensive/runs/status-B09.jsonl": "9737e1e77e316042d1749a49b7873ef196038670422d2958287066cff1db20c8",
     "results/comprehensive/runs/status-B10.jsonl": "2ec6411a46e7f23979a78655f6c4eaa24c76ecda3b5ba7c98c17f5b13e4bf914",
     "results/comprehensive/runs/status-B11.jsonl": "e2f760741fc69c2a56fe11b8e1225f11499efb57aa0c2fe041fc0010badbf1b5",
-    "results/comprehensive/runs/status-B12.jsonl": "34e69a153a2f75d87bbe80268ad11be2011577aeea557a8dcc7cb3308487fa8e",
-    "results/comprehensive/runs/status-B13.jsonl": "9a143078d2c08b79af82431b1609058e9934db7c01db06a9543e016e62aea596",
-    "results/comprehensive/runs/status-B14.jsonl": "b79d4a39b87bf48b080185631bcd7c03f81e02b8579bb62a59ac04e6a8beff17",
-    "results/comprehensive/runs/status-B15.jsonl": "30a6d265ff31acd84b02e09f77a45d538f3d0b9e7db08cff519e7cd76eba2c89",
+    "results/comprehensive/runs/status-B12.jsonl": "472a7e5c1254dda8f0262a2cecbf1ad58dc2267c7c877daa43fa89f00edf2b5a",
+    "results/comprehensive/runs/status-B13.jsonl": "eab4f6614d754b889151f571adbf7f8509d0a926feebfe7f8424aba1e956664f",
+    "results/comprehensive/runs/status-B14.jsonl": "807f5971a2bc9ea31eec81be56784e8ea82186eeda1c98285f2f670406e3c892",
+    "results/comprehensive/runs/status-B15.jsonl": "79e26943352bf5890ab907681d946585335778b57925a56efcb79963af233289",
     "results/comprehensive/runs/status-B16.jsonl": "2dd1f04a4e16a3a2e509a466700d3e63f9c66f9ca32e4ce81e3d82f33654ba2e",
-    "results/comprehensive/runs/status-B17.jsonl": "81735bdb1d420f01150026cfe709069d1f991f15365d8b0720408d33c1245c7a",
+    "results/comprehensive/runs/status-B17.jsonl": "5a080625df6261298f584b71155e65674cc569012dce82fb620a80177ed0d278",
     "results/comprehensive/runs/status-B18.jsonl": "a540ea025e808c56fe21c1090576d33ef6081c4680ecaa8854568b80c5eebf5a",
     "results/comprehensive/runs/status-B19.jsonl": "c49de4a6defcb4ad0560b6e04b35651d84167ba9d04b11fb3261057c33c15b91",
     "results/comprehensive/runs/status-B20.jsonl": "ca3957a5a66dd26d280511c2e6c2443f524af57f515eabe35bfa2dbe9e6517b3",
@@ -112,7 +112,7 @@
     "results/comprehensive/runs/status-B32.jsonl": "7bd1d06e96f1273aa0f0f4756481775387b0b4200e58120f0b0e05fa23107c53",
     "results/comprehensive/runs/wave1-fresh-protocol.jsonl": "7381c40d212f2f57252d6317f4d3090633b92b0569dbf1d9acaa16a7906cb031"
   },
-  "protocol_v3_run_records": 60455,
+  "protocol_v3_run_records": 60401,
   "protocol_version": "benchmark-protocol/3",
   "record_kind": "LEGACY_BASELINE_IMPORT",
   "records_by_adapter": {
@@ -127,7 +127,7 @@
     "legacy_import/skjolber_algorithm_small": 3,
     "legacy_import/skjolber_thpack9_v1": 88
   },
-  "run_manifest_sha256": "0ca51329ab895ce435142293d7b11ddb09f87746ae8e88ff7de106cad0fdea2b",
+  "run_manifest_sha256": "f57871dd7b22e306b222c62aa590c62be4879ac9c9706a7cb8639bf762202476",
   "run_records": 2078,
   "schema_version": 1,
   "warning": "Baseline records normalize archived v1/v2 experiments; protocol records are merged from results/comprehensive/runs."

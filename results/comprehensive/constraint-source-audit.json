@@ -1,0 +1,196 @@
+{
+  "audit_date": "2026-09-01",
+  "cases": {
+    "B09/LARGE_CHEAPER": {
+      "bin_copies": 3,
+      "bins": "heterogeneous_bins.csv",
+      "items": "heterogeneous_items.csv",
+      "required_items": 2
+    },
+    "B09/SMALL_CHEAPER": {
+      "bin_copies": 3,
+      "bins": "heterogeneous_bins_reverse.csv",
+      "items": "heterogeneous_items.csv",
+      "required_items": 2
+    },
+    "B12/ROTATION_FORBIDDEN": {
+      "bin_copies": 1,
+      "bins": "rotation_bins.csv",
+      "items": "rotation_forbidden_items.csv",
+      "required_items": 1
+    },
+    "B12/ROTATION_REQUIRED": {
+      "bin_copies": 1,
+      "bins": "rotation_bins.csv",
+      "items": "rotation_allowed_items.csv",
+      "required_items": 1
+    },
+    "B13/WEIGHT_LIMIT": {
+      "bin_copies": 3,
+      "bins": "weight_bins.csv",
+      "items": "weight_items.csv",
+      "required_items": 3
+    },
+    "B14/MAXIMUM_STACK_COUNT": {
+      "bin_copies": 2,
+      "bins": "stack_count_bins.csv",
+      "items": "stack_count_items.csv",
+      "required_items": 3
+    },
+    "B14/MAXIMUM_WEIGHT_ABOVE": {
+      "bin_copies": 1,
+      "bins": "stack_bins.csv",
+      "items": "stack_items.csv",
+      "required_items": 3
+    },
+    "B14/NESTING_HEIGHT": {
+      "bin_copies": 1,
+      "bins": "nesting_bins.csv",
+      "items": "nesting_items.csv",
+      "required_items": 2
+    },
+    "B15/AXLE_BOUNDARY": {
+      "bin_copies": 1,
+      "bins": "axle_bins.csv",
+      "items": "axle_items.csv",
+      "required_items": 1
+    },
+    "B15/AXLE_INFEASIBLE": {
+      "bin_copies": 1,
+      "bins": "axle_infeasible_bins.csv",
+      "items": "axle_realistic_items.csv",
+      "required_items": 1
+    },
+    "B15/AXLE_NORMAL": {
+      "bin_copies": 1,
+      "bins": "axle_normal_bins.csv",
+      "items": "axle_realistic_items.csv",
+      "required_items": 1
+    },
+    "B17/INCREASING_X": {
+      "bin_copies": 1,
+      "bins": "unloading_bins.csv",
+      "items": "unloading_items.csv",
+      "required_items": 2
+    },
+    "B17/UNLOADING_NONE": {
+      "bin_copies": 1,
+      "bins": "unloading_bins.csv",
+      "items": "unloading_items.csv",
+      "required_items": 2
+    }
+  },
+  "files": {
+    "axle_bins.csv": {
+      "rows": 1,
+      "sha256": "84c5c2a2efc34d300d9fcf53b7ce6e0d718b70075742ad12c2c26800b2d09bee",
+      "total_copies": 1
+    },
+    "axle_infeasible_bins.csv": {
+      "rows": 1,
+      "sha256": "766e17f017864fdac04e7c80ab4f7156421646ed97d5072a5dbed88c87b27b37",
+      "total_copies": 1
+    },
+    "axle_items.csv": {
+      "rows": 1,
+      "sha256": "fedab51a039be117dacb8d8b9a1299a160117201c97f9267df6861d30eb91120",
+      "total_copies": 1
+    },
+    "axle_normal_bins.csv": {
+      "rows": 1,
+      "sha256": "5549c459d8206442ac0cdbf74da63470c2dca80f7bd028864e8d69c247871893",
+      "total_copies": 1
+    },
+    "axle_realistic_items.csv": {
+      "rows": 1,
+      "sha256": "48ea2b1b6ade3df37a6505b10842213063c430e2e59b977a1531a3c52cea22bf",
+      "total_copies": 1
+    },
+    "heterogeneous_bins.csv": {
+      "rows": 2,
+      "sha256": "b915a63ac164f521169dec9d2bc5f3d07e3cdc9b8ea97b589541b87ccb61c971",
+      "total_copies": 3
+    },
+    "heterogeneous_bins_reverse.csv": {
+      "rows": 2,
+      "sha256": "1e7f4616ba3ec04b91b5decc5e9cc9e7ffb6f8a652460468b10d5447a9aebd4c",
+      "total_copies": 3
+    },
+    "heterogeneous_items.csv": {
+      "rows": 1,
+      "sha256": "5e62afa0910c92c803cef00b52c4852be7245634741d5acbeec06021b617c070",
+      "total_copies": 2
+    },
+    "nesting_bins.csv": {
+      "rows": 1,
+      "sha256": "5387e96e155cf5f6eec4f741a2529db9edf2f04a599324eac72b4b00dbd69420",
+      "total_copies": 1
+    },
+    "nesting_items.csv": {
+      "rows": 1,
+      "sha256": "18b2d23c0863b98aef8535cab64573bab12019380b1b5d2e9181e9416344681d",
+      "total_copies": 2
+    },
+    "rotation_allowed_items.csv": {
+      "rows": 1,
+      "sha256": "d65a314e8bd94711a86bbb609ad89f222a6509dff2ef0aa64489159fc52a84dc",
+      "total_copies": 1
+    },
+    "rotation_bins.csv": {
+      "rows": 1,
+      "sha256": "2870a7349f81b8f1462fc67e075852687eda7523cf2672f60bd0b7de1d7bbb9b",
+      "total_copies": 1
+    },
+    "rotation_forbidden_items.csv": {
+      "rows": 1,
+      "sha256": "5295e75f2dbecd991444323be0d1658c270ad33510c5e94c5b6cb897f34a95a2",
+      "total_copies": 1
+    },
+    "stack_bins.csv": {
+      "rows": 1,
+      "sha256": "7140ef6929564ab3b557ad87b9904e221fee8475515c0ce990dd80b44b672674",
+      "total_copies": 1
+    },
+    "stack_count_bins.csv": {
+      "rows": 1,
+      "sha256": "4ee249e51980aee35536074700c8e142b92bab6c34b13e59bf7b43dbe4f19a5e",
+      "total_copies": 2
+    },
+    "stack_count_items.csv": {
+      "rows": 1,
+      "sha256": "48a0d2ef841fac5b29bceda7da2416e8ecde5e9dfcedf42e72c703f1d1fc4360",
+      "total_copies": 3
+    },
+    "stack_items.csv": {
+      "rows": 2,
+      "sha256": "c45f39d90b6e98ebd038bbbb53d442e3cf75a0e22ba2044baa5deaa2b1fe9f17",
+      "total_copies": 3
+    },
+    "unloading_bins.csv": {
+      "rows": 1,
+      "sha256": "201a4c680ce69a50316bf0c63370e395a551613b2ddf29f55f1bc9e57ae4d71a",
+      "total_copies": 1
+    },
+    "unloading_items.csv": {
+      "rows": 2,
+      "sha256": "4001ac9f71198e155cdc5c50622b7f1a0edae887edf0a35b569e09e70c05ef26",
+      "total_copies": 2
+    },
+    "weight_bins.csv": {
+      "rows": 1,
+      "sha256": "da4ce4e145d0c6acfee7f970043cea7c68e2503659740aaa0b8070c3c18f3ffb",
+      "total_copies": 3
+    },
+    "weight_items.csv": {
+      "rows": 1,
+      "sha256": "f5dd5c9236a5b64c3273d152823755f34ed7ce5ebd1aa05acf0cc60fa76002d0",
+      "total_copies": 3
+    }
+  },
+  "fixture_root": "benchmarks/data/packingsolver",
+  "input_status": "VALID",
+  "record_kind": "CONSTRAINT_FIXTURE_SOURCE_AUDIT",
+  "repository": "packing-software-study",
+  "schema_version": 1,
+  "semantic_note": "Repository-owned adversarial conformance fixtures, not published quality benchmarks. Expected behavior and independent validation are defined by run_constraint_gauntlet.py."
+}
