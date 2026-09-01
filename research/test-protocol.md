@@ -58,7 +58,7 @@
 
 ## 4. Benchmark 目录与问题覆盖
 
-B01-B11 是公共质量、目标函数和精确真值主线；B12-B18 是约束 conformance suite；B19-B23 与 B30-B32 是工业综合、边界和应用分布；B24-B29 是可靠性与托管测试。后三类不因统一编号而自动成为可比较的学术质量数据集。每个候选在每个套件必须有机器状态，但只有保留相同问题语义、输入交集和预算的记录才能进入数值排行。
+B01-B11 是公共质量、目标函数和精确真值主线；B12-B18 是约束 conformance suite；B19-B23 与 B30-B32 是工业综合、边界和应用分布；B24-B29 是可靠性与托管测试。后三类不因统一编号而自动成为可比较的学术质量数据集。每个候选在每个套件必须有机器状态，但只有保留相同问题语义、输入交集和预算的记录才能进入数值排行。B33/B34 已完成候选数据源审计，但属于下一版协议候选，不计入当前 B01-B32 的计划分母。
 
 ### 4.1 公共几何与基础优化
 
@@ -133,6 +133,25 @@ B30/B31 的 `SHELF_SEQUENCE_CALIBRATION`、`FLAT_MIXED_CALIBRATION`、`STACKABLE
 | B27 | Seed/order repeatability | 确定性库重复 5 次；随机库至少 5 个 seed；原始/升序/降序/固定随机顺序 | 全部 | seed 是否生效、顺序敏感性、best/median/p95 方差 |
 | B28 | Scalability | 20/50/100/200/500/1000 件，类型重复率和箱型数分层 | 全部；EX 到预算允许的桶 | time-to-first、最终质量、wall、CPU、RSS、超时率 |
 | B29 | Fault/cancellation | timeout、取消、OOM、非法输出、子进程崩溃和恢复 | 全部 adapter/worker | 后端能否安全托管 native/JVM/Python 库 |
+
+### 4.7 下一版候选与范围门
+
+B33/B34 不回写 `benchmark-protocol/3` 的 32×19 笛卡尔积。只有在来源、许可证、canonical converter、独立 validator 和至少一个小规模 exact 校准全部通过后，才可升级为 `benchmark-protocol/4` 的正式套件；升级时必须同步扩展 `suites.json`、运行 schema、计划分母、分析器、排行和 `report.md`，不能只在报告中增加一行数字。
+
+| 候选 | 语义与首要指标 | 允许的 FULL 轨 | 首轮门禁 | 结果解释 |
+|---|---|---|---|---|
+| B33 Q4RealBPP | 现实导向的重量、箱数/重量上限、不相容/亲和、相对位置和重心；完整率、成本/箱数、逐约束合规 | 能保留这些字段的 PS `boxstacks` 和 EX；其他实现只能 projection/post-validator | GPLv3 许可审计；15 个必要文件 hash；输入 quantity 作为 canonical 件数；`Description.txt` 与 3 个输入件数不一致必须保留差异 | 现实约束是否被真正执行；不作为唯一吞吐集或 MPV 替代 |
+| B34 3DBPPsi | 异构车辆、价格、payload、density、stacked-weight、forced orientation 和 stackability；成本、完整率、规模曲线 | PS `boxstacks`、EX 和有明确 stack controls 的引擎；其他实现 projection | CC BY 4.0 署名；20 个 CSV hash；stack master、密度/载荷/姿态 validator；小实例 exact 校准 | 异构车队和堆叠在中大规模上的质量-延迟拐点；无 published optimum 时不写 optimum gap |
+
+如果产品范围扩大，以下是独立的问题族，不得用 B26、B16 或 B22 的结果替代：
+
+| 范围门 | 何时必须加入 | 需要的专用证据 | 当前协议处理 |
+|---|---|---|---|
+| B35 robust/stochastic packing | 尺寸、质量、供应或测量存在不确定性 | 鲁棒/机会约束模型、扰动场景、最坏和分位可行率 | 当前 out-of-scope，B26 只测数值一致性 |
+| B36 multi-objective Pareto | 同时优化成本、碳排、服务水平、装卸或重搬 | Pareto front、hypervolume、约束优先级和业务偏好敏感性 | 当前 out-of-scope，不合成单一加权分数 |
+| B37 motion/securement | 需要验证机器人路径、门洞扫掠、加速度和系固 | 连续碰撞/运动规划、摩擦与系固模型、现场校准 | 当前 out-of-scope，B16 只覆盖静态/反例 |
+| B38 deformable/liquid | 软包装、可压缩物或液体晃动影响可行性 | DEM/FEM/流体或经验证的材料模型 | 当前 out-of-scope，B14 不能替代物理模型 |
+| B39 2D cutting/nesting | 业务包含板材切割、排样而非箱体装载 | 独立 2D nesting 数据集、NFP/碰撞验证和切割约束 | 单独产品族，不与 3D BPP 排名 |
 
 ## 5. 数据冻结与问题投影
 
@@ -220,7 +239,7 @@ validator 不读取求解器内部“feasible”布尔值作为真值。所有 p
 | P0 协议冻结 | 本文、来源、状态、schema、validator 和运行 manifest | Markdown/链接/来源检查通过，人工 review 无 blocking finding |
 | P1 公共核心 | B01-B07；全部基础 packer，EX 分层 | all-libs 状态矩阵完整；共同实例质量榜可重算 |
 | P2 成本与硬约束 | B08-B18 | 原生/组合分榜；所有 hard case 有独立反例验证 |
-| P3 工业与高级边界 | B19-B23、B30-B32 | full/projection 分开；BAYTP/托盘/在线结果分榜；不支持项完整记录；真实数据缺口明确 |
+| P3 工业与高级边界 | B19-B23、B30-B32；B33/B34 仅在下一版协议晋级后加入 | full/projection 分开；BAYTP/托盘/在线结果分榜；不支持项完整记录；真实数据缺口明确 |
 | P4 可靠性与回归 | B24-B29；重跑各波次代表实例 | metamorphic、numeric、repeatability、scalability、fault/cancellation 均有结果；失败可重现 |
 | P5 结论冻结 | 更新 aggregate、结果 README、图、`report.md` 和决策矩阵 | `analyze/plot/verify/pytest` 全过；需求逐项审计完成 |
 
@@ -362,7 +381,7 @@ canonical 整数坐标采用精确整数比较；格式转换产生的浮点仅�
 
 最终 ready 不是“测试命令返回 0”这一条，而是以下条件全部成立：
 
-1. B01-B32 每个计划 cell 都有状态记录，且 `SOURCE_*`、`NOT_SUPPORTED`、`ADAPTER_MISSING`、`NOT_RUN` 的原因可追溯；
+1. B01-B32 每个计划 cell 都有状态记录，且 `SOURCE_*`、`NOT_SUPPORTED`、`ADAPTER_MISSING`、`NOT_RUN` 的原因可追溯；B33/B34 若晋级，必须以新协议版本扩展计划分母，不能回写旧统计；
 2. B01-B07 的公共质量轨、B08-B18 的能力/合规轨、B19-B23/B30-B32 的 full/projection 轨和 B24-B29 的可靠性轨均有对应排行或边界表；
 3. 每个质量数字都有原始 artifact、输入/实现/validator hash 和可重算命令；
 4. 所有非法证书和 hard violation 被排除并在报告中计数，不能隐藏在平均值之外；
