@@ -2,9 +2,11 @@
 
 算法矩阵符号：✅ 原生能力且对应专项已通过；❌ 没有该能力；⚠️ 需要自建模型/adapter/扩展点，或本次存在已复现缺陷。矩阵按问题特性写，不把样例偶然满足某条约束当作能力证明。
 
+算法矩阵中的“机读输出”只表示引擎能输出 CSV/JSON 或 adapter 能导出 placement；它不等于独立验证过的证书。权威证据必须由固定的 ProblemSpec、Solution、ValidationReport、manifest/hash 和独立 validator 共同构成。
+
 ## 算法/库矩阵
 
-| 库/算法 | 正交旋转 | 24 面语义 | 逐件姿态子集 | 连续任意角 | 多箱装完 | 异构成本/库存 | 总重量 | 叠层/层高 | 最大上方重量 | 一般支撑/稳定 | 重心/轴荷 | 卸货/障碍 | 可证明界 | Python 融合 | 解证书 |
+| 库/算法 | 正交旋转 | 24 面语义 | 逐件姿态子集 | 连续任意角 | 多箱装完 | 异构成本/库存 | 总重量 | 叠层/层高 | 最大上方重量 | 一般支撑/稳定 | 重心/轴荷 | 卸货/障碍 | 可证明界 | Python 融合 | 机读输出 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | PackingSolver 官方 `box` | ✅ 6 排列 | ❌ | ✅ 6 姿态白名单 | ❌ | ✅ | ⚠️ #536：官方版异构成本 comparator 崩溃 | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ solver bound | ⚠️ C++ CLI 子进程 | ✅ CSV/JSON |
 | PackingSolver 官方 `boxstacks` | ✅ | ❌ | ✅ 6 姿态白名单 | ❌ | ✅ | ⚠️ #536 | ✅ | ✅ nesting/堆数 | ✅ | ⚠️ 同底面 stack，不是一般接触载荷流 | ⚠️ 有接口，#537/#539 | ✅ increasing X/Y | ✅ solver bound | ⚠️ C++ CLI 子进程 | ✅ CSV/JSON |
@@ -27,7 +29,9 @@
 - ⚠️ Jerry 的 `loadbear` 本地反例允许脆弱件上方实际重量 20；它改变排序优先级，不是硬承压约束。
 - ⚠️ Go `bp3d` 的 `MaxWeight` 字段存在，但放置函数没有用它拒绝超重方案。
 - ⚠️ OR-Tools/SCIP/Gurobi/CPLEX 是建模引擎，不是现成 3D packer；这些行的 ⚠️ 表示可以由自建模型表达，不能解读为官方提供 3D global constraint。它们保留的 ✅ 只表示求解器自身的 bound/optimality 或 Python 接口能力。
-- ⚠️ Rust `u-nesting` 的 `Packer3D` 原生只接受一个 `Boundary3D`。THPACK9 的多箱结果来自本仓库 repeated-single-boundary adapter；ExtremePoint 44/44 合法。Layer decoder 关联的 BottomLeftFill、GA、BRKGA、SA 在 THPACK9-1 和旋转专项中产生越界 placement，5 次重复仍失败；主实验逐策略有效率为 Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5；无效的 15–16 箱不能进入排名。
+- ⚠️ Rust `u-nesting` 的 `Packer3D` 原生只接受一个 `Boundary3D`。THPACK9 的多箱结果来自本仓库 repeated-single-boundary adapter；ExtremePoint 44/44 通过当前 validator。Layer decoder 关联的 BottomLeftFill、GA、BRKGA、SA 在 THPACK9-1 和旋转专项中产生越界 placement，5 次重复仍失败；主实验逐策略有效率为 Layer 3/5、GA 3/5、BRKGA 4/5、SA 4/5；无效的 15–16 箱不能进入排名。
+
+PackingSolver 的“合法”或“通过”均指本仓库当前 validator 的结果；该 validator 仍需独立复算证书中的旋转尺寸和 objective，不能仅凭 solver 输出宣称独立最优或完整几何证明。
 
 ## 技术栈与算法行为矩阵
 

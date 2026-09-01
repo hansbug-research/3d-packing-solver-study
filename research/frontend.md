@@ -411,7 +411,7 @@ Pareto 图用两个可选轴、颜色和大小编码第三/第四指标，但硬
 - PDF：执行摘要、容器用量与成本、每箱装载清单、六向/分层图、步骤、问题和免责声明；
 - CSV/XLSX/JSONL：每个 placement 的 container、position、orientation、load step、stop；这些是由 manifest 绑定 canonical JSON 的明细/流，不能脱离 problem/solution hash、单位、预期件数和 validator/version 单独作为有效证书；
 - JSON：完整 ProblemSpec/Solution/ValidationReport 与 schema version；
-- glTF/PNG：只作可视化交换；
+- glTF/GLB/PNG：只作可视化交换；
 - Parquet：用于实验分析和归档的派生表；Arrow IPC 只在 profiling 证明 JSON 分页传输是瓶颈后作为协议 v2，不替代 JSON 权威结果；
 - job bundle：输入、配置、日志摘要、候选 manifest、最终报告和 checksums，支持离线复现。
 
