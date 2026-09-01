@@ -191,7 +191,7 @@ def basic_payload(payload: dict[str, Any], spec: dict[str, Any]) -> tuple[str, d
                     "validation_error_count": len(errors), "validation_errors": errors, "objective": len(used_bin_ids), "total_cost": total_cost}
 
 
-def invoke(implementation_id: str, spec: dict[str, Any], variant: str, count: int, scale: int, timeout_s: float = 12.0) -> tuple[str, dict[str, Any], str, str, float, int | None, dict[str, Path]]:
+def invoke(implementation_id: str, spec: dict[str, Any], variant: str, count: int, scale: int, timeout_s: float = 12.0, projection: bool = True) -> tuple[str, dict[str, Any], str, str, float, int | None, dict[str, Path]]:
     """Return status, metrics, stdout, stderr, wall seconds, peak RSS."""
     RAW.mkdir(parents=True, exist_ok=True)
     work = Path(tempfile.mkdtemp(prefix="reliability-", dir=str(RAW)))
@@ -223,7 +223,9 @@ def invoke(implementation_id: str, spec: dict[str, Any], variant: str, count: in
     if implementation_id in {"py3dbp", "jerry"}:
         input_path.write_text(json.dumps(python_input(spec, len(spec["bins"]) > 1)) + "\n")
         command = [str(PYTHON), str(ROOT / "benchmarks/campaign/python_thpack/worker.py"), "--library", implementation_id,
-                   "--input", str(input_path), "--order", "descending", "--projection"]
+                   "--input", str(input_path), "--order", "descending"]
+        if projection:
+            command.append("--projection")
     elif implementation_id == "go_bp3d":
         command = [str(GO), "--input", str(input_path)]
     elif implementation_id.startswith("rust_"):
