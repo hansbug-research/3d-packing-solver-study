@@ -135,7 +135,7 @@
       "capability_by_profile": {"ps_fork_box": "ADAPTER_MISSING", "ps_fork_boxstacks": "ADAPTER_MISSING", "ps_upstream_box": "ADAPTER_MISSING", "ps_upstream_boxstacks": "ADAPTER_MISSING", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "ADAPTER_MISSING", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
-      "id": "B31", "name": "Mixed-SKU pallet building", "category": "INDUSTRIAL", "problem_family": "PALLET_BUILDING", "primary_metric": "pallets_used", "input_status": "SOURCE_INCOMPLETE", "ranking_kind": "INDUSTRIAL",
+      "id": "B31", "name": "Mixed-SKU pallet building", "category": "INDUSTRIAL", "problem_family": "PALLET_BUILDING", "primary_metric": "pallets_used", "input_status": "VALID", "ranking_kind": "INDUSTRIAL",
       "capability_by_profile": {"ps_fork_box": "PROJECTION_ONLY", "ps_fork_boxstacks": "PROJECTION_ONLY", "ps_upstream_box": "PROJECTION_ONLY", "ps_upstream_boxstacks": "PROJECTION_ONLY", "py3dbp": "PROJECTION_ONLY", "jerry": "PROJECTION_ONLY", "skjolber": "PROJECTION_ONLY", "go_bp3d": "PROJECTION_ONLY", "rust_unesting": "PROJECTION_ONLY", "exact_model": "ADAPTER_MISSING"}
     },
     {
